@@ -11,7 +11,6 @@
 | OpenProxy | OpenProxy 파라미터와 Pool, User, Shard 구성을 조회하고 수정합니다. | —      | ✓       |
 | Replication Slot | 외부 시스템과의 연동에 사용하는 Replication Slot을 조회하고 관리합니다. | —      | ✓       |
 
-
 ## 공통 상단 영역
 
 연결 정보 관리 화면 상단에는 현재 선택된 DB 서비스의 식별 정보가 모든 탭에 걸쳐 고정으로 표시됩니다.
@@ -42,6 +41,7 @@ Endpoint 탭은 **Service Endpoint**와 **Endpoint Details** 두 영역으로 �
 |-----|-----|
 | 별칭  | 인스턴스 별칭 |
 | 역할  | Primary / Standby(Recovery) / Standby(Read Only) |
+| AZ  | 인스턴스가 위치한 가용영역 |
 | VIP | 인스턴스 접속용 VIP 주소 |
 | Private IP | 인스턴스 내부 네트워크 주소 |
 | Port | DB Listener 포트 번호 |
@@ -70,14 +70,19 @@ Endpoint 탭은 **Service Endpoint**와 **Endpoint Details** 두 영역으로 �
 
 ## Access Control 탭
 
+{% hint style="info" %}
+**참고**
+Access Control 탭은 **OpenSQL** 환경에서만 제공됩니다.
+{% endhint %}
+
 현재 DB 서비스에 적용된 pg_hba 규칙 목록을 테이블 형식으로 표시합니다. 규칙은 Priority 오름차순으로 고정 정렬되며, 위에 위치한 규칙일수록 먼저 적용됩니다.
 
 | 컬럼  | 설명  |
 |-----|-----|
 | Priority | 규칙의 적용 순서. 번호가 작을수록 먼저 적용 |
 | Type | 연결 유형 (`local` / `host` / `hostssl` / `hostnossl`) |
-| 데이터베이스 별칭 | 규칙이 적용되는 데이터베이스 이름 |
-| User | 규칙이 적용되는 사용자 이름 |
+| 데이터베이스 | 규칙이 적용되는 데이터베이스 |
+| User | 규칙이 적용되는 사용자 |
 | Address | 허용 또는 차단할 클라이언트 주소 |
 | Method | 인증 방식 |
 | Auth Option | Method에 따른 세부 인증 옵션 |
@@ -87,7 +92,7 @@ Endpoint 탭은 **Service Endpoint**와 **Endpoint Details** 두 영역으로 �
 
 {% hint style="warning" %}
 **주의**
-시스템이 자동으로 생성한 고정 규칙은 수정 모드에서도 편집 및 순서 변경이 불가합니다. 최소 상위 3개 규칙이 시스템 고정 규칙에 해당하며, Barman 설정에 따라 최대 4개가 될 수 있습니다. 사용자가 추가하는 규칙의 Priority는 시스템 고정 규칙 다음 번호부터 지정할 수 있습니다.
+시스템이 자동으로 생성한 고정 규칙은 수정 모드에서도 편집 및 순서 변경이 불가합니다. Cloud 환경에서는 상위 3개 규칙이 시스템 고정 규칙에 해당하며, 사용자가 추가하는 규칙의 Priority는 시스템 고정 규칙 다음 번호부터 지정할 수 있습니다.
 {% endhint %}
 
 ### 규칙 조회
@@ -116,7 +121,7 @@ Endpoint 탭은 **Service Endpoint**와 **Endpoint Details** 두 영역으로 �
 \* 필수 항목
 
 
-3. 입력을 완료한 후 **저장** 버튼을 클릭합니다.
+3. 입력을 완료한 후 **생성** 버튼을 클릭합니다.
 
 ### 규칙 수정
 
@@ -145,6 +150,11 @@ Endpoint 탭은 **Service Endpoint**와 **Endpoint Details** 두 영역으로 �
 
 ## OpenProxy 탭
 
+{% hint style="info" %}
+**참고**
+OpenProxy 탭은 **OpenSQL** 환경에서만 제공됩니다.
+{% endhint %}
+
 OpenProxy 파라미터를 **Scope** 단위로 조회하고 수정합니다. 화면 왼쪽의 **Select Scope** 영역에서 조회 범위를 선택하면 오른쪽 테이블에 해당 Scope의 파라미터 목록이 표시됩니다. 기본 선택값은 **General**입니다.
 
 | Scope | 설명  |
@@ -155,7 +165,7 @@ OpenProxy 파라미터를 **Scope** 단위로 조회하고 수정합니다. 화�
 | User  | 특정 Pool 내 특정 사용자 단위 파라미터 |
 | Shard | 특정 Pool 내 특정 Shard 단위 파라미터 |
 
-Pool, User, Shard는 아코디언 구조로 표시됩니다.
+Pool, User, Shard는 트리 구조로 표시됩니다.
 
 **파라미터 목록 테이블**
 
@@ -184,7 +194,7 @@ Pool, User, Shard는 아코디언 구조로 표시됩니다.
 
    {% hint style="info" %}
 **참고**
-DB 서비스 상태가 `Running` 상태일 때만 **수정** 버튼이 활성화됩니다.
+OpenProxy Status가 `Running` 상태일 때만 **수정** 버튼이 활성화됩니다.
 {% endhint %}
 2. 수정 모드로 전환되면 테이블에서 변경할 파라미터의 **현재값**을 직접 수정합니다. 임시 변경된 파라미터는 파란색으로 표시됩니다.
 3. Scope를 변경해도 수정 중인 내용은 유지됩니다.
@@ -277,6 +287,11 @@ DB 서비스 상태가 `Running` 상태일 때만 **수정** 버튼이 활성화
 ---
 
 ## Replication Slot 탭
+
+{% hint style="info" %}
+**참고**
+Replication Slot 탭은 **OpenSQL** 환경에서만 제공됩니다.
+{% endhint %}
 
 OpenSQL Primary 인스턴스에 생성된 Replication Slot 목록을 테이블 형식으로 표시합니다. Failover 또는 Switchover가 발생하더라도 항상 **현재 Primary 인스턴스를 기준**으로 조회됩니다.
 

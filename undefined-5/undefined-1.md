@@ -4,6 +4,10 @@
 
 Tibero와 OpenSQL 두 엔진을 모두 지원하며, GNB의 DB Type 토글로 전환하면 해당 엔진에 맞는 지표 목록이 표시됩니다. Elapsed Time 알림 기능을 활성화하면 설정한 임계값을 초과한 세션 행을 색상으로 강조하여 장시간 실행 세션을 시각적으로 식별합니다. 테이블에서 특정 세션 행을 클릭하면 상세 정보와 SQL 전문을 드로어에서 확인할 수 있습니다.
 
+{% hint style="info" %}
+**참고**
+AWS 환경에서는 Tibero 엔진에만 지원되며, Azure 환경에서는 Tibero와 OpenSQL 모두 지원됩니다.
+{% endhint %}
 
 ## 세션 모니터링
 
@@ -141,6 +145,11 @@ Elapsed Time 임계값을 설정하면 경과 시간이 기준을 초과한 세�
 {% endhint %}
 
 ### 세션 상세 정보 조회
+
+{% hint style="warning" %}
+**주의**
+AWS 환경의 OpenSQL 인스턴스는 세션 상세 정보 조회를 지원하지 않습니다.
+{% endhint %}
 
 세션 테이블에서 특정 행을 클릭하면 오른쪽에 상세 정보 드로어가 열립니다. 드로어 제목은 **Session Detail ({SID 또는 PID})** 형식으로 표시됩니다.
 

@@ -18,8 +18,6 @@
 | 타입  | 설명  |
 |-----|-----|
 | Provisioning | 신규 리소스를 생성 중인 상태입니다. (Cloud 환경에서 DB 서비스 생성 시에 해당합니다.) |
-| Deploying | 신규 리소스를 설치 중인 상태입니다.(On-Premise 환경에서 DB 서비스 생성 시에 해당합니다.) |
-| Registering | 신규 리소스를 등록 중인 상태입니다.(On-Premise 환경에서 DB 서비스 생성 시에 해당합니다.) |
 | **Running** \* | 데이터베이스를 정상적으로 사용할 수 있는 상태입니다. |
 | **Updating** \* | 데이터베이스에 계획된 작업이나 변경 사항을 적용 중인 상태입니다. (예: 전체 재시작, 역할 전환, 스펙 변경, 마이그레이션, 복구 등) |
 | **Degraded** \* | 일부 데이터베이스 혹은 구성요소 사용이 불가능한 상태입니다. (예: 개별 인스턴스 재시작 등) |
@@ -103,8 +101,8 @@ DB 서비스에 대한 다양한 관리 작업을 수행할 수 있습니다. �
 
 | 항목  | 설명  |
 |-----|-----|
-| DB 서비스 정보 | 데이터베이스의 주요 정보를 카드 상단에 요약하여 표시합니다.<br>• 표시 항목<br>• DB Type Logo<br>• DB Service Name<br>• Status<br>• DB version (OpenSQL의 경우, OpenSQL 버전과 PostgreSQL 버전을 동시에 표시합니다.)<br>• Topology<br>• Eventlog : I / W / E (각각 Info / Warning / Error를 의미합니다.)<br>클릭 시, '[로그 모니터링 > Eventlog](#eventlog)' 페이지로 이동합니다. |
-| 노드 정보 | 데이터베이스 하위에 연계된 인스턴스 정보를 표시합니다. 역할(Role)을 기준으로 아코디언 형태로 축소/확장할 수 있습니다.<br>• 정렬 규칙<br>• Tibero: Primary → Standby(Read Only) → Standby(Recovery) 순으로 표시합니다.<br>• OpenSQL: Leader → Replica 순으로 표시합니다.<br>• 동일 Role 내에서 AZ 기준으로 정렬합니다.<br>• 표시 항목<br>• 역할(Role) : 해당 역할의 인스턴스 개수를 표시합니다.<br>• Data volume (Tibero) / Volume (OpenSQL): 사용량(%)과 바 차트, Threshold를 표시합니다.<br>• 테이블 항목<br>• 인스턴스 별칭<br>• Health<br>• vCPU: 현재 CPU 사용량(%)<br>• Memory: 현재 메모리 사용량(%)<br>• 활성 세션: 현재 활성 세션 개수 / Max Session Count (Standby(Recovery)는 미표시됩니다.)<br>• 가용 영역: 인스턴스가 위치한 AZ 정보 |
+| DB 서비스 정보 | 데이터베이스의 주요 정보를 카드 상단에 요약하여 표시합니다.<br>표시 항목<br>• DB Type Logo<br>• DB Service Name<br>• Status<br>• DB Type<br>• DB version (OpenSQL의 경우, OpenSQL 버전과 PostgreSQL 버전을 동시에 표시합니다.)<br>• Topology<br>• Eventlog : I / W / E (각각 Info / Warning / Error를 의미합니다.) |
+| 노드 정보 | 데이터베이스 하위에 연계된 인스턴스 정보를 표시합니다. 역할(Role)을 기준으로 아코디언 형태로 축소/확장할 수 있습니다.<br>정렬 규칙<br>• Tibero: Primary → Standby(Read Only) → Standby(Recovery) 순으로 표시합니다.<br>• OpenSQL: Leader → Replica 순으로 표시합니다.<br>• 동일 Role 내에서 AZ 기준으로 정렬합니다.<br>표시 항목<br>• 역할(Role) : 해당 역할의 인스턴스 개수를 표시합니다.<br>• Data volume (Tibero) / Volume (OpenSQL): 사용량(%)과 바 차트, Threshold를 표시합니다.<br>테이블 항목<br>• 인스턴스 별칭<br>• Health<br>• vCPU: 현재 CPU 사용량(%)<br>• Memory: 현재 메모리 사용량(%)<br>• 활성 세션: 현재 활성 세션 개수 / Max Session Count (Standby(Recovery)는 미표시됩니다.)<br>• 가용 영역: 인스턴스가 위치한 AZ 정보 |
 | 클러스터 정보 | Connection Health를 클러스터 다이어그램으로 표시합니다.<br>• Single: Primary/Leader DB 정보만 표시합니다.<br>• Single +DR / HA: Primary/Leader DB와 Standby/Replica DB 정보를 표시합니다. P-S 연결 상태 모니터링 정보를 표시하며, Standby/Replica DB는 AZ별로 각각 생성합니다.<br>• Tibero TAC: Primary DB Box 안에 다중 노드를 표시합니다.<br>• Tibero TAC + DR: Primary DB와 Standby DB 정보를 표시합니다. P-S 연결 상태 모니터링 정보를 표시하며, Primary DB Box 안에 다중 노드를 표시하고 Standby DB는 AZ별로 각각 생성합니다.<br>• DR 구성 연결 상태 모니터링: Primary - Standby / Leader - Replica 간 연결 상태를 선의 색상과 표시 정보로 나타냅니다.<br>• 정상: 초록색,`Connected`<br>• 실패: 붉은색,`Disconnected` |
 |
 {% endtab %}
@@ -123,11 +121,17 @@ DB 서비스에 대한 다양한 관리 작업을 수행할 수 있습니다. �
 |-----|-----|-----------|---------|-----|-----|
 | **이름** | 이름을 표시합니다.<br>• DB 서비스 이름 클릭 시 '[서비스 메타 정보 조회](/doc/5d7daeb2-e4f4-4409-aa74-dcaf1d65ab46)' 페이지로 이동합니다.<br>• 인스턴스 별칭 클릭 시 '[인스턴스 관리](/doc/dF57s45IXBUgU7RX1UvL)' 페이지로 이동합니다. | DB 서비스 이름 | 인스턴스 별칭 | O   | O   |
 | **생성일** | DB 서비스 생성일을 `yyyy.mm.dd HH:mm:ss` 형식으로 표시합니다. | DB 서비스 생성일 | X       | X   | X   |
-| **상태** | Status 또는 Health를 표시합니다. | • Creating<br>• Running(n/m)<br>• Updating(n/m)<br>• Degraded(n/m)<br>• Down(n/m)<br>• Starting<br>• Stopping<br>• Stopped<br>• Terminating<br>• Deploying<br>• Registering<br>• Unregistering | • 🟢 (available)<br>• 🟡 (limited)<br>• 🔵 (in progress)<br>• 🔴 (unavailable) | O   | O   |
+| **상태** | Status 또는 Health를 표시합니다. | • Creating<br>• Running(n/m)<br>• Updating(n/m)<br>• Degraded(n/m)<br>• Down(n/m)<br>• Starting<br>• Stopping<br>• Stopped<br>• Terminating<br>• Deploying (on-premise)<br>• Registering (on-premise)<br>• Unregistering (on-premise) | • 🟢 (available)<br>• 🟡 (limited)<br>• 🔵 (in progress)<br>• 🔴 (unavailable) | O   | O   |
 | **유형** | 데이터베이스 엔진 유형을 표시합니다. | • Tibero<br>• OpenSQL | -       | O   | X   |
 | **구성** | 토폴로지 또는 역할을 표시합니다. | • Tibero: Single, TAC(+DR)<br>• OpenSQL: Single, HA | • Tibero: Primary, Standby(Read Only), Standby(Recovery)<br>• OpenSQL: Leader, Replica | O   | O   |
 | **가용 영역 (Cloud)** | Cloud 환경인 경우, 해당 인스턴스가 위치한 가용 영역(AZ) 정보를 표시합니다. | -         | 가용 영역(AZ) 정보 | O   | X   |
 | **vCPU** | CPU 수와 사용량을 바 차트로 표시합니다. | O         | O       | O   |     |
+| **Memory** | Memory와 사용량을 바 차트로 표시 | O         | O       | O   | X   |
+| **활성세션** | 현재 활성화된 세션의 개수를 바 차트로 표시* Primary / Standby(RO) / Leader / Replica 에 한하여 표시 <br> * Standby(Recovery) : `-`으로 표시 | O         | O       | O   | X   |
+| **Data Volume (Tibero)** | data volume 사용량을 바 차트로 표시 + Threshold 표시  | O         | X       | O   | X   |
+| **Redo log Volume (Tibero)** | redo log volume 사용량을 바 차트로 표시 | O         | X       | X   | X   |
+| **Archive log Volume (Tibero)** | archive log volume 사용량을 바 차트로 표시 | O         | X       | X   | X   |
+| **Root Volume** | Root volume 사용량을 바 차트로 표시 | O         | O       | X   | X   |
 |
 {% endtab %}
 |     |           |         |     |     |

@@ -4,9 +4,13 @@
 
 {% hint style="info" %}
 **참고**
-DB 엔진이 Tibero로 설정된 경우에는 이 페이지 대신 테이블스페이스 및 데이터 파일 관리 화면이 표시됩니다.
+OpenSQL 데이터베이스 관리는 Azure 환경에서만 사용할 수 있습니다. AWS 환경에서는 지원되지 않습니다.
 {% endhint %}
 
+{% hint style="info" %}
+**참고**
+DB 엔진이 Tibero로 설정된 경우에는 이 페이지 대신 테이블스페이스 및 데이터 파일 관리 화면이 표시됩니다.
+{% endhint %}
 
 ## 데이터베이스 목록 조회
 
@@ -45,7 +49,7 @@ DB 엔진이 Tibero로 설정된 경우에는 이 페이지 대신 테이블스�
 |     | Vacuum 정상 (24시간 미만) | Vacuum 주의 (24\~72시간) | Vacuum 위험 (72시간 이상) |
 |-----|---------------------|---------------------|---------------------|
 | Bloat Ratio 정상 (20% 미만) | Healthy             | Watch               | Critical            |
-| Bloat Ratio 주의 (20\~40%) | Watch               | Watch               | Critical            |
+| Bloat Ratio 주의 (20% 이상 40% 미만) | Watch               | Watch               | Critical            |
 | Bloat Ratio 위험 (40% 이상) | Critical            | Critical            | Critical            |
 
 {% hint style="info" %}
@@ -97,6 +101,12 @@ Tuple Health는 추정 통계 기반 가이드로, 트래픽 패턴에 따라 �
 
 목록에서 데이터베이스 별칭을 클릭하면 해당 데이터베이스의 상세 정보 페이지로 이동합니다. 페이지는 기본 정보(Info), Database Activity, Trend Metrics 세 영역으로 구성됩니다.
 
+🔃 아이콘을 클릭하면 페이지 데이터를 수동으로 새로 고침합니다. 페이지 상단 브레드크럼에서 상위 메뉴 이름을 클릭하면 데이터 공간 관리 목록으로 돌아갑니다.
+
+
+1. **관리 > 데이터 공간 관리** 페이지의 데이터베이스 목록에서 조회할 데이터베이스의 **별칭**을 클릭합니다.
+2. 기본 정보, Database Activity, Trend Metrics 영역에서 상태와 현황을 확인합니다.
+
 ### 표시 항목
 
 **기본 정보 (Info)**
@@ -122,15 +132,10 @@ Tuple Health는 추정 통계 기반 가이드로, 트래픽 패턴에 따라 �
 | 항목  | 설명  |
 |-----|-----|
 | Bloat Ratio (%) | 전체 크기 대비 Dead Tuple이 차지하는 비율 |
-| Live Tuple Count | 데이터베이스의 Live Tuple 수 |
-| Dead Tuple Count | 데이터베이스의 Dead Tuple 수 |
+| Live Tuple Count (CNT) | 데이터베이스의 Live Tuple 수 |
+| Dead Tuple Count (CNT) | 데이터베이스의 Dead Tuple 수 |
 | Live/Dead Tuple Rate (%) | Live Tuple 대비 Dead Tuple 비율 |
 
-🔃 아이콘을 클릭하면 페이지 데이터를 수동으로 새로 고침합니다. 페이지 상단 브레드크럼에서 상위 메뉴 이름을 클릭하면 데이터 공간 관리 목록으로 돌아갑니다.
-
-
-1. **관리 > 데이터 공간 관리** 페이지의 데이터베이스 목록에서 조회할 데이터베이스의 **별칭**을 클릭합니다.
-2. 기본 정보, Database Activity, Trend Metrics 영역에서 상태와 현황을 확인합니다.
 
 ## 데이터베이스 삭제
 
