@@ -35,10 +35,10 @@ DB Service가 `Terminating` 상태이면 Syslog를 조회할 수 없습니다. �
 
 {% hint style="info" %}
 **참고**
-컴포넌트 로그 조회는 **OpenSQL**만 사용할 수 있습니다. Tibero에서는 \[Component\] 탭이 표시되지 않습니다.
+컴포넌트 로그 조회는 **Azure 환경의 OpenSQL**에서만 사용할 수 있습니다. AWS 환경 및 Tibero에서는 \[Component\] 탭이 표시되지 않습니다.
 {% endhint %}
 
-OpenSQL DB Service에서는 Syslog 페이지의 \[Component\] 탭에서 OpenHA, OpenProxy, OpenBackup 컴포넌트의 로그 파일 목록을 조회합니다.
+Azure의 OpenSQL DB Service에서는 Syslog 페이지의 \[Component\] 탭에서 OpenHA, OpenProxy, OpenBackup 컴포넌트의 로그 파일 목록을 조회합니다.
 
 | 항목  | 설명  |
 |-----|-----|
@@ -71,7 +71,7 @@ OpenSQL DB Service에서는 Syslog 페이지의 \[Component\] 탭에서 OpenHA, 
 
 {% hint style="info" %}
 **참고**
-컴포넌트 로그 다운로드는 **OpenSQL**만 사용할 수 있습니다.
+컴포넌트 로그 다운로드는 **Azure 환경의 OpenSQL**에서만 사용할 수 있습니다.
 {% endhint %}
 
 \[Component\] 탭에서 로그 파일을 선택한 뒤 \[다운로드\] 버튼을 클릭하면 확인 모달이 나타납니다. 선택한 파일 수에 따라 모달 내용과 다운로드 방식이 달라집니다.

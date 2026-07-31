@@ -1,5 +1,10 @@
 # 데이터베이스 재시작
 
+{% hint style="info" %}
+**참고**
+이 기능은 OwlDB `v2.0`부터 지원합니다.
+{% endhint %}
+
 다중 클러스터 구성의 데이터베이스인 경우, 노드 단위로 재시작할 수 있습니다. 재시작 진행 상태는 콘솔 화면 우측 상단 \[:1f514:\] 아이콘을 클릭하여 확인할 수 있습니다.
 
 {% hint style="warning" %}
@@ -36,7 +41,7 @@ OwlDB는 단일 또는 다중 인스턴스 구성의 데이터베이스를 재�
 | 항목  | 설명  |
 |-----|-----|
 | 제목  | `{instance alias}`를 재시작하시겠습니까? |
-| 내용  | 현재 연결된 모든 세션이 종료됩니다. 일반적으로 몇 분 정도 소요되며, 완료 후 데이터베이스가 다시 활성화됩니다. |
+| 내용  | 현재 연결된 모든 세션이 종료됩니다. 일반적으로 몇 분 정도 소요되며, 완료 후 DB 서비스가 다시 활성화됩니다. |
 | 재시작할 인스턴스 | 재시작할 인스턴스를 드롭다운으로 선택합니다. 단일 인스턴스 구성인 경우 선택이 비활성화됩니다. |
 | 종료 모드 | 데이터베이스 종료 모드를 드롭다운으로 선택합니다. |
 
@@ -46,7 +51,7 @@ OwlDB는 단일 또는 다중 인스턴스 구성의 데이터베이스를 재�
 
 ### 재시작 가능 조건
 
-재시작 버튼은 데이터베이스의 Status가 `Running`, `Degraded`, `Down`, `Updating`, `Failover` 중 하나일 때 활성화됩니다. 단, 인스턴스의 Health 상태에 따라 모달에서 선택할 수 있는 인스턴스 목록이 제한됩니다.
+재시작 버튼은 DB 서비스의 Status가 `Running`, `Degraded`, `Down`, `Updating`, `Failover` 중 하나일 때 활성화됩니다. 단, 인스턴스의 Health 상태에 따라 모달에서 선택할 수 있는 인스턴스 목록이 제한됩니다.
 
 * `**Running**`: `Available` 상태의 모든 인스턴스를 선택할 수 있습니다.
 * `**Degraded**`: `Available` 또는 `Limited` 상태의 인스턴스만 선택할 수 있습니다. 그 외 상태는 비활성화됩니다.
@@ -63,8 +68,8 @@ OwlDB는 단일 또는 다중 인스턴스 구성의 데이터베이스를 재�
 
 ### 재시작 후 상태 변화
 
-* 선택된 인스턴스가 전체 인스턴스인 경우: 데이터베이스 Status가 `Updating - In Progress`로 변경됩니다.
-* 선택된 인스턴스가 일부 인스턴스인 경우: 데이터베이스 Status가 `Degraded - In Progress`로 변경됩니다.
+* 선택된 인스턴스가 전체 인스턴스인 경우: DB 서비스 Status가 `Updating - In Progress`로 변경됩니다.
+* 선택된 인스턴스가 일부 인스턴스인 경우: DB 서비스 Status가 `Degraded - In Progress`로 변경됩니다.
 
 ## 사용 방법
 
@@ -131,5 +136,5 @@ OwlDB는 단일 또는 다중 인스턴스 구성의 데이터베이스를 재�
 
 {% hint style="warning" %}
 **주의**
-재시작 이후 배너의 Status Code가 `Issue: VM Down`인 경우, 이용 중인 CSP 에 따라 \[AWS\] [aws_owldb_support@t](mailto:aws_owldb_support@tmax.co.kr)ibero.com 또는 \[Azure\] [azure_owldb_support@t](mailto:azure_owldb_support@tmax.co.kr)iber.com 으로 문의하시기 바랍니다.
+재시작 이후 배너의 Status Code가 `Issue: VM Down`인 경우, 이용 중인 CSP 에 따라 \[AWS\] [aws_owldb_support@tmax.co.kr](mailto:aws_owldb_support@tmax.co.kr) 또는 \[Azure\] [azure_owldb_support@tmax.co.kr](mailto:azure_owldb_support@tmax.co.kr) 으로 문의하시기 바랍니다.
 {% endhint %}
