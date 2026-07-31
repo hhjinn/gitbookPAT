@@ -50,7 +50,7 @@ Endpoint 탭은 **Service Endpoint**와 **Endpoint Details** 두 영역으로 �
 생성이 완료된 인스턴스만 목록에 나타나며, 생성 중인 인스턴스는 표시되지 않습니다. Failover 또는 Switchover가 발생하더라도 Service Endpoint는 항상 **현재 Primary 인스턴스를 기준**으로 표시됩니다.
 
 {% hint style="info" %}
-**참고**
+**참고**\
 스펙 변경 작업이 진행 중인 경우 화면 상단에 진행 중 배너가 표시되며, 이 상태에서 상단 공통 영역의 **Topology** 항목은 변경 적용 이전의 토폴로지를 표시합니다.
 {% endhint %}
 
@@ -71,7 +71,7 @@ Endpoint 탭은 **Service Endpoint**와 **Endpoint Details** 두 영역으로 �
 ## Access Control 탭
 
 {% hint style="info" %}
-**참고**
+**참고**\
 Access Control 탭은 **OpenSQL** 환경에서만 제공됩니다.
 {% endhint %}
 
@@ -91,7 +91,7 @@ Access Control 탭은 **OpenSQL** 환경에서만 제공됩니다.
 화면은 **조회 모드**와 **수정 모드** 두 가지 상태로 동작합니다. 조회 모드에서는 **생성**/**삭제** 버튼으로 규칙을 추가·제거하고, 수정 모드에서는 테이블 전체가 인라인 편집 가능한 상태로 전환되어 기존 규칙 값이나 Priority(순서)를 변경합니다.
 
 {% hint style="warning" %}
-**주의**
+**주의**\
 시스템이 자동으로 생성한 고정 규칙은 수정 모드에서도 편집 및 순서 변경이 불가합니다. Cloud 환경에서는 상위 3개 규칙이 시스템 고정 규칙에 해당하며, 사용자가 추가하는 규칙의 Priority는 시스템 고정 규칙 다음 번호부터 지정할 수 있습니다.
 {% endhint %}
 
@@ -134,7 +134,7 @@ Access Control 탭은 **OpenSQL** 환경에서만 제공됩니다.
 4. 변경사항 비교 모달에서 수정 전후 내용을 확인한 후 **저장** 버튼을 클릭합니다. 저장이 완료되면 pg_hba에 즉시 반영됩니다.
 
 {% hint style="warning" %}
-**주의**
+**주의**\
 저장 시 연결이 다시 검증될 수 있습니다. 변경사항 비교 모달에서 내용을 충분히 확인한 후 저장합니다.
 {% endhint %}
 
@@ -151,7 +151,7 @@ Access Control 탭은 **OpenSQL** 환경에서만 제공됩니다.
 ## OpenProxy 탭
 
 {% hint style="info" %}
-**참고**
+**참고**\
 OpenProxy 탭은 **OpenSQL** 환경에서만 제공됩니다.
 {% endhint %}
 
@@ -193,7 +193,7 @@ Pool, User, Shard는 트리 구조로 표시됩니다.
 1. **수정** 버튼을 클릭합니다.
 
    {% hint style="info" %}
-**참고**
+**참고**\
 OpenProxy Status가 `Running` 상태일 때만 **수정** 버튼이 활성화됩니다.
 {% endhint %}
 2. 수정 모드로 전환되면 테이블에서 변경할 파라미터의 **현재값**을 직접 수정합니다. 임시 변경된 파라미터는 파란색으로 표시됩니다.
@@ -274,12 +274,12 @@ OpenProxy Status가 `Running` 상태일 때만 **수정** 버튼이 활성화됩
 4. 삭제를 확정하려면 **저장** 버튼을 클릭합니다.
 
 {% hint style="info" %}
-**참고**
+**참고**\
 🗑️ 아이콘은 Pool이 2개 이상일 때 활성화됩니다. User와 Shard는 해당 Pool 내에 각각 2개 이상 존재할 때 삭제할 수 있습니다.
 {% endhint %}
 
 {% hint style="warning" %}
-**주의**
+**주의**\
 저장 전 페이지를 이탈하면 삭제 설정이 초기화됩니다. 현재 선택 중인 Pool, User 또는 Shard를 삭제하면 Scope가 자동으로 General로 변경됩니다.
 {% endhint %}
 
@@ -289,7 +289,7 @@ OpenProxy Status가 `Running` 상태일 때만 **수정** 버튼이 활성화됩
 ## Replication Slot 탭
 
 {% hint style="info" %}
-**참고**
+**참고**\
 Replication Slot 탭은 **OpenSQL** 환경에서만 제공됩니다.
 {% endhint %}
 
@@ -306,7 +306,7 @@ OpenSQL Primary 인스턴스에 생성된 Replication Slot 목록을 테이블 �
 OwlDB 콘솔에서는 **Permanent** Slot만 생성할 수 있으며, Temporary 타입 Slot은 조회만 가능하고 선택하거나 삭제할 수 없습니다.
 
 {% hint style="warning" %}
-**주의**
+**주의**\
 OwlDB 관리 범위를 벗어나 PostgreSQL에 직접 생성하거나 삭제한 Replication Slot은 OwlDB 콘솔에 반영되지 않습니다. 이 경우 Slot 상태 조회, 삭제, 장애 대응 등 관련 관리 기능이 정상적으로 동작하지 않을 수 있습니다. Replication Slot 생성 및 삭제는 반드시 OwlDB 콘솔에서 수행합니다.
 {% endhint %}
 
@@ -335,7 +335,7 @@ OwlDB 관리 범위를 벗어나 PostgreSQL에 직접 생성하거나 삭제한 
 3. 항목을 입력한 후 **생성** 버튼을 클릭합니다.
 
 {% hint style="info" %}
-**참고**
+**참고**\
 DB 서비스 상태가 `Updating` 또는 `Failover`인 경우 **생성** 버튼이 비활성화됩니다.
 {% endhint %}
 
@@ -347,6 +347,6 @@ DB 서비스 상태가 `Updating` 또는 `Failover`인 경우 **생성** 버튼�
 3. 삭제 확인 모달에서 내용을 확인한 후 **삭제** 버튼을 클릭합니다.
 
 {% hint style="info" %}
-**참고**
+**참고**\
 Status가 `Connected`인 Slot과 DB 서비스 상태가 `Updating` 또는 `Failover`인 경우에는 **\[삭제\]** 버튼이 비활성화됩니다.
 {% endhint %}

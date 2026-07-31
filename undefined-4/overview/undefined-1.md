@@ -7,7 +7,7 @@
 변경 가능한 항목의 범위는 DB 엔진과 라이선스 유형(LI/BYOL)에 따라 다릅니다. LI 라이선스는 인스턴스 유형, DR 구성, 가용 영역, 스토리지 설정을 포함한 대부분의 항목을 변경할 수 있으며, BYOL 라이선스는 볼륨 크기, IOPS, MBps 등 스토리지 항목으로 변경 범위가 제한됩니다.
 
 {% hint style="info" %}
-**참고**
+**참고**\
 Azure 환경에서는 현재 BYOL 라이선스 모델만 지원합니다.
 {% endhint %}
 
@@ -22,7 +22,7 @@ Azure 환경에서는 현재 BYOL 라이선스 모델만 지원합니다.
 6. 확인 모달에서 내용을 검토하고 **확인**을 클릭합니다.
 
 {% hint style="info" %}
-**참고**
+**참고**\
 * 1\~4단계 탭은 순서와 관계없이 자유롭게 이동할 수 있습니다.
 * **구성 정보 확인** 탭은 1\~4단계 탭 전체에서 유효성 검사 오류가 없는 경우에만 진입할 수 있습니다.
 * 화면 오른쪽의 **구성 정보** 플로팅 박스에서 각 탭에 입력한 내용을 요약 확인할 수 있으며, 오류 항목은 빨간색 텍스트로 표시됩니다.
@@ -45,7 +45,7 @@ Azure 환경에서는 현재 BYOL 라이선스 모델만 지원합니다.
 | Volume IOPS / MBps | ✓         | ✓           | ✓          | ✓            |
 
 {% hint style="info" %}
-**참고**
+**참고**\
 * Volume Size는 현재 설정값보다 큰 값으로만 변경할 수 있습니다.
 * SE(Standard Edition) 선택 시 인스턴스 유형은 최대 8vCPU로 제한됩니다.
 * OpenSQL은 AWS 환경에서 지원되지 않습니다.
@@ -66,7 +66,7 @@ DB Service Name, DB Engine Type, License Option, Node Count는 현재 설정값�
 
 LI 라이선스 모델의 Tibero TAC 구성은 인스턴스 Scale In/Out 테이블에서 TAC 노드를 직접 추가하거나 삭제하여 노드 수를 조정할 수 있습니다. 최솟값은 2개, 최댓값은 4개입니다.
 {% hint style="warning" %}
-**주의**
+**주의**\
 운영 중인 TAC 인스턴스를 삭제(Scale In)하면 해당 인스턴스에 기록된 모든 데이터가 삭제됩니다.
 {% endhint %}
 
@@ -87,7 +87,7 @@ LI 라이선스 모델의 Tibero TAC 구성은 인스턴스 Scale In/Out 테이�
 | 3단계 | 완전 자동화 (Full Automation) | 장애 조치부터 복구, 미사용 자원 정리까지 모든 과정을 자동으로 처리합니다. 복구 속도를 최우선으로 하므로 최근 일부 데이터가 유실될 수 있습니다. |
 
 {% hint style="info" %}
-**참고**
+**참고**\
 선택 가능한 단계는 라이선스 유형에 따라 다릅니다.
 
 * **Tibero LI**: 0\~3단계 모두 선택 가능
@@ -100,7 +100,7 @@ LI 라이선스 모델의 Tibero TAC 구성은 인스턴스 Scale In/Out 테이�
 LI 라이선스 모델의 OpenSQL은 Replica Scale In/Out 테이블에서 Replica 노드를 추가하거나 삭제하여 구성을 조정합니다. Replica Node #2 이상만 삭제할 수 있습니다.
 
 {% hint style="warning" %}
-**주의**
+**주의**\
 * DR을 미사용으로 변경한 후 스펙 변경을 완료하면 기존 Standby/Replica 인스턴스의 모든 데이터가 삭제됩니다.
 * Failover로 인해 Retired 상태의 인스턴스가 존재하는 경우, DR을 미사용으로 변경하면 해당 인스턴스가 자동으로 삭제됩니다. 해당 인스턴스를 통한 데이터 복구가 불가능해지므로 데이터 검토 및 백업을 완료한 후 진행하십시오.
 {% endhint %}
@@ -123,7 +123,7 @@ LI 라이선스 모델의 OpenSQL은 Replica Scale In/Out 테이블에서 Replic
 | 최대 확장 한도 | Auto Scale 사용 시 최대 확장 가능한 크기를 입력합니다. 현재 Data Volume Size의 110% 이상으로 입력해야 합니다. |
 
 {% hint style="warning" %}
-**주의**
+**주의**\
 볼륨 크기는 축소할 수 없습니다. 최대 확장 한도를 신중하게 설정하십시오.
 {% endhint %}
 
@@ -142,6 +142,6 @@ LI 라이선스 모델의 OpenSQL은 Replica Scale In/Out 테이블에서 Replic
 | Retired 인스턴스가 있는 상태에서 DR 구성 변경 | 삭제될 Retired 인스턴스에 대한 안내 모달이 나타납니다. |
 
 {% hint style="info" %}
-**참고**
+**참고**\
 인스턴스 Scale Up/Down과 스토리지 확장을 함께 요청한 경우, 스토리지 확장을 먼저 처리한 후 인스턴스 Scale Up/Down을 수행합니다.
 {% endhint %}

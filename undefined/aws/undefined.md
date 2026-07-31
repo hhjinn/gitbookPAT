@@ -18,7 +18,7 @@ OwlDB 구독 전, SSH Key pair 리소스를 반드시 생성해야 합니다. SS
 3. **Create key pair**를 클릭하여 생성을 완료하고, SSH Key pair 파일을 다운로드할 수 있습니다.
 
 {% hint style="warning" %}
-**주의**
+**주의**\
 보안을 위해 SSH Key pair 파일은 1회만 다운로드할 수 있습니다. 다운로드한 파일은 반드시 안전한 위치에 보관하시기 바랍니다.
 {% endhint %}
 
@@ -61,7 +61,7 @@ OwlDB 구독 전, SSH Key pair 리소스를 반드시 생성해야 합니다. SS
 {% tabs %}
 {% tab title="스택 생성" %}
 {% hint style="warning" %}
-**주의**
+**주의**\
 해당 단계에서는 기본으로 선택된 옵션을 그대로 사용해야 합니다.
 {% endhint %}
 
@@ -112,7 +112,7 @@ OwlDB 구독 전, SSH Key pair 리소스를 반드시 생성해야 합니다. SS
 | **OwlDB Root User Name** | OwlDB에 로그인하기 위한 기본 관리자 계정의 ID | **Default : admin**<br>설정 이후 변경 불가 |
 
 {% hint style="warning" %}
-**주의**
+**주의**\
 OwlDB Root User Name은 OwlDB 로그인 시 사용되는 ID입니다. 해당 과정에서 설정 이후 변경이 불가합니다.
 {% endhint %}
 
@@ -129,7 +129,7 @@ OwlDB Root User Name은 OwlDB 로그인 시 사용되는 ID입니다. 해당 과
 {% endtab %}
 {% tab title="스택 옵션 구성" %}
 {% hint style="info" %}
-**참고**
+**참고**\
 해당 단계에서는 기본으로 선택된 옵션을 그대로 사용할 수 있습니다.
 {% endhint %}
 
@@ -155,7 +155,7 @@ CloudFormation에서 IAM 리소스를 생성할 수 있도록 승인합니다.
 {% endtab %}
 {% tab title="검토 및 작성" %}
 {% hint style="info" %}
-**참고**
+**참고**\
 해당 단계에서는 지정한 템플릿과 스택 세부 정보를 확인하고 검토합니다.
 
 **전송** 버튼을 클릭하여 프로비저닝을 시작합니다.

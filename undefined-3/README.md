@@ -73,7 +73,7 @@ OpenSQL 인스턴스 노드의 Health는 Patroni, OpenProxy, etcd, Agent 상태�
 | 전체 인스턴스 | Modify Spec (Scale Up/Down), Migration, Restoring, Patch/Upgrade, Starting, Stopping |
 
 {% hint style="info" %}
-**참고**
+**참고**\
 클러스터 관리 도구란, 클러스터 구성의 데이터베이스를 운영하기 위해 필요한 구성 요소입니다. (예: Tibero Cluster Manager(CM), Tibero Active Storage(TAS) 등)
 {% endhint %}
 {% endtab %}
@@ -87,7 +87,7 @@ OpenSQL 인스턴스 노드의 Health는 Patroni, OpenProxy, etcd, Agent 상태�
 * 선택한 데이터베이스에 대해 시작, 중지, 삭제, 역할 전환, 라이선스 갱신 관리 작업을 수행할 수 있습니다.
 * 데이터베이스/인스턴스 별칭 검색 기능을 제공합니다.
 {% hint style="info" %}
-**참고**
+**참고**\
 DB 서비스에 대한 다양한 관리 작업을 수행할 수 있습니다. 자세한 내용은 작업 페이지에서 확인 할 수 있습니다.
 {% endhint %}
 
@@ -113,7 +113,7 @@ DB 서비스에 대한 다양한 관리 작업을 수행할 수 있습니다. �
 | 리스트뷰는 데이터베이스 및 하위 인스턴스 정보를 계층 구조로 파악하기 쉽도록 트리 형태의 표로 표시합니다. |     |
 
 {% hint style="info" %}
-**참고**
+**참고**\
 '기본값'은 초기 화면에서 기본적으로 노출되는 항목을, '필수값'은 숨김 설정이 불가능한 항목을 의미합니다.
 {% endhint %}
 
@@ -167,7 +167,7 @@ Card View에서는 카드에 표시할 정보 영역을 선택할 수 있습니�
 | Cluster Info | Cluster 정보 및 Connection Health를 표시합니다. |
 
 {% hint style="info" %}
-**참고**
+**참고**\
 우측 Preview 영역에서 변경 결과를 실시간으로 확인할 수 있습니다. 저장 전까지 실제 화면에는 적용되지 않습니다.
 {% endhint %}
 {% endtab %}
