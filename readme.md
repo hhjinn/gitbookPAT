@@ -79,7 +79,7 @@ OwlDB가 지원하는 관계형 데이터베이스(RDBMS) 엔진 사양 및 환�
 | 데이터베이스 엔진 | 버전  | 토폴로지 |
 |-----------|-----|------|
 | Tibero    | 7.2.5 | * Single <br> * Single + DR <br> * TAC <br> * TAC + DR |
-| OpenSQL   | * 3.16.12.5 <br> * 3.17.8.5 | * Single <br> * HA |
+| OpenSQL   | * 3.17.10.7 <br> * 3.16.14.7 | * Single <br> * HA |
 
 {% endtab %}
 

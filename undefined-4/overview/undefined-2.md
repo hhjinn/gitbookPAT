@@ -3,7 +3,7 @@
 **OwlDB**에서 운영 중인 인스턴스 상태를 모니터링하고, 필요에 따라 인스턴스를 수정 및 재시작을 수행할 수 있습니다. 버튼을 통해 빠르게 원하는 작업을 수행할 수 있습니다. 인스턴스 상태가 `Available`이 아닌 경우,  일부 정보가 누락될 수 있습니다.
 
 {% hint style="info" %}
-**참고**
+**참고**\
 대시보드에서 다음 경로를 통해 인스턴스 관리 페이지로 이동할 수 있습니다.
 
 
@@ -12,7 +12,7 @@
 {% endhint %}
 
 {% hint style="info" %}
-**참고**
+**참고**\
 AWS 환경에서는 Tibero 엔진만 지원합니다.
 {% endhint %}
 
@@ -32,14 +32,12 @@ AWS 환경에서는 Tibero 엔진만 지원합니다.
 |-----|-----|
 | 별칭  | 인스턴스 별칭 표시(클릭 시 상세 정보 페이지로 이동) |
 | 생성일 | 인스턴스 생성 일시(`yyyy-mm-dd HH:mm:ss`) |
-| AZ  | 인스턴스가 배치된 가용 영역 |
 | Health | 인스턴스의 현재 상태(available / in progress / limited / unavailable) |
 | Open Mode | DB의 운영 모드(READ WRITE) |
 | Replication Mode | Primary DB의 동작 모드(PERFORMANCE) |
 | CPU | 프로비저닝된 vCPU 대비 사용량 바 차트 |
 | Memory | 프로비저닝된 메모리 대비 사용량 바 차트 |
 | 활성 세션 | 활성화된 세션 수 바 차트 |
-| Total Volume | root, data, redo log, archive log 볼륨 사용량 총합 |
 | Data Volume | data 볼륨 사용량(90% 임계값 표시 포함) |
 | Redo log Volume | redo log 볼륨 사용량 |
 | Archive log Volume | archive log 볼륨 사용량 |
@@ -61,8 +59,7 @@ AWS 환경에서는 Tibero 엔진만 지원합니다.
 | CPU | 프로비저닝된 vCPU 대비 사용량 바 차트 |
 | Memory | 프로비저닝된 메모리 대비 사용량 바 차트 |
 | 활성 세션 | 활성화된 세션 수 바 차트 |
-| Total Volume | root, data, redo log, archive log 볼륨 사용량 총합 |
-| Volume | data, WAL log, archive log 볼륨 사용량 총합 |
+| Volume | OpenSQL의 볼륨의 총합과 사용량    |
 | Root Volume | root 볼륨 사용량 |
 | Current Log | 가장 최근 Redo log 식별값(Standby 구성 시에만 표시) |
 |
@@ -81,9 +78,7 @@ AWS 환경에서는 Tibero 엔진만 지원합니다.
 |-----|-----|
 | 별칭  | 인스턴스 별칭 표시(클릭 시 상세 정보 페이지로 이동) |
 | 생성일 | 인스턴스 생성 일시(`yyyy-mm-dd HH:mm:ss`) |
-| AZ  | 인스턴스가 배치된 가용 영역 |
 | Health | 인스턴스의 현재 상태(available / in progress / limited / unavailable, retired 포함) |
-| Standby Status | `v$standby` 조회 시 나오는 `status` 값 표시 |
 | Open Mode | DB의 운영 모드(mounted / recovery / read write / read only / read only with apply) |
 | Log Replication Type | Standby의 복제 방식(LGWR ASYNC / ARCH ASYNC) |
 | CPU | 프로비저닝된 vCPU 대비 사용량 바 차트 |
@@ -102,7 +97,6 @@ AWS 환경에서는 Tibero 엔진만 지원합니다.
 |-----|-----|
 | 별칭  | 인스턴스 별칭 표시(클릭 시 상세 정보 페이지로 이동) |
 | 생성일 | 인스턴스 생성 일시(`yyyy-mm-dd HH:mm:ss`) |
-| AZ  | 인스턴스가 배치된 가용 영역 |
 | Health | 인스턴스의 현재 상태(available / in progress / limited / unavailable) |
 | Standby Status | Standby 인스턴스의 복제 상태(예: PRIMARY NOT CONNECTED 등, 노드별로 다르게 표시될 수 있음) |
 | Open Mode | DB의 운영 모드(READ ONLY) |
@@ -121,7 +115,7 @@ AWS 환경에서는 Tibero 엔진만 지원합니다.
 |     |
 
 {% hint style="warning" %}
-**주의**
+**주의**\
 인스턴스 상태가 `running`이 아닌 경우, 화면 상단에 배너가 나타나 현재 상태에 대한 안내를 제공합니다.
 {% endhint %}
 
@@ -153,10 +147,8 @@ Primary/Leader는 아래 항목을 표시하며, Standby/Replica는 동일 항�
 
 | 항목  | 설명  | 표시 대상 |
 |-----|-----|-------|
-| AZ  | 배치된 가용 영역 | 공통    |
 | Replication Mode | Primary DB의 동작 모드(PERFORMANCE) | Primary |
 | Current Log | 최근 Redo log 식별값(TSN) | 공통    |
-| Standby Status | Standby 복제 상태(노드별 상이 가능) | Standby |
 | Log Replication Type | 복제 방식(LGWR ASYNC / ARCH ASYNC) | Standby |
 | log last received | Primary로부터 수신한 최근 Redo log(TSN) | Standby |
 | log last applied | Standby에 적용된 최근 Redo log(TSN) | Standby |
@@ -169,8 +161,8 @@ Primary/Leader는 아래 항목을 표시하며, Standby/Replica는 동일 항�
 
 | 항목  | 설명  | 표시 대상 |
 |-----|-----|-------|
-| AZ  | 배치된 가용 영역 | 공통    |
 | Current Log | 최근 Redo log 식별값(LSN) | 공통    |
+| Standby Status | Standby 복제 상태(노드별 상이 가능) | Standby |
 | Log Replication Type | 복제 방식(ASYNC / SYNC) | Standby |
 | log last received | Primary로부터 수신한 최근 Redo log(LSN) | Standby |
 | log last applied | Standby에 적용된 최근 Redo log(LSN) | Standby |
@@ -201,7 +193,7 @@ Primary/Leader는 아래 항목을 표시하며, Standby/Replica는 동일 항�
 ### 데이터베이스 정보
 
 {% hint style="info" %}
-**참고**
+**참고**\
 데이터베이스 정보는 OpenSQL 엔진에서만 제공합니다.
 {% endhint %}
 
@@ -213,7 +205,7 @@ Primary/Leader는 아래 항목을 표시하며, Standby/Replica는 동일 항�
 활성 세션 값은 조회 중인 인스턴스가 Primary/Leader이면 Primary 노드 기준, Standby/Replica이면 Standby 노드 기준으로 표시됩니다.
 
 {% hint style="warning" %}
-**주의**
+**주의**\
 * Health가 `Available`이 아닌 경우 일부 정보가 누락되어 표시될 수 있습니다.
 * Health가 `Retired`인 경우(Tibero의 Standby 인스턴스에서만 발생) Health를 제외한 모든 정보가 `-`로 표시되며, \[재시작\] 버튼 대신 \[삭제\] 버튼이 나타납니다.
 {% endhint %}

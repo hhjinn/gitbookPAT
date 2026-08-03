@@ -5,7 +5,7 @@
 CPU 사용률, 메모리 사용률, 활성 세션 수 등 핵심 지표는 화면 상단에 항상 표시됩니다. Quick Insight·Load·I/O·Writes·All 탭을 선택해 상황별 지표를 집중적으로 조회하며, GNB의 DB Type 토글로 Tibero와 OpenSQL을 전환하면 해당 엔진에 맞는 지표 구성이 적용됩니다.
 
 {% hint style="info" %}
-**참고**
+**참고**\
 DB Type에 따라 모니터링 대상 리소스 계층이 다릅니다. Tibero는 Service → Instance 단위로 지표를 표시하며, OpenSQL은 Service → Instance → Database 단위까지 선택합니다.
 {% endhint %}
 
@@ -40,7 +40,7 @@ DB Select 트리는 **Service → Instance → Database** 3단계 구조입니�
 {% endtabs %}
 
 {% hint style="info" %}
-**참고**
+**참고**\
 선택한 DB Type에 리소스가 없거나 수집된 데이터가 없으면 No Data 화면이 표시됩니다. 인스턴스 Health가 비정상인 경우 DB Select 트리에 ⚠️ 아이콘이 표시되며, 해당 리소스만 선택하면 No Data 화면으로 전환됩니다.
 {% endhint %}
 
@@ -172,6 +172,6 @@ OpenSQL을 선택한 경우, 화면에 **Instance View**와 **Database View** �
 | Database View | 선택한 Database별로 지표를 분리하여 표시. DB Select 트리는 3단계로 전환 |
 
 {% hint style="info" %}
-**참고**
+**참고**\
 Database View로 전환해도 Instance 레벨에서만 제공되는 지표는 Instance 기준으로 그대로 표시됩니다.
 {% endhint %}

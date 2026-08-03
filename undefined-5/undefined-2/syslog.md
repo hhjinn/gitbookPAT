@@ -3,7 +3,7 @@
 Syslog 페이지에서는 DB 인스턴스에서 발생하는 이벤트, 경고, 오류 등의 시스템 로그를 조회합니다. Tibero는 DB 탭에서 원문 로그를 확인하고, OpenSQL은 DB 탭 외에 Component 탭을 통해 OpenHA·OpenProxy·OpenBackup 컴포넌트의 로그 파일 목록 조회 및 다운로드를 지원합니다. DB 탭의 로그 데이터는 최근 7일 이내 데이터만 조회됩니다.
 
 {% hint style="info" %}
-**참고**
+**참고**\
 Tibero의 DB 탭만 사용할 수 있습니다.
 {% endhint %}
 
@@ -12,12 +12,12 @@ Tibero의 DB 탭만 사용할 수 있습니다.
 **모니터링 > 로그 모니터링 > Syslog** 페이지에서는 시스템에서 발생하는 이벤트와 프로세스 로그를 확인합니다. 페이지 진입 시 DB 탭이 기본으로 활성화되며, 로그는 줄(라인) 단위로 표시됩니다. 각 행 좌측에 행 번호가 표시되고, 본문 영역에는 로그 원문이 그대로 나타납니다.
 
 {% hint style="info" %}
-**참고**
+**참고**\
 DB Syslog는 최근 7일 이내의 데이터만 조회할 수 있습니다. 7일을 초과한 로그는 표시되지 않습니다.
 {% endhint %}
 
 {% hint style="warning" %}
-**주의**
+**주의**\
 DB Service가 `Terminating` 상태이면 Syslog를 조회할 수 없습니다. 화면 상단에 안내 배너가 표시됩니다.
 {% endhint %}
 
@@ -34,11 +34,11 @@ DB Service가 `Terminating` 상태이면 Syslog를 조회할 수 없습니다. �
 ## 컴포넌트 로그 목록 조회
 
 {% hint style="info" %}
-**참고**
-컴포넌트 로그 조회는 **Azure 환경의 OpenSQL**에서만 사용할 수 있습니다. AWS 환경 및 Tibero에서는 \[Component\] 탭이 표시되지 않습니다.
+**참고**\
+컴포넌트 로그 조회는 **OpenSQL**만 사용할 수 있습니다. Tibero에서는 \[Component\] 탭이 표시되지 않습니다.
 {% endhint %}
 
-Azure의 OpenSQL DB Service에서는 Syslog 페이지의 \[Component\] 탭에서 OpenHA, OpenProxy, OpenBackup 컴포넌트의 로그 파일 목록을 조회합니다.
+OpenSQL DB Service에서는 Syslog 페이지의 \[Component\] 탭에서 OpenHA, OpenProxy, OpenBackup 컴포넌트의 로그 파일 목록을 조회합니다.
 
 | 항목  | 설명  |
 |-----|-----|
@@ -48,7 +48,7 @@ Azure의 OpenSQL DB Service에서는 Syslog 페이지의 \[Component\] 탭에서
 | 파일 크기(MB) | 로그 파일의 크기 |
 
 {% hint style="info" %}
-**참고**
+**참고**\
 컴포넌트별 로그 파일 구성은 다음과 같습니다.
 
 * **OpenBackup**: DB Service당 로그 파일 1개
@@ -70,8 +70,8 @@ Azure의 OpenSQL DB Service에서는 Syslog 페이지의 \[Component\] 탭에서
 ## 컴포넌트 로그 다운로드
 
 {% hint style="info" %}
-**참고**
-컴포넌트 로그 다운로드는 **Azure 환경의 OpenSQL**에서만 사용할 수 있습니다.
+**참고**\
+컴포넌트 로그 다운로드는 **OpenSQL**만 사용할 수 있습니다.
 {% endhint %}
 
 \[Component\] 탭에서 로그 파일을 선택한 뒤 \[다운로드\] 버튼을 클릭하면 확인 모달이 나타납니다. 선택한 파일 수에 따라 모달 내용과 다운로드 방식이 달라집니다.
