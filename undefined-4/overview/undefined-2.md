@@ -2,19 +2,13 @@
 
 **OwlDB**에서 운영 중인 인스턴스 상태를 모니터링하고, 필요에 따라 인스턴스를 수정 및 재시작을 수행할 수 있습니다. 버튼을 통해 빠르게 원하는 작업을 수행할 수 있습니다. 인스턴스 상태가 `Available`이 아닌 경우,  일부 정보가 누락될 수 있습니다.
 
-{% hint style="info" %}
-**참고**\
-대시보드에서 다음 경로를 통해 인스턴스 관리 페이지로 이동할 수 있습니다.
+{% hint style="info" %} **참고** 대시보드에서 다음 경로를 통해 인스턴스 관리 페이지로 이동할 수 있습니다.
 
 
 1. 리스트뷰 : **데이터베이스 별칭 옆 화살표 아이콘 > 인스턴스 별칭** 클릭
-2. 카드뷰 : 데이터베이스 카드의 **인스턴스 별칭** 클릭
-{% endhint %}
+2. 카드뷰 : 데이터베이스 카드의 **인스턴스 별칭** 클릭 {% endhint %}
 
-{% hint style="info" %}
-**참고**\
-AWS 환경에서는 Tibero 엔진만 지원합니다.
-{% endhint %}
+{% hint style="info" %} **참고** AWS 환경에서는 Tibero 엔진만 지원합니다. {% endhint %}
 
 ## 인스턴스 목록 조회
 
@@ -25,8 +19,7 @@ AWS 환경에서는 Tibero 엔진만 지원합니다.
 
 ### Primary(Leader) DB 표시 항목
 
-{% tabs %}
-{% tab title="Tibero" %}
+{% tabs %} {% tab title="Tibero" %}
 
 | 항목  | 설명  |
 |-----|-----|
@@ -45,9 +38,9 @@ AWS 환경에서는 Tibero 엔진만 지원합니다.
 | Archive log Volume | archive log 볼륨 사용량 |
 | Root Volume | root 볼륨 사용량 |
 | Current Log | 가장 최근 Redo log 식별값(Standby 구성 시에만 표시) |
-|
-{% endtab %}
-|     |
+|     |     |
+| {% endtab %} |     |
+|     |     |
 
 {% tab title="OpenSQL" %}
 
@@ -65,17 +58,16 @@ AWS 환경에서는 Tibero 엔진만 지원합니다.
 | Volume | data, WAL log, archive log 볼륨 사용량 총합 |
 | Root Volume | root 볼륨 사용량 |
 | Current Log | 가장 최근 Redo log 식별값(Standby 구성 시에만 표시) |
-|
-{% endtab %}
-|     |
-|
-{% endtabs %}
-|     |
+|     |     |
+| {% endtab %} |     |
+|     |     |
+|     |     |
+| {% endtabs %} |     |
+|     |     |
 
 ### Standby(Replica) DB 표시 항목
 
-{% tabs %}
-{% tab title="Tibero" %}
+{% tabs %} {% tab title="Tibero" %}
 
 | 항목  | 설명  |
 |-----|-----|
@@ -92,9 +84,9 @@ AWS 환경에서는 Tibero 엔진만 지원합니다.
 | log last received | Primary로부터 최근 수신한 Redo log 식별값(TSN 값) |
 | log last applied | Standby에 최근 적용된 Redo log 식별값(TSN 값) |
 | Replication Lag(초) | Primary DB와의 복제 지연 시간 |
-|
-{% endtab %}
-|     |
+|     |     |
+| {% endtab %} |     |
+|     |     |
 
 {% tab title="OpenSQL" %}
 
@@ -113,17 +105,14 @@ AWS 환경에서는 Tibero 엔진만 지원합니다.
 | log last received | Primary로부터 최근 수신한 Redo log 식별값(LSN 값) |
 | log last applied | Standby에 최근 적용된 Redo log 식별값(LSN 값) |
 | Replication Lag(초) | Primary DB와의 복제 지연 시간 |
-|
-{% endtab %}
-|     |
-|
-{% endtabs %}
-|     |
+|     |     |
+| {% endtab %} |     |
+|     |     |
+|     |     |
+| {% endtabs %} |     |
+|     |     |
 
-{% hint style="warning" %}
-**주의**\
-인스턴스 상태가 `running`이 아닌 경우, 화면 상단에 배너가 나타나 현재 상태에 대한 안내를 제공합니다.
-{% endhint %}
+{% hint style="warning" %} **주의** 인스턴스 상태가 `running`이 아닌 경우, 화면 상단에 배너가 나타나 현재 상태에 대한 안내를 제공합니다. {% endhint %}
 
 ## 인스턴스 상세 정보 조회
 
@@ -148,8 +137,7 @@ AWS 환경에서는 Tibero 엔진만 지원합니다.
 
 Primary/Leader는 아래 항목을 표시하며, Standby/Replica는 동일 항목에 복제 관련 항목을 추가로 표시합니다.
 
-{% tabs %}
-{% tab title="Tibero" %}
+{% tabs %} {% tab title="Tibero" %}
 
 | 항목  | 설명  | 표시 대상 |
 |-----|-----|-------|
@@ -161,9 +149,9 @@ Primary/Leader는 아래 항목을 표시하며, Standby/Replica는 동일 항�
 | log last received | Primary로부터 수신한 최근 Redo log(TSN) | Standby |
 | log last applied | Standby에 적용된 최근 Redo log(TSN) | Standby |
 | Replication Lag(초) | Primary와의 복제 지연 시간 | Standby |
-|
-{% endtab %}
-|     |       |
+|     |     |       |
+| {% endtab %} |     |       |
+|     |     |       |
 
 {% tab title="OpenSQL" %}
 
@@ -175,12 +163,12 @@ Primary/Leader는 아래 항목을 표시하며, Standby/Replica는 동일 항�
 | log last received | Primary로부터 수신한 최근 Redo log(LSN) | Standby |
 | log last applied | Standby에 적용된 최근 Redo log(LSN) | Standby |
 | Replication Lag(초) | Primary와의 복제 지연 시간 | Standby |
-|
-{% endtab %}
-|     |       |
-|
-{% endtabs %}
-|     |       |
+|     |     |       |
+| {% endtab %} |     |       |
+|     |     |       |
+|     |     |       |
+| {% endtabs %} |     |       |
+|     |     |       |
 
 ### 자원 사용 정보
 
@@ -200,10 +188,7 @@ Primary/Leader는 아래 항목을 표시하며, Standby/Replica는 동일 항�
 
 ### 데이터베이스 정보
 
-{% hint style="info" %}
-**참고**\
-데이터베이스 정보는 OpenSQL 엔진에서만 제공합니다.
-{% endhint %}
+{% hint style="info" %} **참고** 데이터베이스 정보는 OpenSQL 엔진에서만 제공합니다. {% endhint %}
 
 | 항목  | 설명  |
 |-----|-----|
@@ -212,8 +197,7 @@ Primary/Leader는 아래 항목을 표시하며, Standby/Replica는 동일 항�
 
 활성 세션 값은 조회 중인 인스턴스가 Primary/Leader이면 Primary 노드 기준, Standby/Replica이면 Standby 노드 기준으로 표시됩니다.
 
-{% hint style="warning" %}
-**주의**\
+{% hint style="warning" %} **주의**
+
 * Health가 `Available`이 아닌 경우 일부 정보가 누락되어 표시될 수 있습니다.
-* Health가 `Retired`인 경우(Tibero의 Standby 인스턴스에서만 발생) Health를 제외한 모든 정보가 `-`로 표시되며, \[재시작\] 버튼 대신 \[삭제\] 버튼이 나타납니다.
-{% endhint %}
+* Health가 `Retired`인 경우(Tibero의 Standby 인스턴스에서만 발생) Health를 제외한 모든 정보가 `-`로 표시되며, \[재시작\] 버튼 대신 \[삭제\] 버튼이 나타납니다. {% endhint %}

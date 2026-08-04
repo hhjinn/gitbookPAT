@@ -4,10 +4,7 @@
 
 Tibero와 OpenSQL 두 엔진을 모두 지원하며, GNB의 DB Type 토글로 전환하면 해당 엔진에 맞는 지표 목록이 표시됩니다. Elapsed Time 알림 기능을 활성화하면 설정한 임계값을 초과한 세션 행을 색상으로 강조하여 장시간 실행 세션을 시각적으로 식별합니다. 테이블에서 특정 세션 행을 클릭하면 상세 정보와 SQL 전문을 드로어에서 확인할 수 있습니다.
 
-{% hint style="info" %}
-**참고**\
-AWS 환경에서는 Tibero 엔진에만 지원되며, Azure 환경에서는 Tibero와 OpenSQL 모두 지원됩니다.
-{% endhint %}
+{% hint style="info" %} **참고** AWS 환경에서는 Tibero 엔진에만 지원되며, Azure 환경에서는 Tibero와 OpenSQL 모두 지원됩니다. {% endhint %}
 
 ## 세션 모니터링
 
@@ -31,14 +28,7 @@ AWS 환경에서는 Tibero 엔진에만 지원되며, Azure 환경에서는 Tibe
 
 검색 조건은 선택한 DB Type에 따라 다릅니다.
 
-{% tabs %}
-{% tab title="Tibero" %}
-전체 / Instance Alias / SID / Username / Status
-{% endtab %}
-{% tab title="OpenSQL" %}
-전체 / Instance Alias / Database Name / PID / Username / State
-{% endtab %}
-{% endtabs %}
+{% tabs %} {% tab title="Tibero" %} 전체 / Instance Alias / SID / Username / Status {% endtab %} {% tab title="OpenSQL" %} 전체 / Instance Alias / Database Name / PID / Username / State {% endtab %} {% endtabs %}
 
 ### 세션 컬럼 구성
 
@@ -48,8 +38,7 @@ AWS 환경에서는 Tibero 엔진에만 지원되며, Azure 환경에서는 Tibe
 * **기본 표시**: 기본으로 표시되며 사용자가 숨길 수 있는 컬럼
 * **선택 표시**: 기본으로 숨겨져 있으며 테이블 설정에서 추가할 수 있는 컬럼
 
-{% tabs %}
-{% tab title="Tibero" %}
+{% tabs %} {% tab title="Tibero" %}
 
 | 컬럼  | 설명  | 표시 정책 |
 |-----|-----|-------|
@@ -82,13 +71,9 @@ AWS 환경에서는 Tibero 엔진에만 지원되며, Azure 환경에서는 Tibe
 | Machine | 연결된 세션의 호스트 이름 | 선택 표시 |
 | OS USER | 연결된 세션의 OS 계정 이름 | 선택 표시 |
 
-{% hint style="info" %}
-**참고**\
-SQL ID 및 Prev SQL ID는 음수 값도 정상 범위에 포함됩니다.
-{% endhint %}
+{% hint style="info" %} **참고** SQL ID 및 Prev SQL ID는 음수 값도 정상 범위에 포함됩니다. {% endhint %}
 
-{% endtab %}
-{% tab title="OpenSQL" %}
+{% endtab %} {% tab title="OpenSQL" %}
 
 | 컬럼  | 설명  | 표시 정책 |
 |-----|-----|-------|
@@ -117,8 +102,7 @@ SQL ID 및 Prev SQL ID는 음수 값도 정상 범위에 포함됩니다.
 | backend_xid | 최상위 트랜잭션 ID | 선택 표시 |
 | backend_xmin | 현재 backend의 xmin horizon | 선택 표시 |
 
-{% endtab %}
-{% endtabs %}
+{% endtab %} {% endtabs %}
 
 ### Elapsed Time 알림 설정
 
@@ -138,18 +122,11 @@ Elapsed Time 임계값을 설정하면 경과 시간이 기준을 초과한 세�
 | 경고\* | 경고 수준 임계값 (초) | `0.1` \~ `1000.0`, 소수점 첫째 자리까지 허용 |
 | 주의\* | 주의 수준 임계값 (초) | `0.1` \~ `999.9`, 소수점 첫째 자리까지 허용, 경고 수준보다 작아야 함 |
 
-\* 필수 항목
-{% hint style="info" %}
-**참고**\
-알림 활성화 토글을 켜지 않은 상태로 패널을 닫으면 입력한 임계값은 유지됩니다. 단, 페이지를 이동하면 초기값으로 돌아갑니다.
-{% endhint %}
+\* 필수 항목 {% hint style="info" %} **참고** 알림 활성화 토글을 켜지 않은 상태로 패널을 닫으면 입력한 임계값은 유지됩니다. 단, 페이지를 이동하면 초기값으로 돌아갑니다. {% endhint %}
 
 ### 세션 상세 정보 조회
 
-{% hint style="warning" %}
-**주의**\
-AWS 환경의 OpenSQL 인스턴스는 세션 상세 정보 조회를 지원하지 않습니다.
-{% endhint %}
+{% hint style="warning" %} **주의** AWS 환경의 OpenSQL 인스턴스는 세션 상세 정보 조회를 지원하지 않습니다. {% endhint %}
 
 세션 테이블에서 특정 행을 클릭하면 오른쪽에 상세 정보 드로어가 열립니다. 드로어 제목은 **Session Detail ({SID 또는 PID})** 형식으로 표시됩니다.
 

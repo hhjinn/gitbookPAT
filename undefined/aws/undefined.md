@@ -2,7 +2,7 @@
 
 ## **1. OS 이미지 구독**
 
-OwlDB를 통해 데이터베이스를 구축하기 위해선 `Rocky Linux 9 (Official) - x86_64` AMI에 대한** 사전 구독**이 필요합니다. 구독 방법은 다음과 같습니다.
+OwlDB를 통해 데이터베이스를 구축하기 위해선 `Rocky Linux 9 (Official) - x86_64` AMI에 대한**사전 구독**이 필요합니다. 구독 방법은 다음과 같습니다.
 
 
 1. AWS 마켓플레이스(<https://aws.amazon.com/marketplace>)에서 [Rocky Linux 9 (Official) - x86_64](https://aws.amazon.com/marketplace/pp/prodview-ygp66mwgbl2ii) 을 검색하고 선택합니다.
@@ -13,8 +13,8 @@ OwlDB를 통해 데이터베이스를 구축하기 위해선 `Rocky Linux 9 (Off
 OwlDB 구독 전, SSH Key pair 리소스를 반드시 생성해야 합니다. SSH Key pair는 OwlDB의 배포와 데이터베이스 프로비저닝 과정에 사용됩니다.
 
 
-1. AWS Console(<https://console.aws.amazon.com/console/home>)에서 **Key pairs **를 검색하고 선택합니다.
-2. 우측 상단** Create key pair **을 클릭하여 Key pair를 생성합니다.  Name에서 원하는 Key pair name을 입력합니다. Key pair type에서 원하는 type을 선택합니다. 호환성을 위해 기본 설정인 **RSA**를 권장합니다. Private key file format에서 원하는 private key file 포맷을 설정합니다. 호환성을 위해 기본 설정인 **.pem **포맷을 권장합니다. Tags에서 효율적인 리소스 관리를 위한 Tag를 설정합니다.
+1. AWS Console(<https://console.aws.amazon.com/console/home>)에서 **Key pairs**를 검색하고 선택합니다.
+2. 우측 상단**Create key pair**을 클릭하여 Key pair를 생성합니다.  Name에서 원하는 Key pair name을 입력합니다. Key pair type에서 원하는 type을 선택합니다. 호환성을 위해 기본 설정인 **RSA**를 권장합니다. Private key file format에서 원하는 private key file 포맷을 설정합니다. 호환성을 위해 기본 설정인 **.pem**포맷을 권장합니다. Tags에서 효율적인 리소스 관리를 위한 Tag를 설정합니다.
 3. **Create key pair**를 클릭하여 생성을 완료하고, SSH Key pair 파일을 다운로드할 수 있습니다.
 
 {% hint style="warning" %}
@@ -56,7 +56,7 @@ OwlDB 구독 전, SSH Key pair 리소스를 반드시 생성해야 합니다. SS
 * Configuration 세부 항목을 확인합니다.
 * Choose Action 에서 Launch CloudFormation을 선택하고, **Launch**를 클릭합니다.
 
-## **3. CloudFormation 스택 생성 **
+## **3. CloudFormation 스택 생성**
 
 {% tabs %}
 {% tab title="스택 생성" %}
@@ -71,20 +71,24 @@ OwlDB 구독 전, SSH Key pair 리소스를 반드시 생성해야 합니다. SS
 |-----|-----|
 | 템플릿 준비 | 기존 템플릿 선택 |
 
-### 템플릿 지정 
+### 템플릿 지정
 
 | 항목  | 옵션  |
 |-----|-----|
 | 템플릿 소스 | Amazon S3 URL |
 | Amazon S3 URL | Default 템플릿 그대로 사용 |
+|     |     |
 |
 {% endtab %}
 |     |
+|     |     |
+|     |     |
 |
 {% tab title="스택 세부 정보 지정" %}
 |     |
+|     |     |
 
-### **스택 이름 제공   **
+### **스택 이름 제공**
 
 | 항목  | 설명  | 비고  |
 |-----|-----|-----|
@@ -141,7 +145,7 @@ AWS 리소스를 구성, 식별 및 분류하기 위해 태그를 추가 할 수
 
 IAM을 이용해 스택에서 사용할 역할을 지정할 수 있습니다.
 
-### 스택 실패 옵션 
+### 스택 실패 옵션
 
 프로비저닝 실패에 대한 동작과 롤백 중 새로 생성된 리소스 삭제 방식을 선택합니다.
 
@@ -170,7 +174,7 @@ CloudFormation에서 IAM 리소스를 생성할 수 있도록 승인합니다.
 
 # **OwlDB 접속 안내**
 
-## 최초 접속 
+## 최초 접속
 
 마켓플레이스에서 OwlDB 배포가 완료되면, 스택 생성 시 입력한 이메일로 OwlDB 접속 주소와 계정 정보가 포함된 안내 메일이 발송됩니다. 해당 메일을 통해 OwlDB에 접속할 수 있습니다. 메일이 수신되지 않을 경우, [aws_owldb_support@tibero.com](mailto:aws_owldb_support@tibero.com)으로 문의 주시기 바랍니다.
 

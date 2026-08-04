@@ -46,7 +46,6 @@ Azure 마켓플레이스에서 OwlDB를 이용하기 위한 정보를 확인합�
 | West US 2 | westus2 |
 | West US 3 | westus3 |
 
-
 # 인스턴스 유형
 
 OwlDB는 사용 목적에 따라 적절한 리소스 조합을 선택할 수 있는 유연성을 제공합니다. 다양한 인스턴스 유형을 제공하므로, 목표로 하는 워크로드 요구 사항까지 데이터베이스를 확장할 수 있습니다.
@@ -82,10 +81,7 @@ OwlDB는 사용 목적에 따라 적절한 리소스 조합을 선택할 수 있
 | Standard_E64s_v6 | 64         | 512          |
 | Standard_E96s_v6 | 96         | 768          |
 
-{% hint style="info" %}
-**참고**\
-Tibero의 Single은 2vCPU, Memory 8GiB 이상의 인스턴스 유형을 권장합니다.   Tibero의 TAC는 4vCPU 이상의 인스턴스 유형만 사용 가능하며, 8vCPU 이상을 권장합니다.
-{% endhint %}
+{% hint style="info" %} **참고** Tibero의 Single은 2vCPU, Memory 8GiB 이상의 인스턴스 유형을 권장합니다.   Tibero의 TAC는 4vCPU 이상의 인스턴스 유형만 사용 가능하며, 8vCPU 이상을 권장합니다. {% endhint %}
 
 # 스토리지/디스크 유형
 
@@ -105,7 +101,4 @@ Premium SSD v2는 기존 Premium SSD보다 향상된 성능을 제공하며, 비
 |-----------------|-----------------|
 | 100 \~ 65,536   | 3,000 \~ 80,000 |
 
-{% hint style="info" %}
-**참고**\
-Tibero TAC 토폴로지의 볼륨크기는 최소 200GiB 이상의이어야 합니다.
-{% endhint %}
+{% hint style="info" %} **참고** Tibero TAC 토폴로지의 볼륨크기는 최소 200GiB 이상의이어야 합니다. {% endhint %}

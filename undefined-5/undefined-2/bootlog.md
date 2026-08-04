@@ -6,10 +6,7 @@
 
 Bootlog 화면에는 선택한 DB 인스턴스의 부팅·종료 이벤트 이력이 표시됩니다. 이벤트·모드·상태 필터와 메시지 검색으로 원하는 로그를 좁힌 뒤, 메시지 링크를 클릭하면 우측 사이드 패널에서 전체 상세 로그를 확인합니다.
 
-{% hint style="warning" %}
-**주의**\
-인스턴스가 `Terminating` 상태일 때는 Bootlog를 조회할 수 없습니다.
-{% endhint %}
+{% hint style="warning" %} **주의** 인스턴스가 `Terminating` 상태일 때는 Bootlog를 조회할 수 없습니다. {% endhint %}
 
 **조회 기간**
 

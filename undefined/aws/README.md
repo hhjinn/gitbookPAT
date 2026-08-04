@@ -35,7 +35,6 @@ AWS 마켓플레이스에서 OwlDB를 이용하기 위한 정보를 확인합니
 | 아시아 태평양(서울) | ap-northeast-2 |
 | 아시아 태평양(도쿄) | ap-northeast-1 |
 
-
 # 인스턴스 유형
 
 | 인스턴스 유형 | vCPU (CNT) | Memory (GiB) |
@@ -69,10 +68,7 @@ AWS 마켓플레이스에서 OwlDB를 이용하기 위한 정보를 확인합니
 | r5.16xlarge | 64         | 512          |
 | r5.24xlarge | 96         | 768          |
 
-{% hint style="info" %}
-**참고**\
-Tibero의 Single은 large 이상의 인스턴스 유형을 권장합니다.   Tibero의 TAC는 large 이상의 인스턴스 유형만 사용 가능하며, xlarge 이상을 권장합니다.
-{% endhint %}
+{% hint style="info" %} **참고** Tibero의 Single은 large 이상의 인스턴스 유형을 권장합니다.   Tibero의 TAC는 large 이상의 인스턴스 유형만 사용 가능하며, xlarge 이상을 권장합니다. {% endhint %}
 
 # 스토리지/디스크 유형
 
@@ -102,7 +98,4 @@ OwlDB는 데이터 저장 및 복구를 위해 다양한 스토리지 옵션을 
 |-------------------|-------------------|
 | 100 \~ 65,536     | 3,000 \~ 256,000  |
 
-{% hint style="info" %}
-**참고**\
-Tibero TAC 토폴로지는 io2만 사용 가능합니다.
-{% endhint %}
+{% hint style="info" %} **참고** Tibero TAC 토폴로지는 io2만 사용 가능합니다. {% endhint %}

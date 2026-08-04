@@ -2,10 +2,7 @@
 
 OwlDB는 DR(또는 HA)로 구성된 Primary 데이터베이스의 상태를 지속적으로 모니터링하여 장애 상황을 감지합니다. 시스템은 1초마다 health check를 수행하며, Primary(Tibero) 또는 Leader(OpenSQL) DB가 `Unavailable` 상태로 30초 동안 지속되면 자동으로 장애 조치가 수행됩니다. Tibero TAC 구성에서는 모든 Primary 노드가 `Unavailable` 상태일 때 장애로 판정합니다.
 
-{% hint style="info" %}
-**참고**\
-이 문서에서 Tibero의 **Primary / Standby**는 OpenSQL의 **Leader / Replica**에 대응합니다. 공통으로 적용되는 항목은 `Primary/Leader`, `Standby/Replica`와 같이 함께 표기합니다.
-{% endhint %}
+{% hint style="info" %} **참고** 이 문서에서 Tibero의 **Primary / Standby**는 OpenSQL의 **Leader / Replica**에 대응합니다. 공통으로 적용되는 항목은 `Primary/Leader`, `Standby/Replica`와 같이 함께 표기합니다. {% endhint %}
 
 ## 단계별 알림 정책
 
@@ -24,20 +21,11 @@ OwlDB는 DR(또는 HA)로 구성된 Primary 데이터베이스의 상태를 지�
 | 2단계 (**자동 구성 복구**) | ✓           | ✓ TAC Scale-Out과 함께 신규 Standby/Replica를 자동 생성하여 고가용성 구성을 복구 | old Primary/Leader `retired` 처리 |
 | 3단계 (**완전 자동화**) | ✓           | ✓ old Primary/Leader 역동기화 및 신규 Standby/Replica 자동 생성 | 없음  |
 
-{% hint style="info" %}
-**참고**\
-기존 Primary cluster가 TAC인 경우, 구성 복구를 위하여 Scale-out을 수행하여 새 Primary cluster도 TAC 구성으로 복구됩니다. (Tibero TAC 해당)
-{% endhint %}
+{% hint style="info" %} **참고** 기존 Primary cluster가 TAC인 경우, 구성 복구를 위하여 Scale-out을 수행하여 새 Primary cluster도 TAC 구성으로 복구됩니다. (Tibero TAC 해당) {% endhint %}
 
-{% hint style="info" %}
-**참고**\
-1, 2단계의 경우 Primary/Leader Cluster가 비정상 종료되면 Standby/Replica로 전송되지 않은 로그가 있을 수 있습니다. 데이터 일관성을 보장할 수 없고 Split-Brain 현상을 방지하기 위해 해당 인스턴스는 **retired** 상태로 처리됩니다.
-{% endhint %}
+{% hint style="info" %} **참고** 1, 2단계의 경우 Primary/Leader Cluster가 비정상 종료되면 Standby/Replica로 전송되지 않은 로그가 있을 수 있습니다. 데이터 일관성을 보장할 수 없고 Split-Brain 현상을 방지하기 위해 해당 인스턴스는 **retired** 상태로 처리됩니다. {% endhint %}
 
-{% hint style="warning" %}
-**주의**\
-장애 조치 자동화 레벨이 **1단계**일 때 Standby가 1개만 있는 경우, 해당 Standby가 Primary로 승격되면서 장애 조치 이후 Standby가 없을 수 있습니다. 이 경우 고가용성 구성이 유지되지 않으므로 주의가 필요합니다. (Tibero 해당)
-{% endhint %}
+{% hint style="warning" %} **주의** 장애 조치 자동화 레벨이 **1단계**일 때 Standby가 1개만 있는 경우, 해당 Standby가 Primary로 승격되면서 장애 조치 이후 Standby가 없을 수 있습니다. 이 경우 고가용성 구성이 유지되지 않으므로 주의가 필요합니다. (Tibero 해당) {% endhint %}
 
 ## 라이선스 유형별 자동화 제공 범위
 
@@ -46,20 +34,17 @@ Cloud 환경에서는 DB 엔진과 라이선스 유형(LI/BYOL)에 따라 제공
 | DB Type | LI  | BYOL |
 |---------|-----|------|
 | Tibero  | 0 \~ 3단계 (전체 제공) | 0, 2, 3단계 (**1단계 미제공**) |
-| OpenSQL | 0, 3단계 (**1, 2단계 미제공**) |
+| OpenSQL | 0, 3단계 (**1, 2단계 미제공**) |      |
 
-{% hint style="info" %}
-**참고**\
+{% hint style="info" %} **참고**
+
 * **1단계(자동 장애 조치)** 는 Tibero LI에서만 제공됩니다. Tibero BYOL과 OpenSQL은 지원하지 않습니다.
 * **2단계(자동 구성 복구)** 는 Tibero LI · BYOL에서 제공되며, OpenSQL은 지원하지 않습니다.
-* **OpenSQL은 라이선스 유형(LI/BYOL)과 관계없이** 0단계와 3단계만 제공합니다.
-{% endhint %}
+* **OpenSQL은 라이선스 유형(LI/BYOL)과 관계없이** 0단계와 3단계만 제공합니다. {% endhint %}
 
 ## 자동화 단계별 상세 시나리오
 
-{% hint style="info" %}
-**참고**\
-**참고 — 토폴로지 상태 판별 기준**
+{% hint style="info" %} **참고** **참고 — 토폴로지 상태 판별 기준**
 
 승격 이후 구성 정상화 상태는 토폴로지 방식과 동일한 형상인지를 기준으로 판별합니다.
 
@@ -69,8 +54,7 @@ Cloud 환경에서는 DB 엔진과 라이선스 유형(LI/BYOL)에 따라 제공
    * Primary Node가 2개 미만인 경우 : `Degraded`
 2. **DR / HA 구성 (Tibero DR · OpenSQL HA)** : Standby/Replica를 보유하고 있는지 확인합니다.
    * Standby/Replica가 1개 이상인 경우 : `Running` (단, Standby/Replica가 비정상 상태이면 `Degraded`일 수 있음)
-   * Standby/Replica가 0개인 경우 : `Degraded`
-{% endhint %}
+   * Standby/Replica가 0개인 경우 : `Degraded` {% endhint %}
 
 ### 0단계: 수동
 

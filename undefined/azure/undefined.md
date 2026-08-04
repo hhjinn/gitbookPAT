@@ -18,7 +18,7 @@
 
 {% hint style="info" %}
 **참고**\
-OwlDB** **서비스 리소스는 Azure 시스템이 자동으로 생성하는 별도의 리소스 그룹에 배포되고, Publisher(운영자)에 의해 관리됩니다.
+OwlDB 서비스 리소스는 Azure 시스템이 자동으로 생성하는 별도의 리소스 그룹에 배포되고, Publisher(운영자)에 의해 관리됩니다.
 {% endhint %}
 
 | 항목  | 설명  |
@@ -45,7 +45,7 @@ OwlDB 배포를 위한 ARM(Azure Resource Manager) Template의 파라미터를 �
 
 ## 3. Managed Application Details
 
-애플리케이션의 고유 식별자와 효율적인 리소스 관리를 위해 리소스 그룹을 지정합니다.  
+애플리케이션의 고유 식별자와 효율적인 리소스 관리를 위해 리소스 그룹을 지정합니다.
 
 | 항목  | 설명  |
 |-----|-----|
@@ -61,7 +61,7 @@ OwlDB 배포를 위한 ARM(Azure Resource Manager) Template의 파라미터를 �
 
 ## **SSH Key 생성**
 
-OwlDB 배포 이후, 자동으로 생성된 OwlDB 서비스 리소스 그룹 내에 SSH Key 리소스를 반드시 생성해야 합니다. SSH Key는 OwlDB의 데이터베이스 프로비저닝 과정에 사용됩니다.  
+OwlDB 배포 이후, 자동으로 생성된 OwlDB 서비스 리소스 그룹 내에 SSH Key 리소스를 반드시 생성해야 합니다. SSH Key는 OwlDB의 데이터베이스 프로비저닝 과정에 사용됩니다.
 
 
 1. Azure Portal(<https://portal.azure.com/#home>)에서 **SSH keys**를 검색하고 선택합니다.

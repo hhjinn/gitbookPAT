@@ -4,10 +4,7 @@
 
 CPU 사용률, 메모리 사용률, 활성 세션 수 등 핵심 지표는 화면 상단에 항상 표시됩니다. Quick Insight·Load·I/O·Writes·All 탭을 선택해 상황별 지표를 집중적으로 조회하며, GNB의 DB Type 토글로 Tibero와 OpenSQL을 전환하면 해당 엔진에 맞는 지표 구성이 적용됩니다.
 
-{% hint style="info" %}
-**참고**\
-DB Type에 따라 모니터링 대상 리소스 계층이 다릅니다. Tibero는 Service → Instance 단위로 지표를 표시하며, OpenSQL은 Service → Instance → Database 단위까지 선택합니다.
-{% endhint %}
+{% hint style="info" %} **참고** DB Type에 따라 모니터링 대상 리소스 계층이 다릅니다. Tibero는 Service → Instance 단위로 지표를 표시하며, OpenSQL은 Service → Instance → Database 단위까지 선택합니다. {% endhint %}
 
 ## 인스턴스 모니터링 조회
 
@@ -25,24 +22,14 @@ DB Type에 따라 모니터링 대상 리소스 계층이 다릅니다. Tibero�
 
 GNB의 DB Type 토글에서 **Tibero** 또는 **OpenSQL**을 선택하면, 해당 DB Type에 맞는 DB Select 트리와 지표가 표시됩니다. DB Type을 전환하면 DB Select는 전체 선택으로 초기화됩니다.
 
-{% tabs %}
-{% tab title="Tibero" %}
-DB Select 트리는 **Service → Instance** 2단계 구조입니다. 전체 선택, Primary DB, Standby DB 단위로 선택할 수 있습니다.
+{% tabs %} {% tab title="Tibero" %} DB Select 트리는 **Service → Instance** 2단계 구조입니다. 전체 선택, Primary DB, Standby DB 단위로 선택할 수 있습니다.
 
 * Instance Alias는 최대 30자까지 표시되며, 초과 시 말줄임표(…)로 줄여서 표시합니다.
-* 정렬 순서: Service 생성일 최신순 → Instance Role (Primary → Standby(Read Only) → Standby(Recovery)) → 같은 역할 내 별칭 오름차순
-{% endtab %}
-{% tab title="OpenSQL" %}
-DB Select 트리는 **Service → Instance → Database** 3단계 구조입니다. Database 단위까지 선택할 수 있으며, Database를 선택하면 상위 Instance가 자동으로 포함됩니다.
+* 정렬 순서: Service 생성일 최신순 → Instance Role (Primary → Standby(Read Only) → Standby(Recovery)) → 같은 역할 내 별칭 오름차순 {% endtab %} {% tab title="OpenSQL" %} DB Select 트리는 **Service → Instance → Database** 3단계 구조입니다. Database 단위까지 선택할 수 있으며, Database를 선택하면 상위 Instance가 자동으로 포함됩니다.
 * Database를 일부만 선택하면 Instance View에서도 선택된 Database를 기준으로만 지표를 집계합니다.
-* Instance Alias와 Database 이름은 각각 최대 10자까지 표시되며, 초과 시 말줄임표(…)로 줄여서 표시합니다.
-{% endtab %}
-{% endtabs %}
+* Instance Alias와 Database 이름은 각각 최대 10자까지 표시되며, 초과 시 말줄임표(…)로 줄여서 표시합니다. {% endtab %} {% endtabs %}
 
-{% hint style="info" %}
-**참고**\
-선택한 DB Type에 리소스가 없거나 수집된 데이터가 없으면 No Data 화면이 표시됩니다. 인스턴스 Health가 비정상인 경우 DB Select 트리에 ⚠️ 아이콘이 표시되며, 해당 리소스만 선택하면 No Data 화면으로 전환됩니다.
-{% endhint %}
+{% hint style="info" %} **참고** 선택한 DB Type에 리소스가 없거나 수집된 데이터가 없으면 No Data 화면이 표시됩니다. 인스턴스 Health가 비정상인 경우 DB Select 트리에 ⚠️ 아이콘이 표시되며, 해당 리소스만 선택하면 No Data 화면으로 전환됩니다. {% endhint %}
 
 ### 상단 고정 지표
 
@@ -71,8 +58,7 @@ DB Type에 관계없이 페이지 상단에 항상 표시되는 핵심 지표입
 
 탭별로 표시되는 지표는 DB 엔진에 따라 다릅니다.
 
-{% tabs %}
-{% tab title="Tibero" %}
+{% tabs %} {% tab title="Tibero" %}
 
 **Quick Insight**
 
@@ -115,8 +101,7 @@ DB Type에 관계없이 페이지 상단에 항상 표시되는 핵심 지표입
 | Redo Log Rate (MB/s) | 단위 시간 당 Redo Log에 기록된 데이터 양 |
 | User Rollbacks (CNT) | 단위 시간 내 롤백된 트랜잭션 수 |
 
-{% endtab %}
-{% tab title="OpenSQL" %}
+{% endtab %} {% tab title="OpenSQL" %}
 
 **Quick Insight**
 
@@ -159,8 +144,7 @@ DB Type에 관계없이 페이지 상단에 항상 표시되는 핵심 지표입
 | WAL Rate (MB/s) | 단위 시간 당 WAL Log에 기록된 데이터 양 |
 | Rollbacks (CNT) | 단위 시간 내 롤백된 트랜잭션 수 |
 
-{% endtab %}
-{% endtabs %}
+{% endtab %} {% endtabs %}
 
 ### OpenSQL View 전환
 
@@ -171,7 +155,4 @@ OpenSQL을 선택한 경우, 화면에 **Instance View**와 **Database View** �
 | Instance View (기본값) | 선택한 Database의 지표를 합산 또는 평균하여 Instance 단위로 표시. DB Select 트리는 2단계로 표시 |
 | Database View | 선택한 Database별로 지표를 분리하여 표시. DB Select 트리는 3단계로 전환 |
 
-{% hint style="info" %}
-**참고**\
-Database View로 전환해도 Instance 레벨에서만 제공되는 지표는 Instance 기준으로 그대로 표시됩니다.
-{% endhint %}
+{% hint style="info" %} **참고** Database View로 전환해도 Instance 레벨에서만 제공되는 지표는 Instance 기준으로 그대로 표시됩니다. {% endhint %}

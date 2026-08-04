@@ -2,17 +2,13 @@
 
 OwlDB에서 데이터베이스를 운영하기 위해 데이터베이스를 생성합니다. 데이터베이스 생성(이하 프로비저닝)이 완료되면 OwlDB에서 제공하는 모든 기능을 사용할 수 있습니다. 프로비저닝 진행 상태는 콘솔 화면 우측 상단 :1f514:아이콘을 클릭하여 확인할 수 있습니다. OwlDB에서 지원하는 데이터베이스 엔진 및 인스턴스 타입에 대한 내용은 '[서비스 개요](#XDj4D6jZeLIG3hl9e9W4)' 페이지를 참고하시기 바랍니다.
 
-{% hint style="info" %}
-**참고**\
+{% hint style="info" %} **참고**
+
 * 데이터베이스 생성은 **Root 권한을 가진 사용자만** 수행할 수 있습니다.
 * AWS 환경에서는 OpenSQL 엔진을 지원하지 않습니다.
-* **OwlDB 콘솔 화면 > 대시보드 > 카드뷰 > + 아이콘** 또는 **GNB > DB Alias 드롭다운 > DB Service 생성 버튼**을 클릭하여 데이터베이스 생성 페이지로 이동할 수 있습니다.
-{% endhint %}
+* **OwlDB 콘솔 화면 > 대시보드 > 카드뷰 > + 아이콘** 또는 **GNB > DB Alias 드롭다운 > DB Service 생성 버튼**을 클릭하여 데이터베이스 생성 페이지로 이동할 수 있습니다. {% endhint %}
 
-{% hint style="warning" %}
-**주의**\
-AWS 환경에서는 데이터베이스 생성 페이지에 진입하면 사용자의 **Rocky 구독 상태**를 확인하며, 구독되어 있지 않은 경우 **구독 필수에 대한 안내 모달**이 나타납니다.
-{% endhint %}
+{% hint style="warning" %} **주의** AWS 환경에서는 데이터베이스 생성 페이지에 진입하면 사용자의 **Rocky 구독 상태**를 확인하며, 구독되어 있지 않은 경우 **구독 필수에 대한 안내 모달**이 나타납니다. {% endhint %}
 
 # 새로운 DB 서비 생성
 
@@ -24,10 +20,7 @@ AWS 환경에서는 데이터베이스 생성 페이지에 진입하면 사용�
 5. **구성 정보 확인** 단계에서 전체 생성 정보를 검토합니다.
 6. License Option이 **LI**인 경우 **생성** 버튼을, **BYOL**인 경우 **라이선스 등록** 버튼을 클릭하여 프로비저닝을 시작합니다. BYOL의 라이선스 등록 절차는 [BYOL 라이선스 등록](#byol-%EB%9D%BC%EC%9D%B4%EC%84%A0%EC%8A%A4-%EB%93%B1%EB%A1%9D)을 참고하시기 바랍니다.
 
-{% hint style="info" %}
-**참고**\
-생성 진행 중 **취소** 버튼을 클릭하면 확인 모달이 나타나며, 확인 시 입력한 정보가 모두 초기화되고 대시보드로 이동합니다.
-{% endhint %}
+{% hint style="info" %} **참고** 생성 진행 중 **취소** 버튼을 클릭하면 확인 모달이 나타나며, 확인 시 입력한 정보가 모두 초기화되고 대시보드로 이동합니다. {% endhint %}
 
 
 ---
@@ -47,10 +40,7 @@ AWS 환경에서는 데이터베이스 생성 페이지에 진입하면 사용�
 | Edition\* | 사용 가능한 기능과 최대 리소스를 결정하는 라이선스 에디션<br>-**Standard Edition(SE)**: 단일 서버 구성 전용, 최대 8vCPU까지 사용 가능<br>-**Enterprise Edition(EE)**: 고가용성 및 대규모 구성 지원, vCPU 제한 없음<br>- Topology를 TAC로 선택하면 EE가 자동으로 적용되며 변경할 수 없음 |
 | Node Count\* | 클러스터를 구성할 노드 수<br>- Single 1개 (고정)<br>- TAC 2\~4개 중 선 |
 
-{% hint style="info" %}
-**참고**\
-Edition에서 Standard Edition(SE)을 선택하면 인스턴스 구성 단계에서 최대 8vCPU까지의 인스턴스 유형만 선택할 수 있습니다.
-{% endhint %}
+{% hint style="info" %} **참고** Edition에서 Standard Edition(SE)을 선택하면 인스턴스 구성 단계에서 최대 8vCPU까지의 인스턴스 유형만 선택할 수 있습니다. {% endhint %}
 
 ### 2단계: DR 구성
 
@@ -62,12 +52,11 @@ Edition에서 Standard Edition(SE)을 선택하면 인스턴스 구성 단계에
 | Standby Mode\* | 제공되는 Standby Mode 옵션(Standby DB마다 개별 설정 가능)<br>-**Recovery**<br>-**Read Only** |
 | Log Replication Type | Primary의 로그를 Standby에 전송하는 방식<br>-**LGWR ASYNC**: 트랜잭션이 발생하면 실시간으로 생성되는 Redo log를 곧바로 전송하는 복제 모드<br>-**ARCH ASYNC** : 로그 스위치가 일어난 뒤, 아카이브 로그 파일이 생성되면 그 파일을 모아서 전송하는 복제 모드 |
 
-{% hint style="info" %}
-**참고**\
+{% hint style="info" %} **참고**
+
 * Failover Automation Level, Standby(Replica) Count, Standby Mode, Log Replication Type은 Enable DR에서 사용을 선택한 경우에만 노출됩니다.
 * Failover Automation Level은 라이선스 유형에 따라 설정 가능한 단계가 다릅니다. LI는 0\~3단계, BYOL은 0, 2, 3단계를 선택할 수 있습니다.
-* Standby Mode와 Log Replication Type은 Standby 노드별로 개별 설정이 가능합니다.
-{% endhint %}
+* Standby Mode와 Log Replication Type은 Standby 노드별로 개별 설정이 가능합니다. {% endhint %}
 
 ### 3단계: AZ 구성
 
@@ -77,11 +66,10 @@ Edition에서 Standard Edition(SE)을 선택하면 인스턴스 구성 단계에
 | Primary DB Availability Zone(AZ)\* | Primary DB의 가용 영역<br>- DR 사용 안함 : OwlDB와 같은 영역<br>- DR 사용 : OwlDB와 다른 영역 |
 | Standby DB Availability Zone(AZ)\* | Standby DB의 가용 영역<br>• 기본값 : OwlDB와 같은 가용 영역에 배치, 이후 다른 영역에 자동 배치 |
 
-{% hint style="info" %}
-**참고**\
+{% hint style="info" %} **참고**
+
 * Standby DB Availability Zone은 Enable DR에서 사용을 선택한 경우에만 노출됩니다.
-* Primary DB의 가용 영역은 사용자가 선택할 수 있으나, 안정적인 장애 대응 및 Failover를 위해 Primary DB는 OwlDB와 다른 가용 영역에 배치하는 것을 권장합니다.
-{% endhint %}
+* Primary DB의 가용 영역은 사용자가 선택할 수 있으나, 안정적인 장애 대응 및 Failover를 위해 Primary DB는 OwlDB와 다른 가용 영역에 배치하는 것을 권장합니다. {% endhint %}
 
 ### 4단계: 인스턴스 구성
 
@@ -104,15 +92,12 @@ Edition에서 Standard Edition(SE)을 선택하면 인스턴스 구성 단계에
 | Auto Scale | 사용 여부\* | 데이터 볼륨 사용량에 따라 데이터 볼륨 크기를 자동으로 확장할지 여부 |
 |     | 최대 확장 한도\* | Auto Scale 사용 시 증가할 수 있는 데이터 볼륨의 최대 크기 |
 
-{% hint style="info" %}
-**참고**\
+{% hint style="info" %} **참고**
+
 * 안정적인 운영 환경을 위해, 클러스터 내 모든 인스턴스는 동일한 스펙으로 자동 구성됩니다.
-* Edition을 **Standard Edition(SE)**으로 선택한 경우, DB Instance Type 목록에는 최대 8vCPU 사양까지만 표시됩니다.
+* Edition을 \*\*Standard Edition(SE)\*\*으로 선택한 경우, DB Instance Type 목록에는 최대 8vCPU 사양까지만 표시됩니다.
 * 일부 가용 영역에서는 지원하지 않는 DB Instance Type이 있을 수 있으며, 이 경우 목록에는 표시되나 선택할 수 없습니다.
-
-
-* 각 디스크의 IOPS는 선택한 디스크 유형에서 허용하는 범위 내에서만 입력할 수 있습니다.
-{% endhint %}
+* 각 디스크의 IOPS는 선택한 디스크 유형에서 허용하는 범위 내에서만 입력할 수 있습니다. {% endhint %}
 
 ### 5단계: 데이터베이스 구성
 
@@ -133,10 +118,7 @@ Edition에서 Standard Edition(SE)을 선택하면 인스턴스 구성 단계에
 | Temporary Tablespace Data File Size (GB) | 대용량 연산에 사용되는 임시 테이블스페이스 데이터 파일 크기 |
 | Undo Tablespace Data File Size (GB) | Undo 테이블스페이스 크기 |
 
-{% hint style="warning" %}
-**주의**\
-Database Name, Character Set, Timezone, Database Listener Port는 최초 설정 이후 수정이 불가합니다.
-{% endhint %}
+{% hint style="warning" %} **주의** Database Name, Character Set, Timezone, Database Listener Port는 최초 설정 이후 수정이 불가합니다. {% endhint %}
 
 *\* 표기는 필수 입력 항목을 의미합니다.*
 
@@ -154,11 +136,10 @@ License Option을 **BYOL**로 선택한 경우, 구성 정보 확인 단계에�
 4. **검증** 버튼을 클릭하여 업로드한 라이선스 파일의 유효성을 확인합니다.
 5. 검증에 성공하면 **생성** 버튼을 클릭하여 데이터베이스 생성을 요청합니다..
 
-{% hint style="info" %}
-**참고**\
+{% hint style="info" %} **참고**
+
 * 라이선스 파일은 최대 9개까지 업로드할 수 있습니다.
-* 업로드한 라이선스 파일을 삭제하려면 목록에서 파일을 선택한 후 삭제 버튼을 클릭합니다.
-{% endhint %}
+* 업로드한 라이선스 파일을 삭제하려면 목록에서 파일을 선택한 후 삭제 버튼을 클릭합니다. {% endhint %}
 
 ### 업로드 파일 목록 항목
 
@@ -172,16 +153,13 @@ License Option을 **BYOL**로 선택한 경우, 구성 정보 확인 단계에�
 | Expired Date | 라이선스 만료일 |
 | Signature | 라이선스 시그니처 정보 |
 
-{% hint style="warning" %}
-**주의**\
-다음의 경우 라이선스 검증에 실패합니다.
+{% hint style="warning" %} **주의** 다음의 경우 라이선스 검증에 실패합니다.
 
 * 라이선스 파일의 만료일이 지난 경우
 * 업로드한 라이선스 파일 간 Signature 값이 중복되는 경우
 * 이미 등록한 라이선스 파일을 다시 업로드한 경우
 * 업로드한 라이선스 파일 간 정보(Edition, CSP, Limit CPU, Expired Date)가 서로 다른 경우
-* 선택한 데이터베이스 구성 정보(Edition, CSP, 노드 수, 인스턴스 타입의 vCPU)와 라이선스 파일의 정보가 일치하지 않는 경우
-{% endhint %}
+* 선택한 데이터베이스 구성 정보(Edition, CSP, 노드 수, 인스턴스 타입의 vCPU)와 라이선스 파일의 정보가 일치하지 않는 경우 {% endhint %}
 
 ## 
 
