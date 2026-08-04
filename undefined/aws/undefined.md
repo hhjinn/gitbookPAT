@@ -4,14 +4,12 @@
 
 OwlDB를 통해 데이터베이스를 구축하기 위해선 `Rocky Linux 9 (Official) - x86_64` AMI에 대한**사전 구독**이 필요합니다. 구독 방법은 다음과 같습니다.
 
-
 1. AWS 마켓플레이스(<https://aws.amazon.com/marketplace>)에서 [Rocky Linux 9 (Official) - x86_64](https://aws.amazon.com/marketplace/pp/prodview-ygp66mwgbl2ii) 을 검색하고 선택합니다.
 2. **Continue to Subscribe**를 클릭하여 Subscription을 구독합니다.
 
 ## **2. SSH Key 생성**
 
 OwlDB 구독 전, SSH Key pair 리소스를 반드시 생성해야 합니다. SSH Key pair는 OwlDB의 배포와 데이터베이스 프로비저닝 과정에 사용됩니다.
-
 
 1. AWS Console(<https://console.aws.amazon.com/console/home>)에서 **Key pairs**를 검색하고 선택합니다.
 2. 우측 상단**Create key pair**을 클릭하여 Key pair를 생성합니다.  Name에서 원하는 Key pair name을 입력합니다. Key pair type에서 원하는 type을 선택합니다. 호환성을 위해 기본 설정인 **RSA**를 권장합니다. Private key file format에서 원하는 private key file 포맷을 설정합니다. 호환성을 위해 기본 설정인 **.pem**포맷을 권장합니다. Tags에서 효율적인 리소스 관리를 위한 Tag를 설정합니다.
@@ -24,18 +22,15 @@ OwlDB 구독 전, SSH Key pair 리소스를 반드시 생성해야 합니다. SS
 
 ## 
 
-
 ---
 
 # **AWS 마켓플레이스에서 OwlDB** 구독
-
 
 1. AWS 마켓플레이스(<https://aws.amazon.com/marketplace>)에서 OwlDB를 검색하고 선택합니다.
 2. **Continue to Subscribe**를 클릭하여 Subscription을 구독합니다.
 3. **Continue to Configuration**을 클릭하여 OwlDB 배포를 위한 설정을 시작합니다.
 
 ## 
-
 
 ---
 
@@ -59,7 +54,7 @@ OwlDB 구독 전, SSH Key pair 리소스를 반드시 생성해야 합니다. SS
 ## **3. CloudFormation 스택 생성**
 
 {% tabs %}
-{% tab title="스택 생성" %}
+{% tab title="스택 생성" %} 
 {% hint style="warning" %}
 **주의**\
 해당 단계에서는 기본으로 선택된 옵션을 그대로 사용해야 합니다.
@@ -78,14 +73,18 @@ OwlDB 구독 전, SSH Key pair 리소스를 반드시 생성해야 합니다. SS
 | 템플릿 소스 | Amazon S3 URL |
 | Amazon S3 URL | Default 템플릿 그대로 사용 |
 |     |     |
+|     |     |
 |
 {% endtab %}
 |     |
 |     |     |
 |     |     |
+|     |     |
+|     |     |
 |
 {% tab title="스택 세부 정보 지정" %}
 |     |
+|     |     |
 |     |     |
 
 ### **스택 이름 제공**
@@ -127,11 +126,10 @@ OwlDB Root User Name은 OwlDB 로그인 시 사용되는 ID입니다. 해당 과
 | **User Email** | 서비스 이용과 계정 관리를 위한 이메일 | 개인 정보 이용 동의 필요 |
 | **Consent to Personal Data Use** | 개인 정보 이용 동의 | -   |
 
-
 ---
 
 {% endtab %}
-{% tab title="스택 옵션 구성" %}
+{% tab title="스택 옵션 구성" %} 
 {% hint style="info" %}
 **참고**\
 해당 단계에서는 기본으로 선택된 옵션을 그대로 사용할 수 있습니다.
@@ -157,18 +155,17 @@ IAM을 이용해 스택에서 사용할 역할을 지정할 수 있습니다.
 
 CloudFormation에서 IAM 리소스를 생성할 수 있도록 승인합니다.
 {% endtab %}
-{% tab title="검토 및 작성" %}
+{% tab title="검토 및 작성" %} 
 {% hint style="info" %}
 **참고**\
 해당 단계에서는 지정한 템플릿과 스택 세부 정보를 확인하고 검토합니다.
 
 **전송** 버튼을 클릭하여 프로비저닝을 시작합니다.
 {% endhint %}
-{% endtab %}
+ {% endtab %}
 {% endtabs %}
 
 ## 
-
 
 ---
 
@@ -180,12 +177,12 @@ CloudFormation에서 IAM 리소스를 생성할 수 있도록 승인합니다.
 
 ## **URL 접속**
 
-{% hint style="success" %}
+{% hint style="info" %}
+**참고**\
 [https://고객별](https://xn--i49alow70b) 고유한 도메인 [값.owl-db.com](http://xn--639a.owl-db.com)
 {% endhint %}
 
 고객별 고유한 도메인 값은
-
 
 1. **CloudFormation 콘솔 > 스택 > 스택 이름 > 출력 탭 > ManagementPlaneStackId**에서 확인하거나
 2. **Route 53**서비스의 호스팅 영역 중 owl db에 해당하는 호스팅 영역 이름을 참조하시면 됩니다.

@@ -21,7 +21,6 @@
 | DB Type | 데이터베이스 엔진 유형 |
 | Topology | 데이터베이스 클러스터 구성 방식 |
 
-
 ---
 
 ## Endpoint 탭
@@ -49,10 +48,12 @@ Endpoint 탭은 **Service Endpoint**와 **Endpoint Details** 두 영역으로 �
 
 생성이 완료된 인스턴스만 목록에 나타나며, 생성 중인 인스턴스는 표시되지 않습니다. Failover 또는 Switchover가 발생하더라도 Service Endpoint는 항상 **현재 Primary 인스턴스를 기준**으로 표시됩니다.
 
-{% hint style="info" %} **참고** 스펙 변경 작업이 진행 중인 경우 화면 상단에 진행 중 배너가 표시되며, 이 상태에서 상단 공통 영역의 **Topology** 항목은 변경 적용 이전의 토폴로지를 표시합니다. {% endhint %}
+{% hint style="info" %}
+**참고**\
+스펙 변경 작업이 진행 중인 경우 화면 상단에 진행 중 배너가 표시되며, 이 상태에서 상단 공통 영역의 **Topology** 항목은 변경 적용 이전의 토폴로지를 표시합니다.
+{% endhint %}
 
 ### Endpoint 조회 방법
-
 
 1. 상단 메뉴에서 **관리 > 연결 정보 관리**를 클릭합니다.
 2. **Endpoint** 탭을 클릭합니다.
@@ -62,12 +63,14 @@ Endpoint 탭은 **Service Endpoint**와 **Endpoint Details** 두 영역으로 �
 4. **Endpoint Details** 목록에서 인스턴스별 별칭, 역할, VIP, Private IP, 포트, Health 상태를 확인합니다.
 5. Endpoint 주소를 복사하려면 해당 행의 📋 아이콘을 클릭합니다. 상단의 🔃 아이콘으로 목록을 수동 새로고침할 수 있습니다.
 
-
 ---
 
 ## Access Control 탭
 
-{% hint style="info" %} **참고** Access Control 탭은 **OpenSQL** 환경에서만 제공됩니다. {% endhint %}
+{% hint style="info" %}
+**참고**\
+Access Control 탭은 **OpenSQL** 환경에서만 제공됩니다.
+{% endhint %}
 
 현재 DB 서비스에 적용된 pg_hba 규칙 목록을 테이블 형식으로 표시합니다. 규칙은 Priority 오름차순으로 고정 정렬되며, 위에 위치한 규칙일수록 먼저 적용됩니다.
 
@@ -84,16 +87,17 @@ Endpoint 탭은 **Service Endpoint**와 **Endpoint Details** 두 영역으로 �
 
 화면은 **조회 모드**와 **수정 모드** 두 가지 상태로 동작합니다. 조회 모드에서는 **생성**/**삭제** 버튼으로 규칙을 추가·제거하고, 수정 모드에서는 테이블 전체가 인라인 편집 가능한 상태로 전환되어 기존 규칙 값이나 Priority(순서)를 변경합니다.
 
-{% hint style="warning" %} **주의** 시스템이 자동으로 생성한 고정 규칙은 수정 모드에서도 편집 및 순서 변경이 불가합니다. Cloud 환경에서는 상위 3개 규칙이 시스템 고정 규칙에 해당하며, 사용자가 추가하는 규칙의 Priority는 시스템 고정 규칙 다음 번호부터 지정할 수 있습니다. {% endhint %}
+{% hint style="warning" %}
+**주의**\
+시스템이 자동으로 생성한 고정 규칙은 수정 모드에서도 편집 및 순서 변경이 불가합니다. Cloud 환경에서는 상위 3개 규칙이 시스템 고정 규칙에 해당하며, 사용자가 추가하는 규칙의 Priority는 시스템 고정 규칙 다음 번호부터 지정할 수 있습니다.
+{% endhint %}
 
 ### 규칙 조회
-
 
 1. **관리 > 연결 정보 관리**에서 **Access Control** 탭을 클릭합니다.
 2. 현재 적용된 pg_hba 규칙 목록을 Priority 오름차순으로 확인합니다. 목록 상단에 고정된 시스템 규칙은 수정 및 삭제할 수 없습니다.
 
 ### 규칙 생성
-
 
 1. **\[생성\]** 버튼을 클릭합니다.
 2. 오른쪽 드로어에서 아래 항목을 입력합니다.
@@ -111,11 +115,9 @@ Endpoint 탭은 **Service Endpoint**와 **Endpoint Details** 두 영역으로 �
 
 \* 필수 항목
 
-
 3. 입력을 완료한 후 **생성** 버튼을 클릭합니다.
 
 ### 규칙 수정
-
 
 1. **\[수정\]** 버튼을 클릭합니다.
 2. 수정 모드로 전환되면 테이블의 각 항목을 인라인으로 수정합니다.
@@ -124,21 +126,25 @@ Endpoint 탭은 **Service Endpoint**와 **Endpoint Details** 두 영역으로 �
 3. 수정이 완료되면 **저장** 버튼을 클릭합니다.
 4. 변경사항 비교 모달에서 수정 전후 내용을 확인한 후 **저장** 버튼을 클릭합니다. 저장이 완료되면 pg_hba에 즉시 반영됩니다.
 
-{% hint style="warning" %} **주의** 저장 시 연결이 다시 검증될 수 있습니다. 변경사항 비교 모달에서 내용을 충분히 확인한 후 저장합니다. {% endhint %}
+{% hint style="warning" %}
+**주의**\
+저장 시 연결이 다시 검증될 수 있습니다. 변경사항 비교 모달에서 내용을 충분히 확인한 후 저장합니다.
+{% endhint %}
 
 ### 규칙 삭제
-
 
 1. 삭제할 규칙의 체크박스를 선택합니다.
 2. **삭제** 버튼을 클릭합니다.
 3. 삭제 확인 모달에서 **삭제** 버튼을 클릭합니다.
 
-
 ---
 
 ## OpenProxy 탭
 
-{% hint style="info" %} **참고** OpenProxy 탭은 **OpenSQL** 환경에서만 제공됩니다. {% endhint %}
+{% hint style="info" %}
+**참고**\
+OpenProxy 탭은 **OpenSQL** 환경에서만 제공됩니다.
+{% endhint %}
 
 OpenProxy 파라미터를 **Scope** 단위로 조회하고 수정합니다. 화면 왼쪽의 **Select Scope** 영역에서 조회 범위를 선택하면 오른쪽 테이블에 해당 Scope의 파라미터 목록이 표시됩니다. 기본 선택값은 **General**입니다.
 
@@ -166,7 +172,6 @@ Pool, User, Shard는 트리 구조로 표시됩니다.
 
 ### 파라미터 조회
 
-
 1. **관리 > 연결 정보 관리**에서 **OpenProxy** 탭을 클릭합니다.
 2. 기본적으로 **General** Scope의 파라미터 목록이 표시됩니다.
 3. **Select Scope**에서 원하는 조회 범위를 선택합니다.
@@ -174,10 +179,14 @@ Pool, User, Shard는 트리 구조로 표시됩니다.
 
 ### 파라미터 수정
 
-
 1. **수정** 버튼을 클릭합니다.
 
-   {% hint style="info" %} **참고** OpenProxy Status가 `Running` 상태일 때만 **수정** 버튼이 활성화됩니다. {% endhint %}
+   
+{% hint style="info" %}
+**참고**\
+OpenProxy Status가 `Running` 상태일 때만 **수정** 버튼이 활성화됩니다.
+{% endhint %}
+
 2. 수정 모드로 전환되면 테이블에서 변경할 파라미터의 **현재값**을 직접 수정합니다. 임시 변경된 파라미터는 파란색으로 표시됩니다.
 3. Scope를 변경해도 수정 중인 내용은 유지됩니다.
 4. 수정이 완료되면 **저장** 버튼을 클릭합니다.
@@ -185,17 +194,19 @@ Pool, User, Shard는 트리 구조로 표시됩니다.
    * 동적 파라미터만 수정한 경우: OpenProxy 재기동 없이 즉시 반영됩니다.
    * 정적 파라미터가 포함된 경우: OpenProxy 재기동 후 반영됩니다.
 
-{% hint style="info" %} **참고** **저장** 버튼을 클릭하기 전까지 변경 사항은 서버에 반영되지 않습니다. **\[취소\]** 버튼을 클릭하면 모든 변경 사항이 초기화됩니다. {% endhint %}
+{% hint style="info" %}
+**참고**\
+**저장** 버튼을 클릭하기 전까지 변경 사항은 서버에 반영되지 않습니다. **\[취소\]** 버튼을 클릭하면 모든 변경 사항이 초기화됩니다.
+{% endhint %}
 
 ### Pool / User / Shard 생성
-
 
 1. **수정** 버튼을 클릭하여 수정 모드로 전환합니다.
 2. Select Scope 영역에서 생성할 유형(Pool, User, Shard)의 ➕ 아이콘을 클릭합니다.
 3. 생성 모달에서 아래 항목을 입력합니다.
 
-{% tabs %} {% tab title="Pool 생성" %}
-
+{% tabs %}
+{% tab title="Pool 생성" %}
 | 항목  | 설명  | 입력 규칙 |
 |-----|-----|-------|
 | Pool Name \* | Pool 이름 | 1\~63자, 영어 소문자(a-z)·숫자(0-9)·언더바(`_`) 사용 가능. 첫 글자는 숫자 불가. DB 서비스 내 중복 불가. |
@@ -209,7 +220,8 @@ Pool, User, Shard는 트리 구조로 표시됩니다.
 
 \* 필수 항목
 
-{% endtab %} {% tab title="User 생성" %}
+{% endtab %}
+{% tab title="User 생성" %}
 
 | 항목  | 설명  | 입력 규칙 |
 |-----|-----|-------|
@@ -219,7 +231,8 @@ Pool, User, Shard는 트리 구조로 표시됩니다.
 
 \* 필수 항목
 
-{% endtab %} {% tab title="Shard 생성" %}
+{% endtab %}
+{% tab title="Shard 생성" %}
 
 | 항목  | 설명  | 입력 규칙 |
 |-----|-----|-------|
@@ -230,16 +243,18 @@ Pool, User, Shard는 트리 구조로 표시됩니다.
 
 \* 필수 항목
 
-{% endtab %} {% endtabs %}
-
+{% endtab %}
+{% endtabs %}
 
 4. 필수 항목을 모두 입력한 후 **생성** 버튼을 클릭합니다. 생성된 항목이 목록에 임시로 추가됩니다.
 5. 최종 반영을 위해 **저장** 버튼을 클릭합니다.
 
-{% hint style="info" %} **참고** **저장** 버튼을 클릭하기 전까지 생성한 항목은 서버에 반영되지 않습니다. 저장 전 페이지를 이탈하면 변경 사항이 초기화됩니다. {% endhint %}
+{% hint style="info" %}
+**참고**\
+**저장** 버튼을 클릭하기 전까지 생성한 항목은 서버에 반영되지 않습니다. 저장 전 페이지를 이탈하면 변경 사항이 초기화됩니다.
+{% endhint %}
 
 ### Pool / User / Shard 삭제
-
 
 1. **수정** 버튼을 클릭하여 수정 모드로 전환합니다.
 2. Select Scope 영역에서 삭제할 Pool, User 또는 Shard 항목의 🗑️ 아이콘을 클릭합니다. 해당 항목이 비활성화되고 아이콘이 🔃로 변경됩니다.
@@ -247,16 +262,24 @@ Pool, User, Shard는 트리 구조로 표시됩니다.
 3. 삭제를 취소하려면 🔃 아이콘을 클릭합니다.
 4. 삭제를 확정하려면 **저장** 버튼을 클릭합니다.
 
-{% hint style="info" %} **참고** 🗑️ 아이콘은 Pool이 2개 이상일 때 활성화됩니다. User와 Shard는 해당 Pool 내에 각각 2개 이상 존재할 때 삭제할 수 있습니다. {% endhint %}
+{% hint style="info" %}
+**참고**\
+🗑️ 아이콘은 Pool이 2개 이상일 때 활성화됩니다. User와 Shard는 해당 Pool 내에 각각 2개 이상 존재할 때 삭제할 수 있습니다.
+{% endhint %}
 
-{% hint style="warning" %} **주의** 저장 전 페이지를 이탈하면 삭제 설정이 초기화됩니다. 현재 선택 중인 Pool, User 또는 Shard를 삭제하면 Scope가 자동으로 General로 변경됩니다. {% endhint %}
-
+{% hint style="warning" %}
+**주의**\
+저장 전 페이지를 이탈하면 삭제 설정이 초기화됩니다. 현재 선택 중인 Pool, User 또는 Shard를 삭제하면 Scope가 자동으로 General로 변경됩니다.
+{% endhint %}
 
 ---
 
 ## Replication Slot 탭
 
-{% hint style="info" %} **참고** Replication Slot 탭은 **OpenSQL** 환경에서만 제공됩니다. {% endhint %}
+{% hint style="info" %}
+**참고**\
+Replication Slot 탭은 **OpenSQL** 환경에서만 제공됩니다.
+{% endhint %}
 
 OpenSQL Primary 인스턴스에 생성된 Replication Slot 목록을 테이블 형식으로 표시합니다. Failover 또는 Switchover가 발생하더라도 항상 **현재 Primary 인스턴스를 기준**으로 조회됩니다.
 
@@ -270,17 +293,18 @@ OpenSQL Primary 인스턴스에 생성된 Replication Slot 목록을 테이블 �
 
 OwlDB 콘솔에서는 **Permanent** Slot만 생성할 수 있으며, Temporary 타입 Slot은 조회만 가능하고 선택하거나 삭제할 수 없습니다.
 
-{% hint style="warning" %} **주의** OwlDB 관리 범위를 벗어나 PostgreSQL에 직접 생성하거나 삭제한 Replication Slot은 OwlDB 콘솔에 반영되지 않습니다. 이 경우 Slot 상태 조회, 삭제, 장애 대응 등 관련 관리 기능이 정상적으로 동작하지 않을 수 있습니다. Replication Slot 생성 및 삭제는 반드시 OwlDB 콘솔에서 수행합니다. {% endhint %}
+{% hint style="warning" %}
+**주의**\
+OwlDB 관리 범위를 벗어나 PostgreSQL에 직접 생성하거나 삭제한 Replication Slot은 OwlDB 콘솔에 반영되지 않습니다. 이 경우 Slot 상태 조회, 삭제, 장애 대응 등 관련 관리 기능이 정상적으로 동작하지 않을 수 있습니다. Replication Slot 생성 및 삭제는 반드시 OwlDB 콘솔에서 수행합니다.
+{% endhint %}
 
 ### Replication Slot 조회
-
 
 1. **관리 > 연결 정보 관리**에서 **Replication Slot** 탭을 클릭합니다.
 2. 현재 Primary 인스턴스에 생성된 Replication Slot 목록을 확인합니다.
 3. **Type**(Physical / Logical) 또는 **Status**(Connected / Disconnected) 필터를 사용하여 목록을 좁힙니다.
 
 ### Replication Slot 생성
-
 
 1. **\[생성\]** 버튼을 클릭합니다.
 2. 오른쪽 드로어에서 아래 항목을 입력합니다.
@@ -293,16 +317,20 @@ OwlDB 콘솔에서는 **Permanent** Slot만 생성할 수 있으며, Temporary �
 
 \* 필수 항목
 
-
 3. 항목을 입력한 후 **생성** 버튼을 클릭합니다.
 
-{% hint style="info" %} **참고** DB 서비스 상태가 `Updating` 또는 `Failover`인 경우 **생성** 버튼이 비활성화됩니다. {% endhint %}
+{% hint style="info" %}
+**참고**\
+DB 서비스 상태가 `Updating` 또는 `Failover`인 경우 **생성** 버튼이 비활성화됩니다.
+{% endhint %}
 
 ### Replication Slot 삭제
-
 
 1. 삭제할 Slot을 선택합니다.
 2. **삭제** 버튼을 클릭합니다.
 3. 삭제 확인 모달에서 내용을 확인한 후 **삭제** 버튼을 클릭합니다.
 
-{% hint style="info" %} **참고** Status가 `Connected`인 Slot과 DB 서비스 상태가 `Updating` 또는 `Failover`인 경우에는 **\[삭제\]** 버튼이 비활성화됩니다. {% endhint %}
+{% hint style="info" %}
+**참고**\
+Status가 `Connected`인 Slot과 DB 서비스 상태가 `Updating` 또는 `Failover`인 경우에는 **\[삭제\]** 버튼이 비활성화됩니다.
+{% endhint %}
