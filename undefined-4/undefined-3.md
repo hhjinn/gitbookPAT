@@ -6,10 +6,10 @@
 
 | 탭   | 설명  | Tibero | OpenSQL |
 |-----|-----|:------:|:-------:|
-| Endpoint | 외부 애플리케이션이 접속 가능한 엔드포인트 주소를 확인합니다. | ✓      | ✓       |
-| Access Control | IP 기반 접근 허용·차단 규칙(pg_hba)을 조회하고 관리합니다. | —      | ✓       |
-| OpenProxy | OpenProxy 파라미터와 Pool, User, Shard 구성을 조회하고 수정합니다. | —      | ✓       |
-| Replication Slot | 외부 시스템과의 연동에 사용하는 Replication Slot을 조회하고 관리합니다. | —      | ✓       |
+| Endpoint | 외부 애플리케이션 접속용 엔드포인트 주소 확인 | ✓      | ✓       |
+| Access Control | IP 기반 접근 허용·차단 규칙(pg_hba) 조회·관리 | —      | ✓       |
+| OpenProxy | OpenProxy 파라미터와 Pool, User, Shard 구성 조회·수정 | —      | ✓       |
+| Replication Slot | 외부 시스템 연동용 Replication Slot 조회·관리 | —      | ✓       |
 
 ## 공통 상단 영역
 
@@ -31,7 +31,7 @@ Endpoint 탭은 **Service Endpoint**와 **Endpoint Details** 두 영역으로 �
 
 | 항목  | 설명  |
 |-----|-----|
-| Endpoint | 서비스 대표 접속 주소. **Single 토폴로지**는 VIP가 없으므로 Private IP로 표시하고, **HA·TAC·DR 토폴로지**는 VIP로 표시 |
+| Endpoint | 서비스 대표 접속 주소<br>- Single 토폴로지: VIP가 없으므로 Private IP 표시<br>- HA·TAC·DR 토폴로지: VIP 표시 |
 | Port | DB Listener 포트 번호 |
 
 **Endpoint Details**
@@ -49,7 +49,8 @@ Endpoint 탭은 **Service Endpoint**와 **Endpoint Details** 두 영역으로 �
 생성이 완료된 인스턴스만 목록에 나타나며, 생성 중인 인스턴스는 표시되지 않습니다. Failover 또는 Switchover가 발생하더라도 Service Endpoint는 항상 **현재 Primary 인스턴스를 기준**으로 표시됩니다.
 
 {% hint style="info" %}
-**참고**\
+**참고**
+
 스펙 변경 작업이 진행 중인 경우 화면 상단에 진행 중 배너가 표시되며, 이 상태에서 상단 공통 영역의 **Topology** 항목은 변경 적용 이전의 토폴로지를 표시합니다.
 {% endhint %}
 
@@ -61,14 +62,16 @@ Endpoint 탭은 **Service Endpoint**와 **Endpoint Details** 두 영역으로 �
    * Single 토폴로지: Private IP 주소가 표시됩니다.
    * DR / TAC / HA 토폴로지: VIP 주소가 표시됩니다.
 4. **Endpoint Details** 목록에서 인스턴스별 별칭, 역할, VIP, Private IP, 포트, Health 상태를 확인합니다.
-5. Endpoint 주소를 복사하려면 해당 행의 📋 아이콘을 클릭합니다. 상단의 🔃 아이콘으로 목록을 수동 새로고침할 수 있습니다.
+5. Endpoint 주소를 복사하려면 해당 행의 📋 아이콘을 클릭합니다.
+6. 목록을 수동 새로고침하려면 상단의 🔃 아이콘을 클릭합니다.
 
 ---
 
 ## Access Control 탭
 
 {% hint style="info" %}
-**참고**\
+**참고**
+
 Access Control 탭은 **OpenSQL** 환경에서만 제공됩니다.
 {% endhint %}
 
@@ -88,14 +91,21 @@ Access Control 탭은 **OpenSQL** 환경에서만 제공됩니다.
 화면은 **조회 모드**와 **수정 모드** 두 가지 상태로 동작합니다. 조회 모드에서는 **생성**/**삭제** 버튼으로 규칙을 추가·제거하고, 수정 모드에서는 테이블 전체가 인라인 편집 가능한 상태로 전환되어 기존 규칙 값이나 Priority(순서)를 변경합니다.
 
 {% hint style="warning" %}
-**주의**\
+**주의**
+
 시스템이 자동으로 생성한 고정 규칙은 수정 모드에서도 편집 및 순서 변경이 불가합니다. Cloud 환경에서는 상위 3개 규칙이 시스템 고정 규칙에 해당하며, 사용자가 추가하는 규칙의 Priority는 시스템 고정 규칙 다음 번호부터 지정할 수 있습니다.
 {% endhint %}
 
 ### 규칙 조회
 
 1. **관리 > 연결 정보 관리**에서 **Access Control** 탭을 클릭합니다.
-2. 현재 적용된 pg_hba 규칙 목록을 Priority 오름차순으로 확인합니다. 목록 상단에 고정된 시스템 규칙은 수정 및 삭제할 수 없습니다.
+2. 현재 적용된 pg_hba 규칙 목록을 Priority 오름차순으로 확인합니다.
+
+{% hint style="info" %}
+**참고**
+
+목록 상단에 고정된 시스템 규칙은 수정 및 삭제할 수 없습니다.
+{% endhint %}
 
 ### 규칙 생성
 
@@ -104,13 +114,13 @@ Access Control 탭은 **OpenSQL** 환경에서만 제공됩니다.
 
 | 항목  | 설명  | 입력 규칙 |
 |-----|-----|-------|
-| Priority | 규칙 적용 순서 (숫자가 작을수록 우선 적용) | 미입력 시 마지막 순서로 추가됩니다. 시스템 고정 규칙 번호 이후부터 입력 가능합니다. |
-| Type \* | 연결 유형 | `local` / `host` / `hostssl` / `hostnossl` 중 선택. 기본값: `host` |
-| Database \* | 규칙을 적용할 데이터베이스 | 데이터베이스 목록에서 하나 이상 선택하거나 특수 키워드(`all`, `sameuser`, `samerole`) 중 하나를 선택합니다. 특수 키워드와 데이터베이스 목록은 동시에 선택할 수 없습니다. |
-| User \* | 규칙을 적용할 사용자 | 사용자 목록에서 하나 이상 선택하거나 `all`을 선택합니다. |
-| Address \* | 접근을 허용할 클라이언트 주소 | CIDR 또는 Hostname을 직접 입력하거나 특수 키워드(`all`, `samehost`, `samenet`)를 선택합니다. Type이 `local`이면 비활성화됩니다. 단일 IP 입력 시 자동으로 CIDR 형식으로 변환됩니다 (IPv4: `/32`, IPv6: `/128`). |
-| Method \* | 인증 방식 | 드롭다운에서 선택합니다. 기본값: `scram-sha-256` |
-| Auth Option | Method에 대한 세부 인증 옵션 | Method에 따라 입력 방식이 달라집니다. `trust` 또는 `reject` 선택 시 비활성화됩니다. `scram-sha-256` 또는 `md5` 선택 시 드롭다운으로 선택합니다. 그 외 Method는 `key=value` 형식으로 입력합니다. |
+| Priority | 규칙 적용 순서 (숫자가 작을수록 우선 적용) | - 미입력 시 마지막 순서로 추가<br>- 시스템 고정 규칙 번호 이후부터 입력 가능 |
+| Type \* | 연결 유형 | - `local` / `host` / `hostssl` / `hostnossl` 중 선택<br>- 기본값 `host` |
+| Database \* | 규칙을 적용할 데이터베이스 | - 데이터베이스 목록에서 하나 이상 선택 또는 특수 키워드(`all`, `sameuser`, `samerole`) 중 하나 선택<br>- 특수 키워드와 데이터베이스 목록 동시 선택 불가 |
+| User \* | 규칙을 적용할 사용자 | 사용자 목록에서 하나 이상 선택 또는 `all` 선택 |
+| Address \* | 접근을 허용할 클라이언트 주소 | - CIDR 또는 Hostname 직접 입력 또는 특수 키워드(`all`, `samehost`, `samenet`) 선택<br>- Type이 `local`이면 비활성화<br>- 단일 IP 입력 시 자동 CIDR 형식 변환 (IPv4: `/32`, IPv6: `/128`) |
+| Method \* | 인증 방식 | - 드롭다운에서 선택<br>- 기본값 `scram-sha-256` |
+| Auth Option | Method에 대한 세부 인증 옵션 | - Method에 따라 입력 방식 상이<br>- `trust` 또는 `reject` 선택 시 비활성화<br>- `scram-sha-256` 또는 `md5` 선택 시 드롭다운 선택<br>- 그 외 Method는 `key=value` 형식 입력 |
 | Comment | 규칙에 대한 메모 | 줄바꿈 입력 불가 |
 
 \* 필수 항목
@@ -127,7 +137,8 @@ Access Control 탭은 **OpenSQL** 환경에서만 제공됩니다.
 4. 변경사항 비교 모달에서 수정 전후 내용을 확인한 후 **저장** 버튼을 클릭합니다. 저장이 완료되면 pg_hba에 즉시 반영됩니다.
 
 {% hint style="warning" %}
-**주의**\
+**주의**
+
 저장 시 연결이 다시 검증될 수 있습니다. 변경사항 비교 모달에서 내용을 충분히 확인한 후 저장합니다.
 {% endhint %}
 
@@ -142,7 +153,8 @@ Access Control 탭은 **OpenSQL** 환경에서만 제공됩니다.
 ## OpenProxy 탭
 
 {% hint style="info" %}
-**참고**\
+**참고**
+
 OpenProxy 탭은 **OpenSQL** 환경에서만 제공됩니다.
 {% endhint %}
 
@@ -168,7 +180,10 @@ Pool, User, Shard는 트리 구조로 표시됩니다.
 | 현재값 | 현재 적용된 값 |
 | 동적 파라미터 | 재시작 없이 즉시 적용 가능 여부 (`예` / `아니요`) |
 
-수정 모드는 화면 단위가 아닌 **세션 단위**로 동작하여, Scope를 변경하더라도 이미 수정한 내용은 유지됩니다. 저장 시 **동적 파라미터만 수정한 경우**는 재시작 없이 즉시 반영되고, **정적 파라미터(예: Port)도 함께 수정한 경우**는 OpenProxy 재기동 후 반영됩니다.
+수정 모드는 화면 단위가 아닌 **세션 단위**로 동작하여, Scope를 변경하더라도 이미 수정한 내용은 유지됩니다. 저장 시 반영 시점은 다음과 같이 나뉩니다.
+
+- **동적 파라미터만 수정**: 재시작 없이 즉시 반영
+- **정적 파라미터 포함(예: Port)**: OpenProxy 재기동 후 반영
 
 ### 파라미터 조회
 
@@ -179,15 +194,14 @@ Pool, User, Shard는 트리 구조로 표시됩니다.
 
 ### 파라미터 수정
 
-1. **수정** 버튼을 클릭합니다.
-
-   
 {% hint style="info" %}
-**참고**\
+**참고**
+
 OpenProxy Status가 `Running` 상태일 때만 **수정** 버튼이 활성화됩니다.
 {% endhint %}
 
-2. 수정 모드로 전환되면 테이블에서 변경할 파라미터의 **현재값**을 직접 수정합니다. 임시 변경된 파라미터는 파란색으로 표시됩니다.
+1. **수정** 버튼을 클릭합니다.
+2. 수정 모드로 전환되면 테이블에서 변경할 파라미터의 **현재값**을 직접 수정합니다. 변경 대기 중인 파라미터는 파란색으로 표시됩니다.
 3. Scope를 변경해도 수정 중인 내용은 유지됩니다.
 4. 수정이 완료되면 **저장** 버튼을 클릭합니다.
 5. 저장 확인 모달에서 수정 사항을 확인한 후 **적용** 버튼을 클릭합니다.
@@ -195,7 +209,8 @@ OpenProxy Status가 `Running` 상태일 때만 **수정** 버튼이 활성화됩
    * 정적 파라미터가 포함된 경우: OpenProxy 재기동 후 반영됩니다.
 
 {% hint style="info" %}
-**참고**\
+**참고**
+
 **저장** 버튼을 클릭하기 전까지 변경 사항은 서버에 반영되지 않습니다. **\[취소\]** 버튼을 클릭하면 모든 변경 사항이 초기화됩니다.
 {% endhint %}
 
@@ -219,10 +234,9 @@ OpenProxy Status가 `Running` 상태일 때만 **수정** 버튼이 활성화됩
 | Use Patroni | Patroni를 통한 Auto Failover 사용 여부 | 항상 활성화(변경 불가) |
 
 \* 필수 항목
-
 {% endtab %}
-{% tab title="User 생성" %}
 
+{% tab title="User 생성" %}
 | 항목  | 설명  | 입력 규칙 |
 |-----|-----|-------|
 | User Name \* | 추가할 사용자 이름 | 1\~63자, 영어 소문자(a-z)·숫자(0-9)·언더바(`_`) 사용 가능. 첫 글자는 숫자 불가. 동일 Pool 내 중복 불가. |
@@ -230,10 +244,9 @@ OpenProxy Status가 `Running` 상태일 때만 **수정** 버튼이 활성화됩
 | Password \* | 사용자 비밀번호 | 1\~30자, 영어 소문자(a-z)·숫자(0-9)·특수문자(`-`, `_`, `#`, `$`) 사용 가능 |
 
 \* 필수 항목
-
 {% endtab %}
-{% tab title="Shard 생성" %}
 
+{% tab title="Shard 생성" %}
 | 항목  | 설명  | 입력 규칙 |
 |-----|-----|-------|
 | Shard Name \* | 추가할 Shard 이름 | 1\~30자, 영어 소문자(a-z)·숫자(0-9)·언더바(`_`) 사용 가능. 동일 Pool 내 중복 불가. |
@@ -242,15 +255,15 @@ OpenProxy Status가 `Running` 상태일 때만 **수정** 버튼이 활성화됩
 | Use Patroni | Patroni를 통한 Auto Failover 사용 여부 | 항상 활성화(변경 불가) |
 
 \* 필수 항목
-
 {% endtab %}
 {% endtabs %}
 
-4. 필수 항목을 모두 입력한 후 **생성** 버튼을 클릭합니다. 생성된 항목이 목록에 임시로 추가됩니다.
+4. 필수 항목을 모두 입력한 후 **생성** 버튼을 클릭합니다. 생성된 항목이 목록에 반영 대기 상태로 추가됩니다.
 5. 최종 반영을 위해 **저장** 버튼을 클릭합니다.
 
 {% hint style="info" %}
-**참고**\
+**참고**
+
 **저장** 버튼을 클릭하기 전까지 생성한 항목은 서버에 반영되지 않습니다. 저장 전 페이지를 이탈하면 변경 사항이 초기화됩니다.
 {% endhint %}
 
@@ -263,12 +276,14 @@ OpenProxy Status가 `Running` 상태일 때만 **수정** 버튼이 활성화됩
 4. 삭제를 확정하려면 **저장** 버튼을 클릭합니다.
 
 {% hint style="info" %}
-**참고**\
+**참고**
+
 🗑️ 아이콘은 Pool이 2개 이상일 때 활성화됩니다. User와 Shard는 해당 Pool 내에 각각 2개 이상 존재할 때 삭제할 수 있습니다.
 {% endhint %}
 
 {% hint style="warning" %}
-**주의**\
+**주의**
+
 저장 전 페이지를 이탈하면 삭제 설정이 초기화됩니다. 현재 선택 중인 Pool, User 또는 Shard를 삭제하면 Scope가 자동으로 General로 변경됩니다.
 {% endhint %}
 
@@ -277,7 +292,8 @@ OpenProxy Status가 `Running` 상태일 때만 **수정** 버튼이 활성화됩
 ## Replication Slot 탭
 
 {% hint style="info" %}
-**참고**\
+**참고**
+
 Replication Slot 탭은 **OpenSQL** 환경에서만 제공됩니다.
 {% endhint %}
 
@@ -294,7 +310,8 @@ OpenSQL Primary 인스턴스에 생성된 Replication Slot 목록을 테이블 �
 OwlDB 콘솔에서는 **Permanent** Slot만 생성할 수 있으며, Temporary 타입 Slot은 조회만 가능하고 선택하거나 삭제할 수 없습니다.
 
 {% hint style="warning" %}
-**주의**\
+**주의**
+
 OwlDB 관리 범위를 벗어나 PostgreSQL에 직접 생성하거나 삭제한 Replication Slot은 OwlDB 콘솔에 반영되지 않습니다. 이 경우 Slot 상태 조회, 삭제, 장애 대응 등 관련 관리 기능이 정상적으로 동작하지 않을 수 있습니다. Replication Slot 생성 및 삭제는 반드시 OwlDB 콘솔에서 수행합니다.
 {% endhint %}
 
@@ -320,7 +337,8 @@ OwlDB 관리 범위를 벗어나 PostgreSQL에 직접 생성하거나 삭제한 
 3. 항목을 입력한 후 **생성** 버튼을 클릭합니다.
 
 {% hint style="info" %}
-**참고**\
+**참고**
+
 DB 서비스 상태가 `Updating` 또는 `Failover`인 경우 **생성** 버튼이 비활성화됩니다.
 {% endhint %}
 
@@ -331,6 +349,7 @@ DB 서비스 상태가 `Updating` 또는 `Failover`인 경우 **생성** 버튼�
 3. 삭제 확인 모달에서 내용을 확인한 후 **삭제** 버튼을 클릭합니다.
 
 {% hint style="info" %}
-**참고**\
+**참고**
+
 Status가 `Connected`인 Slot과 DB 서비스 상태가 `Updating` 또는 `Failover`인 경우에는 **\[삭제\]** 버튼이 비활성화됩니다.
 {% endhint %}

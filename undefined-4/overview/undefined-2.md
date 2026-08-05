@@ -1,18 +1,14 @@
 # 인스턴스
 
-**OwlDB**에서 운영 중인 인스턴스 상태를 모니터링하고, 필요에 따라 인스턴스를 수정 및 재시작을 수행할 수 있습니다. 버튼을 통해 빠르게 원하는 작업을 수행할 수 있습니다. 인스턴스 상태가 `Available`이 아닌 경우,  일부 정보가 누락될 수 있습니다.
+**OwlDB**에서 운영 중인 인스턴스의 상태를 모니터링하고 수정·재시작을 수행합니다. 인스턴스 상태가 `Available`이 아니면 일부 정보가 누락될 수 있습니다.
 
 {% hint style="info" %}
-**참고**\
-대시보드에서 다음 경로를 통해 인스턴스 관리 페이지로 이동할 수 있습니다.
+**참고**
 
-1. 리스트뷰 : **데이터베이스 별칭 옆 화살표 아이콘 > 인스턴스 별칭** 클릭
-2. 카드뷰 : 데이터베이스 카드의 **인스턴스 별칭** 클릭
-{% endhint %}
-
-{% hint style="info" %}
-**참고**\
-AWS 환경에서는 Tibero 엔진만 지원합니다.
+* 대시보드에서 다음 경로를 통해 인스턴스 관리 페이지로 이동할 수 있습니다.
+  1. 리스트뷰 : **데이터베이스 별칭 옆 화살표 아이콘 > 인스턴스 별칭** 클릭
+  2. 카드뷰 : 데이터베이스 카드의 **인스턴스 별칭** 클릭
+* AWS 환경에서는 Tibero 엔진만 지원합니다.
 {% endhint %}
 
 ## 인스턴스 목록 조회
@@ -42,11 +38,7 @@ AWS 환경에서는 Tibero 엔진만 지원합니다.
 | Archive log Volume | archive log 볼륨 사용량 |
 | Root Volume | root 볼륨 사용량 |
 | Current Log | 가장 최근 Redo log 식별값(Standby 구성 시에만 표시) |
-|     |     |
-|
 {% endtab %}
-|     |
-|     |     |
 
 {% tab title="OpenSQL" %}
 | 항목  | 설명  |
@@ -63,16 +55,8 @@ AWS 환경에서는 Tibero 엔진만 지원합니다.
 | Volume | data, WAL log, archive log 볼륨 사용량 총합 |
 | Root Volume | root 볼륨 사용량 |
 | Current Log | 가장 최근 Redo log 식별값(Standby 구성 시에만 표시) |
-|     |     |
-|
 {% endtab %}
-|     |
-|     |     |
-|     |     |
-|
 {% endtabs %}
-|     |
-|     |     |
 
 ### Standby(Replica) DB 표시 항목
 
@@ -93,11 +77,7 @@ AWS 환경에서는 Tibero 엔진만 지원합니다.
 | log last received | Primary로부터 최근 수신한 Redo log 식별값(TSN 값) |
 | log last applied | Standby에 최근 적용된 Redo log 식별값(TSN 값) |
 | Replication Lag(초) | Primary DB와의 복제 지연 시간 |
-|     |     |
-|
 {% endtab %}
-|     |
-|     |     |
 
 {% tab title="OpenSQL" %}
 | 항목  | 설명  |
@@ -115,19 +95,12 @@ AWS 환경에서는 Tibero 엔진만 지원합니다.
 | log last received | Primary로부터 최근 수신한 Redo log 식별값(LSN 값) |
 | log last applied | Standby에 최근 적용된 Redo log 식별값(LSN 값) |
 | Replication Lag(초) | Primary DB와의 복제 지연 시간 |
-|     |     |
-|
 {% endtab %}
-|     |
-|     |     |
-|     |     |
-|
 {% endtabs %}
-|     |
-|     |     |
 
 {% hint style="warning" %}
-**주의**\
+**주의**
+
 인스턴스 상태가 `running`이 아닌 경우, 화면 상단에 배너가 나타나 현재 상태에 대한 안내를 제공합니다.
 {% endhint %}
 
@@ -165,11 +138,7 @@ Primary/Leader는 아래 항목을 표시하며, Standby/Replica는 동일 항�
 | log last received | Primary로부터 수신한 최근 Redo log(TSN) | Standby |
 | log last applied | Standby에 적용된 최근 Redo log(TSN) | Standby |
 | Replication Lag(초) | Primary와의 복제 지연 시간 | Standby |
-|     |     |       |
-|
 {% endtab %}
-|     |       |
-|     |     |       |
 
 {% tab title="OpenSQL" %}
 | 항목  | 설명  | 표시 대상 |
@@ -180,16 +149,8 @@ Primary/Leader는 아래 항목을 표시하며, Standby/Replica는 동일 항�
 | log last received | Primary로부터 수신한 최근 Redo log(LSN) | Standby |
 | log last applied | Standby에 적용된 최근 Redo log(LSN) | Standby |
 | Replication Lag(초) | Primary와의 복제 지연 시간 | Standby |
-|     |     |       |
-|
 {% endtab %}
-|     |       |
-|     |     |       |
-|     |     |       |
-|
 {% endtabs %}
-|     |       |
-|     |     |       |
 
 ### 자원 사용 정보
 
@@ -197,7 +158,7 @@ Primary/Leader는 아래 항목을 표시하며, Standby/Replica는 동일 항�
 |-----|-----|-----|
 | CPU | 프로비저닝된 vCPU 대비 사용량(파이 차트) | 5초 주기 갱신 |
 | Memory | 프로비저닝된 메모리 대비 사용량(파이 차트) | 5초 주기 갱신 |
-| 최대 접속 세션수 | 활성 세션 수(라인 차트, 5초 주기 갱신) | Standby는 Tibero의 경우 Read Only 상태일 때만 표시, OpenSQL은 항상 표시 |
+| 최대 접속 세션수 | 활성 세션 수(라인 차트, 5초 주기 갱신) | - Tibero Standby: Read Only 상태일 때만 표시<br>- OpenSQL Standby: 항상 표시 |
 
 ### 네트워크 정보
 
@@ -210,19 +171,21 @@ Primary/Leader는 아래 항목을 표시하며, Standby/Replica는 동일 항�
 ### 데이터베이스 정보
 
 {% hint style="info" %}
-**참고**\
+**참고**
+
 데이터베이스 정보는 OpenSQL 엔진에서만 제공합니다.
 {% endhint %}
 
 | 항목  | 설명  |
 |-----|-----|
 | Auto Vacuum | Auto Vacuum 사용 여부(On / Off) |
-| 데이터베이스 목록 | 하위 데이터베이스를 이름, Data Size(GB), 활성 세션, Bloat Ratio(%), 생성일로 표시하며, 이름 클릭 시 상세 정보로 이동 |
+| 데이터베이스 목록 | - 표시 항목: 이름, Data Size(GB), 활성 세션, Bloat Ratio(%), 생성일<br>- 이름 클릭 시 상세 정보로 이동 |
 
 활성 세션 값은 조회 중인 인스턴스가 Primary/Leader이면 Primary 노드 기준, Standby/Replica이면 Standby 노드 기준으로 표시됩니다.
 
 {% hint style="warning" %}
-**주의**\
+**주의**
+
 * Health가 `Available`이 아닌 경우 일부 정보가 누락되어 표시될 수 있습니다.
 * Health가 `Retired`인 경우(Tibero의 Standby 인스턴스에서만 발생) Health를 제외한 모든 정보가 `-`로 표시되며, \[재시작\] 버튼 대신 \[삭제\] 버튼이 나타납니다.
 {% endhint %}
