@@ -3,8 +3,8 @@
 {% hint style="warning" %}
 **주의**
 
-* Analyzer와 Migrator는 데이터베이스 운영 상태가 `Running`일 때만 수행 가능합니다.
-* Disaster Recovery(DR) 구성 데이터베이스는 마이그레이션 기능을 지원하지 않습니다. DR 구성을 해제하거나 다른 데이터베이스를 선택해 주십시오.
+- Analyzer와 Migrator는 데이터베이스 운영 상태가 `Running`일 때만 수행 가능합니다.
+- Disaster Recovery(DR) 구성 데이터베이스는 마이그레이션 기능을 지원하지 않습니다. DR 구성을 해제하거나 다른 데이터베이스를 선택해 주십시오.
 {% endhint %}
 
 {% hint style="info" %}
@@ -20,8 +20,8 @@ OwlDB에서 제공하는 마이그레이션 기능의 지원 범위와 상세 �
 ## 지원 데이터베이스
 
 | 소스 데이터베이스 | 타겟 데이터베이스 |
-|-----------|-----------|
-| Oracle 11g, 12c, 18c, 19c | Tibero 7  |
+| --- | --- |
+| Oracle 11g, 12c, 18c, 19c | Tibero 7 |
 
 {% hint style="info" %}
 **참고**
@@ -33,44 +33,44 @@ OwlDB에서 제공하는 마이그레이션 기능의 지원 범위와 상세 �
 
 OwlDB 마이그레이션은 모든 Independent Object와 Dependent Object를 한번에 이관합니다. 개별 Object만 선택적으로 이관하거나 제외하는 기능은 지원하지 않습니다.
 
-| Oracle | Tibero | 비고  |
-|--------|--------|-----|
+| Oracle | Tibero | 비고 |
+| --- | --- | --- |
 | Constraint | Constraint | - Primary Key, Foreign Key, Check, Ref Constraint에 대해 이관을 지원함<br>- Primary Key index/constraint는 모두 constraint로 처리함<br>- Check constraint의 표현식은 Oracle의 DD에 저장된 문장을 이용해 DDL을 생성함 |
-| Index  | Index  | - R-TREE 미지원<br>- Domain Index 미지원 |
-| Materialized | Materialized | -   |
-| Materialized View Log | Materialized View Log | -   |
-| Privilege | Privilege | -   |
-| PSM    | PSM    | -   |
-| Role   | Role   | -   |
-| Schema | Schema | -   |
-| Sequence | Sequence | -   |
-| Synonym | Synonym | -   |
-| Table  | Table  | - Nested Table 미지원<br>- XML Table 미지원 |
+| Index | Index | - R-TREE 미지원<br>- Domain Index 미지원 |
+| Materialized | Materialized | - |
+| Materialized View Log | Materialized View Log | - |
+| Privilege | Privilege | - |
+| PSM | PSM | - |
+| Role | Role | - |
+| Schema | Schema | - |
+| Sequence | Sequence | - |
+| Synonym | Synonym | - |
+| Table | Table | - Nested Table 미지원<br>- XML Table 미지원 |
 | Tablespace | Tablespace | - 테이블스페이스 크기 20% 증대 이관<br>- 데이터 이관 시 대상(TO-BE) 용량 증가 대비 |
-| View   | View   | -   |
+| View | View | - |
 
 ### 데이터 변환 타입
 
 Oracle에서 Tibero로 이관할 때 변환되는 데이터 타입에 대해 안내합니다.
 
 | Oracle | Tibero |
-|--------|--------|
-| blob   | BLOB   |
+| --- | --- |
+| blob | BLOB |
 | binary_float | BINARY_FLOAT |
 | binary_double | BINARY_DOUBLE |
-| character | CHAR   |
-| clob   | CLOB   |
-| date   | DATE   |
+| character | CHAR |
+| clob | CLOB |
+| date | DATE |
 | interval day to second | INTERVAL DAY(2) TO SECOND(6) |
 | interval year to month | INTERVAL YEAR(2) TO MONTH |
-| long   | LONG   |
+| long | LONG |
 | long raw | LONG RAW |
-| nchar  | NCHAR  |
-| nclob  | NCLOB  |
+| nchar | NCHAR |
+| nclob | NCLOB |
 | number | NUMBER |
 | nvarchar2 | NVARCHAR2 |
-| rowid  | ROWID  |
-| time   | TIME   |
+| rowid | ROWID |
+| time | TIME |
 | timestamp | TIMESTAMP |
 | timestamp with time zone | TIMESTAMP WITH TIME ZONE |
 | timestamp with local time zone | TIMESTAMP(6) WITH LOCAL TIME ZONE |
@@ -87,19 +87,17 @@ Oracle에서 Tibero로 이관할 때 변환되는 데이터 타입에 대해 안
 3. **분석** 버튼을 클릭합니다.
 4. 호환성을 평가할 소스 데이터베이스(이하 소스 데이터베이스)의 정보를 입력합니다.
 
-| 항목  | 설명  |
-|-----|-----|
-| Title\* | 데이터베이스 호환성 평가 제목 |
-| Type\* | 소스 데이터베이스의 엔진 유형 |
-| ID\* | 소스 데이터베이스의 사용자 ID |
-| Password\* | 소스 데이터베이스의 사용자 PW |
-| Host\* | 소스 데이터베이스의 IP 주소 이름 |
-| Port\* | 소스 데이터베이스의 포트 번호 |
-| SID\* | 소스 데이터베이스의 SID |
+| 항목 | 설명 |
+| --- | --- |
+| Title* | 데이터베이스 호환성 평가 제목 |
+| Type* | 소스 데이터베이스의 엔진 유형 |
+| ID* | 소스 데이터베이스의 사용자 ID |
+| Password* | 소스 데이터베이스의 사용자 PW |
+| Host* | 소스 데이터베이스의 IP 주소 이름 |
+| Port* | 소스 데이터베이스의 포트 번호 |
+| SID* | 소스 데이터베이스의 SID |
 
-   \*표기는 필수 입력 항목을 의미합니다.
-5. 정보 입력을 완료한 후 **분석** 버튼을 클릭하여 호환성 평가를 실행합니다.
-6. **OwlDB 콘솔 화면 > 관리 > 마이그레이션 > Analyzer > 상태**를 클릭하면 진행 정보를 확인합니다.
+*표기는 필수 입력 항목을 의미합니다. 5. 정보 입력을 완료한 후 **분석** 버튼을 클릭하여 호환성 평가를 실행합니다. 6. **OwlDB 콘솔 화면 > 관리 > 마이그레이션 > Analyzer > 상태**를 클릭하면 진행 정보를 확인합니다.
 
 ## Analyzer 결과
 
@@ -112,28 +110,24 @@ Oracle에서 Tibero로 이관할 때 변환되는 데이터 타입에 대해 안
 1. **OwlDB 콘솔 화면 > 관리 > 마이그레이션 > Migrator** 메뉴로 이동합니다.
 2. **DB Alias** 드롭다운 버튼을 클릭하여 이관을 수행할 데이터베이스를 선택합니다.
 3. **이관** 버튼을 클릭합니다.
-4. 이관을 진행할 소스 데이터베이스의 정보를 입력합니다.
+4. 이관을 진행할 소스 데이터베이스의 정보를 입력합니다. **4-1 데이터 연결** 마이그레이션 대상이 되는 소스 데이터베이스에 접속을 수행합니다.
 
-   **4-1 데이터 연결**
+| 항목 | 설명 |
+| --- | --- |
+| Title* | 데이터베이스 이관 제목 |
+| Type* | 소스 데이터베이스의 엔진 유형 |
+| ID* | 소스 데이터베이스의 사용자 ID |
+| Password* | 소스 데이터베이스의 사용자 PW |
+| Host* | 소스 데이터베이스의 IP 주소 이름 |
+| Port* | 소스 데이터베이스의 포트 번호 |
+| SID* | 소스 데이터베이스의 SID |
+| Target Database* | 타겟 데이터베이스의 별칭 |
 
-   마이그레이션 대상이 되는 소스 데이터베이스에 접속을 수행합니다.
+*표기는 필수 입력 항목을 의미합니다.
 
-| 항목  | 설명  |
-|-----|-----|
-| Title\* | 데이터베이스 이관 제목 |
-| Type\* | 소스 데이터베이스의 엔진 유형 |
-| ID\* | 소스 데이터베이스의 사용자 ID |
-| Password\* | 소스 데이터베이스의 사용자 PW |
-| Host\* | 소스 데이터베이스의 IP 주소 이름 |
-| Port\* | 소스 데이터베이스의 포트 번호 |
-| SID\* | 소스 데이터베이스의 SID |
-| Target Database\* | 타겟 데이터베이스의 별칭 |
+**4-2 타입 변환 확인**
 
-   \*표기는 필수 입력 항목을 의미합니다.
-
-   **4-2 타입 변환 확인**
-
-   소스 데이터베이스의 데이터 타입 변환에 관한 정보를 조회합니다.
+소스 데이터베이스의 데이터 타입 변환에 관한 정보를 조회합니다.
 
 {% hint style="info" %}
 **참고**
@@ -141,12 +135,12 @@ Oracle에서 Tibero로 이관할 때 변환되는 데이터 타입에 대해 안
 타입이 변환된 데이터 유형은 주황색 하이라이팅으로 강조하여 표현합니다.
 {% endhint %}
 
-   **4-3 요약 확인**
+**4-3 요약 확인**
 
-   앞 단계에서 입력한 정보를 요약해서 제공합니다.
+앞 단계에서 입력한 정보를 요약해서 제공합니다.
 
-5. 정보 입력을 완료한 후 **이관** 버튼을 클릭하여 이관을 실행합니다.
-6. **OwlDB 콘솔 화면 > 관리 > 마이그레이션 > Migrator > 상태**를 클릭하면 진행 정보를 확인합니다.
+1. 정보 입력을 완료한 후 **이관** 버튼을 클릭하여 이관을 실행합니다.
+2. **OwlDB 콘솔 화면 > 관리 > 마이그레이션 > Migrator > 상태**를 클릭하면 진행 정보를 확인합니다.
 
 ## Migrator 결과
 
