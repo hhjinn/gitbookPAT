@@ -25,50 +25,47 @@ Azure 환경에서는 현재 BYOL 라이선스 모델만 지원합니다.
 {% hint style="info" %}
 **참고**
 
-* 1\~4단계 탭은 순서와 관계없이 자유롭게 이동할 수 있습니다.
-* **구성 정보 확인** 탭은 1\~4단계 탭 전체에서 유효성 검사 오류가 없는 경우에만 진입할 수 있습니다.
-* 화면 오른쪽의 **구성 정보** 플로팅 박스에서 각 탭에 입력한 내용을 요약 확인할 수 있으며, 오류 항목은 빨간색 텍스트로 표시됩니다.
+- 1~4단계 탭은 순서와 관계없이 자유롭게 이동할 수 있습니다.
+- **구성 정보 확인** 탭은 1~4단계 탭 전체에서 유효성 검사 오류가 없는 경우에만 진입할 수 있습니다.
+- 화면 오른쪽의 **구성 정보** 플로팅 박스에서 각 탭에 입력한 내용을 요약 확인할 수 있으며, 오류 항목은 빨간색 텍스트로 표시됩니다.
 {% endhint %}
 
-## 변경 가능 항목
+# 변경 가능 항목
 
 엔진 유형과 라이선스 옵션에 따라 변경할 수 있는 항목이 다릅니다.
 
-| 항목  | Tibero LI | Tibero BYOL | OpenSQL LI | OpenSQL BYOL |
-|-----|:---------:|:-----------:|:----------:|:------------:|
-| Topology | —         | —           | ✓¹         | —            |
-| Edition | ✓         | —           | ✓          | —            |
-| 인스턴스 유형 (Scale Up/Down) | ✓         | —           | ✓          | —            |
-| TAC 노드 수 (Scale In/Out) | ✓         | —           | —          | —            |
-| Replica Scale In/Out | —         | —           | ✓          | —            |
-| Enable DR | ✓         | —           | ✓²         | ✓²           |
-| Failover Automation Level | ✓         | ✓³          | ✓          | ✓⁴           |
-| Volume Size | ✓         | ✓           | ✓          | ✓            |
-| Volume IOPS / MBps | ✓         | ✓           | ✓          | ✓            |
+| 항목 | Tibero LI | Tibero BYOL | OpenSQL LI | OpenSQL BYOL |
+| --- | --- | --- | --- | --- |
+| Topology | — | — | ✓¹ | — |
+| Edition | ✓ | — | ✓ | — |
+| 인스턴스 유형 (Scale Up/Down) | ✓ | — | ✓ | — |
+| TAC 노드 수 (Scale In/Out) | ✓ | — | — | — |
+| Replica Scale In/Out | — | — | ✓ | — |
+| Enable DR | ✓ | — | ✓² | ✓² |
+| Failover Automation Level | ✓ | ✓³ | ✓ | ✓⁴ |
+| Volume Size | ✓ | ✓ | ✓ | ✓ |
+| Volume IOPS / MBps | ✓ | ✓ | ✓ | ✓ |
 
-¹ OpenSQL LI에서 Single ↔ HA 간 변경 가능
-² OpenSQL은 Topology에 따라 자동 결정 (HA → DR 사용, Single → DR 미사용)
-³ 초기 DR 사용 구성 시 변경 가능
-⁴ 초기 HA 구성 시 변경 가능
+¹ OpenSQL LI에서 Single ↔ HA 간 변경 가능 ² OpenSQL은 Topology에 따라 자동 결정 (HA → DR 사용, Single → DR 미사용) ³ 초기 DR 사용 구성 시 변경 가능 ⁴ 초기 HA 구성 시 변경 가능
 
 {% hint style="info" %}
 **참고**
 
-* Volume Size는 현재 설정값보다 큰 값으로만 변경할 수 있습니다.
-* SE(Standard Edition) 선택 시 인스턴스 유형은 최대 8vCPU로 제한됩니다.
-* OpenSQL은 AWS 환경에서 지원되지 않습니다.
+- Volume Size는 현재 설정값보다 큰 값으로만 변경할 수 있습니다.
+- SE(Standard Edition) 선택 시 인스턴스 유형은 최대 8vCPU로 제한됩니다.
+- OpenSQL은 AWS 환경에서 지원되지 않습니다.
 {% endhint %}
 
-## 엔진 옵션
+# 엔진 옵션
 
 DB Service Name, DB Engine Type, License Option, Node Count는 현재 설정값이 표시되며 변경할 수 없습니다.
 
 변경 가능한 항목은 다음과 같습니다.
 
-* **Edition**: Standard Edition(SE)과 Enterprise Edition(EE) 중 선택합니다. SE는 최대 8vCPU까지 사용 가능하고, EE는 vCPU 제한이 없습니다. TAC 또는 HA Topology에서는 EE로 자동 적용되며, LI 라이선스에서만 변경할 수 있습니다.
-* **Topology**: OpenSQL LI에서만 Single ↔ HA 간 변경할 수 있습니다.
+- **Edition**: Standard Edition(SE)과 Enterprise Edition(EE) 중 선택합니다. SE는 최대 8vCPU까지 사용 가능하고, EE는 vCPU 제한이 없습니다. TAC 또는 HA Topology에서는 EE로 자동 적용되며, LI 라이선스에서만 변경할 수 있습니다.
+- **Topology**: OpenSQL LI에서만 Single ↔ HA 간 변경할 수 있습니다.
 
-### TAC Scale In/Out
+## TAC Scale In/Out
 
 LI 라이선스 모델의 Tibero TAC 구성은 인스턴스 Scale In/Out 테이블에서 TAC 노드를 직접 추가하거나 삭제하여 노드 수를 조정할 수 있습니다. 최솟값은 2개, 최댓값은 4개입니다.
 
@@ -78,15 +75,15 @@ LI 라이선스 모델의 Tibero TAC 구성은 인스턴스 Scale In/Out 테이�
 운영 중인 TAC 인스턴스를 삭제(Scale In)하면 해당 인스턴스에 기록된 모든 데이터가 삭제됩니다.
 {% endhint %}
 
-## DR 구성
+# DR 구성
 
-* **Enable DR**: DR 사용 여부를 선택합니다. Tibero LI에서만 직접 변경할 수 있고, OpenSQL은 Topology에 따라 자동 결정됩니다(HA → DR 사용, Single → DR 미사용). BYOL은 변경할 수 없습니다.
-* **Failover Automation Level**: DR 사용 시 장애 조치 자동화 레벨을 선택합니다. DR 미사용 시에는 표시되지 않습니다.
+- **Enable DR**: DR 사용 여부를 선택합니다. Tibero LI에서만 직접 변경할 수 있고, OpenSQL은 Topology에 따라 자동 결정됩니다(HA → DR 사용, Single → DR 미사용). BYOL은 변경할 수 없습니다.
+- **Failover Automation Level**: DR 사용 시 장애 조치 자동화 레벨을 선택합니다. DR 미사용 시에는 표시되지 않습니다.
 
-### Failover Automation Level 옵션
+## Failover Automation Level 옵션
 
-| 단계  | 이름  | 설명  |
-|-----|-----|-----|
+| 단계 | 이름 | 설명 |
+| --- | --- | --- |
 | 0단계 | 수동 (Manual) | 장애 발생 시 사용자가 직접 Standby/Replica를 Primary/Leader로 승격 |
 | 1단계 | 자동 장애 조치 (Auto Failover) | - 시스템이 자동으로 전환<br>- 복구 및 리소스 최적화는 수동 진행 |
 | 2단계 | 자동 구성 복구 (Auto Rebuild) | - 장애 조치 후 새로운 Standby/Replica 자동 생성하여 구성 유지<br>- 데이터 복구는 수동 진행 |
@@ -103,34 +100,34 @@ LI 라이선스 모델의 Tibero TAC 구성은 인스턴스 Scale In/Out 테이�
 
 선택 가능한 단계는 라이선스 유형에 따라 다릅니다.
 
-* **Tibero LI**: 0\~3단계 모두 선택 가능
-* **Tibero BYOL**: 0단계, 2단계, 3단계 선택 가능
-* **OpenSQL**: 0단계, 3단계 선택 가능
+- **Tibero LI**: 0~3단계 모두 선택 가능
+- **Tibero BYOL**: 0단계, 2단계, 3단계 선택 가능
+- **OpenSQL**: 0단계, 3단계 선택 가능
 {% endhint %}
 
-### OpenSQL HA Scale In/Out
+## OpenSQL HA Scale In/Out
 
 LI 라이선스 모델의 OpenSQL은 Replica Scale In/Out 테이블에서 Replica 노드를 추가하거나 삭제하여 구성을 조정합니다. Replica Node #2 이상만 삭제할 수 있습니다.
 
 {% hint style="warning" %}
 **주의**
 
-* DR을 미사용으로 변경한 후 스펙 변경을 완료하면 기존 Standby/Replica 인스턴스의 모든 데이터가 삭제됩니다.
-* Failover로 인해 Retired 상태의 인스턴스가 존재하는 경우, DR을 미사용으로 변경하면 해당 인스턴스가 자동으로 삭제됩니다. 해당 인스턴스를 통한 데이터 복구가 불가능해지므로 데이터 검토 및 백업을 완료한 후 진행하십시오.
+- DR을 미사용으로 변경한 후 스펙 변경을 완료하면 기존 Standby/Replica 인스턴스의 모든 데이터가 삭제됩니다.
+- Failover로 인해 Retired 상태의 인스턴스가 존재하는 경우, DR을 미사용으로 변경하면 해당 인스턴스가 자동으로 삭제됩니다. 해당 인스턴스를 통한 데이터 복구가 불가능해지므로 데이터 검토 및 백업을 완료한 후 진행하십시오.
 {% endhint %}
 
-## AZ 구성
+# AZ 구성
 
 각 인스턴스의 가용 영역(AZ)을 확인하고 설정합니다. 신규로 추가된 인스턴스에 한하여 설정이 가능합니다.
 
-## 인스턴스 구성
+# 인스턴스 구성
 
 인스턴스 유형을 변경하여 Scale Up/Down을 수행합니다. BYOL 라이선스는 인스턴스 유형을 변경할 수 없습니다.
 
 스토리지 관련 설정은 다음과 같습니다.
 
-| 항목  | 설명  |
-|-----|-----|
+| 항목 | 설명 |
+| --- | --- |
 | Volume Size | 현재 설정값보다 큰 값으로만 변경 가능 |
 | Volume IOPS / MBps | Azure 환경에서 볼륨 유형에 따라 허용 범위 내 설정 가능 |
 | Auto Scale | 사용 설정 시 Data Volume 사용량 90% 도달 시 자동으로 볼륨 확장 |
@@ -142,7 +139,7 @@ LI 라이선스 모델의 OpenSQL은 Replica Scale In/Out 테이블에서 Replic
 볼륨 크기는 축소할 수 없습니다. 최대 확장 한도를 신중하게 설정하십시오.
 {% endhint %}
 
-## 구성 정보 확인
+# 구성 정보 확인
 
 변경 전 구성(왼쪽)과 변경 후 구성(오른쪽)을 비교하여 확인합니다. 변경된 항목은 파란색으로 표시됩니다.
 
@@ -150,8 +147,8 @@ LI 라이선스 모델의 OpenSQL은 Replica Scale In/Out 테이블에서 Replic
 
 내용을 확인한 후 **완료**를 클릭하면 변경 유형에 따라 처리 방식이 달라집니다.
 
-| 조건  | 동작  |
-|-----|-----|
+| 조건 | 동작 |
+| --- | --- |
 | 인스턴스 Scale Up/Down 포함 | - 재시작 필요 안내 모달 표시<br>- 재시작 과정에서 서비스 일시 중단 가능 |
 | TAC Scale In/Out 또는 스토리지 확장만 포함 | 재시작 없이 즉시 적용 |
 | Retired 인스턴스가 있는 상태에서 DR 구성 변경 | 삭제될 Retired 인스턴스 안내 모달 표시 |

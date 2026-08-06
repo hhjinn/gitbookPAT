@@ -1,4 +1,4 @@
-# 라이선스 요금 청구 기준
+# 라이선스 청구 기준
 
 인스턴스 상태(Status)와 세부 상태(Health) 조합에 따라 OwlDB 라이선스 요금이 결정됩니다. 이 페이지는 각 상태 조합에서 라이선스 요금이 부과되는지 여부와 그 의미를 설명합니다.
 
@@ -8,32 +8,32 @@
 인스턴스, 스토리지, 네트워크 등 인프라 리소스 요금은 이 기준과 무관하게 각 CSP의 과금 정책에 따라 별도로 발생합니다.
 {% endhint %}
 
-### 미터링 기준
+## 미터링 기준
 
 DB 서비스 라이선스 요금은 사용한 시간을 기준으로 산정합니다.
 
-| 항목  | 기준  |
-|-----|-----|
-| 최소 과금 단위 | 1분  |
+| 항목 | 기준 |
+| --- | --- |
+| 최소 과금 단위 | 1분 |
 | 초 단위 처리 | 분 단위로 올림 |
 | 요금 표시 | - 달러($) 표시<br>- 소수점 둘째 자리 반올림 |
 
-### 청구 기준
+## 청구 기준
 
-| Status | Health | 청구 여부 | 설명  |
-|--------|--------|-------|-----|
-| Provisioning | -      | 미청구   | 인스턴스 생성 중 |
-| Running | available | 청구    | 정상 동작 중 |
-| Updating | - available<br>- in progress | 청구    | 스펙 변경·재시작·마이그레이션·복구·백업 등 작업 진행 중 |
-| Degraded | - available<br>- in progress<br>- limited | 청구    | - 일부 인스턴스 재시작·재구성 중<br>- 일부 관리 기능 제한 |
-| Degraded | unavailable | 미청구   | DB·VM 중단 등으로 사용 불가 |
-| Degraded | retired | 미청구   | Failover 이후 미사용 인스턴스 |
-| Failover | in progress | 청구    | 자동 Failover 진행 중 |
-| Down   | unavailable | 미청구   | DB 서비스 전체 중단 |
-| Stopping | in progress | 청구    | 중지 상태로 전환 중 |
-| Stopped | unavailable | 미청구   | 모든 리소스 일시 비활성화 |
-| Starting | in progress | 미청구   | 중지 상태에서 재시작 중 |
-| Terminating | unavailable | 미청구   | 리소스·데이터 영구 삭제 중 |
+| Status | Health | 청구 여부 | 설명 |
+| --- | --- | --- | --- |
+| Provisioning | - | 미청구 | 인스턴스 생성 중 |
+| Running | available | 청구 | 정상 동작 중 |
+| Updating | - available<br>- in progress | 청구 | 스펙 변경·재시작·마이그레이션·복구·백업 등 작업 진행 중 |
+| Degraded | - available<br>- in progress<br>- limited | 청구 | - 일부 인스턴스 재시작·재구성 중<br>- 일부 관리 기능 제한 |
+| Degraded | unavailable | 미청구 | DB·VM 중단 등으로 사용 불가 |
+| Degraded | retired | 미청구 | Failover 이후 미사용 인스턴스 |
+| Failover | in progress | 청구 | 자동 Failover 진행 중 |
+| Down | unavailable | 미청구 | DB 서비스 전체 중단 |
+| Stopping | in progress | 청구 | 중지 상태로 전환 중 |
+| Stopped | unavailable | 미청구 | 모든 리소스 일시 비활성화 |
+| Starting | in progress | 미청구 | 중지 상태에서 재시작 중 |
+| Terminating | unavailable | 미청구 | 리소스·데이터 영구 삭제 중 |
 
 {% hint style="info" %}
 **참고**
