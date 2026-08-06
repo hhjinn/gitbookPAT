@@ -2,10 +2,11 @@
 
 이 페이지에서는 Azure 마켓플레이스에서 OwlDB를 구독하는 절차를 설명합니다.
 
-1. [Azure 마켓플레이스](https://azuremarketplace.microsoft.com/)에서 OwlDB를 검색하고 선택합니다.
-2. **Get It Now**를 클릭합니다.
-3. **Continue**를 클릭하여 Subscription을 구독합니다.
-4. **Create**을 클릭하여 OwlDB 배포를 위한 설정을 시작합니다.
+1. [Azure 마켓플레이스](https://azuremarketplace.microsoft.com/)에서 OwlDB를 검색합니다.
+2. 검색 결과에서 OwlDB를 선택합니다.
+3. **Get It Now**를 클릭합니다.
+4. **Continue**를 클릭하여 Subscription을 구독합니다.
+5. **Create**을 클릭하여 OwlDB 배포를 위한 설정을 시작합니다.
 
 ---
 
@@ -23,8 +24,8 @@
 OwlDB 서비스 리소스는 Azure 시스템이 자동으로 생성하는 별도의 리소스 그룹에 배포되고, Publisher(운영자)에 의해 관리됩니다.
 {% endhint %}
 
-| 항목 | 설명 |
-| --- | --- |
+| 항목  | 설명  |
+|-----|-----|
 | Subscription | - **Azure 구독 계정**<br>- 모든 리소스의 집합으로, 구독의 모든 리소스는 함께 청구됨 |
 | Resource Group | - **Azure 리소스 그룹**<br>- 동일한 수명 주기, 권한 및 정책을 공유하는 리소스 모음 |
 
@@ -32,14 +33,14 @@ OwlDB 서비스 리소스는 Azure 시스템이 자동으로 생성하는 별도
 
 OwlDB 배포를 위한 ARM(Azure Resource Manager) Template의 파라미터를 직접 지정합니다.
 
-| 항목 | 설명 | 비고 |
-| --- | --- | --- |
+| 항목  | 설명  | 비고  |
+|-----|-----|-----|
 | Region | OwlDB를 배포할 리전 | 제공 리전 확인 |
 | Project Name | 배포하고자 하는 프로젝트의 이름 | 사용 중인 프로젝트 이름과 중복 사용 불가 |
-| Vnet CIDR | 신규로 생성할 VNet의 IP 주소 범위(CIDR block) | - |
+| Vnet CIDR | 신규로 생성할 VNet의 IP 주소 범위(CIDR block) | -   |
 | Availability Zone | 인프라 리소스를 배포할 대상 가용 영역(Availability Zone) | 선택한 리전(Region) 내 AZ |
 | Public Subnet CIDR | - 지정한 VNet 내에서 사용할 Public Subnet의 CIDR 범위<br>- Public Subnet : 인터넷 게이트웨이를 통해 외부 통신이 가능한 네트워크 | VNet CIDR에 포함되는 범위여야 함 |
-| App Gateway Subnet CIDR | 지정한 VNet 내에서 사용할 Azure Application Gateway의 CIDR 범위 | VNet CIDR에 포함되는 범위여야하고 Public Subnet CIDR와 달라야 함 |
+| App Gateway Subnet CIDR | 지정한 VNet 내에서 사용할 Azure Application Gateway의 CIDR 범위 | - VNet CIDR에 포함되는 범위여야 함<br>- Public Subnet CIDR와 달라야 함 |
 | OwlDB Ingress CIDR | OwlDB 인스턴스에 대한 인바운드 접속을 허용할 IP 주소 범위(CIDR) | 접근 제한 불필요할 경우, `0.0.0.0/0` 입력 |
 | SSH Public Key | OwlDB 인스턴스에 SSH로 접근하기 위한 Key Pair 이름 | - SSH Key로 미리 생성되어 있어야 함<br>- PEM 파일은 로컬에 보관 필요 |
 | OwlDB Root Username | OwlDB에 로그인하기 위한 기본 관리자 계정의 ID | - **Default : admin**<br>- 설정 이후 변경 불가 |
@@ -49,8 +50,8 @@ OwlDB 배포를 위한 ARM(Azure Resource Manager) Template의 파라미터를 �
 
 애플리케이션의 고유 식별자와 리소스 관리를 위한 리소스 그룹을 지정합니다.
 
-| 항목 | 설명 |
-| --- | --- |
+| 항목  | 설명  |
+|-----|-----|
 | Application Name | 애플리케이션 고유 식별자 |
 | Managed Resource Group | 리소스 관리를 위한 그룹 |
 
@@ -64,13 +65,14 @@ OwlDB 배포를 위한 ARM(Azure Resource Manager) Template의 파라미터를 �
 
 OwlDB 배포 이후, 자동으로 생성된 OwlDB 서비스 리소스 그룹 내에 SSH Key 리소스를 반드시 생성해야 합니다. SSH Key는 OwlDB의 데이터베이스 프로비저닝 과정에 사용됩니다.
 
-1. [Azure Portal](https://portal.azure.com/#home)에서 **SSH keys**를 검색하고 선택합니다.
-2. 좌측 상단 **Create**을 클릭합니다.
-3. Project details에서 OwlDB 생성 후 자동으로 생성된 리소스 그룹을 선택합니다.
-4. Instance details에서 원하는 Key pair name과 type을 선택합니다.
-5. Tags에서 리소스 관리를 위한 Tag를 설정합니다.
-6. **Next**를 클릭하여 생성을 완료합니다.
-7. SSH Key 파일을 다운로드합니다.
+1. [Azure Portal](https://portal.azure.com/#home)에서 **SSH keys**를 검색합니다.
+2. 검색 결과에서 **SSH keys**를 선택합니다.
+3. 좌측 상단 **Create**을 클릭합니다.
+4. Project details에서 OwlDB 생성 후 자동으로 생성된 리소스 그룹을 선택합니다.
+5. Instance details에서 원하는 Key pair name과 type을 선택합니다.
+6. Tags에서 리소스 관리를 위한 Tag를 설정합니다.
+7. **Next**를 클릭하여 생성을 완료합니다.
+8. SSH Key 파일을 다운로드합니다.
 
 {% hint style="warning" %}
 **주의**
@@ -94,5 +96,5 @@ OwlDB 접속 URL은 `https://<sub-domain>.owl-db.com` 형식이며, `<sub-domain
 
 고객별 고유한 도메인값은 다음 방법으로 확인합니다.
 
-- **Azure 포털 > OwlDB 리소스 그룹 > Settings - Deployments > OwlDB에 해당하는 Deployment > Outputs > sub Domain Name**에서 확인합니다.
-- **DNS zones** 서비스의 리소스 중 owl db에 해당하는 호스팅 영역 이름을 참조합니다.
+* **Azure 포털 > OwlDB 리소스 그룹 > Settings - Deployments > OwlDB에 해당하는 Deployment > Outputs > Sub Domain Name**에서 확인합니다.
+* **DNS zones** 서비스의 리소스 중 OwlDB에 해당하는 호스팅 영역 이름을 참조합니다.
