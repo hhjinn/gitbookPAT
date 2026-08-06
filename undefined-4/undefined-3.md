@@ -105,7 +105,7 @@ Endpoint 탭은 **Service Endpoint**와 **Endpoint Details** 두 영역으로 �
 | Auth Option | Method에 대한 세부 인증 옵션 | Method에 따라 입력 방식이 달라집니다. `trust` 또는 `reject` 선택 시 비활성화됩니다. `scram-sha-256` 또는 `md5` 선택 시 드롭다운으로 선택합니다. 그 외 Method는 `key=value` 형식으로 입력합니다. |
 | Comment | 규칙에 대한 메모 | 줄바꿈 입력 불가 |
 
-* 필수 항목
+- 필수 항목
 
 1. 입력을 완료한 후 **저장** 버튼을 클릭합니다.
 
@@ -167,8 +167,7 @@ Pool, User, Shard는 아코디언 구조로 표시됩니다.
 
 1. **수정** 버튼을 클릭합니다.
 
-**참고**
-DB 서비스 상태가 `Running` 상태일 때만 **수정** 버튼이 활성화됩니다.
+**참고** DB 서비스 상태가 `Running` 상태일 때만 **수정** 버튼이 활성화됩니다.
 
 1. 수정 모드로 전환되면 테이블에서 변경할 파라미터의 **현재값**을 직접 수정합니다. 임시 변경된 파라미터는 파란색으로 표시됩니다.
 2. Scope를 변경해도 수정 중인 내용은 유지됩니다.
@@ -200,7 +199,7 @@ DB 서비스 상태가 `Running` 상태일 때만 **수정** 버튼이 활성화
 | Servers * | 접속할 DB 서버 | 드롭다운에서 1개 이상 선택. 인스턴스의 역할(Role)과 별칭(Instance Alias)이 표시됩니다. |
 | Use Patroni | Patroni를 통한 Auto Failover 사용 여부 | 항상 활성화(변경 불가) |
 
-* 필수 항목
+- 필수 항목
 {% endtab %}
 {% tab title="User 생성" %}
 | 항목 | 설명 | 입력 규칙 |
@@ -209,7 +208,7 @@ DB 서비스 상태가 `Running` 상태일 때만 **수정** 버튼이 활성화
 | Pool Size * | 해당 사용자가 동시에 점유할 수 있는 DB 서버 연결 최대 개수 | 정수 입력. 범위: 1 ~ max connections. 기본값: 9 |
 | Password * | 사용자 비밀번호 | 1~30자, 영어 소문자(a-z)·숫자(0-9)·특수문자(`-`, `_`, `#`, `$`) 사용 가능 |
 
-* 필수 항목
+- 필수 항목
 {% endtab %}
 {% tab title="Shard 생성" %}
 | 항목 | 설명 | 입력 규칙 |
@@ -219,7 +218,7 @@ DB 서비스 상태가 `Running` 상태일 때만 **수정** 버튼이 활성화
 | Servers * | 접속할 DB 서버 | 드롭다운에서 1개 이상 선택. 인스턴스의 역할(Role), 별칭(Instance Alias), Health 정보가 표시됩니다. Health는 참고용 정보이며 서버 선택에는 영향을 미치지 않습니다. |
 | Use Patroni | Patroni를 통한 Auto Failover 사용 여부 | 항상 활성화(변경 불가) |
 
-* 필수 항목
+- 필수 항목
 {% endtab %}
 {% endtabs %}
 
@@ -290,7 +289,7 @@ OwlDB 관리 범위를 벗어나 PostgreSQL에 직접 생성하거나 삭제한 
 | Type * | Slot 유형 | Physical 또는 Logical 중 선택. 기본값: Physical |
 | Scope | 운영 관리 대상 | Permanent로 고정. Temporary Slot은 생성할 수 없습니다. |
 
-* 필수 항목
+- 필수 항목
 
 1. 항목을 입력한 후 **생성** 버튼을 클릭합니다.
 

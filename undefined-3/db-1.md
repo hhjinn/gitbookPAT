@@ -433,9 +433,9 @@ DR 구성을 사용하는 경우에는 SSH Key File을 지정된 경로에 미�
 3. PgAgent 설치
 4. mount volume
 5. 데이터 디렉터리 준비 | | OpenSQL 설정 |
-2. 모듈 설정 | | OpenSQL 설치 |
-3. 부트스트랩 이후 설정 | | OpenSQL 상태체크 |
-4. 초기화 후 설정 적용 | | PGAgent 설치 |
-5. PgAgent 설정 | |
+6. 모듈 설정 | | OpenSQL 설치 |
+7. 부트스트랩 이후 설정 | | OpenSQL 상태체크 |
+8. 초기화 후 설정 적용 | | PGAgent 설치 |
+9. PgAgent 설정 | |
 
 | |
