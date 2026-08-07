@@ -84,7 +84,7 @@ Tuple Health는 추정 통계 기반 가이드로, 트래픽 패턴에 따라 �
 | Encoding | 데이터베이스 Character Set | 기본값: `UTF8` |
 | Connection Limit | 동시 접속 가능한 최대 연결 수 | - 기본값: Unlimited<br>- Unlimited 체크 해제 시 직접 입력 가능 (0 이상의 정수) |
 
-* 필수 항목
+- 필수 항목
 
 **Unlimited** 체크 상태에서는 인스턴스의 `max_connections` 범위 내에서 무제한으로 연결됩니다. 연결 수를 제한하려면 체크박스를 해제한 뒤 원하는 값을 입력합니다.
 
