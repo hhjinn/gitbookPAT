@@ -1,28 +1,27 @@
-**관리 > 백업/복구 > 백업업**에서 데이터베이스 백업 목록을 조회하고 생성·수정·삭제·복구를 수행합니다. 백업은 특정 시점의 데이터베이스 상태를 이미지로 저장합니다. On-Premise 환경에서는 Full/Incremental Backup을 지원하며, Tibero는 RMGR 기반으로 Full Backup 단위를 관리하며, OpenSQL은 rsync 또는 postgres 방식 중 선택한 방식에 따라 백업 단위와 삭제 동작이 달라집니다. 백업은 스케줄러를 통해 자동 생성되거나 사용자가 수동으로 생성할 수 있으며, 완전 복구(Full Restore) 또는 특정 시점 복구(PITR)를 통해 원하는 시점으로 복구할 수 있습니다.
+**관리 > 백업/복구 > 백업**에서 데이터베이스 백업 목록을 조회하고 생성·수정·삭제·복구를 수행합니다. Full/Incremental Backup을 지원하며, Tibero는 RMGR 기반으로 Full Backup 단위를 관리하며, OpenSQL은 rsync 또는 postgres 방식 중 선택한 방식에 따라 백업 단위와 삭제 동작이 달라집니다. 스케줄러를 통해 자동 생성되거나 사용자가 수동으로 생성할 수 있습니다.
 
 {% hint style="info" %}
 **참고**
 
-- On-Premise 환경에서는 보관(Archive) 기능을 제공하지 않니다.
-- 백업을 이용한 데이터베이스 복구 절차는 별도 문서에서 안내합니다.
+On-Premise 환경에서는 Full/Incremental Backup을 지원하며, 보관(Archive) 기능은 제공하지 않습니다.
 {% endhint %}
 
-# 백업 목록 조회
+## 백업 목록 조회
 
 **관리 > 백업/복구 > 백업** 메뉴에 진입하면 현재 DB 서비스의 백업 목록이 나타납니다. Full Backup을 루트로 하여 Incremental Backup이 트리 구조로 중첩되어 표시됩니다.
 
 목록에 표시되는 컬럼은 다음과 같습니다.
 
-| 항목 | 설명 |
-| --- | --- |
-| 이름 | 백업 이미지 이름 |
+| 항목  | 설명  |
+|-----|-----|
+| 이름  | 백업 이미지 이름 |
 | 백업 경로 | 백업 경로 이름 |
 | 백업 방식 | Full Backup 또는 Incremental Backup |
-| 생성일 | 백업 이미지 생성된 일시 (yyyy.mm.dd HH:1f1f2-1f1f2:ss) |
-| 만료일 | - 보존 기간으로 계산된 만료 일시(yyyy.mm.dd HH:1f1f2-1f1f2:ss)<br>- Incremental Backup은 연관된 Full Backup의 만료일을 그대로 표시 |
+| 생성일 | 백업 이미지 생성된 일시 (yyyy.mm.dd HH:mm:ss) |
+| 만료일 | - 보존 기간으로 계산된 만료 일시(yyyy.mm.dd HH:mm:ss)<br>- Incremental Backup은 연관된 Full Backup의 만료일을 그대로 표시 |
 | Size(MB) | - 백업 이미지의 총 용량 표시<br>- Full Backup은 이후 생성된 Incremental Backup 용량을 합산하여 표시<br>- Incremental Backup은 해당 백업의 용량만 표시 |
 | 생성 방식 | 자동/수동 |
-| 상태 | 현재 백업 상태 |
+| 상태  | 현재 백업 상태 |
 
 {% hint style="info" %}
 **참고**
@@ -32,10 +31,10 @@
 
 ### 백업 상태 이력
 
-| 항목 | 설명 |
-| --- | --- |
-| 상태 | - 생성 시작<br>- 복구 가능<br>- 생성 실패<br>- 복구 시작<br>- 복구 실패<br>- 삭제 시작<br>- 삭제됨<br>- 사용 불가 |
-| 발생일 | 상태가 변경된 일시 표시 (yyyy.mm.dd HH:1f1f2-1f1f2:ss) |
+| 항목  | 설명  |
+|-----|-----|
+| 상태  | - 생성 시작<br>- 복구 가능<br>- 생성 실패<br>- 복구 시작<br>- 복구 실패<br>- 삭제 시작<br>- 삭제됨<br>- 사용 불가 |
+| 발생일 | 상태가 변경된 일시 표시 (yyyy.mm.dd HH:mm:ss) |
 
 {% hint style="info" %}
 **참고**
@@ -50,38 +49,33 @@ OpenSQL에서 OpenBackup 사용을 미사용으로 전환하면 상태는 삭제
 1. **백업** 페이지에서 **생성** 버튼을 클릭합니다.
 2. **Type**을 선택합니다.
 3. **이름**을 입력합니다.
-4. 달력에서 **보관 기간**의 종료일을 선택합니다.
+4. 달력에서 **보존 기간**의 종료일을 선택합니다.
 5. **생성** 버튼을 클릭합니다.
 
 {% hint style="info" %}
 **참고**
 
-데이터베이스 운영 상태가 `Running`일 때만 가능합니다.
-{% endhint %}
-
-{% hint style="info" %}
-**참고**
-
-Incremental Backup은 사용 가능한 Full Backup이 있어야 생성할 수 있습니다.
+- 데이터베이스 운영 상태가 `Running`일 때만 가능합니다.
+- Incremental Backup은 사용 가능한 Full Backup이 있어야 생성할 수 있습니다.
 {% endhint %}
 
 ## 복구
 
 백업 목록에서 백업을 하나 선택하고 **복구** 버튼을 클릭하면 복구 모달이 나타납니다. 복구 유형을 선택하여 데이터베이스를 특정 시점으로 복구합니다.
 
-| 복구 유형 | 설명 |
-| --- | --- |
-| Full Restore | 마지막으로 커밋된 시점까지 모든 데이터를 복구합니다. |
-| PITR (Point-in-Time Recovery) | 사용자가 지정한 날짜와 시각(분 단위)까지 데이터를 복구합니다. 지정 시점 이후의 데이터는 손실됩니다. |
+| 복구 유형 | 설명  |
+|-------|-----|
+| Full Restore | 마지막 커밋 시점까지 전체 데이터 복구 |
+| PITR (Point-in-Time Recovery) | - 지정 날짜·시각(분 단위)까지 복구<br>- 지정 시점 이후 데이터 손실 |
 
 {% hint style="warning" %}
 **주의**
 
 복구 유형과 DB 엔진에 따라 기존 백업이 삭제될 수 있습니다.
 
-- **Full Restore (Tibero)**: 기존 백업이 삭제되지 않습니다.
-- **Full Restore (OpenSQL)**: 선택한 백업 이후 생성된 백업이 삭제됩니다.
-- **PITR**: 현재 저장된 모든 백업이 삭제됩니다. 장기 보관이 필요한 데이터는 복구 전에 미리 보관하세요.
+* **Full Restore (Tibero)**: 기존 백업이 삭제되지 않습니다.
+* **Full Restore (OpenSQL)**: 선택한 백업 이후 생성된 백업이 삭제됩니다.
+* **PITR**: 현재 저장된 모든 백업이 삭제됩니다. 장기 보관이 필요한 데이터는 복구 전에 미리 보관하세요.
 {% endhint %}
 
 복구에는 최대 몇 시간이 소요될 수 있으며, 진행 상황은 복구 내역에서 확인합니다.
@@ -119,8 +113,8 @@ Incremental Backup은 사용 가능한 Full Backup이 있어야 생성할 수 �
 {% hint style="warning" %}
 **주의**
 
-- 삭제된 백업은 복구할 수 없으므로 삭제 전 필요한 조치를 취했는지 다시 한 번 확인합니다.
-- **Tibero(RMGR)**: Incremental Backup만 단독으로 선택하면 삭제할 수 없으며, Full Backup 단위로 선택해야 하며 이 경우 하위 Incremental Backup이 모두 함께 삭제됩니다.
-- **OpenSQL(rsync)**: Full Backup과 Incremental Backup을 구분 없이 개별적으로 선택할 수 있으며, 선택한 백업만 삭제되어 다른 백업에는 영향을 주지 않습니다.
-- **OpenSQL(postgres)**: Incremental Backup을 단독으로 선택할 수 있으며, 선택한 백업 이후에 생성된 Incremental Backup까지 함께 삭제됩니다.
+* 삭제된 백업은 복구할 수 없으므로 삭제 전 필요한 조치를 취했는지 다시 한 번 확인합니다.
+* **Tibero(RMGR)**: Incremental Backup만 단독으로 선택하면 삭제할 수 없으며, Full Backup 단위로 선택해야 하며 이 경우 하위 Incremental Backup이 모두 함께 삭제됩니다.
+* **OpenSQL(rsync)**: Full Backup과 Incremental Backup을 구분 없이 개별적으로 선택할 수 있으며, 선택한 백업만 삭제되어 다른 백업에는 영향을 주지 않습니다.
+* **OpenSQL(postgres)**: Incremental Backup을 단독으로 선택할 수 있으며, 선택한 백업 이후에 생성된 Incremental Backup까지 함께 삭제됩니다.
 {% endhint %}
