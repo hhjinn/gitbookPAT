@@ -34,11 +34,11 @@ OpenSQL On-Premise 환경에서는 자동 백업 항목 위에 OpenBackup 설정
 | 항목 | 설명 | 입력 규칙 |
 | --- | --- | --- |
 | Full Backup | Full Backup 사용 여부 | 기본값: 꺼짐 |
-| Full Backup 주기 | Full Backup 실행 주기 | - 시간마다: 1~23<br>- 일마다: 1~7 |
-| 보존 기간 | Full Backup 이미지 보존 기간 | - 시간마다: 1~23<br>- 일마다: 1~35<br>- 영구보관 |
+| Full Backup 주기 | Full Backup 실행 주기 | - 시간마다: 1~~23~~<br>~~- 일마다: 1~~7 |
+| 보존 기간 | Full Backup 이미지 보존 기간 | - 시간마다: 1~~23~~<br>~~- 일마다: 1~~35<br>- 영구보관 |
 | 시작 시간 | Full Backup 시작 일시 | 현재보다 과거 일시 선택 불가 |
 | Incremental Backup | Incremental Backup 사용 여부 | 기본값: 꺼짐 |
-| Incremental Backup 주기 | Incremental Backup 실행 주기 | - 시간마다: 1~23<br>- 일마다: 1~6 |
+| Incremental Backup 주기 | Incremental Backup 실행 주기 | - 시간마다: 1~~23~~<br>~~- 일마다: 1~~6 |
 
 {% hint style="warning" %}
 **주의**
