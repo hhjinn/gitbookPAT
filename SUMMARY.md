@@ -1,8 +1,11 @@
 # Table of contents
 
-* [서비스 개요](readme.md)
+* [서비스 개요](README.md)
 * [설치 가이드](undefined/README.md)
   * [설치 소개](undefined/undefined.md)
+  * [OwlDB 서버 준비 및 설치](undefined/owldb/README.md)
+    * [OwlDB 서버 환경 준비 가이드](undefined/owldb/owldb-1.md)
+    * [OwlDB 설치](undefined/owldb/owldb.md)
   * [데이터베이스 서버 준비 및 설치](undefined/undefined-1/README.md)
     * [Tibero](undefined/undefined-1/tibero/README.md)
       * [데이터베이스 서버 공통 준비 사항](undefined/undefined-1/tibero/undefined.md)
@@ -16,9 +19,6 @@
       * [등록 DB 환경 준비 가이드](undefined/undefined-1/opensql/db-1.md)
       * [OwlDB 연결 확인](undefined/undefined-1/opensql/owldb.md)
       * [OpenBackup 서버 환경 준비 가이드](undefined/undefined-1/opensql/openbackup.md)
-  * [OwlDB 서버 준비 및 설치](undefined/owldb/README.md)
-    * [OwlDB 설치](undefined/owldb/owldb.md)
-    * [OwlDB 서버 환경 준비 가이드](undefined/owldb/owldb-1.md)
 * [시작하기](undefined-2/README.md)
   * [로그인](undefined-2/undefined.md)
   * [계정 생성 요청](undefined-2/undefined-1.md)
