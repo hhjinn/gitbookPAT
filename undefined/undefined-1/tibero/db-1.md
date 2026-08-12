@@ -1,8 +1,8 @@
 {% hint style="info" %}
 **참고**
 
-* 본 가이드는 고객사 인프라 담당자를 대상으로 합니다.
-* 기존 운영 중인 Tibero를 OwlDB에 등록하여 관리하려면 **Tibero 7 이상 버전**이어야 합니다
+- 본 가이드는 고객사 인프라 담당자를 대상으로 합니다.
+- 기존 운영 중인 Tibero를 OwlDB에 등록하여 관리하려면 **Tibero 7 이상 버전**이어야 합니다
 {% endhint %}
 
 ---
@@ -29,8 +29,8 @@ TAC 구성의 경우 Backup 디스크는 모든 노드에서 접근 가능한 �
 
 기존 데이터베이스를 OwlDB에 등록하기 위해 아래 포트들이 필요합니다.
 
-| 포트 유형 | 포트 번호 | 용도  | 비고  |
-|-------|-------|-----|-----|
+| 포트 유형 | 포트 번호 | 용도 | 비고 |
+| --- | --- | --- | --- |
 | **DB Listener 포트** | 기존 DB 설정값 | - 데이터베이스 접속 포트<br>- Tibero: 예) 8629/tcp | - OwlDB 서버로부터의 DB Listener 포트 인바운드 허용 |
 
 {% hint style="warning" %}
@@ -53,16 +53,16 @@ TAC(Tibero Active Cluster) 또는 DR 구성으로 운영 중인 데이터베이�
 
 **DB 파라미터**
 
-| DB 파라미터 | 값   | 설명  |
-|---------|-----|-----|
-| LOG_ARCHIVE_FORMAT | -   | 모든 노드에서 동일한 값으로 설정 |
-| STANDBY_USE_OBSERVER | Y   | DR 구성 시 필수 |
+| DB 파라미터 | 값 | 설명 |
+| --- | --- | --- |
+| LOG_ARCHIVE_FORMAT | - | 모든 노드에서 동일한 값으로 설정 |
+| STANDBY_USE_OBSERVER | Y | DR 구성 시 필수 |
 
 **CM 파라미터**
 
-| CM 파라미터 | 값   | 설명  |
-|---------|-----|-----|
-| _CM_REDIRECT_STDOUT_TO_OUTFILE | Y   | FS07PS_341175b 패치 필요 |
+| CM 파라미터 | 값 | 설명 |
+| --- | --- | --- |
+| _CM_REDIRECT_STDOUT_TO_OUTFILE | Y | FS07PS_341175b 패치 필요 |
 
 ---
 
@@ -70,8 +70,8 @@ TAC(Tibero Active Cluster) 또는 DR 구성으로 운영 중인 데이터베이�
 
 ### 1. 필요 파일 목록
 
-* owldb dp 바이너리 (`owldb-dp-installer-*.tar.gz`)
-* 라이선스 파일 (`license.xml`)
+- owldb dp 바이너리 (`owldb-dp-installer-*.tar.gz`)
+- 라이선스 파일 (`license.xml`)
 
 {% hint style="info" %}
 **참고**

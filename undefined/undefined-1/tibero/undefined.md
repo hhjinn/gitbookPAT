@@ -27,13 +27,10 @@ DR 구성에서는 OwlDB가 노드 간 SCP를 통해 데이터 파일을 전송�
 
 이하 절차에서 사용하는 예시 값은 다음과 같습니다. 실제 환경에 맞게 치환하여 사용하시기 바랍니다.
 
-* DB OS 사용자: `tibero`
-* SSH 포트: `22`
-* 데이터베이스 노드
-  * Node1 (Primary): `10.10.0.11`
-  * Node2 (Standby): `10.10.0.12`
-  * Node3 (Standby): `10.10.0.13`
-* 클러스터 내부 네트워크 CIDR: `10.10.0.0/16`
+- DB OS 사용자: `tibero`
+- SSH 포트: `22`
+- 데이터베이스 노드 Node1 (Primary): `10.10.0.11` Node2 (Standby): `10.10.0.12` Node3 (Standby): `10.10.0.13`
+- 클러스터 내부 네트워크 CIDR: `10.10.0.0/16`
 
 ### 1. DB 전용 OS 사용자 생성
 
@@ -62,8 +59,8 @@ mkdir -p ~/.ssh && chmod 700 ~/.ssh
 ssh-keygen -t ed25519 -N "" -f ~/.ssh/id_ed25519 -C "owldb-shared-key"
 ```
 
-| 옵션  | 설명  |
-|-----|-----|
+| 옵션 | 설명 |
+| --- | --- |
 | `-t ed25519` | 권장 알고리즘. RSA 사용 시 `-t rsa -b 4096` |
 | `-N ""` | 자동화 SCP를 위해 passphrase 없음 |
 | `-C` | 키 식별용 주석 |
@@ -101,7 +98,7 @@ chmod 600 ~/.ssh/id_ed25519 ~/.ssh/authorized_keys
 
 배포 완료 후 모든 노드의 `~/.ssh/` 권한 상태를 확인합니다.
 
-```text
+```
 drwx------   tibero:dba  ~/.ssh
 -rw-------   tibero:dba  ~/.ssh/id_ed25519
 -rw-r--r--   tibero:dba  ~/.ssh/id_ed25519.pub
@@ -126,14 +123,14 @@ chmod 644 ~/.ssh/known_hosts
 
 **1) 설정 항목**
 
-| 항목  | 권장값 | 구분  | 설명  |
-|-----|-----|-----|-----|
+| 항목 | 권장값 | 구분 | 설명 |
+| --- | --- | --- | --- |
 | `PubkeyAuthentication` | `yes` | **필수** | 공개키 기반 인증 허용. 본 매뉴얼의 인증 방식이므로 반드시 활성화 |
 | `AuthorizedKeysFile` | `.ssh/authorized_keys` | **필수** | 사용자별 공개키 목록 파일 경로. sshd 기본값이며, 변경 시 3 및 4단계에서 사용하는 파일 위치도 함께 변경 필요 |
-| `StrictModes` | `yes` | 권장  | 사용자 홈 디렉터리 및 키 파일 권한 검증. 권한이 느슨하면 인증 거부. 4단계에서 명시한 권한 값 준수가 필요한 이유 |
-| `PermitRootLogin` | `no` | 권장  | root 계정 SSH 접속 차단으로 공격 표면 축소 |
-| `PasswordAuthentication` | `no` | 권장  | 비밀번호 기반 인증 차단으로 공개키 인증만 허용. 무차별 대입 공격 차단 |
-| `AllowUsers` | `tibero` | 권장  | DB 전용 OS 사용자만 SSH 접속 허용, 다른 계정 접근 차단 |
+| `StrictModes` | `yes` | 권장 | 사용자 홈 디렉터리 및 키 파일 권한 검증. 권한이 느슨하면 인증 거부. 4단계에서 명시한 권한 값 준수가 필요한 이유 |
+| `PermitRootLogin` | `no` | 권장 | root 계정 SSH 접속 차단으로 공격 표면 축소 |
+| `PasswordAuthentication` | `no` | 권장 | 비밀번호 기반 인증 차단으로 공개키 인증만 허용. 무차별 대입 공격 차단 |
+| `AllowUsers` | `tibero` | 권장 | DB 전용 OS 사용자만 SSH 접속 허용, 다른 계정 접근 차단 |
 
 **2) 적용 방법 (필요 시)**
 
@@ -171,7 +168,7 @@ systemctl status sshd
 
 `authorized_keys` 항목 앞에 `from=` 옵션을 부여하여, 클러스터 내부 네트워크에서만 키가 유효하도록 제한합니다.
 
-```text
+```
 from="10.10.0.0/16,127.0.0.1" ssh-ed25519 AAAA... owldb-shared-key
 ```
 

@@ -60,12 +60,12 @@ CM_HOME=
 
 {% tabs %}
 {% tab title="설치 DB" %}
-| 옵션  | 설명  | 필수  |
-|-----|-----|-----|
-| `IP` | OwlDB 서버 IP 주소 | 필수  |
-| `PORT` | OwlDB 서버 포트 (SERVER_PORT) | 필수  |
-| `USERNAME` | DB OS 사용자 명 | 필수  |
-| `TB_HOME` | Tibero 홈 디렉터리 경로 | 필수  |
+| 옵션 | 설명 | 필수 |
+| --- | --- | --- |
+| `IP` | OwlDB 서버 IP 주소 | 필수 |
+| `PORT` | OwlDB 서버 포트 (SERVER_PORT) | 필수 |
+| `USERNAME` | DB OS 사용자 명 | 필수 |
+| `TB_HOME` | Tibero 홈 디렉터리 경로 | 필수 |
 | `TB_SID` | TB_SID 값 | 설치 시 불필요 |
 | `TAS_SID` | TAS_SID 값 | 설치 시 불필요 |
 | `CM_SID` | CM_SID 값 | 설치 시 불필요 |
@@ -78,12 +78,12 @@ CM_HOME=
 {% endhint %}
 {% endtab %}
 {% tab title="등록 DB" %}
-| 옵션  | 설명  | 필수  |
-|-----|-----|-----|
-| `IP` | OwlDB 서버 IP 주소 | 필수  |
-| `PORT` | OwlDB 서버 포트 (SERVER_PORT) | 필수  |
-| `USERNAME` | Tibero를 설치한 OS 사용자 명 | 필수  |
-| `TB_HOME` | Tibero 홈 디렉터리 경로 | 필수  |
+| 옵션 | 설명 | 필수 |
+| --- | --- | --- |
+| `IP` | OwlDB 서버 IP 주소 | 필수 |
+| `PORT` | OwlDB 서버 포트 (SERVER_PORT) | 필수 |
+| `USERNAME` | Tibero를 설치한 OS 사용자 명 | 필수 |
+| `TB_HOME` | Tibero 홈 디렉터리 경로 | 필수 |
 | `TB_SID` | TB_SID 값 | **필수** |
 | `TAS_SID` | TAS_SID 값 | - TAC 구성 시 필수<br>- 미사용 시 불필요 |
 | `CM_SID` | CM_SID 값 | - CM 구성 시 필수<br>- 미사용 시 불필요 |
