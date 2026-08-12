@@ -1,12 +1,6 @@
 # Table of contents
 
-* [서비스 개요](readme.md)
-* [설치 가이드](undefined-1/README.md)
-  * [설치 소개](undefined-1/undefined.md)
-  * [데이터베이스 서버 준비 및 설치](undefined-1/undefined-1.md)
-  * [OwlDB 서버 준비 및 설치](undefined-1/owldb.md)
-  * [OwlDB 연결 확인](undefined-1/owldb-1.md)
-  * [Barman 서버 설치 가이드](undefined-1/barman.md)
+* [서비스 개요](README.md)
 * [시작하기](undefined-2/README.md)
   * [로그인](undefined-2/undefined.md)
   * [계정 생성 요청](undefined-2/undefined-1.md)
