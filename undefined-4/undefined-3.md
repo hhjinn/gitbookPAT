@@ -112,7 +112,7 @@ Access Control 탭은 **OpenSQL** 환경에서만 제공됩니다.
 | Auth Option | Method에 대한 세부 인증 옵션 | - Method에 따라 입력 방식 상이<br>-`trust` 또는 `reject`선택 시 비활성화<br>-`scram-sha-256` 또는 `md5`선택 시 드롭다운 선택<br>- 그 외 Method는`key=value` 형식 입력 |
 | Comment | 규칙에 대한 메모 | 줄바꿈 입력 불가 |
 
-* 필수 항목
+- 필수 항목
 
 1. 입력을 완료한 후 **생성** 버튼을 클릭합니다.
 
@@ -224,7 +224,7 @@ DB 서비스 상태가 `Running` 상태일 때만 **수정** 버튼이 활성화
 | Servers * | 접속할 DB 서버 | - 드롭다운에서 1개 이상 선택<br>- 인스턴스 역할(Role)·별칭(Instance Alias) 표시 |
 | Use Patroni | Patroni를 통한 Auto Failover 사용 여부 | 항상 활성화(변경 불가) |
 
-* 필수 항목
+- 필수 항목
 {% endtab %}
 {% tab title="User 생성" %}
 | 항목 | 설명 | 입력 규칙 |
@@ -233,7 +233,7 @@ DB 서비스 상태가 `Running` 상태일 때만 **수정** 버튼이 활성화
 | Pool Size * | 해당 사용자가 동시에 점유할 수 있는 DB 서버 연결 최대 개수 | 정수 입력. 범위: 1 ~ max connections. 기본값: 9 |
 | Password * | 사용자 비밀번호 | 1~30자, 영어 소문자(a-z)·숫자(0-9)·특수문자(`-`, `_`, `#`, `$`) 사용 가능 |
 
-* 필수 항목
+- 필수 항목
 {% endtab %}
 {% tab title="Shard 생성" %}
 | 항목 | 설명 | 입력 규칙 |
@@ -243,7 +243,7 @@ DB 서비스 상태가 `Running` 상태일 때만 **수정** 버튼이 활성화
 | Servers * | 접속할 DB 서버 | - 드롭다운에서 1개 이상 선택<br>- 인스턴스 역할(Role)·별칭(Instance Alias)·Health 표시<br>- Health는 참고용, 서버 선택에 영향 없음 |
 | Use Patroni | Patroni를 통한 Auto Failover 사용 여부 | 항상 활성화(변경 불가) |
 
-* 필수 항목
+- 필수 항목
 {% endtab %}
 {% endtabs %}
 
@@ -320,7 +320,7 @@ OwlDB 관리 범위를 벗어나 PostgreSQL에 직접 생성하거나 삭제한 
 | Type * | Slot 유형 | Physical 또는 Logical 중 선택. 기본값: Physical |
 | Scope | 운영 관리 대상 | Permanent로 고정. Temporary Slot은 생성할 수 없습니다. |
 
-* 필수 항목
+- 필수 항목
 
 1. 항목을 입력한 후 **생성** 버튼을 클릭합니다.
 
