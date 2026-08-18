@@ -34,8 +34,8 @@ Tibero는 DB 파라미터 목록을 바로 표시합니다. OpenSQL(Azure)은 **
 {% hint style="info" %}
 **참고**
 
-- 인스턴스 상태가 `Unavailable`인 경우, 현재값은 표시되지 않으며 Config 값이 대신 표시됩니다.
-- OpenSQL **OpenHA** 탭에서 `pg_hba`와 `slot` 파라미터는 조회하거나 수정할 수 없습니다. 해당 파라미터는 **연결 정보 관리** 메뉴에서만 설정합니다.
+* 인스턴스 상태가 `Unavailable`인 경우, 현재값은 표시되지 않으며 Config 값이 대신 표시됩니다.
+* OpenSQL **OpenHA** 탭에서 `pg_hba`와 `slot` 파라미터는 조회하거나 수정할 수 없습니다. 해당 파라미터는 **연결 정보 관리** 메뉴에서만 설정합니다.
 {% endhint %}
 
 # 파라미터 수정
@@ -103,11 +103,11 @@ Tibero 다중 노드 구성에서 글로벌 파라미터는 수정할 수 없습
 {% hint style="warning" %}
 **주의**
 
-OpenHA 파라미터는 수정 시 유효성 검사를 제공하지 않습니다. 잘못된 값을 입력해도 오류를 감지하지 못한 채 비정상적으로 동작할 수 있습니다. 이 경우 OpenHA 로그를 확인해 해당 내용을 인지할 수 있습니다.
+OpenHA 파라미터는 수정 시 유효성 검사를 하지 않습니다. 잘못된 값을 입력해도 오류 없이 저장되므로, 수정 후에는 OpenHA 로그를 확인하세요. `[ERROR]` 로그에는 스택 트레이스가 함께 남습니다.
 
-- `[WARNING]: Violated the rule "loop_wait + 2*retry_timeout <= ttl", where ttl=30. Adjusting loop_wait from 25 to 1 and retry_timeout from 10 to 10` — ttl/loop_wait/retry_timeout 범위 위반. 자동 조정 값 확인 후 재설정
-- `[ERROR]: Exception when setting dynamic_configuration` (스택 트레이스 포함) — ttl 등 값 캐스팅 실패. 입력 값 확인 후 재설정
-- `[ERROR]: Unexpected exception raised, please report it as a BUG` (스택 트레이스 포함) — maximum_lag_on_failover 등 실사용 시 예외 발생. 값 확인 후 재설정
+- `[WARNING]: Violated the rule "loop_wait + 2*retry_timeout <= ttl"` — 값 조합이 제약 위반. 자동 조정되므로 조정된 값 확인 후 재설정
+- `[ERROR]: Exception when setting dynamic_configuration` — `ttl` 등의 자료형 변환 실패. 입력 값 확인 후 재설정
+- `[ERROR]: Unexpected exception raised, please report it as a BUG` — `maximum_lag_on_failover` 등이 실제 동작 시점에 예외 발생. 값 확인 후 재설정
 {% endhint %}
 
 ## 템플릿 불러오기
