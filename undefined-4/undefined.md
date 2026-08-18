@@ -29,7 +29,7 @@ Tibero는 DB 파라미터 목록을 바로 표시합니다. OpenSQL(Azure)은 **
 | 기본값 | 사용자가 별도로 설정하지 않았을 때 적용되는 값 |
 | 현재값 | 현재 DB에 적용된 값 |
 | Config 값 | DB 재시작 시 반영될 값 |
-| 동적 파라미터 | - **예**: 재시작 없이 즉시 반영 가능<br>- **아니요(재시작 필요)**: 반영하려면 DB 재시작 필요 |
+| 동적 파라미터 | - **예**: 재시작 없이 즉시 반영 가능<br>-**아니요(재시작 필요)**: 반영하려면 DB 재시작 필요 |
 
 {% hint style="info" %}
 **참고**
@@ -92,7 +92,7 @@ Tibero 다중 노드 구성에서 글로벌 파라미터는 수정할 수 없습
 | 수정한 파라미터 유형 | 저장 방식 |
 |-------------|-------|
 | 동적 + 정적 파라미터 혼합 | - **적용**: DB 재시작 후 변경 사항 반영 (연결 세션 종료, 수 분 소요) |
-| 동적 파라미터만    | - **적용**: 재시작 없이 현재값에 즉시 반영<br>- **임시 적용**: 재시작 없이 현재값에 반영, DB 재시작 시 기존 Config 값으로 복원 |
+| 동적 파라미터만    | - **적용**: 재시작 없이 현재값에 즉시 반영<br>-**임시 적용**: 재시작 없이 현재값에 반영, DB 재시작 시 기존 Config 값으로 복원 |
 
 {% hint style="info" %}
 **참고**
@@ -105,9 +105,9 @@ Tibero 다중 노드 구성에서 글로벌 파라미터는 수정할 수 없습
 
 OpenHA 파라미터는 수정 시 유효성 검사를 하지 않습니다. 잘못된 값을 입력해도 오류 없이 저장되므로, 수정 후에는 OpenHA 로그를 확인하세요. `[ERROR]` 로그에는 스택 트레이스가 함께 남습니다.
 
-- `[WARNING]: Violated the rule "loop_wait + 2*retry_timeout <= ttl"` — 값 조합이 제약 위반. 자동 조정되므로 조정된 값 확인 후 재설정
-- `[ERROR]: Exception when setting dynamic_configuration` — `ttl` 등의 자료형 변환 실패. 입력 값 확인 후 재설정
-- `[ERROR]: Unexpected exception raised, please report it as a BUG` — `maximum_lag_on_failover` 등이 실제 동작 시점에 예외 발생. 값 확인 후 재설정
+* `[WARNING]: Violated the rule "loop_wait + 2*retry_timeout <= ttl"` — 값 조합이 제약을 위반해 Patroni가 값을 자동으로 조정합니다. 조정된 값을 확인하고 의도한 값으로 다시 설정하세요.
+* `[ERROR]: Exception when setting dynamic_configuration` — `ttl` 처럼 숫자여야 하는 항목에 변환할 수 없는 값이 들어갔습니다. 입력 값을 확인하고 다시 설정하세요.
+* `[ERROR]: Unexpected exception raised, please report it as a BUG` — `maximum_lag_on_failover`처럼 저장 시점에는 걸러지지 않는 값이 실제 동작 시점에 예외를 일으켰습니다. 값을 확인하고 다시 설정하세요.
 {% endhint %}
 
 ## 템플릿 불러오기
