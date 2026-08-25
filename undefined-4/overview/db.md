@@ -39,12 +39,11 @@ BYOL 라이선스 모델을 사용 중이고 라이선스 만료일이 3개월 �
 일시가 표시되는 항목은 모두 데이터베이스 타임존을 기준으로 표시됩니다.
 {% endhint %}
 {% endtab %}
-
 {% tab title="인스턴스" %}
 구성 인스턴스 목록과 정보를 확인합니다.
 
-* **인스턴스 별칭**을 클릭하면 "[인스턴스 관리](#dF57s45IXBUgU7RX1UvL)" 페이지로 이동합니다.
-* ☑️ 아이콘으로 1개 이상의 인스턴스를 먼저 선택한 후 **재시작** 버튼을 클릭하거나, 선택 없이 **재시작** 버튼을 바로 클릭해 열리는 모달에서 재시작할 인스턴스와 재시작 옵션을 선택할 수 있습니다. 자세한 내용은 "[인스턴스 재시작](#undefined-2)"을 참고하시기 바랍니다.
+- **인스턴스 별칭**을 클릭하면 "[인스턴스 관리](#dF57s45IXBUgU7RX1UvL)" 페이지로 이동합니다.
+- ☑️ 아이콘으로 1개 이상의 인스턴스를 먼저 선택한 후 **재시작** 버튼을 클릭하거나, 선택 없이 **재시작** 버튼을 바로 클릭해 열리는 모달에서 재시작할 인스턴스와 재시작 옵션을 선택할 수 있습니다. 자세한 내용은 "[인스턴스 재시작](#undefined-2)"을 참고하시기 바랍니다.
 
 {% hint style="info" %}
 **참고**
@@ -52,14 +51,13 @@ BYOL 라이선스 모델을 사용 중이고 라이선스 만료일이 3개월 �
 DR 구성을 사용하는 경우, Primary(Leader) DB와 Standby(Replica) DB를 구분하여 조회합니다.
 {% endhint %}
 {% endtab %}
-
 {% tab title="설치 정보" %}
 데이터베이스 버전 정보와 시스템 및 컴파일 정보, 패치(또는 Extension) 정보를 확인합니다.
 
 시스템 및 컴파일 정보는 엔진과 무관하게 바이너리 OS 정보 등을 리스트로 표시합니다. Basic Info와 패치 정보는 엔진에 따라 다음과 같이 달라집니다.
 
-| 항목  | Tibero | OpenSQL |
-|-----|--------|---------|
+| 항목 | Tibero | OpenSQL |
+| --- | --- | --- |
 | Basic Info | - 메이저 버전<br>- 마이너 버전<br>- 패치셋 버전 | - OpenSQL 버전(예: 3.0)<br>- PostgreSQL 버전(예: 17.5) |
 | 시스템 및 컴파일 정보 | 바이너리 OS 정보 등 리스트 표시 | 바이너리 OS 정보 등 리스트 표시 |
 | 패치 정보 / Extensions | - 적용된 패치 현황 리스트 표시<br>- 없으면 "적용된 패치가 없습니다" 문구 표시 | - 현재 설치된 Extension 목록 리스트 표시<br>- 운영 중 DDL로 추가한 Extension도 조회 시점 기준 반영 |
@@ -70,12 +68,11 @@ DR 구성을 사용하는 경우, Primary(Leader) DB와 Standby(Replica) DB를 �
 값을 조회할 수 없는 항목은 `-`로 표시됩니다.
 {% endhint %}
 {% endtab %}
-
 {% tab title="(BYOL) 라이선스" %}
 BYOL 라이선스 모델에서 제공하는 탭입니다.
 
-* 사용 중인 라이선스와 할당된 인스턴스 정보를 확인합니다.
-* 기한이 만료된 라이선스 정보도 확인할 수 있습니다.
+- 사용 중인 라이선스와 할당된 인스턴스 정보를 확인합니다.
+- 기한이 만료된 라이선스 정보도 확인할 수 있습니다.
 
 {% hint style="info" %}
 **참고**
@@ -83,21 +80,20 @@ BYOL 라이선스 모델에서 제공하는 탭입니다.
 유휴 라이선스가 존재하는 경우, **재구축** 버튼을 통해 기존 라이선스 구성대로 인스턴스 생성 및 라이선스 할당을 수행할 수 있습니다.
 {% endhint %}
 {% endtab %}
-
 {% tab title="(DR/HA) 전환 이력 관리" %}
 Tibero DR 구성 혹은 OpenSQL HA 구성일 때 제공하는 탭입니다.
 
 데이터베이스 역할 전환 이벤트가 발생한 이력을 확인합니다. 전환 이벤트가 완료되면 이력이 추가됩니다.
 
-| 컬럼명 | 설명  | 데이터 형식 | 기본값 | 필수값 |
-|-----|-----|--------|-----|-----|
-| ID  | - 전환 이벤트를 고유하게 식별하는 번호<br>- 형식: {이벤트유형-랜덤 문자열 16바이트}<br>- 이벤트 유형: FO / SO / FB | - FO-3f9a7c1e2d8b45f0<br>- SO-b17e4a93d2c68f5e<br>- FB-7a2d9e14c6b83f05 | O   | X   |
-| 시작 시간 | 전환 이벤트가 발생한 시각 | yyyy.mm.dd HH:mm:ss | O   | O   |
-| 완료 시간 | 전환 이벤트가 완료된 시각 | yyyy.mm.dd HH:mm:ss | X   | X   |
-| 유형  | 전환 이벤트 유형 | - Failover<br>- Switchover<br>- Failback | O   | O   |
-| 수행 대상 | 해당 이벤트를 수행한 대상 | - Switchover: {사용자 아이디}<br>- Failover: {사용자 아이디} / system(Auto Failover)<br>- Failback: {사용자 아이디} | O   | X   |
-| 결과  | 해당 이벤트 상태 표시 | - 성공<br>- 실패 | O   | X   |
-| 원인/비고 | 해당 이벤트가 발생한 원인, 사용자가 입력한 값 또는 실패 사유 표시 | - 역할 전환 시 사용자가 선택적으로 입력한 값(최대 200자, 미입력 시 빈칸)<br>- Auto Failover의 트리거 조건<br>- Failback 실패 시: Standby/Replica Reboot Failed 또는 Switchover Failed<br>- Failover 실패 시: Standby/Replica Promotion Failed<br>- Failover 성공 후 후처리 실패 시: Cluster Normalization Failed(Primary scale out failed / New Standby/Replica creation failed, 복수 실패 시 콤마로 표시) | O   | X   |
+| 컬럼명 | 설명 | 데이터 형식 | 기본값 | 필수값 |
+| --- | --- | --- | --- | --- |
+| ID | - 전환 이벤트를 고유하게 식별하는 번호<br>- 형식: {이벤트유형-랜덤 문자열 16바이트}<br>- 이벤트 유형: FO / SO / FB | - FO-3f9a7c1e2d8b45f0<br>- SO-b17e4a93d2c68f5e<br>- FB-7a2d9e14c6b83f05 | O | X |
+| 시작 시간 | 전환 이벤트가 발생한 시각 | yyyy.mm.dd HH:1f1f2-1f1f2:ss | O | O |
+| 완료 시간 | 전환 이벤트가 완료된 시각 | yyyy.mm.dd HH:1f1f2-1f1f2:ss | X | X |
+| 유형 | 전환 이벤트 유형 | - Failover<br>- Switchover<br>- Failback | O | O |
+| 수행 대상 | 해당 이벤트를 수행한 대상 | - Switchover: {사용자 아이디}<br>- Failover: {사용자 아이디} / system(Auto Failover)<br>- Failback: {사용자 아이디} | O | X |
+| 결과 | 해당 이벤트 상태 표시 | - 성공<br>- 실패 | O | X |
+| 원인/비고 | 해당 이벤트가 발생한 원인, 사용자가 입력한 값 또는 실패 사유 표시 | - 역할 전환 시 사용자가 선택적으로 입력한 값(최대 200자, 미입력 시 빈칸)<br>- Auto Failover의 트리거 조건<br>- Failback 실패 시: Standby/Replica Reboot Failed 또는 Switchover Failed<br>- Failover 실패 시: Standby/Replica Promotion Failed<br>- Failover 성공 후 후처리 실패 시: Cluster Normalization Failed(Primary scale out failed / New Standby/Replica creation failed, 복수 실패 시 콤마로 표시) | O | X |
 {% endtab %}
 {% endtabs %}
 
