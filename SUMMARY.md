@@ -1,6 +1,6 @@
 # Table of contents
 
-* [서비스 개요](readme.md)
+* [서비스 개요](README.md)
 * [환경 준비](undefined/README.md)
   * [AWS](undefined/aws/README.md)
     * [마켓플레이스 구독 안내](undefined/aws/undefined.md)
@@ -48,3 +48,8 @@
     * [라이선스 청구 기준](undefined-7/undefined-2/undefined.md)
 * [참고 자료](undefined-8/README.md)
   * [재해 복구 (DR)](undefined-8/dr.md)
+* [법적 고지](undefined-1/README.md)
+  * [저작권](undefined-1/undefined.md)
+  * [오픈소스 라이선스](undefined-1/undefined-1/README.md)
+    * [Third-Party Notices and Licenses](undefined-1/undefined-1/third-party-notices-and-licenses.md)
+    * [Open Source Software Licenses](undefined-1/undefined-1/open-source-software-licenses.md)
