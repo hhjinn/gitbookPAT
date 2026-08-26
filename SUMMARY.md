@@ -1,6 +1,6 @@
 # Table of contents
 
-* [서비스 개요](readme.md)
+* [서비스 개요](README.md)
 * [설치 가이드](undefined/README.md)
   * [설치 소개](undefined/undefined.md)
   * [OwlDB 서버 준비 및 설치](undefined/owldb/README.md)
@@ -64,3 +64,8 @@
   * [재해 복구 (DR)](undefined-8/dr.md)
   * [비정상 노드 조치 가이드](undefined-8/undefined.md)
   * [Agent 재기동 시 주의 사항](undefined-8/agent.md)
+* [법적 고지](undefined-1/README.md)
+  * [저작권](undefined-1/undefined.md)
+  * [오픈소스 라이선스](undefined-1/undefined-1/README.md)
+    * [Third-Party Notices and Licenses](undefined-1/undefined-1/third-party-notices-and-licenses.md)
+    * [Open Source Software Licenses](undefined-1/undefined-1/open-source-software-licenses.md)
