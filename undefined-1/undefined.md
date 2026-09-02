@@ -8,15 +8,11 @@
 
 {% embed url="https://www.tibero.com/ko" %}
 
-
-
 ## 기술서비스센터
 
 Tel : +82-1544-8629
 
 E-Mail : gitbook@tibero.com
-
-
 
 ## Restricted Rights Legend
 
