@@ -172,7 +172,7 @@ OwlDB에서 데이터베이스를 생성(이하 프로비저닝)하는 방법을
 Database Name, Character Set, Timezone, Database Listener Port는 최초 설정 이후 수정이 불가합니다.
 {% endhint %}
 
-* 표기는 필수 입력 항목을 의미합니다.
+- 표기는 필수 입력 항목을 의미합니다.
 
 ---
 
