@@ -65,6 +65,7 @@ a. systemd 기동 여부 확인
 ```bash
 systemctl is-active --quiet patroni; echo $?
 ```
+
 ```
 
 | 결과 | 판정 |
@@ -75,6 +76,7 @@ systemctl is-active --quiet patroni; echo $?
 b. 유닛명 확인
 
 ```
+
 ```bash
 # 1) Patroni 프로세스 PID 확인
 pgrep -af patroni
@@ -82,6 +84,7 @@ pgrep -af patroni
 # 2) 해당 PID를 관리하는 유닛 확인 (PID는 1)의 결과값으로 대체)
 cat /proc/<PID>/cgroup
 ```
+
 ```
 
 | 결과 | 판정 |
@@ -92,6 +95,7 @@ cat /proc/<PID>/cgroup
 c. 서비스명 변경 방법
 
 ```
+
 기존 유닛 파일의 `[Install]` 섹션에 Alias를 추가한 뒤 재등록합니다.
 
 ```bash
@@ -105,4 +109,7 @@ systemctl daemon-reload
 systemctl reenable <기존서비스명>
 systemctl is-active --quiet patroni; echo $?   # 0 확인
 ```
+
+```
+
 ```
