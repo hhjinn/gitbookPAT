@@ -14,11 +14,10 @@ OwlDB는 클라우드와 온프레미스 환경에서 데이터베이스를 설�
 
 OwlDB는 두 환경에서 보편적으로 사용되는 공통 관리 기능을 바탕으로, 클라우드와 온프레미스 각각의 인프라 특성에 최적화된 전용 기능을 제공합니다.
 
-**공통 기능**
+#### 공통 기능
 
-| 0gjASqM95zeF | TIsVhWkRb2x4 |
-| --- | --- |
 | **기능** | **설명** |
+|-----|-----|
 | **데이터베이스 상태 조회** | 데이터베이스·인스턴스 가동 상태 실시간 확인 |
 | **모니터링 & 알림** | - 핵심 성능 지표·운영 상태 감시<br>- 이상 징후·이벤트 발생 시 즉시 알림 발송 |
 | **마이그레이션** | 이종 데이터베이스 전환 시 사전 호환성 검증 및 가이드 기반 마이그레이션 지원 |
@@ -26,17 +25,16 @@ OwlDB는 두 환경에서 보편적으로 사용되는 공통 관리 기능을 �
 
 {% tabs %}
 {% tab title="클라우드 특화" %}
-| IbkFMSc5C5K0 | xhRzJMDLxICI |
-| --- | --- |
 | **기능** | **설명** |
+|-----|-----|
 | **자동화된 프로비저닝** | 클라우드 자원 생성부터 데이터베이스 아키텍처 구성까지 전 과정 자동화 |
 | **리소스 확장/변경** | 워크로드 증감에 맞춘 인스턴스 사양·스토리지 확장 및 변경 |
 | **클라우드 스냅샷 백업** | CSP 스냅샷 기능 연동 기반 백업·복구 |
 {% endtab %}
+
 {% tab title="온프레미스 특화" %}
-| heoYzQ2S4DT3 | hx81gYxHSNty |
-| --- | --- |
 | **기능** | **설명** |
+|-----|-----|
 | **데이터베이스 설치/등록** | - 고객 호스트에 신규 DB 원격 배포<br>- 기존 운영 중인 외부 DB 관리 대상 등록 |
 | **인프라 자원 탐색** | Agent를 통한 하드웨어 스펙·구성 정보 자동 수집 및 현황 파악 |
 | **물리 백업/복구** | 데이터베이스 자체 유틸리티(Tibero RMGR 등) 기반 백업·복구 |
@@ -51,30 +49,31 @@ OwlDB가 지원하는 관계형 데이터베이스(RDBMS) 엔진 사양 및 환�
 {% tab title="Cloud" %}
 ### AWS
 
-| 데이터베이스 엔진 | 버전 | 토폴로지 |
-| --- | --- | --- |
-| Tibero | 7.2.5 | - Single<br>- Single + DR<br>- TAC<br>- TAC + DR |
+| 데이터베이스 엔진 | 버전  | 토폴로지 |
+|-----------|-----|------|
+| Tibero    | 7.2.5 | - Single<br>- Single + DR<br>- TAC<br>- TAC + DR |
 
 ### Azure
 
-| 데이터베이스 엔진 | 버전 | 토폴로지 |
-| --- | --- | --- |
-| Tibero | 7.2.5 | - Single<br>- Single + DR<br>- TAC<br>- TAC + DR |
-| OpenSQL | - 3.16.12.5<br>- 3.17.8.5 | - Single<br>- HA |
+| 데이터베이스 엔진 | 버전  | 토폴로지 |
+|-----------|-----|------|
+| Tibero    | 7.2.5 | - Single<br>- Single + DR<br>- TAC<br>- TAC + DR |
+| OpenSQL   | - 3.16.12.5<br>- 3.17.8.5 | - Single<br>- HA |
 {% endtab %}
+
 {% tab title="On-Premise" %}
 ### OwlDB Operation
 
-| 데이터베이스 엔진 | 버전 | 토폴로지 |
-| --- | --- | --- |
-| Tibero | 7 패치셋 이후 | - Single<br>- Single + DR<br>- TAC<br>- TAC + DR |
-| OpenSQL | 3.0(PostgreSQL 17.9) | - Single<br>- HA |
+| 데이터베이스 엔진 | 버전  | 토폴로지 |
+|-----------|-----|------|
+| Tibero    | 7 패치셋 이후 | - Single<br>- Single + DR<br>- TAC<br>- TAC + DR |
+| OpenSQL   | 3.0(PostgreSQL 17.9) | - Single<br>- HA |
 
 ### OwlDB Automation
 
-| 데이터베이스 엔진 | 버전 | 토폴로지 |
-| --- | --- | --- |
-| Tibero | - 등록: 7 패치셋 이후<br>- 설치: 7.2.5 | - Single<br>- Single + DR<br>- TAC<br>- TAC + DR |
-| OpenSQL | 3.0(PostgreSQL 17.9) | - Single<br>- HA |
+| 데이터베이스 엔진 | 버전  | 토폴로지 |
+|-----------|-----|------|
+| Tibero    | - 등록: 7 패치셋 이후<br>- 설치: 7.2.5 | - Single<br>- Single + DR<br>- TAC<br>- TAC + DR |
+| OpenSQL   | 3.0(PostgreSQL 17.9) | - Single<br>- HA |
 {% endtab %}
 {% endtabs %}
