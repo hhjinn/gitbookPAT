@@ -79,8 +79,7 @@ OwlDB에서 데이터베이스를 생성(이하 프로비저닝)하는 방법을
 **참고**
 
 * Standby(Replica) DB Availability Zone은 Enable DR에서 사용을 선택한 경우에만 노출됩니다.
-
-  Primary(Leader) DB의 가용 영역은 사용자가 선택할 수 있으나, 안정적인 장애 대응 및 Failover를 위해 Primary(Leader) DB는 OwlDB와 다른 가용 영역에 배치하는 것을 권장합니다.
+* Primary(Leader) DB의 가용 영역은 사용자가 선택할 수 있으나, 안정적인 장애 대응 및 Failover를 위해 Primary(Leader) DB는 OwlDB와 다른 가용 영역에 배치하는 것을 권장합니다.
 {% endhint %}
 
 ### 4단계: 인스턴스 구성
