@@ -19,7 +19,7 @@
 | `BARMAN_SSH_PORT` | barman host에 SSH 접속할 Port 번호 |   |
 | `BARMAN_CONF_DIR` | barman host의 conf 디렉토리 경로<br>e.g.)`/etc/barman.d/` |   |
 
-1. owlagent를 실행합니다. sh owlagent_start.sh
+3. owlagent를 실행합니다. sh owlagent_start.sh
 
 {% hint style="info" %}
 **참고**
