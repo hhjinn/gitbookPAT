@@ -14,7 +14,7 @@ DR 구성에서는 OwlDB가 노드 간 SCP를 통해 데이터 파일을 전송�
 
 이하 절차에서 사용하는 예시 값은 다음과 같습니다. 실제 환경에 맞게 치환하여 사용하시기 바랍니다.
 
-* DB OS 사용자: `tibero`
+* DB OS 사용자: `opensql`
 * SSH 포트: `22`
 * 데이터베이스 노드
   * Node1 (Primary): `10.10.0.11`
@@ -29,7 +29,7 @@ DR 구성에서는 OwlDB가 노드 간 SCP를 통해 데이터 파일을 전송�
 ```
 # 각 노드에서 root 계정으로 실행
 groupadd -g 1100 dba
-useradd  -u 1100 -g dba -m -s /bin/bash tibero
+useradd  -u 1100 -g dba -m -s /bin/bash opensql
 ```
 
 **주의**
@@ -41,8 +41,8 @@ UID/GID가 노드 간에 다르면 SCP로 전송된 파일의 소유권이 어�
 Node1(`10.10.0.11`)에서 단 1회 키페어를 생성합니다. **이 키페어가 전체 노드의 공용 키가 됩니다.**
 
 ```
-# node1에서 tibero 계정으로 실행
-su - tibero
+# node1에서 opensql 계정으로 실행
+su - opensql
 mkdir -p ~/.ssh && chmod 700 ~/.ssh
 ssh-keygen -t ed25519 -N "" -f ~/.ssh/id_ed25519 -C "owldb-shared-key"
 ```
@@ -62,7 +62,7 @@ ssh-keygen -t ed25519 -N "" -f ~/.ssh/id_ed25519 -C "owldb-shared-key"
 생성된 공개키를 `authorized_keys`에 등록합니다.
 
 ```
-# node1에서 tibero 계정으로 실행
+# node1에서 opensql 계정으로 실행
 cat ~/.ssh/id_ed25519.pub >> ~/.ssh/authorized_keys
 chmod 600 ~/.ssh/authorized_keys
 ```
@@ -72,11 +72,11 @@ chmod 600 ~/.ssh/authorized_keys
 각 Standby 노드에서 node1의 키 파일을 SCP로 가져옵니다.
 
 ```
-# 각 Standby 노드(node2, node3)에서 tibero 계정으로 실행
+# 각 Standby 노드(node2, node3)에서 opensql 계정으로 실행
 mkdir -p ~/.ssh && chmod 700 ~/.ssh
 
-scp -P 22 tibero@10.10.0.11:~/.ssh/id_ed25519      ~/.ssh/id_ed25519      # 개인키
-scp -P 22 tibero@10.10.0.11:~/.ssh/id_ed25519.pub  ~/.ssh/id_ed25519.pub  # 공개키
+scp -P 22 opensql@10.10.0.11:~/.ssh/id_ed25519      ~/.ssh/id_ed25519      # 개인키
+scp -P 22 opensql@10.10.0.11:~/.ssh/id_ed25519.pub  ~/.ssh/id_ed25519.pub  # 공개키
 
 cat ~/.ssh/id_ed25519.pub >> ~/.ssh/authorized_keys
 chmod 600 ~/.ssh/id_ed25519 ~/.ssh/authorized_keys
@@ -85,10 +85,10 @@ chmod 600 ~/.ssh/id_ed25519 ~/.ssh/authorized_keys
 배포 완료 후 모든 노드의 `~/.ssh/` 권한 상태를 확인합니다.
 
 ```
-drwx------   tibero:dba  ~/.ssh
--rw-------   tibero:dba  ~/.ssh/id_ed25519
--rw-r--r--   tibero:dba  ~/.ssh/id_ed25519.pub
--rw-------   tibero:dba  ~/.ssh/authorized_keys
+drwx------   opensql:dba  ~/.ssh
+-rw-------   opensql:dba  ~/.ssh/id_ed25519
+-rw-r--r--   opensql:dba  ~/.ssh/id_ed25519.pub
+-rw-------   opensql:dba  ~/.ssh/authorized_keys
 ```
 
 #### 5. known\_hosts 사전 등록
@@ -96,7 +96,7 @@ drwx------   tibero:dba  ~/.ssh
 자동화 스크립트 실행 시 host key prompt가 발생하는 것을 방지하기 위해, 각 노드에서 클러스터 전 노드의 호스트 공개키를 미리 수집합니다.
 
 ```
-# 각 노드에서 tibero 계정으로 실행
+# 각 노드에서 opensql계정으로 실행
 ssh-keyscan -p 22 -t ed25519 10.10.0.11 10.10.0.12 10.10.0.13 > ~/.ssh/known_hosts
 chmod 644 ~/.ssh/known_hosts
 ```
@@ -116,7 +116,7 @@ chmod 644 ~/.ssh/known_hosts
 | `StrictModes`            | `yes`                  | 권장     | 사용자 홈 디렉터리 및 키 파일 권한 검증. 권한이 느슨하면 인증 거부. 4단계에서 명시한 권한 값 준수가 필요한 이유 |
 | `PermitRootLogin`        | `no`                   | 권장     | root 계정 SSH 접속 차단으로 공격 표면 축소                                       |
 | `PasswordAuthentication` | `no`                   | 권장     | 비밀번호 기반 인증 차단으로 공개키 인증만 허용. 무차별 대입 공격 차단                           |
-| `AllowUsers`             | `tibero`               | 권장     | DB 전용 OS 사용자만 SSH 접속 허용, 다른 계정 접근 차단                               |
+| `AllowUsers`             | `opensql`              | 권장     | DB 전용 OS 사용자만 SSH 접속 허용, 다른 계정 접근 차단                               |
 
 **2) 적용 방법 (필요 시)**
 
@@ -129,7 +129,7 @@ AuthorizedKeysFile .ssh/authorized_keys
 StrictModes yes
 PermitRootLogin no
 PasswordAuthentication no
-AllowUsers tibero
+AllowUsers opensql
 ```
 
 ```
@@ -158,4 +158,4 @@ from="10.10.0.0/16,127.0.0.1" ssh-ed25519 AAAA... owldb-shared-key
 
 **주의**
 
-본 키는 반드시 DB 전용 OS 사용자(`tibero`)로만 사용하며, **root** 계정의 SSH 키로 절대 공용화하지 않습니다. 복구 작업 및 SCP가 root 권한을 필요로 하지 않도록 데이터 디렉터리 소유권을 사전에 정리합니다.
+본 키는 반드시 DB 전용 OS 사용자(`opensql`)로만 사용하며, **root** 계정의 SSH 키로 절대 공용화하지 않습니다. 복구 작업 및 SCP가 root 권한을 필요로 하지 않도록 데이터 디렉터리 소유권을 사전에 정리합니다.
