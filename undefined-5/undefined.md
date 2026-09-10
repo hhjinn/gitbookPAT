@@ -17,8 +17,8 @@ DB Type에 따라 모니터링 대상 리소스 계층이 다릅니다. Tibero�
 3. DB Select 트리에서 조회할 Service와 Instance를 선택합니다. OpenSQL은 Database 단위까지 선택할 수 있습니다.
 4. **(OpenSQL만 해당)** 필요에 따라 **Instance View** 또는 **Database View** 버튼을 클릭합니다.
 5. 탭(**Quick Insight** / **Load** / **I/O** / **Writes** / **All**)을 클릭하여 원하는 지표를 조회합니다.
-6. 필요한 경우 ⚙️ 아이콘을 클릭하여 자동 새로고침을 설정합니다.
-7. 데이터를 즉시 갱신하려면 🔃 아이콘을 클릭합니다.
+6. ⚙️ 아이콘을 클릭하여 자동 새로고침을 설정합니다.
+7. 🔃 아이콘을 클릭하여 데이터를 수동으로 갱신합니다.
 
 ### DB Type 및 리소스 선택
 
@@ -28,14 +28,14 @@ GNB의 DB Type 토글에서 **Tibero** 또는 **OpenSQL**을 선택하면, 해�
 {% tab title="Tibero" %}
 DB Select 트리는 **Service → Instance** 2단계 구조입니다. 전체 선택, Primary DB, Standby DB 단위로 선택할 수 있습니다.
 
-- Instance Alias는 최대 30자까지 표시되며, 초과 시 말줄임표(…)로 줄여서 표시합니다.
-- 정렬 순서: Service 생성일 최신순 → Instance Role (Primary → Standby(Read Only) → Standby(Recovery)) → 같은 역할 내 별칭 오름차순
+* Instance Alias는 최대 30자까지 표시되며, 초과 시 말줄임표(…)로 줄여서 표시합니다.
+* 정렬 순서: Service 생성일 최신순 → Instance Role (Primary → Standby(Read Only) → Standby(Recovery)) → 같은 역할 내 별칭 오름차순
 {% endtab %}
 {% tab title="OpenSQL" %}
 DB Select 트리는 **Service → Instance → Database** 3단계 구조입니다. Database 단위까지 선택할 수 있으며, Database를 선택하면 상위 Instance가 자동으로 포함됩니다.
 
-- Database를 일부만 선택하면 Instance View에서도 선택된 Database를 기준으로만 지표를 집계합니다.
-- Instance Alias와 Database 이름은 각각 최대 10자까지 표시되며, 초과 시 말줄임표(…)로 줄여서 표시합니다.
+* Database를 일부만 선택하면 Instance View에서도 선택된 Database를 기준으로만 지표를 집계합니다.
+* Instance Alias와 Database 이름은 각각 최대 10자까지 표시되며, 초과 시 말줄임표(…)로 줄여서 표시합니다.
 {% endtab %}
 {% endtabs %}
 
@@ -47,10 +47,10 @@ DB Select 트리는 **Service → Instance → Database** 3단계 구조입니�
 
 ### 상단 고정 지표
 
-DB Type에 관계없이 페이지 상단에 항상 표시되는 핵심 지표입니다. 현재 DB Type의 인스턴스 Health 상태(`Health(n)` `Available(n)` `Limited(n)` `Unavailable(n)` `In Progress(n)`)도 함께 표시됩니다.
+DB Type에 관계없이 페이지 상단에 항상 표시되는 핵심 지표입니다. 전체 인스턴스 Health 상태가 `Available(n)`, `Limited(n)`, `Unavailable(n)`, `In Progress(n)`으로 함께 표시됩니다.
 
-| 지표명 | 설명 |
-| --- | --- |
+| 지표명 | 설명  |
+|-----|-----|
 | CPU Usage (%) | CPU 사용률 |
 | Memory Usage (%) | 메모리 사용률 |
 | Active Session Count (CNT) | 현재 활성 중인 세션 수 |
@@ -60,8 +60,8 @@ DB Type에 관계없이 페이지 상단에 항상 표시되는 핵심 지표입
 
 페이지 진입 시 기본 탭은 **Quick Insight**입니다. 탭을 전환하면 해당 상황에 맞는 지표만 조회합니다.
 
-| 탭 | 확인 목적 |
-| --- | --- |
+| 탭   | 확인 목적 |
+|-----|-------|
 | Quick Insight | 전반적인 이상 징후를 빠르게 파악 |
 | Load | 세션·쿼리 부하 및 CPU/Memory 상승 원인 확인 |
 | I/O | 디스크 읽기·쓰기 활동량 및 응답 지연 원인 확인 |
@@ -76,8 +76,8 @@ DB Type에 관계없이 페이지 상단에 항상 표시되는 핵심 지표입
 {% tab title="Tibero" %}
 **Quick Insight**
 
-| 지표명 | 설명 |
-| --- | --- |
+| 지표명 | 설명  |
+|-----|-----|
 | Total Session Count (CNT) | 현재 연결된 전체 세션 수 |
 | Execute Count (CNT) | 단위 시간 내 실행된 쿼리 횟수 |
 | Buffer Cache Hit (%) | Logical Reads와 Physical Reads의 비율 |
@@ -87,8 +87,8 @@ DB Type에 관계없이 페이지 상단에 항상 표시되는 핵심 지표입
 
 **Load**
 
-| 지표명 | 설명 |
-| --- | --- |
+| 지표명 | 설명  |
+|-----|-----|
 | Total Session Count (CNT) | 현재 연결된 전체 세션 수 |
 | Execute Count (CNT) | 단위 시간 내 실행된 쿼리 횟수 |
 | Logical Reads (CNT) | 버퍼 캐시에서 데이터를 읽은 수 |
@@ -98,9 +98,9 @@ DB Type에 관계없이 페이지 상단에 항상 표시되는 핵심 지표입
 
 **I/O**
 
-| 지표명 | 설명 |
-| --- | --- |
-| Physical Reads (CNT) | 디스크에서 데이터를 읽은 수 |
+| 지표명 | 설명  |
+|-----|-----|
+| Physical Reads (CNT) | 디스크에서 직접 읽은 페이지 수 |
 | Disk Read Rate (MB/s) | 단위 시간 당 디스크에서 읽기 요청을 처리한 데이터 양 |
 | Disk Write Rate (MB/s) | 단위 시간 당 디스크에서 쓰기 요청을 처리한 데이터 양 |
 | Multi Block Disk Read (block/s) | 단위 시간 내 멀티 블록 디스크 읽기 블록 수(초당) |
@@ -108,18 +108,20 @@ DB Type에 관계없이 페이지 상단에 항상 표시되는 핵심 지표입
 
 **Writes**
 
-| 지표명 | 설명 |
-| --- | --- |
+| 지표명 | 설명  |
+|-----|-----|
 | Execute Count (CNT) | 단위 시간 내 실행된 쿼리 횟수 |
 | Redo Entries (CNT) | 로그 버퍼에 기록된 Redo 레코드 수 |
 | Redo Log Rate (MB/s) | 단위 시간 당 Redo Log에 기록된 데이터 양 |
 | User Rollbacks (CNT) | 단위 시간 내 롤백된 트랜잭션 수 |
+
 {% endtab %}
 {% tab title="OpenSQL" %}
+
 **Quick Insight**
 
-| 지표명 | 설명 |
-| --- | --- |
+| 지표명 | 설명  |
+|-----|-----|
 | Total Session Count (CNT) | 현재 연결된 전체 세션 수 |
 | Execute Count (CNT) | 단위 시간 내 실행된 쿼리 횟수 |
 | Buffer Cache Hit (%) | Logical Reads와 Physical Reads의 비율 |
@@ -129,8 +131,8 @@ DB Type에 관계없이 페이지 상단에 항상 표시되는 핵심 지표입
 
 **Load**
 
-| 지표명 | 설명 |
-| --- | --- |
+| 지표명 | 설명  |
+|-----|-----|
 | Total Session Count (CNT) | 현재 연결된 전체 세션 수 |
 | Execute Count (CNT) | 단위 시간 내 실행된 쿼리 횟수 |
 | Logical Reads (CNT) | 버퍼 캐시에서 데이터를 읽은 수 |
@@ -140,9 +142,9 @@ DB Type에 관계없이 페이지 상단에 항상 표시되는 핵심 지표입
 
 **I/O**
 
-| 지표명 | 설명 |
-| --- | --- |
-| Physical Reads (CNT) | 디스크에서 데이터를 읽은 수 |
+| 지표명 | 설명  |
+|-----|-----|
+| Physical Reads (CNT) | 디스크에서 직접 읽은 페이지 수 |
 | Disk Read Rate (MB/s) | 단위 시간 당 디스크에서 읽기 요청을 처리한 데이터 양 |
 | Disk Write Rate (MB/s) | 단위 시간 당 디스크에서 쓰기 요청을 처리한 데이터 양 |
 | Block Read Latency (ms/block) | 데이터 블록 1개를 읽는 데 소요된 평균 시간 |
@@ -150,12 +152,13 @@ DB Type에 관계없이 페이지 상단에 항상 표시되는 핵심 지표입
 
 **Writes**
 
-| 지표명 | 설명 |
-| --- | --- |
+| 지표명 | 설명  |
+|-----|-----|
 | Execute Count (CNT) | 단위 시간 내 실행된 쿼리 횟수 |
 | Transactions (CNT) | 단위 시간 내 완료된 트랜잭션 수 |
 | WAL Rate (MB/s) | 단위 시간 당 WAL Log에 기록된 데이터 양 |
 | Rollbacks (CNT) | 단위 시간 내 롤백된 트랜잭션 수 |
+
 {% endtab %}
 {% endtabs %}
 
@@ -163,8 +166,8 @@ DB Type에 관계없이 페이지 상단에 항상 표시되는 핵심 지표입
 
 OpenSQL을 선택한 경우, 화면에 **Instance View**와 **Database View** 전환 버튼이 추가로 표시됩니다.
 
-| View | 설명 |
-| --- | --- |
+| View | 설명  |
+|------|-----|
 | Instance View (기본값) | - 선택한 Database의 지표를 합산 또는 평균하여 Instance 단위로 표시<br>- DB Select 트리는 2단계로 표시 |
 | Database View | - 선택한 Database별로 지표를 분리하여 표시<br>- DB Select 트리는 3단계로 전환 |
 
