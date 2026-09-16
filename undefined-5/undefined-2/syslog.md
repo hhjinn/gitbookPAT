@@ -1,8 +1,6 @@
-# Syslog
-
 Syslog 페이지에서는 DB 인스턴스에서 발생하는 이벤트, 경고, 오류 등의 시스템 로그를 조회합니다. Tibero는 DB 탭에서 원문 로그를 확인하고, OpenSQL은 DB 탭 외에 Component 탭을 통해 OpenHA·OpenProxy·OpenBackup 컴포넌트의 로그 파일 목록 조회 및 다운로드를 지원합니다.
 
-### DB Syslog 조회
+## DB Syslog 조회
 
 **모니터링 > 로그 모니터링 > Syslog** 페이지에서는 시스템에서 발생하는 이벤트, 경고, 오류 등의 시스템 로그를 확인합니다. 페이지 진입 시 DB 탭이 기본으로 활성화되며, 로그는 줄(라인) 단위로 표시됩니다. 각 행 좌측에 행 번호가 표시되고, 본문 영역에는 로그 원문이 그대로 나타납니다.
 
@@ -15,7 +13,7 @@ DB Syslog는 최근 7일 이내의 데이터만 조회할 수 있습니다. 7일
 {% hint style="info" %}
 **참고**
 
-등록을 통해 추가한 OpenSQL DB Service는 초기 등록 시 사용되는 `owl.env`의 `DB_LOG_DIR`를 OpenSQL DB 로그 폴더로 지정하지 않았을 경우 DB Syslog가 정상적으로 동작하지 않을 수 있습니다. 자세한 내용은 [등록 매뉴얼](https://outline.tibero.com/doc/db-6OChcUO1K6)을 참고해주세요.
+등록을 통해 추가한 OpenSQL DB Service는 초기 등록 시 사용되는 `owl.env`의 `DB_LOG_DIR`를 OpenSQL DB 로그 폴더로 지정하지 않았을 경우 DB Syslog가 정상적으로 동작하지 않을 수 있습니다. 자세한 내용은 [등록 매뉴얼](../../undefined/undefined-1/opensql/db-1.md)을 참고해주세요.
 {% endhint %}
 
 {% hint style="warning" %}
@@ -26,15 +24,15 @@ DB Service가 `Terminating` 상태이면 Syslog를 조회할 수 없습니다. �
 
 1. **모니터링 > 로그 모니터링 > Syslog**를 클릭합니다.
 2. 조회 기간 드롭다운에서 원하는 기간을 선택합니다.
-3. **\[OpenSQL]** 로그 레벨 드롭다운에서 확인할 로그 유형을 선택합니다.
+3. **\[OpenSQL\]** 로그 레벨 드롭다운에서 확인할 로그 유형을 선택합니다.
 4. 필요에 따라 검색어를 입력합니다.
 5. 필요에 따라 정렬 순서를 변경합니다.
 6. 목록에서 로그 내용을 확인합니다.
 7. 최신 데이터로 갱신하려면 새로고침 아이콘을 클릭합니다.
 
-***
+---
 
-### 컴포넌트 로그 목록 조회
+## 컴포넌트 로그 목록 조회
 
 {% hint style="info" %}
 **참고**
@@ -44,7 +42,12 @@ DB Service가 `Terminating` 상태이면 Syslog를 조회할 수 없습니다. �
 
 OpenSQL DB Service에서는 Syslog 페이지의 **Component** 탭에서 OpenHA, OpenProxy, OpenBackup 컴포넌트의 로그 파일 목록을 조회합니다.
 
-<table><thead><tr><th width="254">항목</th><th>설명</th></tr></thead><tbody><tr><td>컴포넌트명</td><td>로그 파일이 속한 컴포넌트(OpenHA / OpenProxy / OpenBackup)</td></tr><tr><td>파일명</td><td>컴포넌트에서 생성된 원본 로그 파일명 (예: <code>patroni.log</code>)</td></tr><tr><td>마지막 업데이트 일시</td><td>로그 파일의 최종 수정 시각 (yyyy.mm.dd HH:1f1f2-1f1f2:ss)</td></tr><tr><td>파일 크기(MB)</td><td>로그 파일의 크기</td></tr></tbody></table>
+| 항목  | 설명  |
+|-----|-----|
+| 컴포넌트명 | 로그 파일이 속한 컴포넌트(OpenHA / OpenProxy / OpenBackup) |
+| 파일명 | 컴포넌트에서 생성된 원본 로그 파일명 (예: `patroni.log`) |
+| 마지막 업데이트 일시 | 로그 파일의 최종 수정 시각 (yyyy.mm.dd HH:mm:ss) |
+| 파일 크기(MB) | 로그 파일의 크기 |
 
 {% hint style="info" %}
 **참고**
@@ -63,9 +66,9 @@ OpenSQL DB Service에서는 Syslog 페이지의 **Component** 탭에서 OpenHA, 
 3. 컴포넌트명 필터를 선택해 목록을 좁힙니다.
 4. 목록에서 로그 파일의 이름, 업데이트 일시, 크기를 확인합니다.
 
-***
+---
 
-### 컴포넌트 로그 다운로드
+## 컴포넌트 로그 다운로드
 
 {% hint style="info" %}
 **참고**
@@ -75,10 +78,10 @@ OpenSQL DB Service에서는 Syslog 페이지의 **Component** 탭에서 OpenHA, 
 
 **Component** 탭에서 로그 파일을 선택한 뒤 **다운로드** 버튼을 클릭하면 확인 모달이 나타납니다. 선택한 파일 수에 따라 모달 내용과 다운로드 방식이 달라집니다.
 
-| 선택 파일 수 | 다운로드 방식                                        | 모달 표시 정보                                                |
-| ------- | ---------------------------------------------- | ------------------------------------------------------- |
-| 1개      | 원본 파일명 그대로 단일 파일 다운로드                          | <p>- 컴포넌트명<br>- 파일명<br>- 마지막 업데이트 일시<br>- 파일 크기(MB)</p> |
-| 2개 이상   | `component_syslog_yymmdd.zip` 형식의 ZIP 파일로 다운로드 | <p>- 선택 파일 수<br>- 다운로드 파일명</p>                          |
+| 선택 파일 수 | 다운로드 방식 | 모달 표시 정보 |
+|---------|---------|----------|
+| 1개      | 원본 파일명 그대로 단일 파일 다운로드 | - 컴포넌트명<br>- 파일명<br>- 마지막 업데이트 일시<br>- 파일 크기(MB) |
+| 2개 이상   | `component_syslog_yymmdd.zip` 형식의 ZIP 파일로 다운로드 | - 선택 파일 수<br>- 다운로드 파일명 |
 
 ZIP 파일명의 `yymmdd`는 다운로드를 요청한 날짜를 의미합니다.
 

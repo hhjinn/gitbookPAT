@@ -1,6 +1,6 @@
 # Table of contents
 
-* [서비스 개요](README.md)
+* [서비스 개요](readme.md)
 * [설치 가이드](undefined/README.md)
   * [설치 소개](undefined/undefined.md)
   * [OwlDB 서버 준비 및 설치](undefined/owldb/README.md)
@@ -24,10 +24,10 @@
   * [계정 생성 요청](undefined-2/undefined-1.md)
   * [콘솔 화면 구성 안내](undefined-2/undefined-2.md)
 * [대시보드](undefined-3/README.md)
-  * [DB 서비스 탐색](undefined-3/db/README.md)
+  * [DB Service 탐색](undefined-3/db/README.md)
     * [DB 서비스 등록](undefined-3/db/db-1.md)
     * [DB 서비스 변경 감지](undefined-3/db/db.md)
-  * [DB 서비스 설치](undefined-3/db-1.md)
+  * [DB Service 설치](undefined-3/db-1.md)
   * [데이터베이스 재시작](undefined-3/undefined-1.md)
   * [작업](undefined-3/undefined.md)
 * [관리](undefined-4/README.md)
