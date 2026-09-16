@@ -25,8 +25,8 @@ Tibero는 DB 파라미터 목록을 바로 표시합니다. OpenSQL(Azure)은 **
 {% hint style="info" %}
 **참고**
 
-- 인스턴스 상태가 `Unavailable`인 경우, 현재값은 표시되지 않으며 Config 값이 대신 표시됩니다.
-- OpenSQL **OpenHA** 탭에서 `pg_hba`와 `slot` 파라미터는 조회하거나 수정할 수 없습니다. 해당 파라미터는 **연결 정보 관리** 메뉴에서만 설정합니다.
+* 인스턴스 상태가 `Unavailable`인 경우, 현재값은 표시되지 않으며 Config 값이 대신 표시됩니다.
+* OpenSQL **OpenHA** 탭에서 `pg_hba`와 `slot` 파라미터는 조회하거나 수정할 수 없습니다. 해당 파라미터는 **연결 정보 관리** 메뉴에서만 설정합니다.
 {% endhint %}
 
 # 파라미터 수정
@@ -36,8 +36,8 @@ Tibero는 DB 파라미터 목록을 바로 표시합니다. OpenSQL(Azure)은 **
 {% hint style="warning" %}
 **주의**
 
-- 수정 모드에서 저장하지 않고 화면을 벗어나면 변경 사항이 저장되지 않습니다.
-- 수정 중임을 알리는 배너가 화면 상단에 표시됩니다.
+* 수정 모드에서 저장하지 않고 화면을 벗어나면 변경 사항이 저장되지 않습니다.
+* 수정 중임을 알리는 배너가 화면 상단에 표시됩니다.
 {% endhint %}
 
 {% hint style="info" %}
@@ -88,9 +88,9 @@ Tibero 다중 노드 구성에서 글로벌 파라미터는 수정할 수 없습
 
 OpenHA 파라미터는 수정 시 유효성 검사를 하지 않습니다. 잘못된 값을 입력해도 오류 없이 저장되므로, 수정 후에는 OpenHA 로그를 확인하세요. `[ERROR]` 로그에는 스택 트레이스가 함께 남습니다.
 
-- `[WARNING]: Violated the rule "loop_wait + 2*retry_timeout <= ttl"` — 값 조합이 제약을 위반해 Patroni가 값을 자동으로 조정합니다. 조정된 값을 확인하고 의도한 값으로 다시 설정하세요.
-- `[ERROR]: Exception when setting dynamic_configuration` — `ttl` 처럼 숫자여야 하는 항목에 변환할 수 없는 값이 들어갔습니다. 입력 값을 확인하고 다시 설정하세요.
-- `[ERROR]: Unexpected exception raised, please report it as a BUG` — `maximum_lag_on_failover`처럼 저장 시점에는 걸러지지 않는 값이 실제 동작 시점에 예외를 일으켰습니다. 값을 확인하고 다시 설정하세요.
+* `[WARNING]: Violated the rule "loop_wait + 2*retry_timeout <= ttl"` — 값 조합이 제약을 위반해 Patroni가 값을 자동으로 조정합니다. 조정된 값을 확인하고 의도한 값으로 다시 설정하세요.
+* `[ERROR]: Exception when setting dynamic_configuration` — `ttl` 처럼 숫자여야 하는 항목에 변환할 수 없는 값이 들어갔습니다. 입력 값을 확인하고 다시 설정하세요.
+* `[ERROR]: Unexpected exception raised, please report it as a BUG` — `maximum_lag_on_failover`처럼 저장 시점에는 걸러지지 않는 값이 실제 동작 시점에 예외를 일으켰습니다. 값을 확인하고 다시 설정하세요.
 {% endhint %}
 
 ## 템플릿 불러오기
@@ -121,8 +121,8 @@ Tibero 파라미터 수정 모드에서 미리 저장된 파라미터 템플릿�
 파라미터 템플릿은 Tibero 엔진에서만 사용할 수 있습니다. OpenSQL 엔진을 사용하는 경우 파라미터 템플릿 메뉴가 표시되지 않습니다.
 {% endhint %}
 
-| 템플릿 | 설명 |
-| --- | --- |
+| 템플릿 | 설명  |
+|-----|-----|
 | OLAP | 대규모 데이터 분석과 복잡한 쿼리에 최적화된 템플릿 |
 | OLTP | 빠른 처리 속도와 높은 트랜잭션 빈도를 처리하기 위해 설계된 템플릿 |
 

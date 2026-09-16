@@ -8,16 +8,16 @@ OwlDB는 DR(또는 HA)로 구성된 Primary 데이터베이스의 상태를 지�
 
 ## 단계별 알림 정책
 
-<table data-full-width="true"><thead><tr><th>구분</th><th>Standby/Replica 승격</th><th>구성 정상화</th></tr></thead><tbody><tr><td>수행 시점</td><td>장애 감지 직후</td><td>Standby/Replica 승격 이후</td></tr><tr><td>알림</td><td>시작 / 요청 실패 / 완료 / 실패</td><td>완료 / 실패</td></tr><tr><td>전환 이력 관리</td><td>승격 성공 여부를 결과 컬럼에 표시<ul><li>성공 / 실패</li><li>Standby/Replica가 승격하여 새로운 Primary/Leader가 된 것을 기준으로 성공 여부를 정의</li></ul></td><td>원인/비고 컬럼에 표시<ul><li>전체 성공 시 빈칸</li><li><strong>승격 실패</strong>: Standby Promotion Failed</li><li><strong>승격 성공 후 구성 정상화 실패</strong>: Cluster Normalization Failed — Primary scale out failed 또는 New standby/replica creation failed</li></ul>(둘 다 실패하면 콤마로 표시)</td></tr></tbody></table>
+<table data-full-width="true"><thead><tr><th>구분</th><th>Standby/Replica 승격</th><th>구성 정상화</th></tr></thead><tbody><tr><td>수행 시점</td><td>장애 감지 직후</td><td>Standby/Replica 승격 이후</td></tr><tr><td>알림</td><td>시작 / 요청 실패 / 완료 / 실패</td><td>완료 / 실패</td></tr><tr><td>전환 이력 관리</td><td>승격 성공 여부를 결과 컬럼에 표시<ul><li>성공 / 실패</li><li>Standby/Replica가 승격하여 새로운 Primary/Leader가 된 것을 기준으로 성공 여부를 정의</li></ul></td><td>원인/비고 컬럼에 표시<ul><li>전체 성공 시 빈칸</li><li><strong>승격 실패</strong>: Standby Promotion Failed</li><li><strong>승격 성공 후 구성 정상화 실패</strong>: Cluster Normalization Failed — Primary scale out failed 또는 New standby/replica creation failed(둘 다 실패하면 콤마로 표시)</li></ul></td></tr></tbody></table>
 
 ## 장애 조치 자동화 단계별 동작 요약
 
 | 자동화 레벨 | 자동 Failover | 자동 구성 정상화 | 추가 동작 |
-| --- | --- | --- | --- |
-| 0단계 (**수동**) | ❌ | ❌ | 사용자가 `역할전환` 버튼으로 직접 승격 및 정상화 수행 |
-| 1단계 (**자동 장애 조치**) | ✓ | △ TAC 구성은 Scale-Out으로 노드 수를 복구하지만, 신규 Standby/Replica는 생성하지 않아 DR은 복구되지 않습니다(`Degraded`). | old Primary/Leader를 `retired` 처리 |
-| 2단계 (**자동 구성 복구**) | — | — | 현재 미지원 (OwlDB v1.3 기준) |
-| 3단계 (**완전 자동화**) | ✓ | ✓ old Primary/Leader 역동기화 및 신규 Standby/Replica 자동 생성 | 없음 |
+|--------|-------------|-----------|-------|
+| 0단계 (**수동**) | ❌           | ❌         | 사용자가 `역할전환` 버튼으로 직접 승격 및 정상화 수행 |
+| 1단계 (**자동 장애 조치**) | ✓           | △ TAC 구성은 Scale-Out으로 노드 수를 복구하지만, 신규 Standby/Replica는 생성하지 않아 DR은 복구되지 않습니다(`Degraded`). | old Primary/Leader를 `retired` 처리 |
+| 2단계 (**자동 구성 복구**) | —           | —         | 현재 미지원 (OwlDB v1.3 기준) |
+| 3단계 (**완전 자동화**) | ✓           | ✓ old Primary/Leader 역동기화 및 신규 Standby/Replica 자동 생성 | 없음    |
 
 {% hint style="info" %}
 **참고**
@@ -42,18 +42,18 @@ OwlDB는 DR(또는 HA)로 구성된 Primary 데이터베이스의 상태를 지�
 엔진과 토폴로지에 따라 제공되는 자동화 레벨이 다릅니다.
 
 | 자동화 레벨 | Tibero Single + DR | Tibero TAC + DR | OpenSQL HA |
-| --- | --- | --- | --- |
-| 0단계 (**수동**) | ✓ | ✓ | ✓ |
-| 1단계 (**자동 장애 조치**) | ✓ | ✓ | — |
-| 2단계 (**자동 구성 복구**) | — | — | — |
-| 3단계 (**완전 자동화**) | ✓ | — | ✓ |
+|--------|--------------------|-----------------|------------|
+| 0단계 (**수동**) | ✓                  | ✓               | ✓          |
+| 1단계 (**자동 장애 조치**) | ✓                  | ✓               | —          |
+| 2단계 (**자동 구성 복구**) | —                  | —               | —          |
+| 3단계 (**완전 자동화**) | ✓                  | —               | ✓          |
 
 {% hint style="info" %}
 **참고**
 
-- **1단계(자동 장애 조치)** 는 Tibero(Single+DR, TAC+DR)에서만 제공되며, OpenSQL은 지원하지 않습니다.
-- **3단계(완전 자동화)** 는 Tibero Single+DR과 OpenSQL HA에서 제공되며, **Tibero TAC+DR은 지원하지 않습니다.**
-- **2단계(자동 구성 복구)** 는 현재 어떤 토폴로지에서도 제공되지 않습니다.
+* **1단계(자동 장애 조치)** 는 Tibero(Single+DR, TAC+DR)에서만 제공되며, OpenSQL은 지원하지 않습니다.
+* **3단계(완전 자동화)** 는 Tibero Single+DR과 OpenSQL HA에서 제공되며, **Tibero TAC+DR은 지원하지 않습니다.**
+* **2단계(자동 구성 복구)** 는 현재 어떤 토폴로지에서도 제공되지 않습니다.
 {% endhint %}
 
 ## 자동화 단계별 상세 시나리오
