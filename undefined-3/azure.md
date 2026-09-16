@@ -49,6 +49,8 @@ OwlDB에서 데이터베이스를 생성(이하 프로비저닝)하는 방법을
 | Node Count\* | 클러스터 구성 노드 수<br>-**Tibero**: Single 1개 (고정), TAC 2\~4개 중 선택<br>-**OpenSQL**: Single, HA 모두 1개로 고정 |
 | PostgreSQL Version | OpenSQL 선택 시 사용할 PostgreSQL 버전<br>- 3.16.12.5 (기본값)<br>- 3.17.8.5 |
 
+*표기는 필수 입력 항목을 의미합니다.
+
 {% hint style="info" %}
 **참고**
 
@@ -66,6 +68,8 @@ OwlDB에서 데이터베이스를 생성(이하 프로비저닝)하는 방법을
 | Standby Mode\* | Standby Mode 옵션 (Tibero 엔진에서만 노출되며, Standby 노드별로 개별 설정 가능)<br>-**Recovery**<br>-**Read Only** |
 | Log Replication Type | Primary(Leader)의 로그를 Standby(Replica)에 전송하는 방식<br>-**LGWR ASYNC**: 트랜잭션이 발생하면 실시간으로 생성되는 Redo log를 곧바로 전송하는 복제 모드<br>-**ARCH ASYNC**: 로그 스위치가 일어난 뒤, 아카이브 로그 파일이 생성되면 그 파일을 모아서 전송하는 복제 모드<br>- OpenSQL 엔진은**ASYNC 방식**으로 고정되며 수정할 수 없음. |
 
+*표기는 필수 입력 항목을 의미합니다.
+
 {% hint style="info" %}
 **참고**
 
@@ -82,6 +86,8 @@ OwlDB에서 데이터베이스를 생성(이하 프로비저닝)하는 방법을
 | OwlDB Availability Zone(AZ)\* (disabled) | OwlDB의 가용 영역 |
 | Primary(Leader) DB Availability Zone(AZ)\* | Primary(Leader) DB의 가용 영역<br>**기본값**<br>- DR 사용 안함 : OwlDB와 같은 영역<br>- DR 사용 : OwlDB와 다른 영역 |
 | Standby(Replica) DB Availability Zone(AZ)\* | Standby(Replica) DB의 가용 영역<br>- 기본값 : OwlDB와 같은 가용 영역에 배치, 이후 다른 영역에 자동 배치 |
+
+*표기는 필수 입력 항목을 의미합니다.
 
 {% hint style="info" %}
 **참고**

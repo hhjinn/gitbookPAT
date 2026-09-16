@@ -27,6 +27,8 @@
 | Stopping | Running 상태에서 Stopped로 전환 중 (C트랜잭션 롤백 및 프로세스 정지 후 VM 중지 전환) |
 | Stopped | 모든 리소스를 일시적으로 사용하지 않음 (리소스 비활성화) |
 | Terminating | 모든 리소스와 데이터를 영구적으로 삭제 중 (완료 시 접근 및 복구 불가) |
+
+*표기는 필수 입력 항목을 의미합니다.
 {% endtab %}
 
 {% tab title="Health" %}
