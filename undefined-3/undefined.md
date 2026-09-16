@@ -43,7 +43,7 @@ DB Service를 중지해도 프로비저닝된 스토리지에 대한 비용은 �
 
 ---
 
-# 역할 전환 (Switchover)
+# [역할 전환](#switchover) (Switchover)
 
 DR 구성 시에만 활성화되는 기능입니다.
 

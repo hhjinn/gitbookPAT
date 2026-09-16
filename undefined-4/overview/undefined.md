@@ -29,7 +29,7 @@ AWS 환경에서는 Tibero 엔진에서만 역할 전환을 지원합니다. Azu
 {% hint style="warning" %}
 **주의**
 
-- 현재 Primary DB의 Health가 `In Progress` 상태이거나, 모든 Standby DB가 `Unavailable` 또는 `In Progress` 상태인 경우에는 역할 전환을 수행할 수 없습니다.
-- `Available` 상태가 아닌 Standby DB는 새로운 Primary DB 선택 목록에서 선택할 수 없습니다.
-- 역할 전환 완료 후 "구성 정상화 실패" 알림을 수신한 경우, 고가용성 및 DR 유지를 위해 수동 조치가 필요합니다.
+* 현재 Primary DB의 Health가 `In Progress` 상태이거나, 모든 Standby DB가 `Unavailable` 또는 `In Progress` 상태인 경우에는 역할 전환을 수행할 수 없습니다.
+* `Available` 상태가 아닌 Standby DB는 새로운 Primary DB 선택 목록에서 선택할 수 없습니다.
+* 역할 전환 완료 후 "구성 정상화 실패" 알림을 수신한 경우, 고가용성 및 DR 유지를 위해 수동 조치가 필요합니다.
 {% endhint %}
