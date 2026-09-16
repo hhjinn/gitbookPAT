@@ -16,20 +16,19 @@ OwlDB는 두 환경에서 보편적으로 사용되는 공통 관리 기능을 �
 
 **공통 기능**
 
-<table><thead><tr><th>FJyEqT6nWKCW</th><th>DreMQCgPHi6E</th></tr></thead><tbody><tr><td><strong>기능</strong></td><td><strong>설명</strong></td></tr><tr><td><strong>데이터베이스 상태 조회</strong></td><td>데이터베이스·인스턴스 가동 상태 실시간 확인</td></tr><tr><td><strong>모니터링 & 알림</strong></td><td><ul><li>핵심 성능 지표·운영 상태 감시</li><li>이상 징후·이벤트 발생 시 즉시 알림 발송</li></ul></td></tr><tr><td><strong>마이그레이션</strong></td><td>이종 데이터베이스 전환 시 사전 호환성 검증 및 가이드 기반 마이그레이션 지원</td></tr><tr><td><strong>계정 관리 (RBAC)</strong></td><td>역할 기반 접근 제어를 통한 사용자별 권한 분리·보안 관리</td></tr></tbody></table>
+<table><thead><tr><th><strong>기능</strong></th><th><strong>설명</strong></th></tr></thead><tbody><tr><td><strong>데이터베이스 상태 조회</strong></td><td>데이터베이스·인스턴스 가동 상태 실시간 확인</td></tr><tr><td><strong>모니터링 & 알림</strong></td><td><ul><li>핵심 성능 지표·운영 상태 감시</li><li>이상 징후·이벤트 발생 시 즉시 알림 발송</li></ul></td></tr><tr><td><strong>마이그레이션</strong></td><td>이종 데이터베이스 전환 시 사전 호환성 검증 및 가이드 기반 마이그레이션 지원</td></tr><tr><td><strong>계정 관리 (RBAC)</strong></td><td>역할 기반 접근 제어를 통한 사용자별 권한 분리·보안 관리</td></tr></tbody></table>
 
 {% tabs %}
 {% tab title="클라우드 특화" %}
-| Z54a8L8JFi3W | VVmnKms7yuSq |
-|--------------|--------------|
-| **기능**       | **설명**       |
+| **기능** | **설명** |
+|-----|-----|
 | **자동화된 프로비저닝** | 클라우드 자원 생성부터 데이터베이스 아키텍처 구성까지 전 과정 자동화 |
 | **리소스 확장/변경** | 워크로드 증감에 맞춘 인스턴스 사양·스토리지 확장 및 변경 |
 | **클라우드 스냅샷 백업** | CSP 스냅샷 기능 연동 기반 백업·복구 |
 {% endtab %}
 
 {% tab title="온프레미스 특화" %}
-<table><thead><tr><th>4YMtHXmjX7X3</th><th>JBY3GLkTJfNC</th></tr></thead><tbody><tr><td><strong>기능</strong></td><td><strong>설명</strong></td></tr><tr><td><strong>데이터베이스 설치/등록</strong></td><td><ul><li>고객 호스트에 신규 DB 원격 배포</li><li>기존 운영 중인 외부 DB 관리 대상 등록</li></ul></td></tr><tr><td><strong>인프라 자원 탐색</strong></td><td>Agent를 통한 하드웨어 스펙·구성 정보 자동 수집 및 현황 파악</td></tr><tr><td><strong>물리 백업/복구</strong></td><td>데이터베이스 자체 유틸리티(Tibero RMGR 등) 기반 백업·복구</td></tr></tbody></table>
+<table><thead><tr><th><strong>기능</strong></th><th><strong>설명</strong></th></tr></thead><tbody><tr><td><strong>데이터베이스 설치/등록</strong></td><td><ul><li>고객 호스트에 신규 DB 원격 배포</li><li>기존 운영 중인 외부 DB 관리 대상 등록</li></ul></td></tr><tr><td><strong>인프라 자원 탐색</strong></td><td>Agent를 통한 하드웨어 스펙·구성 정보 자동 수집 및 현황 파악</td></tr><tr><td><strong>물리 백업/복구</strong></td><td>데이터베이스 자체 유틸리티(Tibero RMGR 등) 기반 백업·복구</td></tr></tbody></table>
 {% endtab %}
 {% endtabs %}
 
