@@ -24,8 +24,8 @@
 OwlDB 서비스 리소스는 Azure 시스템이 자동으로 생성하는 별도의 리소스 그룹에 배포되고, Publisher(운영자)에 의해 관리됩니다.
 {% endhint %}
 
-| 항목  | 설명  |
-|-----|-----|
+| 항목 | 설명 |
+| --- | --- |
 | Subscription | - **Azure 구독 계정**<br>- 모든 리소스의 집합으로, 구독의 모든 리소스는 함께 청구됨 |
 | Resource Group | - **Azure 리소스 그룹**<br>- 동일한 수명 주기, 권한 및 정책을 공유하는 리소스 모음 |
 
@@ -33,11 +33,11 @@ OwlDB 서비스 리소스는 Azure 시스템이 자동으로 생성하는 별도
 
 OwlDB 배포를 위한 ARM(Azure Resource Manager) Template의 파라미터를 직접 지정합니다.
 
-| 항목  | 설명  | 비고  |
-|-----|-----|-----|
+| 항목 | 설명 | 비고 |
+| --- | --- | --- |
 | Region | OwlDB를 배포할 리전 | 제공 리전 확인 |
 | Project Name | 배포하고자 하는 프로젝트의 이름 | 사용 중인 프로젝트 이름과 중복 사용 불가 |
-| Vnet CIDR | 신규로 생성할 VNet의 IP 주소 범위(CIDR block) | -   |
+| Vnet CIDR | 신규로 생성할 VNet의 IP 주소 범위(CIDR block) | - |
 | Availability Zone | 인프라 리소스를 배포할 대상 가용 영역(Availability Zone) | 선택한 리전(Region) 내 AZ |
 | Public Subnet CIDR | - 지정한 VNet 내에서 사용할 Public Subnet의 CIDR 범위<br>- Public Subnet : 인터넷 게이트웨이를 통해 외부 통신이 가능한 네트워크 | VNet CIDR에 포함되는 범위여야 함 |
 | App Gateway Subnet CIDR | 지정한 VNet 내에서 사용할 Azure Application Gateway의 CIDR 범위 | - VNet CIDR에 포함되는 범위여야 함<br>- Public Subnet CIDR와 달라야 함 |
@@ -50,8 +50,8 @@ OwlDB 배포를 위한 ARM(Azure Resource Manager) Template의 파라미터를 �
 
 애플리케이션의 고유 식별자와 리소스 관리를 위한 리소스 그룹을 지정합니다.
 
-| 항목  | 설명  |
-|-----|-----|
+| 항목 | 설명 |
+| --- | --- |
 | Application Name | 애플리케이션 고유 식별자 |
 | Managed Resource Group | 리소스 관리를 위한 그룹 |
 
@@ -96,5 +96,5 @@ OwlDB 접속 URL은 `https://<sub-domain>.owl-db.com` 형식이며, `<sub-domain
 
 고객별 고유한 도메인값은 다음 방법으로 확인합니다.
 
-* **Azure 포털 > OwlDB 리소스 그룹 > Settings - Deployments > OwlDB에 해당하는 Deployment > Outputs > Sub Domain Name**에서 확인합니다.
-* **DNS zones** 서비스의 리소스 중 OwlDB에 해당하는 호스팅 영역 이름을 참조합니다.
+- **Azure 포털 > OwlDB 리소스 그룹 > Settings - Deployments > OwlDB에 해당하는 Deployment > Outputs > Sub Domain Name**에서 확인합니다.
+- **DNS zones** 서비스의 리소스 중 OwlDB에 해당하는 호스팅 영역 이름을 참조합니다.

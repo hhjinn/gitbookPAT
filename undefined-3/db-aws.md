@@ -18,7 +18,7 @@ AWS 환경에서는 데이터베이스 생성 페이지에 진입하면 사용�
 
 # 새로운 DB Service 생성
 
-1. **OwlDB 콘솔 화면** > **대시보드** 메뉴로 이동합니다.
+1. **OwlDB 콘솔 화면 > 대시보드** 메뉴로 이동합니다.
 2. **생성** 버튼을 클릭합니다.
 3. **엔진 옵션** 단계에서 데이터베이스 엔진 및 라이선스 관련 정보를 선택합니다.
 4. **DR 구성** 단계에서 DR 사용 여부와 관련 옵션을 설정합니다.
@@ -33,8 +33,7 @@ AWS 환경에서는 데이터베이스 생성 페이지에 진입하면 사용�
 {% hint style="info" %}
 **참고**
 
-* **OwlDB 콘솔 화면 > 대시보드 > 카드뷰 > + 아이콘** 또는 **GNB > DB Alias 드롭다운 > DB Service 생성 버튼**을 클릭하여 데이터베이스 생성 페이지로 이동할 수 있습니다.
-* Azure 환경에서는 라이선스 옵션이 BYOL(Bring Your Own License)로 고정되어 있어, 데이터베이스 생성을 완료하려면 보유한 라이선스 파일을 등록해야 합니다. 자세한 내용은 [BYOL 라이선스 등록](#byol-%EB%9D%BC%EC%9D%B4%EC%84%A0%EC%8A%A4-%EB%93%B1%EB%A1%9D)을 참고하시기 바랍니다.
+License Option을 BYOL로 선택한 경우 라이선스 파일 등록이 필요합니다. 자세한 내용은 [BYOL 라이선스 등록](#byol-%EB%9D%BC%EC%9D%B4%EC%84%A0%EC%8A%A4-%EB%93%B1%EB%A1%9D)을 참고하세요.
 {% endhint %}
 
 ---
@@ -48,12 +47,11 @@ AWS 환경에서는 데이터베이스 생성 페이지에 진입하면 사용�
 | 항목  | 설명  |
 |-----|-----|
 | DB Service Name\* | DB Service를 식별하기 위한 이름<br>- OwlDB 계정 내 중복 사용 불가<br>- 6\~30자 이내, 영어 대소문자(a-z, A-Z), 숫자(0-9), 하이픈(-)만 사용 가능, 공백 사용 불가 |
-| Database Engine Type\* | 사용할 데이터베이스 엔진<br>-**Tibero**<br>-**OpenSQL** |
-| License Option\* | 사용할 라이선스 옵션<br>-**LI**(License Included)<br>-**BYOL** (Bring Your Own License) |
-| Topology\* | 데이터베이스 구조를 결정할 토폴로지 유형<br>-**Tibero**: Single, TAC<br>-**OpenSQL**: Single, HA |
-| Edition\* | 라이선스의 에디션<br>-**Standard Edition (SE)**: 단일 서버 구성 전용, 최대 8vCPU까지 사용 가능<br>-**Enterprise Edition (EE)**: 고가용성 및 대규모 구성 지원, vCPU 제한 없음<br>- Topology를 TAC 또는 HA로 선택하면 Enterprise Edition으로 자동 적용되며 변경할 수 없음 |
-| Node Count\* | 클러스터 구성 노드 수<br>-**Tibero**: Single 1개 (고정), TAC 2\~4개 중 선택<br>-**OpenSQL**: Single, HA 모두 1개로 고정 |
-| PostgreSQL Version | OpenSQL 선택 시 사용할 PostgreSQL 버전<br>- 3.16.12.5 (기본값)<br>- 3.17.8.5 |
+| Database Engine Type\* | 사용할 데이터베이스 엔진<br>- **Tibero**<br>- **OpenSQL** (추후 지원 예정) |
+| License Option\* | 사용할 라이선스 옵션<br>- **LI**(License Included)<br>- **BYOL** (Bring Your Own License) |
+| Topology\* | 데이터베이스 구조를 결정할 토폴로지 유형<br>- **Tibero**: Single, TAC |
+| Edition\* | 라이선스의 에디션<br>- **Standard Edition (SE)**: 단일 서버 구성 전용, 최대 8vCPU까지 사용 가능<br>- **Enterprise Edition (EE)**: 고가용성 및 대규모 구성 지원, vCPU 제한 없음<br>- Topology를 TAC로 선택하면 Enterprise Edition으로 자동 적용되며 변경할 수 없음 |
+| Node Count\* | 클러스터 구성 노드 수<br>- **Tibero**: Single 1개 (고정), TAC 2\~4개 중 선택 |
 
 *표기는 필수 입력 항목을 의미합니다.
 
@@ -67,11 +65,11 @@ Edition에서 Standard Edition(SE)을 선택하면 인스턴스 구성 단계에
 
 | 항목  | 설명  |
 |-----|-----|
-| Enable DR\* | DR 구성 사용 여부<br>-**Tibero**: 사용자가 직접 선택<br>-**OpenSQL**: Topology에 따라 자동으로 결정되며 수정할 수 없음 (Single: DR 미사용 / HA: DR 사용) |
-| Failover Automation Level\* | 장애 조치 자동화 레벨<br>-**0단계 : 수동**<br>-**1단계 : 자동 장애 조치**<br>-**2단계 : 자동 구성 복구**<br>-**3단계 : 완전 자동화** |
-| Standby/Replica Count\* | Standby(또는 Replica) DB 개수<br>-**Tibero**: 최대 2개까지 선택 가능<br>-**OpenSQL**: 1개로 고정 |
-| Standby Mode\* | Standby Mode 옵션 (Tibero 엔진에서만 노출되며, Standby 노드별로 개별 설정 가능)<br>-**Recovery**<br>-**Read Only** |
-| Log Replication Type | Primary(Leader)의 로그를 Standby(Replica)에 전송하는 방식<br>-**LGWR ASYNC**: 트랜잭션이 발생하면 실시간으로 생성되는 Redo log를 곧바로 전송하는 복제 모드<br>-**ARCH ASYNC**: 로그 스위치가 일어난 뒤, 아카이브 로그 파일이 생성되면 그 파일을 모아서 전송하는 복제 모드<br>- OpenSQL 엔진은**ASYNC 방식**으로 고정되며 수정할 수 없음. |
+| Enable DR\* | DR 구성 사용 여부<br>- **Tibero**: 사용자가 직접 선택 |
+| Failover Automation Level\* | 장애 조치 자동화 레벨<br>- **0단계 : 수동**<br>- **1단계 : 자동 장애 조치**<br>- **2단계 : 자동 구성 복구**<br>- **3단계 : 완전 자동화** |
+| Standby/Replica Count\* | Standby(또는 Replica) DB 개수<br>- **Tibero**: 최대 2개까지 선택 가능 |
+| Standby Mode\* | Standby Mode 옵션 (Standby 노드별로 개별 설정 가능)<br>- **Recovery**<br>- **Read Only** |
+| Log Replication Type | Primary의 로그를 Standby에 전송하는 방식<br>- **LGWR ASYNC**: 트랜잭션이 발생하면 실시간으로 생성되는 Redo log를 곧바로 전송하는 복제 모드<br>- **ARCH ASYNC**: 로그 스위치가 일어난 뒤, 아카이브 로그 파일이 생성되면 그 파일을 모아서 전송하는 복제 모드 |
 
 *표기는 필수 입력 항목을 의미합니다.
 
@@ -80,7 +78,6 @@ Edition에서 Standard Edition(SE)을 선택하면 인스턴스 구성 단계에
 
 * Failover Automation Level, Standby(Replica) Count, Standby Mode, Log Replication Type은 Enable DR에서 사용을 선택한 경우에만 노출됩니다.
 * Failover Automation Level은 라이선스 유형에 따라 설정 가능한 단계가 다릅니다. LI는 0\~3단계, BYOL은 0, 2, 3단계를 선택할 수 있습니다.
-* OpenSQL 엔진은 Failover Automation Level에서 0단계 또는 3단계만 선택할 수 있습니다.
 * Standby Mode와 Log Replication Type은 Standby 노드별로 개별 설정이 가능합니다.
 {% endhint %}
 
@@ -103,8 +100,6 @@ Edition에서 Standard Edition(SE)을 선택하면 인스턴스 구성 단계에
 
 ### 4단계: 인스턴스 구성
 
-{% tabs %}
-{% tab title="Tibero" %}
 | 구분  | 항목  | 설명  |
 |-----|-----|-----|
 | Instance Setting | DB Virtual Machine Size\* | 성능과 사양을 결정할 인스턴스 유형 |
@@ -125,23 +120,6 @@ Edition에서 Standard Edition(SE)을 선택하면 인스턴스 구성 단계에
 |     | 최대 확장 한도\* | Auto Scale 사용 시 증가할 수 있는 데이터 디스크의 최대 크기 |
 
 *표기는 필수 입력 항목을 의미합니다.
-{% endtab %}
-
-{% tab title="OpenSQL" %}
-| 구분  | 항목  | 설명  |
-|-----|-----|-----|
-| Instance Setting | DB Virtual Machine Size\* | 성능과 사양을 결정할 인스턴스 유형 |
-| Instance Access Setting | DB Instance SSH Key Name\* | DB 인스턴스에 접근하기 위한 설정 |
-| Disk | Disk Type\* | 주요 데이터를 저장할 디스크의 유형 |
-|     | Disk Size\* | 주요 데이터를 저장할 디스크의 크기 |
-|     | Disk IOPS\* | 주요 데이터를 저장할 디스크의 입출력 처리량 |
-|     | Disk MBps | 주요 데이터를 저장할 디스크의 최대 처리 속도 |
-| Auto Scale | 사용 여부\* | 데이터 볼륨 사용량에 따라 데이터 디스크 크기를 자동으로 확장할지 여부 |
-|     | 최대 확장 한도\* | Auto Scale 사용 시 증가할 수 있는 데이터 디스크의 최대 크기 |
-
-*표기는 필수 입력 항목을 의미합니다.
-{% endtab %}
-{% endtabs %}
 
 {% hint style="info" %}
 **참고**
@@ -155,8 +133,6 @@ Edition에서 Standard Edition(SE)을 선택하면 인스턴스 구성 단계에
 
 ### 5단계: 데이터베이스 구성
 
-{% tabs %}
-{% tab title="Tibero" %}
 | 항목  | 설명  |
 |-----|-----|
 | Database Name\* | 사용할 데이터베이스의 이름 |
@@ -175,25 +151,6 @@ Edition에서 Standard Edition(SE)을 선택하면 인스턴스 구성 단계에
 | Undo Tablespace Data File Size (GB) | Undo 테이블스페이스 크기 |
 
 *표기는 필수 입력 항목을 의미합니다.
-{% endtab %}
-
-{% tab title="OpenSQL" %}
-| 항목  | 설명  |
-|-----|-----|
-| Database Name\* | 사용할 데이터베이스의 이름 |
-| Postgres User Password\* | 데이터베이스 최고 권한 관리자 계정(Postgres 유저)의 비밀번호 |
-| Character Set\* | 데이터베이스에 사용할 문자 인코딩 |
-| Timezone\* | 데이터베이스가 설치될 OS 시간대 |
-| Database Listener Port | 네트워크 통신을 위한 데이터베이스 리스너 포트 |
-| Max Session Count | 동시 허용 최대 세션 수 |
-| Shared Buffers | 공유 버퍼 크기(권장값 자동 계산) |
-| Wal File Size | WAL 파일 한 개의 크기 |
-| Connection Pooler Port | OpenProxy가 클라이언트 접속을 받는 포트 |
-| Extensions | 설치할 Extension |
-
-*표기는 필수 입력 항목을 의미합니다.
-{% endtab %}
-{% endtabs %}
 
 {% hint style="warning" %}
 **주의**
@@ -210,8 +167,9 @@ License Option을 **BYOL**로 선택한 경우, 구성 정보 확인 단계에�
 1. **구성 정보 확인** 단계에서 입력한 정보를 검토한 후, **라이선스 등록** 버튼을 클릭합니다.
 2. 라이선스 등록 창에서 **올리기** 버튼을 클릭하거나 파일을 드래그 앤 드롭하여 보유한 라이선스 파일을 업로드합니다.
 3. 업로드한 라이선스 파일 목록에서 정보를 확인합니다.
-4. 검증할 파일을 **선택**한 후, **검증** 버튼을 클릭하여 업로드한 라이선스 파일의 유효성을 확인합니다.
-5. 검증에 성공하면 **생성** 버튼을 클릭하여 데이터베이스 생성을 요청합니다.
+4. 검증할 라이선스 파일을 선택합니다.
+5. **검증** 버튼을 클릭하여 업로드한 라이선스 파일의 유효성을 확인합니다.
+6. 검증에 성공하면 **생성** 버튼을 클릭하여 데이터베이스 생성을 요청합니다.
 
 {% hint style="info" %}
 **참고**
@@ -253,9 +211,3 @@ License Option을 **BYOL**로 선택한 경우, 구성 정보 확인 단계에�
 * 생성이 시작되면 **DB Service 생성 시작** 알림이 발송됩니다.
 * 생성이 정상적으로 완료되면 **DB Service 생성 완료** 알림이 발송됩니다.
 * 서버 환경 구성 또는 데이터베이스 설치 과정에서 오류가 발생하면 **DB Service 생성 실패** 알림이 발송되며, 안내에 따라 다시 시도할 수 있습니다.
-
-{% hint style="info" %}
-**참고**
-
-OpenSQL 엔진에서 선택한 Extension 설치가 모두 또는 일부 실패한 경우에도 데이터베이스 서비스 자체는 정상적으로 생성되며, 별도의 안내 알림이 함께 발송됩니다.
-{% endhint %}
