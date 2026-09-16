@@ -165,10 +165,7 @@ DB Type에 관계없이 페이지 상단에 항상 표시되는 핵심 지표입
 
 OpenSQL을 선택한 경우, 화면에 **Instance View**와 **Database View** 전환 버튼이 추가로 표시됩니다.
 
-| View | 설명  |
-|------|-----|
-| Instance View (기본값) | - 선택한 Database의 지표를 합산 또는 평균하여 Instance 단위로 표시<br>- DB Select 트리는 2단계로 표시 |
-| Database View | - 선택한 Database별로 지표를 분리하여 표시<br>- DB Select 트리는 3단계로 전환 |
+<table><thead><tr><th>View</th><th>설명</th></tr></thead><tbody><tr><td>Instance View (기본값)</td><td><ul><li>선택한 Database의 지표를 합산 또는 평균하여 Instance 단위로 표시</li><li>DB Select 트리는 2단계로 표시</li></ul></td></tr><tr><td>Database View</td><td><ul><li>선택한 Database별로 지표를 분리하여 표시</li><li>DB Select 트리는 3단계로 전환</li></ul></td></tr></tbody></table>
 
 {% hint style="info" %}
 **참고**

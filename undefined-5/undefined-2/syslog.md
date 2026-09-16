@@ -78,10 +78,7 @@ OpenSQL DB Service에서는 Syslog 페이지의 **Component** 탭에서 OpenHA, 
 
 **Component** 탭에서 로그 파일을 선택한 뒤 **다운로드** 버튼을 클릭하면 확인 모달이 나타납니다. 선택한 파일 수에 따라 모달 내용과 다운로드 방식이 달라집니다.
 
-| 선택 파일 수 | 다운로드 방식 | 모달 표시 정보 |
-|---------|---------|----------|
-| 1개      | 원본 파일명 그대로 단일 파일 다운로드 | - 컴포넌트명<br>- 파일명<br>- 마지막 업데이트 일시<br>- 파일 크기(MB) |
-| 2개 이상   | `component_syslog_yymmdd.zip` 형식의 ZIP 파일로 다운로드 | - 선택 파일 수<br>- 다운로드 파일명 |
+<table><thead><tr><th>선택 파일 수</th><th>다운로드 방식</th><th>모달 표시 정보</th></tr></thead><tbody><tr><td>1개</td><td>원본 파일명 그대로 단일 파일 다운로드</td><td><ul><li>컴포넌트명</li><li>파일명</li><li>마지막 업데이트 일시</li><li>파일 크기(MB)</li></ul></td></tr><tr><td>2개 이상</td><td><code>component_syslog_yymmdd.zip</code> 형식의 ZIP 파일로 다운로드</td><td><ul><li>선택 파일 수</li><li>다운로드 파일명</li></ul></td></tr></tbody></table>
 
 ZIP 파일명의 `yymmdd`는 다운로드를 요청한 날짜를 의미합니다.
 

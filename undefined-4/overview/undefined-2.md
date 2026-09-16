@@ -143,11 +143,7 @@ Primary/Leader는 아래 항목을 표시하며, Standby/Replica는 동일 항�
 
 ### 자원 사용 정보
 
-| 항목  | 설명  | 비고  |
-|-----|-----|-----|
-| CPU | 프로비저닝된 vCPU 대비 사용량(파이 차트) | 5초 주기 갱신 |
-| Memory | 프로비저닝된 메모리 대비 사용량(파이 차트) | 5초 주기 갱신 |
-| 최대 접속 세션수 | 활성 세션 수(라인 차트, 5초 주기 갱신) | - Tibero Standby: Read Only 상태일 때만 표시<br>- OpenSQL Replica: 항상 표시 |
+<table><thead><tr><th>항목</th><th>설명</th><th>비고</th></tr></thead><tbody><tr><td>CPU</td><td>프로비저닝된 vCPU 대비 사용량(파이 차트)</td><td>5초 주기 갱신</td></tr><tr><td>Memory</td><td>프로비저닝된 메모리 대비 사용량(파이 차트)</td><td>5초 주기 갱신</td></tr><tr><td>최대 접속 세션수</td><td>활성 세션 수(라인 차트, 5초 주기 갱신)</td><td><ul><li>Tibero Standby: Read Only 상태일 때만 표시</li><li>OpenSQL Replica: 항상 표시</li></ul></td></tr></tbody></table>
 
 ### 네트워크 정보
 

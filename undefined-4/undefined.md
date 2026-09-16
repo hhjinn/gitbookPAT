@@ -22,14 +22,7 @@ Tibero는 DB 파라미터 목록을 바로 표시합니다. OpenSQL(Azure)은 **
    * 동적 파라미터 여부를 필터링 할 수 있습니다.
    * 이름 및 파라미터 값을 직접 검색하여 확인할 수 있습니다.
 
-| 항목  | 설명  |
-|-----|-----|
-| 이름  | 파라미터 이름 |
-| 데이터 형식 | 파라미터의 데이터 타입 |
-| 기본값 | 사용자가 별도로 설정하지 않았을 때 적용되는 값 |
-| 현재값 | 현재 DB에 적용된 값 |
-| Config 값 | DB 재시작 시 반영될 값 |
-| 동적 파라미터 | - **예**: 재시작 없이 즉시 반영 가능<br>-**아니요(재시작 필요)**: 반영하려면 DB 재시작 필요 |
+<table><thead><tr><th>항목</th><th>설명</th></tr></thead><tbody><tr><td>이름</td><td>파라미터 이름</td></tr><tr><td>데이터 형식</td><td>파라미터의 데이터 타입</td></tr><tr><td>기본값</td><td>사용자가 별도로 설정하지 않았을 때 적용되는 값</td></tr><tr><td>현재값</td><td>현재 DB에 적용된 값</td></tr><tr><td>Config 값</td><td>DB 재시작 시 반영될 값</td></tr><tr><td>동적 파라미터</td><td><ul><li><strong>예</strong>: 재시작 없이 즉시 반영 가능</li><li><strong>아니요(재시작 필요)</strong>: 반영하려면 DB 재시작 필요</li></ul></td></tr></tbody></table>
 
 {% hint style="info" %}
 **참고**
@@ -74,10 +67,7 @@ OpenSQL에서 수정 모드에 진입하면 **수정** 버튼을 클릭할 당�
 
 ## 인스턴스 상태별 수정 가능 대상
 
-| 수정 대상 | 수정 가능 조건 |
-|-------|----------|
-| 현재값   | 인스턴스 상태가 정상(`Available` 또는 `Limited`)일 때 |
-| Config 값 | - 인스턴스 상태 `Unavailable`(DB Down/Nomount)일 때<br>- Config 값 없는 파라미터는 수정 불가 |
+<table><thead><tr><th>수정 대상</th><th>수정 가능 조건</th></tr></thead><tbody><tr><td>현재값</td><td>인스턴스 상태가 정상(<code>Available</code> 또는 <code>Limited</code>)일 때</td></tr><tr><td>Config 값</td><td><ul><li>인스턴스 상태 <code>Unavailable</code>(DB Down/Nomount)일 때</li><li>Config 값 없는 파라미터는 수정 불가</li></ul></td></tr></tbody></table>
 
 인스턴스가 다운된 상태에서 수정 모드에 진입한 후 값을 입력하지 않고 저장하면 기준값(Config 값 우선, 없으면 기본값)으로 처리됩니다.
 
@@ -89,10 +79,7 @@ Tibero 다중 노드 구성에서 글로벌 파라미터는 수정할 수 없습
 
 ## 수정한 파라미터 유형별 저장 방식
 
-| 수정한 파라미터 유형 | 저장 방식 |
-|-------------|-------|
-| 동적 + 정적 파라미터 혼합 | - **적용**: DB 재시작 후 변경 사항 반영 (연결 세션 종료, 수 분 소요) |
-| 동적 파라미터만    | - **적용**: 재시작 없이 현재값에 즉시 반영<br>-**임시 적용**: 재시작 없이 현재값에 반영, DB 재시작 시 기존 Config 값으로 복원 |
+<table><thead><tr><th>수정한 파라미터 유형</th><th>저장 방식</th></tr></thead><tbody><tr><td>동적 + 정적 파라미터 혼합</td><td><ul><li><strong>적용</strong>: DB 재시작 후 변경 사항 반영 (연결 세션 종료, 수 분 소요)</li></ul></td></tr><tr><td>동적 파라미터만</td><td><ul><li><strong>적용</strong>: 재시작 없이 현재값에 즉시 반영</li><li><strong>임시 적용</strong>: 재시작 없이 현재값에 반영, DB 재시작 시 기존 Config 값으로 복원</li></ul></td></tr></tbody></table>
 
 {% hint style="info" %}
 **참고**

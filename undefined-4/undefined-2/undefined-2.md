@@ -34,14 +34,7 @@ OpenSQL On-Premise 환경에서는 자동 백업 항목 위에 OpenBackup 설정
 
 ### 수정 모드 입력 항목
 
-| 항목  | 설명  | 입력 규칙 |
-|-----|-----|-------|
-| Full Backup | Full Backup 사용 여부 | 기본값: 꺼짐 |
-| Full Backup 주기 | Full Backup 실행 주기 | - 시간마다: 1\~23<br>- 일마다: 1\~7 |
-| 보존 기간 | Full Backup 이미지 보존 기간 | - 시간마다: 1\~23<br>- 일마다: 1\~35<br>- 영구보관 |
-| 시작 시간 | Full Backup 시작 일시 | 현재보다 과거 일시 선택 불가 |
-| Incremental Backup | Incremental Backup 사용 여부 | 기본값: 꺼짐 |
-| Incremental Backup 주기 | Incremental Backup 실행 주기 | - 시간마다: 1\~23<br>- 일마다: 1\~6 |
+<table><thead><tr><th>항목</th><th>설명</th><th>입력 규칙</th></tr></thead><tbody><tr><td>Full Backup</td><td>Full Backup 사용 여부</td><td>기본값: 꺼짐</td></tr><tr><td>Full Backup 주기</td><td>Full Backup 실행 주기</td><td><ul><li>시간마다: 1~23</li><li>일마다: 1~7</li></ul></td></tr><tr><td>보존 기간</td><td>Full Backup 이미지 보존 기간</td><td><ul><li>시간마다: 1~23</li><li>일마다: 1~35</li><li>영구보관</li></ul></td></tr><tr><td>시작 시간</td><td>Full Backup 시작 일시</td><td>현재보다 과거 일시 선택 불가</td></tr><tr><td>Incremental Backup</td><td>Incremental Backup 사용 여부</td><td>기본값: 꺼짐</td></tr><tr><td>Incremental Backup 주기</td><td>Incremental Backup 실행 주기</td><td><ul><li>시간마다: 1~23</li><li>일마다: 1~6</li></ul></td></tr></tbody></table>
 
 {% hint style="warning" %}
 **주의**

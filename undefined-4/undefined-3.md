@@ -27,10 +27,7 @@ Endpoint 탭은 **Service Endpoint**와 **Endpoint Details** 두 영역으로 �
 
 **Service Endpoint**
 
-| 항목  | 설명  |
-|-----|-----|
-| Endpoint | - 서비스 대표 접속 주소<br>- Single: Private IP 표시<br>- HA·TAC·DR: VIP 표시 |
-| Port | DB Listener 포트 번호 |
+<table><thead><tr><th>항목</th><th>설명</th></tr></thead><tbody><tr><td>Endpoint</td><td><ul><li>서비스 대표 접속 주소</li><li>Single: Private IP 표시</li><li>HA·TAC·DR: VIP 표시</li></ul></td></tr><tr><td>Port</td><td>DB Listener 포트 번호</td></tr></tbody></table>
 
 **Endpoint Details**
 
@@ -103,16 +100,7 @@ Access Control 탭은 **OpenSQL** 환경에서만 제공됩니다.
 1. **생성** 버튼을 클릭합니다.
 2. 오른쪽 드로어에서 아래 항목을 입력합니다.
 
-| 항목  | 설명  | 입력 규칙 |
-|-----|-----|-------|
-| Priority | 규칙 적용 순서 (숫자가 작을수록 우선 적용) | - 미입력 시 마지막 순서로 추가<br>- 시스템 고정 규칙 번호 이후부터 입력 가능 |
-| Type \* | 연결 유형 | - `local` / `host` / `hostssl` / `hostnossl`중 선택<br>- 기본값`host` |
-| Database \* | 규칙을 적용할 데이터베이스 | - 데이터베이스 목록에서 하나 이상 선택 또는 특수 키워드(`all`, `sameuser`, `samerole`) 중 하나 선택<br>- 특수 키워드와 데이터베이스 목록 동시 선택 불가 |
-| User \* | 규칙을 적용할 사용자 | 사용자 목록에서 하나 이상 선택 또는 `all` 선택 |
-| Address \* | 접근을 허용할 클라이언트 주소 | - CIDR 또는 Hostname 직접 입력 또는 특수 키워드(`all`, `samehost`, `samenet`) 선택<br>- Type이`local`이면 비활성화<br>- 단일 IP 입력 시 자동 CIDR 형식 변환 (IPv4:`/32`, IPv6: `/128`) |
-| Method \* | 인증 방식 | - 드롭다운에서 선택<br>- 기본값`scram-sha-256` |
-| Auth Option | Method에 대한 세부 인증 옵션 | - Method에 따라 입력 방식 상이<br>-`trust` 또는 `reject`선택 시 비활성화<br>-`scram-sha-256` 또는 `md5`선택 시 드롭다운 선택<br>- 그 외 Method는`key=value` 형식 입력 |
-| Comment | 규칙에 대한 메모 | 줄바꿈 입력 불가 |
+<table><thead><tr><th>항목</th><th>설명</th><th>입력 규칙</th></tr></thead><tbody><tr><td>Priority</td><td>규칙 적용 순서 (숫자가 작을수록 우선 적용)</td><td><ul><li>미입력 시 마지막 순서로 추가</li><li>시스템 고정 규칙 번호 이후부터 입력 가능</li></ul></td></tr><tr><td>Type *</td><td>연결 유형</td><td><ul><li><code>local</code> / <code>host</code> / <code>hostssl</code> / <code>hostnossl</code>중 선택</li><li>기본값<code>host</code></li></ul></td></tr><tr><td>Database *</td><td>규칙을 적용할 데이터베이스</td><td><ul><li>데이터베이스 목록에서 하나 이상 선택 또는 특수 키워드(<code>all</code>, <code>sameuser</code>, <code>samerole</code>) 중 하나 선택</li><li>특수 키워드와 데이터베이스 목록 동시 선택 불가</li></ul></td></tr><tr><td>User *</td><td>규칙을 적용할 사용자</td><td>사용자 목록에서 하나 이상 선택 또는 <code>all</code> 선택</td></tr><tr><td>Address *</td><td>접근을 허용할 클라이언트 주소</td><td><ul><li>CIDR 또는 Hostname 직접 입력 또는 특수 키워드(<code>all</code>, <code>samehost</code>, <code>samenet</code>) 선택</li><li>Type이<code>local</code>이면 비활성화</li><li>단일 IP 입력 시 자동 CIDR 형식 변환 (IPv4:<code>/32</code>, IPv6: <code>/128</code>)</li></ul></td></tr><tr><td>Method *</td><td>인증 방식</td><td><ul><li>드롭다운에서 선택</li><li>기본값<code>scram-sha-256</code></li></ul></td></tr><tr><td>Auth Option</td><td>Method에 대한 세부 인증 옵션</td><td><ul><li>Method에 따라 입력 방식 상이</li><li><code>trust</code> 또는 <code>reject</code>선택 시 비활성화</li><li><code>scram-sha-256</code> 또는 <code>md5</code>선택 시 드롭다운 선택</li><li>그 외 Method는<code>key=value</code> 형식 입력</li></ul></td></tr><tr><td>Comment</td><td>규칙에 대한 메모</td><td>줄바꿈 입력 불가</td></tr></tbody></table>
 
 *표기는 필수 입력 항목을 의미합니다.
 
@@ -219,16 +207,7 @@ DB 서비스 상태가 `Running` 상태일 때만 **수정** 버튼이 활성화
 
 {% tabs %}
 {% tab title="Pool 생성" %}
-| 항목  | 설명  | 입력 규칙 |
-|-----|-----|-------|
-| Pool Name \* | Pool 이름 | 1\~63자, 영어 소문자(a-z)·숫자(0-9)·언더바(`_`) 사용 가능. 첫 글자는 숫자 불가. DB 서비스 내 중복 불가. |
-| User Name \* | Pool에 속할 사용자 이름 | 1\~63자, 영어 소문자(a-z)·숫자(0-9)·언더바(`_`) 사용 가능. 첫 글자는 숫자 불가. |
-| Pool Size \* | 해당 사용자가 동시에 점유할 수 있는 DB 서버 연결 최대 개수 | 정수 입력. 범위: 1 \~ max connections. 기본값: 9 |
-| Password \* | 사용자 비밀번호 | 1\~30자, 영어 소문자(a-z)·숫자(0-9)·특수문자(`-`, `_`, `#`, `$`) 사용 가능 |
-| Shard Name \* | Pool에 생성할 Shard 이름 | 1\~30자, 영어 소문자(a-z)·숫자(0-9)·언더바(`_`) 사용 가능. 동일 Pool 내 중복 불가. |
-| Database Name \* | Pool에 연결할 데이터베이스 | 드롭다운에서 선택 |
-| Servers \* | 접속할 DB 서버 | - 드롭다운에서 1개 이상 선택<br>- 인스턴스 역할(Role)·별칭(Instance Alias) 표시 |
-| Use Patroni | Patroni를 통한 Auto Failover 사용 여부 | 항상 활성화(변경 불가) |
+<table><thead><tr><th>항목</th><th>설명</th><th>입력 규칙</th></tr></thead><tbody><tr><td>Pool Name *</td><td>Pool 이름</td><td>1~63자, 영어 소문자(a-z)·숫자(0-9)·언더바(<code>_</code>) 사용 가능. 첫 글자는 숫자 불가. DB 서비스 내 중복 불가.</td></tr><tr><td>User Name *</td><td>Pool에 속할 사용자 이름</td><td>1~63자, 영어 소문자(a-z)·숫자(0-9)·언더바(<code>_</code>) 사용 가능. 첫 글자는 숫자 불가.</td></tr><tr><td>Pool Size *</td><td>해당 사용자가 동시에 점유할 수 있는 DB 서버 연결 최대 개수</td><td>정수 입력. 범위: 1 ~ max connections. 기본값: 9</td></tr><tr><td>Password *</td><td>사용자 비밀번호</td><td>1~30자, 영어 소문자(a-z)·숫자(0-9)·특수문자(<code>-</code>, <code>_</code>, <code>#</code>, <code>$</code>) 사용 가능</td></tr><tr><td>Shard Name *</td><td>Pool에 생성할 Shard 이름</td><td>1~30자, 영어 소문자(a-z)·숫자(0-9)·언더바(<code>_</code>) 사용 가능. 동일 Pool 내 중복 불가.</td></tr><tr><td>Database Name *</td><td>Pool에 연결할 데이터베이스</td><td>드롭다운에서 선택</td></tr><tr><td>Servers *</td><td>접속할 DB 서버</td><td><ul><li>드롭다운에서 1개 이상 선택</li><li>인스턴스 역할(Role)·별칭(Instance Alias) 표시</li></ul></td></tr><tr><td>Use Patroni</td><td>Patroni를 통한 Auto Failover 사용 여부</td><td>항상 활성화(변경 불가)</td></tr></tbody></table>
 
 *표기는 필수 입력 항목을 의미합니다.
 {% endtab %}
@@ -244,12 +223,7 @@ DB 서비스 상태가 `Running` 상태일 때만 **수정** 버튼이 활성화
 {% endtab %}
 
 {% tab title="Shard 생성" %}
-| 항목  | 설명  | 입력 규칙 |
-|-----|-----|-------|
-| Shard Name \* | 추가할 Shard 이름 | 1\~30자, 영어 소문자(a-z)·숫자(0-9)·언더바(`_`) 사용 가능. 동일 Pool 내 중복 불가. |
-| Database Name \* | Shard에 연결할 데이터베이스 | 드롭다운에서 선택 |
-| Servers \* | 접속할 DB 서버 | - 드롭다운에서 1개 이상 선택<br>- 인스턴스 역할(Role)·별칭(Instance Alias)·Health 표시<br>- Health는 참고용, 서버 선택에 영향 없음 |
-| Use Patroni | Patroni를 통한 Auto Failover 사용 여부 | 항상 활성화(변경 불가) |
+<table><thead><tr><th>항목</th><th>설명</th><th>입력 규칙</th></tr></thead><tbody><tr><td>Shard Name *</td><td>추가할 Shard 이름</td><td>1~30자, 영어 소문자(a-z)·숫자(0-9)·언더바(<code>_</code>) 사용 가능. 동일 Pool 내 중복 불가.</td></tr><tr><td>Database Name *</td><td>Shard에 연결할 데이터베이스</td><td>드롭다운에서 선택</td></tr><tr><td>Servers *</td><td>접속할 DB 서버</td><td><ul><li>드롭다운에서 1개 이상 선택</li><li>인스턴스 역할(Role)·별칭(Instance Alias)·Health 표시</li><li>Health는 참고용, 서버 선택에 영향 없음</li></ul></td></tr><tr><td>Use Patroni</td><td>Patroni를 통한 Auto Failover 사용 여부</td><td>항상 활성화(변경 불가)</td></tr></tbody></table>
 
 *표기는 필수 입력 항목을 의미합니다.
 {% endtab %}

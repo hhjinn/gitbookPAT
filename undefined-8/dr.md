@@ -8,11 +8,7 @@ OwlDB는 DR(또는 HA)로 구성된 Primary 데이터베이스의 상태를 지�
 
 ## 단계별 알림 정책
 
-| 구분  | Standby/Replica 승격 | 구성 정상화 |
-|-----|--------------------|--------|
-| 수행 시점 | 장애 감지 직후           | Standby/Replica 승격 이후 |
-| 알림  | 시작 / 요청 실패 / 완료 / 실패 | 완료 / 실패 |
-| 전환 이력 관리 | 승격 성공 여부를 결과 컬럼에 표시<br>• 성공 / 실패<br>• Standby/Replica가 승격하여 새로운 Primary/Leader가 된 것을 기준으로 성공 여부를 정의 | 원인/비고 컬럼에 표시<br>• 전체 성공 시 빈칸<br>•**승격 실패**: Standby Promotion Failed<br>•**승격 성공 후 구성 정상화 실패**: Cluster Normalization Failed — Primary scale out failed 또는 New standby/replica creation failed<br>(둘 다 실패하면 콤마로 표시) |
+<table><thead><tr><th>구분</th><th>Standby/Replica 승격</th><th>구성 정상화</th></tr></thead><tbody><tr><td>수행 시점</td><td>장애 감지 직후</td><td>Standby/Replica 승격 이후</td></tr><tr><td>알림</td><td>시작 / 요청 실패 / 완료 / 실패</td><td>완료 / 실패</td></tr><tr><td>전환 이력 관리</td><td>승격 성공 여부를 결과 컬럼에 표시<ul><li>성공 / 실패</li><li>Standby/Replica가 승격하여 새로운 Primary/Leader가 된 것을 기준으로 성공 여부를 정의</li></ul></td><td>원인/비고 컬럼에 표시<ul><li>전체 성공 시 빈칸</li><li><strong>승격 실패</strong>: Standby Promotion Failed</li><li><strong>승격 성공 후 구성 정상화 실패</strong>: Cluster Normalization Failed — Primary scale out failed 또는 New standby/replica creation failed</li></ul>(둘 다 실패하면 콤마로 표시)</td></tr></tbody></table>
 
 ## 장애 조치 자동화 단계별 동작 요약
 
@@ -89,13 +85,7 @@ OwlDB는 DR(또는 HA)로 구성된 Primary 데이터베이스의 상태를 지�
 
 Old Primary는 재기동하지 않고 종료되며, 신규 Standby를 생성하지 않습니다.
 
-| 단계  | 주요 동작 | 상태  | 시스템 알림 |
-|-----|-------|-----|--------|
-| 1. 장애 감지 | Auto Failover 요청 전송 | `Failover` | • **Auto Failover 시작**<br>• 요청 실패 시 "**Auto Failover 요청 실패**" |
-| 2. Standby 승격 | 가장 최신 로그(TSN)를 반영한 Standby를 Primary로 승격 | -   |        |
-| 3. new Primary 구성 변경 | TAC 구성인 경우 Scale Out 수행 | `Updating` | • new Primary DB 사용 가능 → "**Auto Failover 완료**"<br>• 실패 시 "**Auto Failover 실패**" |
-| 4. Old Primary 처리 | Retired 상태로 표시 후 인스턴스 종료 | -   |        |
-| 5. 완료 | 구성 정상화 완료 | `Degraded` | • "**구성 정상화 완료**"<br>• 실패 시 "**구성 정상화 실패**" |
+<table><thead><tr><th>단계</th><th>주요 동작</th><th>상태</th><th>시스템 알림</th></tr></thead><tbody><tr><td>1. 장애 감지</td><td>Auto Failover 요청 전송</td><td><code>Failover</code></td><td><ul><li><strong>Auto Failover 시작</strong></li><li>요청 실패 시 "<strong>Auto Failover 요청 실패</strong>"</li></ul></td></tr><tr><td>2. Standby 승격</td><td>가장 최신 로그(TSN)를 반영한 Standby를 Primary로 승격</td><td>-</td><td></td></tr><tr><td>3. new Primary 구성 변경</td><td>TAC 구성인 경우 Scale Out 수행</td><td><code>Updating</code></td><td><ul><li>new Primary DB 사용 가능 → "<strong>Auto Failover 완료</strong>"</li><li>실패 시 "<strong>Auto Failover 실패</strong>"</li></ul></td></tr><tr><td>4. Old Primary 처리</td><td>Retired 상태로 표시 후 인스턴스 종료</td><td>-</td><td></td></tr><tr><td>5. 완료</td><td>구성 정상화 완료</td><td><code>Degraded</code></td><td><ul><li>"<strong>구성 정상화 완료</strong>"</li><li>실패 시 "<strong>구성 정상화 실패</strong>"</li></ul></td></tr></tbody></table>
 
 ### 2단계: 자동 구성 복구
 
@@ -107,13 +97,4 @@ Old Primary는 재기동하지 않고 종료되며, 신규 Standby를 생성하�
 
 장애 조치부터 old Primary/Leader 역동기화, 신규 Standby/Replica 생성까지 자동으로 처리합니다. 단일 Primary/Leader 토폴로지에만 적용되므로 TAC Scale Out 과정은 포함되지 않습니다.
 
-| 단계  | 주요 동작 | 상태  | 시스템 알림 |
-|-----|-------|-----|--------|
-| 1. 장애 감지 | Auto Failover 요청 전송 | `Failover` | • **Auto Failover 시작**<br>• 요청 실패 시 "**Auto Failover 요청 실패**" |
-| 2. Old Primary/Leader 재기동 시도 | 인스턴스 재기동 후 DB 재기동 시도 (실패 시 삭제) | -   |        |
-| 3. 승격 | 가장 최신 로그를 반영한 Standby/Replica를 Primary/Leader로 승격 | -   |        |
-| 4. new Primary/Leader 전환 | 승격된 노드를 새로운 Primary/Leader로 서비스 시작 | `Updating` | • new Primary/Leader 사용 가능 → "**Auto Failover 완료**"<br>• 실패 시 "**Auto Failover 실패**" |
-| 5. 역동기화 시도 | • 재기동 **성공**시 Old Primary/Leader를 Standby/Replica로 재연결 → 8번으로 이동<br>• 재기동**실패** 시 해당 인스턴스 삭제 | -   |        |
-| 6. 신규 Standby/Replica 생성 | 동일 스펙으로 신규 Standby/Replica 생성 | -   |        |
-| 7. 연결 및 동기화 | Standby/Replica 연결 및 동기화 | -   |        |
-| 8. 완료 | 구성 정상화 완료 | `Running` / `Degraded` | • "**구성 정상화 완료**"<br>• 실패 시 "**구성 정상화 실패**" |
+<table><thead><tr><th>단계</th><th>주요 동작</th><th>상태</th><th>시스템 알림</th></tr></thead><tbody><tr><td>1. 장애 감지</td><td>Auto Failover 요청 전송</td><td><code>Failover</code></td><td><ul><li><strong>Auto Failover 시작</strong></li><li>요청 실패 시 "<strong>Auto Failover 요청 실패</strong>"</li></ul></td></tr><tr><td>2. Old Primary/Leader 재기동 시도</td><td>인스턴스 재기동 후 DB 재기동 시도 (실패 시 삭제)</td><td>-</td><td></td></tr><tr><td>3. 승격</td><td>가장 최신 로그를 반영한 Standby/Replica를 Primary/Leader로 승격</td><td>-</td><td></td></tr><tr><td>4. new Primary/Leader 전환</td><td>승격된 노드를 새로운 Primary/Leader로 서비스 시작</td><td><code>Updating</code></td><td><ul><li>new Primary/Leader 사용 가능 → "<strong>Auto Failover 완료</strong>"</li><li>실패 시 "<strong>Auto Failover 실패</strong>"</li></ul></td></tr><tr><td>5. 역동기화 시도</td><td><ul><li>재기동 <strong>성공</strong>시 Old Primary/Leader를 Standby/Replica로 재연결 → 8번으로 이동</li><li>재기동<strong>실패</strong> 시 해당 인스턴스 삭제</li></ul></td><td>-</td><td></td></tr><tr><td>6. 신규 Standby/Replica 생성</td><td>동일 스펙으로 신규 Standby/Replica 생성</td><td>-</td><td></td></tr><tr><td>7. 연결 및 동기화</td><td>Standby/Replica 연결 및 동기화</td><td>-</td><td></td></tr><tr><td>8. 완료</td><td>구성 정상화 완료</td><td><code>Running</code> / <code>Degraded</code></td><td><ul><li>"<strong>구성 정상화 완료</strong>"</li><li>실패 시 "<strong>구성 정상화 실패</strong>"</li></ul></td></tr></tbody></table>

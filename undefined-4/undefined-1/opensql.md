@@ -25,19 +25,7 @@
 
 ### 테이블 항목
 
-| 컬럼  | 설명  |
-|-----|-----|
-| 별칭  | - 데이터베이스 이름<br>- 클릭 시 상세 정보 페이지로 이동 |
-| 생성일 | 데이터베이스 생성 일시 |
-| Owner | 데이터베이스 소유 사용자 |
-| Encoding | 데이터베이스에 설정된 Character Set |
-| Connection Limit | 동시 접속 가능한 최대 연결 수 |
-| Data Size | 실제 데이터가 차지하는 용량 (GB) |
-| 활성 세션 수 | 현재 활성화된 세션 수 (바 차트) |
-| Tuple Health | Dead Tuple 비율과 Vacuum 수행 시간을 종합한 상태 지표 |
-| Bloat Ratio | 전체 크기 대비 Dead Tuple이 차지하는 비율 (%) |
-| Live/Dead Tuple Rate | Live Tuple 대비 Dead Tuple 비율 (%) |
-| 마지막 Vacuum 수행 시간 | 마지막 Vacuum이 수행된 일시 |
+<table><thead><tr><th>컬럼</th><th>설명</th></tr></thead><tbody><tr><td>별칭</td><td><ul><li>데이터베이스 이름</li><li>클릭 시 상세 정보 페이지로 이동</li></ul></td></tr><tr><td>생성일</td><td>데이터베이스 생성 일시</td></tr><tr><td>Owner</td><td>데이터베이스 소유 사용자</td></tr><tr><td>Encoding</td><td>데이터베이스에 설정된 Character Set</td></tr><tr><td>Connection Limit</td><td>동시 접속 가능한 최대 연결 수</td></tr><tr><td>Data Size</td><td>실제 데이터가 차지하는 용량 (GB)</td></tr><tr><td>활성 세션 수</td><td>현재 활성화된 세션 수 (바 차트)</td></tr><tr><td>Tuple Health</td><td>Dead Tuple 비율과 Vacuum 수행 시간을 종합한 상태 지표</td></tr><tr><td>Bloat Ratio</td><td>전체 크기 대비 Dead Tuple이 차지하는 비율 (%)</td></tr><tr><td>Live/Dead Tuple Rate</td><td>Live Tuple 대비 Dead Tuple 비율 (%)</td></tr><tr><td>마지막 Vacuum 수행 시간</td><td>마지막 Vacuum이 수행된 일시</td></tr></tbody></table>
 
 **Tuple Health** 상태는 Bloat Ratio와 마지막 Vacuum 수행 시간을 기준으로 결정됩니다.
 
@@ -77,12 +65,7 @@ Tuple Health는 추정 통계 기반 가이드로, 트래픽 패턴에 따라 �
 
 ### 입력 항목
 
-| 항목  | 설명  | 입력 규칙 |
-|-----|-----|-------|
-| Database Name \* | 생성할 데이터베이스 이름 | - 30자 이내 영어 소문자(a-z)·숫자(0-9)·언더바(`_`)만 사용 가능<br>- 동일 인스턴스 내 중복 불가 |
-| Owner \* | 데이터베이스 소유 사용자 | `postgres` (고정값) |
-| Encoding | 데이터베이스 Character Set | 기본값: `UTF8` |
-| Connection Limit | 동시 접속 가능한 최대 연결 수 | - 기본값: Unlimited<br>- Unlimited 체크 해제 시 직접 입력 가능 (0 이상의 정수) |
+<table><thead><tr><th>항목</th><th>설명</th><th>입력 규칙</th></tr></thead><tbody><tr><td>Database Name *</td><td>생성할 데이터베이스 이름</td><td><ul><li>30자 이내 영어 소문자(a-z)·숫자(0-9)·언더바(<code>_</code>)만 사용 가능</li><li>동일 인스턴스 내 중복 불가</li></ul></td></tr><tr><td>Owner *</td><td>데이터베이스 소유 사용자</td><td><code>postgres</code> (고정값)</td></tr><tr><td>Encoding</td><td>데이터베이스 Character Set</td><td>기본값: <code>UTF8</code></td></tr><tr><td>Connection Limit</td><td>동시 접속 가능한 최대 연결 수</td><td><ul><li>기본값: Unlimited</li><li>Unlimited 체크 해제 시 직접 입력 가능 (0 이상의 정수)</li></ul></td></tr></tbody></table>
 
 *표기는 필수 입력 항목을 의미합니다.
 
@@ -117,10 +100,7 @@ Tuple Health는 추정 통계 기반 가이드로, 트래픽 패턴에 따라 �
 
 **Database Activity**
 
-| 항목  | 설명  |
-|-----|-----|
-| DB Size | 실제 데이터가 차지하는 용량 (GB) |
-| 활성 세션 수 | - 현재 활성화된 세션 수 (라인 차트)<br>- HA 구성 시 노드별 세션 개별 라인 표시 |
+<table><thead><tr><th>항목</th><th>설명</th></tr></thead><tbody><tr><td>DB Size</td><td>실제 데이터가 차지하는 용량 (GB)</td></tr><tr><td>활성 세션 수</td><td><ul><li>현재 활성화된 세션 수 (라인 차트)</li><li>HA 구성 시 노드별 세션 개별 라인 표시</li></ul></td></tr></tbody></table>
 
 **Trend Metrics**
 

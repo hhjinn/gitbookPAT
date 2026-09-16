@@ -30,10 +30,7 @@ TAC 구성의 경우 아래의 요구 사항을 따라야 합니다.
 
 * TAC 구성에서 사용되는 모든 디스크는 **모든 DB 노드에서 접근 가능한 공유 볼륨**이어야 합니다.
 
-| 용도  | 요구 사항 |
-|-----|-------|
-| Data / Archive / Redo | - 공유 볼륨, 로우 디바이스 또는 파티셔닝 경로 형태로 준비<br>- 파일 시스템 생성 금지 |
-| Backup | 공유 볼륨, 파일 시스템 경로로 준비 |
+<table><thead><tr><th>용도</th><th>요구 사항</th></tr></thead><tbody><tr><td>Data / Archive / Redo</td><td><ul><li>공유 볼륨, 로우 디바이스 또는 파티셔닝 경로 형태로 준비</li><li>파일 시스템 생성 금지</li></ul></td></tr><tr><td>Backup</td><td>공유 볼륨, 파일 시스템 경로로 준비</td></tr></tbody></table>
 
 {% hint style="warning" %}
 **주의**
@@ -51,10 +48,7 @@ Tibero 데이터베이스 구동을 위해 아래 커널 파라미터를 설정�
 
 신규 데이터베이스 설치를 위해 다음 포트들이 필요합니다.
 
-| 포트 유형 | 포트 번호 | 용도  | 비고  |
-|-------|-------|-----|-----|
-| **DB Listener 포트** | 예시) 8629/tcp | 데이터베이스 접속 포트 | OwlDB 서버로부터의 8629 인바운드 허용 |
-| **노드 간 내부 연결 포트** | 예시) 8630\~8679/tcp | - TAC 구성 시 노드 간 내부 통신 포트<br>- DB Listener 포트 기준 +50 범위 | 노드 간 인바운드/아웃바운드 모두 허용 (TAC, DR 구성 시에만 필요) |
+<table><thead><tr><th>포트 유형</th><th>포트 번호</th><th>용도</th><th>비고</th></tr></thead><tbody><tr><td><strong>DB Listener 포트</strong></td><td>예시) 8629/tcp</td><td>데이터베이스 접속 포트</td><td>OwlDB 서버로부터의 8629 인바운드 허용</td></tr><tr><td><strong>노드 간 내부 연결 포트</strong></td><td>예시) 8630~8679/tcp</td><td><ul><li>TAC 구성 시 노드 간 내부 통신 포트</li><li>DB Listener 포트 기준 +50 범위</li></ul></td><td>노드 간 인바운드/아웃바운드 모두 허용 (TAC, DR 구성 시에만 필요)</td></tr></tbody></table>
 
 {% hint style="warning" %}
 **주의**

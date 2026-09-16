@@ -83,8 +83,7 @@ Overview 페이지의 작업 메뉴를 통해 진입한 경우, DB 노드 구성
 
 {% tabs %}
 {% tab title="엔진 옵션" %}
-데이터베이스 별칭과 엔진, 토폴로지 정보를 확인하는 단계입니다. 대부분의 항목은 변경할 수 없으며, 노드 구성만 설치 DB에 한하여 조정할 수 있습니다.
-**Tibero**
+데이터베이스 별칭과 엔진, 토폴로지 정보를 확인하는 단계입니다. 대부분의 항목은 변경할 수 없으며, 노드 구성만 설치 DB에 한하여 조정할 수 있습니다. **Tibero**
 
 | 항목  | 설명  | 변경 여부 |
 |-----|-----|-------|
@@ -116,8 +115,7 @@ Overview 페이지의 작업 메뉴를 통해 진입한 경우, DB 노드 구성
 {% endtab %}
 
 {% tab title="DR 구성" %}
-DR 사용 여부와 장애 조치 자동화 레벨, Standby 노드 설정을 변경하는 단계입니다. 엔진에 따라 변경 방식이 다릅니다.
-**Tibero**
+DR 사용 여부와 장애 조치 자동화 레벨, Standby 노드 설정을 변경하는 단계입니다. 엔진에 따라 변경 방식이 다릅니다. **Tibero**
 
 | 항목  | 설명  |
 |-----|-----|
@@ -148,10 +146,7 @@ DR 사용 여부는 설치 DB에서만 직접 변경할 수 있으며, 변경 �
 
 현재 구성된 Standby 노드 목록이 표시되며, 다음 항목을 변경할 수 있습니다. Log Replication Type의 세부 옵션은 다음과 같습니다.
 
-| 항목  | 설명  |
-|-----|-----|
-| Open Mode | Standby 노드의 Open Mode를 `Recovery` 또는 `Read Only` 중에서 선택합니다. (Tibero 해당) |
-| Log Replication Type | Standby 노드의 로그 복제 방식을 선택합니다. (Tibero 해당)<br>-**LGWR ASYNC**: 트랜잭션 발생 시 실시간으로 생성되는 Redo log를 전송하는 복제 모드<br>-**ARCH ASYNC** : 로그 스위치 이후 생성된 아카이브 로그 파일을 모아서 전송하는 복제 모드 |
+<table><thead><tr><th>항목</th><th>설명</th></tr></thead><tbody><tr><td>Open Mode</td><td>Standby 노드의 Open Mode를 <code>Recovery</code> 또는 <code>Read Only</code> 중에서 선택합니다. (Tibero 해당)</td></tr><tr><td>Log Replication Type</td><td>Standby 노드의 로그 복제 방식을 선택합니다. (Tibero 해당)<ul><li><strong>LGWR ASYNC</strong>: 트랜잭션 발생 시 실시간으로 생성되는 Redo log를 전송하는 복제 모드</li><li><strong>ARCH ASYNC</strong> : 로그 스위치 이후 생성된 아카이브 로그 파일을 모아서 전송하는 복제 모드</li></ul></td></tr></tbody></table>
 
 {% hint style="info" %}
 **참고**
@@ -162,6 +157,7 @@ OpenSQL의 Standby 노드는 비동기(ASYNC) 복제 방식으로 고정 구성�
 
 {% tab title="인스턴스 구성" %}
 Primary / Standby 노드별 구성 정보를 확인하는 단계입니다. 토폴로지와 설치/등록 방식에 따라 조회되지 않는 항목이 있으며, **Backup Path**만 수정할 수 있습니다.
+
 #### **Tibero**
 
 | 항목  | 설명  | 비고  |
@@ -202,8 +198,7 @@ Primary / Standby 노드별 구성 정보를 확인하는 단계입니다. 토�
 {% endtab %}
 
 {% tab title="데이터베이스 구성" %}
-데이터베이스 구성 정보를 확인하는 단계입니다. 대부분의 항목은 OwlDB 메타데이터 및 실제 DB 탐색 데이터를 통해 자동으로 설정됩니다.
-**공통 항목**
+데이터베이스 구성 정보를 확인하는 단계입니다. 대부분의 항목은 OwlDB 메타데이터 및 실제 DB 탐색 데이터를 통해 자동으로 설정됩니다. **공통 항목**
 
 | 항목  | 설명  |
 |-----|-----|
@@ -243,6 +238,7 @@ VIP를 사용 중인 DB에서 Scale Out이 발생한 경우, 추가된 노드에
 
 {% tab title="구성 정보 확인" %}
 앞 단계에서 설정한 내용을 최종 확인합니다. 변경된 항목은 파란색으로 표시되며, 각 항목은 아코디언으로 확장/축소할 수 있습니다. **완료**를 클릭하면 스펙 변경이 반영됩니다.
+
 {% hint style="warning" %}
 **주의**
 

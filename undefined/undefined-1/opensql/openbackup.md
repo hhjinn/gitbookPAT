@@ -22,19 +22,7 @@
    ```
 2. `owlagent.env`에 설정 값을 입력합니다.
 
-| 항목  | 설명  | 입력 규칙 |
-|-----|-----|-------|
-| `AGENT_TYPE` | barman |       |
-| `IP` | OwlDB CP의 IP |       |
-| `PORT` | OwlDB CP의 port |       |
-| `USERNAME` | opensql을 실행할 user의 이름 |       |
-| `OPENSQL_HOME` |     | - [2. 파일 배치](db-1.md#h-2-%ED%8C%8C%EC%9D%BC-%EB%B0%B0%EC%B9%98)단계에서 이미 환경 변수가 설정되어 있으면 미입력<br>- 환경 변수가 없으면 위에서 사용한`OPENSQL_HOME` 입력 |
-| `BARMAN_NAME` | barman 서버의 이름 |       |
-| `BARMAN_SSH_USER` | SSH 접속 계정 |       |
-| `BARMAN_SSH_KEYPATH` | SSH 접속에 사용할 개인 키 파일 경로 |       |
-| `BARMAN_SSH_IP` | barman host에 SSH 접속할 IP 주소 |       |
-| `BARMAN_SSH_PORT` | barman host에 SSH 접속할 Port 번호 |       |
-| `BARMAN_CONF_DIR` | barman host의 conf 디렉토리 경로<br>e.g.)`/etc/barman.d/` |       |
+<table><thead><tr><th>항목</th><th>설명</th><th>입력 규칙</th></tr></thead><tbody><tr><td><code>AGENT_TYPE</code></td><td>barman</td><td></td></tr><tr><td><code>IP</code></td><td>OwlDB CP의 IP</td><td></td></tr><tr><td><code>PORT</code></td><td>OwlDB CP의 port</td><td></td></tr><tr><td><code>USERNAME</code></td><td>opensql을 실행할 user의 이름</td><td></td></tr><tr><td><code>OPENSQL_HOME</code></td><td></td><td><ul><li><a href="db-1.md#h-2-%ED%8C%8C%EC%9D%BC-%EB%B0%B0%EC%B9%98">2. 파일 배치</a>단계에서 이미 환경 변수가 설정되어 있으면 미입력</li><li>환경 변수가 없으면 위에서 사용한<code>OPENSQL_HOME</code> 입력</li></ul></td></tr><tr><td><code>BARMAN_NAME</code></td><td>barman 서버의 이름</td><td></td></tr><tr><td><code>BARMAN_SSH_USER</code></td><td>SSH 접속 계정</td><td></td></tr><tr><td><code>BARMAN_SSH_KEYPATH</code></td><td>SSH 접속에 사용할 개인 키 파일 경로</td><td></td></tr><tr><td><code>BARMAN_SSH_IP</code></td><td>barman host에 SSH 접속할 IP 주소</td><td></td></tr><tr><td><code>BARMAN_SSH_PORT</code></td><td>barman host에 SSH 접속할 Port 번호</td><td></td></tr><tr><td><code>BARMAN_CONF_DIR</code></td><td>barman host의 conf 디렉토리 경로<br>e.g.)<code>/etc/barman.d/</code></td><td></td></tr></tbody></table>
 
 3. owlagent를 실행합니다.
 

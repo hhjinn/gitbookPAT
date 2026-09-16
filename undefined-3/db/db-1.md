@@ -45,13 +45,7 @@
 
 데이터베이스 이름과 엔진, 토폴로지 정보를 설정하는 단계입니다.
 
-| 항목  | 설명  |
-|-----|-----|
-| Service Name\* | 데이터베이스 서비스를 식별하기 위한 이름<br>- 6\~30자의 영문 대소문자(a-z, A-Z), 숫자(0-9), 하이픈(-)만 사용 가능<br>- 미입력 시`owldb-001`과 같은 형태로 자동 생성 |
-| Database Engine Type | 사용할 데이터베이스 엔진<br>-**Tibero**: 다중화 구성으로 안정적인 서비스 운영 및 DB 확장이 가능한 RDBMS<br>-**OpenSQL** : Open Source 기반 고객 맞춤형 DBMS 기술 플랫폼 |
-| Topology | 데이터베이스 구조를 결정할 토폴로지 유형<br>-**Tibero**: Single, TAC<br>-**OpenSQL** : Single, HA |
-| Node Count | 클러스터 구성 노드 수<br>-**Tibero**Single : 1 / TAC : 2\~8<br>-**OpenSQL** Single : 1 / HA : 2\~3 |
-| PostgreSQL Version | OpenSQL 선택 시 노출되는 PostgreSQL 버전<br>현재 단일 버전만 제공 |
+<table><thead><tr><th>항목</th><th>설명</th></tr></thead><tbody><tr><td>Service Name*</td><td>데이터베이스 서비스를 식별하기 위한 이름<ul><li>6~30자의 영문 대소문자(a-z, A-Z), 숫자(0-9), 하이픈(-)만 사용 가능</li><li>미입력 시<code>owldb-001</code>과 같은 형태로 자동 생성</li></ul></td></tr><tr><td>Database Engine Type</td><td>사용할 데이터베이스 엔진<ul><li><strong>Tibero</strong>: 다중화 구성으로 안정적인 서비스 운영 및 DB 확장이 가능한 RDBMS</li><li><strong>OpenSQL</strong> : Open Source 기반 고객 맞춤형 DBMS 기술 플랫폼</li></ul></td></tr><tr><td>Topology</td><td>데이터베이스 구조를 결정할 토폴로지 유형<ul><li><strong>Tibero</strong>: Single, TAC</li><li><strong>OpenSQL</strong> : Single, HA</li></ul></td></tr><tr><td>Node Count</td><td>클러스터 구성 노드 수<ul><li><strong>Tibero</strong>Single : 1 / TAC : 2~8</li><li><strong>OpenSQL</strong> Single : 1 / HA : 2~3</li></ul></td></tr><tr><td>PostgreSQL Version</td><td>OpenSQL 선택 시 노출되는 PostgreSQL 버전<br>현재 단일 버전만 제공</td></tr></tbody></table>
 
 *표기는 필수 입력 항목을 의미합니다.
 
@@ -68,13 +62,7 @@ OpenSQL의 HA는 2node 또는 3node로 탐색될 수 있습니다.
 
 DR 사용 여부와 장애 조치 자동화 레벨을 설정하는 단계입니다.
 
-| 항목  | 설명  | 비고  |
-|-----|-----|-----|
-| Enable DR | DR 구성 사용 여부 | -   |
-| Failover Automation Level\* | 자동 장애 조치 단계<br>-**0단계 : 수동**<br>-**1단계 : 자동 장애 조치**<br>-**2단계 : 자동 구성 복구 (On-Premise 미지원)**<br>-**3단계 : 완전 자동화** | - Tibero Single : 0, 1, 3단계 지원<br>- Tibero TAC : 0, 1단계 지원<br>- OpenSQL : 0, 3단계 지원 |
-| {Standby/Replica} Count | Standby/Replica DB 개수 | -   |
-| Standby Mode | Standby Mode 옵션<br>-**Recovery**<br>-**Read Only** | Tibero에서만 입력 |
-| Log Replication Type | Primary(Leader)에서 Standby(Replica)로의 로그 전송 방식<br>-**LGWR ASYNC**(Tibero) : 트랜잭션이 발생하면 실시간으로 생성되는 Redo log를 전송하는 복제 모드<br>-**ARCH ASYNC**(Tibero) : 로그 스위치 이후, 아카이브 로그 파일이 생성되면 해당 파일을 모아서 전송하는 복제 모드<br>-**ASYNC**(OpenSQL) : 복제 연결을 통해 데이터를 비동기로 전송하는 복제 모드 | -   |
+<table><thead><tr><th>항목</th><th>설명</th><th>비고</th></tr></thead><tbody><tr><td>Enable DR</td><td>DR 구성 사용 여부</td><td>-</td></tr><tr><td>Failover Automation Level*</td><td>자동 장애 조치 단계<ul><li><strong>0단계 : 수동</strong></li><li><strong>1단계 : 자동 장애 조치</strong></li><li><strong>2단계 : 자동 구성 복구 (On-Premise 미지원)</strong></li><li><strong>3단계 : 완전 자동화</strong></li></ul></td><td><ul><li>Tibero Single : 0, 1, 3단계 지원</li><li>Tibero TAC : 0, 1단계 지원</li><li>OpenSQL : 0, 3단계 지원</li></ul></td></tr><tr><td>{Standby/Replica} Count</td><td>Standby/Replica DB 개수</td><td>-</td></tr><tr><td>Standby Mode</td><td>Standby Mode 옵션<ul><li><strong>Recovery</strong></li><li><strong>Read Only</strong></li></ul></td><td>Tibero에서만 입력</td></tr><tr><td>Log Replication Type</td><td>Primary(Leader)에서 Standby(Replica)로의 로그 전송 방식<ul><li><strong>LGWR ASYNC</strong>(Tibero) : 트랜잭션이 발생하면 실시간으로 생성되는 Redo log를 전송하는 복제 모드</li><li><strong>ARCH ASYNC</strong>(Tibero) : 로그 스위치 이후, 아카이브 로그 파일이 생성되면 해당 파일을 모아서 전송하는 복제 모드</li><li><strong>ASYNC</strong>(OpenSQL) : 복제 연결을 통해 데이터를 비동기로 전송하는 복제 모드</li></ul></td><td>-</td></tr></tbody></table>
 
 *표기는 필수 입력 항목을 의미합니다.
 
@@ -179,6 +167,7 @@ DR 사용 여부와 장애 조치 자동화 레벨을 설정하는 단계입니�
 * 입력한 경로가 설치 대상 호스트에 **실제로 존재**해야 합니다.
 * 파일 시스템 경로에 대해 DP Agent 실행 계정이 **읽기, 쓰기, 실행 권한**을 보유해야 합니다.
 {% endtab %}
+
 {% tab title="OpenSQL" %}
 노드 섹션명은 **Leader Node**, **Replica Node #{n}**으로 표시되며, 2node HA로 탐색된 경우 **Quorum Node**가 함께 표시됩니다.
 

@@ -79,16 +79,7 @@ CM_HOME=
 {% endtab %}
 
 {% tab title="등록 DB" %}
-| 옵션  | 설명  | 필수  |
-|-----|-----|-----|
-| `IP` | OwlDB 서버 IP 주소 | 필수  |
-| `PORT` | OwlDB 서버 포트 (SERVER_PORT) | 필수  |
-| `USERNAME` | Tibero를 설치한 OS 사용자 명 | 필수  |
-| `TB_HOME` | Tibero 홈 디렉터리 경로 | 필수  |
-| `TB_SID` | TB_SID 값 | **필수** |
-| `TAS_SID` | TAS_SID 값 | - TAC 구성 시 필수<br>- 미사용 시 불필요 |
-| `CM_SID` | CM_SID 값 | - CM 구성 시 필수<br>- 미사용 시 불필요 |
-| `CM_HOME` | CM_HOME 값 | - CM 구성 시 필수<br>- 미사용 시 불필요 |
+<table><thead><tr><th>옵션</th><th>설명</th><th>필수</th></tr></thead><tbody><tr><td><code>IP</code></td><td>OwlDB 서버 IP 주소</td><td>필수</td></tr><tr><td><code>PORT</code></td><td>OwlDB 서버 포트 (SERVER_PORT)</td><td>필수</td></tr><tr><td><code>USERNAME</code></td><td>Tibero를 설치한 OS 사용자 명</td><td>필수</td></tr><tr><td><code>TB_HOME</code></td><td>Tibero 홈 디렉터리 경로</td><td>필수</td></tr><tr><td><code>TB_SID</code></td><td>TB_SID 값</td><td><strong>필수</strong></td></tr><tr><td><code>TAS_SID</code></td><td>TAS_SID 값</td><td><ul><li>TAC 구성 시 필수</li><li>미사용 시 불필요</li></ul></td></tr><tr><td><code>CM_SID</code></td><td>CM_SID 값</td><td><ul><li>CM 구성 시 필수</li><li>미사용 시 불필요</li></ul></td></tr><tr><td><code>CM_HOME</code></td><td>CM_HOME 값</td><td><ul><li>CM 구성 시 필수</li><li>미사용 시 불필요</li></ul></td></tr></tbody></table>
 
 {% hint style="warning" %}
 **주의**

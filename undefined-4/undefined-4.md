@@ -26,21 +26,7 @@ OwlDB에서 제공하는 마이그레이션 기능의 지원 범위와 상세 �
 
 OwlDB 마이그레이션은 모든 Independent Object와 Dependent Object를 한번에 이관합니다. 개별 Object만 선택적으로 이관하거나 제외하는 기능은 지원하지 않습니다.
 
-| Oracle | Tibero | 비고 |
-| --- | --- | --- |
-| Constraint | Constraint | Primary Key, Foreign Key, Check, Ref Constraint에 대해 이관을 지원함<br>• Primary Key index/constraint는 모두 constraint로 처리함<br>• Check constraint의 표현식은 Oracle의 DD에 저장된 문장을 이용해 DDL을 생성함 |
-| Index | Index | • R-TREE 미지원<br>• Domain Index 미지원 |
-| Materialized | Materialized | - |
-| Materialized View Log | Materialized View Log | - |
-| Privilege | Privilege | - |
-| PSM | PSM | - |
-| Role | Role | - |
-| Schema | Schema | - |
-| Sequence | Sequence | - |
-| Synonym | Synonym | - |
-| Table | Table | • Nested Table 미지원<br>• XML Table 미지원 |
-| Tablespace | Tablespace | 테이블 스페이스의 크기는 20% 증대하여 이관함 -> 데이터 이관 시 용량이 TO-BE에서보다 커질 수 있기 때문 |
-| View | View | - |
+<table><thead><tr><th>Oracle</th><th>Tibero</th><th>비고</th></tr></thead><tbody><tr><td>Constraint</td><td>Constraint</td><td>Primary Key, Foreign Key, Check, Ref Constraint에 대해 이관을 지원함<ul><li>Primary Key index/constraint는 모두 constraint로 처리함</li><li>Check constraint의 표현식은 Oracle의 DD에 저장된 문장을 이용해 DDL을 생성함</li></ul></td></tr><tr><td>Index</td><td>Index</td><td><ul><li>R-TREE 미지원</li><li>Domain Index 미지원</li></ul></td></tr><tr><td>Materialized</td><td>Materialized</td><td>-</td></tr><tr><td>Materialized View Log</td><td>Materialized View Log</td><td>-</td></tr><tr><td>Privilege</td><td>Privilege</td><td>-</td></tr><tr><td>PSM</td><td>PSM</td><td>-</td></tr><tr><td>Role</td><td>Role</td><td>-</td></tr><tr><td>Schema</td><td>Schema</td><td>-</td></tr><tr><td>Sequence</td><td>Sequence</td><td>-</td></tr><tr><td>Synonym</td><td>Synonym</td><td>-</td></tr><tr><td>Table</td><td>Table</td><td><ul><li>Nested Table 미지원</li><li>XML Table 미지원</li></ul></td></tr><tr><td>Tablespace</td><td>Tablespace</td><td>테이블 스페이스의 크기는 20% 증대하여 이관함 -> 데이터 이관 시 용량이 TO-BE에서보다 커질 수 있기 때문</td></tr><tr><td>View</td><td>View</td><td>-</td></tr></tbody></table>
 
 ### **데이터 변환 타입**
 

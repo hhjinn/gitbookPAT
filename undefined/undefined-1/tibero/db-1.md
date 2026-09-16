@@ -29,9 +29,7 @@ TAC 구성의 경우 Backup 디스크는 모든 노드에서 접근 가능한 �
 
 기존 데이터베이스를 OwlDB에 등록하기 위해 아래 포트들이 필요합니다.
 
-| 포트 유형 | 포트 번호 | 용도  | 비고  |
-|-------|-------|-----|-----|
-| **DB Listener 포트** | 기존 DB 설정값 | - 데이터베이스 접속 포트<br>- Tibero: 예) 8629/tcp | - OwlDB 서버로부터의 DB Listener 포트 인바운드 허용 |
+<table><thead><tr><th>포트 유형</th><th>포트 번호</th><th>용도</th><th>비고</th></tr></thead><tbody><tr><td><strong>DB Listener 포트</strong></td><td>기존 DB 설정값</td><td><ul><li>데이터베이스 접속 포트</li><li>Tibero: 예) 8629/tcp</li></ul></td><td><ul><li>OwlDB 서버로부터의 DB Listener 포트 인바운드 허용</li></ul></td></tr></tbody></table>
 
 {% hint style="warning" %}
 **주의**

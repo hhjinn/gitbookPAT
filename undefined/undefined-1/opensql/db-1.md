@@ -48,17 +48,7 @@ $OPENSQL_HOME/
    \
 2. owlagent.env에 설정 값을 입력 합니다.
 
-| Key | Value | 입력 규칙 |
-|-----|-------|-------|
-| AGENT_TYPE\* |       | `pg` 입력 |
-| IP\* | OwlDB CP의 IP |       |
-| PORT\* | OwlDB CP의 port |       |
-| USERNAME\* | opensql 실행 user 이름 |       |
-| OPENSQL_HOME |       | - 이미 설정 시 입력 불필요<br>- 미설정 시 위에서 사용한 OPENSQL_HOME 입력 |
-| DB_LOG_DIR | PG 로그 경로 | 로그 미수집 시 입력 불필요 |
-| DB_LOG_FILE_GLOB | PG 로그 파일 형식 | 예: `postgresql*.log` |
-| PATRONI_CONFIG | patroni.yml 경로 |       |
-| PATRONI_MEMBER | patroni 멤버 이름 |       |
+<table><thead><tr><th>Key</th><th>Value</th><th>입력 규칙</th></tr></thead><tbody><tr><td>AGENT_TYPE*</td><td></td><td><code>pg</code> 입력</td></tr><tr><td>IP*</td><td>OwlDB CP의 IP</td><td></td></tr><tr><td>PORT*</td><td>OwlDB CP의 port</td><td></td></tr><tr><td>USERNAME*</td><td>opensql 실행 user 이름</td><td></td></tr><tr><td>OPENSQL_HOME</td><td></td><td><ul><li>이미 설정 시 입력 불필요</li><li>미설정 시 위에서 사용한 OPENSQL_HOME 입력</li></ul></td></tr><tr><td>DB_LOG_DIR</td><td>PG 로그 경로</td><td>로그 미수집 시 입력 불필요</td></tr><tr><td>DB_LOG_FILE_GLOB</td><td>PG 로그 파일 형식</td><td>예: <code>postgresql*.log</code></td></tr><tr><td>PATRONI_CONFIG</td><td>patroni.yml 경로</td><td></td></tr><tr><td>PATRONI_MEMBER</td><td>patroni 멤버 이름</td><td></td></tr></tbody></table>
 
 *표기는 필수 입력 항목을 의미합니다.
 
@@ -86,10 +76,7 @@ a. systemd 기동 여부 확인
     systemctl is-active --quiet patroni; echo $?
     ```
 
-| 결과  | 판정  |
-|-----|-----|
-| 0   | `patroni.service`로 등록·기동됨 → 점검 완료 |
-| 0 이외 | 아래 두 경우가 구분되지 않아 b 추가 수행 필요<br>- 다른 유닛명으로 기동된 경우<br>- systemd 미등록인 경우 |
+<table><thead><tr><th>결과</th><th>판정</th></tr></thead><tbody><tr><td>0</td><td><code>patroni.service</code>로 등록·기동됨 → 점검 완료</td></tr><tr><td>0 이외</td><td>아래 두 경우가 구분되지 않아 b 추가 수행 필요<ul><li>다른 유닛명으로 기동된 경우</li><li>systemd 미등록인 경우</li></ul></td></tr></tbody></table>
 
 b. 유닛명 확인
 

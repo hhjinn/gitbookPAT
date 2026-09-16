@@ -18,20 +18,7 @@ DB 서비스 라이선스 요금은 사용한 시간을 기준으로 산정하�
 
 # 청구 기준
 
-| Status | Health | 청구 여부 | 설명 |
-| --- | --- | --- | --- |
-| Provisioning | - | 미청구 | 인스턴스 생성 중 |
-| Running | available | 청구 | 정상 동작 중 |
-| Updating | - available<br>- in progress | 청구 | 스펙 변경·재시작·마이그레이션·복구·백업 등 작업 진행 중 |
-| Degraded | - available<br>- in progress<br>- limited | 청구 | - 일부 인스턴스 재시작·재구성 중<br>- 일부 관리 기능 제한 |
-| Degraded | unavailable | 미청구 | DB·VM 중단 등으로 사용 불가 |
-| Degraded | retired | 미청구 | Failover 이후 미사용 인스턴스 |
-| Failover | in progress | 청구 | 자동 Failover 진행 중 |
-| Down | unavailable | 미청구 | DB 서비스 전체 중단 |
-| Stopping | in progress | 청구 | 중지 상태로 전환 중 |
-| Stopped | unavailable | 미청구 | 모든 리소스 일시 비활성화 |
-| Starting | in progress | 미청구 | 중지 상태에서 재시작 중 |
-| Terminating | unavailable | 미청구 | 리소스·데이터 영구 삭제 중 |
+<table><thead><tr><th>Status</th><th>Health</th><th>청구 여부</th><th>설명</th></tr></thead><tbody><tr><td>Provisioning</td><td>-</td><td>미청구</td><td>인스턴스 생성 중</td></tr><tr><td>Running</td><td>available</td><td>청구</td><td>정상 동작 중</td></tr><tr><td>Updating</td><td><ul><li>available</li><li>in progress</li></ul></td><td>청구</td><td>스펙 변경·재시작·마이그레이션·복구·백업 등 작업 진행 중</td></tr><tr><td>Degraded</td><td><ul><li>available</li><li>in progress</li><li>limited</li></ul></td><td>청구</td><td><ul><li>일부 인스턴스 재시작·재구성 중</li><li>일부 관리 기능 제한</li></ul></td></tr><tr><td>Degraded</td><td>unavailable</td><td>미청구</td><td>DB·VM 중단 등으로 사용 불가</td></tr><tr><td>Degraded</td><td>retired</td><td>미청구</td><td>Failover 이후 미사용 인스턴스</td></tr><tr><td>Failover</td><td>in progress</td><td>청구</td><td>자동 Failover 진행 중</td></tr><tr><td>Down</td><td>unavailable</td><td>미청구</td><td>DB 서비스 전체 중단</td></tr><tr><td>Stopping</td><td>in progress</td><td>청구</td><td>중지 상태로 전환 중</td></tr><tr><td>Stopped</td><td>unavailable</td><td>미청구</td><td>모든 리소스 일시 비활성화</td></tr><tr><td>Starting</td><td>in progress</td><td>미청구</td><td>중지 상태에서 재시작 중</td></tr><tr><td>Terminating</td><td>unavailable</td><td>미청구</td><td>리소스·데이터 영구 삭제 중</td></tr></tbody></table>
 
 {% hint style="info" %}
 **참고**
