@@ -47,13 +47,7 @@
 
 데이터베이스 이름과 엔진, 토폴로지 정보를 설정하는 단계입니다.
 
-| 항목                   | 설명                                                                                                                                                                          |
-| -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Service Name\*       | <p>데이터베이스 서비스를 식별하기 위한 이름</p><ul><li>6~30자의 영문 대소문자(a-z, A-Z), 숫자(0-9), 하이픈(-)만 사용 가능</li><li>미입력 시<code>owldb-001</code>과 같은 형태로 자동 생성</li></ul>                           |
-| Database Engine Type | <p>사용할 데이터베이스 엔진</p><ul><li><strong>Tibero</strong>: 다중화 구성으로 안정적인 서비스 운영 및 DB 확장이 가능한 RDBMS</li><li><strong>OpenSQL</strong> : Open Source 기반 고객 맞춤형 DBMS 기술 플랫폼</li></ul> |
-| Topology             | <p>데이터베이스 구조를 결정할 토폴로지 유형</p><ul><li><strong>Tibero</strong>: Single, TAC</li><li><strong>OpenSQL</strong> : Single, HA</li></ul>                                           |
-| Node Count           | <p>클러스터 구성 노드 수</p><ul><li><strong>Tibero</strong>Single : 1 / TAC : 2~8</li><li><strong>OpenSQL</strong> Single : 1 / HA : 2~3</li></ul>                                   |
-| PostgreSQL Version   | <p>OpenSQL 선택 시 노출되는 PostgreSQL 버전<br>현재 단일 버전만 제공</p>                                                                                                                      |
+<table><thead><tr><th width="229">항목</th><th>설명</th></tr></thead><tbody><tr><td>Service Name*</td><td><p>데이터베이스 서비스를 식별하기 위한 이름</p><ul><li>6~30자의 영문 대소문자(a-z, A-Z), 숫자(0-9), 하이픈(-)만 사용 가능</li><li>미입력 시<code>owldb-001</code>과 같은 형태로 자동 생성</li></ul></td></tr><tr><td>Database Engine Type</td><td><p>사용할 데이터베이스 엔진</p><ul><li><strong>Tibero</strong>: 다중화 구성으로 안정적인 서비스 운영 및 DB 확장이 가능한 RDBMS</li><li><strong>OpenSQL</strong> : Open Source 기반 고객 맞춤형 DBMS 기술 플랫폼</li></ul></td></tr><tr><td>Topology</td><td><p>데이터베이스 구조를 결정할 토폴로지 유형</p><ul><li><strong>Tibero</strong>: Single, TAC</li><li><strong>OpenSQL</strong> : Single, HA</li></ul></td></tr><tr><td>Node Count</td><td><p>클러스터 구성 노드 수</p><ul><li><p><strong>Tibero</strong></p><ul><li>Single : 1 </li><li>TAC : 2~8</li></ul></li><li><p><strong>OpenSQL</strong> </p><ul><li>Single : 1 </li><li>HA : 2~3</li></ul></li></ul></td></tr><tr><td>PostgreSQL Version</td><td>OpenSQL 선택 시 노출되는 PostgreSQL 버전<br>현재 단일 버전만 제공</td></tr></tbody></table>
 
 \*표기는 필수 입력 항목을 의미합니다.
 
