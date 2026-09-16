@@ -273,7 +273,7 @@ DR 구성을 사용하는 경우에는 SSH Key File을 지정된 경로에 미�
 | Hostname\*                  | <p>선택한 토폴로지 구성에 맞게,<br>데이터베이스를 설치할 호스트를 선택</p> | -                                                             |
 | Service IP\*                | OwlDB와 노드간 통신에 사용할 IP를 직접 입력 또는 선택             | NAT를 사용하는 경우 NAT IP를 입력                                       |
 | Service Port\*              | OwlDB와 데이터베이스 서버간 통신에 사용할 Port를 직접 입력          | 포트 포워딩을 사용하는 경우 외부 Port를 입력                                   |
-| Replication Connection IP\* | 복제 연결에 사용할 IP을 입력 또는 선택                        | -                                                             |
+| Replication Connection IP\* | 복제 연결에 사용할 IP를 입력 또는 선택                        | -                                                             |
 | 네트워크 인터페이스\*                | 네트워크 인터페이스를 선택                                 | -                                                             |
 | Data Path\*                 | Data Path 입력                                   | 파일 시스템 경로만 입력 가능                                              |
 | SSH Port\*                  | SSH port                                       | -                                                             |
