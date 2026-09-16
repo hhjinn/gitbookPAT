@@ -37,8 +37,8 @@ OpenSQL에서 OpenBackup 사용을 **미사용**으로 전환하면 상태는 �
 {% hint style="info" %}
 **참고**
 
-* 데이터베이스 운영 상태가 `Running`일 때만 가능합니다.
-* Incremental Backup은 사용 가능한 Full Backup이 있어야 생성할 수 있습니다.
+- 데이터베이스 운영 상태가 `Running`일 때만 가능합니다.
+- Incremental Backup은 사용 가능한 Full Backup이 있어야 생성할 수 있습니다.
 {% endhint %}
 
 ## 복구
@@ -68,9 +68,9 @@ OpenSQL에서 OpenBackup 사용을 **미사용**으로 전환하면 상태는 �
 {% hint style="info" %}
 **참고**
 
-* 데이터베이스 운영 상태가 `Running`, `Down`, `Degraded`일 때만 가능합니다.
-* OpenSQL은 백업 방식에 따라 복구 후 Incremental Backup 생성 동작이 다릅니다. `rsync` : 복구 이후에도 기존 백업 체인을 이어서 Incremental Backup을 생성할 수 있습니다. `postgres` : 복구 시 새 timeline으로 분기되어 기존 체인을 이어갈 수 없습니다. 복구 후 Full Backup을 1회 수행해야 하며, 해당 백업이 새로운 기준점이 됩니다. `postgres` 방식은 PostgreSQL 17 이상에서만 선택할 수 있습니다.
-* 복구가 실패하는 경우 이전에 선택한 시점보다 더 이전 시점을 선택해 다시 시도해 주세요. 여러 차례 시도해도 복구되지 않으면 기술지원을 요청해 주세요.
+- 데이터베이스 운영 상태가 `Running`, `Down`, `Degraded`일 때만 가능합니다.
+- OpenSQL은 백업 방식에 따라 복구 후 Incremental Backup 생성 동작이 다릅니다. `rsync` : 복구 이후에도 기존 백업 체인을 이어서 Incremental Backup을 생성할 수 있습니다. `postgres` : 복구 시 새 timeline으로 분기되어 기존 체인을 이어갈 수 없습니다. 복구 후 Full Backup을 1회 수행해야 하며, 해당 백업이 새로운 기준점이 됩니다. `postgres` 방식은 PostgreSQL 17 이상에서만 선택할 수 있습니다.
+- 복구가 실패하는 경우 이전에 선택한 시점보다 더 이전 시점을 선택해 다시 시도해 주세요. 여러 차례 시도해도 복구되지 않으면 기술지원을 요청해 주세요.
 {% endhint %}
 
 ## 백업 수정
@@ -96,7 +96,7 @@ OpenSQL에서 OpenBackup 사용을 **미사용**으로 전환하면 상태는 �
 
 삭제된 백업은 복구할 수 없으므로 삭제 전 필요한 조치를 취했는지 다시 한 번 확인합니다.
 
-* **Tibero(RMGR)**: Incremental Backup만 단독으로 선택하면 삭제할 수 없습니다. Full Backup 단위로 선택해야 하며, 이 경우 하위 Incremental Backup이 모두 함께 삭제됩니다.
-* **OpenSQL(rsync)**: Full Backup과 Incremental Backup을 구분 없이 개별적으로 선택할 수 있으며, 선택한 백업만 삭제되어 다른 백업에는 영향을 주지 않습니다.
-* **OpenSQL(postgres)**: Incremental Backup을 단독으로 선택할 수 있으며, 선택한 백업 이후에 생성된 Incremental Backup까지 함께 삭제됩니다.
+- **Tibero(RMGR)**: Incremental Backup만 단독으로 선택하면 삭제할 수 없습니다. Full Backup 단위로 선택해야 하며, 이 경우 하위 Incremental Backup이 모두 함께 삭제됩니다.
+- **OpenSQL(rsync)**: Full Backup과 Incremental Backup을 구분 없이 개별적으로 선택할 수 있으며, 선택한 백업만 삭제되어 다른 백업에는 영향을 주지 않습니다.
+- **OpenSQL(postgres)**: Incremental Backup을 단독으로 선택할 수 있으며, 선택한 백업 이후에 생성된 Incremental Backup까지 함께 삭제됩니다.
 {% endhint %}

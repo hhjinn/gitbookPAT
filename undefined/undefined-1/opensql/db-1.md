@@ -2,7 +2,7 @@
 
 # **1. 필요 파일 목록**
 
-* owldb dp 바이너리 (`owldb_dp_installer_owl_x.x.x.tar.gz`)
+- owldb dp 바이너리 (`owldb_dp_installer_owl_x.x.x.tar.gz`)
 
 # **2. 파일 배치**
 
@@ -31,7 +31,7 @@ $OPENSQL_HOME/
 
 <table data-full-width="true"><thead><tr><th>Key</th><th>Value</th><th>입력 규칙</th></tr></thead><tbody><tr><td>AGENT_TYPE*</td><td></td><td><code>pg</code> 입력</td></tr><tr><td>IP*</td><td>OwlDB CP의 IP</td><td></td></tr><tr><td>PORT*</td><td>OwlDB CP의 port</td><td></td></tr><tr><td>USERNAME*</td><td>opensql 실행 user 이름</td><td></td></tr><tr><td>OPENSQL_HOME</td><td></td><td><ul><li>이미 설정 시 입력 불필요</li><li>미설정 시 위에서 사용한 OPENSQL_HOME 입력</li></ul></td></tr><tr><td>DB_LOG_DIR</td><td>PG 로그 경로</td><td>로그 미수집 시 입력 불필요</td></tr><tr><td>DB_LOG_FILE_GLOB</td><td>PG 로그 파일 형식</td><td>예: <code>postgresql*.log</code></td></tr><tr><td>PATRONI_CONFIG</td><td>patroni.yml 경로</td><td></td></tr><tr><td>PATRONI_MEMBER</td><td>patroni 멤버 이름</td><td></td></tr></tbody></table>
 
-\*표기는 필수 입력 항목을 의미합니다.
+*표기는 필수 입력 항목을 의미합니다.
 
 {% hint style="info" %}
 **참고**
@@ -69,8 +69,8 @@ pgrep -af patroni
 cat /proc/<PID>/cgroup
 ```
 
-| 결과  | 판정  |
-|-----|-----|
+| 결과 | 판정 |
+| --- | --- |
 | 0::/system.slice/xxxxxxxx.service | 유닛명 불일치 → c 추가 수행 필요 |
 | 0::/user.slice/user-1000.slice/session-3.scope | systemd 미등록 → 추가 조치 필요 없음<br>owldb 내부에서 중지/시작 처리 |
 

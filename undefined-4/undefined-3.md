@@ -2,19 +2,19 @@
 
 메뉴는 DB 엔진에 따라 제공되는 탭이 다릅니다.
 
-| 탭   | 설명  | Tibero | OpenSQL |
-|-----|-----|--------|---------|
-| Endpoint | 외부 애플리케이션이 접속 가능한 엔드포인트 주소 확인 | ✓      | ✓       |
-| Access Control | IP 기반 접근 허용·차단 규칙(pg_hba) 조회·관리 | —      | ✓       |
-| OpenProxy | OpenProxy 파라미터와 Pool, User, Shard 구성 조회·수정 | —      | ✓       |
-| Replication Slot | 외부 시스템과의 연동에 사용하는 Replication Slot 조회·관리 | —      | ✓       |
+| 탭 | 설명 | Tibero | OpenSQL |
+| --- | --- | --- | --- |
+| Endpoint | 외부 애플리케이션이 접속 가능한 엔드포인트 주소 확인 | ✓ | ✓ |
+| Access Control | IP 기반 접근 허용·차단 규칙(pg_hba) 조회·관리 | — | ✓ |
+| OpenProxy | OpenProxy 파라미터와 Pool, User, Shard 구성 조회·수정 | — | ✓ |
+| Replication Slot | 외부 시스템과의 연동에 사용하는 Replication Slot 조회·관리 | — | ✓ |
 
 ## 공통 상단 영역
 
 연결 정보 관리 화면 상단에는 현재 선택된 DB 서비스의 식별 정보가 모든 탭에 걸쳐 고정으로 표시됩니다.
 
-| 항목  | 설명  |
-|-----|-----|
+| 항목 | 설명 |
+| --- | --- |
 | Status | DB 서비스의 현재 상태 |
 | DB Type | 데이터베이스 엔진 유형 |
 | Topology | 데이터베이스 클러스터 구성 방식 |
@@ -31,10 +31,10 @@ Endpoint 탭은 **Service Endpoint**와 **Endpoint Details** 두 영역으로 �
 
 **Endpoint Details**
 
-| 컬럼  | 설명  |
-|-----|-----|
-| 별칭  | 인스턴스 별칭 |
-| 역할  | Primary / Standby(Recovery) / Standby(Read Only) |
+| 컬럼 | 설명 |
+| --- | --- |
+| 별칭 | 인스턴스 별칭 |
+| 역할 | Primary / Standby(Recovery) / Standby(Read Only) |
 | VIP | 인스턴스 접속용 VIP 주소 |
 | Private IP | 인스턴스 내부 네트워크 주소 |
 | Port | DB Listener 포트 번호 |
@@ -69,8 +69,8 @@ Access Control 탭은 **OpenSQL** 환경에서만 제공됩니다.
 
 현재 DB 서비스에 적용된 pg_hba 규칙 목록을 테이블 형식으로 표시합니다. 규칙은 Priority 오름차순으로 고정 정렬되며, 위에 위치한 규칙일수록 먼저 적용됩니다.
 
-| 컬럼  | 설명  |
-|-----|-----|
+| 컬럼 | 설명 |
+| --- | --- |
 | Priority | 규칙의 적용 순서. 번호가 작을수록 먼저 적용 |
 | Type | 연결 유형 (`local` / `host` / `hostssl` / `hostnossl`) |
 | 데이터베이스 별칭 | 규칙이 적용되는 데이터베이스 이름 |
@@ -100,7 +100,7 @@ Access Control 탭은 **OpenSQL** 환경에서만 제공됩니다.
 
 <table data-full-width="true"><thead><tr><th>항목</th><th>설명</th><th>입력 규칙</th></tr></thead><tbody><tr><td>Priority</td><td>규칙 적용 순서 (숫자가 작을수록 우선 적용)</td><td><ul><li>미입력 시 마지막 순서로 추가</li><li>시스템 고정 규칙 번호 이후부터 입력 가능</li></ul></td></tr><tr><td>Type *</td><td>연결 유형</td><td><ul><li><code>local</code> / <code>host</code> / <code>hostssl</code> / <code>hostnossl</code>중 선택</li><li>기본값<code>host</code></li></ul></td></tr><tr><td>Database *</td><td>규칙을 적용할 데이터베이스</td><td><ul><li>데이터베이스 목록에서 하나 이상 선택 또는 특수 키워드(<code>all</code>, <code>sameuser</code>, <code>samerole</code>) 중 하나 선택</li><li>특수 키워드와 데이터베이스 목록 동시 선택 불가</li></ul></td></tr><tr><td>User *</td><td>규칙을 적용할 사용자</td><td>사용자 목록에서 하나 이상 선택 또는 <code>all</code> 선택</td></tr><tr><td>Address *</td><td>접근을 허용할 클라이언트 주소</td><td><ul><li>CIDR 또는 Hostname 직접 입력 또는 특수 키워드(<code>all</code>, <code>samehost</code>, <code>samenet</code>) 선택</li><li>Type이<code>local</code>이면 비활성화</li><li>단일 IP 입력 시 자동 CIDR 형식 변환 (IPv4:<code>/32</code>, IPv6: <code>/128</code>)</li></ul></td></tr><tr><td>Method *</td><td>인증 방식</td><td><ul><li>드롭다운에서 선택</li><li>기본값<code>scram-sha-256</code></li></ul></td></tr><tr><td>Auth Option</td><td>Method에 대한 세부 인증 옵션</td><td><ul><li>Method에 따라 입력 방식 상이</li><li><code>trust</code> 또는 <code>reject</code>선택 시 비활성화</li><li><code>scram-sha-256</code> 또는 <code>md5</code>선택 시 드롭다운 선택</li><li>그 외 Method는<code>key=value</code> 형식 입력</li></ul></td></tr><tr><td>Comment</td><td>규칙에 대한 메모</td><td>줄바꿈 입력 불가</td></tr></tbody></table>
 
-\*표기는 필수 입력 항목을 의미합니다.
+*표기는 필수 입력 항목을 의미합니다.
 
 3. 입력을 완료한 후 **생성** 버튼을 클릭합니다.
 
@@ -138,30 +138,30 @@ OpenProxy 탭은 **OpenSQL** 환경에서만 제공됩니다.
 
 OpenProxy 파라미터를 **Scope** 단위로 조회하고 수정합니다. 화면 왼쪽의 **Select Scope** 영역에서 조회 범위를 선택하면 오른쪽 테이블에 해당 Scope의 파라미터 목록이 표시됩니다. 기본 선택값은 **General**입니다.
 
-| Scope | 설명  |
-|-------|-----|
+| Scope | 설명 |
+| --- | --- |
 | General | 전역 설정 파라미터 |
 | Virtual Router | HA/VIP 관련 설정 파라미터 |
-| Pool  | 특정 Pool 단위 파라미터 |
-| User  | 특정 Pool 내 특정 사용자 단위 파라미터 |
+| Pool | 특정 Pool 단위 파라미터 |
+| User | 특정 Pool 내 특정 사용자 단위 파라미터 |
 | Shard | 특정 Pool 내 특정 Shard 단위 파라미터 |
 
 Pool, User, Shard는 아코디언 구조로 표시됩니다.
 
 **파라미터 목록 테이블**
 
-| 컬럼  | 설명  |
-|-----|-----|
-| 이름  | 파라미터명 |
-| 형식  | 파라미터 데이터 형식 |
+| 컬럼 | 설명 |
+| --- | --- |
+| 이름 | 파라미터명 |
+| 형식 | 파라미터 데이터 형식 |
 | 기본값 | 사용자가 설정하지 않았을 때 적용되는 기본값 |
 | 현재값 | 현재 적용된 값 |
 | 동적 파라미터 | 재시작 없이 즉시 적용 가능 여부 (`예` / `아니요`) |
 
 수정 모드는 화면 단위가 아닌 **세션 단위**로 동작하여, Scope를 변경하더라도 이미 수정한 내용은 유지됩니다. 저장 시 결과는 파라미터 유형에 따라 갈립니다.
 
-* **동적 파라미터만 수정**: 재시작 없이 즉시 반영
-* **정적 파라미터 포함**: OpenProxy 재기동 후 반영
+- **동적 파라미터만 수정**: 재시작 없이 즉시 반영
+- **정적 파라미터 포함**: OpenProxy 재기동 후 반영
 
 ### 파라미터 조회
 
@@ -203,23 +203,21 @@ DB 서비스 상태가 `Running` 상태일 때만 **수정** 버튼이 활성화
 {% tab title="Pool 생성" %}
 <table data-full-width="true"><thead><tr><th>항목</th><th>설명</th><th>입력 규칙</th></tr></thead><tbody><tr><td>Pool Name *</td><td>Pool 이름</td><td>1~63자, 영어 소문자(a-z)·숫자(0-9)·언더바(<code>_</code>) 사용 가능. 첫 글자는 숫자 불가. DB 서비스 내 중복 불가.</td></tr><tr><td>User Name *</td><td>Pool에 속할 사용자 이름</td><td>1~63자, 영어 소문자(a-z)·숫자(0-9)·언더바(<code>_</code>) 사용 가능. 첫 글자는 숫자 불가.</td></tr><tr><td>Pool Size *</td><td>해당 사용자가 동시에 점유할 수 있는 DB 서버 연결 최대 개수</td><td>정수 입력. 범위: 1 ~ max connections. 기본값: 9</td></tr><tr><td>Password *</td><td>사용자 비밀번호</td><td>1~30자, 영어 소문자(a-z)·숫자(0-9)·특수문자(<code>-</code>, <code>_</code>, <code>#</code>, <code>$</code>) 사용 가능</td></tr><tr><td>Shard Name *</td><td>Pool에 생성할 Shard 이름</td><td>1~30자, 영어 소문자(a-z)·숫자(0-9)·언더바(<code>_</code>) 사용 가능. 동일 Pool 내 중복 불가.</td></tr><tr><td>Database Name *</td><td>Pool에 연결할 데이터베이스</td><td>드롭다운에서 선택</td></tr><tr><td>Servers *</td><td>접속할 DB 서버</td><td><ul><li>드롭다운에서 1개 이상 선택</li><li>인스턴스 역할(Role)·별칭(Instance Alias) 표시</li></ul></td></tr><tr><td>Use Patroni</td><td>Patroni를 통한 Auto Failover 사용 여부</td><td>항상 활성화(변경 불가)</td></tr></tbody></table>
 
-\*표기는 필수 입력 항목을 의미합니다.
+*표기는 필수 입력 항목을 의미합니다.
 {% endtab %}
-
 {% tab title="User 생성" %}
-| 항목  | 설명  | 입력 규칙 |
-|-----|-----|-------|
-| User Name \* | 추가할 사용자 이름 | 1\~63자, 영어 소문자(a-z)·숫자(0-9)·언더바(`_`) 사용 가능. 첫 글자는 숫자 불가. 동일 Pool 내 중복 불가. |
-| Pool Size \* | 해당 사용자가 동시에 점유할 수 있는 DB 서버 연결 최대 개수 | 정수 입력. 범위: 1 \~ max connections. 기본값: 9 |
-| Password \* | 사용자 비밀번호 | 1\~30자, 영어 소문자(a-z)·숫자(0-9)·특수문자(`-`, `_`, `#`, `$`) 사용 가능 |
+| 항목 | 설명 | 입력 규칙 |
+| --- | --- | --- |
+| User Name * | 추가할 사용자 이름 | 1~63자, 영어 소문자(a-z)·숫자(0-9)·언더바(`_`) 사용 가능. 첫 글자는 숫자 불가. 동일 Pool 내 중복 불가. |
+| Pool Size * | 해당 사용자가 동시에 점유할 수 있는 DB 서버 연결 최대 개수 | 정수 입력. 범위: 1 ~ max connections. 기본값: 9 |
+| Password * | 사용자 비밀번호 | 1~30자, 영어 소문자(a-z)·숫자(0-9)·특수문자(`-`, `_`, `#`, `$`) 사용 가능 |
 
-\*표기는 필수 입력 항목을 의미합니다.
+*표기는 필수 입력 항목을 의미합니다.
 {% endtab %}
-
 {% tab title="Shard 생성" %}
 <table data-full-width="true"><thead><tr><th>항목</th><th>설명</th><th>입력 규칙</th></tr></thead><tbody><tr><td>Shard Name *</td><td>추가할 Shard 이름</td><td>1~30자, 영어 소문자(a-z)·숫자(0-9)·언더바(<code>_</code>) 사용 가능. 동일 Pool 내 중복 불가.</td></tr><tr><td>Database Name *</td><td>Shard에 연결할 데이터베이스</td><td>드롭다운에서 선택</td></tr><tr><td>Servers *</td><td>접속할 DB 서버</td><td><ul><li>드롭다운에서 1개 이상 선택</li><li>인스턴스 역할(Role)·별칭(Instance Alias)·Health 표시</li><li>Health는 참고용, 서버 선택에 영향 없음</li></ul></td></tr><tr><td>Use Patroni</td><td>Patroni를 통한 Auto Failover 사용 여부</td><td>항상 활성화(변경 불가)</td></tr></tbody></table>
 
-\*표기는 필수 입력 항목을 의미합니다.
+*표기는 필수 입력 항목을 의미합니다.
 {% endtab %}
 {% endtabs %}
 
@@ -263,9 +261,9 @@ Replication Slot 탭은 **OpenSQL** 환경에서만 제공됩니다.
 
 OpenSQL Primary 인스턴스에 생성된 Replication Slot 목록을 테이블 형식으로 표시합니다. Failover 또는 Switchover가 발생하더라도 항상 **현재 Primary 인스턴스를 기준**으로 조회됩니다.
 
-| 컬럼  | 설명  |
-|-----|-----|
-| 이름  | Replication Slot 이름 |
+| 컬럼 | 설명 |
+| --- | --- |
+| 이름 | Replication Slot 이름 |
 | Type | `Physical`(WAL 로그를 그대로 저장) 또는 `Logical`(INSERT·UPDATE·DELETE 형태로 변환하여 저장) |
 | Scope | `Permanent`(영구 유지) 또는 `Temporary`(세션 종료 시 자동 삭제) |
 | Status | `Connected`(Replication Client 연결 중) 또는 `Disconnected`(연결된 Client 없음) |
@@ -290,13 +288,13 @@ OwlDB 관리 범위를 벗어나 PostgreSQL에 직접 생성하거나 삭제한 
 1. **생성** 버튼을 클릭합니다.
 2. 오른쪽 드로어에서 아래 항목을 입력합니다.
 
-| 항목  | 설명  | 입력 규칙 |
-|-----|-----|-------|
-| 이름 \* | Replication Slot의 고유 이름 | 30자 이내 영어 소문자(a-z)·숫자(0-9)·언더바(`_`) 사용 가능. 공백 및 탭 입력 불가. 중복 불가. |
-| Type \* | Slot 유형 | Physical 또는 Logical 중 선택. 기본값: Physical |
+| 항목 | 설명 | 입력 규칙 |
+| --- | --- | --- |
+| 이름 * | Replication Slot의 고유 이름 | 30자 이내 영어 소문자(a-z)·숫자(0-9)·언더바(`_`) 사용 가능. 공백 및 탭 입력 불가. 중복 불가. |
+| Type * | Slot 유형 | Physical 또는 Logical 중 선택. 기본값: Physical |
 | Scope | 운영 관리 대상 | Permanent로 고정. Temporary Slot은 생성할 수 없습니다. |
 
-\*표기는 필수 입력 항목을 의미합니다.
+*표기는 필수 입력 항목을 의미합니다.
 
 3. 항목을 입력한 후 **생성** 버튼을 클릭합니다.
 
