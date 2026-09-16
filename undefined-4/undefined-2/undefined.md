@@ -10,7 +10,7 @@
 
 필터 및 검색 항목은 다음과 같습니다.
 
-<table><thead><tr><th>항목</th><th>설명</th></tr></thead><tbody><tr><td>조회 기간</td><td><ul><li>최근 1일 \~최대 3개월</li><li>직접 입력 기간</li></ul></td></tr><tr><td>복구 유형</td><td><ul><li>전체 복구(Full Restore)</li><li>특정 시점 복구(PITR)</li></ul></td></tr><tr><td>상태</td><td>성공/실패</td></tr><tr><td>이름·ID·생성일·만료일</td><td>직접 입력 검색</td></tr></tbody></table>
+<table><thead><tr><th>항목</th><th>설명</th></tr></thead><tbody><tr><td>조회 기간</td><td><ul><li>최근 1일 ~최대 3개월</li><li>직접 입력 기간</li></ul></td></tr><tr><td>복구 유형</td><td><ul><li>전체 복구(Full Restore)</li><li>특정 시점 복구(PITR)</li></ul></td></tr><tr><td>상태</td><td>성공/실패</td></tr><tr><td>이름·ID·생성일·만료일</td><td>직접 입력 검색</td></tr></tbody></table>
 
 {% hint style="info" %}
 **참고**

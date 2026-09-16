@@ -20,7 +20,7 @@ Cloud 환경에서는 CSP Snapshot 기능을 사용해 Full/Incremental 구분 �
 
 페이지에는 다음 항목이 표시됩니다.
 
-<table><thead><tr><th>항목</th><th>설명</th><th>입력 규칙</th></tr></thead><tbody><tr><td>자동 백업</td><td>자동 백업 활성화 여부 (켜짐/꺼짐)</td><td>기본값: 꺼짐</td></tr><tr><td>자동 백업 주기</td><td>자동 백업이 실행되는 주기</td><td><ul><li>시간마다: 1\~23</li><li>일마다: 1\~7</li></ul></td></tr><tr><td>보존 기간</td><td>생성된 백업 이미지를 보존하는 기간</td><td><ul><li>시간마다: 1\~23</li><li>일마다: 1\~35</li></ul></td></tr><tr><td>시작 시간</td><td>자동 백업이 처음 시작되는 일시</td><td>현재보다 과거 일시는 선택 불가</td></tr><tr><td>최근 백업 일자</td><td>가장 최근에 자동 백업이 완료된 일시</td><td>표시 전용</td></tr><tr><td>다음 백업 일자</td><td>다음 자동 백업 예정 일시</td><td>표시 전용</td></tr></tbody></table>
+<table><thead><tr><th>항목</th><th>설명</th><th>입력 규칙</th></tr></thead><tbody><tr><td>자동 백업</td><td>자동 백업 활성화 여부 (켜짐/꺼짐)</td><td>기본값: 꺼짐</td></tr><tr><td>자동 백업 주기</td><td>자동 백업이 실행되는 주기</td><td><ul><li>시간마다: 1~23</li><li>일마다: 1~7</li></ul></td></tr><tr><td>보존 기간</td><td>생성된 백업 이미지를 보존하는 기간</td><td><ul><li>시간마다: 1~23</li><li>일마다: 1~35</li></ul></td></tr><tr><td>시작 시간</td><td>자동 백업이 처음 시작되는 일시</td><td>현재보다 과거 일시는 선택 불가</td></tr><tr><td>최근 백업 일자</td><td>가장 최근에 자동 백업이 완료된 일시</td><td>표시 전용</td></tr><tr><td>다음 백업 일자</td><td>다음 자동 백업 예정 일시</td><td>표시 전용</td></tr></tbody></table>
 
 {% hint style="warning" %}
 **주의**
