@@ -45,18 +45,18 @@ OwlDB 구독 전, SSH Key pair 리소스를 반드시 생성해야 합니다. SS
 
 ## 1. Configure this software
 
-- 아래 항목을 선택하고, **Continue to Launch**를 클릭합니다.
+* 아래 항목을 선택하고, **Continue to Launch**를 클릭합니다.
 
-| 항목 | 옵션 |
-| --- | --- |
+| 항목  | 옵션  |
+|-----|-----|
 | Fulfillment option | OwlDB for Tibero7 |
 | Software version | 1.2.0 (Dec 29, 2025) |
-| Region | 선택 |
+| Region | 선택  |
 
 ## 2. Launch this software
 
-- Configuration 세부 항목을 확인합니다.
-- Choose Action에서 Launch CloudFormation을 선택하고, **Launch**를 클릭합니다.
+* Configuration 세부 항목을 확인합니다.
+* Choose Action에서 Launch CloudFormation을 선택하고, **Launch**를 클릭합니다.
 
 ## 3. CloudFormation 스택 생성
 
@@ -74,8 +74,8 @@ CloudFormation 스택 생성은 아래 네 단계를 순서대로 모두 거쳐�
 
 **템플릿 지정**
 
-| 항목 | 옵션 |
-| --- | --- |
+| 항목  | 옵션  |
+|-----|-----|
 | 템플릿 소스 | Amazon S3 URL |
 | Amazon S3 URL | Default 템플릿 그대로 사용 |
 
@@ -83,37 +83,26 @@ CloudFormation 스택 생성은 아래 네 단계를 순서대로 모두 거쳐�
 
 **스택 이름 제공**
 
-| 항목 | 설명 | 비고 |
-| --- | --- | --- |
+| 항목  | 설명  | 비고  |
+|-----|-----|-----|
 | 스택 이름 | 배포하고자 하는 스택의 고유식별자 | 사용 중인 스택 이름과 중복 사용 불가 |
 
-**파라미터 [Fulfillment option : Deploy into new VPC]**
+**파라미터 \[Fulfillment option : Deploy into new VPC\]**
 
 OwlDB Infra Setting
 
-| 항목 | 설명 | 비고 |
-| --- | --- | --- |
-| VPC CIDR | 신규로 생성할 VPC의 IP 주소 범위(CIDR block) 정의 | 기 존재하는 VPC와 동일하거나 겹치는 범위 사용 불가 |
-| Availability Zone 1 | 인프라 리소스를 배포할 대상 가용 영역(Availability Zone) | 선택한 리전(Region) 내 AZ이어야 함 |
-| Public Subnet 1 CIDR | - 지정한 VPC 내에서 사용할 Public Subnet의 CIDR 범위<br>- Public Subnet : 인터넷 게이트웨이를 통해 외부 통신이 가능한 네트워크 | VPC CIDR에 포함되는 범위여야 함 |
-| Availability Zone 2 | 인프라 리소스를 배포할 대상 가용 영역(Availability Zone) | 선택한 리전(Region) 내 AZ이어야 하고 Availability Zone 1과 달라야 함 |
-| Public Subnet 2 CIDR | 지정한 VPC 내에서 사용할 Public Subnet2의 CIDR 범위 | VPC CIDR에 포함되는 범위여야 하고 Public Subnet 1 CIDR와 달라야 함 |
-| CIDR Range for OwlDB Access | OwlDB 인스턴스에 대한 인바운드 접속을 허용할 IP 주소 범위(CIDR) | 접근 제한 불필요할 경우, 0.0.0.0/0 입력 |
-| KeyPair Name | OwlDB 인스턴스에 SSH로 접근하기 위한 Key Pair 이름 | - 해당 키는 AWS EC2 Key Pair로 미리 생성되어 있어야 함<br>- PEM 파일은 로컬에 보관 필요 |
-| Image Id | OwlDB가 구축될 Image의 Id | Default 그대로 사용 |
+<table><thead><tr><th>항목</th><th>설명</th><th>비고</th></tr></thead><tbody><tr><td>VPC CIDR</td><td>신규로 생성할 VPC의 IP 주소 범위(CIDR block) 정의</td><td>기 존재하는 VPC와 동일하거나 겹치는 범위 사용 불가</td></tr><tr><td>Availability Zone 1</td><td>인프라 리소스를 배포할 대상 가용 영역(Availability Zone)</td><td>선택한 리전(Region) 내 AZ이어야 함</td></tr><tr><td>Public Subnet 1 CIDR</td><td><ul><li>지정한 VPC 내에서 사용할 Public Subnet의 CIDR 범위</li><li>Public Subnet : 인터넷 게이트웨이를 통해 외부 통신이 가능한 네트워크</li></ul></td><td>VPC CIDR에 포함되는 범위여야 함</td></tr><tr><td>Availability Zone 2</td><td>인프라 리소스를 배포할 대상 가용 영역(Availability Zone)</td><td>선택한 리전(Region) 내 AZ이어야 하고 Availability Zone 1과 달라야 함</td></tr><tr><td>Public Subnet 2 CIDR</td><td>지정한 VPC 내에서 사용할 Public Subnet2의 CIDR 범위</td><td>VPC CIDR에 포함되는 범위여야 하고 Public Subnet 1 CIDR와 달라야 함</td></tr><tr><td>CIDR Range for OwlDB Access</td><td>OwlDB 인스턴스에 대한 인바운드 접속을 허용할 IP 주소 범위(CIDR)</td><td>접근 제한 불필요할 경우, 0.0.0.0/0 입력</td></tr><tr><td>KeyPair Name</td><td>OwlDB 인스턴스에 SSH로 접근하기 위한 Key Pair 이름</td><td><ul><li>해당 키는 AWS EC2 Key Pair로 미리 생성되어 있어야 함</li><li>PEM 파일은 로컬에 보관 필요</li></ul></td></tr><tr><td>Image Id</td><td>OwlDB가 구축될 Image의 Id</td><td>Default 그대로 사용</td></tr></tbody></table>
 
 OwlDB Setting
 
-| 항목 | 설명 | 비고 |
-| --- | --- | --- |
-| OwlDB Root User Name | OwlDB에 로그인하기 위한 기본 관리자 계정의 ID | - Default : admin<br>- 설정 이후 변경 불가 |
+<table><thead><tr><th>항목</th><th>설명</th><th>비고</th></tr></thead><tbody><tr><td>OwlDB Root User Name</td><td>OwlDB에 로그인하기 위한 기본 관리자 계정의 ID</td><td><ul><li>Default : admin</li><li>설정 이후 변경 불가</li></ul></td></tr></tbody></table>
 
 Personal Information
 
-| 항목 | 설명 | 비고 |
-| --- | --- | --- |
+| 항목  | 설명  | 비고  |
+|-----|-----|-----|
 | User Email | 서비스 이용과 계정 관리를 위한 이메일 | 개인 정보 이용 동의 필요 |
-| Consent to Personal Data Use | 개인 정보 이용 동의 | - |
+| Consent to Personal Data Use | 개인 정보 이용 동의 | -   |
 
 ### 3-3. 스택 옵션 구성
 
@@ -123,13 +112,13 @@ Personal Information
 해당 단계에서는 기본으로 선택된 옵션을 그대로 사용합니다.
 {% endhint %}
 
-| 항목 | 설명 |
-| --- | --- |
+| 항목  | 설명  |
+|-----|-----|
 | 태그 (선택 사항) | 리소스 구성·식별·분류용 태그 추가(스택당 최대 50개) |
 | 권한 (선택 사항) | IAM으로 스택에서 사용할 역할 지정 |
 | 스택 실패 옵션 | 프로비저닝 실패 동작 및 롤백 중 생성된 리소스 삭제 방식 선택 |
 | 추가 설정 (선택 사항) | 스택 알림 옵션·정책 등 추가 옵션 설정 |
-| 기능 | CloudFormation의 IAM 리소스 생성 승인 |
+| 기능  | CloudFormation의 IAM 리소스 생성 승인 |
 
 ### 3-4. 검토 및 작성
 

@@ -24,34 +24,20 @@
 OwlDB 서비스 리소스는 Azure 시스템이 자동으로 생성하는 별도의 리소스 그룹에 배포되고, Publisher(운영자)에 의해 관리됩니다.
 {% endhint %}
 
-| 항목 | 설명 |
-| --- | --- |
-| Subscription | - **Azure 구독 계정**<br>- 모든 리소스의 집합으로, 구독의 모든 리소스는 함께 청구됨 |
-| Resource Group | - **Azure 리소스 그룹**<br>- 동일한 수명 주기, 권한 및 정책을 공유하는 리소스 모음 |
+<table><thead><tr><th>항목</th><th>설명</th></tr></thead><tbody><tr><td>Subscription</td><td><ul><li><strong>Azure 구독 계정</strong></li><li>모든 리소스의 집합으로, 구독의 모든 리소스는 함께 청구됨</li></ul></td></tr><tr><td>Resource Group</td><td><ul><li><strong>Azure 리소스 그룹</strong></li><li>동일한 수명 주기, 권한 및 정책을 공유하는 리소스 모음</li></ul></td></tr></tbody></table>
 
 ## 2. Instance details
 
 OwlDB 배포를 위한 ARM(Azure Resource Manager) Template의 파라미터를 직접 지정합니다.
 
-| 항목 | 설명 | 비고 |
-| --- | --- | --- |
-| Region | OwlDB를 배포할 리전 | 제공 리전 확인 |
-| Project Name | 배포하고자 하는 프로젝트의 이름 | 사용 중인 프로젝트 이름과 중복 사용 불가 |
-| Vnet CIDR | 신규로 생성할 VNet의 IP 주소 범위(CIDR block) | - |
-| Availability Zone | 인프라 리소스를 배포할 대상 가용 영역(Availability Zone) | 선택한 리전(Region) 내 AZ |
-| Public Subnet CIDR | - 지정한 VNet 내에서 사용할 Public Subnet의 CIDR 범위<br>- Public Subnet : 인터넷 게이트웨이를 통해 외부 통신이 가능한 네트워크 | VNet CIDR에 포함되는 범위여야 함 |
-| App Gateway Subnet CIDR | 지정한 VNet 내에서 사용할 Azure Application Gateway의 CIDR 범위 | - VNet CIDR에 포함되는 범위여야 함<br>- Public Subnet CIDR와 달라야 함 |
-| OwlDB Ingress CIDR | OwlDB 인스턴스에 대한 인바운드 접속을 허용할 IP 주소 범위(CIDR) | 접근 제한 불필요할 경우, `0.0.0.0/0` 입력 |
-| SSH Public Key | OwlDB 인스턴스에 SSH로 접근하기 위한 Key Pair 이름 | - SSH Key로 미리 생성되어 있어야 함<br>- PEM 파일은 로컬에 보관 필요 |
-| OwlDB Root Username | OwlDB에 로그인하기 위한 기본 관리자 계정의 ID | - **Default : admin**<br>- 설정 이후 변경 불가 |
-| User Email | 서비스 이용과 계정 관리를 위한 이메일 | 개인 정보 이용 동의 필요 |
+<table><thead><tr><th>항목</th><th>설명</th><th>비고</th></tr></thead><tbody><tr><td>Region</td><td>OwlDB를 배포할 리전</td><td>제공 리전 확인</td></tr><tr><td>Project Name</td><td>배포하고자 하는 프로젝트의 이름</td><td>사용 중인 프로젝트 이름과 중복 사용 불가</td></tr><tr><td>Vnet CIDR</td><td>신규로 생성할 VNet의 IP 주소 범위(CIDR block)</td><td>-</td></tr><tr><td>Availability Zone</td><td>인프라 리소스를 배포할 대상 가용 영역(Availability Zone)</td><td>선택한 리전(Region) 내 AZ</td></tr><tr><td>Public Subnet CIDR</td><td><ul><li>지정한 VNet 내에서 사용할 Public Subnet의 CIDR 범위</li><li>Public Subnet : 인터넷 게이트웨이를 통해 외부 통신이 가능한 네트워크</li></ul></td><td>VNet CIDR에 포함되는 범위여야 함</td></tr><tr><td>App Gateway Subnet CIDR</td><td>지정한 VNet 내에서 사용할 Azure Application Gateway의 CIDR 범위</td><td><ul><li>VNet CIDR에 포함되는 범위여야 함</li><li>Public Subnet CIDR와 달라야 함</li></ul></td></tr><tr><td>OwlDB Ingress CIDR</td><td>OwlDB 인스턴스에 대한 인바운드 접속을 허용할 IP 주소 범위(CIDR)</td><td>접근 제한 불필요할 경우, <code>0.0.0.0/0</code> 입력</td></tr><tr><td>SSH Public Key</td><td>OwlDB 인스턴스에 SSH로 접근하기 위한 Key Pair 이름</td><td><ul><li>SSH Key로 미리 생성되어 있어야 함</li><li>PEM 파일은 로컬에 보관 필요</li></ul></td></tr><tr><td>OwlDB Root Username</td><td>OwlDB에 로그인하기 위한 기본 관리자 계정의 ID</td><td><ul><li><strong>Default : admin</strong></li><li>설정 이후 변경 불가</li></ul></td></tr><tr><td>User Email</td><td>서비스 이용과 계정 관리를 위한 이메일</td><td>개인 정보 이용 동의 필요</td></tr></tbody></table>
 
 ## 3. Managed Application Details
 
 애플리케이션의 고유 식별자와 리소스 관리를 위한 리소스 그룹을 지정합니다.
 
-| 항목 | 설명 |
-| --- | --- |
+| 항목  | 설명  |
+|-----|-----|
 | Application Name | 애플리케이션 고유 식별자 |
 | Managed Resource Group | 리소스 관리를 위한 그룹 |
 
@@ -96,5 +82,5 @@ OwlDB 접속 URL은 `https://<sub-domain>.owl-db.com` 형식이며, `<sub-domain
 
 고객별 고유한 도메인값은 다음 방법으로 확인합니다.
 
-- **Azure 포털 > OwlDB 리소스 그룹 > Settings - Deployments > OwlDB에 해당하는 Deployment > Outputs > Sub Domain Name**에서 확인합니다.
-- **DNS zones** 서비스의 리소스 중 OwlDB에 해당하는 호스팅 영역 이름을 참조합니다.
+* **Azure 포털 > OwlDB 리소스 그룹 > Settings - Deployments > OwlDB에 해당하는 Deployment > Outputs > Sub Domain Name**에서 확인합니다.
+* **DNS zones** 서비스의 리소스 중 OwlDB에 해당하는 호스팅 영역 이름을 참조합니다.
