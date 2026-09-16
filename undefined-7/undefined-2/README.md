@@ -16,7 +16,7 @@
 
 ## 요약 정보 항목
 
-<table><thead><tr><th><strong>항목</strong></th><th><strong>설명</strong></th></tr></thead><tbody><tr><td>이용 기간</td><td><ul><li>당월 1일부터 UTC 기준 조회 전일까지 기간 표시</li><li>표기:<code>YYYY.MM.DD ~ YYYY.MM.DD</code></li></ul></td></tr><tr><td>DB 서비스 개수</td><td><ul><li>조회 기간 내 이용한 DB 서비스 총개수</li><li>DB 유형별(Tibero / OpenSQL) 개수 함께 표시</li></ul></td></tr><tr><td>총 이용 요금</td><td><ul><li>조회 기간 내 이용한 DB 서비스 라이선스 요금 합계</li><li>달러($) 기준, 소수점 둘째 자리 반올림</li></ul></td></tr></tbody></table>
+<table><thead><tr><th><strong>항목</strong></th><th><strong>설명</strong></th></tr></thead><tbody><tr><td>이용 기간</td><td><ul><li>당월 1일부터 UTC 기준 조회 전일까지 기간 표시</li><li>표기:<code>YYYY.MM.DD \~ YYYY.MM.DD</code></li></ul></td></tr><tr><td>DB 서비스 개수</td><td><ul><li>조회 기간 내 이용한 DB 서비스 총개수</li><li>DB 유형별(Tibero / OpenSQL) 개수 함께 표시</li></ul></td></tr><tr><td>총 이용 요금</td><td><ul><li>조회 기간 내 이용한 DB 서비스 라이선스 요금 합계</li><li>달러($) 기준, 소수점 둘째 자리 반올림</li></ul></td></tr></tbody></table>
 
 ## 이용 현황 목록
 
