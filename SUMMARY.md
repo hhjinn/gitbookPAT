@@ -1,11 +1,11 @@
 # Table of contents
 
-* [서비스 개요](README.md)
+* [서비스 개요](readme.md)
 * [환경 준비](undefined/README.md)
   * [AWS](undefined/aws/README.md)
     * [마켓플레이스 구독 안내](undefined/aws/undefined.md)
   * [Azure](undefined/azure/README.md)
-    * [마켓플레이스 구독 안내](undefined/azure/마켓플레이스-구독-안내.md)
+    * [마켓플레이스 구독 안내](undefined/azure/undefined.md)
 * [시작하기](undefined-2/README.md)
   * [로그인](undefined-2/undefined.md)
   * [계정 생성 요청](undefined-2/undefined-1.md)
