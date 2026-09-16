@@ -90,7 +90,7 @@ OwlDB는 워크로드 요구 사항에 맞춰 여러 인스턴스 유형을 지�
 
 워크로드에 맞춰 선택 가능한 스토리지/디스크 유형과 크기·IOPS 범위를 확인합니다.
 
-<table><thead><tr><th>유형</th><th>적합 워크로드</th><th>Disk Size (GiB)</th><th>Disk IOPS (IOPS)</th></tr></thead><tbody><tr><td>Ultra Disk</td><td>Azure 가상 머신(VM)용 스토리지 옵션<ul><li>SAP HANA 등 데이터 집약적 워크로드</li><li>트랜잭션 다수 워크로드</li></ul></td><td>100 ~ 65,536</td><td>3,000 ~ 400,000</td></tr><tr><td>Premium SSD v2</td><td>가상 머신·컨테이너용 고성능 스토리지 옵션<ul><li>빅데이터 분석</li><li>게임 실행</li></ul></td><td>100 ~ 65,536</td><td>3,000 ~ 80,000</td></tr></tbody></table>
+<table data-full-width="true"><thead><tr><th>유형</th><th>적합 워크로드</th><th>Disk Size (GiB)</th><th>Disk IOPS (IOPS)</th></tr></thead><tbody><tr><td>Ultra Disk</td><td>Azure 가상 머신(VM)용 스토리지 옵션<ul><li>SAP HANA 등 데이터 집약적 워크로드</li><li>트랜잭션 다수 워크로드</li></ul></td><td>100 ~ 65,536</td><td>3,000 ~ 400,000</td></tr><tr><td>Premium SSD v2</td><td>가상 머신·컨테이너용 고성능 스토리지 옵션<ul><li>빅데이터 분석</li><li>게임 실행</li></ul></td><td>100 ~ 65,536</td><td>3,000 ~ 80,000</td></tr></tbody></table>
 
 {% hint style="info" %}
 **참고**

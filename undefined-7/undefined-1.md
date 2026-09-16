@@ -20,7 +20,7 @@ Member는 Root로부터 접근 권한을 부여받은 DB Service에 한하여 Ow
 
 ### 역할별 권한 매트릭스
 
-<table><thead><tr><th>기능 분류</th><th>상세 기능</th><th>Root</th><th>Member</th></tr></thead><tbody><tr><td>계정 관리</td><td>계정 생성 및 삭제</td><td>✓</td><td>—</td></tr><tr><td>권한 관리</td><td>DB Service 할당</td><td>✓</td><td>—</td></tr><tr><td>서비스 관리</td><td>DB Service 생성 및 삭제</td><td>✓</td><td>—</td></tr><tr><td>DB 관리</td><td><ul><li>스펙 변경</li><li>테이블스페이스 관리</li><li>파라미터 관리</li><li>백업/복구</li><li>모니터링</li></ul></td><td>✓</td><td>✓</td></tr></tbody></table>
+<table data-full-width="true"><thead><tr><th>기능 분류</th><th>상세 기능</th><th>Root</th><th>Member</th></tr></thead><tbody><tr><td>계정 관리</td><td>계정 생성 및 삭제</td><td>✓</td><td>—</td></tr><tr><td>권한 관리</td><td>DB Service 할당</td><td>✓</td><td>—</td></tr><tr><td>서비스 관리</td><td>DB Service 생성 및 삭제</td><td>✓</td><td>—</td></tr><tr><td>DB 관리</td><td><ul><li>스펙 변경</li><li>테이블스페이스 관리</li><li>파라미터 관리</li><li>백업/복구</li><li>모니터링</li></ul></td><td>✓</td><td>✓</td></tr></tbody></table>
 
 ---
 

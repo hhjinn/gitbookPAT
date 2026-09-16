@@ -89,7 +89,7 @@ TAC 노드 Scale In/Out은 Tibero 엔진에서만 제공됩니다. OpenSQL은 DR
 
 ### Failover Automation Level 옵션
 
-<table><thead><tr><th>단계</th><th>이름</th><th>설명</th></tr></thead><tbody><tr><td>0단계</td><td>수동 (Manual)</td><td>장애 발생 시 사용자가 직접 Standby/Replica를 Primary/Leader로 승격</td></tr><tr><td>1단계</td><td>자동 장애 조치 (Auto Failover)</td><td><ul><li>시스템이 자동으로 전환</li><li>복구 및 리소스 최적화는 수동 진행</li></ul></td></tr><tr><td>2단계</td><td>자동 구성 복구 (Auto Rebuild)</td><td><ul><li>장애 조치 후 새로운 Standby/Replica 자동 생성하여 구성 유지</li><li>데이터 복구는 수동 진행</li></ul></td></tr><tr><td>3단계</td><td>완전 자동화 (Full Automation)</td><td>장애 조치부터 복구, 미사용 자원 정리까지 전 과정 자동 처리</td></tr></tbody></table>
+<table data-full-width="true"><thead><tr><th>단계</th><th>이름</th><th>설명</th></tr></thead><tbody><tr><td>0단계</td><td>수동 (Manual)</td><td>장애 발생 시 사용자가 직접 Standby/Replica를 Primary/Leader로 승격</td></tr><tr><td>1단계</td><td>자동 장애 조치 (Auto Failover)</td><td><ul><li>시스템이 자동으로 전환</li><li>복구 및 리소스 최적화는 수동 진행</li></ul></td></tr><tr><td>2단계</td><td>자동 구성 복구 (Auto Rebuild)</td><td><ul><li>장애 조치 후 새로운 Standby/Replica 자동 생성하여 구성 유지</li><li>데이터 복구는 수동 진행</li></ul></td></tr><tr><td>3단계</td><td>완전 자동화 (Full Automation)</td><td>장애 조치부터 복구, 미사용 자원 정리까지 전 과정 자동 처리</td></tr></tbody></table>
 
 {% hint style="warning" %}
 **주의**
@@ -134,7 +134,7 @@ Replica Scale In/Out은 OpenSQL 엔진에서만 제공됩니다. Tibero는 엔�
 
 스토리지 관련 설정은 다음과 같습니다.
 
-<table><thead><tr><th>항목</th><th>설명</th></tr></thead><tbody><tr><td>Volume Size</td><td>현재 설정값보다 큰 값으로만 변경 가능</td></tr><tr><td>Volume IOPS / MBps</td><td>Azure 환경에서 볼륨 유형에 따라 허용 범위 내 설정 가능</td></tr><tr><td>Auto Scale</td><td>사용 설정 시 Data Volume 사용량 90% 도달 시 자동으로 볼륨 확장</td></tr><tr><td>최대 확장 한도</td><td><ul><li>Auto Scale 사용 시 최대 확장 가능 크기 입력</li><li>현재 Data Volume Size의 110% 이상 입력 필요</li></ul></td></tr></tbody></table>
+<table data-full-width="true"><thead><tr><th>항목</th><th>설명</th></tr></thead><tbody><tr><td>Volume Size</td><td>현재 설정값보다 큰 값으로만 변경 가능</td></tr><tr><td>Volume IOPS / MBps</td><td>Azure 환경에서 볼륨 유형에 따라 허용 범위 내 설정 가능</td></tr><tr><td>Auto Scale</td><td>사용 설정 시 Data Volume 사용량 90% 도달 시 자동으로 볼륨 확장</td></tr><tr><td>최대 확장 한도</td><td><ul><li>Auto Scale 사용 시 최대 확장 가능 크기 입력</li><li>현재 Data Volume Size의 110% 이상 입력 필요</li></ul></td></tr></tbody></table>
 
 {% hint style="warning" %}
 **주의**

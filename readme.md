@@ -40,20 +40,20 @@ OwlDB가 지원하는 관계형 데이터베이스(RDBMS) 엔진 사양 및 환�
 {% tab title="Cloud" %}
 ### AWS
 
-<table><thead><tr><th>데이터베이스 엔진</th><th>버전</th><th>토폴로지</th></tr></thead><tbody><tr><td>Tibero</td><td>7.2.5</td><td><ul><li>Single</li><li>Single + DR</li><li>TAC</li><li>TAC + DR</li></ul></td></tr></tbody></table>
+<table data-full-width="true"><thead><tr><th>데이터베이스 엔진</th><th>버전</th><th>토폴로지</th></tr></thead><tbody><tr><td>Tibero</td><td>7.2.5</td><td><ul><li>Single</li><li>Single + DR</li><li>TAC</li><li>TAC + DR</li></ul></td></tr></tbody></table>
 
 ### Azure
 
-<table><thead><tr><th>데이터베이스 엔진</th><th>버전</th><th>토폴로지</th></tr></thead><tbody><tr><td>Tibero</td><td>7.2.5</td><td><ul><li>Single</li><li>Single + DR</li><li>TAC</li><li>TAC + DR</li></ul></td></tr><tr><td>OpenSQL</td><td><ul><li>3.16.12.5</li><li>3.17.8.5</li></ul></td><td><ul><li>Single</li><li>HA</li></ul></td></tr></tbody></table>
+<table data-full-width="true"><thead><tr><th>데이터베이스 엔진</th><th>버전</th><th>토폴로지</th></tr></thead><tbody><tr><td>Tibero</td><td>7.2.5</td><td><ul><li>Single</li><li>Single + DR</li><li>TAC</li><li>TAC + DR</li></ul></td></tr><tr><td>OpenSQL</td><td><ul><li>3.16.12.5</li><li>3.17.8.5</li></ul></td><td><ul><li>Single</li><li>HA</li></ul></td></tr></tbody></table>
 {% endtab %}
 
 {% tab title="On-Premise" %}
 ### OwlDB Operation
 
-<table><thead><tr><th>데이터베이스 엔진</th><th>버전</th><th>토폴로지</th></tr></thead><tbody><tr><td>Tibero</td><td>7 패치셋 이후</td><td><ul><li>Single</li><li>Single + DR</li><li>TAC</li><li>TAC + DR</li></ul></td></tr><tr><td>OpenSQL</td><td>3.0(PostgreSQL 17.9)</td><td><ul><li>Single</li><li>HA</li></ul></td></tr></tbody></table>
+<table data-full-width="true"><thead><tr><th>데이터베이스 엔진</th><th>버전</th><th>토폴로지</th></tr></thead><tbody><tr><td>Tibero</td><td>7 패치셋 이후</td><td><ul><li>Single</li><li>Single + DR</li><li>TAC</li><li>TAC + DR</li></ul></td></tr><tr><td>OpenSQL</td><td>3.0(PostgreSQL 17.9)</td><td><ul><li>Single</li><li>HA</li></ul></td></tr></tbody></table>
 
 ### OwlDB Automation
 
-<table><thead><tr><th>데이터베이스 엔진</th><th>버전</th><th>토폴로지</th></tr></thead><tbody><tr><td>Tibero</td><td><ul><li>등록: 7 패치셋 이후</li><li>설치: 7.2.5</li></ul></td><td><ul><li>Single</li><li>Single + DR</li><li>TAC</li><li>TAC + DR</li></ul></td></tr><tr><td>OpenSQL</td><td>3.0(PostgreSQL 17.9)</td><td><ul><li>Single</li><li>HA</li></ul></td></tr></tbody></table>
+<table data-full-width="true"><thead><tr><th>데이터베이스 엔진</th><th>버전</th><th>토폴로지</th></tr></thead><tbody><tr><td>Tibero</td><td><ul><li>등록: 7 패치셋 이후</li><li>설치: 7.2.5</li></ul></td><td><ul><li>Single</li><li>Single + DR</li><li>TAC</li><li>TAC + DR</li></ul></td></tr><tr><td>OpenSQL</td><td>3.0(PostgreSQL 17.9)</td><td><ul><li>Single</li><li>HA</li></ul></td></tr></tbody></table>
 {% endtab %}
 {% endtabs %}

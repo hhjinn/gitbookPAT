@@ -26,7 +26,7 @@ OwlDB에서 제공하는 마이그레이션 기능의 지원 범위와 상세 �
 
 OwlDB 마이그레이션은 모든 Independent Object와 Dependent Object를 한번에 이관합니다. 개별 Object만 선택적으로 이관하거나 제외하는 기능은 지원하지 않습니다.
 
-<table><thead><tr><th>Oracle</th><th>Tibero</th><th>비고</th></tr></thead><tbody><tr><td>Constraint</td><td>Constraint</td><td>Primary Key, Foreign Key, Check, Ref Constraint에 대해 이관을 지원함<ul><li>Primary Key index/constraint는 모두 constraint로 처리함</li><li>Check constraint의 표현식은 Oracle의 DD에 저장된 문장을 이용해 DDL을 생성함</li></ul></td></tr><tr><td>Index</td><td>Index</td><td><ul><li>R-TREE 미지원</li><li>Domain Index 미지원</li></ul></td></tr><tr><td>Materialized</td><td>Materialized</td><td>-</td></tr><tr><td>Materialized View Log</td><td>Materialized View Log</td><td>-</td></tr><tr><td>Privilege</td><td>Privilege</td><td>-</td></tr><tr><td>PSM</td><td>PSM</td><td>-</td></tr><tr><td>Role</td><td>Role</td><td>-</td></tr><tr><td>Schema</td><td>Schema</td><td>-</td></tr><tr><td>Sequence</td><td>Sequence</td><td>-</td></tr><tr><td>Synonym</td><td>Synonym</td><td>-</td></tr><tr><td>Table</td><td>Table</td><td><ul><li>Nested Table 미지원</li><li>XML Table 미지원</li></ul></td></tr><tr><td>Tablespace</td><td>Tablespace</td><td>테이블 스페이스의 크기는 20% 증대하여 이관함 -> 데이터 이관 시 용량이 TO-BE에서보다 커질 수 있기 때문</td></tr><tr><td>View</td><td>View</td><td>-</td></tr></tbody></table>
+<table data-full-width="true"><thead><tr><th>Oracle</th><th>Tibero</th><th>비고</th></tr></thead><tbody><tr><td>Constraint</td><td>Constraint</td><td>Primary Key, Foreign Key, Check, Ref Constraint에 대해 이관을 지원함<ul><li>Primary Key index/constraint는 모두 constraint로 처리함</li><li>Check constraint의 표현식은 Oracle의 DD에 저장된 문장을 이용해 DDL을 생성함</li></ul></td></tr><tr><td>Index</td><td>Index</td><td><ul><li>R-TREE 미지원</li><li>Domain Index 미지원</li></ul></td></tr><tr><td>Materialized</td><td>Materialized</td><td>-</td></tr><tr><td>Materialized View Log</td><td>Materialized View Log</td><td>-</td></tr><tr><td>Privilege</td><td>Privilege</td><td>-</td></tr><tr><td>PSM</td><td>PSM</td><td>-</td></tr><tr><td>Role</td><td>Role</td><td>-</td></tr><tr><td>Schema</td><td>Schema</td><td>-</td></tr><tr><td>Sequence</td><td>Sequence</td><td>-</td></tr><tr><td>Synonym</td><td>Synonym</td><td>-</td></tr><tr><td>Table</td><td>Table</td><td><ul><li>Nested Table 미지원</li><li>XML Table 미지원</li></ul></td></tr><tr><td>Tablespace</td><td>Tablespace</td><td>테이블 스페이스의 크기는 20% 증대하여 이관함 -> 데이터 이관 시 용량이 TO-BE에서보다 커질 수 있기 때문</td></tr><tr><td>View</td><td>View</td><td>-</td></tr></tbody></table>
 
 ### **데이터 변환 타입**
 
@@ -76,7 +76,7 @@ Oracle에서 Tibero로 이관할 때 변환되는 데이터 타입에 대해 안
 | Port\* | 소스 데이터베이스의 포트 번호 |
 | SID\* | 소스 데이터베이스의 SID |
 
-*표기는 필수 입력 항목을 의미합니다.
+\*표기는 필수 입력 항목을 의미합니다.
 
 5. **분석** 버튼을 클릭합니다.
 6. **OwlDB 콘솔 화면 > 관리 > 마이그레이션 > Analyzer > 상태** 클릭 시, 진행 정보를 확인할 수 있습니다.
@@ -109,7 +109,7 @@ Oracle에서 Tibero로 이관할 때 변환되는 데이터 타입에 대해 안
 | SID\* | 소스 데이터베이스의 SID |
 | Target Database\* | 타겟 데이터베이스의 별칭 |
 
-*표기는 필수 입력 항목을 의미합니다.
+\*표기는 필수 입력 항목을 의미합니다.
 {% endtab %}
 
 {% tab title="Type Conversion" %}

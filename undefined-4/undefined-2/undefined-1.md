@@ -28,7 +28,7 @@
 
 ### 백업 상태 이력
 
-<table><thead><tr><th>항목</th><th>설명</th></tr></thead><tbody><tr><td>상태</td><td><ul><li>생성 시작</li><li>복구 가능</li><li>생성 실패</li><li>복구 시작</li><li>복구 실패</li><li>삭제 시작</li><li>삭제됨</li><li>사용 불가</li></ul></td></tr><tr><td>발생일</td><td>상태가 변경된 일시 표시 (yyyy.mm.dd HH:mm:ss)</td></tr></tbody></table>
+<table data-full-width="true"><thead><tr><th>항목</th><th>설명</th></tr></thead><tbody><tr><td>상태</td><td><ul><li>생성 시작</li><li>복구 가능</li><li>생성 실패</li><li>복구 시작</li><li>복구 실패</li><li>삭제 시작</li><li>삭제됨</li><li>사용 불가</li></ul></td></tr><tr><td>발생일</td><td>상태가 변경된 일시 표시 (yyyy.mm.dd HH:mm:ss)</td></tr></tbody></table>
 
 {% hint style="info" %}
 **참고**

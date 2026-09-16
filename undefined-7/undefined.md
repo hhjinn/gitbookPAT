@@ -7,7 +7,7 @@
 
 본인 계정의 상세 정보를 조회합니다.
 
-<table><thead><tr><th>항목</th><th>설명</th></tr></thead><tbody><tr><td>아이디</td><td>로그인 시 사용하는 ID</td></tr><tr><td>이름</td><td>사용자 표시명</td></tr><tr><td>역할</td><td><code>Root</code> 또는 <code>Member</code></td></tr><tr><td>권한</td><td>해당 계정이 가진 권한 (DB Service 목록)</td></tr><tr><td>이메일</td><td><ul><li>이메일 정보 표시</li><li>아이디 찾기 및 비밀번호 재설정 시 사용</li><li>Root : CSP 계정 정보</li></ul></td></tr><tr><td>상태</td><td>계정 상태</td></tr><tr><td>생성일</td><td>계정 생성 시각</td></tr><tr><td>마지막 접속일</td><td>최종 로그인 시각</td></tr><tr><td>변경일</td><td>마지막 수정 시각</td></tr><tr><td>구독 정보</td><td>Azure 리소스 아이디 항목 내 <code>Subscription</code> 정보 조회 (Root 계정만)</td></tr><tr><td>리소스 그룹</td><td>Azure 리소스 아이디 항목 내 <code>resourceGroups</code> 정보 (Root 계정만)</td></tr></tbody></table>
+<table data-full-width="true"><thead><tr><th>항목</th><th>설명</th></tr></thead><tbody><tr><td>아이디</td><td>로그인 시 사용하는 ID</td></tr><tr><td>이름</td><td>사용자 표시명</td></tr><tr><td>역할</td><td><code>Root</code> 또는 <code>Member</code></td></tr><tr><td>권한</td><td>해당 계정이 가진 권한 (DB Service 목록)</td></tr><tr><td>이메일</td><td><ul><li>이메일 정보 표시</li><li>아이디 찾기 및 비밀번호 재설정 시 사용</li><li>Root : CSP 계정 정보</li></ul></td></tr><tr><td>상태</td><td>계정 상태</td></tr><tr><td>생성일</td><td>계정 생성 시각</td></tr><tr><td>마지막 접속일</td><td>최종 로그인 시각</td></tr><tr><td>변경일</td><td>마지막 수정 시각</td></tr><tr><td>구독 정보</td><td>Azure 리소스 아이디 항목 내 <code>Subscription</code> 정보 조회 (Root 계정만)</td></tr><tr><td>리소스 그룹</td><td>Azure 리소스 아이디 항목 내 <code>resourceGroups</code> 정보 (Root 계정만)</td></tr></tbody></table>
 
 ## 내 계정 정보 수정
 
@@ -24,7 +24,7 @@
 | 비밀번호 확인\* | 변경할 비밀번호 확인 | 변경 비밀번호와 동일하게 입력 |
 | 이메일 | 이메일 정보 | 수정 가능 |
 
-*표기는 필수 입력 항목을 의미합니다.
+\*표기는 필수 입력 항목을 의미합니다.
 
 {% hint style="info" %}
 **참고**

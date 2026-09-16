@@ -83,7 +83,7 @@ OwlDB가 제공되는 클라우드 환경과 서버 사양을 확인합니다.
 
 OwlDB에서 사용 가능한 스토리지 유형과 각 유형의 용량·IOPS 범위를 확인합니다.
 
-<table><thead><tr><th>유형</th><th>특성</th><th>볼륨 크기(GiB)</th><th>볼륨 IOPS(개)</th></tr></thead><tbody><tr><td>gp3</td><td><ul><li>SSD 기반 볼륨</li><li>높은 IOPS, 낮은 대기시간</li><li>용량당 비용 저렴</li></ul></td><td>100 ~ 65,536</td><td>3,000 ~ 80,000</td></tr><tr><td>gp2</td><td><ul><li>SSD 기반 볼륨</li><li>대량 데이터 저장·처리에 적합</li><li>용량당 비용 저렴</li><li>일관성 편차 있음</li><li>IOPS는 할당된 스토리지 크기에 따라 변경, 사용자 설정 불가</li></ul></td><td>100 ~ 16,384</td><td>450 ~ 16,000</td></tr><tr><td>io2</td><td><ul><li>SSD 기반 볼륨</li><li>매우 높은 IOPS, 일관된 성능</li><li>용량당 비용 높음</li><li>대기시간 상대적으로 김</li></ul></td><td>100 ~ 65,536</td><td>3,000 ~ 256,000</td></tr></tbody></table>
+<table data-full-width="true"><thead><tr><th>유형</th><th>특성</th><th>볼륨 크기(GiB)</th><th>볼륨 IOPS(개)</th></tr></thead><tbody><tr><td>gp3</td><td><ul><li>SSD 기반 볼륨</li><li>높은 IOPS, 낮은 대기시간</li><li>용량당 비용 저렴</li></ul></td><td>100 ~ 65,536</td><td>3,000 ~ 80,000</td></tr><tr><td>gp2</td><td><ul><li>SSD 기반 볼륨</li><li>대량 데이터 저장·처리에 적합</li><li>용량당 비용 저렴</li><li>일관성 편차 있음</li><li>IOPS는 할당된 스토리지 크기에 따라 변경, 사용자 설정 불가</li></ul></td><td>100 ~ 16,384</td><td>450 ~ 16,000</td></tr><tr><td>io2</td><td><ul><li>SSD 기반 볼륨</li><li>매우 높은 IOPS, 일관된 성능</li><li>용량당 비용 높음</li><li>대기시간 상대적으로 김</li></ul></td><td>100 ~ 65,536</td><td>3,000 ~ 256,000</td></tr></tbody></table>
 
 {% hint style="info" %}
 **참고**

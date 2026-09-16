@@ -16,11 +16,11 @@
 
 ## 요약 정보 항목
 
-<table><thead><tr><th><strong>항목</strong></th><th><strong>설명</strong></th></tr></thead><tbody><tr><td>이용 기간</td><td><ul><li>당월 1일부터 UTC 기준 조회 전일까지 기간 표시</li><li>표기:<code>YYYY.MM.DD \~ YYYY.MM.DD</code></li></ul></td></tr><tr><td>DB 서비스 개수</td><td><ul><li>조회 기간 내 이용한 DB 서비스 총개수</li><li>DB 유형별(Tibero / OpenSQL) 개수 함께 표시</li></ul></td></tr><tr><td>총 이용 요금</td><td><ul><li>조회 기간 내 이용한 DB 서비스 라이선스 요금 합계</li><li>달러($) 기준, 소수점 둘째 자리 반올림</li></ul></td></tr></tbody></table>
+<table data-full-width="true"><thead><tr><th><strong>항목</strong></th><th><strong>설명</strong></th></tr></thead><tbody><tr><td>이용 기간</td><td><ul><li>당월 1일부터 UTC 기준 조회 전일까지 기간 표시</li><li>표기:<code>YYYY.MM.DD \~ YYYY.MM.DD</code></li></ul></td></tr><tr><td>DB 서비스 개수</td><td><ul><li>조회 기간 내 이용한 DB 서비스 총개수</li><li>DB 유형별(Tibero / OpenSQL) 개수 함께 표시</li></ul></td></tr><tr><td>총 이용 요금</td><td><ul><li>조회 기간 내 이용한 DB 서비스 라이선스 요금 합계</li><li>달러($) 기준, 소수점 둘째 자리 반올림</li></ul></td></tr></tbody></table>
 
 ## 이용 현황 목록
 
-<table><thead><tr><th><strong>항목</strong></th><th><strong>설명</strong></th></tr></thead><tbody><tr><td>DB 유형</td><td>DB 서비스 유형 (<code>Tibero</code> / <code>OpenSQL</code>)</td></tr><tr><td>이름</td><td>조회 기간 내 이용한 DB 서비스 이름<ul><li>삭제된 서비스는 이름 앞<code>(Terminated)</code>표기</li><li>행 전체 빨간색 표시</li></ul></td></tr><tr><td>인스턴스 별칭</td><td>해당 DB 서비스에 속한 인스턴스 별칭</td></tr><tr><td>라이선스 옵션</td><td>라이선스 적용 유형 (<code>LI</code> / <code>BYOL</code>)</td></tr><tr><td>이용 시간</td><td>조회 기간 내 누적 이용 시간 (<code>nh nm</code>형태)<ul><li>초 단위는 분으로 올림 후 시/분 변환 (예: 45초 →<code>1m</code>, 1시간 24분 1초 → <code>1h 25m</code>)</li></ul></td></tr><tr><td>이용 요금</td><td>조회 기간 내 발생한 라이선스 이용 요금 ($ 단위)<ul><li>BYOL 데이터베이스도 BYOL 빌링 정책에 따라 지정된 라이선스 비용으로 계산</li></ul></td></tr></tbody></table>
+<table data-full-width="true"><thead><tr><th><strong>항목</strong></th><th><strong>설명</strong></th></tr></thead><tbody><tr><td>DB 유형</td><td>DB 서비스 유형 (<code>Tibero</code> / <code>OpenSQL</code>)</td></tr><tr><td>이름</td><td>조회 기간 내 이용한 DB 서비스 이름<ul><li>삭제된 서비스는 이름 앞<code>(Terminated)</code>표기</li><li>행 전체 빨간색 표시</li></ul></td></tr><tr><td>인스턴스 별칭</td><td>해당 DB 서비스에 속한 인스턴스 별칭</td></tr><tr><td>라이선스 옵션</td><td>라이선스 적용 유형 (<code>LI</code> / <code>BYOL</code>)</td></tr><tr><td>이용 시간</td><td>조회 기간 내 누적 이용 시간 (<code>nh nm</code>형태)<ul><li>초 단위는 분으로 올림 후 시/분 변환 (예: 45초 →<code>1m</code>, 1시간 24분 1초 → <code>1h 25m</code>)</li></ul></td></tr><tr><td>이용 요금</td><td>조회 기간 내 발생한 라이선스 이용 요금 ($ 단위)<ul><li>BYOL 데이터베이스도 BYOL 빌링 정책에 따라 지정된 라이선스 비용으로 계산</li></ul></td></tr></tbody></table>
 
 {% hint style="info" %}
 **참고**
@@ -48,7 +48,7 @@
 
 ## 이용 내역 목록
 
-<table><thead><tr><th><strong>항목</strong></th><th><strong>설명</strong></th></tr></thead><tbody><tr><td><strong>이름</strong></td><td>월별 이용 리포트 이름 (형식: <code>OwlDB Monthly Report YYYYMM</code>)</td></tr><tr><td><strong>이용 월</strong></td><td>리포트 대상 월 (형식: <code>YYYY년 MM월</code>)</td></tr><tr><td><strong>총 이용 요금</strong></td><td>해당 월에 발생한 총 라이선스 이용 요금 (소수점 둘째 자리 반올림)<ul><li>이용 요금이 없는 달은<code>$0.00</code> 표기</li></ul></td></tr></tbody></table>
+<table data-full-width="true"><thead><tr><th><strong>항목</strong></th><th><strong>설명</strong></th></tr></thead><tbody><tr><td><strong>이름</strong></td><td>월별 이용 리포트 이름 (형식: <code>OwlDB Monthly Report YYYYMM</code>)</td></tr><tr><td><strong>이용 월</strong></td><td>리포트 대상 월 (형식: <code>YYYY년 MM월</code>)</td></tr><tr><td><strong>총 이용 요금</strong></td><td>해당 월에 발생한 총 라이선스 이용 요금 (소수점 둘째 자리 반올림)<ul><li>이용 요금이 없는 달은<code>$0.00</code> 표기</li></ul></td></tr></tbody></table>
 
 {% hint style="info" %}
 **참고**

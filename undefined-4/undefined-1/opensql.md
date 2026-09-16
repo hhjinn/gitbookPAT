@@ -65,9 +65,9 @@ Tuple Health는 추정 통계 기반 가이드로, 트래픽 패턴에 따라 �
 
 ### 입력 항목
 
-<table><thead><tr><th>항목</th><th>설명</th><th>입력 규칙</th></tr></thead><tbody><tr><td>Database Name *</td><td>생성할 데이터베이스 이름</td><td><ul><li>30자 이내 영어 소문자(a-z)·숫자(0-9)·언더바(<code>_</code>)만 사용 가능</li><li>동일 인스턴스 내 중복 불가</li></ul></td></tr><tr><td>Owner *</td><td>데이터베이스 소유 사용자</td><td><code>postgres</code> (고정값)</td></tr><tr><td>Encoding</td><td>데이터베이스 Character Set</td><td>기본값: <code>UTF8</code></td></tr><tr><td>Connection Limit</td><td>동시 접속 가능한 최대 연결 수</td><td><ul><li>기본값: Unlimited</li><li>Unlimited 체크 해제 시 직접 입력 가능 (0 이상의 정수)</li></ul></td></tr></tbody></table>
+<table data-full-width="true"><thead><tr><th>항목</th><th>설명</th><th>입력 규칙</th></tr></thead><tbody><tr><td>Database Name *</td><td>생성할 데이터베이스 이름</td><td><ul><li>30자 이내 영어 소문자(a-z)·숫자(0-9)·언더바(<code>_</code>)만 사용 가능</li><li>동일 인스턴스 내 중복 불가</li></ul></td></tr><tr><td>Owner *</td><td>데이터베이스 소유 사용자</td><td><code>postgres</code> (고정값)</td></tr><tr><td>Encoding</td><td>데이터베이스 Character Set</td><td>기본값: <code>UTF8</code></td></tr><tr><td>Connection Limit</td><td>동시 접속 가능한 최대 연결 수</td><td><ul><li>기본값: Unlimited</li><li>Unlimited 체크 해제 시 직접 입력 가능 (0 이상의 정수)</li></ul></td></tr></tbody></table>
 
-*표기는 필수 입력 항목을 의미합니다.
+\*표기는 필수 입력 항목을 의미합니다.
 
 **Unlimited** 체크 상태에서는 인스턴스의 `max_connections` 범위 내에서 무제한으로 연결됩니다. 연결 수를 제한하려면 체크박스를 해제한 뒤 원하는 값을 입력합니다.
 
