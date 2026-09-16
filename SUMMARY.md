@@ -5,6 +5,7 @@
   * [AWS](undefined/aws/README.md)
     * [마켓플레이스 구독 안내](undefined/aws/undefined.md)
   * [Azure](undefined/azure/README.md)
+    * [마켓플레이스 구독 안내](undefined/azure/마켓플레이스-구독-안내.md)
     * [마켓플레이스 구독 안내](undefined/azure/undefined.md)
 * [시작하기](undefined-2/README.md)
   * [로그인](undefined-2/undefined.md)
