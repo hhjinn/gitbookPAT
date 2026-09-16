@@ -8,13 +8,13 @@
 
 ### Agent 설치 및 기동
 
-#### 1. Agent 바이너리 압축 해제
+**1. Agent 바이너리 압축 해제**
 
 ```bash
 tar -zxvf $TB_HOME/tbagent_dist_latest.tar.gz -C $TB_HOME
 ```
 
-#### 2. agent.env 파일 작성
+**2. agent.env 파일 작성**
 
 agent 기동에 필요한 정보를 env 파일에 입력합니다.
 
@@ -60,12 +60,12 @@ CM_HOME=
 
 {% tabs %}
 {% tab title="설치 DB" %}
-| 옵션  | 설명  | 필수  |
-|-----|-----|-----|
-| `IP` | OwlDB 서버 IP 주소 | 필수  |
-| `PORT` | OwlDB 서버 포트 (SERVER_PORT) | 필수  |
-| `USERNAME` | DB OS 사용자 명 | 필수  |
-| `TB_HOME` | Tibero 홈 디렉터리 경로 | 필수  |
+| 옵션 | 설명 | 필수 |
+| --- | --- | --- |
+| `IP` | OwlDB 서버 IP 주소 | 필수 |
+| `PORT` | OwlDB 서버 포트 (SERVER_PORT) | 필수 |
+| `USERNAME` | DB OS 사용자 명 | 필수 |
+| `TB_HOME` | Tibero 홈 디렉터리 경로 | 필수 |
 | `TB_SID` | TB_SID 값 | 설치 시 불필요 |
 | `TAS_SID` | TAS_SID 값 | 설치 시 불필요 |
 | `CM_SID` | CM_SID 값 | 설치 시 불필요 |
@@ -77,18 +77,8 @@ CM_HOME=
 `TB_SID` 등 DB 식별 값은 OwlDB가 설치 과정에서 자동으로 설정합니다. 설치 전 단계에서는 입력하지 않아도 됩니다.
 {% endhint %}
 {% endtab %}
-
 {% tab title="등록 DB" %}
-| 옵션  | 설명  | 필수  |
-|-----|-----|-----|
-| `IP` | OwlDB 서버 IP 주소 | 필수  |
-| `PORT` | OwlDB 서버 포트 (SERVER_PORT) | 필수  |
-| `USERNAME` | Tibero를 설치한 OS 사용자 명 | 필수  |
-| `TB_HOME` | Tibero 홈 디렉터리 경로 | 필수  |
-| `TB_SID` | TB_SID 값 | **필수** |
-| `TAS_SID` | TAS_SID 값 | <ul><li>TAC 구성 시 필수</li><li>미사용 시 불필요</li></ul> |
-| `CM_SID` | CM_SID 값 | <ul><li>CM 구성 시 필수</li><li>미사용 시 불필요</li></ul> |
-| `CM_HOME` | CM_HOME 값 | <ul><li>CM 구성 시 필수</li><li>미사용 시 불필요</li></ul> |
+<table data-full-width="true"><thead><tr><th>옵션</th><th>설명</th><th>필수</th></tr></thead><tbody><tr><td><code>IP</code></td><td>OwlDB 서버 IP 주소</td><td>필수</td></tr><tr><td><code>PORT</code></td><td>OwlDB 서버 포트 (SERVER_PORT)</td><td>필수</td></tr><tr><td><code>USERNAME</code></td><td>Tibero를 설치한 OS 사용자 명</td><td>필수</td></tr><tr><td><code>TB_HOME</code></td><td>Tibero 홈 디렉터리 경로</td><td>필수</td></tr><tr><td><code>TB_SID</code></td><td>TB_SID 값</td><td><strong>필수</strong></td></tr><tr><td><code>TAS_SID</code></td><td>TAS_SID 값</td><td><ul><li>TAC 구성 시 필수</li><li>미사용 시 불필요</li></ul></td></tr><tr><td><code>CM_SID</code></td><td>CM_SID 값</td><td><ul><li>CM 구성 시 필수</li><li>미사용 시 불필요</li></ul></td></tr><tr><td><code>CM_HOME</code></td><td>CM_HOME 값</td><td><ul><li>CM 구성 시 필수</li><li>미사용 시 불필요</li></ul></td></tr></tbody></table>
 
 {% hint style="warning" %}
 **주의**
@@ -98,7 +88,7 @@ CM_HOME=
 {% endtab %}
 {% endtabs %}
 
-#### 3. Agent 설치 스크립트 실행
+**3. Agent 설치 스크립트 실행**
 
 ```bash
 cd $TB_HOME/tbagent_dist
@@ -110,10 +100,10 @@ sh tbagent_start.sh
 
 `tbagent_start.sh` 스크립트는 Agent를 systemd 서비스 및 타이머로 등록하며, 이 과정에서 sudo 권한이 사용됩니다.
 
-Agent를 재기동하는 경우 [참고 자료 > Agent 재기동 시 주의 사항](agent.md#nql9NMu6dh160KsnoVKa)을 반드시 확인합니다.
+Agent를 재기동하는 경우 [참고 자료 > Agent 재기동 시 주의 사항](#nql9NMu6dh160KsnoVKa)을 반드시 확인합니다.
 {% endhint %}
 
-#### 4. OS user sudoers 설정
+**4. OS user sudoers 설정**
 
 데이터베이스 설치 및 운영 과정에서 일부 명령어를 sudo로 실행합니다. 스크립트 실행 중 비밀번호 입력이 요구되면 작업이 중단될 수 있으므로, 설치에 사용할 OS user에 NOPASSWD를 설정합니다.
 
