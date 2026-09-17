@@ -53,8 +53,8 @@ Endpoint 탭은 **Service Endpoint**와 **Endpoint Details** 두 영역으로 �
 1. 상단 메뉴에서 **관리 > 연결 정보 관리**를 클릭합니다.
 2. **Endpoint** 탭을 클릭합니다.
 3. **Service Endpoint** 영역에서 DB Service의 대표 접속 주소와 포트를 확인합니다.
-   - **Single**: Private IP 표시
-   - **HA·TAC·DR**: VIP 표시
+   * **Single**: Private IP 표시
+   * **HA·TAC·DR**: VIP 표시
 4. **Endpoint Details** 목록에서 인스턴스별 별칭, 역할, VIP, Private IP, 포트, Health 상태를 확인합니다.
 5. 복사할 행의 📋 아이콘으로 Endpoint 주소를 복사합니다.
 6. 상단의 🔃 아이콘으로 목록을 수동 새로고침합니다.
@@ -110,8 +110,8 @@ Access Control 탭은 **OpenSQL** 환경에서만 제공됩니다.
 
 1. **수정** 버튼을 클릭합니다.
 2. 수정 모드로 전환되면 테이블의 각 항목을 인라인으로 수정합니다.
-   - Priority를 변경하면 영향을 받는 다른 규칙의 순서가 자동으로 조정됩니다.
-   - Type을 `local`로 변경하면 Address 필드가 비활성화됩니다.
+   * Priority를 변경하면 영향을 받는 다른 규칙의 순서가 자동으로 조정됩니다.
+   * Type을 `local`로 변경하면 Address 필드가 비활성화됩니다.
 3. 수정이 완료되면 **저장** 버튼을 클릭합니다.
 4. 변경사항 비교 모달에서 수정 전후 내용을 확인합니다.
 5. **저장** 버튼을 클릭합니다.
@@ -164,8 +164,8 @@ Pool, User, Shard는 아코디언 구조로 표시됩니다.
 
 수정 모드는 화면 단위가 아닌 세션 단위로 동작하여, Scope를 변경하더라도 이미 수정한 내용은 유지됩니다. 저장 시 결과는 파라미터 유형에 따라 갈립니다.
 
-- **동적 파라미터만 수정**: 재시작 없이 즉시 반영
-- **정적 파라미터 포함**: OpenProxy 재기동 후 반영
+* **동적 파라미터만 수정**: 재시작 없이 즉시 반영
+* **정적 파라미터 포함**: OpenProxy 재기동 후 반영
 
 #### 파라미터 조회
 
@@ -189,8 +189,8 @@ DB Service 상태가 `Running` 상태일 때만 **수정** 버튼이 활성화�
 4. 수정이 완료되면 **저장** 버튼을 클릭합니다.
 5. 저장 확인 모달에서 수정 사항을 확인합니다.
 6. **적용** 버튼을 클릭합니다.
-   - **동적 파라미터만 수정**: 즉시 반영
-   - **정적 파라미터 포함**: 재기동 후 반영
+   * **동적 파라미터만 수정**: 즉시 반영
+   * **정적 파라미터 포함**: 재기동 후 반영
 
 {% hint style="info" %}
 **참고**
@@ -263,9 +263,9 @@ DB Service 상태가 `Running` 상태일 때만 **수정** 버튼이 활성화�
 {% hint style="info" %}
 **참고**
 
-- Replication Slot 탭은 **OpenSQL** 환경에서만 제공됩니다.
-- **Logical Type Slot**은 생성을 지원하지 않으며, 조회와 삭제는 가능합니다.
-- **Permanent Scope Slot**만 생성할 수 있으며, **Temporary Scope Slot**은 조회만 가능하고 선택하거나 삭제할 수 없습니다.
+* Replication Slot 탭은 **OpenSQL** 환경에서만 제공됩니다.
+* **Logical Type Slot**은 생성을 지원하지 않으며, 조회와 삭제는 가능합니다.
+* **Permanent Scope Slot**만 생성할 수 있으며, **Temporary Scope Slot**은 조회만 가능하고 선택하거나 삭제할 수 없습니다.
 {% endhint %}
 
 OpenSQL Primary 인스턴스에 생성된 Replication Slot 목록을 테이블 형식으로 표시합니다. Failover 또는 Switchover가 발생하더라도 항상 현재 Primary 인스턴스를 기준으로 조회됩니다.
