@@ -23,38 +23,38 @@ Azure 환경에서는 현재 BYOL 라이선스 모델만 지원합니다.
 {% hint style="info" %}
 **참고**
 
-* 1\~4단계 탭은 순서와 관계없이 자유롭게 이동할 수 있습니다.
-* **구성 정보 확인** 탭은 1\~4단계 탭 전체에서 유효성 검사 오류가 없는 경우에만 진입할 수 있습니다.
-* 화면 오른쪽의 **구성 정보** 플로팅 박스에서 각 탭에 입력한 내용을 요약 확인할 수 있으며, 오류 항목은 빨간색 텍스트로 표시됩니다.
+- 1~4단계 탭은 순서와 관계없이 자유롭게 이동할 수 있습니다.
+- **구성 정보 확인** 탭은 1~4단계 탭 전체에서 유효성 검사 오류가 없는 경우에만 진입할 수 있습니다.
+- 화면 오른쪽의 **구성 정보** 플로팅 박스에서 각 탭에 입력한 내용을 요약 확인할 수 있으며, 오류 항목은 빨간색 텍스트로 표시됩니다.
 {% endhint %}
 
 ## 변경 가능 항목
 
 엔진 유형과 라이선스 옵션에 따라 변경할 수 있는 항목이 다릅니다.
 
-| 항목  | Tibero LI | Tibero BYOL | OpenSQL LI | OpenSQL BYOL |
-|-----|:---------:|:-----------:|:----------:|:------------:|
-| Topology | —         | —           | ✓¹         | —            |
-| Edition | ✓         | —           | ✓          | —            |
-| 인스턴스 유형 (Scale Up/Down) | ✓         | —           | ✓          | —            |
-| TAC 노드 수 (Scale In/Out) | ✓         | —           | —          | —            |
-| Replica Scale In/Out | —         | —           | ✓          | —            |
-| Enable DR | ✓         | —           | ✓²         | ✓²           |
-| Failover Automation Level | ✓         | ✓³          | ✓          | ✓⁴           |
-| Volume Size | ✓         | ✓           | ✓          | ✓            |
-| Volume IOPS / MBps | ✓         | ✓           | ✓          | ✓            |
+| 항목 | Tibero LI | Tibero BYOL | OpenSQL LI | OpenSQL BYOL |
+| --- | --- | --- | --- | --- |
+| Topology | — | — | ✓¹ | — |
+| Edition | ✓ | — | ✓ | — |
+| 인스턴스 유형 (Scale Up/Down) | ✓ | — | ✓ | — |
+| TAC 노드 수 (Scale In/Out) | ✓ | — | — | — |
+| Replica Scale In/Out | — | — | ✓ | — |
+| Enable DR | ✓ | — | ✓² | ✓² |
+| Failover Automation Level | ✓ | ✓³ | ✓ | ✓⁴ |
+| Volume Size | ✓ | ✓ | ✓ | ✓ |
+| Volume IOPS / MBps | ✓ | ✓ | ✓ | ✓ |
 
-* ¹ OpenSQL LI에서 Single ↔ HA 간 변경 가능
-* ² OpenSQL은 Topology에 따라 자동 결정 (HA → DR 사용, Single → DR 미사용)
-* ³ 초기 DR 사용 구성 시 변경 가능
-* ⁴ 초기 HA 구성 시 변경 가능
+- ¹ OpenSQL LI에서 Single ↔ HA 간 변경 가능
+- ² OpenSQL은 Topology에 따라 자동 결정 (HA → DR 사용, Single → DR 미사용)
+- ³ 초기 DR 사용 구성 시 변경 가능
+- ⁴ 초기 HA 구성 시 변경 가능
 
 {% hint style="info" %}
 **참고**
 
-* Volume Size는 현재 설정값보다 큰 값으로만 변경할 수 있습니다.
-* SE(Standard Edition) 선택 시 인스턴스 유형은 최대 8vCPU로 제한됩니다.
-* OpenSQL은 AWS 환경에서 지원되지 않습니다.
+- Volume Size는 현재 설정값보다 큰 값으로만 변경할 수 있습니다.
+- SE(Standard Edition) 선택 시 인스턴스 유형은 최대 8vCPU로 제한됩니다.
+- OpenSQL은 AWS 환경에서 지원되지 않습니다.
 {% endhint %}
 
 ## 엔진 옵션
@@ -63,8 +63,8 @@ DB Service Name, DB Engine Type, License Option, Node Count는 현재 설정값�
 
 변경 가능한 항목은 다음과 같습니다.
 
-* **Edition**: Standard Edition(SE)과 Enterprise Edition(EE) 중 선택합니다. SE는 최대 8vCPU까지 사용 가능하고, EE는 vCPU 제한이 없습니다. TAC 또는 HA Topology에서는 EE로 자동 적용되며, LI 라이선스에서만 변경할 수 있습니다.
-* **Topology**: OpenSQL LI에서만 Single ↔ HA 간 변경할 수 있습니다.
+- **Edition**: Standard Edition(SE)과 Enterprise Edition(EE) 중 선택합니다. SE는 최대 8vCPU까지 사용 가능하고, EE는 vCPU 제한이 없습니다. TAC 또는 HA Topology에서는 EE로 자동 적용되며, LI 라이선스에서만 변경할 수 있습니다.
+- **Topology**: OpenSQL LI에서만 Single ↔ HA 간 변경할 수 있습니다.
 
 ### TAC Scale In/Out
 
@@ -84,8 +84,8 @@ TAC 노드 Scale In/Out은 Tibero 엔진에서만 제공됩니다. OpenSQL은 DR
 
 ## DR 구성
 
-* **Enable DR**: DR 사용 여부를 선택합니다. Tibero LI에서만 직접 변경할 수 있고, OpenSQL은 Topology에 따라 자동 결정됩니다(HA → DR 사용, Single → DR 미사용). BYOL은 변경할 수 없습니다.
-* **Failover Automation Level**: DR 사용 시 장애 조치 자동화 레벨을 선택합니다. DR 미사용 시에는 표시되지 않습니다.
+- **Enable DR**: DR 사용 여부를 선택합니다. Tibero LI에서만 직접 변경할 수 있고, OpenSQL은 Topology에 따라 자동 결정됩니다(HA → DR 사용, Single → DR 미사용). BYOL은 변경할 수 없습니다.
+- **Failover Automation Level**: DR 사용 시 장애 조치 자동화 레벨을 선택합니다. DR 미사용 시에는 표시되지 않습니다.
 
 ### Failover Automation Level 옵션
 
@@ -102,9 +102,9 @@ TAC 노드 Scale In/Out은 Tibero 엔진에서만 제공됩니다. OpenSQL은 DR
 
 선택 가능한 단계는 라이선스 유형에 따라 다릅니다.
 
-* **Tibero LI**: 0\~3단계 모두 선택 가능
-* **Tibero BYOL**: 0단계, 2단계, 3단계 선택 가능
-* **OpenSQL**: 0단계, 3단계 선택 가능
+- **Tibero LI**: 0~3단계 모두 선택 가능
+- **Tibero BYOL**: 0단계, 2단계, 3단계 선택 가능
+- **OpenSQL**: 0단계, 3단계 선택 가능
 {% endhint %}
 
 ### OpenSQL HA Scale In/Out
@@ -120,8 +120,8 @@ Replica Scale In/Out은 OpenSQL 엔진에서만 제공됩니다. Tibero는 엔�
 {% hint style="warning" %}
 **주의**
 
-* DR을 미사용으로 변경한 후 스펙 변경을 완료하면 기존 Standby/Replica 인스턴스의 모든 데이터가 삭제됩니다.
-* Failover로 인해 Retired 상태의 인스턴스가 존재하는 경우, DR을 미사용으로 변경하면 해당 인스턴스가 자동으로 삭제됩니다. 해당 인스턴스를 통한 데이터 복구가 불가능해지므로 데이터 검토 및 백업을 완료한 후 진행하십시오.
+- DR을 미사용으로 변경한 후 스펙 변경을 완료하면 기존 Standby/Replica 인스턴스의 모든 데이터가 삭제됩니다.
+- Failover로 인해 Retired 상태의 인스턴스가 존재하는 경우, DR을 미사용으로 변경하면 해당 인스턴스가 자동으로 삭제됩니다. 해당 인스턴스를 통한 데이터 복구가 불가능해지므로 데이터 검토 및 백업을 완료한 후 진행하십시오.
 {% endhint %}
 
 ## AZ 구성
