@@ -94,7 +94,9 @@ DR 사용 여부와 장애 조치 자동화 레벨을 설정하는 단계입니�
 <table data-full-width="true"><thead><tr><th>항목</th><th>설명</th></tr></thead><tbody><tr><td>Enable DR*</td><td>DR 구성 사용 여부(직접 선택 가능)</td></tr><tr><td>Failover Automation Level*</td><td><a href="#undefined">자동 장애 조치 단계</a><ul><li>0단계 : 수동</li><li>1단계 : 자동 장애 조치</li><li>2단계 : 자동 구성 복구 (OwlDB v1.3 미지원)</li><li>3단계 : 완전 자동화</li><li>Single : 0, 1, 3단계 지원</li><li>TAC : 0, 1단계 지원</li></ul></td></tr><tr><td>Standby Count*</td><td>Standby DB 개수(표준 아키텍처 기준 최대 1개로 고정)</td></tr><tr><td>Standby Mode*</td><td>Standby Mode 옵션<ul><li><strong>Recovery</strong></li><li><strong>Read Only</strong></li></ul></td></tr><tr><td>Log Replication Type</td><td>Primary에서 Standby로의 로그 전송 방식<ul><li><strong>LGWR ASYNC</strong>: 트랜잭션이 발생하면 실시간으로 생성되는 Redo log를 전송하는 복제 모드</li><li><strong>ARCH ASYNC</strong> : 로그 스위치 이후, 아카이브 로그 파일이 생성되면 해당 파일을 모아서 전송하는 복제 모드</li></ul></td></tr></tbody></table>
 
 *표기는 필수 입력 항목을 의미합니다.
+
 {%end tab%}
+
 {% tab title="OpenSQL" %}
 <table data-full-width="true"><thead><tr><th>항목</th><th>설명</th></tr></thead><tbody><tr><td>Enable DR*</td><td>Single은 DR 미사용, HA는 DR 사용으로 자동 결정되며 수정 불가</td></tr><tr><td>Failover Automation Level*</td><td><a href="#undefined">자동 장애 조치 단계</a><ul><li>0단계 : 수동</li><li>2단계 : 자동 구성 복구 (OwlDB v1.3 미지원)</li><li>3단계 : 완전 자동화</li><li>0, 3단계 지원(기본값 3단계)</li></ul></td></tr><tr><td>Standby Count*</td><td>Replica DB 개수(표준 아키텍처 기준 최대 1개로 고정)</td></tr><tr><td>Log Replication Type</td><td>ASYNC 방식으로 고정되어 수정 불가</td></tr></tbody></table>
 
