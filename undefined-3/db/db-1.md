@@ -177,6 +177,8 @@ DR 사용 여부와 장애 조치 자동화 레벨을 설정하는 단계입니�
 | Replication Connection IP\* | HA 구성일 때, 복제 연결에 사용할 IP를 직접 입력 또는 선택 | HA 구성에서만 노출 |
 
 \*표기는 필수 입력 항목을 의미합니다.
+{% endtab %}
+{% endtabs %}
 
 **데이터베이스 구성**
 
@@ -202,11 +204,12 @@ DR 사용 여부와 장애 조치 자동화 레벨을 설정하는 단계입니�
 | Temporary Tablespace Data File Size (MB) | 대용량 연산에 사용되는 임시 테이블스페이스 데이터 파일 크기<br>탐색 과정에서 값을 확인할 수 없어 빈 값으로 표시되며 수정할 수 없음 |
 | Undo Tablespace Data File Size (MB) | Undo 테이블스페이스 크기<br>탐색 과정에서 값을 확인할 수 없어 빈 값으로 표시되며 수정할 수 없음 |
 
-*표기는 필수 입력 항목을 의미합니다.
+\*표기는 필수 입력 항목을 의미합니다.
 {% endtab %}
+
 {% tab title="OpenSQL" %}
 | 항목  | 설명  |
-| --- | --- |
+|-----|-----|
 | Database Name | 사용할 데이터베이스의 이름 |
 | User Id |     |
 | User Password\* | 데이터베이스 최고 권한 관리자 계정의 비밀번호 |
