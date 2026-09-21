@@ -2,7 +2,7 @@
 
 # **1. 필요 파일 목록**
 
-* owldb dp 바이너리 (`owldb_dp_installer_owl_x.x.x.tar.gz`)
+- owldb dp 바이너리 (`owldb_dp_installer_owl_x.x.x.tar.gz`)
 
 # **2. 파일 배치**
 
@@ -85,8 +85,8 @@ pgrep -af patroni
 cat /proc/<PID>/cgroup
 ```
 
-| 결과  | 판정  |
-|-----|-----|
+| 결과 | 판정 |
+| --- | --- |
 | 0::/system.slice/xxxxxxxx.service | 유닛명 불일치 → c 추가 수행 필요 |
 | 0::/user.slice/user-1000.slice/session-3.scope | systemd 미등록 → 추가 조치 필요 없음<br>owldb 내부에서 중지/시작 처리 |
 
