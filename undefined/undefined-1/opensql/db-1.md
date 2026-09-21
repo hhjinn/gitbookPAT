@@ -2,7 +2,7 @@
 
 # **1. 필요 파일 목록**
 
-- owldb dp 바이너리 (`owldb_dp_installer_owl_x.x.x.tar.gz`)
+* owldb dp 바이너리 (`owldb_dp_installer_owl_x.x.x.tar.gz`)
 
 # **2. 파일 배치**
 
@@ -26,17 +26,33 @@ $OPENSQL_HOME/
 
 # 3. owlagent 설치
 
-1. agent 바이너리를 압축 해제 합니다. tar -zxvf owlagent_dist_latest.tar.gz -C $OPENSQL_HOME owlagent_dist_latest.tar.gz └── owlagent_dist/ ├── config.json.description ├── manifest ├── owlagent ├── owlagent.env ├── owlagent_start └── owlagent_stop
+1. agent 바이너리를 압축 해제합니다.
+
+```bash
+tar -zxvf owlagent_dist_latest.tar.gz -C $OPENSQL_HOME
+```
+
+```bash
+owlagent_dist_latest.tar.gz
+└── owlagent_dist/
+    ├── config.json.description
+    ├── manifest
+    ├── owlagent
+    ├── owlagent.env
+    ├── owlagent_start
+    └── owlagent_stop
+```
+
 2. owlagent.env에 설정 값을 입력 합니다.
 
-<table data-full-width="true"><thead><tr><th>Key</th><th>Value</th><th>입력 규칙</th></tr></thead><tbody><tr><td>AGENT_TYPE*</td><td></td><td><code>pg</code> 입력</td></tr><tr><td>IP*</td><td>OwlDB CP의 IP</td><td></td></tr><tr><td>PORT*</td><td>OwlDB CP의 port</td><td></td></tr><tr><td>USERNAME*</td><td>opensql 실행 user 이름</td><td></td></tr><tr><td>OPENSQL_HOME</td><td></td><td><ul><li>이미 설정 시 입력 불필요</li><li>미설정 시 위에서 사용한 OPENSQL_HOME 입력</li></ul></td></tr><tr><td>DB_LOG_DIR</td><td>PG 로그 경로</td><td>로그 미수집 시 입력 불필요</td></tr><tr><td>DB_LOG_FILE_GLOB</td><td>PG 로그 파일 형식</td><td>예: <code>postgresql*.log</code></td></tr><tr><td>PATRONI_CONFIG</td><td>patroni.yml 경로</td><td></td></tr><tr><td>PATRONI_MEMBER</td><td>patroni 멤버 이름</td><td></td></tr></tbody></table>
+<table data-full-width="true"><thead><tr><th>항목</th><th>설명</th><th>입력 규칙</th></tr></thead><tbody><tr><td>AGENT_TYPE*</td><td></td><td><code>pg</code> 입력</td></tr><tr><td>IP*</td><td>OwlDB CP의 IP</td><td></td></tr><tr><td>PORT*</td><td>OwlDB CP의 port</td><td></td></tr><tr><td>USERNAME*</td><td>opensql 실행 user 이름</td><td></td></tr><tr><td>OPENSQL_HOME</td><td></td><td><ul><li>이미 설정 시 입력 불필요</li><li>미설정 시 위에서 사용한 OPENSQL_HOME 입력</li></ul></td></tr><tr><td>DB_LOG_DIR</td><td>PG 로그 경로</td><td>로그 미수집 시 입력 불필요</td></tr><tr><td>DB_LOG_FILE_GLOB</td><td>PG 로그 파일 형식</td><td>예: <code>postgresql*.log</code></td></tr><tr><td>PATRONI_CONFIG</td><td>patroni.yml 경로</td><td></td></tr><tr><td>PATRONI_MEMBER</td><td>patroni 멤버 이름</td><td></td></tr></tbody></table>
 
 *표기는 필수 입력 항목을 의미합니다.
 
 {% hint style="info" %}
 **참고**
 
-DB Service 등록 시점에 `DB_LOG_DIR` 경로에 로그 파일이 존재하지 않아도 무방합니다. 등록 이후에 로그 파일이 생성되면 [Syslog](../../../undefined-5/undefined-2/syslog.md) 메뉴에서 정상적으로 조회할 수 있습니다.
+DB Service 등록 시점에 `DB_LOG_DIR` 경로에 로그 파일이 존재하지 않아도 무방합니다. 등록 이후 로그 파일이 생성되면 [Syslog](../../../undefined-5/undefined-2/syslog.md) 메뉴에서 조회합니다.
 {% endhint %}
 
 3. owlagent 실행
@@ -69,8 +85,8 @@ pgrep -af patroni
 cat /proc/<PID>/cgroup
 ```
 
-| 결과 | 판정 |
-| --- | --- |
+| 결과  | 판정  |
+|-----|-----|
 | 0::/system.slice/xxxxxxxx.service | 유닛명 불일치 → c 추가 수행 필요 |
 | 0::/user.slice/user-1000.slice/session-3.scope | systemd 미등록 → 추가 조치 필요 없음<br>owldb 내부에서 중지/시작 처리 |
 
@@ -93,36 +109,3 @@ systemctl daemon-reload
 systemctl reenable <기존서비스명>
 systemctl is-active --quiet patroni; echo $?   # 0 확인
 ```
-
-# 5.  OwlDB 접속 허용(pg_hba)
-
-DB Service를 등록 시 OwlDB는 커넥션 테스트를 통해 접속이 가능한지 확인합니다. 등록 작업 전에 pg_hba가 DBMaster 서버의 접속을 이미 허용하고 있어야 합니다. 허용돼 있지 않으면 DBMaster가 대상 DB에 접속하지 못해 등록 자체가 실패합니다.
-
-**확인 방법**
-
-대상 클러스터의 현재 pg_hba 설정을 확인합니다.
-
-```
-patronictl -c <patroni.yml 경로> show-config
-```
-
-`postgresql.pg_hba` 목록에 DBMaster 서버(OwlDB CP)의 IP를 허용하는 `host` 규칙이 있는지 확인합니다. 없다면 아래 방법으로 추가합니다.
-
-**설정 방법**
-
-```
-patronictl -c <patroni.yml 경로> edit-config
-```
-
-편집기(vi 등)가 열리면 `postgresql.pg_hba:` 목록에 DBMaster IP를 허용하는 줄을 **추가**합니다(기존 규칙은 지우지 말고 그대로 둡니다).
-
-{% code overflow="wrap" %}
-```
-postgresql:
-  pg_hba:
-  - host all all <DBMaster CP IP>/32 md5
-  - ...(기존 규칙 유지)
-```
-{% endcode %}
-
-저장 후 종료하면 Patroni가 변경 사항을 클러스터 전체에 반영합니다. `show-config`로 다시 조회해 반영을 확인합니다.
