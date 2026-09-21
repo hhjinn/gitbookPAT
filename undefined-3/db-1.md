@@ -94,7 +94,6 @@ DR 사용 여부와 장애 조치 자동화 레벨을 설정하는 단계입니�
 <table data-full-width="true"><thead><tr><th>항목</th><th>설명</th></tr></thead><tbody><tr><td>Enable DR*</td><td>DR 구성 사용 여부(직접 선택 가능)</td></tr><tr><td>Failover Automation Level*</td><td><a href="#undefined">자동 장애 조치 단계</a><ul><li>0단계 : 수동</li><li>1단계 : 자동 장애 조치</li><li>2단계 : 자동 구성 복구 (OwlDB v1.3 미지원)</li><li>3단계 : 완전 자동화</li><li>Single : 0, 1, 3단계 지원</li><li>TAC : 0, 1단계 지원</li></ul></td></tr><tr><td>Standby Count*</td><td>Standby DB 개수(표준 아키텍처 기준 최대 1개로 고정)</td></tr><tr><td>Standby Mode*</td><td>Standby Mode 옵션<ul><li><strong>Recovery</strong></li><li><strong>Read Only</strong></li></ul></td></tr><tr><td>Log Replication Type</td><td>Primary에서 Standby로의 로그 전송 방식<ul><li><strong>LGWR ASYNC</strong>: 트랜잭션이 발생하면 실시간으로 생성되는 Redo log를 전송하는 복제 모드</li><li><strong>ARCH ASYNC</strong> : 로그 스위치 이후, 아카이브 로그 파일이 생성되면 해당 파일을 모아서 전송하는 복제 모드</li></ul></td></tr></tbody></table>
 
 \*표기는 필수 입력 항목을 의미합니다.
-
 {% endtab %}
 
 {% tab title="OpenSQL" %}
@@ -318,7 +317,32 @@ DR 구성을 사용하는 경우에는 SSH Key File을 지정된 경로에 미�
 
 데이터베이스 구성 정보를 입력하는 단계입니다.
 
-<table data-full-width="true"><thead><tr><th>항목</th><th>설명</th></tr></thead><tbody><tr><td>Database Name*</td><td>사용할 데이터베이스의 이름</td></tr><tr><td>SYS User Password*</td><td>데이터베이스 최고 권한 관리자 계정(SYS)의 비밀번호</td></tr><tr><td>Target Memory Size*</td><td>대상 메모리 사이즈</td></tr><tr><td>Shared Memory Size*</td><td>공유 메모리 사이즈</td></tr><tr><td>Character Set*</td><td>데이터베이스에 사용할 문자 인코딩</td></tr><tr><td>Timezone*</td><td>데이터베이스가 설치될 OS 시간대</td></tr><tr><td>VIP*</td><td>VIP 사용 여부 선택</td></tr><tr><td>Primary Node #N Vip</td><td>데이터베이스 가상 IP<br>(VIP 사용 선택시 활성화)</td></tr><tr><td>Database Listener Port</td><td>네트워크 통신을 위한 데이터베이스 리스너 포트</td></tr><tr><td>Max Session Count</td><td>동시 허용 최대 세션 수</td></tr><tr><td>Redo Log File Size (MB)</td><td>Redo 로그 파일 크기</td></tr><tr><td>System Data File Size (MB)</td><td>시스템 테이블 및 주요 메타 데이터를 저장할 데이터 파일의 크기</td></tr><tr><td>Syssub Data File Size (MB)</td><td>시스템 운영 관련 데이터 저장을 위한 서브 데이터 파일 크기</td></tr><tr><td>User Tablespace Data File Size (MB)</td><td>사용자 데이터를 저장할 테이블 스페이스 데이터 파일 크기</td></tr><tr><td>Temporary Tablespace Data File Size (MB)</td><td>대용량 연산에 사용되는 임시 테이블스페이스 데이터 파일 크기</td></tr><tr><td>Undo Tablespace Data File Size (MB)</td><td>Undo 테이블스페이스 크기</td></tr><tr><td>항목</td><td>설명</td></tr><tr><td>---</td><td>---</td></tr><tr><td>Database Name*</td><td>사용할 데이터베이스의 이름</td></tr><tr><td>User Id*</td><td>데이터베이스 최고 권한 관리자 계정 ID</td></tr><tr><td>User Password*</td><td>데이터베이스 최고 권한 관리자 계정의 비밀번호</td></tr><tr><td>Character Set*</td><td>데이터베이스에 사용할 문자 인코딩</td></tr><tr><td>Timezone*</td><td>데이터베이스가 설치될 OS 시간대</td></tr><tr><td>VIP*</td><td>데이터베이스 가상 IP</td></tr><tr><td>Database Listener Port</td><td>네트워크 통신을 위한 데이터베이스 리스너 포트</td></tr><tr><td>Max Session Count</td><td>동시 허용 최대 세션 수</td></tr><tr><td>Shared Buffers</td><td>공유 메모리 크기 (수정 불가)</td></tr><tr><td>WAL File Size (MB)</td><td>WAL 파일 크기<br>탐색 과정에서 값을 확인할 수 없어 빈 값으로 표시되며 수정할 수 없음</td></tr><tr><td>Connection Pooler Port</td><td>OpenSQL에서 커넥션 풀이 클라이언트 연결을 수신하는 포트<ul><li>기본값 : 6432</li><li>입력 범위 : 1024~65535</li></ul></td></tr><tr><td>Extension</td><td>OpenSQL 데이터베이스 생성 시 함께 설치할 Extension 선택(다중 선택 가능)</td></tr></tbody></table>
+{% tabs %}
+{% tab title="Tibero" %}
+| 항목  | 설명  |
+|-----|-----|
+| Database Name\* | 사용할 데이터베이스의 이름 |
+| SYS User Password\* | 데이터베이스 최고 권한 관리자 계정(SYS)의 비밀번호 |
+| Target Memory Size\* | 대상 메모리 사이즈 |
+| Shared Memory Size\* | 공유 메모리 사이즈 |
+| Character Set\* | 데이터베이스에 사용할 문자 인코딩 |
+| Timezone\* | 데이터베이스가 설치될 OS 시간대 |
+| VIP\* | VIP 사용 여부 선택 |
+| Primary Node #N Vip | 데이터베이스 가상 IP<br>(VIP 사용 선택시 활성화) |
+| Database Listener Port | 네트워크 통신을 위한 데이터베이스 리스너 포트 |
+| Max Session Count | 동시 허용 최대 세션 수 |
+| Redo Log File Size (MB) | Redo 로그 파일 크기 |
+| System Data File Size (MB) | 시스템 테이블 및 주요 메타 데이터를 저장할 데이터 파일의 크기 |
+| Syssub Data File Size (MB) | 시스템 운영 관련 데이터 저장을 위한 서브 데이터 파일 크기 |
+| User Tablespace Data File Size (MB) | 사용자 데이터를 저장할 테이블 스페이스 데이터 파일 크기 |
+| Temporary Tablespace Data File Size (MB) | 대용량 연산에 사용되는 임시 테이블스페이스 데이터 파일 크기 |
+| Undo Tablespace Data File Size (MB) | Undo 테이블스페이스 크기 |
+
+\*표기는 필수 입력 항목을 의미합니다.
+{% endtab %}
+
+{% tab title="OpenSQL" %}
+<table data-full-width="true"><thead><tr><th>항목</th><th>설명</th></tr></thead><tbody><tr><td>Database Name*</td><td>사용할 데이터베이스의 이름</td></tr><tr><td>User Id*</td><td>데이터베이스 최고 권한 관리자 계정 ID</td></tr><tr><td>User Password*</td><td>데이터베이스 최고 권한 관리자 계정의 비밀번호</td></tr><tr><td>Character Set*</td><td>데이터베이스에 사용할 문자 인코딩</td></tr><tr><td>Timezone*</td><td>데이터베이스가 설치될 OS 시간대</td></tr><tr><td>VIP*</td><td>데이터베이스 가상 IP</td></tr><tr><td>Database Listener Port</td><td>네트워크 통신을 위한 데이터베이스 리스너 포트</td></tr><tr><td>Max Session Count</td><td>동시 허용 최대 세션 수</td></tr><tr><td>Shared Buffers</td><td>공유 메모리 크기 (수정 불가)</td></tr><tr><td>WAL File Size (MB)</td><td>WAL 파일 크기<br>탐색 과정에서 값을 확인할 수 없어 빈 값으로 표시되며 수정할 수 없음</td></tr><tr><td>Connection Pooler Port</td><td>OpenSQL에서 커넥션 풀이 클라이언트 연결을 수신하는 포트<ul><li>기본값 : 6432</li><li>입력 범위 : 1024~65535</li></ul></td></tr><tr><td>Extension</td><td>OpenSQL 데이터베이스 생성 시 함께 설치할 Extension 선택(다중 선택 가능)</td></tr></tbody></table>
 
 \*표기는 필수 입력 항목을 의미합니다.
 
@@ -328,6 +352,8 @@ DR 구성을 사용하는 경우에는 SSH Key File을 지정된 경로에 미�
 * Connection Pooler Port, Extension 항목은 OpenSQL 엔진 선택 시에만 노출됩니다.
 * Extension 설치에 실패해도 데이터베이스 생성에는 영향을 주지 않으며, 설치에 실패한 Extension은 시스템 알림에서 확인할 수 있습니다.
 {% endhint %}
+{% endtab %}
+{% endtabs %}
 
 ---
 
@@ -375,23 +401,15 @@ DR 구성을 사용하는 경우에는 SSH Key File을 지정된 경로에 미�
 | Tibero 설정 | 1. Tibero instance Tip file &DSN file 생성<br>2. cm 순차설치로 인한 volume 설정 변경<br>3. cm 순차설치로 인한 volume 대기<br>4. Tip covert(primary<→ standby)<br>5. Standby 설치 완료 tag 설정 변경<br>6. Standby 설치 완료 tag 대기<br>7. RMGR 백업 및 전송<br>8. RMGR 백업 대기 |
 | DB 설치 | 1. CM gen(resource 등록 및 실행)<br>2. DB create(TAS도 포함됨 토폴로지에 따라)<br>3. Disk snapshot 생성<br>4. wait Disk snapshot in Standby node<br>5. CM Fence on(reboot)<br>6. cm complete(service up)<br>7. wait cm service<br>8. recovery RMGR |
 | Tibero 상태 확인 | 1. Tb probe |
-
-입력해 주세요
 {% endtab %}
 
-{% tab title="Tab" %}
-1. Kernel 환경 설정\n2. 필수 package 설치\n3. PgAgent 설치\n4. mount volume\n5. 데이터 디렉터리 준비 | | OpenSQL 설정 |
-2. 모듈 설정 | | OpenSQL 설치 |
-3. 부트스트랩 이후 설정 | | OpenSQL 상태체크 |
-4. 초기화 후 설정 적용 | | PGAgent 설치 |
-5. PgAgent 설정 | |
-{% endtab %}
-{% endtabs %}
-
+{% tab title="OpenSQL" %}
 | 주요 단계 | 세부 단계 |
 |-------|-------|
-| 인프라 설정 |       |
-
-| |
+| 인프라 설정 | 1. Kernel 환경 설정<br>2. 필수 package 설치<br>3. PgAgent 설치<br>4. mount volume<br>5. 데이터 디렉터리 준비 |
+| OpenSQL 설정 | 1. 모듈 설정 |
+| OpenSQL 설치 | 1. 부트스트랩 이후 설정 |
+| OpenSQL 상태체크 | 1. 초기화 후 설정 적용 |
+| PGAgent 설치 | 1. PgAgent 설정 |
 {% endtab %}
 {% endtabs %}
