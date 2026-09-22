@@ -1,4 +1,6 @@
-관리 > 데이터 공간 관리** 메뉴에서 OpenSQL 인스턴스에 속한 데이터베이스를 조회하고 관리합니다. 데이터베이스 목록에서 각 데이터베이스의 크기·활성 세션 수·Tuple Health 상태를 한눈에 파악하고, 신규 데이터베이스 생성 및 삭제를 수행할 수 있습니다. 데이터베이스 별칭을 클릭하면 Encoding, Connection Limit, Bloat Ratio 등 상세 정보와 추세 지표를 함께 확인할 수 있습니다.
+# OpenSQL
+
+관리 > 데이터 공간 관리\*\* 메뉴에서 OpenSQL 인스턴스에 속한 데이터베이스를 조회하고 관리합니다. 데이터베이스 목록에서 각 데이터베이스의 크기·활성 세션 수·Tuple Health 상태를 한눈에 파악하고, 신규 데이터베이스 생성 및 삭제를 수행할 수 있습니다. 데이터베이스 별칭을 클릭하면 Encoding, Connection Limit, Bloat Ratio 등 상세 정보와 추세 지표를 함께 확인할 수 있습니다.
 
 {% hint style="info" %}
 **참고**
@@ -7,33 +9,45 @@
 * DB 엔진이 Tibero로 설정된 경우 이 페이지 대신 테이블스페이스 및 데이터 파일 관리 화면이 표시됩니다.
 {% endhint %}
 
-## 데이터베이스 목록 조회
+<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption><p>그림 1. 데이터 스페이스 - OpenSQL</p></figcaption></figure>
+
+### 데이터베이스 목록 조회
 
 **관리 > 데이터 공간 관리** 메뉴에 진입하면 현재 인스턴스에 속한 데이터베이스 목록을 조회합니다. 페이지 상단에는 인스턴스 전체의 상태 요약이 표시되고, 중앙 테이블에서 데이터베이스별 상세 현황을 확인합니다.
 
-!\[데이터 공간 관리 목록 페이지\](상단 요약 정보와 데이터베이스 테이블이 함께 표시된 데이터 공간 관리 화면)
+#### 상단 요약 정보
 
-### 상단 요약 정보
-
-| 항목  | 설명  |
-|-----|-----|
-| Auto Vacuum | Auto Vacuum 사용 여부 |
-| 데이터베이스 수 | 인스턴스 하위의 데이터베이스 총 개수 |
+| 항목                   | 설명                           |
+| -------------------- | ---------------------------- |
+| Auto Vacuum          | Auto Vacuum 사용 여부            |
+| 데이터베이스 수             | 인스턴스 하위의 데이터베이스 총 개수         |
 | Active Session Count | 전체 데이터베이스의 활성 세션 수 합계 (바 차트) |
-| Total DB Size | 전체 데이터베이스 크기 합계 |
-| WAL Size | Write-Ahead Log 크기 |
+| Total DB Size        | 전체 데이터베이스 크기 합계              |
+| WAL Size             | Write-Ahead Log 크기           |
 
-### 테이블 항목
+#### 테이블 항목
 
-<table><thead><tr><th>컬럼</th><th>설명</th></tr></thead><tbody><tr><td>별칭</td><td><ul><li>데이터베이스 이름</li><li>클릭 시 상세 정보 페이지로 이동</li></ul></td></tr><tr><td>생성일</td><td>데이터베이스 생성 일시</td></tr><tr><td>Owner</td><td>데이터베이스 소유 사용자</td></tr><tr><td>Encoding</td><td>데이터베이스에 설정된 Character Set</td></tr><tr><td>Connection Limit</td><td>동시 접속 가능한 최대 연결 수</td></tr><tr><td>Data Size</td><td>실제 데이터가 차지하는 용량 (GB)</td></tr><tr><td>활성 세션 수</td><td>현재 활성화된 세션 수 (바 차트)</td></tr><tr><td>Tuple Health</td><td>Dead Tuple 비율과 Vacuum 수행 시간을 종합한 상태 지표</td></tr><tr><td>Bloat Ratio</td><td>전체 크기 대비 Dead Tuple이 차지하는 비율 (%)</td></tr><tr><td>Live/Dead Tuple Rate</td><td>Live Tuple 대비 Dead Tuple 비율 (%)</td></tr><tr><td>마지막 Vacuum 수행 시간</td><td>마지막 Vacuum이 수행된 일시</td></tr></tbody></table>
+| 컬럼                   | 설명                                                     |
+| -------------------- | ------------------------------------------------------ |
+| 별칭                   | <ul><li>데이터베이스 이름</li><li>클릭 시 상세 정보 페이지로 이동</li></ul> |
+| 생성일                  | 데이터베이스 생성 일시                                           |
+| Owner                | 데이터베이스 소유 사용자                                          |
+| Encoding             | 데이터베이스에 설정된 Character Set                              |
+| Connection Limit     | 동시 접속 가능한 최대 연결 수                                      |
+| Data Size            | 실제 데이터가 차지하는 용량 (GB)                                   |
+| 활성 세션 수              | 현재 활성화된 세션 수 (바 차트)                                    |
+| Tuple Health         | Dead Tuple 비율과 Vacuum 수행 시간을 종합한 상태 지표                 |
+| Bloat Ratio          | 전체 크기 대비 Dead Tuple이 차지하는 비율 (%)                       |
+| Live/Dead Tuple Rate | Live Tuple 대비 Dead Tuple 비율 (%)                        |
+| 마지막 Vacuum 수행 시간     | 마지막 Vacuum이 수행된 일시                                     |
 
 **Tuple Health** 상태는 Bloat Ratio와 마지막 Vacuum 수행 시간을 기준으로 결정됩니다.
 
-| 3xCdwgyaRWkM | Vacuum 정상 (24시간 미만) | Vacuum 주의 (24\~72시간) | Vacuum 위험 (72시간 이상) |
-|--------------|---------------------|---------------------|---------------------|
-| Bloat Ratio 정상 (20% 미만) | Healthy             | Watch               | Critical            |
-| Bloat Ratio 주의 (20\~40%) | Watch               | Watch               | Critical            |
-| Bloat Ratio 위험 (40% 이상) | Critical            | Critical            | Critical            |
+| 3xCdwgyaRWkM             | Vacuum 정상 (24시간 미만) | Vacuum 주의 (24\~72시간) | Vacuum 위험 (72시간 이상) |
+| ------------------------ | ------------------- | -------------------- | ------------------- |
+| Bloat Ratio 정상 (20% 미만)  | Healthy             | Watch                | Critical            |
+| Bloat Ratio 주의 (20\~40%) | Watch               | Watch                | Critical            |
+| Bloat Ratio 위험 (40% 이상)  | Critical            | Critical             | Critical            |
 
 {% hint style="info" %}
 **참고**
@@ -53,7 +67,7 @@ Tuple Health는 추정 통계 기반 가이드로, 트래픽 패턴에 따라 �
 2. 상단 요약 정보와 데이터베이스 테이블에서 현황을 확인합니다.
 3. 특정 데이터베이스를 찾으려면 검색창에 별칭을 입력합니다.
 
-## 데이터베이스 생성
+### 데이터베이스 생성
 
 **생성** 버튼을 클릭하면 화면 오른쪽에 데이터베이스 생성 드로어가 열립니다. 필수 항목을 입력한 뒤 **생성** 버튼을 클릭하면 생성 요청이 전송되고 드로어가 닫힙니다. 생성 요청 결과와 완료 여부는 화면 상단에 표시되는 토스트 메시지로 확인합니다.
 
@@ -63,7 +77,7 @@ Tuple Health는 추정 통계 기반 가이드로, 트래픽 패턴에 따라 �
 **취소**를 클릭하거나 드로어를 닫으면 입력한 내용이 모두 초기화됩니다. **생성** 버튼을 클릭하기 전까지 변경사항이 저장되지 않습니다.
 {% endhint %}
 
-### 입력 항목
+#### 입력 항목
 
 <table data-full-width="true"><thead><tr><th>항목</th><th>설명</th><th>입력 규칙</th></tr></thead><tbody><tr><td>Database Name *</td><td>생성할 데이터베이스 이름</td><td><ul><li>30자 이내 영어 소문자(a-z)·숫자(0-9)·언더바(<code>_</code>)만 사용 가능</li><li>동일 인스턴스 내 중복 불가</li></ul></td></tr><tr><td>Owner *</td><td>데이터베이스 소유 사용자</td><td><code>postgres</code> (고정값)</td></tr><tr><td>Encoding</td><td>데이터베이스 Character Set</td><td>기본값: <code>UTF8</code></td></tr><tr><td>Connection Limit</td><td>동시 접속 가능한 최대 연결 수</td><td><ul><li>기본값: Unlimited</li><li>Unlimited 체크 해제 시 직접 입력 가능 (0 이상의 정수)</li></ul></td></tr></tbody></table>
 
@@ -76,7 +90,7 @@ Tuple Health는 추정 통계 기반 가이드로, 트래픽 패턴에 따라 �
 3. **생성** 버튼을 클릭합니다.
 4. 드로어가 닫히면 토스트 메시지로 생성 요청 결과와 완료 여부를 확인합니다.
 
-## 데이터베이스 상세 정보 조회
+### 데이터베이스 상세 정보 조회
 
 목록에서 데이터베이스 별칭을 클릭하면 해당 데이터베이스의 상세 정보 페이지로 이동합니다. 페이지는 기본 정보(Info), Database Activity, Trend Metrics 세 영역으로 구성됩니다.
 
@@ -85,33 +99,36 @@ Tuple Health는 추정 통계 기반 가이드로, 트래픽 패턴에 따라 �
 1. **관리 > 데이터 공간 관리** 페이지의 데이터베이스 목록에서 조회할 데이터베이스의 **별칭**을 클릭합니다.
 2. 기본 정보, Database Activity, Trend Metrics 영역에서 상태와 현황을 확인합니다.
 
-### 표시 항목
+#### 표시 항목
 
 **기본 정보 (Info)**
 
-| 항목  | 설명  |
-|-----|-----|
-| 생성일 | 데이터베이스 생성 일시 |
-| Tuple Health | Dead Tuple 비율과 Vacuum 수행 시간을 기반으로 한 상태 지표 (Healthy / Watch / Critical) |
-| 마지막 Vacuum 수행 시간 | 마지막 Vacuum이 수행된 일시 |
-| Owner | 데이터베이스 소유 사용자 |
-| Encoding | 데이터베이스에 설정된 Character Set |
-| Connection Limit | 동시 접속 가능한 최대 연결 수 |
+| 항목               | 설명                                                                     |
+| ---------------- | ---------------------------------------------------------------------- |
+| 생성일              | 데이터베이스 생성 일시                                                           |
+| Tuple Health     | Dead Tuple 비율과 Vacuum 수행 시간을 기반으로 한 상태 지표 (Healthy / Watch / Critical) |
+| 마지막 Vacuum 수행 시간 | 마지막 Vacuum이 수행된 일시                                                     |
+| Owner            | 데이터베이스 소유 사용자                                                          |
+| Encoding         | 데이터베이스에 설정된 Character Set                                              |
+| Connection Limit | 동시 접속 가능한 최대 연결 수                                                      |
 
 **Database Activity**
 
-<table><thead><tr><th>항목</th><th>설명</th></tr></thead><tbody><tr><td>DB Size</td><td>실제 데이터가 차지하는 용량 (GB)</td></tr><tr><td>활성 세션 수</td><td><ul><li>현재 활성화된 세션 수 (라인 차트)</li><li>HA 구성 시 노드별 세션 개별 라인 표시</li></ul></td></tr></tbody></table>
+| 항목      | 설명                                                                     |
+| ------- | ---------------------------------------------------------------------- |
+| DB Size | 실제 데이터가 차지하는 용량 (GB)                                                   |
+| 활성 세션 수 | <ul><li>현재 활성화된 세션 수 (라인 차트)</li><li>HA 구성 시 노드별 세션 개별 라인 표시</li></ul> |
 
 **Trend Metrics**
 
-| 항목  | 설명  |
-|-----|-----|
-| Bloat Ratio (%) | 전체 크기 대비 Dead Tuple이 차지하는 비율 |
-| Live Tuple Count (CNT) | 데이터베이스의 Live Tuple 수 |
-| Dead Tuple Count (CNT) | 데이터베이스의 Dead Tuple 수 |
-| Live/Dead Tuple Rate (%) | Live Tuple 대비 Dead Tuple 비율 |
+| 항목                       | 설명                           |
+| ------------------------ | ---------------------------- |
+| Bloat Ratio (%)          | 전체 크기 대비 Dead Tuple이 차지하는 비율 |
+| Live Tuple Count (CNT)   | 데이터베이스의 Live Tuple 수         |
+| Dead Tuple Count (CNT)   | 데이터베이스의 Dead Tuple 수         |
+| Live/Dead Tuple Rate (%) | Live Tuple 대비 Dead Tuple 비율  |
 
-## 데이터베이스 삭제
+### 데이터베이스 삭제
 
 데이터베이스는 목록 페이지와 상세 정보 페이지 두 곳에서 삭제할 수 있습니다. 삭제 버튼을 클릭하면 확인 모달이 나타나며, 모달에서 최종 확인 후 삭제가 진행됩니다.
 
@@ -121,7 +138,7 @@ Tuple Health는 추정 통계 기반 가이드로, 트래픽 패턴에 따라 �
 삭제 작업은 되돌릴 수 없습니다. 데이터베이스에 포함된 모든 데이터와 객체가 영구적으로 삭제되며, 연결 중인 애플리케이션에 즉시 장애가 발생할 수 있습니다.
 {% endhint %}
 
-1. **관리 > 데이터 공간 관리** 페이지에서 삭제할 데이터베이스로 진입합니다. **\[목록 페이지\]** 삭제할 데이터베이스를 라디오 버튼으로 선택합니다. **\[상세 정보 페이지\]** 삭제할 데이터베이스의 **별칭**을 클릭해 상세 정보 페이지로 이동합니다.
+1. **관리 > 데이터 공간 관리** 페이지에서 삭제할 데이터베이스로 진입합니다. **\[목록 페이지]** 삭제할 데이터베이스를 라디오 버튼으로 선택합니다. **\[상세 정보 페이지]** 삭제할 데이터베이스의 **별칭**을 클릭해 상세 정보 페이지로 이동합니다.
 2. **삭제** 버튼을 클릭합니다.
 3. 삭제 확인 모달에서 삭제 대상과 영향 범위를 확인합니다.
 4. **삭제** 버튼을 클릭합니다.
