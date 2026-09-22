@@ -4,13 +4,13 @@
 2. 각 노드에서 `db_scan.info` 파일을 생성합니다.
 3. 파일에 동일한 TSC ID를 입력합니다.
 
-```
+```properties
 tsc_id={고유한 숫자 값}
 ```
 
 예를 들어 4개의 노드로 구성된 TSC 클러스터의 경우 아래와 같이 설정합니다.
 
-```
+```text
 Node 1의 Agent 경로/db_scan.info → tsc_id=262
 Node 2의 Agent 경로/db_scan.info → tsc_id=262
 Node 3의 Agent 경로/db_scan.info → tsc_id=262
