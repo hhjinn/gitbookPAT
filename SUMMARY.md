@@ -1,6 +1,6 @@
 # Table of contents
 
-* [서비스 개요](readme.md)
+* [서비스 개요](README.md)
 * [환경 준비](undefined/README.md)
   * [AWS](undefined/aws/README.md)
     * [마켓플레이스 구독 안내](undefined/aws/undefined.md)
@@ -10,7 +10,7 @@
   * [로그인](undefined-2/undefined.md)
   * [계정 생성 요청](undefined-2/undefined-1.md)
   * [콘솔 화면 구성 안내](undefined-2/undefined-2.md)
-  * [서비스 업데이트](undefined-2/undefined-3.md)
+  * [서비스 업데](undefined-2/undefined-3.md)
 * [대시보드](undefined-3/README.md)
   * [DB Service 생성 (AWS)](undefined-3/db-aws.md)
   * [DB Service 생성 (Azure)](undefined-3/azure.md)
@@ -37,8 +37,8 @@
   * [인스턴스 모니터링](undefined-5/undefined.md)
   * [세션 모니터링](undefined-5/undefined-1.md)
   * [로그 모니터링](undefined-5/undefined-2/README.md)
-    * [Bootlog](undefined-5/undefined-2/bootlog.md)
     * [Syslog](undefined-5/undefined-2/syslog.md)
+    * [Bootlog](undefined-5/undefined-2/bootlog.md)
     * [Eventlog](undefined-5/undefined-2/eventlog.md)
 * [알림](undefined-6.md)
 * [마이페이지](undefined-7/README.md)
