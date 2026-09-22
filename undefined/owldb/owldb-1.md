@@ -33,13 +33,13 @@ Since OwlDB runs on Docker, the following software must be installed before inst
 
 ### 3. Disk Configuration
 
-A minimum of 50GB or more of disk space is required to install OwlDB, and it is recommended to configure it by purpose as shown below.
+A minimum of 50GB of disk space is required to install OwlDB, and it is recommended to configure it separately by purpose as shown below.
 
 | Area | Purpose | Recommended Size |
 | --- | --- | --- |
 | Installation Path | OwlDB binaries and configuration files | 10GB |
 | Data Path | Metadata store | 20GB |
-| Log Path | OwlDB operation logs | 10GB |
+| Log Path | OwlDB operational logs | 10GB |
 | Backup Path | Backup file store | 10GB |
 
 ---
@@ -58,4 +58,4 @@ The following ports must be open on the OwlDB server.
 
 ### 2. Firewall Settings
 
-According to the port configuration above, firewall permission settings between the OwlDB server and the database server are required. Configure inbound and outbound rules in accordance with the customer environment's firewall policy.
+Based on the port configuration above, firewall permission settings between the OwlDB server and the database server are required. Configure the inbound and outbound rules according to the firewall policy of the customer environment.

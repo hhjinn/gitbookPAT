@@ -1,4 +1,4 @@
-This section explains the environment preparation procedure, from placing the deployment file of the DB Service to be registered, up to installing and starting owlagent.
+This document explains the environment preparation procedure, from placing the deployment files for the DB Service to be registered, to installing and starting owlagent.
 
 # **1. List of Required Files**
 
@@ -6,14 +6,14 @@ This section explains the environment preparation procedure, from placing the de
 
 # **2. File Placement**
 
-Extract the DP binary `$OPENSQL_HOME`to.
+The DP binary `$OPENSQL_HOME`Extract it to.
 
 ```bash
 # Extract the DP binary
 tar -zxvf owldb_dp_installer_owl_x.x.x.tar.gz -C $OPENSQL_HOME
 ```
 
-After preparation is complete, the `$OPENSQL_HOME`structure is as follows
+After preparation is complete, `$OPENSQL_HOME`The structure is as follows
 
 ```bash
 $OPENSQL_HOME/
@@ -24,7 +24,7 @@ $OPENSQL_HOME/
      └── validate_infra.sh
 ```
 
-# 3. owlagent Installation
+# 3. Installing owlagent
 
 1. Extract the agent binary.
 
@@ -45,19 +45,19 @@ owlagent_dist_latest.tar.gz
 
 2. Enter the configuration values in owlagent.env.
 
-<table data-full-width="true"><thead><tr><th>Item</th><th>Description</th><th>Input Rule</th></tr></thead><tbody><tr><td>AGENT_TYPE*</td><td></td><td><code>pg</code> Enter</td></tr><tr><td>IP*</td><td>IP of OwlDB CP</td><td></td></tr><tr><td>PORT*</td><td>port of OwlDB CP</td><td></td></tr><tr><td>USERNAME*</td><td>Name of the opensql execution user</td><td></td></tr><tr><td>OPENSQL_HOME</td><td></td><td><ul><li>No entry required if already set</li><li>If not set, enter the OPENSQL_HOME used above</li></ul></td></tr><tr><td>DB_LOG_DIR</td><td>PG log path</td><td>No entry required if logs are not collected</td></tr><tr><td>DB_LOG_FILE_GLOB</td><td>PG log file format</td><td>Example: <code>postgresql*.log</code></td></tr><tr><td>PATRONI_CONFIG</td><td>patroni.yml path</td><td></td></tr><tr><td>PATRONI_MEMBER</td><td>patroni member name</td><td></td></tr></tbody></table>
+<table data-full-width="true"><thead><tr><th>Item</th><th>Description</th><th>Input rule</th></tr></thead><tbody><tr><td>AGENT_TYPE*</td><td></td><td><code>pg</code> Input</td></tr><tr><td>IP*</td><td>IP of OwlDB CP</td><td></td></tr><tr><td>PORT*</td><td>port of OwlDB CP</td><td></td></tr><tr><td>USERNAME*</td><td>opensql execution user name</td><td></td></tr><tr><td>OPENSQL_HOME</td><td></td><td><ul><li>No input required if already configured</li><li>If not configured, enter the OPENSQL_HOME used above</li></ul></td></tr><tr><td>DB_LOG_DIR</td><td>PG log path</td><td>No input required if logs are not collected</td></tr><tr><td>DB_LOG_FILE_GLOB</td><td>PG log file format</td><td>e.g.: <code>postgresql*.log</code></td></tr><tr><td>PATRONI_CONFIG</td><td>patroni.yml path</td><td></td></tr><tr><td>PATRONI_MEMBER</td><td>patroni member name</td><td></td></tr></tbody></table>
 
 *표기는 필수 입력 항목을 의미합니다.
 
-The * mark indicates a required input item.
+The * notation indicates a required input item.
 
 {% hint style="info" %}
 **Note**
 
-At the time of DB Service registration, `DB_LOG_DIR` it is fine even if no log file exists in the path. Once a log file is created after registration, it can be viewed from the [Syslog](../../../undefined-5/undefined-2/syslog.md) menu.
+At the time of DB Service registration, `DB_LOG_DIR` It is acceptable that the log file does not exist in the path. Once the log file is created after registration, [Syslog](../../../undefined-5/undefined-2/syslog.md) View it from the menu.
 {% endhint %}
 
-1. owlagent Execution
+1. Running owlagent
 
 ```bash
 sh owlagent_start.sh
@@ -65,9 +65,9 @@ sh owlagent_start.sh
 
 `owlagent_start` The script registers the Agent as a systemd service and timer, and sudo privileges are used in this process.
 
-# 4. Checking the patroni Service Name
+# 4. Checking the patroni service name
 
-In an environment where Patroni is started with systemd, `systemctl start|stop|status patroni` Patroni is controlled in the form of. If the unit name is not `patroni.service`, start/stop control and status collection will not work, so the unit name must be checked in advance.
+In an environment where Patroni is started with systemd, `systemctl start|stop|status patroni` Patroni is controlled in this form. If the unit name is `patroni.service`If it is not, start/stop control and status collection will not work, so the unit name must be verified in advance.
 
 a. Checking whether systemd is started
 
@@ -75,9 +75,9 @@ a. Checking whether systemd is started
 systemctl is-active --quiet patroni; echo $?
 ```
 
-<table data-full-width="true"><thead><tr><th>Result</th><th>Determination</th></tr></thead><tbody><tr><td>0</td><td><code>patroni.service</code>Registered and started → check complete</td></tr><tr><td>Other than 0</td><td>The following two cases cannot be distinguished, so step b must be additionally performed<ul><li>When started with a different unit name</li><li>When not registered with systemd</li></ul></td></tr></tbody></table>
+<table data-full-width="true"><thead><tr><th>Result</th><th>Determination</th></tr></thead><tbody><tr><td>0</td><td><code>patroni.service</code>Registered and started with → check complete</td></tr><tr><td>Other than 0</td><td>The following two cases cannot be distinguished, so step b must be additionally performed<ul><li>When started with a different unit name</li><li>When not registered with systemd</li></ul></td></tr></tbody></table>
 
-b. Checking the Unit Name
+b. Checking the unit name
 
 ```bash
 # 1) Check the Patroni process PID
@@ -90,11 +90,11 @@ cat /proc/<PID>/cgroup
 | Result | Determination |
 | --- | --- |
 | 0::/system.slice/xxxxxxxx.service | Unit name mismatch → step c must be additionally performed |
-| 0::/user.slice/user-1000.slice/session-3.scope | Not registered with systemd → no additional action required<br>Stop/start is handled inside owldb |
+| 0::/user.slice/user-1000.slice/session-3.scope | Not registered with systemd → no additional action required<br>Stop/start handling is done internally within owldb |
 
-c. How to Change the Service Name
+c. How to change the service name
 
-Add an Alias to the `[Install]` section of the existing unit file, then re-register.
+Of the existing unit file `[Install]` After adding Alias to the section, re-register.
 
 ```bash
 [Install]
@@ -104,10 +104,10 @@ Alias=patroni.service
 
 d. Re-registration (daemon-reload·reenable)
 
-After adding the Alias, re-register the service with daemon-reload and reenable.
+After adding Alias, re-register the service with daemon-reload and reenable.
 
 ```bash
 systemctl daemon-reload
-systemctl reenable <existing-service-name>
+systemctl reenable <existing service name>
 systemctl is-active --quiet patroni; echo $?   # confirm 0
 ```

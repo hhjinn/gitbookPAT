@@ -1,10 +1,10 @@
-Users without an OwlDB account **login** can directly request account creation on the page.
+Users without an OwlDB account **Login** can directly request account creation from the page.
 
-1. **login** On the page **Request Account Creation** click the button.
+1. **Login** On the **Request Account Creation** Click the button.
 2. Enter the following information. ID Name Password Confirm Password Email
-3. **Request** click the button.
-4. In the account creation request modal **Confirm** click the button.
-5. **Confirm** When you click the button **login** it moves to the page.
+3. **Request** Click the button.
+4. In the account creation request modal, **Confirm** Click the button.
+5. **Confirm** When you click the button, **Login** you are taken to the page.
 
 ## Account Approval
 

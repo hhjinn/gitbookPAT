@@ -1,4 +1,4 @@
-This page prepares the server environment for installing an OpenSQL-based database. You will download the distribution files and place them in the installation directory, install the required packages and owlagent, and then perform environment verification.
+This page prepares the server environment for an OpenSQL-based database installation. You download the distribution files and place them in the installation directory, install the required packages and owlagent, and then perform environment validation.
 
 # **1. List of Required Files**
 
@@ -6,20 +6,20 @@ This page prepares the server environment for installing an OpenSQL-based databa
 - OpenSQL binary (`Tmax_OpenSQL_*.tar.gz`)
 - License file (`license.xml`)
 
-# **2. Creating the Installation Directory**
+# **2. Create the Installation Directory**
 
-Create the path where the database will be installed (hereafter `설치 디렉터리`). (Example: `/home/rocky/owldb`)
+Create the path where the database will be installed (hereinafter `설치 디렉터리`). (Example: `/home/rocky/owldb`)
 
 ```bash
 mkdir -p {installation directory}/opensql
 chmod 755 {installation directory}/opensql
 ```
 
-`{설치 디렉터리}/opensql` This path is used in later procedures as `$OPENSQL_HOME`.
+`{설치 디렉터리}/opensql` The path is used as `$OPENSQL_HOME`in subsequent procedures.
 
-# **3. Placing the Files**
+# **3. Place the Files**
 
-Extract the DP binary into `$OPENSQL_HOME`, and place the OpenSQL binary and license file.
+Extract the DP binary into `$OPENSQL_HOME`, and place the OpenSQL binary and the license file.
 
 ```bash
 # Extract the DP binary
@@ -43,9 +43,9 @@ $OPENSQL_HOME/
      └── validate_infra.sh
 ```
 
-# **4. Installing the Required Packages**
+# **4. Install the Required Packages**
 
-`owldb_dp_installer` Move to the directory and run the script. Steps 5 and 6 that follow are also performed in the same directory.
+`owldb_dp_installer` Move into the directory and run the script. Steps 5 and 6 that follow are also performed continuously in the same directory.
 
 ```bash
 cd $OPENSQL_HOME/owldb_dp_installer
@@ -116,7 +116,7 @@ dnf --enablerepo=pgdg-common install -y geos313-devel
 pip3 install pyyaml etcd3 requests psycopg2-binary 'protobuf<4.0.0' tabulate
 ```
 
-# **5. Installing owlagent**
+# **5. Install owlagent**
 
 1. Extract the owlagent binary. tar -zxvf owlagent_dist_latest.tar.gz -C $OPENSQL_HOME owlagent_dist_latest.tar.gz └── owlagent_dist/ ├── config.json.description ├── manifest ├── owlagent ├── owlagent.env ├── owlagent_start.sh └── owlagent_stop.sh
 2. Enter the configuration values in owlagent.env.
@@ -124,10 +124,10 @@ pip3 install pyyaml etcd3 requests psycopg2-binary 'protobuf<4.0.0' tabulate
 | KEY | VALUE |
 | --- | --- |
 | AGENT_TYPE | pg |
-| IP | IP of the OwlDB CP |
-| PORT | port of the OwlDB CP |
+| IP | IP of OwlDB CP |
+| PORT | port of OwlDB CP |
 | USERNAME | Name of the user that will run opensql |
-| OPENSQL_HOME | [2. Creating the Installation Directory](#h-2-설치-디렉터리-생성) Use the $OPENSQL_HOME entered in the step |
+| OPENSQL_HOME | [2. Create the Installation Directory](#h-2-설치-디렉터리-생성) Use the $OPENSQL_HOME entered in the step |
 
 3. Run owlagent. sh owlagent_start.sh
 
@@ -137,9 +137,9 @@ pip3 install pyyaml etcd3 requests psycopg2-binary 'protobuf<4.0.0' tabulate
 `owlagent_start.sh` The script registers owlagent as a systemd service and timer, and sudo privileges are used during this process.
 {% endhint %}
 
-# **6. Performing Environment Verification**
+# **6. Perform Environment Validation**
 
-Run the script that verifies whether the current server is ready for database installation.
+Run the script that verifies whether the current server is ready for the database installation.
 
 ```bash
 bash validate_infra.sh --mode DP --db-type opensql

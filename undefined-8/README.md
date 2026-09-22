@@ -1,4 +1,4 @@
-This page collects reference materials and troubleshooting guides that are helpful in addition to the user guide. If you encounter a problem while using it, please check the related items below first.
+This page collects reference materials and troubleshooting guides that are helpful in addition to the user guide. If you encounter a problem during use, please check the relevant items below first.
 
 
 
