@@ -1,266 +1,277 @@
-# DB 서비스 등록
+You can register and manage an already operating database in OwlDB. In addition to databases built on a standard architecture, registration is also supported for databases with a non-standard architecture that customers have configured themselves.
 
-이미 운영 중인 데이터베이스를 OwlDB에 등록하여 관리할 수 있습니다. 표준 아키텍처 기반으로 구축된 데이터베이스뿐만 아니라, 고객이 직접 구성한 비표준 아키텍처의 데이터베이스도 등록을 지원합니다.
+Once registration is complete, you can use features provided by OwlDB such as monitoring and parameter management.
 
-등록이 완료되면 OwlDB에서 제공하는 모니터링, 파라미터 관리 등의 기능을 사용할 수 있습니다.
+**Check the following items before registration.**
 
-**등록 전 아래 사항을 확인합니다.**
+- The registration feature is available only to administrator accounts.
+- The boot mode of the DB node to be registered must be `Normal`, `Recovery`, `Readonly` . Nodes started in any other boot mode are treated as abnormal nodes.
+- Standby multi-node configurations do not support registration.
 
-- 등록 기능은 관리자 계정만 사용할 수 있습니다.
-- 등록할 DB 노드의 부트모드는 `Normal`, `Recovery`, `Readonly` 여야 합니다. 이외의 부트모드로 기동된 노드는 비정상 노드로 처리됩니다.
-- Standby 멀티 노드 구성은 등록을 지원하지 않습니다.
+## Registration Procedure
 
-# 등록
+1. On the OwlDB console screen > Dashboard > **Discover** click the button.
+2. In the discovery results, **Registrable DB** check the list, and for the relevant database **Register** click the button to move to the registration page.
+3. Enter the registration options step by step. Entering registration options consists of a total of 5 steps, and for detailed information on each step, please refer to the '**Registration Options**' below.
+4. Check the entered information and **Register** click the button.
+5. When the status of the relevant database in the dashboard list is displayed as **Running**registration has been completed successfully.
 
-## 등록 절차
+**Register** When you click the button, the license conditions are verified, then the registration request begins and you are moved to the dashboard. You can check whether registration has started, completed, or failed through system notifications.
 
-1. OwlDB 콘솔 화면 > 대시보드 > **[탐색]** 버튼을 클릭합니다.
-2. 탐색 결과에서 **등록 가능한 DB** 목록을 확인하고, 해당 데이터베이스의 **[등록]** 버튼을 클릭하여 등록 페이지로 이동합니다.
-3. 등록 옵션을 단계별로 입력합니다. 등록 옵션 입력은 총 5단계로 이루어지며, 각 단계에 대한 상세 내용은 아래 '**등록 옵션**'을 참고해 주세요.
-4. 입력한 정보를 확인하고 **[등록]** 버튼을 클릭합니다.
-5. 대시보드 목록에서 해당 데이터베이스의 상태가 **Running**으로 표시되면 등록이 정상적으로 완료된 것입니다.
-
-**[등록]** 버튼을 클릭하면 라이선스 조건을 검증한 후 등록 요청이 시작되며, 대시보드로 이동합니다. 등록 시작, 완료, 실패 여부는 시스템 알림으로 확인할 수 있습니다.
-
-![탐색 결과 화면에서 등록 가능한 데이터베이스 목록과 등록 버튼](탐색 결과 목록 및 등록 버튼 화면)
+![List of registrable databases and the register button on the discovery results screen](Discovery results list and register button screen)
 
 {% hint style="warning" %}
-**주의** 등록 진행 중 아래와 같은 경우 등록이 실패할 수 있습니다.
+**Caution**
 
-- 대상 데이터베이스와의 연결에 실패한 경우
-- 등록 진행 중 데이터베이스 상태가 변경된 경우
-- Agent와의 연결에 실패한 경우
-- 대상 노드에 라이선스 파일이 없거나 라이선스 코어 수가 부족한 경우
+Registration may fail during the registration process in the following cases.
 
-등록이 실패하면 오류 메시지가 표시되며 대시보드로 이동하지 않고 처리가 종료됩니다.
+- When the connection to the target database fails
+- When the database status changes during the registration process
+- When the connection to the Agent fails
+- When there is no license file on the target node or the number of license cores is insufficient
+
+If registration fails, an error message is displayed, and processing ends without moving to the dashboard.
 {% endhint %}
 
 ---
 
-## 등록 옵션
+## Registration Options
 
-등록 페이지로 이동하면 탐색을 통해 수집된 데이터베이스 정보가 자동으로 입력되어 있습니다. 자동으로 입력된 항목은 변경할 수 없으며, 수집할 수 없는 일부 항목만 입력이 필요합니다.
+When you move to the registration page, the database information collected through discovery is automatically entered. Automatically entered items cannot be changed, and only some items that cannot be collected need to be entered.
 
-### 엔진 옵션
+**Engine Options**
 
-데이터베이스 이름과 엔진, 토폴로지 정보를 설정하는 단계입니다.
+This is the step for setting the database name, engine, and topology information.
 
-| 항목 | 설명 |
-| --- | --- |
-| Service Name* | 데이터베이스 서비스를 식별하기 위한 이름<br>- 6~30자의 영문 대소문자(a-z, A-Z), 숫자(0-9), 하이픈(-)만 사용 가능<br>- 미입력 시`owldb-001`과 같은 형태로 자동 생성 |
-| Database Engine Type | 사용할 데이터베이스 엔진<br>-**Tibero**: 다중화 구성으로 안정적인 서비스 운영 및 DB 확장이 가능한 RDBMS<br>-**OpenSQL** : Open Source 기반 고객 맞춤형 DBMS 기술 플랫폼 |
-| Topology | 데이터베이스 구조를 결정할 토폴로지 유형<br>-**Tibero**: Single, TAC<br>-**OpenSQL** : Single, HA |
-| Node Count | 클러스터 구성 노드 수<br>-**Tibero**Single : 1 / TAC : 2~~8~~<br>~~-~~~~**OpenSQL**~~~~ Single : 1 / HA : 2~~3 |
-| PostgreSQL Version | OpenSQL 선택 시 노출되는 PostgreSQL 버전<br>현재 단일 버전만 제공 |
+<table data-full-width="true"><thead><tr><th>Item</th><th>Description</th></tr></thead><tbody><tr><td>Service Name*</td><td>A name to identify the database service<ul><li>Only 6–30 characters of English uppercase and lowercase letters (a-z, A-Z), numbers (0-9), and hyphens (-) can be used</li><li>If not entered<code>owldb-001</code>automatically generated in a format such as</li></ul></td></tr><tr><td>Database Engine Type</td><td>The database engine to use<ul><li><strong>Tibero</strong>: An RDBMS that enables stable service operation and DB expansion through a redundancy configuration</li><li><strong>OpenSQL</strong> : An Open Source-based customized DBMS technology platform</li></ul></td></tr><tr><td>Topology</td><td>The topology type that determines the database structure<ul><li><strong>Tibero</strong>: Single, TAC</li><li><strong>OpenSQL</strong> : Single, HA</li></ul></td></tr><tr><td>Node Count</td><td>The number of nodes making up the cluster<ul><li><strong>Tibero</strong>Single : 1</li><li>TAC : 2~8<strong>OpenSQL</strong></li><li>Single : 1</li><li>HA : 2~3</li></ul></td></tr><tr><td>PostgreSQL Version</td><td>The PostgreSQL version shown when OpenSQL is selected</td></tr></tbody></table>
+
+*표기는 필수 입력 항목을 의미합니다.
+
+The * mark indicates a required input item.
 
 {% hint style="info" %}
-**참고** OpenSQL의 HA는 2node 또는 3node로 탐색될 수 있습니다.
+**Note**
 
-- 2node HA : Leader 1대 + Replica 1대 + Quorum Node(etcd) 1대로 구성
-- 3node HA : Leader 1대 + Replica 2대로 구성
+OpenSQL HA can be discovered as either 2-node or 3-node.
+
+- 2-node HA: Configured with 1 Leader + 1 Replica + 1 Quorum Node (etcd)
+- 3-node HA: Configured with 1 Leader + 2 Replicas
 {% endhint %}
 
-### DR 구성
+**DR Configuration**
 
-DR 사용 여부와 장애 조치 자동화 레벨을 설정하는 단계입니다.
+This is the step for setting whether to use DR and the failover automation level.
 
-| 항목 | 설명 | 비고 |
-| --- | --- | --- |
-| Enable DR | DR 구성 사용 여부 | - |
-| Failover Automation Level* | 자동 장애 조치 단계<br>-**0단계 : 수동**<br>-**1단계 : 자동 장애 조치**<br>-**2단계 : 자동 구성 복구 (On-Premise 미지원)**<br>-**3단계 : 완전 자동화** | - Tibero Single : 0, 1, 3단계 지원<br>- Tibero TAC : 0, 1단계 지원<br>- OpenSQL : 0, 3단계 지원 |
-| {Standby/Replica} Count | Standby/Replica DB 개수 | - |
-| Standby Mode | Standby Mode 옵션<br>-**Recovery**<br>-**Read Only** | Tibero에서만 입력 |
-| Log Replication Type | Primary(Leader)에서 Standby(Replica)로의 로그 전송 방식<br>-**LGWR ASYNC**(Tibero) : 트랜잭션이 발생하면 실시간으로 생성되는 Redo log를 전송하는 복제 모드<br>-**ARCH ASYNC**(Tibero) : 로그 스위치 이후, 아카이브 로그 파일이 생성되면 해당 파일을 모아서 전송하는 복제 모드<br>-**ASYNC**(OpenSQL) : 복제 연결을 통해 데이터를 비동기로 전송하는 복제 모드 | - |
+<table data-full-width="true"><thead><tr><th>Item</th><th>Description</th><th>Remarks</th></tr></thead><tbody><tr><td>Enable DR</td><td>Whether to use DR configuration</td><td>-</td></tr><tr><td>Failover Automation Level*</td><td>Failover Automation Level<ul><li><strong>Level 0: Manual</strong></li><li><strong>Level 1: Automatic Failover</strong></li><li><strong>Level 2: Automatic Configuration Recovery (Not supported On-Premise)</strong></li><li><strong>Level 3: Fully Automated</strong></li></ul></td><td><ul><li>Tibero Single: Supports Levels 0, 1, 3</li><li>Tibero TAC: Supports Levels 0, 1</li><li>OpenSQL: Supports Levels 0, 3</li></ul></td></tr><tr><td>{Standby/Replica} Count</td><td>Number of Standby/Replica DBs</td><td>-</td></tr><tr><td>Standby Mode</td><td>Standby Mode option<ul><li><strong>Recovery</strong></li><li><strong>Read Only</strong></li></ul></td><td>Entered only for Tibero</td></tr><tr><td>Log Replication Type</td><td>Log transmission method from Primary (Leader) to Standby (Replica)<ul><li><strong>LGWR ASYNC</strong>(Tibero): A replication mode that transmits Redo log generated in real time when a transaction occurs</li><li><strong>ARCH ASYNC</strong>(Tibero): A replication mode that collects and transmits archive log files after a log switch, once the files are generated</li><li><strong>ASYNC</strong>(OpenSQL): A replication mode that transmits data asynchronously through a replication connection</li></ul></td><td>-</td></tr></tbody></table>
+
+*표기는 필수 입력 항목을 의미합니다.
+
+The * symbol indicates a required field.
 
 {% hint style="info" %}
-**참고**
+**Note**
 
-- Enable DR 항목에서 DR 사용을 선택한 경우 **Failover Automation Level, {Standby/Replica} Count, Standby Mode, Log Replication Type** 항목이 노출됩니다.
-- OpenSQL을 HA 구성으로 탐색한 경우 Enable DR 항목은 자동으로 **DR 사용**으로 표시되며 변경할 수 없습니다. Topology를 변경하려면 이전 단계로 이동해 주세요.
+- When DR usage is selected in the Enable DR item **Failover Automation Level, {Standby/Replica} Count, Standby Mode, Log Replication Type** items are displayed.
+- When OpenSQL is discovered as an HA configuration, the Enable DR item is automatically displayed as **Use DR**and cannot be changed. To change the Topology, please go back to the previous step.
 {% endhint %}
 
-### 인스턴스 구성
+**Instance Configuration**
 
-토폴로지에 따라 노드별 입력 항목이 자동으로 구성됩니다. 각 노드 영역은 아코디언 형태로 펼치거나 접을 수 있습니다. 두 번째 노드부터는 **이전과 동일** 체크박스를 선택하면 이전 노드에 입력한 Port와 Backup Path 값을 그대로 적용할 수 있습니다.
+Input fields for each node are automatically configured according to the topology. Each node area can be expanded or collapsed in an accordion style. From the second node onward, **Same as previous** selecting the checkbox applies the Port and Backup Path values entered for the previous node as they are.
 
 {% tabs %}
 {% tab title="Tibero" %}
 **Single**
 
-| 항목 | 설명 | 비고 |
+| Item | Description | Remarks |
 | --- | --- | --- |
-| Hostname* | DB 노드에 매핑할 호스트를 선택 | - |
-| Service IP* | OwlDB와 노드간 통신에 사용할 IP를 직접 입력 또는 선택 | NAT를 사용하는 경우 NAT IP를 입력 |
-| Service Port* | OwlDB와 데이터베이스 서버간 통신에 사용할 Port를 직접 입력 | 포트 포워딩을 사용하는 경우<br>외부 Port 입력 |
-| Backup Path* | Backup Path 입력 | 파일 시스템 경로만 입력 가능 |
+| Hostname* | Select the host to map to the DB node | - |
+| Service IP* | Directly enter or select the IP to be used for communication between OwlDB and the node | If using NAT, enter the NAT IP |
+| Service Port* | Directly enter the Port to be used for communication between OwlDB and the database server | If using port forwarding, enter the external Port |
+| Backup Path* | Enter the Backup Path | Only a file system path can be entered |
 
-**Path**는 파일 시스템 경로만 입력할 수 있습니다.
+*표기는 필수 입력 항목을 의미합니다.
 
-단, 다음 조건을 반드시 충족해야 합니다.
+The * symbol indicates a required field.
 
-- 입력한 경로가 등록 대상 호스트에 **실제로 존재**해야 합니다.
-- 파일 시스템 경로에 대해 DP Agent 실행 계정이 **읽기, 쓰기, 실행 권한**을 보유해야 합니다.
+**Path**can only be entered as a file system path.
+
+However, the following conditions must be met.
+
+- The entered path must **actually exist**on the target host to be registered.
+- For the file system path, the DP Agent execution account must have **read, write, and execute permissions**.
 
 ---
 
 **Single+DR**
 
-| 항목 | 설명 | 비고 |
+| Item | Description | Remarks |
 | --- | --- | --- |
-| Hostname* | DB 노드에 매핑할 호스트를 선택 | - |
-| Service IP* | OwlDB와 노드간 통신에 사용할 IP를 직접 입력 또는 선택 | NAT를 사용하는 경우 NAT IP를 입력 |
-| Service Port* | OwlDB와 데이터베이스 서버간 통신에 사용할 Port를 직접 입력 | 포트 포워딩을 사용하는 경우 외부 Port를 입력 |
-| Primary Destination IP*(Primary 인스턴스만 입력) | StandByDB에서 PrimaryDB로의 통신에서 사용할 Primary Destination IP를 직접 입력 | NAT를 사용하는 경우 NAT IP를 입력<br>Primary 인스턴스만 입력 |
-| Primary Destination Port*<br>(Primary 인스턴스만 입력) | StandBy DB에서 Primary DB로 통신에서 사용할 Primary Destination Port를 직접 입력 | 포트 포워딩을 사용하는 경우 외부 Port를 입력 |
-| StandBy Destination IP*<br>(StandBy 인스턴스만 입력) | Primary DB에서 StandBy DB로의 통신에서 사용할 StandBy Destination IP를 직접 입력 | NAT를 사용하는 경우 NAT IP를 입력 |
-| StandBy Destination Port*<br>(StandBy 인스턴스만 입력) | Primary DB에서 StandBy DB로 통신에서 사용할 StandBy Destination Port를 직접 입력 | 포트 포워딩을 사용하는 경우 외부 Port를 입력 |
-| Backup Path* | Backup Path 입력 | 파일 시스템 경로만 입력 가능 |
+| Hostname* | Select the host to map to the DB node | - |
+| Service IP* | Directly enter or select the IP to be used for communication between OwlDB and the node | If using NAT, enter the NAT IP |
+| Service Port* | Directly enter the Port to be used for communication between OwlDB and the database server | If using port forwarding, enter the external Port |
+| Primary Destination IP* (Entered only for the Primary instance) | Directly enter the Primary Destination IP to be used for communication from StandByDB to PrimaryDB | When using NAT, enter the NAT IP<br>Enter for the Primary instance only |
+| Primary Destination Port*<br>(Enter for the Primary instance only) | Directly enter the Primary Destination Port to be used for communication from StandBy DB to Primary DB | When using port forwarding, enter the external Port |
+| StandBy Destination IP*<br>(Enter for the StandBy instance only) | Directly enter the StandBy Destination IP to be used for communication from Primary DB to StandBy DB | When using NAT, enter the NAT IP |
+| StandBy Destination Port*<br>(Enter for the StandBy instance only) | Directly enter the StandBy Destination Port to be used for communication from Primary DB to StandBy DB | When using port forwarding, enter the external Port |
+| Backup Path* | Enter the Backup Path | Only a file system path can be entered |
 
-**Path**는 파일 시스템 경로만 입력할 수 있습니다.
+*표기는 필수 입력 항목을 의미합니다.
 
-단, 다음 조건을 반드시 충족해야 합니다.
+The * mark indicates a required input item.
 
-- 입력한 경로가 등록 대상 호스트에 **실제로 존재**해야 합니다.
-- 파일 시스템 경로에 대해 DP Agent 실행 계정이 **읽기, 쓰기, 실행 권한**을 보유해야 합니다.
+**Path**Only a file system path can be entered.
+
+However, the following conditions must be met.
+
+- The entered path must **actually exist**on the target host to be registered.
+- For the file system path, the DP Agent execution account must **read, write, and execute permissions**hold.
 
 ---
 
 **TAC**
 
-| 항목 | 설명 | 비고 |
+| Item | Description | Remarks |
 | --- | --- | --- |
-| Hostname* | DB 노드에 매핑할 호스트를 선택 | - |
-| Service IP* | OwlDB와 노드간 통신에 사용할 IP를 직접 입력 또는 선택 | NAT를 사용하는 경우 NAT IP를 입력 |
-| Service Port* | OwlDB와 데이터베이스 서버간 통신에 사용할 Port를 직접 입력 | 포트 포워딩을 사용하는 경우 외부 Port를 입력 |
-| Backup Path* | Backup Path 입력 | 파일 시스템 경로만 입력 가능,<br>공유 볼륨 사용 |
+| Hostname* | Select the host to map to the DB node | - |
+| Service IP* | Directly enter or select the IP to be used for communication between OwlDB and the node | When using NAT, enter the NAT IP |
+| Service Port* | Directly enter the Port to be used for communication between OwlDB and the database server | When using port forwarding, enter the external Port |
+| Backup Path* | Enter the Backup Path | Only a file system path can be entered,<br>using a shared volume |
 
-**Backup Path**의 경우 파일 시스템 경로만 입력할 수 있습니다.
+*표기는 필수 입력 항목을 의미합니다.
 
-단, 다음 조건을 반드시 충족해야 합니다.
+The * mark indicates a required input item.
 
-- 입력한 모든 Path는 **공유 볼륨**으로 구성되어 있어야 합니다.
-- 입력한 경로가 설치 대상 호스트에 **실제로 존재**해야 합니다.
-- 파일 시스템 경로에 대해 DP Agent 실행 계정이 **읽기, 쓰기, 실행 권한**을 보유해야 합니다.
+**Backup Path**In this case, only a file system path can be entered.
+
+However, the following conditions must be met.
+
+- All entered paths must **a shared volume**be configured as.
+- The entered path must **actually exist**on the installation target host.
+- For the file system path, the DP Agent execution account must **read, write, and execute permissions**hold.
 
 ---
 
 **TAC+DR**
 
-| 항목 | 설명 | 비고 |
+| Item | Description | Remarks |
 | --- | --- | --- |
-| Hostname* | DB 노드에 매핑할 호스트를 선택 | - |
-| Service IP* | OwlDB와 노드간 통신에 사용할 IP를 직접 입력 또는 선택 | NAT를 사용한다면 NAT IP를 입력 |
-| Service Port* | OwlDB와 데이터베이스 서버간 통신에 사용할 Port를 직접 입력 | 포트 포워딩을 사용하는 경우 외부 Port를 입력 |
-| Primary Destination IP*(Primary 인스턴스만 입력) | StandByDB에서 PrimaryDB로의 통신에서 사용할 Primary Destination IP를 직접 입력 | NAT를 사용하는 경우 NAT IP를 입력 |
-| Primary Destination Port*<br>(Primary 인스턴스만 입력) | StandBy DB에서 Primary DB로 통신에서 사용할 Primary Destination Port를 직접 입력 | 포트 포워딩을 사용하는 경우 외부 Port를 입력 |
-| StandBy Destination IP*<br>(StandBy 인스턴스만 입력) | Primary DB에서 StandBy DB로의 통신에서 사용할 StandBy Destination IP를 직접 입력 | NAT를 사용하는 경우 NAT IP를 입력 |
-| StandBy Destination Port*<br>(StandBy 인스턴스만 입력) | Primary DB에서 StandBy DB로 통신에서 사용할 StandBy Destination Port를 직접 입력 | 포트 포워딩을 사용하는 경우 외부 Port를 입력 |
-| Backup Path* | Backup Path 입력 | 파일 시스템 경로만 입력 가능,<br>공유 볼륨 사용 |
+| Hostname* | Select the host to map to the DB node | - |
+| Service IP* | Directly enter or select the IP to be used for communication between OwlDB and the node | If using NAT, enter the NAT IP |
+| Service Port* | Directly enter the Port to be used for communication between OwlDB and the database server | When using port forwarding, enter the external Port |
+| Primary Destination IP* (Enter for the Primary instance only) | Directly enter the Primary Destination IP to be used for communication from StandByDB to PrimaryDB | When using NAT, enter the NAT IP |
+| Primary Destination Port*<br>(Enter for the Primary instance only) | Directly enter the Primary Destination Port to be used for communication from StandBy DB to Primary DB | When using port forwarding, enter the external Port |
+| StandBy Destination IP*<br>(Enter for the StandBy instance only) | Directly enter the StandBy Destination IP to be used for communication from Primary DB to StandBy DB | When using NAT, enter the NAT IP |
+| StandBy Destination Port*<br>(Enter for the StandBy instance only) | Directly enter the StandBy Destination Port to be used for communication from Primary DB to StandBy DB | When using port forwarding, enter the external Port |
+| Backup Path* | Enter the Backup Path | File system paths only, uses shared volume |
 
-**Backup Path**의 경우 파일 시스템 경로만 입력할 수 있습니다.
+*표기는 필수 입력 항목을 의미합니다.
 
-단, 다음 조건을 반드시 충족해야 합니다.
+The * mark indicates a required input field.
 
-- 입력한 모든 Path는 **공유 볼륨**으로 구성되어 있어야 합니다.
-- 입력한 경로가 설치 대상 호스트에 **실제로 존재**해야 합니다.
-- 파일 시스템 경로에 대해 DP Agent 실행 계정이 **읽기, 쓰기, 실행 권한**을 보유해야 합니다.
+**Backup Path**Only file system paths can be entered.
+
+However, the following conditions must be met.
+
+- All entered Paths must **shared volume**be configured as.
+- The entered path must **actually exist**on the installation target host.
+- For the file system path, the DP Agent execution account must have **read, write, and execute permissions**.
 {% endtab %}
 {% tab title="OpenSQL" %}
-노드 섹션명은 **Leader Node**, **Replica Node #{n}**으로 표시되며, 2node HA로 탐색된 경우 **Quorum Node**가 함께 표시됩니다.
+The node section names are displayed as **Leader Node**, **Replica Node #{n}**, and when detected as 2node HA, **Quorum Node**is displayed together.
 
-| 항목 | 설명 | 비고 |
+| Item | Description | Remarks |
 | --- | --- | --- |
-| Hostname* | DB 노드에 매핑할 호스트를 선택 | - |
-| Service IP* | OwlDB와 노드간 통신에 사용할 IP를 직접 입력 또는 선택 | NAT를 사용하는 경우 NAT IP를 입력 |
-| Service Port* | OwlDB와 데이터베이스 서버간 통신에 사용할 Port를 직접 입력<br>기본값 :`5432` | 포트 포워딩을 사용하는 경우 외부 Port를 입력 |
-| Replication Connection IP* | HA 구성일 때, 복제 연결에 사용할 IP를 직접 입력 또는 선택 | HA 구성에서만 노출 |
-{% endtab %}
-{% tab title="Tab" %}
-| | | |
+| Hostname* | Select the host to map to the DB node | - |
+| Service IP* | Directly enter or select the IP to be used for communication between OwlDB and the node | When using NAT, enter the NAT IP |
+| Service Port* | Directly enter the Port to be used for communication between OwlDB and the database server<br>Default:`5432` | When using port forwarding, enter the external Port |
+| Replication Connection IP* | In an HA configuration, directly enter or select the IP to be used for the replication connection | Displayed only in HA configuration |
+
+*표기는 필수 입력 항목을 의미합니다.
+
+The * mark indicates a required input field.
 {% endtab %}
 {% endtabs %}
 
-| | |
+**Database Configuration**
 
-### 데이터베이스 구성
-
-데이터베이스 구성 정보를 확인하고, 수집할 수 없는 일부 항목을 직접 입력하는 단계입니다. 대부분의 항목은 탐색 결과가 자동으로 입력되며 수정할 수 없습니다.
+This is the step to review the database configuration information and directly enter some items that cannot be collected. Most items are automatically filled in with the discovery results and cannot be modified.
 
 {% tabs %}
 {% tab title="Tibero" %}
-| 항목 | 설명 |
+| Item | Description |
 | --- | --- |
-| Database Name | 사용할 데이터베이스의 이름 |
-| SYS User Password* | 데이터베이스 최고 권한 관리자 계정(SYS)의 비밀번호 |
-| Character Set | 데이터베이스에 사용할 문자 인코딩 |
-| Timezone | 데이터베이스가 설치될 OS 시간대 |
-| VIP | 데이터베이스 가상 IP<br>VIP를 사용하지 않는 경우`-`로 표시 |
-| Database Listener Port | 네트워크 통신을 위한 데이터베이스 리스너 포트 |
-| Max Session Count | 동시 허용 최대 세션 수 (수정 불가) |
-| Target Memory Size | 대상 메모리 크기 (수정 불가) |
-| Shared Memory Size | 공유 메모리 크기 (수정 불가) |
-| Redo Log File Size (MB) | Redo 로그 파일 크기<br>탐색 과정에서 값을 확인할 수 없어 빈 값으로 표시되며 수정할 수 없음 |
-| System Data File Size (MB) | 시스템 테이블 및 주요 메타 데이터를 저장할 데이터 파일의 크기<br>탐색 과정에서 값을 확인할 수 없어 빈 값으로 표시되며 수정할 수 없음 |
-| Syssub Data File Size (MB) | 시스템 운영 관련 데이터 저장을 위한 서브 데이터 파일 크기<br>탐색 과정에서 값을 확인할 수 없어 빈 값으로 표시되며 수정할 수 없음 |
-| User Tablespace Data File Size (MB) | 사용자 데이터를 저장할 테이블 스페이스 데이터 파일 크기<br>탐색 과정에서 값을 확인할 수 없어 빈 값으로 표시되며 수정할 수 없음 |
-| Temporary Tablespace Data File Size (MB) | 대용량 연산에 사용되는 임시 테이블스페이스 데이터 파일 크기<br>탐색 과정에서 값을 확인할 수 없어 빈 값으로 표시되며 수정할 수 없음 |
-| Undo Tablespace Data File Size (MB) | Undo 테이블스페이스 크기<br>탐색 과정에서 값을 확인할 수 없어 빈 값으로 표시되며 수정할 수 없음 |
-{% endtab %}
-{% tab title="Tab" %}
-| | |
+| Database Name | The name of the database to be used |
+| SYS User Password* | The password of the database's highest-privilege administrator account (SYS) |
+| Character Set | The character encoding to be used for the database |
+| Timezone | The OS timezone where the database will be installed |
+| VIP | Database virtual IP<br>When VIP is not used`-`displayed as |
+| Database Listener Port | The database listener port for network communication |
+| Max Session Count | Maximum number of concurrently allowed sessions (cannot be modified) |
+| Target Memory Size | Target memory size (cannot be modified) |
+| Shared Memory Size | Shared memory size (cannot be modified) |
+| Redo Log File Size (MB) | Redo log file size<br>The value cannot be confirmed during the discovery process, so it is displayed as an empty value and cannot be modified |
+| System Data File Size (MB) | The size of the data file for storing system tables and key metadata<br>The value cannot be confirmed during the discovery process, so it is displayed as an empty value and cannot be modified |
+| Syssub Data File Size (MB) | The size of the sub data file for storing system operation-related data<br>The value cannot be confirmed during the discovery process, so it is displayed as an empty value and cannot be modified |
+| User Tablespace Data File Size (MB) | The size of the tablespace data file for storing user data<br>The value cannot be confirmed during the discovery process, so it is displayed as an empty value and cannot be modified |
+| Temporary Tablespace Data File Size (MB) | The size of the temporary tablespace data file used for large-scale operations<br>The value cannot be confirmed during the discovery process, so it is displayed as an empty value and cannot be modified |
+| Undo Tablespace Data File Size (MB) | Undo tablespace size<br>The value cannot be confirmed during the discovery process, so it is displayed as an empty value and cannot be modified |
+
+*표기는 필수 입력 항목을 의미합니다.
+
+The * mark indicates a required input field.
 {% endtab %}
 {% tab title="OpenSQL" %}
-| |
-
-| 항목 | 설명 |
+| Item | Description |
 | --- | --- |
-| Database Name | 사용할 데이터베이스의 이름 |
+| Database Name | The name of the database to be used |
 | User Id |   |
-| User Password* | 데이터베이스 최고 권한 관리자 계정의 비밀번호 |
-| Character Set | 데이터베이스에 사용할 문자 인코딩 |
-| Timezone | 데이터베이스가 설치될 OS 시간대 |
-| VIP | 데이터베이스 가상 IP<br>VIP를 사용하지 않는 경우`-`로 표시 |
-| Database Listener Port | 네트워크 통신을 위한 데이터베이스 리스너 포트 |
-| Max Session Count | 동시 허용 최대 세션 수 (수정 불가) |
-| Target Memory Size | 대상 메모리 크기 (수정 불가) |
-| Shared Buffers | 공유 메모리 크기 (수정 불가) |
-| WAL File Size (MB) | WAL 파일 크기<br>탐색 과정에서 값을 확인할 수 없어 빈 값으로 표시되며 수정할 수 없음 |
-| Connection Pooler Port* | 커넥션 풀이 클라이언트 연결을 수신하는 포트<br>범위 : 1024~65535 |
-{% endtab %}
-{% tab title="Tab" %}
-| | |
+| User Password* | Password of the database's top-level privileged administrator account |
+| Character Set | Character encoding to be used by the database |
+| Timezone | OS timezone where the database will be installed |
+| VIP | Database virtual IP<br>When VIP is not used`-`Displayed as |
+| Database Listener Port | Database listener port for network communication |
+| Max Session Count | Maximum number of concurrently allowed sessions (not editable) |
+| Target Memory Size | Target memory size (not editable) |
+| Shared Buffers | Shared memory size (not editable) |
+| WAL File Size (MB) | WAL file size<br>The value cannot be determined during discovery, so it is displayed as empty and cannot be edited |
+| Connection Pooler Port* | Port on which the connection pool listens for client connections<br>Range: 1024~65535 |
+
+*표기는 필수 입력 항목을 의미합니다.
+
+The * mark indicates a required input field.
 {% endtab %}
 {% endtabs %}
 
-| |
+**Verify Configuration Information**
 
-### 구성 정보 확인
+You can enter this step only after validation confirms that all options entered in the previous steps were entered correctly.
 
-앞선 단계에서 입력한 모든 옵션이 정상적으로 입력되었는지 검증이 완료된 후 이 단계로 진입할 수 있습니다.
+Review the entered configuration information at a glance, and if there are no issues, **Register** click the button to begin registration. To modify the content, **Previous** please click the button.
 
-입력한 구성 정보를 한눈에 확인하고, 이상이 없다면 **등록** 버튼을 클릭하여 등록을 시작합니다. 내용을 수정하려면 **이전** 버튼을 클릭해 주세요.
+In the summary area on the right side of the screen, you can expand or collapse the information entered at each step to review it, and required fields left blank are displayed as `[미입력]`.
 
-화면 우측의 요약 영역에서 단계별로 입력한 정보를 확장하거나 축소하여 확인할 수 있으며, 값을 입력하지 않은 필수 항목은 `[미입력]`으로 표시됩니다.
-
-****표기는 필수 입력 항목을 의미합니다. 이외의 항목들은 탐색을 통해 수집된 정보가 자동으로 입력되어 있습니다.***
+****The mark indicates a required input field. For other items, information collected through discovery is automatically entered.***
 
 {% hint style="warning" %}
-**주의** 인스턴스 구성 및 데이터베이스 구성 단계에서 **다음** 버튼을 클릭하면 아래 항목에 대한 유효성 검사가 수행되며, 실패 시 등록을 진행할 수 없습니다.
+**Caution**
 
-- 노드 간 OS Timezone이 다른 경우 (Tibero) : 각 노드에 접속하여 Timezone 설정을 통일해야 합니다.
-- SYS 계정 로그인에 실패한 경우 (Tibero) : 입력한 비밀번호를 확인해야 합니다.
-- 입력한 Backup Path가 호스트에 존재하지 않는 경우
+In the instance configuration and database configuration steps, **Next** When you click the button, validation is performed on the items below, and if it fails, registration cannot proceed.
+
+- When the OS Timezone differs between nodes (Tibero): You must connect to each node and unify the Timezone settings.
+- When SYS account login fails (Tibero): You must check the entered password.
+- When the entered Backup Path does not exist on the host
 {% endhint %}
 
 ---
 
-# 등록 해제
+## Deregister
 
-등록된 데이터베이스는 삭제가 아닌 등록 해제 방식으로 OwlDB 관리 대상에서 제외할 수 있습니다. 등록 해제 후에도 실제 데이터베이스는 운영 환경에 그대로 유지되며, 필요 시 재등록이 가능합니다.
+Registered databases can be excluded from OwlDB management targets through deregistration rather than deletion. Even after deregistration, the actual database remains intact in the operating environment and can be re-registered if needed.
 
-등록 해제는 다음 경로에서 진행할 수 있습니다.
+Deregistration can be performed from the following paths.
 
-- **Overview > 작업 > 등록 해제** 클릭
-- **대시보드 > DB 서비스 선택 > 등록 해제** 클릭
+- **Overview > Actions > Deregister** Click
+- **Dashboard > Select DB Service > Deregister** Click
 
-**등록 해제** 버튼을 클릭하면 확인 모달이 표시되며, DB Service Name를 입력하고 **확인** 버튼을 클릭하면 등록 해제가 완료됩니다.
+**Deregister** When you click the button, a confirmation modal is displayed, and after entering the DB Service Name, **Confirm** when you click the button, deregistration is completed.

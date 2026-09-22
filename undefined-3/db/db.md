@@ -1,88 +1,87 @@
-# DB 서비스 변경 감지
+Change detection is a feature that detects when the database configuration has been changed outside of OwlDB and reflects those changes in OwlDB.
 
-변경 감지는 OwlDB 외부에서 데이터베이스 구성이 변경된 경우, 이를 탐지하여 OwlDB에 반영하는 기능입니다.
-
-대시보드 상단의 **탐색** 버튼을 클릭하면, 변경이 감지된 DB가 있을 경우 대시보드에 표시됩니다.
-
-**변경 감지 반영 전 아래 사항을 확인합니다.**
-
-- 변경 감지 반영은 관리자 계정만 사용할 수 있습니다.
-- **등록 DB**에 한해서만 변경 감지 기능이 제공됩니다. 설치 DB는 변경 감지 대상에서 제외됩니다.
+At the top of the dashboard, **Discover** when you click the button, any DB with detected changes is displayed on the dashboard. **Registered DB**The change detection feature is provided only for. Installed DBs are excluded from change detection.
 
 ---
 
-# 변경 유형
+## Change Types
 
-변경 감지는 아래 두 가지 유형으로 구분됩니다.
+Change detection is divided into the following two types.
 
-| 유형 | 설명 |
-| --- | --- |
-| 스펙 변경 | OwlDB 외부에서 DB 구성이 변경된 경우 (예: Primary 또는 Standby 노드 Scale In/Out) |
-| 상태 변경 | DB 구성은 그대로이나 노드의 역할이 변경된 경우<br>(예: Failover 발생, Primary ↔ Standby 역할 전환) |
+| Type | Description | Supported Engines |
+| --- | --- | --- |
+| Status Change | When the DB configuration remains the same but the node's role has changed<br>(e.g., Failover occurred, Primary ↔ Standby role switch) | Tibero |
+| Spec Change | When the DB configuration has been changed outside of OwlDB (e.g., Primary or Standby node Scale In/Out) | Tibero, OpenSQL |
 
 {% hint style="info" %}
-**참고** 상태 변경과 스펙 변경이 동시에 감지된 경우, 상태 변경이 우선 처리됩니다.
+**Note**
 
-대시보드에서는 해당 DB가 상태 변경 DB로만 표시됩니다.
-
-토폴로지 변경에 대해서는 변경 감지를 지원하지 않습니다.
+- When a status change and a spec change are detected simultaneously, the status change is processed first, and the DB is displayed on the dashboard only as a status-changed DB.
+- Change detection is not supported for topology changes.
+- For OpenSQL, node role changes (status changes) are performed by Patroni, and OwlDB automatically reflects the detection results, so no user action screen is provided. Automatically reflected role changes are recorded as Failover in the switchover history, and if a spec change is detected together, the dashboard activates only the **Spec Change** button.
 {% endhint %}
 
 ---
 
-# 스펙 변경된 DB
+## Spec-Changed DB
 
-OwlDB 외부에서 수동으로 Scale In/Out이 발생한 경우, 탐색 후 대시보드에 **스펙 변경** 버튼이 활성화된 카드뷰로 표시됩니다.
+When Scale In/Out has occurred manually outside of OwlDB, after discovery it is displayed on the dashboard as a card view with the **Spec Change** button activated.
 
-- Scale In된 인스턴스는 카드뷰에서 표시되지 않습니다.
-- Scale Out된 인스턴스는 해당 역할 목록 하단에 추가되어 표시됩니다.
+- Scale In instances are not displayed in the card view.
+- Scale Out instances are added and displayed at the bottom of the corresponding role list.
 
-## **반영 방법**
+### How to Reflect
 
-1. 대시보드에서 스펙 변경이 감지된 DB를 선택합니다.
-2. **스펙 변경** 버튼을 클릭하여 스펙 변경 페이지로 이동합니다.
-3. 변경된 스펙 정보를 확인 및 추가 정보를 입력하여 OwlDB에 반영합니다.
+1. Select the DB with a detected spec change on the dashboard.
+2. **Spec Change** Click the button to go to the spec change page.
+3. Verify the changed spec information and enter additional information to reflect it in OwlDB.
 
 ---
 
-# 상태 변경된 DB
+## Status-Changed DB
 
-OwlDB 외부에서 수동으로 역할 전환 또는 Failover가 발생한 경우, 탐색 후 대시보드에 **상태 변경** 버튼이 활성화된 카드뷰로 표시됩니다.
+When a role switch or Failover has occurred manually outside of OwlDB, after discovery it is displayed on the dashboard as a card view with the **Status Change** button activated. The status change action is provided only for Tibero DBs.
 
-카드뷰에는 상태 변경이 적용되기 전까지 OwlDB에 저장된 기존 상태가 그대로 표시되며, 상태 변경 버튼을 클릭하면 변경 전후를 비교하는 모달 창이 로드됩니다.
+The card view continues to display the existing status stored in OwlDB until the status change is applied, and clicking the status change button loads a modal window comparing the before and after states.
 
-- 왼쪽 카드뷰 : 기존 상태 (OwlDB에 저장된 상태)
-- 오른쪽 카드뷰 : 탐색 후 감지된 현재 상태
+- Left card view: Existing status (status stored in OwlDB)
+- Right card view: Current status detected after discovery
 
 {% hint style="info" %}
-**참고** 상태 변경이 감지된 경우, 인스턴스의 Health 정보만 조회되며 CPU, Memory, 활성 세션 등 상세 정보는 표시되지 않습니다.
+**Note**
+
+When a status change is detected, only the instance's Health information is queried, and detailed information such as CPU, Memory, and active sessions is not displayed.
 {% endhint %}
 
-## **반영 방법**
+### How to Reflect
 
-상태 변경만 감지된 경우와 상태 변경 + 스펙 변경이 동시에 감지된 경우로 나뉩니다.
+This is divided into cases where only a status change is detected and cases where a status change and a spec change are detected simultaneously.
 
-**상태 변경만 감지된 경우**
+**When only a status change is detected**
 
-1. 대시보드에서 상태 변경이 감지된 DB를 선택합니다.
-2. **상태 변경** 버튼을 클릭합니다.
-3. 모달 창에서 변경 전후 상태를 확인합니다.
-4. 아래 중 원하는 동작을 선택합니다.
+1. Select the DB with a detected status change on the dashboard.
+2. **Status Change** Click the button.
+3. Verify the before and after states in the modal window.
+4. Select the desired action from the following.
 
-- **적용** : 상태 변경 내역을 OwlDB에 반영하고 모달을 닫습니다.
-- **취소** : 변경 사항을 반영하지 않고 모달을 닫습니다.
+- **Apply** : Reflects the status change details in OwlDB and closes the modal.
+- **Cancel** : Closes the modal without reflecting the changes.
 
-**상태 변경 + 스펙 변경이 동시에 감지된 경우**
 
-1. 대시보드에서 상태 변경이 감지된 DB를 선택합니다.
-2. **상태 변경** 버튼을 클릭합니다.
-3. 모달 창에서 변경 전후 상태를 확인합니다.
-4. 아래 중 원하는 동작을 선택합니다.
 
-- **적용** : 상태 변경만 OwlDB에 반영하고 대시보드로 돌아갑니다.
-- **취소** : 변경 사항을 반영하지 않고 모달을 닫습니다.
-- **스펙 변경으로 이동** : 상태 변경을 반영한 후, 스펙 변경 페이지로 이동하여 스펙 변경도 함께 반영합니다.
+**When a status change and a spec change are detected simultaneously**
+
+1. Select the DB with a detected status change on the dashboard.
+2. **Status Change** Click the button.
+3. Verify the before and after states in the modal window.
+4. Select the desired action from the following.
+
+- **Apply** : Reflects only the status change in OwlDB and returns to the dashboard.
+- **Cancel** : Closes the modal without reflecting the changes.
+- **Go to Spec Change** : After reflecting the status change, moves to the spec change page to reflect the spec change as well.
 
 {% hint style="info" %}
-**참고** **적용**을 선택하여 상태 변경만 반영한 경우, 대시보드에는 스펙 변경 버튼이 표시되지 않습니다. 반영하지 않은 스펙 변경 사항이 남아있다면 다시 **탐색**을 실행할 때 해당 DB가 스펙 변경 대상으로 다시 표시됩니다.
+**Note**
+
+**Apply**If you select to reflect only the status change, the spec change button is not displayed on the dashboard. If there are unreflected spec changes remaining, the DB will be displayed again as a spec change target when you run **Discover**again.
 {% endhint %}

@@ -1,65 +1,103 @@
-# 백업 설정
-
-백업 설정 페이지에서는 자동 백업 스케줄러를 구성하고 운영 상태를 확인합니다. 자동 백업의 사용 여부, 실행 주기, 보존 기간, 시작 시간을 설정할 수 있으며, 스케줄러의 최근 실행 결과·7일 성공률·연속 실패 횟수와 30일 실행 이력 차트를 통해 백업 안정성을 점검합니다. Cloud 환경에서는 Full과 Incremental을 구분하지 않고 단일 자동 백업으로 관리합니다.
+**Backup Settings** Configure the automatic backup scheduler and check its operational status on this page. In an On-Premise environment, Full Backup and Incremental Backup are configured independently of each other.
 
 {% hint style="warning" %}
-**주의**
-자동 백업을 켜면 설정한 주기와 보존 기간에 따라 저장 용량이 늘어나며, 별도 요금이 발생합니다.
+**Caution**
+
+OpenSQL must use OpenBackup in order to use the backup/recovery features.
 {% endhint %}
 
-## 백업 설정
+## Backup Settings
 
-**관리 > 백업 설정** 메뉴를 클릭하면 현재 설정된 자동 백업 구성 정보를 확인합니다. Cloud 환경에서는 CSP Snapshot 기능을 활용하여 Full/Incremental 구분 없이 단일 자동 백업으로 관리합니다.
+**Management > Backup Settings**Click to view the current automatic backup configuration information. In an On-Premise environment, Full Backup and Incremental Backup are displayed separately.
 
+1. **Management > Backup Settings**Click it.
+2. **Edit**Click it.
+3. Enter the configuration items. For OpenSQL, also enter the OpenBackup configuration information.
+4. **Save**Click it.
 
-1. **관리 > 백업 설정**을 클릭합니다.
-2. **수정**을 클릭합니다.
-3. 자동 백업 토글을 **켜짐**으로 설정합니다.
-4. 자동 백업 주기, 보존 기간, 시작 시간을 입력합니다.
-5. **저장**을 클릭합니다.
+### OpenBackup Settings (OpenSQL only)
 
-페이지에는 다음 항목이 표시됩니다.
+In an OpenSQL On-Premise environment, OpenBackup configuration information is additionally displayed above the automatic backup items. If OpenBackup is disabled, a notice banner appears at the top of the page and the automatic backup items are not displayed.
 
-| 항목  | 설명  |
-|-----|-----|
-| 자동 백업 | 자동 백업 활성화 여부 (켜짐/꺼짐) |
-| 자동 백업 주기 | 자동 백업이 실행되는 주기 |
-| 보존 기간 | 생성된 백업 이미지를 보존하는 기간 |
-| 시작 시간 | 자동 백업이 처음 시작되는 일시 |
-| 최근 백업 일자 | 가장 최근에 자동 백업이 완료된 일시 |
-| 다음 백업 일자 | 다음 자동 백업 예정 일시 |
+| Item | Description |
+| --- | --- |
+| OpenBackup | Whether OpenBackup is used (Enabled/Disabled) |
+| Health | Backup server connection status (Connected/Disconnected) |
+| Backup Server | Information about the OpenBackup(Barman) server in use |
+| OpenBackup Agent Port | The port number used to communicate with the Agent of the OpenBackup server |
+| WAL Retention Method | `archiver` / `streaming` / `archiver + streaming` |
+| Backup Method | `rsync` / `postgres` |
+| Backup Reuse Method | Only displayed when the backup method is `rsync`(`link` / `copy`) |
 
-### 수정 모드 입력 항목
+### Edit Mode Input Items
 
-| 항목  | 설명  | 입력 규칙 |
-|-----|-----|-------|
-| 자동 백업 | 자동 백업 사용 여부 설정 | 기본값: 꺼짐 |
-| 자동 백업 주기 | 백업을 실행할 주기 | * 시간마다: 1\~23  <br> * 일마다: 1\~7 |
-| 보존 기간 | 백업 이미지를 보존할 기간 | * 시간마다: 1\~23 <br> * 일마다: 1\~35 |
-| 시작 시간 | 자동 백업이 시작될 날짜와 시간 | 현재보다 과거 일시는 선택 불가 |
+<table data-full-width="true"><thead><tr><th>Item</th><th>Description</th><th>Input Rules</th></tr></thead><tbody><tr><td>Full Backup</td><td>Whether Full Backup is used</td><td>Default value: Off</td></tr><tr><td>Full Backup Interval</td><td>Full Backup execution interval</td><td><ul><li>Hourly: 1~23</li><li>Daily: 1~7</li></ul></td></tr><tr><td>Retention Period</td><td>Full Backup image retention period</td><td><ul><li>Hourly: 1~23</li><li>Daily: 1~35</li><li>Permanent retention</li></ul></td></tr><tr><td>Start Time</td><td>Full Backup start date and time</td><td>Cannot select a date and time earlier than the current time</td></tr><tr><td>Incremental Backup</td><td>Whether Incremental Backup is used</td><td>Default value: Off</td></tr><tr><td>Incremental Backup Interval</td><td>Incremental Backup execution interval</td><td><ul><li>Hourly: 1~23</li><li>Daily: 1~6</li></ul></td></tr></tbody></table>
 
 {% hint style="warning" %}
-**주의**
-자동 백업을 켜짐으로 설정하면 저장 주기와 보존 기간에 따라 저장 용량이 늘어나며, 별도 요금이 발생합니다.
+**Caution**
+
+Note the following when configuring Incremental Backup.
+
+- Incremental Backup cannot be enabled while Full Backup is Off. Please enable Full Backup first.
+- The Incremental Backup interval must be smaller than the Full Backup interval.
 {% endhint %}
 
+{% hint style="info" %}
+**Note**
 
----
+On OpenSQL On-Premise, if the PostgreSQL version is 16 or lower and the WAL retention method is `streaming`Incremental Backup cannot be used.
+{% endhint %}
 
-## 백업 스케줄러 운영 상태
+## Backup Scheduler Operational Status
 
-백업 설정 페이지 하단의 **백업 스케줄러 운영 상태** 섹션에서 자동 백업의 최근 실행 이력과 안정성 지표를 확인합니다. 자동 백업이 꺼진 상태에서도 마지막 실행 정보가 표시될 수 있습니다.
+At the bottom of the Backup Settings page, **Backup Scheduler Operational Status** In this section, check the recent execution history and reliability metrics of automatic backups. The last execution information may be displayed even when automatic backup is Off.
 
-| 항목  | 설명  | 미설정 시 표시 |
-|-----|-----|----------|
-| 최근 실행 결과 | 가장 최근에 완료된 자동 백업의 성공/실패 여부 | `-`      |
-| 최근 7일 성공률 | 최근 7일 이내 완료된 자동 백업의 성공 비율 (예: 90% (9/10)) | `-`      |
-| 연속 실패 횟수 | 가장 최근 완료 건부터 연속으로 실패한 횟수 (모두 성공인 경우 0회) | `-`      |
-| 최근 30일 실행 결과 차트 | 최근 30일간 일자별 자동 백업 성공/실패 건수를 누적 막대 차트로 표시 | No Data 상태 표시 |
+| Item | Description | When not configured |
+| --- | --- | --- |
+| Recent Execution Result | The most recent completed execution result for each of Full Backup and Incremental Backup (Success/Failure) | `-` |
+| Last 7-Day Success Rate | The success rate of all automatic backups completed within the last 7 days (e.g., 90% (9/10)) | `-` |
+| Consecutive Failure Count | The number of consecutive failures starting from the most recent completed run (0 if all succeeded) | `-` |
+| Last 30-Day Execution Result Chart | Displays the daily automatic backup success/failure counts over the last 30 days as a stacked bar chart | No Data |
 
-차트에서 성공과 실패는 색상으로 구분됩니다. 막대 위에 마우스를 올리면 해당 일자의 자동 백업 성공·실패 건수 상세 정보를 확인할 수 있습니다.
+The 7-day success rate and consecutive failure count are calculated by summing all Full Backup and Incremental Backup executions. The most recent execution result is displayed as follows depending on the configuration state.
 
+- **Full Backup only configured**: Displays only the most recent Full Backup execution result.
+- **Full + Incremental Backup configured together**: Displays the execution results of both types separately.
+- **Not configured**: `-`is displayed.
 
-1. **관리 > 백업 설정**을 클릭합니다.
-2. 페이지 하단의 **백업 스케줄러 운영 상태** 섹션에서 최근 실행 결과, 최근 7일 성공률, 연속 실패 횟수를 확인합니다.
-3. **최근 30일 실행 결과 차트**에서 막대 위에 마우스를 올려 일자별 상세 실행 결과를 확인합니다.
+Hovering the mouse over a bar in the chart shows the respective success and failure counts of Full Backup and Incremental Backup for that day. Backups scheduled to run that day or not yet completed are not included in the chart.
+
+1. **Management > Backup Settings**Click.
+2. At the bottom of the page **Backup Scheduler Operation Status** In the section, check the most recent execution result, the 7-day success rate, and the consecutive failure count.
+3. Hover the mouse over a bar in the chart to check the detailed execution result for each day.
+
+## Backup Storage Usage
+
+In the Backup Storage Usage section, check the current disk storage status used for backups as a horizontal bar chart. The center of the chart displays the usage ratio relative to total storage, and each item is distinguished by color and legend.
+
+{% tabs %}
+{% tab title="Tibero" %}
+| Item | Description |
+| --- | --- |
+| Total Storage | Total capacity of the backup storage |
+| Backup | Full/Incremental Backup storage usage |
+| Archive Log | Archive Log usage retained to guarantee the recovery point |
+| Others | Capacity used in the same path other than the current DB service's Backup/Archive Log |
+| Free | Unused free capacity |
+{% endtab %}
+{% tab title="OpenSQL" %}
+| Item | Description |
+| --- | --- |
+| Total backup storage | Total capacity of the backup storage available to the current DB service |
+| Backup | Full/Incremental Backup storage usage |
+| WAL | WAL usage retained to guarantee the recovery point |
+| Others | Capacity used in the same path other than the current DB service's Backup/WAL |
+| Free | Unused free capacity |
+
+{% hint style="info" %}
+**Note**
+
+The Others item may include usage from other DB services using the same Barman server, or arbitrary files.
+{% endhint %}
+{% endtab %}
+{% endtabs %}

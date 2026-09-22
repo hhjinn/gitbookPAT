@@ -1,147 +1,303 @@
-# 스펙 변경
+This feature changes the node configuration and DR configuration of a running database.
 
-운영 중인 Cloud DB 서비스의 인스턴스 유형, DR 구성, 스토리지 등의 구성을 변경합니다.
+Spec change **Overview** or **Change Detection DB**It starts here and proceeds through five steps: Engine Options → DR Configuration → Instance Configuration → Database Configuration → Configuration Review. In each step, you check the current settings and modify the necessary items, then in the final step you review and apply the changes.
 
-스펙 변경은 관리 > Overview에서 시작하며, 엔진 옵션 → DR 구성 → AZ 구성 → 인스턴스 구성 → 구성 정보 확인의 5단계로 진행됩니다. 각 단계에서 현재 설정을 확인하고 필요한 항목을 수정한 뒤, 마지막 단계에서 변경 전후 구성과 예상 금액을 비교하고 적용을 요청합니다. 변경 내용에 따라 DB 서비스 재시작이 필요할 수 있습니다.
-
-변경 가능한 항목의 범위는 DB 엔진과 라이선스 유형(LI/BYOL)에 따라 다릅니다. LI 라이선스는 인스턴스 유형, DR 구성, 가용 영역, 스토리지 설정을 포함한 대부분의 항목을 변경할 수 있으며, BYOL 라이선스는 볼륨 크기, IOPS, MBps 등 스토리지 항목으로 변경 범위가 제한됩니다.
+Spec change is available when the database operating status is `Running` or `Degraded`The range of items that can be changed varies depending on the DB engine (Tibero/OpenSQL) and the installation method (Installed DB/Registered DB).
 
 {% hint style="info" %}
-**참고**
-Azure 환경에서는 현재 BYOL 라이선스 모델만 지원합니다.
+**Note**
+
+- `Degraded` If there is any node that is in progress or unavailable in this state, the Spec Change button cannot be used.
+- `Degraded` If the state has only issues caused by a Failover Primary, the Spec Change button can be used.
 {% endhint %}
 
-# 스펙 변경
+## How to Access Spec Change
 
+The Spec Change page can be accessed in the following two ways.
 
-1. **관리 > Overview**로 이동합니다.
-2. **스펙 변경**을 클릭합니다.
-3. **엔진 옵션**, **DR 구성**, **AZ 구성**, **인스턴스 구성** 탭을 이동하며 변경할 항목을 설정합니다.
-4. **구성 정보 확인** 탭으로 이동하여 변경 전후 구성과 예상 금액을 확인합니다.
-5. **완료**를 클릭합니다.
-6. 확인 모달에서 내용을 검토하고 **확인**을 클릭합니다.
+- **Access from Overview** : Overview page > Actions > **Spec Change** Click
+- **Access from Change Detection DB** : Dashboard > Explore > Change Detection DB > **Spec Change** Click
+
+## Spec Change
+
+When accessed from Overview, proceed in the following order.
+
+1. On the Overview page, **Actions > Spec Change**Click this to access the Spec Change page.
+2. **Engine Options** In this step, check the node configuration and set Scale In/Out if necessary.
+3. **DR Configuration** In this step, adjust whether to use DR, the failover automation level, and the Standby node settings.
+4. **Instance Configuration** In this step, check the information for each node and modify the Backup Path if necessary.
+5. **Database Configuration** In this step, enter configuration information such as the VIP of the added node.
+6. **Configuration Review** In this step, review the changes and then click **Complete**Click.
+
+## Accessing Spec Change from Overview
+
+When accessed through the Actions menu on the Overview page, you can perform two tasks: DB node configuration change and DR modification.
+
+### DB Node Configuration Change
+
+{% tabs %}
+{% tab title="Tibero" %}
+- **Installed DB**allows Scale In/Out of the Primary node within the topology range of the standard architecture. For example, a TAC configuration allows the Primary node to be adjusted from a minimum of 2 to a maximum of 4.
+- **Registered DB**does not support Scale In/Out.
+- If Scale Out was performed, for a DB using VIP, you must enter the VIP of the added node in the **Database Configuration** step.
 
 {% hint style="info" %}
-**참고**
-* 1\~4단계 탭은 순서와 관계없이 자유롭게 이동할 수 있습니다.
-* **구성 정보 확인** 탭은 1\~4단계 탭 전체에서 유효성 검사 오류가 없는 경우에만 진입할 수 있습니다.
-* 화면 오른쪽의 **구성 정보** 플로팅 박스에서 각 탭에 입력한 내용을 요약 확인할 수 있으며, 오류 항목은 빨간색 텍스트로 표시됩니다.
+**Note**
+
+- Changing the topology itself (e.g., Single → TAC) is not supported in Spec Change.
+- Scale In/Out is only possible for nodes whose prior environment configuration has been completed, the same as for a new installation.
 {% endhint %}
+{% endtab %}
+{% tab title="OpenSQL" %}
+- **Installed DB**supports Single ↔ HA topology conversion, and in the HA topology it also supports Scale In/Out of the Standby node. The adjustable number of nodes is 1 for Single and 2–3 for HA.
+- **Registered DB**does not support topology change or Scale In/Out.
+- If a topology conversion or Scale Out was performed, for a DB using VIP, you must enter the VIP of the added node in the **Database Configuration** step.
+{% endtab %}
+{% endtabs %}
 
-### 변경 가능 항목
+### DR Modification
 
-엔진 유형과 라이선스 옵션에 따라 변경할 수 있는 항목이 다릅니다.
-
-| 항목  | Tibero LI | Tibero BYOL | OpenSQL LI | OpenSQL BYOL |
-|-----|:---------:|:-----------:|:----------:|:------------:|
-| Topology | —         | —           | ✓ (Single ↔ HA) | —            |
-| Edition | ✓         | —           | ✓          | —            |
-| 인스턴스 유형 (Scale Up/Down) | ✓         | —           | ✓          | —            |
-| TAC 노드 수 (Scale In/Out) | ✓         | —           | 해당 없음      | 해당 없음        |
-| Replica Scale In/Out | 해당 없음     | 해당 없음       | ✓          | —            |
-| Enable DR | ✓         | —           | 자동 결정      | 자동 결정        |
-| Failover Automation Level | ✓         | ✓ (초기 DR 사용 시) | ✓          | ✓ (초기 HA 구성 시) |
-| Volume Size | ✓         | ✓           | ✓          | ✓            |
-| Volume IOPS / MBps | ✓         | ✓           | ✓          | ✓            |
+{% tabs %}
+{% tab title="Tibero" %}
+- **Installed DB**can change DR usage ↔ non-usage, and can also change the failover automation level. When DR is in use, the Open Mode and Log Replication Type of the Standby node can also be changed.
+- **Registered DB**does not support changing whether DR is used; when DR is in use, only the failover automation level and Standby node settings can be changed.
+{% endtab %}
+{% tab title="OpenSQL" %}
+- Whether DR is used is automatically determined by the topology selected in the **Engine Options** step. Converting from Single → HA automatically enables DR, and converting from HA → Single automatically disables DR.
+- **Installed DB**As described above, whether DR is used changes only through topology conversion, and the failover automation level can be changed separately.
+- **Registered DB**does not support changing whether DR is used; only the failover automation level and Standby node settings can be changed.
+{% endtab %}
+{% endtabs %}
 
 {% hint style="info" %}
-**참고**
-* Volume Size는 현재 설정값보다 큰 값으로만 변경할 수 있습니다.
-* SE(Standard Edition) 선택 시 인스턴스 유형은 최대 8vCPU로 제한됩니다.
-* OpenSQL은 AWS 환경에서 지원되지 않습니다.
+**Note**
+
+For the supported failover automation levels, refer to the [**Failover Automation document**](#GDPaQdLZBmgq4vRqB2Sz)Please refer to it.
 {% endhint %}
 
-## 엔진 옵션
+## Spec Change Steps
 
-DB Service Name, DB Engine Type, License Option, Node Count는 현재 설정값이 표시되며 변경할 수 없습니다.
+The items that can be configured at each step vary depending on the engine.
 
-변경 가능한 항목은 다음과 같습니다.
+{% tabs %}
+{% tab title="Engine Options" %}
+This step verifies the database alias, engine, and topology information. Most items cannot be changed; only the node configuration can be adjusted, and only for installed DBs. **Tibero**
 
-| 항목  | 설명  |
-|-----|-----|
-| Edition | - Standard Edition(SE)과 Enterprise Edition(EE) 중 선택합니다.<br>- SE는 최대 8vCPU까지 사용 가능하며, EE는 vCPU 제한이 없습니다.<br>- TAC 또는 HA Topology에서는 EE로 자동 적용됩니다.<br>- LI 라이선스에서만 변경 가능합니다. |
-| Topology | OpenSQL LI에서만 Single과 HA 간 변경 가능합니다. |
+| Item | Description | Changeable |
+| --- | --- | --- |
+| Database Alias | An alias for identifying the database | Cannot be changed |
+| Database Engine Type | Tibero | Cannot be changed |
+| Topology | Single, TAC | Cannot be changed |
+| Node Count | 1 for Single, 2–4 for TAC | Cannot be changed (reflects the Scale In/Out results below) |
+| Scale In/Out | Primary node list | Available only for installed DBs |
 
-### TAC Scale In/Out
+**OpenSQL**
 
-LI 라이선스 모델의 Tibero TAC 구성은 인스턴스 Scale In/Out 테이블에서 TAC 노드를 직접 추가하거나 삭제하여 노드 수를 조정할 수 있습니다. 최솟값은 2개, 최댓값은 4개입니다.
+| Item | Description | Changeable |
+| --- | --- | --- |
+| Database Alias | An alias for identifying the database | Cannot be changed |
+| Database Engine Type | OpenSQL | Cannot be changed |
+| Topology | Single, HA | Installed DBs can switch between Single ↔ HA |
+| Node Count | 1 for Single, 2–3 for HA | Cannot be changed (reflects the topology switch/Scale results) |
+| PostgreSQL Version | The PostgreSQL version to use | Cannot be changed |
+
+**Scale In/Out (Tibero TAC installed DB)**
+
+For an installed Tibero TAC topology DB, a Scale In/Out item is displayed below Node Count. You can verify the list of currently configured Primary nodes and perform the following operations.
+
+- **Add** : Clicking the Add button lets you select an instance from the list of installable hosts. The selected host is added to the table and becomes a Scale Out target.
+- **Delete** : After selecting the node to remove from the table, click the Delete button. The selected node becomes a Scale In target and is displayed dimmed in the table.
+- **Reset** : Reverts any added or deleted changes to their initial state.
+
+When switching the topology from Single → HA on an installed OpenSQL DB, the DR configuration is automatically enabled, and the Standby node configuration is **DR Configuration** verified and adjusted in this step.
+{% endtab %}
+{% tab title="DR Configuration" %}
+This step changes whether DR is used, the failover automation level, and the Standby node settings. The change method varies depending on the engine. **Tibero**
+
+| Item | Description |
+| --- | --- |
+| Enable DR | Whether the DR configuration is used. This can be changed directly only for installed DBs. |
+| Failover Automation Level | Level 0 (manual), Level 1 (automatic failover), and Level 3 (fully automated) are supported.<br>Level 2 (automatic configuration recovery) is not supported in OwlDB v1.3 |
+| Standby Count | Installation: fixed at 1 / Registration: 1–9 |
+| Standby Mode | Select the Open Mode of the Standby node (Recovery / Read Only) |
+| Log Replication Type | Select the log transmission method of the Standby node (LGWR ASYNC / ARCH ASYNC) |
+
+Whether DR is used can be changed directly only on installed DBs, and it behaves as follows depending on the direction of change.
+
+| Change Direction | Behavior |
+| --- | --- |
+| Disabled → Enabled | Newly builds the Standby node and sets the failover automation level to Level 1 by default. |
+| Enabled → Disabled | Performs Standby node clean up. |
+
+**OpenSQL**
+
+| Item | Description |
+| --- | --- |
+| Enable DR | **Engine Options** Automatically determined based on the topology selection in the previous step (HA → enabled, Single → disabled) |
+| Failover Automation Level | Supports Level 0 (manual) and Level 3 (fully automated) |
+| Standby Count | 1 to 2 |
+| Standby Scale In/Out | Installed DBs can be adjusted directly using the Add/Delete buttons |
+| Log Replication Type | Configured with asynchronous (ASYNC) replication (fixed) |
+
+**Standby node settings** (Shown when DR is enabled)
+
+The list of currently configured Standby nodes is displayed, and the following items can be changed. The detailed options for Log Replication Type are as follows.
+
+<table data-full-width="true"><thead><tr><th>Item</th><th>Description</th></tr></thead><tbody><tr><td>Open Mode</td><td>The Open Mode of the Standby node is set to <code>Recovery</code> or <code>Read Only</code> , whichever is selected. (Applies to Tibero)</td></tr><tr><td>Log Replication Type</td><td>Selects the log replication method for the Standby node. (Applies to Tibero)<ul><li><strong>LGWR ASYNC</strong>: A replication mode that transmits Redo logs generated in real time when a transaction occurs</li><li><strong>ARCH ASYNC</strong> : A replication mode that collects and transmits archive log files generated after a log switch</li></ul></td></tr></tbody></table>
+
+{% hint style="info" %}
+**Note**
+
+The Standby node of OpenSQL is fixed to asynchronous (ASYNC) replication, and Open Mode and Log Replication Type cannot be selected.
+{% endhint %}
+{% endtab %}
+{% tab title="Instance Configuration" %}
+This is the step for checking the configuration information for each Primary / Standby node. Some items may not be displayed depending on the topology and installation/registration method, and **Backup Path**only can be modified.
+
+**Tibero**
+
+| Item | Description | Remarks |
+| --- | --- | --- |
+| Hostname | Connected host information | Not editable |
+| Service IP | IP used for communication between OwlDB and the node | Not editable |
+| Service Port | Port used for communication between OwlDB and the database server | Not editable |
+| Interconnect IP | Interconnect IP used for communication between nodes within the cluster | Not editable |
+| Primary Destination IP | IP used for communication from the Standby DB to the Primary DB (entered only for the Primary instance) | Not editable |
+| Primary Destination Port | Port used for communication from the Standby DB to the Primary DB (entered only for the Primary instance) | Not editable |
+| Standby Destination IP | IP used for communication from the Primary DB to the Standby DB (entered only for the Standby instance) | Not editable |
+| Standby Destination Port | Port used for communication from the Primary DB to the Standby DB (entered only for the Standby instance) | Not editable |
+| Data Path | Data Path | Not editable |
+| Redo Path | Redo Path | Not editable |
+| Archive Path | Archive Path | Not editable |
+| Backup Path | Backup Path | Only a file system path can be entered |
+| SSH Port | SSH Port | Not editable |
+| SSH User | SSH User | Not editable |
+| SSH Key File Path | SSH Key File Path | Not editable |
+
+**Backup Path**can only accept a file system path, and in the case of a TAC configuration, it **shared volume**must be configured as.
+
+**OpenSQL**
+
+| Item | Description | Remarks |
+| --- | --- | --- |
+| Hostname | Connected host information | Cannot be modified |
+| Service IP | IP used for communication between OwlDB and nodes | Cannot be modified |
+| Service Port | Port used for communication between OwlDB and the database server | Cannot be modified |
+| Replication Connection Ip | IP used for the replication connection in an HA configuration | Cannot be modified |
+| Network interface | Network interface | Cannot be modified |
+| Data Path | Data Path | Cannot be modified |
+| SSH Port | SSH Port | Cannot be modified |
+| SSH User | SSH User | Cannot be modified |
+| SSH Key File Path | SSH Key File Path | Cannot be modified |
+
+Configuration information for each Primary / Standby node is displayed according to the configuration set in the previous step. When scaling out, an input field for the added node is newly created, and when scaling in, the corresponding node is removed from the screen.
+{% endtab %}
+{% tab title="Database Configuration" %}
+This is the step for reviewing the database configuration information. Most items are automatically set through OwlDB metadata and actual DB discovery data. **Common items**
+
+| Item | Description |
+| --- | --- |
+| Database Name | Name of the database to be used |
+| SYS User Password | Password for the highest-privilege database administrator account (SYS user) |
+| Target Memory Size | Target memory size |
+| Character Set | Character encoding to be used for the database |
+| Timezone | OS time zone where the database will be installed |
+| Database Listener Port | Database listener port for network communication |
+| Max Session Count | Maximum number of concurrent sessions allowed |
+
+**Tibero-specific items**
+
+| Item | Description |
+| --- | --- |
+| VIP | Select whether to use VIP |
+| Primary Node #N VIP | Database virtual IP (enabled when VIP use is selected) |
+| Shared Memory Size (MB) | Shared memory size |
+| Redo Log File Size (MB) | Redo log file size |
+| System Data File Size (MB) | Size of the data file for storing system tables and key metadata |
+| Syssub Data File Size (MB) | Size of the sub data file for storing system operation-related data |
+| User Tablespace Data File Size (MB) | Size of the tablespace data file for storing user data |
+| Temporary Tablespace Data File Size (MB) | Size of the temporary tablespace data file used for large-scale operations |
+| Undo Tablespace Data File Size (MB) | Undo tablespace size |
+
+**OpenSQL-specific items**
+
+| Item | Description |
+| --- | --- |
+| VIP | Database virtual IP (enabled when a network interface is selected) |
+| Shared Buffers (%) | Shared memory size |
+| WAL File Size (MB) | WAL File Size |
+| Connection Pooler Port | The port on which OpenProxy accepts client connections |
+
+If Scale Out has occurred in a DB that is using VIP, the VIP for the added node must be entered in this step.
+{% endtab %}
+{% tab title="Verify Configuration Information" %}
+Perform a final review of the settings configured in the previous steps. Changed items are displayed in blue, and each item can be expanded or collapsed using an accordion. **Complete**Clicking this applies the spec change.
+
 {% hint style="warning" %}
-**주의**
-운영 중인 TAC 인스턴스를 삭제(Scale In)하면 해당 인스턴스에 기록된 모든 데이터가 삭제됩니다.
+**Caution**
+
+- If there are no changes, the Complete button is disabled.
+- If you change the DR configuration to disabled while a Retired instance exists in the Standby, a confirmation modal is displayed. Upon confirmation, all Retired instances are deleted and the DR configuration is changed to disabled.
 {% endhint %}
-
-## DR 구성
-
-| 항목  | 설명  |
-|-----|-----|
-| Enable DR | DR 사용 여부를 선택합니다. Tibero LI에서만 직접 변경할 수 있습니다. OpenSQL의 DR 구성은 Topology에 따라 자동으로 결정됩니다(HA → DR 사용, Single → DR 미사용). BYOL은 변경할 수 없습니다. |
-| Failover Automation Level | DR 사용 시 장애 조치 자동화 레벨을 선택합니다. DR 미사용 시에는 표시되지 않습니다. |
-
-### Failover Automation Level 옵션
-
-| 단계  | 이름  | 설명  |
-|-----|-----|-----|
-| 0단계 | 수동 (Manual) | 장애 발생 시 사용자가 직접 Standby/Replica를 Primary/Leader로 승격합니다. |
-| 1단계 | 자동 장애 조치 (Auto Failover) | 시스템이 자동으로 전환합니다. 복구 및 리소스 최적화는 수동으로 진행합니다. |
-| 2단계 | 자동 구성 복구 (Auto Rebuild) | 장애 조치 후 새로운 Standby/Replica를 자동 생성하여 구성을 유지합니다. 데이터 복구는 수동으로 진행합니다. |
-| 3단계 | 완전 자동화 (Full Automation) | 장애 조치부터 복구, 미사용 자원 정리까지 모든 과정을 자동으로 처리합니다. 복구 속도를 최우선으로 하므로 최근 일부 데이터가 유실될 수 있습니다. |
 
 {% hint style="info" %}
-**참고**
-선택 가능한 단계는 라이선스 유형에 따라 다릅니다.
+**Note**
 
-* **Tibero LI**: 0\~3단계 모두 선택 가능
-* **Tibero BYOL**: 0단계, 2단계, 3단계 선택 가능
-* **OpenSQL**: 0단계, 3단계 선택 가능
+**Complete** When clicked, it verifies the presence of the license file, the CP Max Core count, and whether the license options match. In the following cases, the spec change does not proceed and an error message is displayed.
+
+- If the license file does not exist on the node: place the license file and try again.
+- If the requested Core count exceeds the maximum Core count of the license: adjust the Core count and try again.
+- If the requested configuration does not match the current license options: reselect a configuration that matches the license options.
+- If processing is delayed due to multiple simultaneous spec change requests: try again after a moment.
 {% endhint %}
+{% endtab %}
+{% endtabs %}
 
-### OpenSQL HA Scale In/Out
+## Entering spec change from a change-detected DB
 
-LI 라이선스 모델의 OpenSQL은 Replica Scale In/Out 테이블에서 Replica 노드를 추가하거나 삭제하여 구성을 조정합니다. Replica Node #2 이상만 삭제할 수 있습니다.
+For registered DBs only, if the DB configuration is changed outside of OwlDB, OwlDB automatically detects it. In Dashboard Exploration, check the DB where the change was detected and **Spec Change**click it to enter.
 
-{% hint style="warning" %}
-**주의**
-* DR을 미사용으로 변경한 후 스펙 변경을 완료하면 기존 Standby/Replica 인스턴스의 모든 데이터가 삭제됩니다.
-* Failover로 인해 Retired 상태의 인스턴스가 존재하는 경우, DR을 미사용으로 변경하면 해당 인스턴스가 자동으로 삭제됩니다. 해당 인스턴스를 통한 데이터 복구가 불가능해지므로 데이터 검토 및 백업을 완료한 후 진행하십시오.
-{% endhint %}
+When entering this way, externally changed details are automatically reflected on the spec change page. Changed items are marked separately, and the user can review the contents before applying them to OwlDB.
 
-## AZ 구성
+**Example** If a TAC DR DB using VIP (Primary 2 nodes / Standby 1 node) is externally expanded to 4 Primary nodes, it is reflected in each step as follows.
 
-각 인스턴스의 가용 영역(AZ)을 확인하고 설정합니다. 신규로 추가된 인스턴스에 한하여 설정이 가능합니다.
+1. **Engine Options** : The added 2 nodes are displayed in the list.
+2. **Instance Configuration** : Fields for entering the configuration information of the added 2 nodes are created.
+3. **Database Configuration** : Fields for entering the VIP of the added 2 nodes are created.
 
-## 인스턴스 구성
+After reviewing the contents and completing the input in each step, **Complete**clicking this applies the changes to OwlDB.
 
-인스턴스 유형을 변경하여 Scale Up/Down을 수행합니다. BYOL 라이선스는 인스턴스 유형을 변경할 수 없습니다.
+## Maximum spec change processing time
 
-스토리지 관련 설정은 다음과 같습니다.
+The spec change processing time may vary depending on the database capacity, load state, and configuration environment. In a typical environment, it is processed within a few minutes, and the maximum processing time may differ depending on the conditions as follows.
 
-| 항목  | 설명  |
-|-----|-----|
-| Volume Size | 현재 설정값보다 큰 값으로만 변경할 수 있습니다. |
-| Volume IOPS / MBps | Azure 환경에서 볼륨 유형에 따라 허용 범위 내에서 설정할 수 있습니다. |
-| Auto Scale | 사용으로 설정하면 Data Volume 사용량이 90%에 도달할 때 자동으로 볼륨을 확장합니다. |
-| 최대 확장 한도 | Auto Scale 사용 시 최대 확장 가능한 크기를 입력합니다. 현재 Data Volume Size의 110% 이상으로 입력해야 합니다. |
-
-{% hint style="warning" %}
-**주의**
-볼륨 크기는 축소할 수 없습니다. 최대 확장 한도를 신중하게 설정하십시오.
-{% endhint %}
-
-## 구성 정보 확인
-
-변경 전 구성(왼쪽)과 변경 후 구성(오른쪽)을 비교하여 확인합니다. 변경된 항목은 파란색으로 표시됩니다.
-
-예상 금액은 시간당 및 월당 비용으로 표시됩니다. 서울 리전을 기준으로 산정된 값이며, 실제 금액은 리전 및 실사용량에 따라 달라질 수 있습니다.
-
-내용을 확인한 후 **완료**를 클릭하면 변경 유형에 따라 처리 방식이 달라집니다.
-
-| 조건  | 동작  |
-|-----|-----|
-| 인스턴스 Scale Up/Down 포함 | 재시작이 필요하다는 안내 모달이 나타납니다. 재시작 과정에서 서비스가 일시적으로 중단될 수 있습니다. |
-| TAC Scale In/Out 또는 스토리지 확장만 포함 | 재시작 없이 즉시 적용됩니다. |
-| Retired 인스턴스가 있는 상태에서 DR 구성 변경 | 삭제될 Retired 인스턴스에 대한 안내 모달이 나타납니다. |
-
-{% hint style="info" %}
-**참고**
-인스턴스 Scale Up/Down과 스토리지 확장을 함께 요청한 경우, 스토리지 확장을 먼저 처리한 후 인스턴스 Scale Up/Down을 수행합니다.
-{% endhint %}
+{% tabs %}
+{% tab title="Primary Creation" %}
+| Logic | Maximum Processing Time | Remarks |
+| --- | --- | --- |
+| Database Configuration | 6 hours | Script Execution |
+{% endtab %}
+{% tab title="Primary Removal" %}
+| Logic | Maximum Processing Time | Remarks |
+| --- | --- | --- |
+| Database shutdown and cluster resource removal | 30 minutes |   |
+| Environment cleanup | 5 minutes |   |
+{% endtab %}
+{% tab title="Standby Creation" %}
+| Logic | Maximum Processing Time | Remarks |
+| --- | --- | --- |
+| Creating CM on a Single Database | 30 minutes | Database shutdown |
+|   | 6 hours | Cluster resource addition |
+|   | 30 minutes | Database startup |
+| Primary node backup | 6 hours |   |
+| Standby node configuration | 6 hours |   |
+| Primary node parameter change | 30 minutes | Database shutdown, adding parameter to tip |
+|   | 30 minutes | Database startup |
+{% endtab %}
+{% tab title="Standby Removal" %}
+| Logic | Maximum Processing Time | Remarks |
+| --- | --- | --- |
+| Database shutdown and cluster resource removal | 30 minutes |   |
+| Environment cleanup | 5 minutes |   |
+{% endtab %}
+{% endtabs %}

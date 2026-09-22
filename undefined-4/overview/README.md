@@ -1,1 +1,1 @@
-# Overview
+**Overview** The page allows you to view the overall overview of the selected database at a glance. You can query detailed information such as database information, instance information, and version information, and perform various operations such as starting, stopping, and deleting the database.

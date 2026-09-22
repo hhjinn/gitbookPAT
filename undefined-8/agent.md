@@ -1,32 +1,30 @@
-# Agent 재기동 시 주의 사항
-
-`agent.env` 값 변경이 필요하거나 알 수 없는 원인으로 Agent 기동이 실패한 경우, 아래 명령으로 Agent를 재기동할 수 있습니다.
-
-bash
+`agent.env` If a value needs to be changed or the Agent fails to start for an unknown reason, you can restart the Agent with the command below.
 
 ```bash
 sh tbagent_start.sh
 ```
 
-재기동 시 아래와 같은 선택 프롬프트가 출력됩니다.
+The following selection prompt is displayed upon restart.
 
 ```
 ============================================
- DB Agent config.json 생성 스크립트
+ DB Agent config.json generation script
 ============================================
-▲ 경고: config.json 파일이 이미 존재합니다.
- 1) 기존 config.json을 덮어쓰고 계속 진행
- ▲ 경고: 정상 설치/등록된 호스트에서 이 작업을 수행하면 새로운 config.json으로
- Agent가 기동되어, OwlDB에서 해당 호스트를 더 이상 식별할 수 없게 됩니다.
- 2) 기존 config.json을 그대로 사용하고 계속 진행
- 3) 취소
+▲ Warning: The config.json file already exists.
+ 1) Overwrite the existing config.json and continue
+ ▲ Warning: If you perform this operation on a host that is properly installed/registered, the Agent will start
+ with a new config.json, and OwlDB will no longer be able to identify that host.
+ 2) Use the existing config.json as is and continue
+ 3) Cancel
 ```
 
-| 상황 | 선택 |
+| Situation | Selection |
 | --- | --- |
-| OwlDB에 정상 설치/등록된 호스트에서 재기동 | 반드시 **2번** 선택 |
-| OwlDB에 아직 등록되지 않은 호스트에서 재기동 | 1번 또는 2번 모두 가능 |
+| Restart on a host properly installed/registered in OwlDB | Be sure to **Option 2** Select |
+| Restart on a host not yet registered in OwlDB | Either option 1 or option 2 is possible |
 
 {% hint style="warning" %}
-**주의** 정상 등록된 호스트에서 1번을 선택하면 `config.json`이 새로 생성되어 Agent의 고유 식별값이 변경됩니다. 이 경우 OwlDB에서 해당 호스트를 더 이상 식별할 수 없게 됩니다.
+**Caution**
+
+If you select option 1 on a properly registered host, `config.json`a new one is generated and the Agent's unique identifier changes. In this case, OwlDB can no longer identify that host.
 {% endhint %}

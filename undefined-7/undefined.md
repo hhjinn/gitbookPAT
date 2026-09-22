@@ -1,55 +1,45 @@
-# 내 정보 관리
+**My Page > Manage My Information**Here you can view and manage the basic profile and permission status of the currently logged-in account.
 
-**마이페이지 > 내 정보 관리**에서 현재 로그인한 계정의 기본 프로필, 권한 상태 및 접속 이력을 조회하고 관리합니다.
+Through My Information, users can view in real time not only their basic information such as their ID, name, and email, but also their currently assigned role (Root/Member) and the list of DB Service permissions they belong to.
 
-내 정보 조회를 통해 사용자는 본인의 아이디, 이름, 이메일과 같은 기본 정보뿐만 아니라 현재 부여된 역할(Root/Member) 및 소속된 데이터베이스 서비스 권한 목록을 실시간으로 확인할 수 있습니다.
+## View My Account Information
 
-{% hint style="info" %}
-**참고**
-참고
+View the detailed information of your account.
 
-* **Root 계정 특화 정보:**  `Root` 계정에 한해 Azure 콘솔과 연동된 **구독 정보(Subscription ID)** 및 **리소스 그룹(Resource Groups)** 항목이 화면에 추가로 노출됩니다. (일반 Member 계정 제외)
-{% endhint %}
+| Item | Description |
+| --- | --- |
+| ID | The ID used when logging in |
+| Name | User display name |
+| Role | `Root` or `Member` |
+| Permissions | The permissions held by the account (DB Service list) |
+| Email | Email information |
+| Status | Account status |
+| Creation Date | Account creation time |
+| Last Access Date | Last login time |
+| Modification Date | Last modification time |
 
+## Edit My Account Information
 
-## 내 계정 정보 조회
+Edit the detailed information of your account. The ID, role, and permissions are displayed for informational purposes only and cannot be modified.
 
-본인 계정의 상세 정보를 조회할 수 있습니다.
+| Item | Description | Input Rules |
+| --- | --- | --- |
+| ID | The ID used when logging in | Cannot be modified |
+| Role | `Root` or `Member` | Cannot be modified |
+| Permissions | The permissions held by the account (DB Service list) | Cannot be modified |
+| Name | User display name | Can be modified |
+| Current Password* | The previously set password | Input for identity verification |
+| New Password* | The password to change to | 8–20 characters, a combination of letters, numbers, and special characters |
+| Confirm Password* | Confirm the password to change to | Enter the same value as the new password |
+| Email | Email information | Can be modified |
 
-| 항목  | 설명  |
-|-----|-----|
-| 아이디 | 로그인 시 사용하는 ID |
-| 이름  | 사용자 표시명 |
-| 역할  | `Root` 또는 `Member` |
-| 권한  | 해당 계정이 가진 권한 (DB 서비스 목록) |
-| 이메일 | 이메일 정보<br>• 아이디 찾기 시 사용* `Root` : CSP 계정 정보 |
-| 상태  | 계정 상태 |
-| 생성일 | 계정 생성 시각 |
-| 마지막 접속일 | 최종 로그인 시각 |
-| 변경일 | 마지막 수정 시각 |
-| 구독 정보 | Azure 리소스 아이디 항목 내 Subscription 정보를 조회 |
-| 리소스 그룹 | Azure 리소스 아이디 항목 내 resourceGroups 정보 |
+*표기는 필수 입력 항목을 의미합니다.
 
-
-\
-## 내 계정 정보 수정
-
-본인 계정의 상세 정보를 수정할 수 있습니다.
-
-| 항목  | 설명  |
-|-----|-----|
-| 아이디 | 로그인 시 사용하는 ID (정보 확인용) |
-| 이름  | 사용자 표시명 |
-| 역할  | `Root` 또는 `Member` (정보 확인용) |
-| 권한  | 해당 계정이 가진 권한 (DB 서비스 목록) (정보 확인용) |
-| 현재 비밀번호 | 기존에 설정된 비밀번호 |
-| 변경 비밀번호 | 변경할 비밀번호 |
-| 비밀번호 확인 | 변경할 비밀번호 확인 |
-| 이메일 | 이메일 정보<br>• 아이디 찾기 시 사용* `Root` : CSP 계정 정보 |
-
+The * mark indicates a required input field.
 
 {% hint style="info" %}
-**참고**
-* 계정 보안을 유지하기 위해 주기적인 비밀번호 변경을 권장합니다.
-* 새로 변경할 비밀번호는 이전에 사용하던 비밀번호와 중복되어 설정할 수 없습니다.
+**Note**
+
+- To maintain account security, we recommend changing your password periodically.
+- The new password cannot be set to be the same as a previously used password.
 {% endhint %}

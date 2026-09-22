@@ -1,104 +1,90 @@
-# 계정 관리
-
-계정 관리 메뉴에서 OwlDB에 등록된 모든 계정을 조회하고 관리할 수 있습니다.
+You can view and manage all accounts registered in OwlDB from the Account Management menu.
 
 {% hint style="info" %}
-**참고**
-계정 관리 메뉴는 Root만 접근할 수 있습니다.
+**Note**
+
+Only Root can access the Account Management menu.
 {% endhint %}
 
-# 계정 역할 안내
+## Account Role Guide
 
-## Root
+### Root
 
-Root 계정은 Member 계정을 생성, 조회, 수정할 수 있으며, 특정 DB 서비스에 대한 접근 권한을 부여하거나 회수할 수 있습니다. 또한 데이터베이스 설치, 등록, 인프라 탐색 기능을 사용할 수 있습니다.
+The Root account can create, view, and modify Member accounts, and can grant or revoke access permissions for specific DB Services. It can also use the database installation, DB Service registration, and infrastructure discovery features.
 
-Member가 계정 생성을 요청하면 Root에게 해당 요청이 전달되고, Root가 승인하면 Member 계정이 활성화됩니다.
+When a user without an account (an applicant) requests account creation, the request is forwarded to Root, and the account is activated once Root approves it.
 
-## Member
+### Member
 
-Member는 Root로부터 접근 권한을 부여받은 DB 서비스에 한하여 OwlDB가 제공하는 운영·관리 기능(모니터링, 백업/복구, 파라미터 관리 등)을 사용할 수 있습니다. 또한 본인 계정의 생성을 Root에게 직접 요청할 수 있습니다.
+A Member can use the operation and management features provided by OwlDB (monitoring, backup/recovery, parameter management, etc.) only for the DB Services to which Root has granted access permissions. A user without an account (an applicant) can request the creation of their own account from Root.
 
-## 역할별 권한 매트릭스
+### Permission Matrix by Role
 
-| 기능 분류 | 상세 기능 | Root | Member |
-|-------|-------|------|--------|
-| 계정 관리 | 사용자 생성 및 삭제 | O    | X      |
-| 권한 관리 | DB 서비스 할당 | O    | X      |
-| 서비스 관리 | 서비스 생성(설치/등록) 및 삭제 | O    | X      |
-| DB 관리 | • 스펙 변경<br>• 테이블스페이스 관리<br>• 파라미터 관리<br>• 백업/복구<br>• 모니터링 | O    | O      |
-
-
+<table data-full-width="true"><thead><tr><th>Feature Category</th><th>Detailed Feature</th><th>Root</th><th>Member</th></tr></thead><tbody><tr><td>Account Management</td><td>Create and Delete Users</td><td>O</td><td>X</td></tr><tr><td>Permission Management</td><td>DB Service Assignment</td><td>O</td><td>X</td></tr><tr><td>Service Management</td><td>DB Service Installation/Deletion</td><td>O</td><td>X</td></tr><tr><td>Service Management</td><td>DB Service Registration/Deregistration</td><td>O</td><td>X</td></tr><tr><td>DB Management</td><td><ul><li>Spec Change</li><li>Tablespace Management</li><li>Parameter Management</li><li>Backup/Recovery</li><li>Monitoring</li></ul></td><td>O</td><td>O</td></tr></tbody></table>
 
 ---
 
-> 📷 **\[이미지\]** 이미지
+## View Account List
 
-# 계정 목록 조회
+**Account Management** When you enter the menu, you can view the list of all accounts registered in OwlDB. You can filter by account status or search by ID, name, or email.
 
-**\[계정 관리\]** 메뉴에 진입하면 OwlDB에 등록된 모든 계정 목록을 확인할 수 있습니다. 계정 상태로 필터링하거나, 아이디,이름,이메일로 검색할 수 있습니다.
+**Account Status**
 
-**계정 상태**
-
-| 계정 상태 | 처리 방식 |
-|-------|-------|
-| Active | 정상 계정 |
-| Inactive | 비활성화 처리한 계정 |
-| Account Requested | 관리자 승인 대기 중인 계정 |
-| Deleted | 삭제된 계정 |
-
+| Account Status | Description |
+| --- | --- |
+| Active | Normal account |
+| Inactive | Deactivated account |
+| Account Requested | Account awaiting administrator approval |
+| Deleted | Deleted account |
 
 ---
 
-## 계정 생성
+# Account Management Tasks
 
-새로운 Member 계정을 직접 생성할 수 있습니다.
+## Create Account
 
+You can directly create a new Member account.
 
-1. **\[계정 관리\]** 메뉴에서 **\[생성\]** 버튼을 클릭합니다.
-2. 계정 정보(아이디, 이름, 비밀번호 등)를 입력합니다.
-3. 필요한 경우 DB 서비스 접근 권한을 함께 부여할 수 있습니다.
-4. **\[생성\]** 버튼을 클릭하면 계정 생성이 완료됩니다.
+1. **Account Management** From the menu, **Create** Click the button.
+2. Enter the account information (ID, name, password, etc.).
+3. If necessary, you can also grant DB Service access permissions at the same time.
+4. **Create** Clicking the button completes the account creation.
 
-계정이 생성되면 해당 Member에게 권한 부여 알림이 전송됩니다.
-
-
----
-
-## 계정 상세 조회 및 수정
-
-계정 목록에서 사용자 아이디를 클릭하면 해당 계정의 상세 정보를 조회할 수 있습니다. 본인을 포함한 모든 계정의 상세 정보를 조회하고 수정할 수 있습니다.
-
-조회할 수 있는 항목은 아래와 같습니다.
-
-* 아이디, 이름, 역할, 이메일
-* 부여된 DB 서비스 권한
-* 계정 상태, 생성일, 마지막 접속일, 변경일
-
-수정하려면 상세 페이지에서 **\[수정\]** 버튼을 클릭합니다.
-
+Once the account is created, a permission grant notification is sent to the corresponding Member.
 
 ---
 
-## 계정 생성 요청 승인
+## View and Edit Account Details
 
-계정이 없는 사용자가 계정 생성을 요청하면, 요청 내역이 **\[계정 관리\]** 메뉴에 `Account Requested` 상태로 표시됩니다.
+Clicking a user ID in the account list lets you view the detailed information of that account. You can view and modify the detailed information of all accounts, including your own.
 
-Root가 해당 계정을 `Active` 상태로 변경하면 계정이 활성화됩니다.
+The items you can view are as follows.
 
+- ID, Name, Role, Email
+- Granted DB Service permissions
+- Account status, creation date, last access date, change date
+
+To modify, on the detail page **Edit** Click the button.
 
 ---
 
-## 계정 삭제
+## Approve Account Creation Requests
 
+When a user without an account requests account creation, the request record **Account Management** in the menu `Account Requested` status is displayed.
 
-1. **\[계정 관리\]** 메뉴에서 삭제할 계정을 선택합니다.
-2. **\[삭제\]** 버튼을 클릭합니다.
-3. 확인 모달에서 **\[삭제\]** 버튼을 클릭하면 즉시 해당 계정의 접근이 차단됩니다.
+When Root changes the account to `Active` status, the account is activated.
+
+---
+
+## Deleting an Account
+
+1. **Account Management** Select the account to delete from the menu.
+2. **Delete** Click the button.
+3. In the confirmation modal, **Delete** When you click the button, access for that account is blocked immediately.
 
 {% hint style="info" %}
-**참고**
-삭제된 계정의 아이디는 재사용할 수 없습니다. 단, 기존 작업 이력 및 로그는 유지됩니다.
+**Note**
 
-Root 계정은 삭제할 수 없습니다.
+- The ID of a deleted account cannot be reused. However, existing work history and logs are retained.
+- The Root account cannot be deleted.
 {% endhint %}
