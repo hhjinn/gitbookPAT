@@ -13,8 +13,8 @@ OwlDB에서 제공하는 마이그레이션 기능의 지원 범위와 상세 �
 ## **지원 데이터베이스**
 
 | 소스 데이터베이스 | 타겟 데이터베이스 |
-| --- | --- |
-| Oracle 11g, 12c, 18c, 19c | Tibero 7 |
+|-----------|-----------|
+| Oracle 11g, 12c, 18c, 19c | Tibero 7  |
 
 {% hint style="info" %}
 **참고**
@@ -33,23 +33,23 @@ OwlDB 마이그레이션은 모든 Independent Object와 Dependent Object를 한
 Oracle에서 Tibero로 이관할 때 변환되는 데이터 타입에 대해 안내합니다.
 
 | Oracle | Tibero |
-| --- | --- |
-| blob | BLOB |
+|--------|--------|
+| blob   | BLOB   |
 | binary_float | BINARY_FLOAT |
 | binary_double | BINARY_DOUBLE |
-| character | CHAR |
-| clob | CLOB |
-| date | DATE |
+| character | CHAR   |
+| clob   | CLOB   |
+| date   | DATE   |
 | interval day to second | INTERVAL DAY(2) TO SECOND(6) |
 | interval year to month | INTERVAL YEAR(2) TO MONTH |
-| long | LONG |
+| long   | LONG   |
 | long raw | LONG RAW |
-| nchar | NCHAR |
-| nclob | NCLOB |
+| nchar  | NCHAR  |
+| nclob  | NCLOB  |
 | number | NUMBER |
 | nvarchar2 | NVARCHAR2 |
-| rowid | ROWID |
-| time | TIME |
+| rowid  | ROWID  |
+| time   | TIME   |
 | timestamp | TIMESTAMP |
 | timestamp with time zone | TIMESTAMP WITH TIME ZONE |
 | timestamp with local time zone | TIMESTAMP(6) WITH LOCAL TIME ZONE |
@@ -66,17 +66,17 @@ Oracle에서 Tibero로 이관할 때 변환되는 데이터 타입에 대해 안
 3. **분석** 버튼을 클릭합니다.
 4. 호환성을 평가할 소스 데이터베이스(이하 소스 데이터베이스)의 정보를 입력합니다.
 
-| 항목 | 설명 |
-| --- | --- |
-| Title* | 데이터베이스 호환성 평가 제목 |
-| Type* | 소스 데이터베이스의 엔진 유형 |
-| ID* | 소스 데이터베이스의 사용자 ID |
-| Password* | 소스 데이터베이스의 사용자 PW |
-| Address* | 소스 데이터베이스의 IP 주소 이름 |
-| Port* | 소스 데이터베이스의 포트 번호 |
-| SID* | 소스 데이터베이스의 SID |
+| 항목  | 설명  |
+|-----|-----|
+| Title\* | 데이터베이스 호환성 평가 제목 |
+| Type\* | 소스 데이터베이스의 엔진 유형 |
+| ID\* | 소스 데이터베이스의 사용자 ID |
+| Password\* | 소스 데이터베이스의 사용자 PW |
+| Address\* | 소스 데이터베이스의 IP 주소 이름 |
+| Port\* | 소스 데이터베이스의 포트 번호 |
+| SID\* | 소스 데이터베이스의 SID |
 
-*표기는 필수 입력 항목을 의미합니다.
+\*표기는 필수 입력 항목을 의미합니다.
 
 5. **분석** 버튼을 클릭합니다.
 6. **OwlDB 콘솔 화면 > 관리 > 마이그레이션 > Analyzer > 상태** 클릭 시, 진행 정보를 확인할 수 있습니다.
@@ -98,19 +98,20 @@ Oracle에서 Tibero로 이관할 때 변환되는 데이터 타입에 대해 안
 {% tab title="Data Connection" %}
 마이그레이션 대상이 되는 소스 데이터베이스에 접속을 수행합니다.
 
-| 항목 | 설명 |
-| --- | --- |
-| Title* | 데이터베이스 이관 제목 |
-| Type* | 소스 데이터베이스의 엔진 유형 |
-| ID* | 소스 데이터베이스의 사용자 ID |
-| Password* | 소스 데이터베이스의 사용자 PW |
-| Host* | 소스 데이터베이스의 IP 주소 이름 |
-| Port* | 소스 데이터베이스의 포트 번호 |
-| SID* | 소스 데이터베이스의 SID |
-| Target Database* | 타겟 데이터베이스의 별칭 |
+| 항목  | 설명  |
+|-----|-----|
+| Title\* | 데이터베이스 이관 제목 |
+| Type\* | 소스 데이터베이스의 엔진 유형 |
+| ID\* | 소스 데이터베이스의 사용자 ID |
+| Password\* | 소스 데이터베이스의 사용자 PW |
+| Host\* | 소스 데이터베이스의 IP 주소 이름 |
+| Port\* | 소스 데이터베이스의 포트 번호 |
+| SID\* | 소스 데이터베이스의 SID |
+| Target Database\* | 타겟 데이터베이스의 별칭 |
 
-*표기는 필수 입력 항목을 의미합니다.
+\*표기는 필수 입력 항목을 의미합니다.
 {% endtab %}
+
 {% tab title="Type Conversion" %}
 소스 데이터베이스의 데이터 타입 변환에 관한 정보를 조회합니다.
 
@@ -120,6 +121,7 @@ Oracle에서 Tibero로 이관할 때 변환되는 데이터 타입에 대해 안
 타입이 변환된 데이터 유형은 주황색 하이라이팅으로 강조하여 표현합니다.
 {% endhint %}
 {% endtab %}
+
 {% tab title="Summary" %}
 앞 단계에서 입력한 정보를 요약해서 제공합니다.
 {% endtab %}

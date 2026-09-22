@@ -36,8 +36,8 @@ OwlDB 배포를 위한 ARM(Azure Resource Manager) Template의 파라미터를 �
 
 애플리케이션의 고유 식별자와 리소스 관리를 위한 리소스 그룹을 지정합니다.
 
-| 항목 | 설명 |
-| --- | --- |
+| 항목  | 설명  |
+|-----|-----|
 | Application Name | 애플리케이션 고유 식별자 |
 | Managed Resource Group | 리소스 관리를 위한 그룹 |
 
@@ -82,5 +82,5 @@ OwlDB 접속 URL은 `https://<sub-domain>.owl-db.com` 형식이며, `<sub-domain
 
 고객별 고유한 도메인값은 다음 방법으로 확인합니다.
 
-- **Azure 포털 > OwlDB 리소스 그룹 > Settings - Deployments > OwlDB에 해당하는 Deployment > Outputs > Sub Domain Name**에서 확인합니다.
-- **DNS zones** 서비스의 리소스 중 OwlDB에 해당하는 호스팅 영역 이름을 참조합니다.
+* **Azure 포털 > OwlDB 리소스 그룹 > Settings - Deployments > OwlDB에 해당하는 Deployment > Outputs > Sub Domain Name**에서 확인합니다.
+* **DNS zones** 서비스의 리소스 중 OwlDB에 해당하는 호스팅 영역 이름을 참조합니다.

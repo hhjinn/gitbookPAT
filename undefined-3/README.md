@@ -4,71 +4,75 @@
 
 # 전체 상태 요약 정보 확인
 
-운영 중인 전체 데이터베이스/인스턴스에 대해 최상위 상태 값(**Status**)과 세부 상태 값(**Health**)을 확인합니다. 각 상태를 클릭하면 '[DB Service/인스턴스 목록 확인](#db-service인스턴스-목록-확인)'에서 해당 상태 값을 가진 DB Service/인스턴스 목록을 확인할 수 있습니다.
+운영 중인 전체 데이터베이스/인스턴스에 대해 최상위 상태 값(**Status**)과 세부 상태 값(**Health**)을 확인합니다. 각 상태를 클릭하면 '[DB Service/인스턴스 목록 확인](#db-service%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4-%EB%AA%A9%EB%A1%9D-%ED%99%95%EC%9D%B8)'에서 해당 상태 값을 가진 DB Service/인스턴스 목록을 확인할 수 있습니다.
 
 {% tabs %}
 {% tab title="Status" %}
 최상위 상태인 Status는 데이터베이스 단위로 표시합니다.
 
-- 인스턴스 노드 별로 상태가 변경될 수 있기 때문에 상태 옆에 개수를 (n/m) 형태로 표시합니다. n: 사용할 수 있는 인스턴스 노드 개수 m: 전체 인스턴스 노드 개수
-- Bold체로 표기하고 뒤에 `*`를 붙인 타입은 대시보드에서 필터링할 수 있습니다.
+* 인스턴스 노드 별로 상태가 변경될 수 있기 때문에 상태 옆에 개수를 (n/m) 형태로 표시합니다.
+  * n: 사용할 수 있는 인스턴스 노드 개수
+  * m: 전체 인스턴스 노드 개수
+* Bold체로 표기하고 뒤에 `*`를 붙인 타입은 대시보드에서 필터링할 수 있습니다.
 
-| 타입 | 설명 |
-| --- | --- |
+| 타입  | 설명  |
+|-----|-----|
 | Provisioning | 신규 리소스 생성 중 |
-| **Running** * | 데이터베이스 정상 사용 가능 |
-| **Updating** * | 데이터베이스에 계획된 작업이나 변경 사항 적용 중 (예: 전체 재시작, 역할 전환, 스펙 변경, 마이그레이션, 복구 등) |
-| **Degraded** * | 일부 데이터베이스 혹은 구성요소 사용 불가 (예: 개별 인스턴스 재시작 등) |
-| **Failover** * | 시스템이 데이터베이스 장애를 감지하여 Auto Failover 수행 중 (Primary DB 클러스터 전체가 Unavailable 상태가 되었을 때 발생) |
-| **Down** * | 전체 데이터베이스 사용 불가 (Primary와 Standby 모두 사용 불가) |
+| **Running** \* | 데이터베이스 정상 사용 가능 |
+| **Updating** \* | 데이터베이스에 계획된 작업이나 변경 사항 적용 중 (예: 전체 재시작, 역할 전환, 스펙 변경, 마이그레이션, 복구 등) |
+| **Degraded** \* | 일부 데이터베이스 혹은 구성요소 사용 불가 (예: 개별 인스턴스 재시작 등) |
+| **Failover** \* | 시스템이 데이터베이스 장애를 감지하여 Auto Failover 수행 중 (Primary DB 클러스터 전체가 Unavailable 상태가 되었을 때 발생) |
+| **Down** \* | 전체 데이터베이스 사용 불가 (Primary와 Standby 모두 사용 불가) |
 | Starting | Stopped 상태에서 Running으로 전환 중 |
 | Stopping | Running 상태에서 Stopped로 전환 중 (C트랜잭션 롤백 및 프로세스 정지 후 VM 중지 전환) |
 | Stopped | 모든 리소스를 일시적으로 사용하지 않음 (리소스 비활성화) |
 | Terminating | 모든 리소스와 데이터를 영구적으로 삭제 중 (완료 시 접근 및 복구 불가) |
 
-*표기는 필수 입력 항목을 의미합니다.
+\*표기는 필수 입력 항목을 의미합니다.
 {% endtab %}
+
 {% tab title="Health" %}
 세부 상태인 Health는 인스턴스 노드 별로 표시합니다.
 
-- DB Boot Mode, Instance, 클러스터 관리 도구(이하 CMT), Agent 연결 상태를 조합하여 표시합니다.
-- 메시지에 따라 제한되는 기능은 각 메뉴 진입 시 배너로 확인할 수 있습니다.
+* DB Boot Mode, Instance, 클러스터 관리 도구(이하 CMT), Agent 연결 상태를 조합하여 표시합니다.
+* 메시지에 따라 제한되는 기능은 각 메뉴 진입 시 배너로 확인할 수 있습니다.
 
 엔진별 Health 판정 기준은 다음과 같습니다.
 
-- Tibero: DB Boot Mode, 클러스터 관리 도구(CMT), Agent 상태를 조합하여 판정합니다.
-- OpenSQL: Patroni, OpenProxy, etcd, Agent 상태를 조합하여 판정합니다.
+* Tibero: DB Boot Mode, 클러스터 관리 도구(CMT), Agent 상태를 조합하여 판정합니다.
+* OpenSQL: Patroni, OpenProxy, etcd, Agent 상태를 조합하여 판정합니다.
 
 {% tabs %}
 {% tab title="Tibero" %}
-| 표시 | 상태 | 메시지 | 설명 |
-| --- | --- | --- | --- |
-| 🟢 Available | available | - | 노드 정상 |
+| 표시  | 상태  | 메시지 | 설명  |
+|-----|-----|-----|-----|
+| 🟢 Available | available | -   | 노드 정상 |
 | 🟡 Limited | limited | Issue: CMT Inactive | 클러스터 관리 도구(CMT) 비정상 |
-|   | limited | Issue: Mount Mode | 노드 Mount 모드 기동 |
+|     | limited | Issue: Mount Mode | 노드 Mount 모드 기동 |
 | 🔴 Unavailable | unavailable | Issue: Nomount Mode | 노드 Nomount 모드 기동 |
-|   | unavailable | Issue: DB Down | 노드 DB Down |
-|   | unavailable | Issue: Agent Disconnect | 노드 위치 VM과 Agent 연결 끊김 |
-|   | unavailable | Issue: VM Down | 노드 위치 VM Down |
+|     | unavailable | Issue: DB Down | 노드 DB Down |
+|     | unavailable | Issue: Agent Disconnect | 노드 위치 VM과 Agent 연결 끊김 |
+|     | unavailable | Issue: VM Down | 노드 위치 VM Down |
 | ⚫ Retired | retired | Issue: Failovered Primary | Failover 수행 중 (구)Primary 비정상 종료 |
 {% endtab %}
+
 {% tab title="OpenSQL" %}
 OpenSQL 인스턴스 노드의 Health는 Patroni, OpenProxy, etcd, Agent 상태를 조합하여 판정합니다.
 
-| 표시 | 상태 | 메시지 | 설명 |
-| --- | --- | --- | --- |
-| 🟢 Available | available | - | 노드 정상 |
+| 표시  | 상태  | 메시지 | 설명  |
+|-----|-----|-----|-----|
+| 🟢 Available | available | -   | 노드 정상 |
 | 🟡 Limited | limited | Issue: etcd Inactive | etcd 비정상 |
-|   | limited | Issue: OpenProxy Inactive | OpenProxy 비정상 |
+|     | limited | Issue: OpenProxy Inactive | OpenProxy 비정상 |
 | 🔴 Unavailable | unavailable | Issue: DB Down | Patroni 비정상으로 DB Down |
-|   | unavailable | Issue: Agent Disconnect | 노드 위치 VM과 Agent 연결 끊김 |
+|     | unavailable | Issue: Agent Disconnect | 노드 위치 VM과 Agent 연결 끊김 |
 {% endtab %}
 {% endtabs %}
 
 `🔵 In Progress` 상태는 Tibero와 OpenSQL 공통으로 적용됩니다.
 
-| 준위 | 메시지 |
-| --- | --- |
+| 준위  | 메시지 |
+|-----|-----|
 | 개별 인스턴스 노드 | Reboot, Switchover, Failover, Rebuilding, Modify Spec (TAC Scale In/Out) |
 | 전체 인스턴스 | Modify Spec (Scale Up/Down), Migration, Restoring, Patch/Upgrade, Starting, Stopping |
 
@@ -82,11 +86,11 @@ OpenSQL 인스턴스 노드의 Health는 Patroni, OpenProxy, etcd, Agent 상태�
 
 # DB Service/인스턴스 목록 확인
 
-전체 DB Service와 하위 인스턴스 목록을 확인합니다. '[전체 상태 요약 정보 확인](#전체-상태-요약-정보-확인)'에서 선택한 상태값에 따라 표시되는 DB Service 및 인스턴스 목록이 달라집니다.
+전체 DB Service와 하위 인스턴스 목록을 확인합니다. '[전체 상태 요약 정보 확인](#%EC%A0%84%EC%B2%B4-%EC%83%81%ED%83%9C-%EC%9A%94%EC%95%BD-%EC%A0%95%EB%B3%B4-%ED%99%95%EC%9D%B8)'에서 선택한 상태값에 따라 표시되는 DB Service 및 인스턴스 목록이 달라집니다.
 
-- 선택한 데이터베이스의 하위 인스턴스에 대해 재시작 작업을 수행할 수 있습니다.
-- 선택한 데이터베이스에 대해 시작, 중지, 삭제, 역할 전환, 라이선스 갱신 관리 작업을 수행할 수 있습니다.
-- 데이터베이스/인스턴스 별칭 검색 기능을 제공합니다.
+* 선택한 데이터베이스의 하위 인스턴스에 대해 재시작 작업을 수행할 수 있습니다.
+* 선택한 데이터베이스에 대해 시작, 중지, 삭제, 역할 전환, 라이선스 갱신 관리 작업을 수행할 수 있습니다.
+* 데이터베이스/인스턴스 별칭 검색 기능을 제공합니다.
 
 {% hint style="info" %}
 **참고**
@@ -104,6 +108,7 @@ DB Service/인스턴스 목록을 카드뷰와 리스트뷰 두 가지 방식으
 
 <table data-full-width="true"><thead><tr><th>항목</th><th>설명</th></tr></thead><tbody><tr><td>DB Service 정보</td><td>데이터베이스의 주요 정보를 카드 상단에 요약 표시<br>표시 항목<ul><li>DB Type Logo</li><li>DB Service Name</li><li>Status</li><li>DB Type</li><li>DB version (OpenSQL의 경우 OpenSQL 버전과 PostgreSQL 버전 동시 표시)</li><li>Topology</li><li>Eventlog : I / W / E (각각 Info / Warning / Error)</li></ul></td></tr><tr><td>노드 정보</td><td>데이터베이스 하위에 연계된 인스턴스 정보 표시. 역할(Role) 기준으로 아코디언 형태로 축소/확장 가능<br>정렬 규칙<ul><li>Tibero: Primary → Standby(Read Only) → Standby(Recovery) 순으로 표시</li><li>OpenSQL: Leader → Replica 순으로 표시</li><li>동일 Role 내에서 AZ 기준으로 정렬</li></ul>표시 항목<ul><li>역할(Role) : 해당 역할의 인스턴스 개수 표시</li><li>Data volume (Tibero) / Volume (OpenSQL): 사용량(%)과 바 차트, Threshold 표시</li></ul>테이블 항목<ul><li>인스턴스 별칭</li><li>Health</li><li>vCPU: 현재 CPU 사용량(%)</li><li>Memory: 현재 메모리 사용량(%)</li><li>활성 세션: 현재 활성 세션 개수 / Max Session Count (Standby(Recovery)는 미표시)</li><li>가용 영역: 인스턴스가 위치한 AZ 정보</li></ul></td></tr><tr><td>클러스터 정보</td><td>Connection Health를 클러스터 다이어그램으로 표시<ul><li>Single: Primary/Leader DB 정보만 표시</li><li>Single +DR / HA: Primary/Leader DB와 Standby/Replica DB 정보 표시. P-S 연결 상태 모니터링 정보 표시, Standby/Replica DB는 AZ별로 각각 생성</li><li>Tibero TAC: Primary DB Box 안에 다중 노드 표시</li><li>Tibero TAC + DR: Primary DB와 Standby DB 정보 표시. P-S 연결 상태 모니터링 정보 표시, Primary DB Box 안에 다중 노드 표시, Standby DB는 AZ별로 각각 생성</li><li>DR 구성 연결 상태 모니터링: Primary - Standby / Leader - Replica 간 연결 상태를 선의 색상과 표시 정보로 표현</li><li>정상: 초록색,<code>Connected</code></li><li>실패: 붉은색,<code>Disconnected</code></li></ul></td></tr></tbody></table>
 {% endtab %}
+
 {% tab title="리스트뷰(List View)" %}
 리스트뷰는 데이터베이스 및 하위 인스턴스 정보를 계층 구조로 파악하기 쉽도록 트리 형태의 표로 표시합니다.
 
@@ -113,7 +118,7 @@ DB Service/인스턴스 목록을 카드뷰와 리스트뷰 두 가지 방식으
 '기본값'은 초기 화면에서 기본적으로 노출되는 항목을, '필수값'은 숨김 설정이 불가능한 항목을 의미합니다.
 {% endhint %}
 
-<table data-full-width="true"><thead><tr><th>컬럼</th><th>설명</th><th>DB Service 준위</th><th>인스턴스 준위</th><th>기본값</th><th>필수값</th></tr></thead><tbody><tr><td><strong>이름</strong></td><td>이름 표시<ul><li>DB Service 이름 클릭 시 '<a href="https://github.com/hhjinn/gitbookPAT/tree/dori/TgpIeVAAe6TUtfrjaD2G/doc/5d7daeb2-e4f4-4409-aa74-dcaf1d65ab46/README.md">서비스 메타 정보 조회</a>' 페이지로 이동</li><li>인스턴스 별칭 클릭 시 '<a href="https://github.com/hhjinn/gitbookPAT/tree/dori/TgpIeVAAe6TUtfrjaD2G/doc/dF57s45IXBUgU7RX1UvL/README.md">인스턴스 관리</a>' 페이지로 이동</li></ul></td><td>DB Service 이름</td><td>인스턴스 별칭</td><td>O</td><td>O</td></tr><tr><td><strong>생성일</strong></td><td>DB Service 생성일을 <code>yyyy.mm.dd HH:mm:ss</code> 형식으로 표시</td><td>DB Service 생성일</td><td>X</td><td>X</td><td>X</td></tr><tr><td><strong>상태</strong></td><td>Status 또는 Health 표시</td><td><ul><li>Creating</li><li>Running(n/m)</li><li>Updating(n/m)</li><li>Degraded(n/m)</li><li>Failover(n/m)</li><li>Down(n/m)</li><li>Starting</li><li>Stopping</li><li>Stopped</li><li>Terminating</li><li>Deploying (on-premise)</li><li>Registering (on-premise)</li><li>Unregistering (on-premise)</li></ul></td><td><ul><li>🟢 (available)</li><li>🟡 (limited)</li><li>🔵 (in progress)</li><li>🔴 (unavailable)</li></ul></td><td>O</td><td>O</td></tr><tr><td><strong>유형</strong></td><td>데이터베이스 엔진 유형 표시</td><td><ul><li>Tibero</li><li>OpenSQL</li></ul></td><td>-</td><td>O</td><td>X</td></tr><tr><td><strong>구성</strong></td><td>토폴로지 또는 역할 표시</td><td><ul><li>Tibero: Single, TAC(+DR)</li><li>OpenSQL: Single, HA</li></ul></td><td><ul><li>Tibero: Primary, Standby(Read Only), Standby(Recovery)</li><li>OpenSQL: Leader, Replica</li></ul></td><td>O</td><td>O</td></tr><tr><td><strong>가용 영역 (Cloud)</strong></td><td>Cloud 환경인 경우 해당 인스턴스가 위치한 가용 영역(AZ) 정보 표시</td><td>-</td><td>가용 영역(AZ) 정보</td><td>O</td><td>X</td></tr><tr><td><strong>vCPU</strong></td><td>CPU 수와 사용량을 바 차트로 표시</td><td>O</td><td>O</td><td>O</td><td>X</td></tr><tr><td><strong>Memory</strong></td><td>Memory와 사용량을 바 차트로 표시</td><td>O</td><td>O</td><td>O</td><td>X</td></tr><tr><td><strong>활성 세션</strong></td><td>현재 활성화된 세션의 개수를 바 차트로 표시<ul><li>Primary / Standby(RO) / Leader / Replica 에 한하여 표시</li><li>Standby(Recovery) :<code>-</code>으로 표시</li></ul></td><td>O</td><td>O</td><td>O</td><td>X</td></tr><tr><td><strong>Data Volume (Tibero)</strong></td><td>data volume 사용량을 바 차트로 표시 + Threshold 표시</td><td>O</td><td>X</td><td>O</td><td>X</td></tr><tr><td><strong>Redo log Volume (Tibero)</strong></td><td>redo log volume 사용량을 바 차트로 표시</td><td>O</td><td>X</td><td>X</td><td>X</td></tr><tr><td><strong>Archive log Volume (Tibero)</strong></td><td>archive log volume 사용량을 바 차트로 표시</td><td>O</td><td>X</td><td>X</td><td>X</td></tr><tr><td><strong>Root Volume</strong></td><td>Root volume 사용량을 바 차트로 표시</td><td>O</td><td>O</td><td>X</td><td>X</td></tr></tbody></table>
+<table data-full-width="true"><thead><tr><th>컬럼</th><th>설명</th><th>DB Service 준위</th><th>인스턴스 준위</th><th>기본값</th><th>필수값</th></tr></thead><tbody><tr><td><strong>이름</strong></td><td>이름 표시<ul><li>DB Service 이름 클릭 시 '<a href="/doc/5d7daeb2-e4f4-4409-aa74-dcaf1d65ab46">서비스 메타 정보 조회</a>' 페이지로 이동</li><li>인스턴스 별칭 클릭 시 '<a href="/doc/dF57s45IXBUgU7RX1UvL">인스턴스 관리</a>' 페이지로 이동</li></ul></td><td>DB Service 이름</td><td>인스턴스 별칭</td><td>O</td><td>O</td></tr><tr><td><strong>생성일</strong></td><td>DB Service 생성일을 <code>yyyy.mm.dd HH:mm:ss</code> 형식으로 표시</td><td>DB Service 생성일</td><td>X</td><td>X</td><td>X</td></tr><tr><td><strong>상태</strong></td><td>Status 또는 Health 표시</td><td><ul><li>Creating</li><li>Running(n/m)</li><li>Updating(n/m)</li><li>Degraded(n/m)</li><li>Failover(n/m)</li><li>Down(n/m)</li><li>Starting</li><li>Stopping</li><li>Stopped</li><li>Terminating</li><li>Deploying (on-premise)</li><li>Registering (on-premise)</li><li>Unregistering (on-premise)</li></ul></td><td><ul><li>🟢 (available)</li><li>🟡 (limited)</li><li>🔵 (in progress)</li><li>🔴 (unavailable)</li></ul></td><td>O</td><td>O</td></tr><tr><td><strong>유형</strong></td><td>데이터베이스 엔진 유형 표시</td><td><ul><li>Tibero</li><li>OpenSQL</li></ul></td><td>-</td><td>O</td><td>X</td></tr><tr><td><strong>구성</strong></td><td>토폴로지 또는 역할 표시</td><td><ul><li>Tibero: Single, TAC(+DR)</li><li>OpenSQL: Single, HA</li></ul></td><td><ul><li>Tibero: Primary, Standby(Read Only), Standby(Recovery)</li><li>OpenSQL: Leader, Replica</li></ul></td><td>O</td><td>O</td></tr><tr><td><strong>가용 영역 (Cloud)</strong></td><td>Cloud 환경인 경우 해당 인스턴스가 위치한 가용 영역(AZ) 정보 표시</td><td>-</td><td>가용 영역(AZ) 정보</td><td>O</td><td>X</td></tr><tr><td><strong>vCPU</strong></td><td>CPU 수와 사용량을 바 차트로 표시</td><td>O</td><td>O</td><td>O</td><td>X</td></tr><tr><td><strong>Memory</strong></td><td>Memory와 사용량을 바 차트로 표시</td><td>O</td><td>O</td><td>O</td><td>X</td></tr><tr><td><strong>활성 세션</strong></td><td>현재 활성화된 세션의 개수를 바 차트로 표시<ul><li>Primary / Standby(RO) / Leader / Replica 에 한하여 표시</li><li>Standby(Recovery) :<code>-</code>으로 표시</li></ul></td><td>O</td><td>O</td><td>O</td><td>X</td></tr><tr><td><strong>Data Volume (Tibero)</strong></td><td>data volume 사용량을 바 차트로 표시 + Threshold 표시</td><td>O</td><td>X</td><td>O</td><td>X</td></tr><tr><td><strong>Redo log Volume (Tibero)</strong></td><td>redo log volume 사용량을 바 차트로 표시</td><td>O</td><td>X</td><td>X</td><td>X</td></tr><tr><td><strong>Archive log Volume (Tibero)</strong></td><td>archive log volume 사용량을 바 차트로 표시</td><td>O</td><td>X</td><td>X</td><td>X</td></tr><tr><td><strong>Root Volume</strong></td><td>Root volume 사용량을 바 차트로 표시</td><td>O</td><td>O</td><td>X</td><td>X</td></tr></tbody></table>
 {% endtab %}
 {% endtabs %}
 
@@ -121,8 +126,8 @@ DB Service/인스턴스 목록을 카드뷰와 리스트뷰 두 가지 방식으
 
 DB Service List 화면 우측 상단의 ⚙️ **설정** 아이콘을 클릭하면 화면 표시 방식을 사용자 환경에 맞게 설정할 수 있습니다.
 
-- Card View : 카드에 표시되는 정보 영역을 설정합니다.
-- List View : 목록에 표시되는 컬럼을 설정합니다.
+* Card View : 카드에 표시되는 정보 영역을 설정합니다.
+* List View : 목록에 표시되는 컬럼을 설정합니다.
 
 설정한 내용은 사용자별로 저장되며 이후에도 동일하게 적용됩니다.
 
@@ -137,8 +142,8 @@ Card View에서는 카드에 표시할 정보 영역을 선택할 수 있습니�
 
 ### 설정 항목
 
-| 항목 | 설명 |
-| --- | --- |
+| 항목  | 설명  |
+|:----|:----|
 | DB Service Info | DB Service 기본 정보 표시 |
 | Node Info | 노드별 상태·리소스 정보 표시 |
 | Cluster Info | Cluster 정보·Connection Health 표시 |
@@ -149,6 +154,7 @@ Card View에서는 카드에 표시할 정보 영역을 선택할 수 있습니�
 우측 Preview 영역에서 변경 결과를 실시간으로 확인할 수 있습니다. 저장 전까지 실제 화면에는 적용되지 않습니다.
 {% endhint %}
 {% endtab %}
+
 {% tab title="List View" %}
 List View에서는 목록에 표시할 컬럼을 선택하거나 컬럼 순서를 변경할 수 있습니다.
 
@@ -159,8 +165,8 @@ List View에서는 목록에 표시할 컬럼을 선택하거나 컬럼 순서�
 
 ### 주요 기능
 
-| 기능 | 설명 |
-| --- | --- |
+| 기능  | 설명  |
+|:----|:----|
 | 컬럼 표시/숨김 | 스위치를 이용하여 컬럼 표시 여부 설정 |
 | 컬럼 검색 | 컬럼명을 검색하여 원하는 항목을 빠르게 검색 |
 | 컬럼 순서 변경 | 드래그하여 원하는 순서로 변경 |
@@ -177,8 +183,8 @@ List View에서는 목록에 표시할 컬럼을 선택하거나 컬럼 순서�
 
 **환경별 지원 엔진 차이**
 
-- AWS 환경: Tibero 엔진 인스턴스만 조회 대상에 포함됩니다.
-- Azure 환경: Tibero, OpenSQL 엔진 인스턴스가 모두 조회 대상에 포함됩니다.
+* AWS 환경: Tibero 엔진 인스턴스만 조회 대상에 포함됩니다.
+* Azure 환경: Tibero, OpenSQL 엔진 인스턴스가 모두 조회 대상에 포함됩니다.
 {% endhint %}
 
 ### 표시 지표
@@ -189,6 +195,6 @@ List View에서는 목록에 표시할 컬럼을 선택하거나 컬럼 순서�
 
 Top N 차트 영역 상단의 버튼을 클릭하면 차트 영역이 접히거나 펼쳐집니다.
 
-- 기본 상태는 확장 상태입니다.
-- 사용자가 축소 상태로 변경한 경우, 같은 세션 내에서 다른 화면으로 이동했다가 다시 돌아와도 축소 상태가 유지됩니다.
-- 로그아웃하거나 세션이 종료되어 새 세션으로 접속하면 확장 상태로 초기화됩니다.
+* 기본 상태는 확장 상태입니다.
+* 사용자가 축소 상태로 변경한 경우, 같은 세션 내에서 다른 화면으로 이동했다가 다시 돌아와도 축소 상태가 유지됩니다.
+* 로그아웃하거나 세션이 종료되어 새 세션으로 접속하면 확장 상태로 초기화됩니다.
