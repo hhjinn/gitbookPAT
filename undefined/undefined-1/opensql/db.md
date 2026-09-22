@@ -2,9 +2,9 @@
 
 # **1. 필요 파일 목록**
 
-- owldb dp 바이너리 (`owldb_dp_installer_owl_x.x.x.tar.gz`)
-- OpenSQL 바이너리 (`Tmax_OpenSQL_*.tar.gz`)
-- 라이선스 파일 (`license.xml`)
+* owldb dp 바이너리 (`owldb_dp_installer_owl_x.x.x.tar.gz`)
+* OpenSQL 바이너리 (`Tmax_OpenSQL_*.tar.gz`)
+* 라이선스 파일 (`license.xml`)
 
 # **2. 설치 디렉터리 생성**
 
@@ -122,12 +122,12 @@ pip3 install pyyaml etcd3 requests psycopg2-binary 'protobuf<4.0.0' tabulate
 2. owlagent.env에 설정 값을 입력 합니다.
 
 | KEY | VALUE |
-| --- | --- |
-| AGENT_TYPE | pg |
-| IP | OwlDB CP의 IP |
+|-----|-------|
+| AGENT_TYPE | pg    |
+| IP  | OwlDB CP의 IP |
 | PORT | OwlDB CP의 port |
 | USERNAME | opensql을 실행할 user의 이름 |
-| OPENSQL_HOME | [2.설치 디렉터리 생성](#h-2-설치-디렉터리-생성) 단계에서 입력한 $OPENSQL_HOME 사용 |
+| OPENSQL_HOME | [2.설치 디렉터리 생성](#h-2-%EC%84%A4%EC%B9%98-%EB%94%94%EB%A0%89%ED%84%B0%EB%A6%AC-%EC%83%9D%EC%84%B1) 단계에서 입력한 $OPENSQL_HOME 사용 |
 
 3. owlagent를 실행합니다. sh owlagent_start.sh
 

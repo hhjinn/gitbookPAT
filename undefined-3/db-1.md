@@ -2,14 +2,14 @@ OwlDB에서 데이터베이스를 운영하기 위해 데이터베이스를 설�
 
 **설치 전 아래 사항을 확인합니다.**
 
-- 설치 기능은 관리자 계정만 사용할 수 있습니다.
+* 설치 기능은 관리자 계정만 사용할 수 있습니다.
 
 ### 표준 아키텍처
 
 OwlDB는 표준 아키텍처를 기반으로 데이터베이스 신규 설치 기능을 제공합니다. OwlDB On-premise에서 제공하는 표준 아키텍처는 아래와 같습니다.
 
-| 구성 | 설명 |
-| --- | --- |
+| 구성  | 설명  |
+|-----|-----|
 | Single | 단일 노드 구성 |
 | TAC (Tibero) | 최대 4노드 클러스터 구성 |
 | Single + DR (Tibero) | Single 구성에 Standby 1노드 고정 |
@@ -53,8 +53,8 @@ OwlDB를 통하지 않고 외부에서 직접 데이터베이스 구성을 변�
 
 아래 경로를 통해서도 데이터베이스 설치 페이지에 접근할 수 있습니다.
 
-- OwlDB 콘솔 화면 > 대시보드 > 카드뷰 > + 아이콘
-- GNB > DB Alias 드롭다운 > 데이터베이스 설치 버튼
+* OwlDB 콘솔 화면 > 대시보드 > 카드뷰 > + 아이콘
+* GNB > DB Alias 드롭다운 > 데이터베이스 설치 버튼
 
 설치 진행 중 **취소** 버튼을 클릭하면 확인 모달이 나타나며, 모달에서 확인을 클릭하면 입력한 정보가 초기화되고 대시보드로 이동합니다.
 
@@ -66,9 +66,9 @@ OwlDB를 통하지 않고 외부에서 직접 데이터베이스 구성을 변�
 
 **설치** 버튼을 클릭하면 라이선스 파일 유무 및 코어 수 검증이 함께 진행됩니다.
 
-- 설치 대상 호스트에 라이선스 파일이 없으면 설치가 진행되지 않으며, 라이선스 파일을 배치한 후 다시 시도해야 합니다.
-- 요청한 코어 수가 보유 라이선스의 최대 코어 수를 초과하면 설치가 진행되지 않습니다.
-- 동시에 많은 설치 요청이 접수되어 처리가 지연되는 경우, 잠시 후 다시 시도해야 합니다.
+* 설치 대상 호스트에 라이선스 파일이 없으면 설치가 진행되지 않으며, 라이선스 파일을 배치한 후 다시 시도해야 합니다.
+* 요청한 코어 수가 보유 라이선스의 최대 코어 수를 초과하면 설치가 진행되지 않습니다.
+* 동시에 많은 설치 요청이 접수되어 처리가 지연되는 경우, 잠시 후 다시 시도해야 합니다.
 {% endhint %}
 
 ---
@@ -81,7 +81,7 @@ OwlDB를 통하지 않고 외부에서 직접 데이터베이스 구성을 변�
 
 <table data-full-width="true"><thead><tr><th>항목</th><th>설명</th></tr></thead><tbody><tr><td>Service Name*</td><td>DB Service를 식별하기 위한 이름<ul><li>6~30자의 영어 대소문자, 숫자, 하이픈(-)만 입력 가능</li><li>OwlDB 계정 내에서 중복 생성 불가</li><li>기본값 :<code>owldb-001</code>부터 순차 부여</li></ul></td></tr><tr><td>DB Engine Type*</td><td>사용할 데이터베이스 엔진<ul><li><strong>Tibero</strong>: 다중화 구성으로 안정적인 서비스 운영 및 DB 확장이 가능한 RDBMS</li><li><strong>OpenSQL</strong> : Open Source 기반 DBMS</li></ul></td></tr><tr><td>Topology*</td><td><ul><li><strong>Tibero</strong>: Single, TAC</li><li><strong>OpenSQL</strong> : Single, HA</li></ul></td></tr><tr><td>Node Count*</td><td><ul><li><strong>Tibero</strong>: Single(1, 고정), TAC(2~4 중 선택)</li><li><strong>OpenSQL</strong> : Single, HA(1, 고정)</li></ul></td></tr><tr><td>PostgreSQL Version</td><td>OpenSQL에서 사용할 PostgreSQL 버전(Tibero는 해당 없음)<ul><li>기본값 :<strong>17.9</strong></li></ul></td></tr></tbody></table>
 
-*표기는 필수 입력 항목을 의미합니다.
+\*표기는 필수 입력 항목을 의미합니다.
 
 ---
 
@@ -93,20 +93,21 @@ DR 사용 여부와 장애 조치 자동화 레벨을 설정하는 단계입니�
 {% tab title="Tibero" %}
 <table data-full-width="true"><thead><tr><th>항목</th><th>설명</th></tr></thead><tbody><tr><td>Enable DR*</td><td>DR 구성 사용 여부(직접 선택 가능)</td></tr><tr><td>Failover Automation Level*</td><td><a href="#undefined">자동 장애 조치 단계</a><ul><li>0단계 : 수동</li><li>1단계 : 자동 장애 조치</li><li>2단계 : 자동 구성 복구 (OwlDB v1.3 미지원)</li><li>3단계 : 완전 자동화</li><li>Single : 0, 1, 3단계 지원</li><li>TAC : 0, 1단계 지원</li></ul></td></tr><tr><td>Standby Count*</td><td>Standby DB 개수(표준 아키텍처 기준 최대 1개로 고정)</td></tr><tr><td>Standby Mode*</td><td>Standby Mode 옵션<ul><li><strong>Recovery</strong></li><li><strong>Read Only</strong></li></ul></td></tr><tr><td>Log Replication Type</td><td>Primary에서 Standby로의 로그 전송 방식<ul><li><strong>LGWR ASYNC</strong>: 트랜잭션이 발생하면 실시간으로 생성되는 Redo log를 전송하는 복제 모드</li><li><strong>ARCH ASYNC</strong> : 로그 스위치 이후, 아카이브 로그 파일이 생성되면 해당 파일을 모아서 전송하는 복제 모드</li></ul></td></tr></tbody></table>
 
-*표기는 필수 입력 항목을 의미합니다.
+\*표기는 필수 입력 항목을 의미합니다.
 {% endtab %}
+
 {% tab title="OpenSQL" %}
 <table data-full-width="true"><thead><tr><th>항목</th><th>설명</th></tr></thead><tbody><tr><td>Enable DR*</td><td>Single은 DR 미사용, HA는 DR 사용으로 자동 결정되며 수정 불가</td></tr><tr><td>Failover Automation Level*</td><td><a href="#undefined">자동 장애 조치 단계</a><ul><li>0단계 : 수동</li><li>2단계 : 자동 구성 복구 (OwlDB v1.3 미지원)</li><li>3단계 : 완전 자동화</li><li>0, 3단계 지원(기본값 3단계)</li></ul></td></tr><tr><td>Standby Count*</td><td>Replica DB 개수(표준 아키텍처 기준 최대 1개로 고정)</td></tr><tr><td>Log Replication Type</td><td>ASYNC 방식으로 고정되어 수정 불가</td></tr></tbody></table>
 
-*표기는 필수 입력 항목을 의미합니다.
+\*표기는 필수 입력 항목을 의미합니다.
 {% endtab %}
 {% endtabs %}
 
 {% hint style="info" %}
 **참고**
 
-- Enable DR 항목에서 DR 사용을 선택한 경우 **Failover Automation Level, Standby Count, Standby Mode, Log Replication Type** 항목들이 노출됩니다.
-- ARCH ASYNC 모드 사용 시, 아카이브 로그가 생성되는 주기(최대 약 10분)에 따라 Standby로의 동기화가 지연될 수 있습니다.
+* Enable DR 항목에서 DR 사용을 선택한 경우 **Failover Automation Level, Standby Count, Standby Mode, Log Replication Type** 항목들이 노출됩니다.
+* ARCH ASYNC 모드 사용 시, 아카이브 로그가 생성되는 주기(최대 약 10분)에 따라 Standby로의 동기화가 지연될 수 있습니다.
 {% endhint %}
 
 {% hint style="warning" %}
@@ -119,7 +120,7 @@ Failover Automation Level을 3단계(완전 자동화)로 설정하면 장애 �
 
 **인스턴스 구성**
 
-토폴로지에 따라 노드별 입력 항목이 자동으로 구성됩니다. *표기는 필수 입력 항목을 의미합니다.
+토폴로지에 따라 노드별 입력 항목이 자동으로 구성됩니다. \*표기는 필수 입력 항목을 의미합니다.
 
 {% tabs %}
 {% tab title="Tibero" %}
@@ -127,47 +128,47 @@ Failover Automation Level을 3단계(완전 자동화)로 설정하면 장애 �
 
 **Single**
 
-| 항목 | 설명 | 비고 |
-| --- | --- | --- |
-| Hostname* | 선택한 토폴로지 구성에 맞게,<br>데이터베이스를 설치할 호스트 선택 | - |
-| Service IP* | OwlDB와 노드간 통신에 사용할 IP를 직접 입력 또는 선택 | NAT를 사용하는 경우 NAT IP를 입력 |
-| Service Port* | OwlDB와 데이터베이스 서버간 통신에 사용할 Port를 직접 입력 | 포트 포워딩을 사용하는 경우<br>외부 Port 입력 |
-| Data Path* | Data Path 입력 | 파일 시스템 경로만 입력 가능 |
-| Redo Path* | Redo Path 입력 | 파일 시스템 경로만 입력 가능 |
-| Archive Path* | Archive Path 입력 | 파일 시스템 경로만 입력 가능 |
-| Backup Path* | Backup Path 입력 | 파일 시스템 경로만 입력 가능 |
+| 항목  | 설명  | 비고  |
+|-----|-----|-----|
+| Hostname\* | 선택한 토폴로지 구성에 맞게,<br>데이터베이스를 설치할 호스트 선택 | -   |
+| Service IP\* | OwlDB와 노드간 통신에 사용할 IP를 직접 입력 또는 선택 | NAT를 사용하는 경우 NAT IP를 입력 |
+| Service Port\* | OwlDB와 데이터베이스 서버간 통신에 사용할 Port를 직접 입력 | 포트 포워딩을 사용하는 경우<br>외부 Port 입력 |
+| Data Path\* | Data Path 입력 | 파일 시스템 경로만 입력 가능 |
+| Redo Path\* | Redo Path 입력 | 파일 시스템 경로만 입력 가능 |
+| Archive Path\* | Archive Path 입력 | 파일 시스템 경로만 입력 가능 |
+| Backup Path\* | Backup Path 입력 | 파일 시스템 경로만 입력 가능 |
 
-*표기는 필수 입력 항목을 의미합니다.
+\*표기는 필수 입력 항목을 의미합니다.
 
 **각 Path**는 파일 시스템 경로만 입력할 수 있습니다. 동일한 경로 또는 서로 다른 경로를 중복 입력하는 것도 허용됩니다.
 
 단, 다음 조건을 반드시 충족해야 합니다.
 
-- 입력한 경로가 설치 대상 호스트에 **실제로 존재**해야 합니다.
-- 파일 시스템 경로에 대해 DP Agent 실행 계정이 **읽기, 쓰기, 실행 권한**을 보유해야 합니다.
+* 입력한 경로가 설치 대상 호스트에 **실제로 존재**해야 합니다.
+* 파일 시스템 경로에 대해 DP Agent 실행 계정이 **읽기, 쓰기, 실행 권한**을 보유해야 합니다.
 
 ---
 
 **Single+DR**
 
-| 항목 | 설명 | 비고 |
-| --- | --- | --- |
-| Hostname* | 선택한 토폴로지 구성에 맞게,<br>데이터베이스를 설치할 호스트를 선택 | - |
-| Service IP* | OwlDB와 노드간 통신에 사용할 IP를 직접 입력 또는 선택 | NAT를 사용하는 경우 NAT IP를 입력 |
-| Service Port* | OwlDB와 데이터베이스 서버간 통신에 사용할 Port를 직접 입력 | 포트 포워딩을 사용하는 경우 외부 Port를 입력 |
-| Primary Destination IP*(Primary 인스턴스만 입력) | StandByDB에서 PrimaryDB로의 통신에서 사용할 Primary Destination IP를 직접 입력 | NAT를 사용하는 경우 NAT IP를 입력<br>Primary 인스턴스만 입력 |
-| Primary Destination Port*<br>(Primary 인스턴스만 입력) | StandBy DB에서 Primary DB로 통신에서 사용할 Primary Destination Port를 직접 입력 | 포트 포워딩을 사용하는 경우 외부 Port를 입력 |
-| StandBy Destination IP*<br>(StandBy 인스턴스만 입력) | Primary DB에서 StandBy DB로의 통신에서 사용할 StandBy Destination IP를 직접 입력 | NAT를 사용하는 경우 NAT IP를 입력 |
-| StandBy Destination Port*<br>(StandBy 인스턴스만 입력) | Primary DB에서 StandBy DB로 통신에서 사용할 StandBy Destination Port를 직접 입력 | 포트 포워딩을 사용하는 경우 외부 Port를 입력 |
-| Data Path* | Data Path 입력 | 파일 시스템 경로만 입력 가능 |
-| Redo Path* | Redo Path 입력 | 파일 시스템 경로만 입력 가능 |
-| Archive Path* | Archive Path 입력 | 파일 시스템 경로만 입력 가능 |
-| Backup Path* | Backup Path 입력 | 파일 시스템 경로만 입력 가능 |
-| SSH Port* | SSH port | - |
-| SSH User* | SSH User | - |
-| SSH Key File Path* | 인스턴스 간 SSH 접속에 사용할 private key path 입력 | 인스턴스 간 SSH 접속 시 동일한 private key를 사용하도록 공통 private key path 입력 |
+| 항목  | 설명  | 비고  |
+|-----|-----|-----|
+| Hostname\* | 선택한 토폴로지 구성에 맞게,<br>데이터베이스를 설치할 호스트를 선택 | -   |
+| Service IP\* | OwlDB와 노드간 통신에 사용할 IP를 직접 입력 또는 선택 | NAT를 사용하는 경우 NAT IP를 입력 |
+| Service Port\* | OwlDB와 데이터베이스 서버간 통신에 사용할 Port를 직접 입력 | 포트 포워딩을 사용하는 경우 외부 Port를 입력 |
+| Primary Destination IP\*(Primary 인스턴스만 입력) | StandByDB에서 PrimaryDB로의 통신에서 사용할 Primary Destination IP를 직접 입력 | NAT를 사용하는 경우 NAT IP를 입력<br>Primary 인스턴스만 입력 |
+| Primary Destination Port\*<br>(Primary 인스턴스만 입력) | StandBy DB에서 Primary DB로 통신에서 사용할 Primary Destination Port를 직접 입력 | 포트 포워딩을 사용하는 경우 외부 Port를 입력 |
+| StandBy Destination IP\*<br>(StandBy 인스턴스만 입력) | Primary DB에서 StandBy DB로의 통신에서 사용할 StandBy Destination IP를 직접 입력 | NAT를 사용하는 경우 NAT IP를 입력 |
+| StandBy Destination Port\*<br>(StandBy 인스턴스만 입력) | Primary DB에서 StandBy DB로 통신에서 사용할 StandBy Destination Port를 직접 입력 | 포트 포워딩을 사용하는 경우 외부 Port를 입력 |
+| Data Path\* | Data Path 입력 | 파일 시스템 경로만 입력 가능 |
+| Redo Path\* | Redo Path 입력 | 파일 시스템 경로만 입력 가능 |
+| Archive Path\* | Archive Path 입력 | 파일 시스템 경로만 입력 가능 |
+| Backup Path\* | Backup Path 입력 | 파일 시스템 경로만 입력 가능 |
+| SSH Port\* | SSH port | -   |
+| SSH User\* | SSH User | -   |
+| SSH Key File Path\* | 인스턴스 간 SSH 접속에 사용할 private key path 입력 | 인스턴스 간 SSH 접속 시 동일한 private key를 사용하도록 공통 private key path 입력 |
 
-*표기는 필수 입력 항목을 의미합니다.
+\*표기는 필수 입력 항목을 의미합니다.
 
 {% hint style="info" %}
 **참고**
@@ -179,57 +180,57 @@ DR 구성을 사용하는 경우에는 SSH Key File을 지정된 경로에 미�
 
 단, 다음 조건을 반드시 충족해야 합니다.
 
-- 입력한 경로가 설치 대상 호스트에 **실제로 존재**해야 합니다.
-- 파일 시스템 경로에 대해 DP Agent 실행 계정이 **읽기, 쓰기, 실행 권한**을 보유해야 합니다.
+* 입력한 경로가 설치 대상 호스트에 **실제로 존재**해야 합니다.
+* 파일 시스템 경로에 대해 DP Agent 실행 계정이 **읽기, 쓰기, 실행 권한**을 보유해야 합니다.
 
 ---
 
 **TAC**
 
-| 항목 | 설명 | 비고 |
-| --- | --- | --- |
-| Hostname* | 선택한 토폴로지 구성에 맞게,<br>데이터베이스를 설치할 호스트를 선택 | - |
-| Service IP* | OwlDB와 노드간 통신에 사용할 IP를 직접 입력 또는 선택 | NAT를 사용하는 경우 NAT IP를 입력 |
-| Service Port* | OwlDB와 데이터베이스 서버간 통신에 사용할 Port를 직접 입력 | 포트 포워딩을 사용하는 경우 외부 Port를 입력 |
-| Interconnect IP* | Cluster내부 노드 간 통신에 사용할 Interconnect IP를 목록에서 선택 | Primary, StandBy 클러스터 둘 다 입력 |
-| Data Path* | 데이터 Path 입력 | 로우 디바이스 또는 파티션 경로 입력, 공유 볼륨 사용 |
-| Redo Path* | Redo Path 입력 | 로우 디바이스 또는 파티션 경로 입력, 공유 볼륨 사용 |
-| Archive Path* | Archive Path 입력 | 로우 디바이스 또는 파티션 경로 입력, 공유 볼륨 사용 |
-| Backup Path* | Backup Path 입력 | 파일 시스템 경로만 입력 가능 |
+| 항목  | 설명  | 비고  |
+|-----|-----|-----|
+| Hostname\* | 선택한 토폴로지 구성에 맞게,<br>데이터베이스를 설치할 호스트를 선택 | -   |
+| Service IP\* | OwlDB와 노드간 통신에 사용할 IP를 직접 입력 또는 선택 | NAT를 사용하는 경우 NAT IP를 입력 |
+| Service Port\* | OwlDB와 데이터베이스 서버간 통신에 사용할 Port를 직접 입력 | 포트 포워딩을 사용하는 경우 외부 Port를 입력 |
+| Interconnect IP\* | Cluster내부 노드 간 통신에 사용할 Interconnect IP를 목록에서 선택 | Primary, StandBy 클러스터 둘 다 입력 |
+| Data Path\* | 데이터 Path 입력 | 로우 디바이스 또는 파티션 경로 입력, 공유 볼륨 사용 |
+| Redo Path\* | Redo Path 입력 | 로우 디바이스 또는 파티션 경로 입력, 공유 볼륨 사용 |
+| Archive Path\* | Archive Path 입력 | 로우 디바이스 또는 파티션 경로 입력, 공유 볼륨 사용 |
+| Backup Path\* | Backup Path 입력 | 파일 시스템 경로만 입력 가능 |
 
-*표기는 필수 입력 항목을 의미합니다.
+\*표기는 필수 입력 항목을 의미합니다.
 
 **Data Path, Redo Path, Archive Path**는 로우 디바이스 경로(`/dev/sdb`) 또는 파티션 경로(`/dev/sdb1`)를 입력합니다. **Backup Path**의 경우 파일 시스템 경로만 입력할 수 있습니다.
 
 단, 다음 조건을 반드시 충족해야 합니다.
 
-- 입력한 모든 Path는 **공유 볼륨**으로 구성되어 있어야 합니다.
-- 입력한 경로가 설치 대상 호스트에 **실제로 존재**해야 합니다.
-- 파일 시스템 경로에 대해 DP Agent 실행 계정이 **읽기, 쓰기, 실행 권한**을 보유해야 합니다.
+* 입력한 모든 Path는 **공유 볼륨**으로 구성되어 있어야 합니다.
+* 입력한 경로가 설치 대상 호스트에 **실제로 존재**해야 합니다.
+* 파일 시스템 경로에 대해 DP Agent 실행 계정이 **읽기, 쓰기, 실행 권한**을 보유해야 합니다.
 
 ---
 
 **TAC+DR**
 
-| 항목 | 설명 | 비고 |
-| --- | --- | --- |
-| Hostname* | 선택한 토폴로지 구성에 맞게,<br>데이터베이스를 설치할 호스트를 선택 | - |
-| Service IP* | OwlDB와 노드간 통신에 사용할 IP를 직접 입력 또는 선택 | NAT를 사용한다면 NAT IP를 입력 |
-| Service Port* | OwlDB와 데이터베이스 서버간 통신에 사용할 Port를 직접 입력 | 포트 포워딩을 사용하는 경우 외부 Port를 입력 |
-| Interconnect IP* | Cluster내부 노드 간 통신에 사용할 Interconnect IP를 목록에서 선택 | Primary, StandBy 클러스터 둘 다 입력 |
-| Primary Destination IP*(Primary 인스턴스만 입력) | StandByDB에서 PrimaryDB로의 통신에서 사용할 Primary Destination IP를 직접 입력 | NAT를 사용하는 경우 NAT IP를 입력 |
-| Primary Destination Port*<br>(Primary 인스턴스만 입력) | StandBy DB에서 Primary DB로 통신에서 사용할 Primary Destination Port를 직접 입력 | 포트 포워딩을 사용하는 경우 외부 Port를 입력 |
-| StandBy Destination IP*<br>(StandBy 인스턴스만 입력) | Primary DB에서 StandBy DB로의 통신에서 사용할 StandBy Destination IP를 직접 입력 | NAT를 사용하는 경우 NAT IP를 입력 |
-| StandBy Destination Port*<br>(StandBy 인스턴스만 입력) | Primary DB에서 StandBy DB로 통신에서 사용할 StandBy Destination Port를 직접 입력 | 포트 포워딩을 사용하는 경우 외부 Port를 입력 |
-| Data Path* | 데이터 Path 입력 | 로우 디바이스 또는 파티션 경로 입력, 공유 볼륨 사용 |
-| Redo Path* | Redo Path 입력 | 로우 디바이스 또는 파티션 경로 입력, 공유 볼륨 사용 |
-| Archive Path* | Archive Path 입력 | 로우 디바이스 또는 파티션 경로 입력, 공유 볼륨 사용 |
-| Backup Path* | Backup Path 입력 | 파일 시스템 경로만 입력 가능 |
-| SSH Port* | SSH port | - |
-| SSH User* | SSH User | - |
-| SSH Key File Path* | 인스턴스 간 SSH 접속에 사용할 private key path 입력 | 인스턴스 간 SSH 접속 시 동일한 private key를 사용하도록 공통 private key path 입력 |
+| 항목  | 설명  | 비고  |
+|-----|-----|-----|
+| Hostname\* | 선택한 토폴로지 구성에 맞게,<br>데이터베이스를 설치할 호스트를 선택 | -   |
+| Service IP\* | OwlDB와 노드간 통신에 사용할 IP를 직접 입력 또는 선택 | NAT를 사용한다면 NAT IP를 입력 |
+| Service Port\* | OwlDB와 데이터베이스 서버간 통신에 사용할 Port를 직접 입력 | 포트 포워딩을 사용하는 경우 외부 Port를 입력 |
+| Interconnect IP\* | Cluster내부 노드 간 통신에 사용할 Interconnect IP를 목록에서 선택 | Primary, StandBy 클러스터 둘 다 입력 |
+| Primary Destination IP\*(Primary 인스턴스만 입력) | StandByDB에서 PrimaryDB로의 통신에서 사용할 Primary Destination IP를 직접 입력 | NAT를 사용하는 경우 NAT IP를 입력 |
+| Primary Destination Port\*<br>(Primary 인스턴스만 입력) | StandBy DB에서 Primary DB로 통신에서 사용할 Primary Destination Port를 직접 입력 | 포트 포워딩을 사용하는 경우 외부 Port를 입력 |
+| StandBy Destination IP\*<br>(StandBy 인스턴스만 입력) | Primary DB에서 StandBy DB로의 통신에서 사용할 StandBy Destination IP를 직접 입력 | NAT를 사용하는 경우 NAT IP를 입력 |
+| StandBy Destination Port\*<br>(StandBy 인스턴스만 입력) | Primary DB에서 StandBy DB로 통신에서 사용할 StandBy Destination Port를 직접 입력 | 포트 포워딩을 사용하는 경우 외부 Port를 입력 |
+| Data Path\* | 데이터 Path 입력 | 로우 디바이스 또는 파티션 경로 입력, 공유 볼륨 사용 |
+| Redo Path\* | Redo Path 입력 | 로우 디바이스 또는 파티션 경로 입력, 공유 볼륨 사용 |
+| Archive Path\* | Archive Path 입력 | 로우 디바이스 또는 파티션 경로 입력, 공유 볼륨 사용 |
+| Backup Path\* | Backup Path 입력 | 파일 시스템 경로만 입력 가능 |
+| SSH Port\* | SSH port | -   |
+| SSH User\* | SSH User | -   |
+| SSH Key File Path\* | 인스턴스 간 SSH 접속에 사용할 private key path 입력 | 인스턴스 간 SSH 접속 시 동일한 private key를 사용하도록 공통 private key path 입력 |
 
-*표기는 필수 입력 항목을 의미합니다.
+\*표기는 필수 입력 항목을 의미합니다.
 
 {% hint style="info" %}
 **참고**
@@ -241,58 +242,59 @@ DR 구성을 사용하는 경우에는 SSH Key File을 지정된 경로에 미�
 
 단, 다음 조건을 반드시 충족해야 합니다.
 
-- 입력한 모든 Path는 **공유 볼륨**으로 구성되어 있어야 합니다.
-- 입력한 경로가 설치 대상 호스트에 **실제로 존재**해야 합니다.
-- 파일 시스템 경로에 대해 DP Agent 실행 계정이 **읽기, 쓰기, 실행 권한**을 보유해야 합니다.
+* 입력한 모든 Path는 **공유 볼륨**으로 구성되어 있어야 합니다.
+* 입력한 경로가 설치 대상 호스트에 **실제로 존재**해야 합니다.
+* 파일 시스템 경로에 대해 DP Agent 실행 계정이 **읽기, 쓰기, 실행 권한**을 보유해야 합니다.
 
 {% hint style="info" %}
 **참고**
 
-- 선택한 토폴로지에 따라 필요한 노드 수 만큼 위의 입력 항목이 자동으로 구성됩니다.
-- 안정적인 운영 환경을 위해, 클러스터 내 모든 인스턴스는 동일한 스펙으로 자동 구성됩니다.
+* 선택한 토폴로지에 따라 필요한 노드 수 만큼 위의 입력 항목이 자동으로 구성됩니다.
+* 안정적인 운영 환경을 위해, 클러스터 내 모든 인스턴스는 동일한 스펙으로 자동 구성됩니다.
 {% endhint %}
 {% endtab %}
+
 {% tab title="OpenSQL" %}
 노드 역할은 **Leader/Replica**로 표시됩니다.
 
 **Single**
 
-| 항목 | 설명 | 비고 |
-| --- | --- | --- |
-| Hostname* | 선택한 토폴로지 구성에 맞게,<br>데이터베이스를 설치할 호스트 선택 | - |
-| Service IP* | OwlDB와 노드간 통신에 사용할 IP를 직접 입력 또는 선택 | NAT를 사용하는 경우 NAT IP를 입력 |
-| Service Port* | OwlDB와 데이터베이스 서버간 통신에 사용할 Port를 직접 입력 | 포트 포워딩을 사용하는 경우<br>외부 Port 입력 |
-| Data Path* | Data Path 입력 | 파일 시스템 경로만 입력 가능 |
-| SSH Port* | SSH port | - |
-| SSH User* | SSH User | - |
-| SSH Key File Path* | 인스턴스 간 SSH 접속에 사용할 private key path 입력 | 인스턴스 간 SSH 접속 시 동일한 private key를 사용하도록 공통 private key path 입력 |
+| 항목  | 설명  | 비고  |
+|-----|-----|-----|
+| Hostname\* | 선택한 토폴로지 구성에 맞게,<br>데이터베이스를 설치할 호스트 선택 | -   |
+| Service IP\* | OwlDB와 노드간 통신에 사용할 IP를 직접 입력 또는 선택 | NAT를 사용하는 경우 NAT IP를 입력 |
+| Service Port\* | OwlDB와 데이터베이스 서버간 통신에 사용할 Port를 직접 입력 | 포트 포워딩을 사용하는 경우<br>외부 Port 입력 |
+| Data Path\* | Data Path 입력 | 파일 시스템 경로만 입력 가능 |
+| SSH Port\* | SSH port | -   |
+| SSH User\* | SSH User | -   |
+| SSH Key File Path\* | 인스턴스 간 SSH 접속에 사용할 private key path 입력 | 인스턴스 간 SSH 접속 시 동일한 private key를 사용하도록 공통 private key path 입력 |
 
-*표기는 필수 입력 항목을 의미합니다.
+\*표기는 필수 입력 항목을 의미합니다.
 
 **각 Path**는 파일 시스템 경로만 입력할 수 있습니다. 동일한 경로 또는 서로 다른 경로를 중복 입력하는 것도 허용됩니다.
 
 단, 다음 조건을 반드시 충족해야 합니다.
 
-- 입력한 경로가 설치 대상 호스트에 **실제로 존재**해야 합니다.
-- 파일 시스템 경로에 대해 DP Agent 실행 계정이 **읽기, 쓰기, 실행 권한**을 보유해야 합니다.
+* 입력한 경로가 설치 대상 호스트에 **실제로 존재**해야 합니다.
+* 파일 시스템 경로에 대해 DP Agent 실행 계정이 **읽기, 쓰기, 실행 권한**을 보유해야 합니다.
 
 ---
 
 **HA**
 
-| 항목 | 설명 | 비고 |
-| --- | --- | --- |
-| Hostname* | 선택한 토폴로지 구성에 맞게,<br>데이터베이스를 설치할 호스트를 선택 | - |
-| Service IP* | OwlDB와 노드간 통신에 사용할 IP를 직접 입력 또는 선택 | NAT를 사용하는 경우 NAT IP를 입력 |
-| Service Port* | OwlDB와 데이터베이스 서버간 통신에 사용할 Port를 직접 입력 | 포트 포워딩을 사용하는 경우 외부 Port를 입력 |
-| Replication Connection IP* | 복제 연결에 사용할 IP을 입력 또는 선택 | - |
-| 네트워크 인터페이스* | 네트워크 인터페이스를 선택 | - |
-| Data Path* | Data Path 입력 | 파일 시스템 경로만 입력 가능 |
-| SSH Port* | SSH port | - |
-| SSH User* | SSH User | - |
-| SSH Key File Path* | 인스턴스 간 SSH 접속에 사용할 private key path 입력 | 인스턴스 간 SSH 접속 시 동일한 private key를 사용하도록 공통 private key path 입력 |
+| 항목  | 설명  | 비고  |
+|-----|-----|-----|
+| Hostname\* | 선택한 토폴로지 구성에 맞게,<br>데이터베이스를 설치할 호스트를 선택 | -   |
+| Service IP\* | OwlDB와 노드간 통신에 사용할 IP를 직접 입력 또는 선택 | NAT를 사용하는 경우 NAT IP를 입력 |
+| Service Port\* | OwlDB와 데이터베이스 서버간 통신에 사용할 Port를 직접 입력 | 포트 포워딩을 사용하는 경우 외부 Port를 입력 |
+| Replication Connection IP\* | 복제 연결에 사용할 IP을 입력 또는 선택 | -   |
+| 네트워크 인터페이스\* | 네트워크 인터페이스를 선택 | -   |
+| Data Path\* | Data Path 입력 | 파일 시스템 경로만 입력 가능 |
+| SSH Port\* | SSH port | -   |
+| SSH User\* | SSH User | -   |
+| SSH Key File Path\* | 인스턴스 간 SSH 접속에 사용할 private key path 입력 | 인스턴스 간 SSH 접속 시 동일한 private key를 사용하도록 공통 private key path 입력 |
 
-*표기는 필수 입력 항목을 의미합니다.
+\*표기는 필수 입력 항목을 의미합니다.
 
 {% hint style="info" %}
 **참고**
@@ -304,8 +306,8 @@ DR 구성을 사용하는 경우에는 SSH Key File을 지정된 경로에 미�
 
 단, 다음 조건을 반드시 충족해야 합니다.
 
-- 입력한 경로가 설치 대상 호스트에 **실제로 존재**해야 합니다.
-- 파일 시스템 경로에 대해 DP Agent 실행 계정이 **읽기, 쓰기, 실행 권한**을 보유해야 합니다.
+* 입력한 경로가 설치 대상 호스트에 **실제로 존재**해야 합니다.
+* 파일 시스템 경로에 대해 DP Agent 실행 계정이 **읽기, 쓰기, 실행 권한**을 보유해야 합니다.
 {% endtab %}
 {% endtabs %}
 
@@ -317,15 +319,15 @@ DR 구성을 사용하는 경우에는 SSH Key File을 지정된 경로에 미�
 
 {% tabs %}
 {% tab title="Tibero" %}
-| 항목 | 설명 |
-| --- | --- |
-| Database Name* | 사용할 데이터베이스의 이름 |
-| SYS User Password* | 데이터베이스 최고 권한 관리자 계정(SYS)의 비밀번호 |
-| Target Memory Size* | 대상 메모리 사이즈 |
-| Shared Memory Size* | 공유 메모리 사이즈 |
-| Character Set* | 데이터베이스에 사용할 문자 인코딩 |
-| Timezone* | 데이터베이스가 설치될 OS 시간대 |
-| VIP* | VIP 사용 여부 선택 |
+| 항목  | 설명  |
+|-----|-----|
+| Database Name\* | 사용할 데이터베이스의 이름 |
+| SYS User Password\* | 데이터베이스 최고 권한 관리자 계정(SYS)의 비밀번호 |
+| Target Memory Size\* | 대상 메모리 사이즈 |
+| Shared Memory Size\* | 공유 메모리 사이즈 |
+| Character Set\* | 데이터베이스에 사용할 문자 인코딩 |
+| Timezone\* | 데이터베이스가 설치될 OS 시간대 |
+| VIP\* | VIP 사용 여부 선택 |
 | Primary Node #N Vip | 데이터베이스 가상 IP<br>(VIP 사용 선택시 활성화) |
 | Database Listener Port | 네트워크 통신을 위한 데이터베이스 리스너 포트 |
 | Max Session Count | 동시 허용 최대 세션 수 |
@@ -336,18 +338,19 @@ DR 구성을 사용하는 경우에는 SSH Key File을 지정된 경로에 미�
 | Temporary Tablespace Data File Size (MB) | 대용량 연산에 사용되는 임시 테이블스페이스 데이터 파일 크기 |
 | Undo Tablespace Data File Size (MB) | Undo 테이블스페이스 크기 |
 
-*표기는 필수 입력 항목을 의미합니다.
+\*표기는 필수 입력 항목을 의미합니다.
 {% endtab %}
+
 {% tab title="OpenSQL" %}
 <table data-full-width="true"><thead><tr><th>항목</th><th>설명</th></tr></thead><tbody><tr><td>Database Name*</td><td>사용할 데이터베이스의 이름</td></tr><tr><td>User Id*</td><td>데이터베이스 최고 권한 관리자 계정 ID</td></tr><tr><td>User Password*</td><td>데이터베이스 최고 권한 관리자 계정의 비밀번호</td></tr><tr><td>Character Set*</td><td>데이터베이스에 사용할 문자 인코딩</td></tr><tr><td>Timezone*</td><td>데이터베이스가 설치될 OS 시간대</td></tr><tr><td>VIP*</td><td>데이터베이스 가상 IP</td></tr><tr><td>Database Listener Port</td><td>네트워크 통신을 위한 데이터베이스 리스너 포트</td></tr><tr><td>Max Session Count</td><td>동시 허용 최대 세션 수</td></tr><tr><td>Shared Buffers</td><td>공유 메모리 크기 (수정 불가)</td></tr><tr><td>WAL File Size (MB)</td><td>WAL 파일 크기<br>탐색 과정에서 값을 확인할 수 없어 빈 값으로 표시되며 수정할 수 없음</td></tr><tr><td>Connection Pooler Port</td><td>OpenSQL에서 커넥션 풀이 클라이언트 연결을 수신하는 포트<ul><li>기본값 : 6432</li><li>입력 범위 : 1024~65535</li></ul></td></tr><tr><td>Extension</td><td>OpenSQL 데이터베이스 생성 시 함께 설치할 Extension 선택(다중 선택 가능)</td></tr></tbody></table>
 
-*표기는 필수 입력 항목을 의미합니다.
+\*표기는 필수 입력 항목을 의미합니다.
 
 {% hint style="info" %}
 **참고**
 
-- Connection Pooler Port, Extension 항목은 OpenSQL 엔진 선택 시에만 노출됩니다.
-- Extension 설치에 실패해도 데이터베이스 생성에는 영향을 주지 않으며, 설치에 실패한 Extension은 시스템 알림에서 확인할 수 있습니다.
+* Connection Pooler Port, Extension 항목은 OpenSQL 엔진 선택 시에만 노출됩니다.
+* Extension 설치에 실패해도 데이터베이스 생성에는 영향을 주지 않으며, 설치에 실패한 Extension은 시스템 알림에서 확인할 수 있습니다.
 {% endhint %}
 {% endtab %}
 {% endtabs %}
@@ -365,20 +368,20 @@ DR 구성을 사용하는 경우에는 SSH Key File을 지정된 경로에 미�
 
 **4. 데이터베이스 구성** 단계에서 **다음** 버튼을 클릭하면 입력한 정보에 대한 유효성 검사가 자동으로 수행되며, 검사를 통과해야 **5. 구성 정보 확인** 단계로 진입할 수 있습니다.
 
-**[Tibero]** 아래 항목을 추가로 확인합니다.
+**\[Tibero\]** 아래 항목을 추가로 확인합니다.
 
-- 입력한 Data/Redo/Archive/Backup Path가 설치 대상 호스트에 실제로 존재하는지 여부
-- 노드 간 SSH 연결 가능 여부
-- 모든 노드의 OS Timezone 일치 여부
-- 입력한 Data File 크기 합계가 스토리지 여유 공간을 초과하지 않는지 여부
+* 입력한 Data/Redo/Archive/Backup Path가 설치 대상 호스트에 실제로 존재하는지 여부
+* 노드 간 SSH 연결 가능 여부
+* 모든 노드의 OS Timezone 일치 여부
+* 입력한 Data File 크기 합계가 스토리지 여유 공간을 초과하지 않는지 여부
 
-**[OpenSQL]** 아래 항목을 추가로 확인합니다.
+**\[OpenSQL\]** 아래 항목을 추가로 확인합니다.
 
-- 입력한 Data Path가 설치 대상 호스트에 실제로 존재하는지 여부
-- 노드 간 SSH 연결 가능 여부
-- SSH Key File Path가 실제로 존재하는지 여부 및 Private key 인지 여부
-- 모든 노드의 OS Timezone 일치 여부
-- 입력한 Data File 크기 합계가 스토리지 여유 공간을 초과하지 않는지 여부
+* 입력한 Data Path가 설치 대상 호스트에 실제로 존재하는지 여부
+* 노드 간 SSH 연결 가능 여부
+* SSH Key File Path가 실제로 존재하는지 여부 및 Private key 인지 여부
+* 모든 노드의 OS Timezone 일치 여부
+* 입력한 Data File 크기 합계가 스토리지 여유 공간을 초과하지 않는지 여부
 
 검사에 실패하면 오류가 발생한 항목에 에러 메시지가 표시되며, 다음 단계로 이동할 수 없습니다.
 {% endhint %}
@@ -392,16 +395,17 @@ DR 구성을 사용하는 경우에는 SSH Key File을 지정된 경로에 미�
 {% tabs %}
 {% tab title="Tibero" %}
 | 주요 단계 | 세부 단계 |
-| --- | --- |
+|-------|-------|
 | 설치 필수 조건 검증 | 1. sudo 권한 검증<br>2. 필수 파일 검증<br>3. parameter config 검증 |
 | 인프라 설정 | 1. Kernel 환경 설정<br>2. 필수 package 설치<br>3. Disk udev rule 설정<br>4. Volume mount<br>5. Disk attach (instance) |
 | Tibero 설정 | 1. Tibero instance Tip file &DSN file 생성<br>2. cm 순차설치로 인한 volume 설정 변경<br>3. cm 순차설치로 인한 volume 대기<br>4. Tip covert(primary<→ standby)<br>5. Standby 설치 완료 tag 설정 변경<br>6. Standby 설치 완료 tag 대기<br>7. RMGR 백업 및 전송<br>8. RMGR 백업 대기 |
 | DB 설치 | 1. CM gen(resource 등록 및 실행)<br>2. DB create(TAS도 포함됨 토폴로지에 따라)<br>3. Disk snapshot 생성<br>4. wait Disk snapshot in Standby node<br>5. CM Fence on(reboot)<br>6. cm complete(service up)<br>7. wait cm service<br>8. recovery RMGR |
 | Tibero 상태 확인 | 1. Tb probe |
 {% endtab %}
+
 {% tab title="OpenSQL" %}
 | 주요 단계 | 세부 단계 |
-| --- | --- |
+|-------|-------|
 | 인프라 설정 | 1. Kernel 환경 설정<br>2. 필수 package 설치<br>3. PgAgent 설치<br>4. mount volume<br>5. 데이터 디렉터리 준비 |
 | OpenSQL 설정 | 1. 모듈 설정 |
 | OpenSQL 설치 | 1. 부트스트랩 이후 설정 |
