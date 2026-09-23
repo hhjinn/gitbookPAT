@@ -10,7 +10,7 @@
   * [로그인](undefined-2/undefined.md)
   * [계정 생성 요청](undefined-2/undefined-1.md)
   * [콘솔 화면 구성 안내](undefined-2/undefined-2.md)
-  * [서비스 업데](undefined-2/undefined-3.md)
+  * [서비스 업데이트](undefined-2/undefined-3.md)
 * [대시보드](undefined-3/README.md)
   * [DB Service 생성 (AWS)](undefined-3/db-aws.md)
   * [DB Service 생성 (Azure)](undefined-3/azure.md)
