@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Service Overview](readme.md)
+* [Service Overview](README.md)
 * [Environment Setup](undefined/README.md)
   * [AWS](undefined/aws/README.md)
     * [Marketplace Subscription Guide](undefined/aws/undefined.md)

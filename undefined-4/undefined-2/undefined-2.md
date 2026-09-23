@@ -1,10 +1,12 @@
+# Backup Settings
+
 The Backup Settings page is where you configure the automatic backup scheduler and check its operational status.
 
-## Backup Settings
+### Backup Settings
 
 You set whether to enable automatic backup, the execution interval, the retention period, and the start time, and you check backup stability through the scheduler's most recent execution result, 7-day success rate, consecutive failure count, and the 30-day execution history chart.
 
-**Management > Backup Settings** Clicking the menu lets you check the currently configured automatic backup settings.
+Click **Management > Backup Settings** to check the currently configured automatic backup settings.
 
 {% hint style="info" %}
 **Note**
@@ -12,11 +14,11 @@ You set whether to enable automatic backup, the execution interval, the retentio
 In the Cloud environment, the CSP Snapshot feature is used to manage backups as a single automatic backup without distinguishing between Full and Incremental.
 {% endhint %}
 
-1. **Management > Backup Settings**Click.
-2. **Edit**Click.
+1. Click **Management > Backup Settings**.
+2. Click **Edit**.
 3. Set the automatic backup toggle to **On**.
 4. Enter the automatic backup interval, retention period, and start time.
-5. **Save**Click.
+5. Click **Save**.
 
 The page displays the following items.
 
@@ -28,21 +30,21 @@ The page displays the following items.
 If you set automatic backup to On, storage capacity increases depending on the backup interval and retention period, and additional charges apply.
 {% endhint %}
 
----
+***
 
-## Backup Scheduler Operational Status
+### Backup Scheduler Operational Status
 
-At the bottom of the Backup Settings page, **Backup Scheduler Operational Status** In this section, you check the recent execution history and stability metrics of automatic backup. The last execution information is displayed even when automatic backup is off.
+At the bottom of the Backup Settings page, the **Backup Scheduler Operational Status** section lets you check the recent execution history and stability metrics of automatic backup. The last execution information is displayed even when automatic backup is off.
 
-| Item | Description | Displayed when not configured |
-| --- | --- | --- |
-| Most Recent Execution Result | Whether the most recently completed automatic backup succeeded or failed | `-` |
-| 7-Day Success Rate | The success rate of automatic backups completed within the last 7 days (e.g., 90% (9/10)) | `-` |
-| Consecutive Failure Count | The number of consecutive failures starting from the most recently completed run (0 if all succeeded) | `-` |
-| 30-Day Execution Result Chart | Displays the number of successful/failed automatic backups per day over the last 30 days as a stacked bar chart | No Data status display |
+| Item                          | Description                                                                                                     | Displayed when not configured |
+| ----------------------------- | --------------------------------------------------------------------------------------------------------------- | ----------------------------- |
+| Most Recent Execution Result  | Whether the most recently completed automatic backup succeeded or failed                                        | `-`                           |
+| 7-Day Success Rate            | The success rate of automatic backups completed within the last 7 days (e.g., 90% (9/10))                       | `-`                           |
+| Consecutive Failure Count     | The number of consecutive failures starting from the most recently completed run (0 if all succeeded)           | `-`                           |
+| 30-Day Execution Result Chart | Displays the number of successful/failed automatic backups per day over the last 30 days as a stacked bar chart | No Data status display        |
 
 In the chart, success and failure are distinguished by color. Hovering the mouse over a bar shows detailed information on the number of successful and failed automatic backups for that date.
 
-1. **Management > Backup Settings**Click.
-2. At the bottom of the page, **Backup Scheduler Operational Status** In this section, check the most recent execution result, the 7-day success rate, and the consecutive failure count.
-3. **30-Day Execution Result Chart**Hover the mouse over a bar to check the detailed execution results for each date.
+1. Click **Management > Backup Settings**.
+2. At the bottom of the page, check the most recent execution result, 7-day success rate, and consecutive failure count in **Backup Scheduler Operational Status**.
+3. Hover over a bar in **30-Day Execution Result Chart** to check detailed execution results for each date.

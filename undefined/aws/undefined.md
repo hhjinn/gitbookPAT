@@ -1,25 +1,27 @@
-# OwlDB Subscription Prerequisites
+# Marketplace Subscription Guide
+
+## OwlDB Subscription Prerequisites
 
 This page explains the OS image subscription and SSH Key creation tasks that must be completed before subscribing to OwlDB.
 
-## 1. OS Image Subscription
+### 1. OS Image Subscription
 
-To build a database through OwlDB, `Rocky Linux 9 (Official) - x86_64` a prior subscription to the AMI is required. The subscription method is as follows.
+To build a database through OwlDB, a prior subscription to the `Rocky Linux 9 (Official) - x86_64` AMI is required. The subscription method is as follows.
 
-1. [AWS Marketplace](https://aws.amazon.com/marketplace)In [Rocky Linux 9 (Official) - x86_64](https://aws.amazon.com/marketplace/pp/prodview-ygp66mwgbl2ii)Search for and select it.
-2. **Continue to Subscribe**Click it to subscribe to the Subscription.
+1. On [AWS Marketplace](https://aws.amazon.com/marketplace), search for and select [Rocky Linux 9 (Official) - x86\_64](https://aws.amazon.com/marketplace/pp/prodview-ygp66mwgbl2ii).
+2. Click **Continue to Subscribe** to subscribe.
 
-## 2. SSH Key Creation
+### 2. SSH Key Creation
 
 Before subscribing to OwlDB, you must create an SSH Key pair resource. The SSH Key pair is used in the deployment of OwlDB and the database provisioning process.
 
-1. [AWS Console](https://console.aws.amazon.com/console/home)Search for and select Key pairs.
-2. In the upper right corner, **Create key pair**Click it.
+1. On [AWS Console](https://console.aws.amazon.com/console/home), search for and select Key pairs.
+2. In the upper-right corner, click **Create key pair**.
 3. Enter the desired Key pair name in Name.
-4. Select the Key pair type. For compatibility, the default setting RSA is recommended.
-5. Select the Private key file format. For compatibility, the default .pem format is recommended.
-6. In Tags, set Tags for efficient resource management.
-7. **Create key pair**Click it to complete the creation and download the SSH Key pair file.
+4. Select the Key pair type. For compatibility, the default RSA setting is recommended.
+5. Select the Private key file format. For compatibility, the default `.pem` format is recommended.
+6. In Tags, add tags for efficient resource management.
+7. Click **Create key pair** to complete the creation and download the SSH Key pair file.
 
 {% hint style="warning" %}
 **Caution**
@@ -27,42 +29,42 @@ Before subscribing to OwlDB, you must create an SSH Key pair resource. The SSH K
 For security, the SSH Key pair file can only be downloaded once. Be sure to store the downloaded file in a secure location.
 {% endhint %}
 
----
+***
 
-# Subscribing to OwlDB on AWS Marketplace
+## Subscribing to OwlDB on AWS Marketplace
 
 This page explains how to subscribe to OwlDB on AWS Marketplace and begin the deployment configuration.
 
-1. [AWS Marketplace](https://aws.amazon.com/marketplace)Search for and select OwlDB.
-2. **Continue to Subscribe**Click it to subscribe to the Subscription.
-3. **Continue to Configuration**Click it to begin the configuration for OwlDB deployment.
+1. On [AWS Marketplace](https://aws.amazon.com/marketplace), search for and select OwlDB.
+2. Click **Continue to Subscribe** to subscribe.
+3. Click **Continue to Configuration** to begin configuring the OwlDB deployment.
 
----
+***
 
-# Deploying OwlDB via AWS CloudFormation
+## Deploying OwlDB via AWS CloudFormation
 
 This page explains the process of deploying OwlDB using AWS CloudFormation step by step.
 
-## 1. Configure this software
+### 1. Configure this software
 
-- Select the items below, and **Continue to Launch**Click it.
+* Select the items below, then click **Continue to Launch**.
 
-| Item | Option |
-| --- | --- |
-| Fulfillment option | OwlDB for Tibero7 |
-| Software version | 1.2.0 (Dec 29, 2025) |
-| Region | Select |
+| Item               | Option               |
+| ------------------ | -------------------- |
+| Fulfillment option | OwlDB for Tibero7    |
+| Software version   | 1.2.0 (Dec 29, 2025) |
+| Region             | Select               |
 
-## 2. Launch this software
+### 2. Launch this software
 
-- Check the Configuration details.
-- Select Launch CloudFormation in Choose Action, and **Launch**Click it.
+* Check the Configuration details.
+* In Choose Action, select Launch CloudFormation, then click **Launch**.
 
-## 3. Creating a CloudFormation Stack
+### 3. Creating a CloudFormation Stack
 
 Creating a CloudFormation stack requires going through all four steps below in order.
 
-### 3-1. Creating a Stack
+#### 3-1. Creating a Stack
 
 {% hint style="warning" %}
 **Caution**
@@ -74,20 +76,20 @@ In the template preparation item of the prerequisites, use Choose an existing te
 
 **Specify template**
 
-| Item | Option |
-| --- | --- |
-| Template source | Amazon S3 URL |
-| Amazon S3 URL | Use the Default template as is |
+| Item            | Option                         |
+| --------------- | ------------------------------ |
+| Template source | Amazon S3 URL                  |
+| Amazon S3 URL   | Use the Default template as is |
 
-### 3-2. Specifying Stack Details
+#### 3-2. Specifying Stack Details
 
 **Provide a stack name**
 
-| Item | Description | Remarks |
-| --- | --- | --- |
+| Item       | Description                                   | Remarks                                      |
+| ---------- | --------------------------------------------- | -------------------------------------------- |
 | Stack name | Unique identifier of the stack to be deployed | Cannot duplicate a stack name already in use |
 
-**Parameters [Fulfillment option : Deploy into new VPC]**
+**Parameters \[Fulfillment option : Deploy into new VPC]**
 
 OwlDB Infra Setting
 
@@ -99,49 +101,49 @@ OwlDB Setting
 
 Personal Information
 
-| Item | Description | Remarks |
-| --- | --- | --- |
-| User Email | Email for service usage and account management | Consent to personal data use is required |
-| Consent to Personal Data Use | Consent to personal data use | - |
+| Item                         | Description                                    | Remarks                                  |
+| ---------------------------- | ---------------------------------------------- | ---------------------------------------- |
+| User Email                   | Email for service usage and account management | Consent to personal data use is required |
+| Consent to Personal Data Use | Consent to personal data use                   | -                                        |
 
-### 3-3. Configuring Stack Options
+#### 3-3. Configuring Stack Options
 
 {% hint style="info" %}
 **Note**
 
-In this step, use the default selected options as is.
+In this step, use the default options as is.
 {% endhint %}
 
-| Item | Description |
-| --- | --- |
-| Tags (Optional) | Add tags for configuring, identifying, and classifying resources (up to 50 per stack) |
-| Permissions (Optional) | Specify the role to be used by the stack with IAM |
-| Stack Failure Options | Select the behavior on provisioning failure and how resources created during rollback are deleted |
-| Advanced Settings (Optional) | Configure additional options such as stack notification options and policies |
-| Capabilities | Acknowledge the creation of IAM resources by CloudFormation |
+| Item                         | Description                                                                                       |
+| ---------------------------- | ------------------------------------------------------------------------------------------------- |
+| Tags (Optional)              | Add tags for configuring, identifying, and classifying resources (up to 50 per stack)             |
+| Permissions (Optional)       | Specify the role to be used by the stack with IAM                                                 |
+| Stack Failure Options        | Select the behavior on provisioning failure and how resources created during rollback are deleted |
+| Advanced Settings (Optional) | Configure additional options such as stack notification options and policies                      |
+| Capabilities                 | Acknowledge the creation of IAM resources by CloudFormation                                       |
 
-### 3-4. Review and Create
+#### 3-4. Review and Create
 
 Check and review the specified template and stack details.
 
-**Submit**Click to start provisioning.
+Click **Submit** to start provisioning.
 
----
+***
 
-# OwlDB Connection Guide
+## OwlDB Connection Guide
 
 This page explains how to connect for the first time after OwlDB deployment is complete and how to check the connection URL.
 
-## First Connection
+### First Connection
 
-Once OwlDB deployment is complete in the Marketplace, a guide email containing the OwlDB connection address and account information is sent to the email entered during stack creation. Connect to OwlDB through that email. If the email is not received, [aws_owldb_support@tibero.com](mailto:aws_owldb_support@tibero.com)contact us at.
+Once OwlDB deployment is complete in the Marketplace, a guide email containing the OwlDB connection address and account information is sent to the email entered during stack creation. Connect to OwlDB through that email. If you do not receive the email, contact us at [aws\_owldb\_support@tibero.com](mailto:aws_owldb_support@tibero.com).
 
-## URL Connection
+### URL Connection
 
 {% hint style="info" %}
 **Note**
 
-The connection address is in the format `https://<고객별-고유-도메인>.owl-db.com` format.
+The connection address follows the `https://<고객별-고유-도메인>.owl-db.com` format.
 {% endhint %}
 
 The unique domain value for each customer can be checked using the following methods.
