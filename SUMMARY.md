@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Service Overview](readme.md)
+* [Service Overview](README.md)
 * [Installation Guide](undefined/README.md)
   * [Installation Introduction](undefined/undefined.md)
   * [OwlDB Server Preparation and Installation](undefined/owldb/README.md)
