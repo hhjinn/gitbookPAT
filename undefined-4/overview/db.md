@@ -1,102 +1,102 @@
-# DB 서비스
+Queries the status of databases operating in OwlDB and performs operations such as modification, stopping, starting, deletion, role switchover, license renewal, and spec changes.
 
-OwlDB에서 운영 중인 데이터베이스 상태를 모니터링하고, 필요에 따라 데이터베이스를 수정, 중지, 시작, 삭제, 역할전환, 라이선스 갱신 및 스펙변경을 수행할 수 있습니다. 버튼을 통해 빠르게 원하는 작업을 수행할 수 있으며, 데이터베이스 성능을 최적화하기 위해 다양한 설정을 조절할 수 있습니다. 인스턴스 상태가 Running이 아닌 경우, 일부 정보가 누락될 수 있습니다.
 {% hint style="info" %}
-**참고**
-참고 데이터베이스 관리 페이지는 데이터베이스 타임존을 기준으로 시간이 표시되므로, 로컬 시스템 시간(브라우저 시간)과 차이가 있을 수 있습니다.
+**Note**
+
+- When the instance status is `Running`other than this, some information may be missing.
+- The database management page displays times based on the database timezone, so there may be a difference from the local system time (browser time).
 {% endhint %}
-
-> 📷 **\[이미지\]** 이미지
-
 
 ---
 
-# **데이터베이스 정보 조회**
+## Querying Database Information
 
-
-1. **관리 > Overview** 메뉴를 클릭합니다.
-2. **DB Service Alias** 드롭다운 버튼을 클릭하여 정보를 조회할 데이터베이스를 선택합니다.
-3. 운영정보, 인스턴스, 버전, (DR/HA) 전환 이력 관리, (BYOL) 라이선스 탭에서 상세 정보를 확인합니다.
-4. 데이터베이스 운영 상태는 **전체 상태 요약 정보** 페이지를 참고하시기 바랍니다. **DB Alias** 드롭다운으로 데이터베이스를 선택하면 화면 상단에 서비스 요약 정보가 표시되고, 그 아래 탭에서 상세 정보를 확인할 수 있습니다.
+1. **Management > Overview** Click the menu.
+2. **DB Service Alias** Click the dropdown button to select the database whose information you want to query.
+3. Check the detailed information in the Operation Information, Instance, Installation Information, (DR/HA) Switchover History Management, and (BYOL) License tabs.
 
 {% hint style="info" %}
-**참고**
-BYOL 라이선스 모델을 사용 중이고 라이선스 만료일이 3개월 이내로 남은 경우, 화면 상단에 만료 예정 안내 배너가 표시됩니다. 배너의 **갱신 페이지로 이동** 링크를 클릭하면 라이선스 갱신 화면으로 이동할 수 있습니다.
+**Note**
+
+The database operation status can be found on the **Overall Status Summary Information** page.
+{% endhint %}
+
+{% hint style="info" %}
+**Note**
+
+If you are using the BYOL license model and the license expiration date is within 3 months, an expiration notice banner is displayed at the top of the screen. In the banner's **Go to Renewal Page** Click the link to move to the license renewal screen.
 {% endhint %}
 
 {% tabs %}
-{% tab title="운영 정보" %}
-데이터베이스의 로그, 체크포인트, 클러스터 구성 등 운영 상세 정보를 확인합니다.
+{% tab title="Operation Information" %}
+<figure>
+<img src="../../.gitbook/assets/image-87ac079b.png" alt="">
+<figcaption>Figure 1. Operation Information</figcaption>
+</figure>
+
+You can check detailed database information such as account information that can access the database, control files, logs, and checkpoints, and you can visually check the database configuration as a diagram.
 
 {% hint style="info" %}
-**참고**
-일시가 표시되는 항목은 모두 데이터베이스 타임존을 기준으로 표시됩니다.
+**Note**
+
+All items that display date and time are shown based on the database timezone.
 {% endhint %}
 {% endtab %}
-{% tab title="인스턴스" %}
-구성 인스턴스 목록과 정보를 확인합니다.
+{% tab title="Instance" %}
+<figure>
+<img src="../../.gitbook/assets/image-121f711d.png" alt="">
+<figcaption>Figure 2. Instance</figcaption>
+</figure>
 
-* '인스턴스 별칭'을 클릭하면 "[인스턴스 관리](#dF57s45IXBUgU7RX1UvL)" 페이지로 이동합니다.
-* ☑️ 아이콘으로 1개 이상의 인스턴스를 먼저 선택한 후 **재시작** 버튼을 클릭하거나, 선택 없이 **재시작** 버튼을 바로 클릭해 열리는 모달에서 재시작할 인스턴스와 재시작 옵션을 선택할 수 있습니다. 자세한 내용은 "[인스턴스 재시작](#undefined-2)"을 참고하시기 바랍니다.
+Check the list and information of configured instances.
+
+- **Instance Alias**When you click, "[Instance Management](#dF57s45IXBUgU7RX1UvL)" page is displayed.
+- After first selecting one or more instances with the ☑️ icon **Restart** Click the button, or without selecting **Restart** Click the button directly, and in the modal that opens you can select the instances to restart and the restart options. For details, refer to "[Restarting an Instance](#undefined-2)".
 
 {% hint style="info" %}
-**참고**
-DR 구성을 사용하는 경우, Primary(Leader) DB와 Standby(Replica) DB를 구분하여 조회합니다.
+**Note**
+
+When using a DR configuration, the Primary(Leader) DB and Standby(Replica) DB are queried separately.
 {% endhint %}
 {% endtab %}
-{% tab title="설치 정보" %}
-데이터베이스 버전 정보와 시스템 및 컴파일 정보, 패치(또는 Extension) 정보를 확인합니다.
+{% tab title="Installation Information" %}
+Check the database version information, system and compile information, and patch (or Extension) information.
 
-| 항목  | Tibero | OpenSQL |
-|-----|--------|---------|
-| Basic Info | 메이저 버전, 마이너 버전, 패치셋 버전 표시 | OpenSQL 버전(예: 3.0), PostgreSQL 버전(예: 17.5) 표시 |
-| 시스템 및 컴파일 정보 | 바이너리 OS 정보 등을 리스트로 표시 | 바이너리 OS 정보 등을 리스트로 표시 |
-| 패치 정보 / Extensions | 적용된 패치 현황을 리스트로 표시하며, 적용된 패치가 없으면 "적용된 패치가 없습니다" 문구가 나타납니다. | 현재 설치된 Extension 목록을 리스트로 표시합니다. 운영 중 DDL로 추가한 Extension도 조회 시점 기준으로 반영되어 표시됩니다. |
+The system and compile information displays binary OS information and the like as a list, regardless of the engine. Basic Info and patch information vary depending on the engine as follows.
+
+<table data-full-width="true"><thead><tr><th>Item</th><th>Tibero</th><th>OpenSQL</th></tr></thead><tbody><tr><td>Basic Info</td><td><ul><li>Major version</li><li>Minor version</li><li>Patchset version</li></ul></td><td><ul><li>OpenSQL version (e.g., 3.0)</li><li>PostgreSQL version (e.g., 17.5)</li></ul></td></tr><tr><td>System and Compile Information</td><td>Displays binary OS information and the like as a list</td><td>Displays binary OS information and the like as a list</td></tr><tr><td>Patch Information / Extensions</td><td><ul><li>Displays the list of applied patches</li><li>If none, displays the message "There are no applied patches"</li></ul></td><td><ul><li>Displays the list of currently installed Extensions</li><li>Extensions added via DDL during operation are also reflected as of the query time</li></ul></td></tr></tbody></table>
 
 {% hint style="info" %}
-**참고**
-값을 조회할 수 없는 항목은 `-`로 표시됩니다.
+**Note**
+
+Items whose values cannot be queried are displayed as `-`displayed as.
 {% endhint %}
 {% endtab %}
-{% tab title="(BYOL) 라이선스" %}
-BYOL 라이선스 모델에서 제공하는 탭입니다.
+{% tab title="(BYOL) License" %}
+This tab is provided in the BYOL license model.
 
-* 사용 중인 라이선스와 할당된 인스턴스 정보를 확인합니다.
-* 기한이 만료된 라이선스 정보도 확인할 수 있습니다.
+- Check the license in use and the assigned instance information.
+- You can also check information on expired licenses.
 
 {% hint style="info" %}
-**참고**
-유휴 라이선스가 존재하는 경우, **재구축** 버튼을 통해 기존 라이선스 구성대로 인스턴스 생성 및 라이선스 할당을 수행할 수 있습니다.
+**Note**
+
+If an idle license exists, **Rebuild** Through the button, you can create instances and assign licenses according to the existing license configuration.
 {% endhint %}
 {% endtab %}
-{% tab title="(DR/HA) 전환 이력 관리" %}
+{% tab title="(DR/HA) Switchover History Management" %}
+This tab is provided for Tibero DR configurations or OpenSQL HA configurations.
 
-Tibero DR 구성 혹은 OpenSQL HA 구성일 때 제공하는 탭입니다.
+Check the history of database role switchover events that have occurred. When a switchover event completes, an entry is added to the history.
 
-데이터베이스 역할 전환 이벤트가 발생한 이력을 확인합니다.
-
-* 전환 이벤트가 발생하여 완료된 후 데이터 추가
-
-| 컬럼명 | 설명  | 데이터 형식 | 기본값 | 필수값 |
-|-----|-----|--------|-----|-----|
-| ID  | 전환 이벤트를 고유하게 식별할 수 있는 번호<br>• 형식 : {이벤트유형-랜덤 문자열 16바이트}<br>• 이벤트 유형 : FO / SO / FB | • FO-3f9a7c1e2d8b45f0<br>• SO-b17e4a93d2c68f5e<br>• FB-7a2d9e14c6b83f05 | O   | X   |
-| 시작 시간 | 전환 이벤트가 발생한 시각 | yyyy.mm.dd HH:mm:ss | O   | O   |
-| 완료 시간 | 전환 이벤트가 완료된 시각 | yyyy.mm.dd HH:mm:ss | X   | X   |
-| 유형  | 전환 이벤트 유형 | • Failover<br>• Switchover<br>• Failback | O   | O   |
-| 수행 대상 | 해당 이벤트를 수행한 대상 | • Switchover : {사용자 아이디}<br>• Failover : {사용자 아이디} / system(Auto Failover)<br>• Failback : {사용자 아이디} | O   | X   |
-| 결과  | 해당 이벤트 상태를 표시 | • 성공<br>• 실패 | O   | X   |
-| 원인/비고 | 해당 이벤트가 발생한 원인, 사용자가 입력한 값 또는 실패 사유를 표시 | • 역할 전환 시 사용자가 선택적으로 입력한 값(최대 200자, 미입력 시 빈칸)<br>• Auto Failover의 트리거 조건<br>• Failback 실패 시 : Standby/Replica Reboot Failed 또는 Switchover Failed<br>• Failover 실패 시 : Standby/Replica Promotion Failed<br>• Failover 성공 후 후처리 실패 시 : Cluster Normalization Failed(Primary scale out failed / New Standby/Replica creation failed, 복수 실패 시 콤마로 표시) | O   | X   |
-|
+<table data-full-width="true"><thead><tr><th>Column Name</th><th>Description</th><th>Data Format</th><th>Default Value</th><th>Required Value</th></tr></thead><tbody><tr><td>ID</td><td><ul><li>A number that uniquely identifies a switchover event</li><li>Format: {event type-random string 16 bytes}</li><li>Event type: FO / SO / FB</li></ul></td><td><ul><li>FO-3f9a7c1e2d8b45f0</li><li>SO-b17e4a93d2c68f5e</li><li>FB-7a2d9e14c6b83f05</li></ul></td><td>O</td><td>X</td></tr><tr><td>Start Time</td><td>Time when the transition event occurred</td><td>yyyy.mm.dd HH:mm:ss</td><td>O</td><td>O</td></tr><tr><td>Completion Time</td><td>Time when the transition event completed</td><td>yyyy.mm.dd HH:mm:ss</td><td>X</td><td>X</td></tr><tr><td>Type</td><td>Transition event type</td><td><ul><li>Failover</li><li>Switchover</li><li>Failback</li></ul></td><td>O</td><td>O</td></tr><tr><td>Executed By</td><td>The entity that executed the event</td><td><ul><li>Switchover: {user ID}</li><li>Failover: {user ID} / system(Auto Failover)</li><li>Failback: {user ID}</li></ul></td><td>O</td><td>X</td></tr><tr><td>Result</td><td>Displays the status of the event</td><td><ul><li>Success</li><li>Failure</li></ul></td><td>O</td><td>X</td></tr><tr><td>Cause/Remarks</td><td>Displays the cause of the event, the value entered by the user, or the failure reason</td><td><ul><li>Value optionally entered by the user during role transition (up to 200 characters, blank if not entered)</li><li>Trigger condition for Auto Failover</li><li>On Failback failure: Standby/Replica Reboot Failed or Switchover Failed</li><li>On Failover failure: Standby/Replica Promotion Failed</li><li>On post-processing failure after successful Failover: Cluster Normalization Failed(Primary scale out failed / New Standby/Replica creation failed, displayed separated by commas in case of multiple failures)</li></ul></td><td>O</td><td>X</td></tr></tbody></table>
 {% endtab %}
 {% endtabs %}
-|     |        |     |     |
-
 
 ---
 
-## DB 서비스 정보 수정
+## Editing DB Service Information
 
-
-1. DB 서비스 별칭 옆 **연필 아이콘**을 클릭합니다.
-2. DB 서비스 별칭과 설명을 수정합니다.
-3. **저장** 버튼을 클릭합니다.
+1. Next to the DB Service alias **pencil icon**Click.
+2. Edit the DB Service alias and description.
+3. **Save** Click the button.

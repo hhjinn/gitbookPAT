@@ -1,57 +1,62 @@
-# 작업
+**Management > Overview** or **Dashboard**After selecting a DB Service from **Actions** click the button to perform the functions below.
 
-**관리 > Oveview** 또는 **대시보드**에서 데이터베이스를 선택한 후 **작업** 버튼을 클릭하여 아래 기능들을 수행할 수 있습니다.
-
-# 데이터베이스 중지 및 시작
+# Stopping and Starting a DB Service
 
 {% hint style="info" %}
-**참고**
-데이터베이스 중지는 최대 7일(168시간)까지 가능합니다. 7일 이내에 직접 시작하지 않으면 168시간이 경과한 후 다음 정각에 자동으로 시작합니다.
+**Note**
+
+A DB Service can be stopped for up to 7 days (168 hours). If you do not start it manually within 7 days, it will start automatically at the next top of the hour after 168 hours have elapsed.
 {% endhint %}
 
-
-1. **작업** 버튼을 클릭합니다.
-2. **중지** 또는 **시작** 버튼을 클릭합니다.
-
-{% hint style="warning" %}
-**주의**
-데이터베이스를 중지해도 프로비저닝된 스토리지에 대한 비용은 부과됩니다. 지정된 보존 기간 내의 수동 스냅샷 및 자동 백업을 포함하여 백업 스토리지에 대한 요금도 부과됩니다.
-{% endhint %}
-
+1. **Actions** Click the button.
+2. **Stop** or **Start** Click the button.
 
 ---
 
-# **데이터베이스 삭제**
+# Deleting a DB Service
 
-
-1. **작업** 버튼을 클릭합니다.
-2. **삭제** 버튼을 클릭합니다.
-3. 입력창에 데이터베이스 별칭을 입력합니다.
-4. **확인** 버튼을 클릭합니다.
+1. **Actions** Click the button.
+2. **Delete** Click the button.
+3. Enter the DB Service Name in the input field.
+4. **Confirm** Click the button.
 
 {% hint style="warning" %}
-**주의**
-삭제한 데이터베이스는 다시 복구할 수 없으며 모든 데이터가 완전히 삭제됩니다.
+**Caution**
+
+Even if you stop a DB Service, charges for the provisioned storage still apply. Charges for backup storage, including manual snapshots and automatic backups within the specified retention period, also apply.
 {% endhint %}
-
-
 
 ---
 
-# [**역할 전환**](#switchover) (Switchover)
+# Deleting a DB Service
 
-DR 구성 시 활성화되는 기능입니다.
+1. **Actions** Click the button.
+2. **Delete** Click the button.
+3. Enter the DB Service Name in the input field.
+4. **Confirm** Click the button.
 
+{% hint style="warning" %}
+**Caution**
 
-1. **역할 전환** 버튼을 클릭합니다.
-2. 비밀번호를 입력하고 **확인** 버튼을 클릭합니다.
-3. 새로운 Primary가 될 Standby 데이터베이스를 선택하고 변경 사유를 입력합니다.
-4. **확인** 버튼을 클릭합니다.
-
-{% hint style="info" %}
-**참고**
-드롭다운 목록에는 상태가 `Available`인 Standby 데이터베이스만 표시됩니다.
+A deleted DB Service cannot be recovered, and all data is permanently deleted.
 {% endhint %}
 
+---
 
-\
+# [Switchover](#switchover) (Switchover)
+
+This function is enabled only when DR is configured.
+
+1. **Actions** Click the button.
+2. **Switchover** Click the button.
+3. Enter the password.
+4. **Confirm** Click the button.
+5. Select the Standby database that will become the new Primary.
+6. Enter the reason for the change.
+7. **Confirm** Click the button.
+
+{% hint style="info" %}
+**Note**
+
+The dropdown list displays only Standby databases whose status is `Available`Only Standby databases are displayed.
+{% endhint %}

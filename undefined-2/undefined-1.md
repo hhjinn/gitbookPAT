@@ -1,30 +1,18 @@
-# 계정 생성 요청
+Users without an OwlDB account can **Login** can directly request account creation from the page.
 
-OwlDB 계정이 없는 사용자는 로그인 페이지에서 계정 생성을 직접 요청할 수 있습니다.
+1. **Login** On the **Request Account Creation** click the button.
+2. Enter the following information. ID Name Password Confirm Password Email
+3. **Request** click the button.
+4. In the account creation request modal, **Confirm** click the button.
+5. **Confirm** When you click the button, **Login** you are taken to the page.
 
-# 계정 생성 요청
+## Account Approval
 
-OwlDB 계정이 없는 사용자는 로그인 페이지에서 계정 생성을 직접 요청할 수 있습니다.
+When the administrator approves the account creation, an account approval completion email is sent to the registered email address.
 
-1. 로그인 페이지에서 **계정 생성 요청** 버튼을 클릭합니다.
-2. 아래 정보를 입력합니다.
-   * 아이디
-   * 이름
-   * 비밀번호
-   * 비밀번호 확인
-   * 이메일 주소
-3. **요청** 버튼을 클릭합니다.
-4. 계정 생성 요청이 완료되면 확인 메시지가 표시됩니다.
-5. **확인** 버튼을 클릭하면 **로그인** 페이지로 이동합니다.
+The notification email includes the following information.
 
+- ID
+- OwlDB access URL
 
-## 계정 승인
-
-관리자가 계정 생성을 승인하면 등록한 이메일 주소로 승인 완료 메일이 발송됩니다.
-
-승인 완료 메일에는 다음 정보가 포함됩니다.
-
-* 아이디
-* OwlDB 접속 URL
-
-승인 완료 메일을 받은 후 해당 계정 정보로 로그인할 수 있습니다.
+After receiving the approval email, you can log in with the corresponding account information.

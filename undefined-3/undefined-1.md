@@ -1,140 +1,110 @@
-# 데이터베이스 재시작
-
-{% hint style="info" %}
-**참고**
-이 기능은 OwlDB `v2.0`부터 지원합니다.
-{% endhint %}
-
-다중 클러스터 구성의 데이터베이스인 경우, 노드 단위로 재시작할 수 있습니다. 재시작 진행 상태는 콘솔 화면 우측 상단 \[:1f514:\] 아이콘을 클릭하여 확인할 수 있습니다.
+OwlDB can restart databases in single-instance or multi-instance configurations.
 
 {% hint style="warning" %}
-**주의**
-데이터베이스 재시작 시, 현재 연결된 모든 세션을 종료합니다. 다시 활성화되기까지 몇 분 소요될 수 있습니다.
+**Caution**
+
+When the database is restarted, all currently connected sessions are terminated. It may take a few minutes before it becomes active again.
 {% endhint %}
 
-## 개요
+### Menu Path
 
-OwlDB는 단일 또는 다중 인스턴스 구성의 데이터베이스를 재시작할 수 있습니다. 재시작 진행 상태는 콘솔 화면 우측 상단 \[:1f514:\] 아이콘을 클릭하여 확인할 수 있습니다.
+The database restart feature can be accessed from the following menu paths.
 
-## 화면 구성
+- **OwlDB console screen > Dashboard**
+- **OwlDB console screen > Overview > Instances tab**
+- **OwlDB console screen > Overview > Instance details**
 
-### 메뉴 경로
+### Restart button
 
-데이터베이스 재시작 기능은 다음 메뉴 경로에서 접근할 수 있습니다.
+**Restart** The button is enabled according to the Status of the DB Service. The detailed enablement and selection conditions based on Status and Health are described in the 'Restart Conditions' section below.
 
-* **OwlDB 콘솔 화면 > 대시보드**
-* **OwlDB 콘솔 화면 > Overview > 인스턴스 탭**
-* **OwlDB 콘솔 화면 > Overview > 인스턴스 상세 정보**
+### Restart options 
 
-### 재시작 버튼
+**Restart** When you click the button, the restart options modal appears.
 
-재시작 버튼은 다음 조건에서 활성화됩니다.
+<table data-full-width="true"><thead><tr><th>Item</th><th>Description</th></tr></thead><tbody><tr><td>Title</td><td><code>{instance alias}</code>Do you want to restart?</td></tr><tr><td>Content</td><td><ul><li>Terminate all currently connected sessions</li><li>Typically takes a few minutes; the DB Service is reactivated after completion</li></ul></td></tr><tr><td>Instance to restart</td><td><ul><li>Select the instance to restart from the dropdown</li><li>Selection is disabled in a single-instance configuration</li></ul></td></tr><tr><td>Shutdown mode</td><td>Select the database shutdown mode from the dropdown</td></tr></tbody></table>
 
-| 버튼명 | 활성화 조건 |
-|-----|--------|
-| 재시작 | \* Status: `Running`<br>\* Status가`Degraded` 이면서 Health가 `Limited`인 인스턴스<br>\* Status가`Down` 이면서 `DB Down` / `Nomount`인 상태의 인스턴스 |
+## How the feature works
 
-### 재시작 옵션 모달
+Database restart behaves differently depending on the status of the selected instance.
 
-재시작 버튼을 클릭하면 재시작 옵션 모달이 나타납니다.
+### Restart Conditions
 
-| 항목  | 설명  |
-|-----|-----|
-| 제목  | `{instance alias}`를 재시작하시겠습니까? |
-| 내용  | 현재 연결된 모든 세션이 종료됩니다. 일반적으로 몇 분 정도 소요되며, 완료 후 DB 서비스가 다시 활성화됩니다. |
-| 재시작할 인스턴스 | 재시작할 인스턴스를 드롭다운으로 선택합니다. 단일 인스턴스 구성인 경우 선택이 비활성화됩니다. |
-| 종료 모드 | 데이터베이스 종료 모드를 드롭다운으로 선택합니다. |
+**Restart** The button is enabled when the Status of the DB Service is one of `Running`, `Degraded`, `Down`, `Updating`, `Failover` . However, the list of instances that can be selected in the modal is limited based on the Health status of the instances.
 
-## 기능 동작 방식
+| Status | Selectable instances |
+| --- | --- |
+| `Running` | `Available` All instances in the state |
+| `Degraded` | `Available` or `Limited` Instances in the state |
+| `Down` | `Unavailable` All instances in the state |
+| `Updating` | `Available` Instances in the state |
+| `Failover` | `Available` Instances in the state |
 
-데이터베이스 재시작은 선택한 인스턴스의 상태에 따라 다르게 동작합니다. 재시작 진행 상태는 콘솔 화면 우측 상단 \[:1f514:\] 아이콘을 클릭하여 확인할 수 있습니다.
+In the following Status states, **Restart** the button is disabled.
 
-### 재시작 가능 조건
+- `Provisioning`
+- `Stopped`
+- `Terminating`
+- `Retired` (In this case, on the instance details page it is **Delete** displayed as a button instead.)
 
-재시작 버튼은 DB 서비스의 Status가 `Running`, `Degraded`, `Down`, `Updating`, `Failover` 중 하나일 때 활성화됩니다. 단, 인스턴스의 Health 상태에 따라 모달에서 선택할 수 있는 인스턴스 목록이 제한됩니다.
+### Status change after restart
 
-* `**Running**`: `Available` 상태의 모든 인스턴스를 선택할 수 있습니다.
-* `**Degraded**`: `Available` 또는 `Limited` 상태의 인스턴스만 선택할 수 있습니다. 그 외 상태는 비활성화됩니다.
-* `**Down**`: `Unavailable` 상태의 모든 인스턴스를 선택할 수 있습니다.
-* `**Updating**`: `Available` 상태의 인스턴스만 선택할 수 있습니다. 그 외 상태는 비활성화됩니다.
-* `**Failover**`: `Available` 상태의 인스턴스만 선택할 수 있습니다. 그 외 상태는 비활성화됩니다.
-
-다음 Status 상태에서는 재시작 버튼이 비활성화됩니다.
-
-* `Provisioning`
-* `Stopped`
-* `Terminating`
-* `Retired` (이 경우 인스턴스 상세 정보 페이지에서 \[삭제\] 버튼으로 변경 표시됩니다.)
-
-### 재시작 후 상태 변화
-
-* 선택된 인스턴스가 전체 인스턴스인 경우: DB 서비스 Status가 `Updating - In Progress`로 변경됩니다.
-* 선택된 인스턴스가 일부 인스턴스인 경우: DB 서비스 Status가 `Degraded - In Progress`로 변경됩니다.
+- **When all instances are selected**: Status changes to `Updating - In Progress`[T_54]
+When some instances are selected
+- **일부 인스턴스 선택 시**: Status changes to `Degraded - In Progress`[T_57]
+How to use
 
 ## 사용 방법
 
-데이터베이스를 재시작하는 방법은 다음과 같습니다.
+The steps to restart a database are as follows.
 
-
-1. **OwlDB 콘솔 화면 > 대시보드** 메뉴로 이동합니다.
-2. 재시작할 데이터베이스를 선택한 후, **재시작** 버튼을 클릭합니다.
-   * **Overview > 인스턴스 탭** 또는 **Overview > 인스턴스 상세 정보** 메뉴에서도 재시작할 수 있습니다.
-3. `{instance alias}`를 재시작하시겠습니까? 모달이 나타나면, **재시작할 인스턴스** 드롭다운에서 재시작할 인스턴스를 선택합니다.
-   * 단일 인스턴스 구성인 경우, 해당 드롭다운은 비활성화됩니다.
-4. **종료 모드** 드롭다운에서 데이터베이스 종료 모드를 선택합니다.
+1. **OwlDB console screen > Dashboard** Navigate to the menu.
+2. Select the database to restart.
+3. **Restart** Click the button. **Overview > Instances tab** or **Overview > Instance details** You can also restart from the menu.
+4. `{instance alias}`When the "Do you want to restart?" modal appears, **Instance to restart** Select the instance to restart from the dropdown. In a single-instance configuration, the dropdown is disabled.
+5. **Shutdown mode** Select the database shutdown mode from the dropdown.
 
 {% tabs %}
 {% tab title="Tibero" %}
-
-| 종료 모드 | 설명  | 비고  |
-|-------|-----|-----|
-| ~~NORMAL~~ | 모든 세션의 접속이 끊어질 때까지 기다린 후 종료합니다. | 추후 지원 예정 |
-| ~~POST_TX~~ | 모든 트랜잭션 수행이 끝날 때까지 기다린 후 종료합니다. | 추후 지원 예정 |
-| IMMEDIATE | 현재 수행 중인 모든 작업을 강제로 중단시키며, 진행 중인 모든 트랜잭션을 롤백한 후 종료합니다. | **기본값** |
-| ABORT | Tibero의 프로세스를 강제로 종료합니다. |     |
-| ABNORMAL | Tibero 서버에 접속하지 않고 서버 프로세스를 무조건 강제로 종료합니다. |     |
+| Shutdown Mode | Description | Remarks |
+| --- | --- | --- |
+| IMMEDIATE | Forcibly halts all operations currently in progress, rolls back all in-progress transactions, and then shuts down | **Default** |
+| ABORT | Forcibly Terminating the Tibero Process |   |
+| ABNORMAL | Forcibly Terminating the Server Process Without Connecting to the Tibero Server |   |
 
 {% hint style="warning" %}
-**주의**
-**ABORT** 모드로 종료할 경우, 일부 시스템 리소스(공유 메모리, 세마포어 등)가 해제되지 않아 파손 복구 가능성이 있습니다. 다음과 같은 상황에서만 사용할 것을 권장합니다.
+**Caution**
 
-* Tibero 내부 오류로 인한 정상적인 종료가 불가한 경우
-* H/W에 문제가 발생하여 Tibero를 즉시 종료해야 하는 경우
-* 해킹 등의 비상 상태가 발생하여 Tibero를 즉시 종료해야 하는 경우
-{% endhint %}
-
-{% hint style="warning" %}
-**주의**
-**ABNORMAL** 모드는 OS 강제 종료 시그널로 서버를 즉시 종료하며, 시스템 리소스(공유 메모리, 세마포어 등)가 해제되지 않아 재시작 후 파손 복구 과정이 필요합니다. 다음과 같은 상황에서만 사용할 것을 권장합니다.
-
-* Tibero 내부 오류로 정상적인 종료가 불가한 경우
-* ABNORMAL 외 다른 종료 모드로 종료 명령을 내린 후 지연되고 있는데 강제로 즉시 종료해야 하는 경우
-* H/W나 OS 등 외부적인 요인으로 인하여 문제가 발생하여 ABNORMAL 외 다른 종료 모드의 실행이 실패한 경우
-* 해킹 등 비상 상태가 발생하여 Tibero를 즉시 종료해야 하는 경우
+- **ABORT**: Because some system resources (shared memory, semaphores, etc.) are not released, there is a possibility of corruption recovery, so its use is recommended only in the following situations. When a normal shutdown is not possible due to an internal Tibero error When Tibero must be shut down immediately due to an H/W problem When Tibero must be shut down immediately due to an emergency such as hacking
+- **ABNORMAL**: The server is shut down immediately by an OS forced-termination signal, and because system resources (shared memory, semaphores, etc.) are not released, a corruption recovery process is required after restart, so its use is recommended only in the following situations. When a normal shutdown is not possible due to an internal Tibero error When a shutdown command has been issued in a shutdown mode other than ABNORMAL but is delayed and an immediate forced shutdown is required When a problem has occurred due to external factors such as H/W or OS and the execution of a shutdown mode other than ABNORMAL has failed When Tibero must be shut down immediately due to an emergency such as hacking
 {% endhint %}
 {% endtab %}
 {% tab title="OpenSQL" %}
-| 종료 모드 | 설명 | 비고 | |---|---|---| | FAST | 진행 중인 트랜잭션을 롤백하고, 연결된 세션을 종료한 후 서버를 빠르게 종료합니다. | **기본값** | | ~~SMART~~ | 연결된 세션이 없을 때만 정상적으로 종료합니다. | 추후 지원 예정 | | IMMEDIATE | 모든 작업을 즉시 중단하고 진행 중인 트랜잭션을 강제로 롤백한 후 서버를 종료합니다. | |
+| Shutdown Mode | Description | Remarks |
+| --- | --- | --- |
+| FAST | Rolls back transactions in progress, terminates connected sessions, and then quickly shuts down the server | **Default value** |
+| IMMEDIATE | Immediately halts all operations, forcibly rolls back transactions in progress, and then shuts down the server |   |
 
 {% hint style="warning" %}
-**주의**
-**IMMEDIATE** 모드로 종료할 경우, 일부 시스템 리소스가 제대로 정리되지 않을 수 있어, 자동 복구 모드로 실행됩니다. 다음과 같은 경우에만 사용을 권장합니다.
+**Caution**
 
-* PostgreSQL 내부 오류로 정상 종료가 불가능한 경우
-* FAST 모드 종료가 일정 시간 동안 반응하지 않는 경우
-* H/W 또는 OS 등 외부 요인 문제로 긴급 종료가 필요한 경우
+**IMMEDIATE** When shutting down in this mode, some system resources may not be cleaned up properly, so it runs in automatic recovery mode. Its use is recommended only in the following cases.
+
+- When a normal shutdown is not possible due to an internal OpenSQL error
+- When a FAST mode shutdown does not respond for a certain period of time
+- When an emergency shutdown is required due to an external factor such as H/W or OS
 {% endhint %}
 {% endtab %}
 {% endtabs %}
 
+6. **Restart** Click the button.
 
-5. **재시작** 버튼을 클릭합니다.
+## Checking the Results
 
-## 결과 확인
-
-재시작 작업이 시작되면 콘솔 화면 우측 상단 \[:1f514:\] 아이콘을 클릭하여 진행 상태를 확인할 수 있습니다. 재시작 완료 후 데이터베이스 상태가 정상적으로 변경되었는지 확인합니다.
+Once the restart operation begins, you can check the progress status by clicking the notification icon in the upper-right corner of the console screen. After the restart is complete, verify that the Status of the DB Service has changed to normal.
 
 {% hint style="warning" %}
-**주의**
-재시작 이후 배너의 Status Code가 `Issue: VM Down`인 경우, 이용 중인 CSP 에 따라 \[AWS\] [aws_owldb_support@tmax.co.kr](mailto:aws_owldb_support@tmax.co.kr) 또는 \[Azure\] [azure_owldb_support@tmax.co.kr](mailto:azure_owldb_support@tmax.co.kr) 으로 문의하시기 바랍니다.
+**Caution**
+
+If the Status Code in the banner after the restart is `Issue: VM Down`, depending on the CSP you are using, **AWS** [aws_owldb_support@tibero.com](mailto:aws_owldb_support@tibero.com) or **Azure** [azure_owldb_support@tibero.com](mailto:azure_owldb_support@tibero.com) please contact.
 {% endhint %}

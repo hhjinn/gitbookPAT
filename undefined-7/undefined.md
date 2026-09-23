@@ -1,55 +1,35 @@
-# 내 정보 관리
+**My Page > My Account Management**View and manage the basic profile and permission status of the currently logged-in account.
 
-**마이페이지 > 내 정보 관리**에서 현재 로그인한 계정의 기본 프로필, 권한 상태 및 접속 이력을 조회하고 관리합니다.
+- **Root Account-Specific Information:** `Root` For this account only, linked to the Azure console, **Subscription ID** and **Resource Groups** items are additionally displayed on the screen. (Excluding general Member accounts)
 
-내 정보 조회를 통해 사용자는 본인의 아이디, 이름, 이메일과 같은 기본 정보뿐만 아니라 현재 부여된 역할(Root/Member) 및 소속된 데이터베이스 서비스 권한 목록을 실시간으로 확인할 수 있습니다.
+## View My Account Information
 
-{% hint style="info" %}
-**참고**
-참고
+View the detailed information of your account.
 
-* **Root 계정 특화 정보:**  `Root` 계정에 한해 Azure 콘솔과 연동된 **구독 정보(Subscription ID)** 및 **리소스 그룹(Resource Groups)** 항목이 화면에 추가로 노출됩니다. (일반 Member 계정 제외)
-{% endhint %}
+<table data-full-width="true"><thead><tr><th>Item</th><th>Description</th></tr></thead><tbody><tr><td>ID</td><td>ID used when logging in</td></tr><tr><td>Name</td><td>User display name</td></tr><tr><td>Role</td><td><code>Root</code> or <code>Member</code></td></tr><tr><td>Permission</td><td>Permissions held by the account (DB Service list)</td></tr><tr><td>Email</td><td><ul><li>Email information display</li><li>Used when finding ID and resetting password</li><li>Root : CSP account information</li></ul></td></tr><tr><td>Status</td><td>Account status</td></tr><tr><td>Created Date</td><td>Account creation time</td></tr><tr><td>Last Access Date</td><td>Last login time</td></tr><tr><td>Modified Date</td><td>Last modification time</td></tr><tr><td>Subscription Information</td><td>Within the Azure Resource ID item, <code>Subscription</code> information lookup (Root account only)</td></tr><tr><td>Resource Groups</td><td>Within the Azure Resource ID item, <code>resourceGroups</code> information (Root account only)</td></tr></tbody></table>
 
+## Edit My Account Information
 
-## 내 계정 정보 조회
+Edit the detailed information of your account. ID, Role, and Permission are displayed for information confirmation only and cannot be edited.
 
-본인 계정의 상세 정보를 조회할 수 있습니다.
+| Item | Description | Input Rules |
+| --- | --- | --- |
+| ID | ID used when logging in | Cannot be edited |
+| Role | `Root` or `Member` | Cannot be edited |
+| Permission | Permissions held by the account (DB Service list) | Cannot be edited |
+| Name | User display name | Editable |
+| Current Password* | Previously set password | Input for identity verification |
+| New Password* | Password to change | 8-20 characters, combination of letters, numbers, and special characters |
+| Confirm Password* | Confirm the password to change | Enter the same as the new password |
+| Email | Email information | Editable |
 
-| 항목  | 설명  |
-|-----|-----|
-| 아이디 | 로그인 시 사용하는 ID |
-| 이름  | 사용자 표시명 |
-| 역할  | `Root` 또는 `Member` |
-| 권한  | 해당 계정이 가진 권한 (DB 서비스 목록) |
-| 이메일 | 이메일 정보<br>• 아이디 찾기 시 사용* `Root` : CSP 계정 정보 |
-| 상태  | 계정 상태 |
-| 생성일 | 계정 생성 시각 |
-| 마지막 접속일 | 최종 로그인 시각 |
-| 변경일 | 마지막 수정 시각 |
-| 구독 정보 | Azure 리소스 아이디 항목 내 Subscription 정보를 조회 |
-| 리소스 그룹 | Azure 리소스 아이디 항목 내 resourceGroups 정보 |
+*표기는 필수 입력 항목을 의미합니다.
 
-
-\
-## 내 계정 정보 수정
-
-본인 계정의 상세 정보를 수정할 수 있습니다.
-
-| 항목  | 설명  |
-|-----|-----|
-| 아이디 | 로그인 시 사용하는 ID (정보 확인용) |
-| 이름  | 사용자 표시명 |
-| 역할  | `Root` 또는 `Member` (정보 확인용) |
-| 권한  | 해당 계정이 가진 권한 (DB 서비스 목록) (정보 확인용) |
-| 현재 비밀번호 | 기존에 설정된 비밀번호 |
-| 변경 비밀번호 | 변경할 비밀번호 |
-| 비밀번호 확인 | 변경할 비밀번호 확인 |
-| 이메일 | 이메일 정보<br>• 아이디 찾기 시 사용* `Root` : CSP 계정 정보 |
-
+The * mark indicates required input items.
 
 {% hint style="info" %}
-**참고**
-* 계정 보안을 유지하기 위해 주기적인 비밀번호 변경을 권장합니다.
-* 새로 변경할 비밀번호는 이전에 사용하던 비밀번호와 중복되어 설정할 수 없습니다.
+**Note**
+
+- Periodic password changes are recommended to maintain account security.
+- The new password cannot be set to be the same as a previously used password.
 {% endhint %}

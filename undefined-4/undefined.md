@@ -1,178 +1,171 @@
-# 파라미터
+**Management > Parameters > Settings** On this page, you can view and edit the parameter values required for database operation.
 
-**관리 > 파라미터 > 설정** 페이지에서 데이터베이스 운영에 필요한 파라미터 값을 조회하고 수정합니다.
+Each parameter displays its name, data type, default value, current value, Config value, and whether it is a dynamic parameter. Dynamic parameters can be applied immediately without restarting the database, while static parameters require a restart after modification. Tibero also supports temporary application, where changes take effect without a restart but are reverted upon restart.
 
-각 파라미터는 이름, 데이터 형식, 기본값, 현재값, Config값, 동적 파라미터 여부를 표시합니다. 동적 파라미터는 데이터베이스 재시작 없이 즉시 적용할 수 있으며, 정적 파라미터는 수정 후 재시작이 필요합니다. 재시작 없이 변경 내용을 임시 반영하는 임시 적용도 지원합니다.
-
-DB 엔진에 따라 조회·수정할 수 있는 파라미터 범위가 다릅니다. Tibero는 DB 파라미터만 제공하며, OpenSQL은 DB 파라미터와 OpenHA 파라미터를 탭으로 구분하여 제공합니다.
+The range of parameters that can be viewed and modified varies depending on the DB engine. Tibero provides only DB parameters, while OpenSQL provides DB parameters and OpenHA parameters, separated into tabs.
 
 {% hint style="warning" %}
-**주의**
-Standby(Recovery) 인스턴스가 선택된 상태에서는 파라미터를 수정할 수 없습니다. 수정하려면 Primary 인스턴스를 선택해야 합니다.
+**Caution**
+
+Parameters cannot be modified while a Standby (Recovery) instance is selected. To modify them, you must select the Primary instance.
 {% endhint %}
 
-# 파라미터 조회
+# Viewing Parameters
 
-**관리 > 파라미터 > 설정** 메뉴에 진입하면 파라미터 목록이 나타납니다.
+**Management > Parameters > Settings** When you enter the menu, the parameter list appears.
 
-Tibero는 DB 파라미터 목록을 바로 표시합니다. OpenSQL(Azure)은 **DB** 탭과 **OpenHA** 탭을 전환하며 각각의 파라미터를 조회합니다.
+Tibero displays the DB parameter list directly. OpenSQL (Azure) **DB** tab and **OpenHA** By switching tabs, you can view the parameters for each.
 
+1. **Management > Parameters > Settings** Click the menu.
+2. If you are using OpenSQL, **DB** or **OpenHA** Click the tab to select the type of parameter to view.
+3. Apply a search or filter to find the parameter you want. You can filter by whether a parameter is dynamic. You can search directly by name and parameter value to find them.
 
-1. **관리 > 파라미터 > 설정** 메뉴를 클릭합니다.
-2. OpenSQL을 사용하는 경우, **DB** 또는 **OpenHA** 탭을 클릭해 조회할 파라미터 유형을 선택합니다.
-3. 검색 또는 필터를 적용해 원하는 파라미터를 확인합니다.
-   * 동적 파라미터 여부를 필터링 할 수 있습니다.
-   * 이름 및 파라미터 값을 직접 검색하여 확인할 수 있습니다.
-
-| 항목  | 설명  |
-|-----|-----|
-| 이름  | 파라미터 이름 |
-| 데이터 형식 | 파라미터의 데이터 타입 |
-| 기본값 | 사용자가 별도로 설정하지 않았을 때 적용되는 값 |
-| 현재값 | 현재 DB에 적용된 값 |
-| Config 값 | DB 재시작 시 반영될 값 |
-| 동적 파라미터 | **예**: 재시작 없이 즉시 반영 가능 / **아니요 (재시작 필요)**: 반영하려면 DB 재시작 필요 |
+<table data-full-width="true"><thead><tr><th>Item</th><th>Description</th></tr></thead><tbody><tr><td>Name</td><td>Parameter name</td></tr><tr><td>Data type</td><td>The data type of the parameter</td></tr><tr><td>Default value</td><td>The value applied when the user has not set it separately</td></tr><tr><td>Current value</td><td>The value currently applied to the DB</td></tr><tr><td>Config value</td><td>The value that will take effect when the DB is restarted</td></tr><tr><td>Dynamic parameter</td><td><ul><li><strong>Yes</strong>: Can be applied immediately without a restart</li><li><strong>No (restart required)</strong>: A DB restart is required to apply it</li></ul></td></tr></tbody></table>
 
 {% hint style="info" %}
-**참고**
-인스턴스 상태가 `Unavailable`인 경우, 현재값은 표시되지 않으며 Config 값이 대신 표시됩니다.
+**Note**
+
+- When the instance status is `Unavailable`, the current value is not displayed and the Config value is displayed instead.
+- OpenSQL **OpenHA** On the tab, `pg_hba`and `slot` parameters cannot be viewed or modified. These parameters are **Connection Information Management** They are configured only from the menu.
+{% endhint %}
+
+# Modifying Parameters
+
+In the parameter list, **Edit** When you click the button, it switches to edit mode, where you can directly edit parameter values in the list.
+
+{% hint style="warning" %}
+**Caution**
+
+- If you leave the screen without saving in edit mode, your changes will not be saved.
+- A banner indicating that editing is in progress is displayed at the top of the screen.
+{% endhint %}
+
+{% hint style="info" %}
+**Note**
+
+When you enter edit mode in OpenSQL, **Edit** The tab that was selected at the time the button was clicked (**DB** or **OpenHA**) is the only one switched to an editable state. While editing, you cannot move to another tab; move only after saving or canceling.
+{% endhint %}
+
+1. **Management > Parameters > Settings** Click the menu.
+2. If you are using OpenSQL, **DB** or **OpenHA** Click the tab to select the type.
+3. **Edit** Click the button.
+4. Modify the parameter values.
+5. To revert a specific parameter to its original value, restore it. Select the parameter. **Restore default value** or **Restore current value** Click the button.
+6. **Save** Click the button.
+7. Review the preview of the modifications.
+8. **Apply** or **Temporary apply**Click to save the changes.
+
+{% hint style="info" %}
+**Note**
+
+Parameter names highlighted in blue are the values currently being modified.
+{% endhint %}
+
+## Modifiable targets by instance state
+
+<table data-full-width="true"><thead><tr><th>Modification target</th><th>Modifiable conditions</th></tr></thead><tbody><tr><td>Current value</td><td>When the instance state is normal (<code>Available</code> or <code>Limited</code>)</td></tr><tr><td>Config value</td><td><ul><li>Instance state <code>Unavailable</code>When (DB Down/Nomount)</li><li>Parameters without a Config value cannot be modified</li></ul></td></tr></tbody></table>
+
+If you enter modification mode while the instance is down and save without entering a value, it is processed with the reference value (Config value takes precedence; if absent, the default value).
+
+{% hint style="info" %}
+**Note**
+
+Global parameters cannot be modified in a Tibero multi-node configuration.
+{% endhint %}
+
+## Save method by modified parameter type
+
+<table data-full-width="true"><thead><tr><th>Modified parameter type</th><th>Save method</th></tr></thead><tbody><tr><td>Mixed dynamic + static parameters</td><td><ul><li><strong>Apply</strong>: Changes are reflected after the DB restarts (connection sessions are terminated; takes several minutes)</li></ul></td></tr><tr><td>Dynamic parameters only</td><td><ul><li><strong>Apply</strong>: Reflected immediately in the current value without a restart</li><li><strong>Temporary apply</strong>: Reflected in the current value without a restart; restored to the existing Config value when the DB restarts</li></ul></td></tr></tbody></table>
+
+{% hint style="info" %}
+**Note**
+
+Temporary apply is supported only by the Tibero engine. Since OpenSQL does not support temporary apply, only **Apply**can be used when modifying parameters.
 {% endhint %}
 
 {% hint style="warning" %}
-**주의**
-Standby(Recovery) 인스턴스를 선택한 경우 파라미터 수정이 제한됩니다. 파라미터를 수정하려면 Primary 인스턴스를 선택하세요.
+**Caution**
+
+OpenHA parameters are not validated when modified. Even if you enter an invalid value, it is saved without error, so check the OpenHA log after modification. `[ERROR]` The log also includes a stack trace.
+
+- `[WARNING]: Violated the rule "loop_wait + 2*retry_timeout <= ttl"` — The value combination violates a constraint, so Patroni automatically adjusts the value. Check the adjusted value and reset it to the intended value.
+- `[ERROR]: Exception when setting dynamic_configuration` — `ttl` A value that cannot be converted was entered for an item that must be a number. Check the input value and reset it.
+- `[ERROR]: Unexpected exception raised, please report it as a BUG` — `maximum_lag_on_failover`A value that is not filtered out at save time caused an exception at actual runtime. Check the value and reset it.
 {% endhint %}
+
+## Load template
+
+In Tibero parameter modification mode, load a previously saved parameter template and apply it to the modification list in bulk.
 
 {% hint style="info" %}
-**참고**
-OpenSQL **OpenHA** 탭에서 `pg_hba`와 `slot` 파라미터는 조회하거나 수정할 수 없습니다. 해당 파라미터는 **연결 정보 관리** 메뉴에서만 설정합니다.
+**Note**
+
+Load template is supported only by the Tibero engine. In OpenSQL, the **Load** button is not displayed.
 {% endhint %}
 
-
-## 파라미터 수정
-
-파라미터 목록에서 **수정** 버튼을 클릭하면 수정 모드로 전환되며, 목록에서 파라미터 값을 직접 편집할 수 있습니다.
-
-{% hint style="warning" %}
-**주의**
-수정 모드에서 저장하지 않고 화면을 벗어나면 변경 사항이 저장되지 않습니다. 수정 중임을 알리는 배너가 화면 상단에 표시됩니다.
-{% endhint %}
-
-
-1. **관리 > 파라미터 > 설정 메뉴**를 클릭합니다.
-2. OpenSQL을 사용하는 경우, **DB** 또는 **OpenHA** 탭을 클릭해 조회할 파라미터 유형을 선택합니다.
-   * OpenSQL에서 수정 모드에 진입하면 **수정** 버튼을 클릭할 당시 선택된 탭(**DB** 또는 **OpenHA**)만 수정 가능한 상태로 전환됩니다. 수정 중에는 다른 탭으로 이동할 수 없으며, 저장하거나 취소한 후 이동합니다.
-3. **수정** 버튼을 클릭합니다.
-4. 파라미터 값을 수정합니다.
-   * 특정 파라미터를 원래 값으로 되돌리려면 해당 파라미터를 선택한 후 **기본값 복원** 또는 **현재값 복원** 버튼을 클릭합니다.
-
-   {% hint style="info" %}
-**참고**
-파란색으로 강조된 파라미터 이름은 현재 수정 중인 값입니다.
-{% endhint %}
-5. **저장** 버튼을 클릭하고 수정 사항 미리보기를 확인합니다.
-6. **적용** 또는 **임시 적용**을 클릭해 변경 사항을 저장합니다.
-
-
-### 인스턴스 상태별 수정 가능 대상
-
-| 수정 대상 | 수정 가능 조건 |
-|-------|----------|
-| 현재값   | 인스턴스 상태가 정상(`Available` 또는 `Limited`)일 때 |
-| Config 값 | 인스턴스 상태가 `Unavailable`(DB Down/Nomount)일 때. Config 값이 없는 파라미터는 수정 불가 |
-
-인스턴스가 다운된 상태에서 수정 모드에 진입한 후 값을 입력하지 않고 저장하면 기준값(Config 값 우선, 없으면 기본값)으로 처리됩니다.
-
-{% hint style="info" %}
-**참고**
-Tibero 다중 노드 구성에서 글로벌 파라미터는 수정할 수 없습니다.
-{% endhint %}
-
-### 수정한 파라미터 유형별 저장 방식
-
-| 수정한 파라미터 유형 | 저장 방식 |
-|-------------|-------|
-| 동적 + 정적 파라미터 혼합 | **적용** : DB를 재시작하여 변경 사항을 반영합니다. 재시작 시 현재 연결된 모든 세션이 종료되며 일반적으로 몇 분이 소요됩니다. |
-| 동적 파라미터만    | * **적용** : 재시작 없이 현재값에 즉시 반영합니다. <br> * **임시 적용** : 재시작 없이 현재값에 반영하되, DB 재시작 시 기존 Config 값으로 복원됩니다. |
-
-
-## 템플릿 불러오기
-
-Tibero 파라미터 수정 모드에서 미리 저장된 파라미터 템플릿을 불러와 수정 목록에 일괄 반영합니다.
-
-{% hint style="info" %}
-**참고**
-템플릿 불러오기는 Tibero 엔진에서만 지원합니다. OpenSQL에서는 **불러오기** 버튼이 표시되지 않습니다.
-{% endhint %}
-
-
-
-1. 파라미터 수정 모드에서 **불러오기** 버튼을 클릭합니다.
-2. 템플릿 목록에서 적용할 템플릿을 선택합니다.
-3. 미리보기를 확인한 후 **적용** 버튼을 클릭합니다.
-4. 수정 목록에 템플릿이 반영되면 **저장**을 클릭해 파라미터를 적용합니다.
-
+1. In parameter modification mode, **Load** click the button.
+2. Select the template to apply from the template list.
+3. Review the preview.
+4. **Apply** Click the button.
+5. Once the template is reflected in the modification list, **Save**click to apply the parameters.
 
 ---
 
-# 파라미터 템플릿
+# Parameter template
+
+**Management > Parameters > Templates** On the page, view and apply parameter templates. You can load a predefined template to set multiple parameters at once.
 
 {% hint style="info" %}
-**참고**
-파라미터 템플릿은 Tibero 엔진에서만 사용할 수 있습니다. OpenSQL 엔진을 사용하는 경우 파라미터 템플릿 메뉴가 표시되지 않습니다.
+**Note**
+
+Parameter templates can only be used with the Tibero engine. If you are using the OpenSQL engine, the parameter template menu is not displayed.
 {% endhint %}
 
-
-1. **관리 > 파라미터 > 템플릿**으로 이동합니다.
-2. 파라미터 템플릿 목록을 확인합니다.
-3. 템플릿 이름을 클릭하면 드로어에서 해당 템플릿의 파라미터 상세 내용을 확인합니다.
-
-| 템플릿 | 설명  |
-|-----|-----|
-| OLAP | 대규모 데이터 분석과 복잡한 쿼리에 최적화된 템플릿 |
-| OLTP | 빠른 처리 속도와 높은 트랜잭션 빈도를 처리하기 위해 설계된 템플릿 |
+| Template | Description |
+| --- | --- |
+| OLAP | A template optimized for large-scale data analysis and complex queries |
+| OLTP | A template designed to handle fast processing speeds and high transaction frequency |
 
 {% hint style="info" %}
-**참고**
-기본 제공 템플릿(OLAP, OLTP)은 수정하거나 삭제할 수 없습니다.
+**Note**
+
+The built-in templates (OLAP, OLTP) cannot be modified or deleted.
 {% endhint %}
 
-
-4. **적용** 버튼을 클릭합니다.
-5. 적용 확인 모달에서 변경될 파라미터 목록(이름 / 현재값 / 수정값)을 검토합니다.
-6. **적용** 버튼을 클릭합니다.
-
+1. **Management > Parameters > Templates**Navigate to.
+2. Review the parameter template list.
+3. Click a template name to view the detailed parameters of that template in the drawer.
+4. **Apply** Click the button.
+5. In the apply confirmation modal, review the list of parameters to be changed (Name / Current Value / Modified Value).
+6. **Apply** Click the button.
 
 ---
 
-# 파라미터 수정 내역
+# Parameter Modification History
 
-파라미터 수정내역 페이지에서는 데이터베이스 파라미터의 변경 이력을 조회합니다.
+**Management > Parameters > Modification History** On this page, you can view the change history of database parameters.
 
-수정 요청 단위로 그룹화된 이력 목록을 확인하고, 각 수정 건을 클릭해 변경된 파라미터의 이전값·수정값·동적 여부·적용 방식을 상세히 조회합니다. 수정 이력에 설명을 추가하거나 편집할 수 있어, 변경 사유를 기록으로 남길 수 있습니다.
+Review the history list grouped by modification request, and click each modification to view details of the changed parameters, including the previous value, modified value, whether it is dynamic, and the application method. You can add or edit a description for a modification history, allowing you to keep a record of the reason for the change.
 
+1. **Management > Parameters > Modification History**Click.
+2. Select the desired period from the query period dropdown.
+3. Check the parameter modification history in the table.
 
-1. **관리 > 파라미터 > 수정내역**을 클릭합니다.
-2. 조회 기간 드롭다운에서 원하는 기간을 선택합니다.
-3. 테이블에서 파라미터 수정 내역을 확인합니다.
+## View Modification History Details
 
-## 수정 내역 상세 확인
+1. The one to check in the modification history table **Modification Date**Click.
+2. Check the list of changed parameters in the drawer that appears on the right side of the screen.
+3. If necessary, find a specific parameter using the table filter or search.
 
-
-1. 수정 내역 테이블에서 확인할 **수정일**을 클릭합니다. 
-2. 화면 오른쪽에 나타나는 드로어에서 변경된 파라미터 목록을 확인합니다.
-3. 필요한 경우 테이블 필터 또는 검색으로 특정 파라미터를 찾습니다.
-
-
-## 수정 내역 설명 수정
+## Edit Modification History Description
 
 {% hint style="warning" %}
-**주의**
-수정 모드 진입 후 **저장** 버튼을 클릭하지 않으면 변경사항이 저장되지 않습니다.
+**Caution**
+
+After entering edit mode **Save** If you do not click the button, the changes will not be saved.
 {% endhint %}
 
-
-1. 수정 내역 테이블에서 **수정일**을 클릭해 드로어를 엽니다.
-2. 드로어 상단의 **수정** 버튼을 클릭합니다.
-3. 설명 입력 필드에 변경 사유 또는 설명을 입력합니다.
-4. **저장** 버튼을 클릭합니다.
+1. In the modification history table **Modification Date**Click to open the drawer.
+2. At the top of the drawer **Edit** Click the button.
+3. Enter the reason or description for the change in the description input field.
+4. **Save** Click the button.

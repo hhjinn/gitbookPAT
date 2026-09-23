@@ -1,13 +1,19 @@
-# 복구 내역
+**Management > Backup/Restore > Restore History** On this page, you can view and manage the history of database restore operations performed in the past.
 
-**관리 > 백업/복구 > 복구 내역** 페이지에서 과거에 수행된 데이터베이스 복구 작업의 이력을 조회하고 관리합니다.
+The restore history provides detailed information such as the start and end times of restore operations attempted by the user and the progress status (success/failure). Restore types are classified into Full Restore and Point-in-Time Recovery (PITR). It supports queries by period, ranging from the most recent 1 day up to a maximum of 3 months as well as direct input, and provides type/status filters and name search functionality.
 
-복구 내역은 사용자가 시도한 복구 작업의 시작 및 종료 일시, 진행 상태(성공/실패) 등의 상세 정보를 제공합니다. 복구 유형은 전체 복구(Full Restore), 특정 시점 복구(PITR)로 구분됩니다. 효율적인 이력 관리를 위해 최근 1일부터 최대 3개월 및 직접 입력을 통한 기간별 조회가 가능하며, 유형·상태 필터와 이름 검색 기능을 지원합니다.
+1. **OwlDB console screen > Management > Backup/Restore > Restore History** Navigate to the menu.
+2. **DB Alias** Click the dropdown button to select the database whose restore history you want to view.
+3. View the restore history.
+4. Filter by query period, restore type, and status.
+5. Search by name, ID, creation date, and expiration date.
 
+The filter and search items are as follows.
 
+<table data-full-width="true"><thead><tr><th>Item</th><th>Description</th></tr></thead><tbody><tr><td>Query Period</td><td><ul><li>Most recent 1 day ~ up to 3 months</li><li>Directly entered period</li></ul></td></tr><tr><td>Restore Type</td><td><ul><li>Full Restore</li><li>Point-in-Time Recovery (PITR)</li></ul></td></tr><tr><td>Status</td><td>Success/Failure</td></tr><tr><td>Name, ID, creation date, expiration date</td><td>Direct input search</td></tr></tbody></table>
 
-1. **OwlDB 콘솔 화면 > 관리 > 백업/복구 > 복구 내역** 메뉴로 이동합니다.
-2. **DB Alias** 드롭다운 버튼을 클릭하여 복구 내역을 확인할 데이터베이스를 선택합니다.
-3. 백업 복구 내역을 조회합니다. 조회 기간 및 복구 유형, 상태를 필터링할 수 있습니다. 이름 및 ID, 생성일, 만료일을 직접 검색하여 복구 내역을 확인할 수 있습니다.
+{% hint style="info" %}
+**Note**
 
-   \
+If the restore fails, please select an earlier point in time than the one previously selected and try again. If the restore still does not succeed after multiple attempts, please request technical support.
+{% endhint %}

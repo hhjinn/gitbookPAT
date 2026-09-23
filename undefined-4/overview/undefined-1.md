@@ -1,147 +1,159 @@
-# 스펙 변경
+Changes the configuration of an operational Cloud DB service, such as the instance type, DR configuration, and storage.
 
-운영 중인 Cloud DB 서비스의 인스턴스 유형, DR 구성, 스토리지 등의 구성을 변경합니다.
+Spec changes start from Management > Overview and proceed through five steps: Engine Options → DR Configuration → AZ Configuration → Instance Configuration → Review Configuration Details. In each step, you review the current settings and modify the necessary items, and in the final step, you compare the configuration and estimated cost before and after the change and request that it be applied. Depending on the changes, a restart of the DB service may be required.
 
-스펙 변경은 관리 > Overview에서 시작하며, 엔진 옵션 → DR 구성 → AZ 구성 → 인스턴스 구성 → 구성 정보 확인의 5단계로 진행됩니다. 각 단계에서 현재 설정을 확인하고 필요한 항목을 수정한 뒤, 마지막 단계에서 변경 전후 구성과 예상 금액을 비교하고 적용을 요청합니다. 변경 내용에 따라 DB 서비스 재시작이 필요할 수 있습니다.
-
-변경 가능한 항목의 범위는 DB 엔진과 라이선스 유형(LI/BYOL)에 따라 다릅니다. LI 라이선스는 인스턴스 유형, DR 구성, 가용 영역, 스토리지 설정을 포함한 대부분의 항목을 변경할 수 있으며, BYOL 라이선스는 볼륨 크기, IOPS, MBps 등 스토리지 항목으로 변경 범위가 제한됩니다.
+The range of items that can be changed varies depending on the DB engine and license type (LI/BYOL). The LI license allows you to change most items, including the instance type, DR configuration, availability zone, and storage settings, while the BYOL license limits the scope of changes to storage items such as volume size, IOPS, and MBps.
 
 {% hint style="info" %}
-**참고**
-Azure 환경에서는 현재 BYOL 라이선스 모델만 지원합니다.
+**Note**
+
+In the Azure environment, only the BYOL license model is currently supported.
 {% endhint %}
 
-# 스펙 변경
-
-
-1. **관리 > Overview**로 이동합니다.
-2. **스펙 변경**을 클릭합니다.
-3. **엔진 옵션**, **DR 구성**, **AZ 구성**, **인스턴스 구성** 탭을 이동하며 변경할 항목을 설정합니다.
-4. **구성 정보 확인** 탭으로 이동하여 변경 전후 구성과 예상 금액을 확인합니다.
-5. **완료**를 클릭합니다.
-6. 확인 모달에서 내용을 검토하고 **확인**을 클릭합니다.
+1. **Management > Overview**Navigate to.
+2. **Change Spec**Click.
+3. **Engine Options**, **DR Configuration**, **AZ Configuration**, **Instance Configuration** Navigate to each tab.
+4. Set the items to be changed.
+5. **Review Configuration Details** Navigate to the tab.
+6. Review the configuration and estimated cost before and after the change.
+7. **Complete**Click.
+8. Review the details in the confirmation modal.
+9. **Confirm**Click.
 
 {% hint style="info" %}
-**참고**
-* 1\~4단계 탭은 순서와 관계없이 자유롭게 이동할 수 있습니다.
-* **구성 정보 확인** 탭은 1\~4단계 탭 전체에서 유효성 검사 오류가 없는 경우에만 진입할 수 있습니다.
-* 화면 오른쪽의 **구성 정보** 플로팅 박스에서 각 탭에 입력한 내용을 요약 확인할 수 있으며, 오류 항목은 빨간색 텍스트로 표시됩니다.
+**Note**
+
+- Tabs for steps 1 through 4 can be freely navigated in any order.
+- **Review Configuration Details** The tab can only be entered when there are no validation errors across all of the step 1 through 4 tabs.
+- On the right side of the screen, **Configuration Details** In the floating box, you can review a summary of the content entered in each tab, and error items are displayed in red text.
 {% endhint %}
 
-### 변경 가능 항목
+## Changeable Items
 
-엔진 유형과 라이선스 옵션에 따라 변경할 수 있는 항목이 다릅니다.
+The items that can be changed vary depending on the engine type and license option.
 
-| 항목  | Tibero LI | Tibero BYOL | OpenSQL LI | OpenSQL BYOL |
-|-----|:---------:|:-----------:|:----------:|:------------:|
-| Topology | —         | —           | ✓ (Single ↔ HA) | —            |
-| Edition | ✓         | —           | ✓          | —            |
-| 인스턴스 유형 (Scale Up/Down) | ✓         | —           | ✓          | —            |
-| TAC 노드 수 (Scale In/Out) | ✓         | —           | 해당 없음      | 해당 없음        |
-| Replica Scale In/Out | 해당 없음     | 해당 없음       | ✓          | —            |
-| Enable DR | ✓         | —           | 자동 결정      | 자동 결정        |
-| Failover Automation Level | ✓         | ✓ (초기 DR 사용 시) | ✓          | ✓ (초기 HA 구성 시) |
-| Volume Size | ✓         | ✓           | ✓          | ✓            |
-| Volume IOPS / MBps | ✓         | ✓           | ✓          | ✓            |
+| Item | Tibero LI | Tibero BYOL | OpenSQL LI | OpenSQL BYOL |
+| --- | --- | --- | --- | --- |
+| Topology | — | — | ✓¹ | — |
+| Edition | ✓ | — | ✓ | — |
+| Instance Type (Scale Up/Down) | ✓ | — | ✓ | — |
+| TAC Node Count (Scale In/Out) | ✓ | — | — | — |
+| Replica Scale In/Out | — | — | ✓ | — |
+| Enable DR | ✓ | — | ✓² | ✓² |
+| Failover Automation Level | ✓ | ✓³ | ✓ | ✓⁴ |
+| Volume Size | ✓ | ✓ | ✓ | ✓ |
+| Volume IOPS / MBps | ✓ | ✓ | ✓ | ✓ |
+
+- ¹ In OpenSQL LI, switching between Single ↔ HA is possible
+- ² OpenSQL is determined automatically based on Topology (HA → DR enabled, Single → DR disabled)
+- ³ Can be changed when initially configuring DR usage
+- ⁴ Can be changed during initial HA configuration
 
 {% hint style="info" %}
-**참고**
-* Volume Size는 현재 설정값보다 큰 값으로만 변경할 수 있습니다.
-* SE(Standard Edition) 선택 시 인스턴스 유형은 최대 8vCPU로 제한됩니다.
-* OpenSQL은 AWS 환경에서 지원되지 않습니다.
+**Note**
+
+- Volume Size can only be changed to a value larger than the current setting.
+- When SE (Standard Edition) is selected, the instance type is limited to a maximum of 8 vCPU.
+- OpenSQL is not supported in the AWS environment.
 {% endhint %}
 
-## 엔진 옵션
+## Engine Options
 
-DB Service Name, DB Engine Type, License Option, Node Count는 현재 설정값이 표시되며 변경할 수 없습니다.
+DB Service Name, DB Engine Type, License Option, and Node Count display the current settings and cannot be changed.
 
-변경 가능한 항목은 다음과 같습니다.
+The changeable items are as follows.
 
-| 항목  | 설명  |
-|-----|-----|
-| Edition | - Standard Edition(SE)과 Enterprise Edition(EE) 중 선택합니다.<br>- SE는 최대 8vCPU까지 사용 가능하며, EE는 vCPU 제한이 없습니다.<br>- TAC 또는 HA Topology에서는 EE로 자동 적용됩니다.<br>- LI 라이선스에서만 변경 가능합니다. |
-| Topology | OpenSQL LI에서만 Single과 HA 간 변경 가능합니다. |
+- **Edition**: Select between Standard Edition (SE) and Enterprise Edition (EE). SE supports up to 8 vCPU, while EE has no vCPU limit. In TAC or HA Topology, EE is applied automatically, and it can only be changed with an LI license.
+- **Topology**: Switching between Single ↔ HA is only possible in OpenSQL LI.
 
 ### TAC Scale In/Out
 
-LI 라이선스 모델의 Tibero TAC 구성은 인스턴스 Scale In/Out 테이블에서 TAC 노드를 직접 추가하거나 삭제하여 노드 수를 조정할 수 있습니다. 최솟값은 2개, 최댓값은 4개입니다.
-{% hint style="warning" %}
-**주의**
-운영 중인 TAC 인스턴스를 삭제(Scale In)하면 해당 인스턴스에 기록된 모든 데이터가 삭제됩니다.
-{% endhint %}
-
-## DR 구성
-
-| 항목  | 설명  |
-|-----|-----|
-| Enable DR | DR 사용 여부를 선택합니다. Tibero LI에서만 직접 변경할 수 있습니다. OpenSQL의 DR 구성은 Topology에 따라 자동으로 결정됩니다(HA → DR 사용, Single → DR 미사용). BYOL은 변경할 수 없습니다. |
-| Failover Automation Level | DR 사용 시 장애 조치 자동화 레벨을 선택합니다. DR 미사용 시에는 표시되지 않습니다. |
-
-### Failover Automation Level 옵션
-
-| 단계  | 이름  | 설명  |
-|-----|-----|-----|
-| 0단계 | 수동 (Manual) | 장애 발생 시 사용자가 직접 Standby/Replica를 Primary/Leader로 승격합니다. |
-| 1단계 | 자동 장애 조치 (Auto Failover) | 시스템이 자동으로 전환합니다. 복구 및 리소스 최적화는 수동으로 진행합니다. |
-| 2단계 | 자동 구성 복구 (Auto Rebuild) | 장애 조치 후 새로운 Standby/Replica를 자동 생성하여 구성을 유지합니다. 데이터 복구는 수동으로 진행합니다. |
-| 3단계 | 완전 자동화 (Full Automation) | 장애 조치부터 복구, 미사용 자원 정리까지 모든 과정을 자동으로 처리합니다. 복구 속도를 최우선으로 하므로 최근 일부 데이터가 유실될 수 있습니다. |
+In the Tibero TAC configuration of the LI license model, you can adjust the number of nodes by directly adding or deleting TAC nodes in the instance Scale In/Out table. The minimum is 2 and the maximum is 4.
 
 {% hint style="info" %}
-**참고**
-선택 가능한 단계는 라이선스 유형에 따라 다릅니다.
+**Note**
 
-* **Tibero LI**: 0\~3단계 모두 선택 가능
-* **Tibero BYOL**: 0단계, 2단계, 3단계 선택 가능
-* **OpenSQL**: 0단계, 3단계 선택 가능
+TAC node Scale In/Out is provided only by the Tibero engine. OpenSQL adjusts nodes through Replica Scale In/Out in the DR configuration stage.
+{% endhint %}
+
+{% hint style="warning" %}
+**Caution**
+
+If you delete (Scale In) an operating TAC instance, all data recorded on that instance will be deleted.
+{% endhint %}
+
+## DR Configuration
+
+- **Enable DR**: Select whether to use DR. It can be changed directly only in Tibero LI, while OpenSQL is determined automatically based on Topology (HA → DR enabled, Single → DR disabled). BYOL cannot be changed.
+- **Failover Automation Level**: Select the failover automation level when DR is used. It is not displayed when DR is not used.
+
+### Failover Automation Level Options
+
+<table data-full-width="true"><thead><tr><th>Level</th><th>Name</th><th>Description</th></tr></thead><tbody><tr><td>Level 0</td><td>Manual</td><td>When a failure occurs, the user directly promotes the Standby/Replica to Primary/Leader</td></tr><tr><td>Level 1</td><td>Auto Failover</td><td><ul><li>The system switches over automatically</li><li>Recovery and resource optimization are performed manually</li></ul></td></tr><tr><td>Level 2</td><td>Auto Rebuild</td><td><ul><li>After failover, a new Standby/Replica is automatically created to maintain the configuration</li><li>Data recovery is performed manually</li></ul></td></tr><tr><td>Level 3</td><td>Full Automation</td><td>The entire process from failover to recovery and cleanup of unused resources is handled automatically</td></tr></tbody></table>
+
+{% hint style="warning" %}
+**Caution**
+
+Level 3 (Full Automation) prioritizes recovery speed, so some recent data may be lost.
+{% endhint %}
+
+{% hint style="info" %}
+**Note**
+
+The selectable levels vary depending on the license type.
+
+- **Tibero LI**: All levels 0–3 are selectable
+- **Tibero BYOL**: Levels 0, 2, and 3 are selectable
+- **OpenSQL**: Levels 0 and 3 are selectable
 {% endhint %}
 
 ### OpenSQL HA Scale In/Out
 
-LI 라이선스 모델의 OpenSQL은 Replica Scale In/Out 테이블에서 Replica 노드를 추가하거나 삭제하여 구성을 조정합니다. Replica Node #2 이상만 삭제할 수 있습니다.
-
-{% hint style="warning" %}
-**주의**
-* DR을 미사용으로 변경한 후 스펙 변경을 완료하면 기존 Standby/Replica 인스턴스의 모든 데이터가 삭제됩니다.
-* Failover로 인해 Retired 상태의 인스턴스가 존재하는 경우, DR을 미사용으로 변경하면 해당 인스턴스가 자동으로 삭제됩니다. 해당 인스턴스를 통한 데이터 복구가 불가능해지므로 데이터 검토 및 백업을 완료한 후 진행하십시오.
-{% endhint %}
-
-## AZ 구성
-
-각 인스턴스의 가용 영역(AZ)을 확인하고 설정합니다. 신규로 추가된 인스턴스에 한하여 설정이 가능합니다.
-
-## 인스턴스 구성
-
-인스턴스 유형을 변경하여 Scale Up/Down을 수행합니다. BYOL 라이선스는 인스턴스 유형을 변경할 수 없습니다.
-
-스토리지 관련 설정은 다음과 같습니다.
-
-| 항목  | 설명  |
-|-----|-----|
-| Volume Size | 현재 설정값보다 큰 값으로만 변경할 수 있습니다. |
-| Volume IOPS / MBps | Azure 환경에서 볼륨 유형에 따라 허용 범위 내에서 설정할 수 있습니다. |
-| Auto Scale | 사용으로 설정하면 Data Volume 사용량이 90%에 도달할 때 자동으로 볼륨을 확장합니다. |
-| 최대 확장 한도 | Auto Scale 사용 시 최대 확장 가능한 크기를 입력합니다. 현재 Data Volume Size의 110% 이상으로 입력해야 합니다. |
-
-{% hint style="warning" %}
-**주의**
-볼륨 크기는 축소할 수 없습니다. 최대 확장 한도를 신중하게 설정하십시오.
-{% endhint %}
-
-## 구성 정보 확인
-
-변경 전 구성(왼쪽)과 변경 후 구성(오른쪽)을 비교하여 확인합니다. 변경된 항목은 파란색으로 표시됩니다.
-
-예상 금액은 시간당 및 월당 비용으로 표시됩니다. 서울 리전을 기준으로 산정된 값이며, 실제 금액은 리전 및 실사용량에 따라 달라질 수 있습니다.
-
-내용을 확인한 후 **완료**를 클릭하면 변경 유형에 따라 처리 방식이 달라집니다.
-
-| 조건  | 동작  |
-|-----|-----|
-| 인스턴스 Scale Up/Down 포함 | 재시작이 필요하다는 안내 모달이 나타납니다. 재시작 과정에서 서비스가 일시적으로 중단될 수 있습니다. |
-| TAC Scale In/Out 또는 스토리지 확장만 포함 | 재시작 없이 즉시 적용됩니다. |
-| Retired 인스턴스가 있는 상태에서 DR 구성 변경 | 삭제될 Retired 인스턴스에 대한 안내 모달이 나타납니다. |
+For OpenSQL in the LI license model, you adjust the configuration by adding or deleting Replica nodes in the Replica Scale In/Out table. Only Replica Node #2 and above can be deleted.
 
 {% hint style="info" %}
-**참고**
-인스턴스 Scale Up/Down과 스토리지 확장을 함께 요청한 경우, 스토리지 확장을 먼저 처리한 후 인스턴스 Scale Up/Down을 수행합니다.
+**Note**
+
+Replica Scale In/Out is provided only by the OpenSQL engine. Tibero adjusts nodes through TAC Scale In/Out in the engine options stage.
+{% endhint %}
+
+{% hint style="warning" %}
+**Caution**
+
+- If you complete the spec change after changing DR to disabled, all data on the existing Standby/Replica instances will be deleted.
+- If an instance in the Retired state exists due to a Failover, changing DR to disabled will automatically delete that instance. Since data recovery through that instance becomes impossible, proceed only after completing data review and backup.
+{% endhint %}
+
+## AZ Configuration
+
+Check and set the Availability Zone (AZ) of each instance. Configuration is possible only for newly added instances.
+
+## Instance Configuration
+
+Perform Scale Up/Down by changing the instance type. With a BYOL license, the instance type cannot be changed.
+
+The storage-related settings are as follows.
+
+<table data-full-width="true"><thead><tr><th>Item</th><th>Description</th></tr></thead><tbody><tr><td>Volume Size</td><td>Can only be changed to a value larger than the current setting</td></tr><tr><td>Volume IOPS / MBps</td><td>Can be set within the allowed range depending on the volume type in the Azure environment</td></tr><tr><td>Auto Scale</td><td>When enabled, the volume is automatically expanded when Data Volume usage reaches 90%</td></tr><tr><td>Maximum Expansion Limit</td><td><ul><li>Enter the maximum expandable size when Auto Scale is used</li><li>Must enter at least 110% of the current Data Volume Size</li></ul></td></tr></tbody></table>
+
+{% hint style="warning" %}
+**Caution**
+
+Volume size cannot be reduced. Set the maximum expansion limit carefully.
+{% endhint %}
+
+## Verify configuration information
+
+Compare and verify the configuration before the change (left) and after the change (right). Changed items are displayed in blue.
+
+The estimated cost is displayed as hourly and monthly costs. The values are calculated based on the Seoul region, and actual costs may vary depending on the region and actual usage.
+
+After verifying the content **Complete**When you click, the processing method varies depending on the type of change.
+
+<table data-full-width="true"><thead><tr><th>Condition</th><th>Behavior</th></tr></thead><tbody><tr><td>Includes instance Scale Up/Down</td><td><ul><li>Displays a modal notifying that a restart is required</li><li>Service may be temporarily interrupted during the restart process</li></ul></td></tr><tr><td>Includes only TAC Scale In/Out or storage expansion</td><td>Applied immediately without a restart</td></tr><tr><td>Changing the DR configuration while a Retired instance exists</td><td>Displays a modal notifying of the Retired instance to be deleted</td></tr></tbody></table>
+
+{% hint style="info" %}
+**Note**
+
+When instance Scale Up/Down and storage expansion are requested together, they are processed in the order of storage expansion → instance Scale Up/Down.
 {% endhint %}

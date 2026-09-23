@@ -1,213 +1,183 @@
-# 백업
+**Management > Backup/Recovery > Backup**allows you to view the database backup list and perform creation, modification, deletion, and recovery.
 
-**관리 > 백업/복구 > 백업**에서 데이터베이스 백업 목록을 조회하고 생성·수정·삭제·복구를 수행합니다.
+A backup saves the database state at a specific point in time as an image. Backups can be created automatically through the scheduler or manually by the user, and can be recovered to a desired point in time through Full Restore or Point-in-Time Recovery (PITR). Separate charges apply based on backup storage capacity.
 
-백업은 특정 시점의 데이터베이스 상태를 이미지로 저장합니다. Cloud 환경에서는 단일 백업 이미지 단위로 목록을 표시하며, 각 백업의 보존 기간은 최대 35일까지 설정할 수 있습니다. 백업은 스케줄러를 통해 자동 생성되거나 사용자가 수동으로 생성할 수 있으며, 완전 복구(Full Restore) 또는 특정 시점 복구(PITR)를 통해 원하는 시점으로 복구할 수 있습니다. 백업 저장 용량을 기준으로 별도 요금이 발생합니다.
+The retention period can be set from a minimum of 1 hour up to a maximum of 35 days.
 
-| 항목  | 설명  | 보존 기간 |
-|-----|-----|-------|
-| 백업  | * 특정 시점의 데이터를 안전하게 보관함 <br> * 스토리지 비용이 비쌈 <br> * 즉시 복구 가능하며 평균 30분 소요 | 1시간 \~ 35일 |
+## Viewing the Backup List
 
-# 백업 목록 조회
+**Management > Backup/Recovery > Backup** When you enter the menu, the backup list of the current DB Service appears. Each row represents a single backup image, displayed on a single-image basis without distinguishing between Full and Incremental.
 
-**관리 > 백업/복구 > 백업** 메뉴에 진입하면 현재 DB 서비스의 백업 목록이 나타납니다. 각 행은 하나의 백업 이미지를 나타내며, Full/Incremental 구분 없이 단일 이미지 기준으로 표시됩니다.
+The columns displayed in the list are as follows.
 
-목록에 표시되는 컬럼은 다음과 같습니다. 
-
-| 컬럼  | 설명  |
-|-----|-----|
-| 이름  | 백업 이미지 이름 |
-| 백업 경로 | 백업 경로 이름 |
-| 생성일 | 백업 이미지 생성 일시 (yyyy.mm.dd HH:mm:ss) |
-| 만료일 | 보존 기간으로 계산된 만료 일시 (yyyy.mm.dd HH:mm:ss) |
-| 생성 방식 | 자동 / 수동 |
-| 상태  | 현재 백업 상태 |
+| Column | Description |
+| --- | --- |
+| Name | Backup image name |
+| Backup Path | Backup path name |
+| Created Date | Backup image creation date and time (yyyy.mm.dd HH:1f1f2-1f1f2:ss) |
+| Expiration Date | Expiration date and time calculated from the retention period (yyyy.mm.dd HH:1f1f2-1f1f2:ss) |
+| Creation Method | Automatic / Manual |
+| Status | Current backup status |
 
 {% hint style="info" %}
-**참고**
-🔃 아이콘을 클릭하여 목록을 수동으로 새로고침합니다. 조회 조건에 해당하는 데이터가 없으면 "확인 가능한 데이터가 없습니다."가 표시됩니다.
+**Note**
+
+- Click the 🔃 icon to manually refresh the list.
+- If there is no data matching the search conditions, "No data available." is displayed.
 {% endhint %}
 
-### 백업 상태 이력
+### Backup Status History
 
-| 항목  | 설명  |
-|-----|-----|
-| 상태  | - 생성 시작<br>- 복구 가능<br>-  생성 실패<br>-  복구 시작<br>-  복구 실패<br>-  삭제 시작<br>- 삭제됨<br>-  사용 불가 |
-| 발생일 | 상태가 변경된 일시 표시 (yyyy.mm.dd HH:mm:ss) |
+<table data-full-width="true"><thead><tr><th>Item</th><th>Description</th></tr></thead><tbody><tr><td>Status</td><td><ul><li>Creation Started</li><li>Recoverable</li><li>Creation Failed</li><li>Recovery Started</li><li>Recovery Failed</li><li>Deletion Started</li><li>Deleted</li><li>Unavailable</li></ul></td></tr><tr><td>Occurrence Date</td><td>Displays the date and time when the status changed (yyyy.mm.dd HH:mm:ss)</td></tr></tbody></table>
 
 {% hint style="info" %}
-**참고**
-OpenSQL에서 OpenBackup 사용을 미사용으로 전환하면 상태는 삭제됨으로 표시됩니다.
+**Note**
+
+When OpenBackup usage is switched to disabled in OpenSQL, the status is displayed as Deleted.
 {% endhint %}
 
-## 백업 생성
+## Creating a Backup
 
-이름과 보존 기간을 입력하면 원하는 시점의 단일 백업 이미지가 생성됩니다.
+When you enter a name and retention period, a single backup image at the current point in time is created.
+
+1. **Backup** On the page, **Create** Click the button.
+2. **Name**Enter it.
+3. From the calendar, **Retention Period**Select the end date of.
+4. **Create** Click the button.
 
 {% hint style="info" %}
-**참고**
-백업 저장 용량을 기준으로 별도 요금이 발생합니다.
+**Note**
+
+The database operation status is `Running`Only possible when it is.
 {% endhint %}
 
+## Recovery
 
-1. **백업** 페이지에서 **생성** 버튼을 클릭합니다.
-2. **이름**을 입력합니다.
-3. 달력에서 **보존 기간**의 종료일을 선택합니다.
-4. **생성** 버튼을 클릭합니다.
+Select one backup from the backup list and **Recover** When you click the button, the recovery modal appears. Select the recovery type to recover the database to a specific point in time.
 
-{% hint style="info" %}
-**참고**
-데이터베이스 운영 상태가 `Running`일 때만 가능합니다.
-{% endhint %}
-
-
-## 복구
-
-백업 목록에서 백업을 하나 선택하고 **복구** 버튼을 클릭하면 복구 모달이 나타납니다. 복구 유형을 선택하여 데이터베이스를 특정 시점으로 복구합니다.
-
-| 복구 유형 | 설명  |
-|-------|-----|
-| Full Restore | 마지막으로 커밋된 시점까지 모든 데이터를 복구합니다. |
-| PITR (Point-in-Time Recovery) | 사용자가 지정한 날짜와 시각(분 단위)까지 데이터를 복구합니다. 지정 시점 이후의 데이터는 손실됩니다. |
+<table data-full-width="true"><thead><tr><th>Recovery Type</th><th>Description</th></tr></thead><tbody><tr><td>Full Restore</td><td>Recovers all data up to the last commit point</td></tr><tr><td>PITR (Point-in-Time Recovery)</td><td><ul><li>Recovers up to the specified date and time (in minutes)</li><li>Data loss after the specified point in time</li></ul></td></tr></tbody></table>
 
 {% hint style="warning" %}
-**주의**
-복구 유형과 DB 엔진에 따라 기존 백업이 삭제될 수 있습니다.
+**Caution**
 
-* **Full Restore (Tibero)**: 기존 백업이 삭제되지 않습니다.
-* **Full Restore (OpenSQL)**: 선택한 백업 이후 생성된 백업이 삭제됩니다.
-* **PITR**: 현재 저장된 모든 백업이 삭제됩니다. 장기 보관이 필요한 데이터는 복구 전에 미리 보관하세요.
+Existing backups may be deleted depending on the recovery type and DB engine.
+
+- **Full Restore (Tibero)**: Existing backups are not deleted.
+- **Full Restore (OpenSQL)**: Backups created after the selected backup are deleted.
+- **PITR**: All currently stored backups are deleted. Please back up any data requiring long-term retention before recovery.
 {% endhint %}
 
-복구에는 최대 몇 시간이 소요될 수 있으며, 진행 상황은 복구 내역에서 확인합니다.
+Recovery may take up to several hours, and the progress can be checked in **Recovery History**Check it in.
 
-
-1. 복구할 백업을 하나 선택합니다.
-2. **복구** 버튼을 클릭합니다.
-3. **복구 유형**을 선택합니다.
-4. **PITR**을 선택한 경우, 복구할 날짜와 시각을 선택합니다. 선택 가능한 범위는 해당 백업의 생성 시각과 현재 시각 사이입니다.
-5. **복구** 버튼을 클릭합니다.
+1. Select one backup to restore.
+2. **Restore** Click the button.
+3. **Select the recovery type.**Select it.
+4. **PITR**If you selected it, select the date and time to restore. The selectable range is between the recoverable point of the backup and the current time.
+5. **Restore** Click the button.
 
 {% hint style="info" %}
-**참고**
-데이터베이스 운영 상태가 `Running`, `Down`, `Degraded`일 때만 가능합니다.
+**Note**
+
+- The database operational status is `Running`, `Down`, `Degraded`This is only possible when it is.
+- If the restore fails, please select an earlier point in time than the one previously selected and try again. If the restore does not succeed after several attempts, please request technical support.
 {% endhint %}
 
+## Edit Backup
 
-## 백업 수정
+Edit the backup's name and retention period.
 
-백업의 이름과 보존 기간을 수정합니다. 
+1. Select one backup to edit.
+2. **Edit** Click the button.
+3. **Name** or **Retention Period**Change it.
+4. **Save** Click the button.
 
+## Delete Backup
 
-1. 수정할 백업을 하나 선택합니다.
-2. **수정** 버튼을 클릭합니다.
-3. **이름** 또는 **보존 기간**을 변경합니다.
-4. **저장** 버튼을 클릭합니다.
-
-
-## 백업 삭제
-
-선택한 백업 이미지를 영구적으로 삭제합니다.
+Permanently delete the selected backup image.
 
 {% hint style="warning" %}
-**주의**
-삭제된 백업은 복구할 수 없습니다. 삭제하기 전에 필요한 데이터를 반드시 확인하세요.
+**Caution**
+
+Deleted backups cannot be restored. Be sure to verify any necessary data before deleting.
 {% endhint %}
 
+1. Select one or more backups to delete.
+2. **Delete** Click the button.
+3. Review the deletion notice modal.
+4. **Delete** Click the button.
 
-1. 삭제할 백업을 하나 이상 선택합니다.
-2. **삭제** 버튼을 클릭합니다.
-3. 삭제 안내 모달을 확인합니다.
-4. **삭제** 버튼을 클릭합니다.
+## Archive Backup
 
-
-## 백업 보관
-
-특정 백업을 장기 보관 스토리지에 저장합니다. 보관된 백업은 보관 기간이 지나도 자동으로 삭제되지 않으며, 필요할 때 복구합니다.
+Save a specific backup to long-term archive storage. Archived backups are not automatically deleted even after the retention period passes, and can be restored when needed.
 
 {% hint style="info" %}
-**참고**
-백업 보관은 AWS 환경의 Tibero에서만 지원합니다.
+**Note**
 
-보관 저장 용량을 기준으로 별도 요금이 발생합니다. 데이터 삭제 여부와 관계없이, 최소 보관 기간인 90일 동안의 요금이 청구됩니다.
+- Backup archiving is only supported on Tibero in AWS environments, and the archive list is not displayed in Azure environments.
+- A separate charge is incurred based on the archive storage capacity, and you will be billed for the minimum retention period of 90 days regardless of whether the data is deleted.
 {% endhint %}
 
-
-1. 보관할 백업을 하나 선택합니다.
-2. **보관** 버튼을 클릭합니다.
-3. **이름, 보관 기간**을 입력합니다.
-4. **보관** 버튼을 클릭합니다.
+1. Select one backup to archive.
+2. **Archive** Click the button.
+3. **Name**Enter it.
+4. **Retention Period**Select it.
+5. **Archive** Click the button.
 
 {% hint style="info" %}
-**참고**
-데이터베이스 운영 상태가 `Terminating`이 아닐 때만 가능합니다.
+**Note**
+
+The database operational status is `Terminating`This is only possible when it is not.
 {% endhint %}
 
+### View Archive List
 
----
+Within the Backup/Archive page **Archive** In the section, check the list of backups in long-term archive.
 
-# 보관 목록 조회
+| Column | Description |
+| --- | --- |
+| Name | The name entered when archiving |
+| ID | The ID automatically generated by the CSP |
+| Creation Date | The creation date and time of the original backup image (not the archive request date) |
+| Expiration Date | The expiration date and time calculated from the retention period |
+| Size (MB) | The total size of the archived backup image |
+| Status | Recoverable, Recovering, Deleted, Deleting |
 
-{% hint style="info" %}
-**참고**
-보관 기능은 AWS 환경의 Tibero에서만 제공합니다. Azure 환경에서는 보관 목록이 표시되지 않습니다.
-{% endhint %}
+For archived backups whose expiration date is within 30 days, a ⚠️ icon is displayed before the name. Hovering the mouse over the icon shows the scheduled deletion date and time. If long-term archiving is needed, before expiration **Edit**Click it to extend the retention period.
 
-백업/보관 페이지 내 **보관** 섹션에서 장기 보관 중인 백업 목록을 확인합니다.
+1. **Management > Backup/Restore > Backup**Navigate to it.
+2. Scroll down the page to **Archive** Move to the section.
+3. Find the archived backup you want using filters or name search.
 
-| 컬럼  | 설명  |
-|-----|-----|
-| 이름  | 보관 시 입력한 이름 |
-| ID  | CSP에서 자동 생성한 ID |
-| 생성일 | 원본 백업 이미지의 생성 일시 (보관 요청일 아님) |
-| 만료일 | 보관 기간으로 계산된 만료 일시 |
-| Size (MB) | 보관된 백업 이미지의 총 크기 |
-| 상태  | 복구 가능, 복구 중, 삭제됨, 삭제 중 |
+### Modify Archive
 
-만료일이 30일 이내로 남은 보관 백업에는 이름 앞에 ⚠️ 아이콘이 표시됩니다. 아이콘에 마우스를 올리면 삭제 예정 일시를 확인합니다. 장기 보관이 필요하다면 만료 전에 **수정**을 클릭하여 보관 기간을 연장합니다.
+Modify the name and retention period of an archived backup.
 
+1. Select one archived backup to modify.
+2. **Modify** Click the button.
+3. **Name** or **Retention period**Change it.
+4. **Save** Click the button.
 
-1. **관리 > 백업/복구 > 백업/보관**으로 이동합니다.
-2. 페이지를 아래로 스크롤하여 **보관** 섹션으로 이동합니다.
-3. 필터나 이름 검색으로 원하는 보관 백업을 찾습니다.
+### Restore Archive
 
-   \
-
-## 보관 수정
-
-보관된 백업의 이름과 보존 기간을 수정합니다. 
-
-
-1. 수정할 보관된 백업을 하나 선택합니다.
-2. **수정** 버튼을 클릭합니다.
-3. **이름** 또는 **보존 기간**을 변경합니다.
-4. **저장** 버튼을 클릭합니다.
-
-
-## 보관 복구 
-
-
-1. 복구할 보관된 백업을 하나 선택합니다.
-2. **복구** 버튼을 클릭합니다.
-3. 복구 날짜 및 시각을 입력하고 **복구** 버튼을 클릭합니다.
-4. '복구 내역 조회' 에서 진행 상태를 확인할 수 있습니다.
+1. Select one archived backup to restore.
+2. **Restore** Click the button.
+3. Enter the restore date and time.
+4. **Restore** Click the button.
+5. **Restore History**Check the progress status here.
 
 {% hint style="warning" %}
-**주의**
-보관 복구 시, 즉시 데이터베이스가 복구되며 현재 저장된 모든 스냅샷이 삭제됩니다. 데이터 크기에 따라 최대 3일 가량 소요될 수 있습니다.
+**Caution**
+
+When restoring an archive, database recovery starts immediately and all currently stored backups are deleted. Depending on the data size, completion can take up to 3 days.
 {% endhint %}
 
+### Delete Archive
 
-## 보관 삭제
-
-
-1. 삭제할 백업을 하나 이상 선택합니다.
-2. **삭제** 버튼을 클릭합니다.
+1. Select one or more archived backups to delete.
+2. **Delete** Click the button.
 
 {% hint style="warning" %}
-**주의**
-삭제한 보관은 다시 복구할 수 없으며 모든 데이터가 완전히 삭제됩니다.
+**Caution**
+
+Deleted archives cannot be restored again, and all data is permanently deleted.
 {% endhint %}
-
-
-\

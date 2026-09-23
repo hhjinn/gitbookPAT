@@ -1,9 +1,10 @@
-# 알림
+OwlDB provides notifications for various events that occur while using it. Notifications can be viewed by clicking the 🔔 icon in the upper-right corner of the console screen.
 
-OwlDB를 이용하면서 발생하는 각종 이벤트에 대해 알림을 제공합니다. 알림은 콘솔 화면 우측 상단 🔔 아이콘을 클릭하여 확인할 수 있습니다.
+<figure>
+<img src=".gitbook/assets/image-60e557ec.png" alt="">
+<figcaption>Figure 1. Notifications</figcaption>
+</figure>
 
-> 📷 **\[이미지\]** 이미지
-
-* 메시지 우측 :2714: 아이콘을 클릭하여 읽음 상태를 자유롭게 변경할 수 있습니다.
-* 읽음 처리된 메시지는 30일 이후 자동으로 삭제됩니다.
-* 우측 상단 미트볼 메뉴 아이콘 버튼> '**전체 읽음**'을 클릭하면 모든 메시지가 읽음 처리 됩니다.
+- Click the ✔ icon on the right side of a message to change its read status.
+- Messages marked as read are automatically deleted after 30 days.
+- Upper-right corner **Meatball menu** icon > **Mark all as read**Clicking this marks all messages as read.

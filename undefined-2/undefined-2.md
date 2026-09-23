@@ -1,15 +1,17 @@
-# 화면 구성
+<figure>
+<img src="../.gitbook/assets/image-0cf60310.png" alt="">
+<figcaption>Figure 1. Console Screen Components</figcaption>
+</figure>
 
-이 페이지에서는 OwlDB 화면의 주요 구성 요소와 각 영역의 기능을 확인합니다.
+This section describes the components and functions of each area of the console screen.
 
-> 📷 **\[이미지\]** 이미지
+<table data-full-width="true"><thead><tr><th>Component</th><th>Description</th></tr></thead><tbody><tr><td>① GNB - Menu</td><td><ul><li>Hamburger menu: Function to open and close the menu panel</li><li>Menu icon: Function to open and close the detail menu area with main functions</li></ul></td></tr><tr><td>② Detail Menu Area</td><td><ul><li>Displays the list of submenus for the selected menu icon</li><li>Page navigation function</li></ul></td></tr><tr><td>③ Logo</td><td><strong>Dashboard</strong> Navigates to the page</td></tr><tr><td>④ DB / Instance Selection</td><td><ul><li>Selects the database and instance to be managed and monitored</li><li>Selection items may vary by function ('<a href="#IAtHKOuaikB0qe5kmvf4">Usage Guide by Function</a>' for reference)</li></ul></td></tr><tr><td>⑤ GNB - Others</td><td><ul><li>Notification Center</li><li>User Guide</li><li>User Settings (language, theme)</li><li>Logout</li></ul></td></tr><tr><td>⑥ Table Settings</td><td><ul><li>Function to select and deselect table fields to display on the screen</li><li>Adjust the order of table fields</li></ul></td></tr><tr><td>⑦ Info</td><td>Version and release information</td></tr></tbody></table>
 
-| 요소  | 설명  |
-|-----|-----|
-| ① GNB - 메뉴 | - 햄버거 메뉴: 메뉴 패널 열고 닫기<br>- 메뉴 아이콘: 주 기능으로 상세 메뉴 영역 열고 닫기 |
-| ② 상세 메뉴 영역 | - 선택된 메뉴 아이콘의 하위 메뉴 목록 표시<br>- 페이지 간 전환 |
-| ③ 로고 | - **대시보드** 페이지로 이동 |
-| ④ DB / Instance 선택 | - 관리 및 모니터링 대상 데이터베이스와 인스턴스 선택<br>- 기능별 선택 항목 변동 가능 ('[기능별 사용 안내](#IAtHKOuaikB0qe5kmvf4)' 참고) |
-| ⑤ GNB - 기타 | - 알림 센터<br>- 사용자 안내서<br>- 사용자 설정 (언어, 테마)<br>- 로그아웃 |
-| ⑥ 테이블 설정 | - 화면에 표시할 테이블 필드 선택 및 해제<br>- 테이블 필드 순서 조정 |
-| ⑦ Info | - 버전 및 출시 정보 |
+<table data-full-width="true"><thead><tr><th>Component</th><th>Description</th></tr></thead><tbody><tr><td>① GNB - Menu</td><td><ul><li>Hamburger menu: Function to open and close the menu panel</li><li>Menu icon: Function to open and close the detail menu area with main functions</li></ul></td></tr><tr><td>② Detail Menu Area</td><td><ul><li>Displays the list of submenus for the selected menu icon</li><li>Page navigation function</li></ul></td></tr><tr><td>③ Logo</td><td><strong>Dashboard</strong> Navigates to the page</td></tr><tr><td>④ DB / Instance Selection</td><td><ul><li>Selects the database and instance to be managed and monitored</li><li>Selection items may vary by function ('<a href="#IAtHKOuaikB0qe5kmvf4">Usage Guide by Function</a>' for reference)</li></ul></td></tr><tr><td>⑤ GNB - Others</td><td><ul><li>Notification Center</li><li>User Guide</li><li>User Settings (language, theme)</li><li>Logout</li></ul></td></tr><tr><td>⑥ DB Engine Selection</td><td><ul><li>Function to select the DB engine to display on the screen</li><li>The DB Service list in the DB/Instance selection dropdown changes according to the selected DB engine</li></ul></td></tr><tr><td>⑦ Info</td><td>Version and release information</td></tr></tbody></table>
+
+<figure>
+<img src="../.gitbook/assets/image-d3a4e630.png" alt="">
+<figcaption>Figure 2. Table Settings</figcaption>
+</figure>
+
+<table data-full-width="true"><thead><tr><th>Component</th><th>Description</th></tr></thead><tbody><tr><td>① Table Settings</td><td><ul><li>Function to select and deselect table fields to display on the screen</li><li>Adjust the order of table fields</li></ul></td></tr></tbody></table>

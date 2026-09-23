@@ -1,104 +1,58 @@
-# 서비스 개요
+OwlDB is a managed database service that installs databases in cloud and on-premises environments and registers, integrates, and manages them as DB Services. This page describes OwlDB's operating environments, key features, and supported engines and topologies.
 
-OwlDB는 클라우드와 온프레미스를 아우르는 통합 관리형 데이터베이스 서비스입니다.
+# Operating Environments
 
-클라우드 환경에서는 인프라 인스턴스 생성부터 DB 자동화까지 제어하는 완전 관리형 DBaaS의 편리함을 제공하며, 온프레미스 환경에서는 고객이 보유한 물리 자원을 기반으로 효율적인 설치 및 통합 등록/관리를 지원합니다. 인프라 형태와 관계없이 OwlDB가 제공하는 검증된 자동화 기능과 관리 도구를 통해 안정적인 데이터베이스 서비스를 즉시 시작할 수 있습니다.
+## Cloud Environment Support
 
-# 운영 환경
+This is a method of dynamically creating and operating databases by leveraging cloud infrastructure resources. Based on IaC (Infrastructure as Code), it automates infrastructure provisioning and database configuration, allowing users to build and scale database environments with the desired specifications from the console.
 
-## 클라우드 환경 지원
+## On-Premises Environment Support
 
-클라우드 인프라 자원을 활용하여 데이터베이스를 동적으로 생성하고 운영하는 방식입니다. IaC(Infrastructure as Code) 기반으로 인프라 프로비저닝과 데이터베이스 설정을 자동화하여, 사용자가 콘솔 내에서 클릭 몇 번만으로 원하는 사양의 데이터베이스 환경을 손쉽게 구축하고 유연하게 확장할 수 있도록 지원합니다.
+This is a method of operating databases based on physical infrastructure resources such as servers, networks, and storage that customers own themselves. It is designed to efficiently utilize fixed infrastructure resources and supports closed network environments that are isolated from external networks. Through OwlDB, you can install a new database on a host, or integrate an existing database already in operation as an OwlDB management target for unified control.
 
-## 온프레미스 환경 지원
+# Key Features
 
-고객이 자체 보유한 서버, 네트워크, 스토리지 등 물리적 인프라 자원을 기반으로 데이터베이스를 운영하는 방식입니다. 고정된 인프라 리소스를 효율적으로 활용할 수 있도록 설계되었으며, 외부 네트워크와 단절된 폐쇄망 환경을 완벽히 지원합니다. OwlDB를 통해 호스트에 신규 데이터베이스를 설치하거나, 기존에 이미 운영 중인 데이터베이스를 OwlDB 관리 대상으로 연동하여 통합 제어할 수 있습니다.
+Based on common management features universally used in both environments, OwlDB provides dedicated features optimized for the infrastructure characteristics of cloud and on-premises respectively.
 
+**Common Features**
 
-> *여기에 참고로 온프레미스 가이드북 링크 넣기*
-
-# 주요 기능
-
-OwlDB는 두 환경에서 보편적으로 사용되는 공통 관리 기능을 바탕으로, 클라우드와 온프레미스 각각의 인프라 특성에 최적화된 전용 기능을 제공합니다.
+<table data-full-width="true"><thead><tr><th>j69iSzhgoLxy</th><th>FiiQPQwAxn1e</th></tr></thead><tbody><tr><td><strong>Feature</strong></td><td><strong>Description</strong></td></tr><tr><td><strong>Database Status Inquiry</strong></td><td>Real-time verification of database and instance operational status</td></tr><tr><td><strong>Monitoring & Alerts</strong></td><td><ul><li>Monitoring of key performance indicators and operational status</li><li>Immediate alert delivery upon anomalies or events</li></ul></td></tr><tr><td><strong>Migration</strong></td><td>Support for pre-migration compatibility validation and guide-based migration when transitioning between heterogeneous databases</td></tr><tr><td><strong>Account Management (RBAC)</strong></td><td>Per-user privilege separation and security management through role-based access control</td></tr></tbody></table>
 
 {% tabs %}
-
-{% tab title="공통 기능" %}
-
-| **기능** | **설명** |
-|-----|-----|
-| **데이터베이스 상태 조회** | 데이터베이스와 개별 인스턴스의 현재 가동 상태를 실시간으로 확인할 수 있습니다. |
-| **모니터링 & 알림** | 핵심 성능 지표와 운영 상태를 감시하며, 이상 징후나 이벤트 발생 시 즉시 알림을 발송합니다. |
-| **마이그레이션** | 이종 데이터베이스 간 전환에 필요한 사전 호환성 검증과 가이드 기반의 마이그레이션을 지원합니다. |
-| **계정 관리 (RBAC)** | 역할 기반 접근 제어 체계를 통해 사용자별 명확한 권한 분리 및 보안 관리를 지원합니다. |
-|
+{% tab title="Cloud-Specific" %}
+| 0OEBZJuqlpUR | oCch6FMIgDv9 |
+| --- | --- |
+| **Feature** | **Description** |
+| **Automated Provisioning** | Full automation from cloud resource creation to database architecture configuration |
+| **Resource Scaling/Modification** | Instance specification and storage scaling and modification aligned with workload increases and decreases |
+| **Cloud Snapshot Backup** | Backup and recovery based on CSP snapshot feature integration |
 {% endtab %}
-|     |
-
-{% tab title="클라우드 특화" %}
-
-| **기능** | **설명** |
-|-----|-----|
-| **자동화된 프로비저닝** | 클라우드 자원 생성부터 데이터베이스 아키텍처 구성까지 전 과정을 자동화합니다. |
-| **유연한 리소스 변경** | 워크로드 증감에 맞춰 인스턴스 사양 및 스토리지를 자유롭게 확장하거나 변경할 수 있습니다. |
-| **클라우드 스냅샷 백업** | CSP 고유의 스냅샷 기능을 연동하여 검증된 방식의 백업 및 복구를 수행합니다. |
-|
+{% tab title="On-Premises-Specific" %}
+<table data-full-width="true"><thead><tr><th>bEERkyHFGU8Q</th><th>Ds9oZhkQb9hU</th></tr></thead><tbody><tr><td><strong>Feature</strong></td><td><strong>Description</strong></td></tr><tr><td><strong>Database Installation/Registration</strong></td><td><ul><li>Remote deployment of new DBs to customer hosts</li><li>Registration of existing external DBs in operation as management targets</li></ul></td></tr><tr><td><strong>Infrastructure Resource Discovery</strong></td><td>Automatic collection of hardware specifications and configuration information and status assessment through the Agent</td></tr><tr><td><strong>Physical Backup/Recovery</strong></td><td>Backup and recovery based on the database's own utilities (Tibero RMGR, etc.)</td></tr></tbody></table>
 {% endtab %}
-|     |
-
-{% tab title="온프레미스 특화" %}
-
-| **기능** | **설명** |
-|-----|-----|
-| **데이터베이스 설치/등록** | 고객 호스트에 신규 DB를 원격 배포하거나, 기존 운영 중인 외부 DB를 관리 대상으로 손쉽게 등록합니다. |
-| **인프라 자원 탐색** | 인프라에 설치된 Agent를 통해 하드웨어 스펙 및 구성 정보를 자동으로 수집하고 현황을 파악합니다. |
-| **물리 백업/복구** | 인프라 환경에 맞춰 데이터베이스 자체 유틸리티(Tibero RMGR 등) 기반의 안정적인 백업·복구를 지원합니다. |
-|
-{% endtab %}
-|     |
-|
 {% endtabs %}
-|     |
 
-## 데이터베이스 엔진 및 토폴로지
+## Database Engines and Topologies
 
-OwlDB가 지원하는 관계형 데이터베이스(RDBMS) 엔진 사양 및 환경별 아키텍처 구성은 다음과 같습니다.
+The relational database (RDBMS) engine specifications supported by OwlDB and the architecture configurations by environment are as follows.
 
 {% tabs %}
-
 {% tab title="Cloud" %}
-
 ### AWS
 
-| 데이터베이스 엔진 | 버전  | 토폴로지 |
-|-----------|-----|------|
-| Tibero    | 7.2.5 | * Single <br> * Single + DR <br> * TAC <br> * TAC + DR |
+<table data-full-width="true"><thead><tr><th>Database Engine</th><th>Version</th><th>Topology</th></tr></thead><tbody><tr><td>Tibero</td><td>7.2.5</td><td><ul><li>Single</li><li>Single + DR</li><li>TAC</li><li>TAC + DR</li></ul></td></tr></tbody></table>
 
 ### Azure
 
-| 데이터베이스 엔진 | 버전  | 토폴로지 |
-|-----------|-----|------|
-| Tibero    | 7.2.5 | * Single <br> * Single + DR <br> * TAC <br> * TAC + DR |
-| OpenSQL   | * 3.16.12.5 <br> * 3.17.8.5 | * Single <br> * HA |
-
+<table data-full-width="true"><thead><tr><th>Database Engine</th><th>Version</th><th>Topology</th></tr></thead><tbody><tr><td>Tibero</td><td>7.2.5</td><td><ul><li>Single</li><li>Single + DR</li><li>TAC</li><li>TAC + DR</li></ul></td></tr><tr><td>OpenSQL</td><td><ul><li>3.16.12.5</li><li>3.17.8.5</li></ul></td><td><ul><li>Single</li><li>HA</li></ul></td></tr></tbody></table>
 {% endtab %}
-
 {% tab title="On-Premise" %}
-
 ### OwlDB Operation
 
-| 데이터베이스 엔진 | 버전  | 토폴로지 |
-|-----------|-----|------|
-| Tibero    | 7 패치셋 이후 | * Single <br> * Single + DR <br> * TAC <br> * TAC + DR |
-| OpenSQL   | 3.0(PostgreSQL 17.9) | * Single <br> * HA |
+<table data-full-width="true"><thead><tr><th>Database Engine</th><th>Version</th><th>Topology</th></tr></thead><tbody><tr><td>Tibero</td><td>7 patchset and later</td><td><ul><li>Single</li><li>Single + DR</li><li>TAC</li><li>TAC + DR</li></ul></td></tr><tr><td>OpenSQL</td><td>3.0 (PostgreSQL 17.9)</td><td><ul><li>Single</li><li>HA</li></ul></td></tr></tbody></table>
 
 ### OwlDB Automation
 
-| 데이터베이스 엔진 | 버전  | 토폴로지 |
-|-----------|-----|------|
-| Tibero    | * 등록 : 7 패치셋 이후 <br> * 설치 : 7.2.5 | * Single <br> * Single + DR <br> * TAC <br> * TAC + DR |
-| OpenSQL   | 3.0(PostgreSQL 17.9) | * Single <br> * HA |
-
+<table data-full-width="true"><thead><tr><th>Database Engine</th><th>Version</th><th>Topology</th></tr></thead><tbody><tr><td>Tibero</td><td><ul><li>Registered: After 7 patchset</li><li>Installed: 7.2.5</li></ul></td><td><ul><li>Single</li><li>Single + DR</li><li>TAC</li><li>TAC + DR</li></ul></td></tr><tr><td>OpenSQL</td><td>3.0(PostgreSQL 17.9)</td><td><ul><li>Single</li><li>HA</li></ul></td></tr></tbody></table>
 {% endtab %}
-
 {% endtabs %}

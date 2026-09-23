@@ -1,113 +1,82 @@
-# Tibero
-
-**OwlDB**에서 운영 중인 데이터베이스의 논리적, 물리적 저장 공간을 관리할 수 있습니다. 하나의 테이블스페이스는 여러 개의 데이터 파일을 포함할 수 있습니다. 데이터베이스 상태가 `Running` 인 경우에만 테이블스페이스 조회, 수정 및 삭제가 가능합니다.
+Queries, creates, modifies, and deletes the storage space (tablespaces and data files) of databases operating in OwlDB. A single tablespace can contain multiple data files.
 
 {% hint style="info" %}
-**참고**
-DB 엔진이 OpenSQL로 설정된 경우에는 이 페이지 대신 데이터베이스 관리 화면이 표시됩니다.
+**Note**
+
+- Tablespaces can only be queried, modified, or deleted when the database status is `Running`.
+- When the DB engine is set to OpenSQL, the database management screen is displayed instead of this page.
 {% endhint %}
 
-> 📷 **\[이미지\]** 이미지
+<figure>
+<img src="../../.gitbook/assets/image-3f7b97b2.png" alt="">
+<figcaption>Figure 1. Data Space - Tibero</figcaption>
+</figure>
 
-# **테이블스페이스 조회**
+# Query Tablespace
 
+1. **OwlDB Console Screen > Management > Tablespace** Navigate to the menu.
+2. **DB Alias** Click the dropdown button to select the database whose tablespaces you want to query.
+3. Queries the tablespace list. You can filter the list by type. You can search directly by name.
 
-1. **OwlDB 콘솔 화면 > 관리 > 테이블스페이스** 메뉴로 이동합니다.
-2. **DB Alias** 드롭다운 버튼을 클릭하여 테이블스페이스를 조회할 데이터베이스를 선택합니다.
-3. 테이블스페이스 목록을 조회합니다. 유형을 필터링할 수 있습니다. 이름을 직접 검색할 수 있습니다.
-
-| 항목  | 설명  |
-|-----|-----|
-| Name | 테이블스페이스 이름 |
-| Type | 테이블스페이스 유형<br>•**Permanent**: 영구적인 데이터를 저장하며 일반적으로 가장 많이 사용하는 타입<br>•**Temporary**: 임시 데이터를 저장하며 세션이 종료되거나 작업 완료 시 데이터 삭제<br>•**Undo** : 수정된 데이터에 대해 저장 |
-| Status | 테이블스페이스 상태<br>•**ONLINE**: 데이터베이스에 정상적으로 연결되어 사용할 수 있는 상태<br>•**OFFLINE** : 데이터베이스에 연결이 끊긴 상태 (테이블스페이스에 저장된 객체에 접근 불가) |
-| Used/Total Size | • **Used Size**: 해당 테이블스페이스에 속한 데이터 파일이 사용 중인 공간의 총합<br>•**Total Size** : 해당 테이블스페이스에 속한 데이터 파일이 할당받은 공간의 총합 |
-| Total/Max Size | • **Total Size**: 해당 테이블스페이스에 속한 데이터 파일이 할당받은 공간의 총합<br>•**Max Size** : 해당 테이블스페이스에 속한 데이터 파일이 최대로 할당받을 수 있는 공간의 총합 |
-| Logging | 로깅 여부 |
-| Allocation Type | Extent 할당 방식<br>•**SYSTEM**: 시스템 요구에 따라 동적으로 extent 크기를 할당하는 방식<br>•**UNIFORM**: 동일한 크기의 Extent를 사용하여 오브젝트를 저장하는 방식 |
-| Next Extent | 다음 할당 Extent 크기 |
-
+<table data-full-width="true"><thead><tr><th>Item</th><th>Description</th></tr></thead><tbody><tr><td>Name</td><td>Tablespace name</td></tr><tr><td>Type</td><td>Tablespace type<ul><li><strong>Permanent</strong>: Stores permanent data; generally the most commonly used type</li><li><strong>Temporary</strong>: Stores temporary data; data is deleted when the session ends or the operation completes</li><li><strong>Undo</strong>: Stores modified data</li></ul></td></tr><tr><td>Status</td><td>Tablespace status<ul><li><strong>ONLINE</strong>: A state in which it is properly connected to the database and available for use</li><li><strong>OFFLINE</strong>: A state in which it is disconnected from the database (objects stored in the tablespace cannot be accessed)</li></ul></td></tr><tr><td>Used/Total Size</td><td><ul><li><strong>Used Size</strong>: The total space in use by the data files belonging to that tablespace</li><li><strong>Total Size</strong>: The total space allocated to the data files belonging to that tablespace</li></ul></td></tr><tr><td>Total/Max Size</td><td><ul><li><strong>Total Size</strong>: The total space allocated to the data files belonging to that tablespace</li><li><strong>Max Size</strong>: The total maximum space that can be allocated to the data files belonging to that tablespace</li></ul></td></tr><tr><td>Logging</td><td>Whether logging is enabled</td></tr><tr><td>Allocation Type</td><td>Extent allocation method<ul><li><strong>SYSTEM</strong>: A method that dynamically allocates extent sizes according to system requirements</li><li><strong>UNIFORM</strong>: A method that stores objects using extents of the same size</li></ul></td></tr><tr><td>Next Extent</td><td>Next allocation extent size</td></tr></tbody></table>
 
 ---
 
-# **테이블스페이스 생성**
+# Create Tablespace
 
-
-1. **OwlDB 콘솔 화면 > 관리 > 테이블스페이스** 메뉴로 이동합니다.
-2. **DB Alias** 드롭다운 버튼을 클릭하여 테이블스페이스를 생성할 데이터베이스를 선택합니다.
-3. **생성** 버튼을 클릭합니다.
+1. **OwlDB Console Screen > Management > Tablespace** Navigate to the menu.
+2. **DB Alias** Click the dropdown button to select the database in which you want to create a tablespace.
+3. **Create** Click the button.
 
 {% hint style="info" %}
-**참고**
-데이터 블록 크기 8KB 기준, UNIFORM SIZE를 128KB 보다 작게 설정하더라도 Extent 최소 크기인 128KB로 설정됩니다.
+**Note**
+
+Based on a data block size of 8KB, even if UNIFORM SIZE is set smaller than 128KB, it is set to 128KB, the minimum extent size.
 {% endhint %}
 
+---
+
+# Modify Tablespace
+
+1. **OwlDB Console Screen > Management > Tablespace** Navigate to the menu.
+2. **DB Alias** Click the dropdown button to select the database whose tablespace you want to modify.
+3. **Modify** Click the button.
 
 ---
 
-# **테이블스페이스 수정**
+# Delete Tablespace
 
-
-1. **OwlDB 콘솔 화면 > 관리 > 테이블스페이스** 메뉴로 이동합니다.
-2. **DB Alias** 드롭다운 버튼을 클릭하여 테이블스페이스를 수정할 데이터베이스를 선택합니다.
-3. **수정 **버튼을 클릭합니다.
-
+1. **OwlDB Console Screen > Management > Tablespace** Navigate to the menu.
+2. **DB Alias** Click the dropdown button to select the database whose tablespace you want to delete.
+3. **Delete** Click the button.
 
 ---
 
-# **테이블스페이스 삭제**
+# Query Data File
 
+1. '[Query Tablespace](#테이블스페이스-조회)' to select the database whose data files you want to query.
+2. **Tablespace** Click the radio button to select the tablespace whose data files you want to view.
+3. Views the list of data files. You can filter the list by whether auto-extend is enabled. You can search directly by data file name.
 
-1. **OwlDB 콘솔 화면 > 관리 > 테이블스페이스** 메뉴로 이동합니다.
-2. **DB Alias** 드롭다운 버튼을 클릭하여 테이블스페이스를 삭제할 데이터베이스를 선택합니다.
-3. **삭제** 버튼을 클릭합니다.
-
-
----
-
-# **데이터 파일 조회**
-
-
-1. '[테이블스페이스 조회](#undefined)'를 참고하여 데이터 파일을 조회할 데이터베이스를 선택합니다.
-2. **Tablespace** 라디오 버튼을 클릭하여 데이터 파일을 조회할 테이블스페이스를 선택합니다.
-3. 데이터 파일 목록을 조회합니다. 자동 확장 여부를 필터링할 수 있습니다. 데이터 파일 이름으로 직접 검색할 수 있습니다.
-
-| 항목  | 설명  |
-|-----|-----|
-| Tablespace Name | 테이블스페이스 이름 |
-| Name | 데이터 파일 이름 |
-| Online Status | 데이터 파일 상태<br>•**SYSOFF**: system offline file<br>•**SYSTEM**: system online file<br>•**OFFLINE**<br>•**ONLINE**<br>•**RECOVER**: Datafile needs to be recovered<br>•**AVAILABLE** |
-| Used/Total Size | • **Used Size**: 해당 데이터 파일이 사용 중인 공간의 용량<br>•**Total Size** : 해당 데이터 파일이 할당받은 공간의 용량 |
-| Total/Max Size | • **Total Size**: 해당 데이터 파일이 할당받은 공간의 용량<br>•**Max Size** : 해당 데이터 파일이 최대로 할당받을 수 있는 공간의 용량 |
-| Auto Extend | 자동 확장 여부 |
-| Next | 다음 확장 용량 |
-| Physical Reads | 물리적 읽기 횟수 |
-| Physical Writes | 물리적 쓰기 횟수 |
-| Single Block Reads | 단일 블록 읽기 횟수 |
-
+<table data-full-width="true"><thead><tr><th>Item</th><th>Description</th></tr></thead><tbody><tr><td>Tablespace Name</td><td>Tablespace name</td></tr><tr><td>Name</td><td>Data file name</td></tr><tr><td>Online Status</td><td>Data file status<ul><li><strong>SYSOFF</strong>: System offline file</li><li><strong>SYSTEM</strong>: System online file</li><li><strong>OFFLINE</strong>: Offline status</li><li><strong>ONLINE</strong>: Online status</li><li><strong>RECOVER</strong>: A state requiring recovery</li><li><strong>AVAILABLE</strong>: Available status</li></ul></td></tr><tr><td>Used/Total Size</td><td><ul><li><strong>Used Size</strong>: The amount of space currently in use by the data file</li><li><strong>Total Size</strong>: The amount of space allocated to the data file</li></ul></td></tr><tr><td>Total/Max Size</td><td><ul><li><strong>Total Size</strong>: The amount of space allocated to the data file</li><li><strong>Max Size</strong>: The maximum amount of space that can be allocated to the data file</li></ul></td></tr><tr><td>Auto Extend</td><td>Whether auto-extend is enabled</td></tr><tr><td>Next</td><td>Next extension size</td></tr><tr><td>Physical Reads</td><td>Number of physical reads</td></tr><tr><td>Physical Writes</td><td>Number of physical writes</td></tr><tr><td>Single Block Reads</td><td>Number of single block reads</td></tr></tbody></table>
 
 ---
 
-# **데이터 파일 생성**
+# Creating a data file
 
-
-1. '[데이터 파일 조회](#undefined-4)'를 참고하여 데이터 파일을 생성할 테이블스페이스를 선택합니다.
-2. **생성** 버튼을 클릭합니다.
-
+1. '[Viewing Data Files](#데이터-파일-조회)' to select the tablespace in which to create the data file.
+2. **Create** Click the button.
 
 ---
 
-# **데이터 파일 수정**
+# Modifying a data file
 
-
-1. '[데이터 파일 조회](#undefined-4)'를 참고하여 데이터 파일을 수정할 테이블스페이스를 선택합니다.
-2. **수정** 버튼을 클릭합니다.
-
+1. '[Viewing Data Files](#데이터-파일-조회)' to select the tablespace in which to modify the data file.
+2. **Modify** Click the button.
 
 ---
 
-# **데이터 파일 삭제**
+# Deleting a data file
 
-
-1. '[데이터 파일 조회](#undefined-4)'를 참고하여 데이터 파일을 수정할 테이블스페이스를 선택합니다.
-2. **삭제** 버튼을 클릭합니다.
+1. '[Viewing Data Files](#데이터-파일-조회)' to select the tablespace from which to delete the data file.
+2. **Delete** Click the button.

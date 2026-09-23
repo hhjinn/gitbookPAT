@@ -1,152 +1,149 @@
-# 로그인
+<figure>
+<img src="../.gitbook/assets/frame-1b0413b2-368c8565.png" alt="" width="760">
+<figcaption>Figure 1. Login</figcaption>
+</figure>
 
-> 📷 **\[이미지\]** 이미지
+## Root First Login
 
-## Root 최초 로그인
+When the OwlDB deployment is complete, the Root account information is sent to the email address entered during stack creation.
 
-OwlDB 배포가 완료되면 스택 생성 시 입력한 이메일 주소로 Root 계정 정보가 발송됩니다.
+| Item | Initial value |
+| --- | --- |
+| ID | admin or user input value |
+| Password | Temporary password |
 
-| 항목  | 초기값 |
-|-----|-----|
-| 아이디 | admin 혹은 사용자 입력값 |
-| 비밀번호 | 임시 비밀번호 |
-
-
-1. 이메일에 기재된 접속 URL로 이동합니다.
-2. 이메일에서 받은 Root 계정과 임시 비밀번호를 입력합니다.
-3. **로그인** 버튼을 클릭합니다.
-4. 최초 로그인 시 보안을 위해 **비밀번호 변경** 페이지로 자동 이동합니다.
-5. 새로운 비밀번호를 입력하고 변경합니다.
-6. 변경한 비밀번호로 다시 로그인합니다.
-
-{% hint style="warning" %}
-**주의**
-최초 로그인 후 반드시 비밀번호를 변경합니다.
-
-비밀번호를 변경하기 전까지는 다른 페이지로 이동할 수 없습니다.
-{% endhint %}
-
-
----
-
-## 로그인
-
-
-1. 로그인 페이지에서 아이디와 비밀번호를 입력합니다.
-2. **로그인** 버튼을 클릭합니다.
-3. 인증이 완료되면 대시보드 페이지로 이동합니다.
-
-{% hint style="info" %}
-**참고**
-Member 계정이 없는 경우, 로그인 페이지에서 **계정 생성 요청** 버튼을 클릭하여 계정 생성을 요청할 수 있습니다. 자세한 내용은 계정 생성 요청을 참고합니다.
-{% endhint %}
-
-
----
-
-## 아이디 찾기
-
-아이디를 잊어버린 경우, 등록된 이메일 주소를 통해 아이디를 확인할 수 있습니다.
-
-{% hint style="info" %}
-**참고**
-아이디 찾기 기능은 Cloud 환경에서만 제공합니다.
-{% endhint %}
-
-
-1. 로그인 페이지에서 **아이디 찾기**를 클릭합니다.
-2. 등록된 이메일 주소를 입력합니다.
-3. **이메일 발송하기**를 클릭합니다.
-4. 입력한 이메일 주소가 확인되면 아이디 안내 메일이 발송됩니다.
-5. 로그인 하기를 클릭하여 **로그인** 페이지로 이동합니다.
-
-### 계정별 이메일 확인 기준
-
-| 계정  | 입력해야 하는 이메일 |
-|-----|-------------|
-| Root | OwlDB 구독 시 입력한 이메일 주소 |
-| Member | 계정에 등록된 이메일 주소 |
-
-{% hint style="info" %}
-**참고**
-입력한 이메일 주소가 등록한 정보와 일치하지 않으면 아이디를 찾을 수 없습니다.
-{% endhint %}
-
-
-## 아이디 안내 메일
-
-이메일 인증이 완료되면 등록된 이메일 주소로 아이디 안내 메일이 발송됩니다.
-
-메일에는 다음 정보가 포함됩니다.
-
-* 아이디
-* OwlDB 로그인 페이지 바로가기
-
-메일을 받은 후 **OwlDB 바로 가기**를 클릭하거나 로그인 페이지로 이동하여 안내받은 아이디로 로그인합니다.
-
-
-### 이메일을 받지 못한 경우
-
-아이디 안내 메일이 도착하지 않은 경우 이메일 재발송을 크릭하여 다시 발송할 수 있습니다.
-
-{% hint style="info" %}
-**참고**
-이메일은 10분동안 최대 5회까지 재발송할 수 있습니다. 재발송 횟수를 초과하면 일정 시간 이후 다시 시도해야 합니다.
-{% endhint %}
-
-
----
-
-## 비밀번호 재설정
-
-비밀번호를 잊어버린 경우 등록한 계정 정보를 확인한 후 임시 비밀번호를 발급받아 새로운 비밀번호를 변경할 수 있습니다.
-
-{% hint style="info" %}
-**참고**
-비밀번호 재설정 기능은 Cloud 환경에서만 제공합니다.
-{% endhint %}
-
-### 임시 비밀번호 발급
-
-
-1. 로그인 페이지에서 **비밀번호 재설정**을 클릭합니다.
-2. 아이디와 등록된 이메일 주소를 입력합니다.
-3. **이메일 발송하기**를 클릭합니다.
-4. 입력한 계정 정보가 확인되면 등록된 이메일 주소로 임시 비밀번호가 발송됩니다.
-5. **로그인 하기**를 클릭하여 로그인 페이지로 이동합니다.
-
-{% hint style="info" %}
-**참고**
-입력한 아이디와 이메일 주소가 등록된 정보와 일치하지 않으면 임시 비밀번호를 발급받을 수 없습니다.
-{% endhint %}
-
-
-## 임시 비밀번호로 로그인
-
-
-1. 이메일에서 **임시 비밀번호**를 확인합니다.
-2. 로그인 페이지에서 아이디와 임시 비밀번호를 입력한 후 **로그인**을 클릭합니다.
-3. **비밀번호 재설정** 페이지로 자동 이동합니다.
+1. Go to the access URL provided in the email.
+2. Enter the Root account and temporary password received in the email.
+3. **Login** Click the button.
+4. For security purposes on first login, **Change Password** You are automatically redirected to the page.
+5. Enter a new password.
+6. Change the password.
+7. Log in again with the changed password.
 
 {% hint style="warning" %}
-**주의**
-임시 비밀번호로 로그인한 경우에는 비밀번호를 변경하기 전까지 다른 페이지를 사용할 수 없습니다.
+**Caution**
+
+- Be sure to change the password after the first login.
+- You cannot navigate to other pages until you change the password.
 {% endhint %}
 
+---
 
-## 비밀번호 변경
+## Login
 
+**Login** Enter your account information on the page to access OwlDB.
 
-1. 새로운 비밀번호를 입력합니다.
-2. 비밀번호를 다시 입력하여 확인합니다.
-3. **비밀번호 변경하기**를 클릭합니다.
-4. 비밀번호 변경이 완료되면 로그인 페이지로 이동합니다.
-5. 변경한 비밀번호로 다시 로그인합니다.
+1. **Login** Enter your ID and password on the page.
+2. **Login** Click the button.
+3. When authentication is complete, **Dashboard** You are redirected to the page.
 
 {% hint style="info" %}
-**참고**
-기존 비밀번호와 동일한 비밀번호는 사용할 수 없습니다.
+**Note**
+
+If you do not have a Member account, **Login** on the page **Request Account Creation** You can request account creation by clicking the button. For more details, refer to Request Account Creation.
 {% endhint %}
 
+---
 
-\
+## Find ID
+
+If you have forgotten your ID, you can check your ID through your registered email address.
+
+{% hint style="info" %}
+**Note**
+
+The Find ID feature is only available in the Cloud environment.
+{% endhint %}
+
+1. **Login** on the page **Find ID**Click.
+2. Enter your registered email address.
+3. **Send Email**Click.
+4. Once the entered email address is verified, an ID notification email is sent.
+5. **Log In**Click **Login** to go to the page.
+
+### Email Verification Criteria by Account
+
+| Account | Email to enter |
+| --- | --- |
+| Root | The email address entered when subscribing to OwlDB |
+| Member | The email address registered to the account |
+
+{% hint style="info" %}
+**Note**
+
+If the entered email address does not match the registered information, the ID cannot be found.
+{% endhint %}
+
+## ID Notification Email
+
+Once email verification is complete, an ID notification email is sent to the registered email address.
+
+The email includes the following information.
+
+- ID
+- OwlDB **Login** Page shortcut
+
+After receiving the email, **Go to OwlDB**Click **Login** Go to the page and log in with the ID you were notified of.
+
+### If you did not receive the email
+
+If the ID notification email has not arrived, **Resend Email**You can send it again by clicking.
+
+{% hint style="info" %}
+**Note**
+
+An email can be resent up to 5 times within 10 minutes. If the resend limit is exceeded, you must try again after a certain period of time.
+{% endhint %}
+
+---
+
+## Reset Password
+
+If you have forgotten your password, you can verify your registered account information, receive a temporary password, and then change it to a new password.
+
+{% hint style="info" %}
+**Note**
+
+The password reset feature is provided only in the Cloud environment.
+{% endhint %}
+
+### Issuing a Temporary Password
+
+1. **Login** On the page, **Reset Password**Click.
+2. Enter your ID and registered email address.
+3. **Send Email**Click.
+4. Once the entered account information is verified, a temporary password is sent to the registered email address.
+5. **Log In**Click to **Login** Move to the page.
+
+{% hint style="info" %}
+**Note**
+
+If the entered ID and email address do not match the registered information, you cannot receive a temporary password.
+{% endhint %}
+
+## Logging In with a Temporary Password
+
+1. In the email, **Temporary Password**Check.
+2. **Login** Enter your ID and temporary password on the page.
+3. **Login**Click.
+4. **Reset Password** You are automatically moved to the page.
+
+{% hint style="warning" %}
+**Caution**
+
+If you have logged in with a temporary password, you cannot use other pages until you change your password.
+{% endhint %}
+
+## Change Password
+
+1. Enter a new password.
+2. Enter the password again to confirm it.
+3. **Change Password**Click.
+4. Once the password change is complete, **Login** Move to the page.
+5. Log in again with your changed password.
+
+{% hint style="info" %}
+**Note**
+
+You cannot use a password that is identical to your existing password.
+{% endhint %}

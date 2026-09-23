@@ -1,65 +1,48 @@
-# 백업 설정
+The Backup Settings page is where you configure the automatic backup scheduler and check its operational status.
 
-백업 설정 페이지에서는 자동 백업 스케줄러를 구성하고 운영 상태를 확인합니다. 자동 백업의 사용 여부, 실행 주기, 보존 기간, 시작 시간을 설정할 수 있으며, 스케줄러의 최근 실행 결과·7일 성공률·연속 실패 횟수와 30일 실행 이력 차트를 통해 백업 안정성을 점검합니다. Cloud 환경에서는 Full과 Incremental을 구분하지 않고 단일 자동 백업으로 관리합니다.
+## Backup Settings
 
-{% hint style="warning" %}
-**주의**
-자동 백업을 켜면 설정한 주기와 보존 기간에 따라 저장 용량이 늘어나며, 별도 요금이 발생합니다.
+You set whether to enable automatic backup, the execution interval, the retention period, and the start time, and you check backup stability through the scheduler's most recent execution result, 7-day success rate, consecutive failure count, and the 30-day execution history chart.
+
+**Management > Backup Settings** Clicking the menu lets you check the currently configured automatic backup settings.
+
+{% hint style="info" %}
+**Note**
+
+In the Cloud environment, the CSP Snapshot feature is used to manage backups as a single automatic backup without distinguishing between Full and Incremental.
 {% endhint %}
 
-## 백업 설정
+1. **Management > Backup Settings**Click.
+2. **Edit**Click.
+3. Set the automatic backup toggle to **On**.
+4. Enter the automatic backup interval, retention period, and start time.
+5. **Save**Click.
 
-**관리 > 백업 설정** 메뉴를 클릭하면 현재 설정된 자동 백업 구성 정보를 확인합니다. Cloud 환경에서는 CSP Snapshot 기능을 활용하여 Full/Incremental 구분 없이 단일 자동 백업으로 관리합니다.
+The page displays the following items.
 
-
-1. **관리 > 백업 설정**을 클릭합니다.
-2. **수정**을 클릭합니다.
-3. 자동 백업 토글을 **켜짐**으로 설정합니다.
-4. 자동 백업 주기, 보존 기간, 시작 시간을 입력합니다.
-5. **저장**을 클릭합니다.
-
-페이지에는 다음 항목이 표시됩니다.
-
-| 항목  | 설명  |
-|-----|-----|
-| 자동 백업 | 자동 백업 활성화 여부 (켜짐/꺼짐) |
-| 자동 백업 주기 | 자동 백업이 실행되는 주기 |
-| 보존 기간 | 생성된 백업 이미지를 보존하는 기간 |
-| 시작 시간 | 자동 백업이 처음 시작되는 일시 |
-| 최근 백업 일자 | 가장 최근에 자동 백업이 완료된 일시 |
-| 다음 백업 일자 | 다음 자동 백업 예정 일시 |
-
-### 수정 모드 입력 항목
-
-| 항목  | 설명  | 입력 규칙 |
-|-----|-----|-------|
-| 자동 백업 | 자동 백업 사용 여부 설정 | 기본값: 꺼짐 |
-| 자동 백업 주기 | 백업을 실행할 주기 | * 시간마다: 1\~23  <br> * 일마다: 1\~7 |
-| 보존 기간 | 백업 이미지를 보존할 기간 | * 시간마다: 1\~23 <br> * 일마다: 1\~35 |
-| 시작 시간 | 자동 백업이 시작될 날짜와 시간 | 현재보다 과거 일시는 선택 불가 |
+<table data-full-width="true"><thead><tr><th>Item</th><th>Description</th><th>Input Rules</th></tr></thead><tbody><tr><td>Automatic Backup</td><td>Whether automatic backup is enabled (On/Off)</td><td>Default: Off</td></tr><tr><td>Automatic Backup Interval</td><td>The interval at which automatic backup runs</td><td><ul><li>Hourly: 1–23</li><li>Daily: 1–7</li></ul></td></tr><tr><td>Retention Period</td><td>The period for which created backup images are retained</td><td><ul><li>Hourly: 1–23</li><li>Daily: 1–35</li></ul></td></tr><tr><td>Start Time</td><td>The date and time when automatic backup first starts</td><td>Dates and times earlier than the current time cannot be selected</td></tr><tr><td>Last Backup Date</td><td>The date and time when automatic backup was most recently completed</td><td>Display only</td></tr><tr><td>Next Backup Date</td><td>The scheduled date and time of the next automatic backup</td><td>Display only</td></tr></tbody></table>
 
 {% hint style="warning" %}
-**주의**
-자동 백업을 켜짐으로 설정하면 저장 주기와 보존 기간에 따라 저장 용량이 늘어나며, 별도 요금이 발생합니다.
-{% endhint %}
+**Caution**
 
+If you set automatic backup to On, storage capacity increases depending on the backup interval and retention period, and additional charges apply.
+{% endhint %}
 
 ---
 
-## 백업 스케줄러 운영 상태
+## Backup Scheduler Operational Status
 
-백업 설정 페이지 하단의 **백업 스케줄러 운영 상태** 섹션에서 자동 백업의 최근 실행 이력과 안정성 지표를 확인합니다. 자동 백업이 꺼진 상태에서도 마지막 실행 정보가 표시될 수 있습니다.
+At the bottom of the Backup Settings page, **Backup Scheduler Operational Status** In this section, you check the recent execution history and stability metrics of automatic backup. The last execution information is displayed even when automatic backup is off.
 
-| 항목  | 설명  | 미설정 시 표시 |
-|-----|-----|----------|
-| 최근 실행 결과 | 가장 최근에 완료된 자동 백업의 성공/실패 여부 | `-`      |
-| 최근 7일 성공률 | 최근 7일 이내 완료된 자동 백업의 성공 비율 (예: 90% (9/10)) | `-`      |
-| 연속 실패 횟수 | 가장 최근 완료 건부터 연속으로 실패한 횟수 (모두 성공인 경우 0회) | `-`      |
-| 최근 30일 실행 결과 차트 | 최근 30일간 일자별 자동 백업 성공/실패 건수를 누적 막대 차트로 표시 | No Data 상태 표시 |
+| Item | Description | Displayed when not configured |
+| --- | --- | --- |
+| Most Recent Execution Result | Whether the most recently completed automatic backup succeeded or failed | `-` |
+| 7-Day Success Rate | The success rate of automatic backups completed within the last 7 days (e.g., 90% (9/10)) | `-` |
+| Consecutive Failure Count | The number of consecutive failures starting from the most recently completed run (0 if all succeeded) | `-` |
+| 30-Day Execution Result Chart | Displays the number of successful/failed automatic backups per day over the last 30 days as a stacked bar chart | No Data status display |
 
-차트에서 성공과 실패는 색상으로 구분됩니다. 막대 위에 마우스를 올리면 해당 일자의 자동 백업 성공·실패 건수 상세 정보를 확인할 수 있습니다.
+In the chart, success and failure are distinguished by color. Hovering the mouse over a bar shows detailed information on the number of successful and failed automatic backups for that date.
 
-
-1. **관리 > 백업 설정**을 클릭합니다.
-2. 페이지 하단의 **백업 스케줄러 운영 상태** 섹션에서 최근 실행 결과, 최근 7일 성공률, 연속 실패 횟수를 확인합니다.
-3. **최근 30일 실행 결과 차트**에서 막대 위에 마우스를 올려 일자별 상세 실행 결과를 확인합니다.
+1. **Management > Backup Settings**Click.
+2. At the bottom of the page, **Backup Scheduler Operational Status** In this section, check the most recent execution result, the 7-day success rate, and the consecutive failure count.
+3. **30-Day Execution Result Chart**Hover the mouse over a bar to check the detailed execution results for each date.

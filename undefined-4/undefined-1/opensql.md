@@ -1,168 +1,135 @@
-# OpenSQL
-
-**관리 > 데이터 공간 관리** 메뉴에서 OpenSQL 인스턴스에 속한 데이터베이스를 조회하고 관리합니다. 데이터베이스 목록에서 각 데이터베이스의 크기·활성 세션 수·Tuple Health 상태를 한눈에 파악하고, 신규 데이터베이스 생성 및 삭제를 수행할 수 있습니다. 데이터베이스 별칭을 클릭하면 Encoding, Connection Limit, Bloat Ratio 등 상세 정보와 추세 지표를 함께 확인할 수 있습니다.
+**Management > Data Space Management** In this menu, you can query and manage databases belonging to an OpenSQL instance. From the database list, you can see each database's size, active session count, and Tuple Health status at a glance, and you can create and delete databases. Clicking a database alias lets you view detailed information such as Encoding, Connection Limit, and Bloat Ratio, along with trend indicators.
 
 {% hint style="info" %}
-**참고**
-OpenSQL 데이터베이스 관리는 Azure 환경에서만 사용할 수 있습니다. AWS 환경에서는 지원되지 않습니다.
+**Note**
+
+- OpenSQL database management is available only in Azure environments. It is not supported in AWS environments.
+- When the DB engine is set to Tibero, the tablespace and data file management screen is displayed instead of this page.
 {% endhint %}
+
+<figure>
+<img src="../../.gitbook/assets/image-7c6a12e3.png" alt="">
+<figcaption>Figure 1. Data Space - OpenSQL</figcaption>
+</figure>
+
+## Querying the Database List
+
+**Management > Data Space Management** When you enter the menu, the list of databases belonging to the current instance is displayed. A status summary for the entire instance is shown at the top of the page, and detailed status for each database can be checked in the central table.
+
+![Data Space Management list page](The Data Space Management screen showing the top summary information together with the database table)
+
+### Top Summary Information
+
+| Item | Description |
+| --- | --- |
+| Auto Vacuum | Whether Auto Vacuum is enabled |
+| Number of Databases | Total number of databases under the instance |
+| Active Session Count | Sum of active sessions across all databases (bar chart) |
+| Total DB Size | Sum of the sizes of all databases |
+| WAL Size | Write-Ahead Log size |
+
+### Table Items
+
+<table data-full-width="true"><thead><tr><th>Column</th><th>Description</th></tr></thead><tbody><tr><td>Alias</td><td><ul><li>Database name</li><li>Clicking navigates to the detail information page</li></ul></td></tr><tr><td>Creation Date</td><td>Date and time the database was created</td></tr><tr><td>Owner</td><td>User who owns the database</td></tr><tr><td>Encoding</td><td>Character Set configured for the database</td></tr><tr><td>Connection Limit</td><td>Maximum number of concurrent connections allowed</td></tr><tr><td>Data Size</td><td>Capacity actually occupied by data (GB)</td></tr><tr><td>Active Session Count</td><td>Number of currently active sessions (bar chart)</td></tr><tr><td>Tuple Health</td><td>A status indicator combining the Dead Tuple ratio and Vacuum execution time</td></tr><tr><td>Bloat Ratio</td><td>The proportion of Dead Tuple relative to total size (%)</td></tr><tr><td>Live/Dead Tuple Rate</td><td>Ratio of Dead Tuple to Live Tuple (%)</td></tr><tr><td>Last Vacuum Execution Time</td><td>Date and time the last Vacuum was executed</td></tr></tbody></table>
+
+**Tuple Health** The status is determined based on the Bloat Ratio and the last Vacuum execution time.
+
+| bIIG5p6cXo7A | Vacuum Normal (under 24 hours) | Vacuum Warning (24–72 hours) | Vacuum Danger (72 hours or more) |
+| --- | --- | --- | --- |
+| Bloat Ratio Normal (under 20%) | Healthy | Watch | Critical |
+| Bloat Ratio Warning (20–40%) | Watch | Watch | Critical |
+| Bloat Ratio Danger (40% or more) | Critical | Critical | Critical |
 
 {% hint style="info" %}
-**참고**
-DB 엔진이 Tibero로 설정된 경우에는 이 페이지 대신 테이블스페이스 및 데이터 파일 관리 화면이 표시됩니다.
+**Note**
+
+Tuple Health is a guide based on estimated statistics, and the actual performance impact may differ depending on traffic patterns.
 {% endhint %}
 
-## 데이터베이스 목록 조회
-
-**관리 > 데이터 공간 관리** 메뉴에 진입하면 현재 인스턴스에 속한 데이터베이스 목록을 조회합니다. 페이지 상단에는 인스턴스 전체의 상태 요약이 표시되고, 중앙 테이블에서 데이터베이스별 상세 현황을 확인합니다.
-
-!\[데이터 공간 관리 목록 페이지\](상단 요약 정보와 데이터베이스 테이블이 함께 표시된 데이터 공간 관리 화면)
-
-### 상단 요약 정보
-
-| 항목  | 설명  |
-|-----|-----|
-| Auto Vacuum | Auto Vacuum 사용 여부 |
-| 데이터베이스 수 | 인스턴스 하위의 데이터베이스 총 개수 |
-| Active Session Count | 전체 데이터베이스의 활성 세션 수 합계 (바 차트) |
-| Total DB Size | 전체 데이터베이스 크기 합계 |
-| WAL Size | Write-Ahead Log 크기 |
-
-### 테이블 항목
-
-| 컬럼  | 설명  |
-|-----|-----|
-| 별칭  | 데이터베이스 이름. 클릭하면 상세 정보 페이지로 이동합니다. |
-| 생성일 | 데이터베이스 생성 일시 |
-| Owner | 데이터베이스 소유 사용자 |
-| Encoding | 데이터베이스에 설정된 Character Set |
-| Connection Limit | 동시 접속 가능한 최대 연결 수 |
-| Data Size | 실제 데이터가 차지하는 용량 (GB) |
-| 활성 세션 수 | 현재 활성화된 세션 수 (바 차트) |
-| Tuple Health | Dead Tuple 비율과 Vacuum 수행 시간을 종합한 상태 지표 |
-| Bloat Ratio | 전체 크기 대비 Dead Tuple이 차지하는 비율 (%) |
-| Live/Dead Tuple Rate | Live Tuple 대비 Dead Tuple 비율 (%) |
-| 마지막 Vacuum 수행 시간 | 마지막 Vacuum이 수행된 일시 |
-
-**Tuple Health** 상태는 Bloat Ratio와 마지막 Vacuum 수행 시간을 기준으로 결정됩니다.
-
-|     | Vacuum 정상 (24시간 미만) | Vacuum 주의 (24\~72시간) | Vacuum 위험 (72시간 이상) |
-|-----|---------------------|---------------------|---------------------|
-| Bloat Ratio 정상 (20% 미만) | Healthy             | Watch               | Critical            |
-| Bloat Ratio 주의 (20% 이상 40% 미만) | Watch               | Watch               | Critical            |
-| Bloat Ratio 위험 (40% 이상) | Critical            | Critical            | Critical            |
+You can find a specific database by entering its alias in the search box. Clicking a column header sorts in ascending/descending order, and the default sort criterion is alias ascending. Clicking the 🔃 icon manually refreshes the page data.
 
 {% hint style="info" %}
-**참고**
-Tuple Health는 추정 통계 기반 가이드로, 트래픽 패턴에 따라 실제 성능 영향이 다를 수 있습니다.
+**Note**
+
+`postgres`, `template0`, `template1`are system default databases; they appear in the list but cannot be selected or deleted.
 {% endhint %}
 
-검색창에 별칭을 입력해 특정 데이터베이스를 찾을 수 있습니다. 열 헤더를 클릭하면 오름차순/내림차순으로 정렬하며, 기본 정렬 기준은 별칭 오름차순입니다. 🔃 아이콘을 클릭하면 페이지 데이터를 수동으로 새로 고침합니다.
+1. **Management > Data Space Management** Click the menu.
+2. Check the status in the top summary information and the database table.
+3. To find a specific database, enter its alias in the search box.
 
-{% hint style="info" %}
-**참고**
-`postgres`, `template0`, `template1`은 시스템 기본 데이터베이스로, 목록에 표시되지만 선택하거나 삭제할 수 없습니다.
-{% endhint %}
+## Creating a Database
 
-
-1. **관리 > 데이터 공간 관리** 메뉴를 클릭합니다.
-2. 상단 요약 정보와 데이터베이스 테이블에서 현황을 확인합니다.
-3. 특정 데이터베이스를 찾으려면 검색창에 별칭을 입력합니다.
-
-## 데이터베이스 생성
-
-\[생성\] 버튼을 클릭하면 화면 오른쪽에 데이터베이스 생성 드로어가 열립니다. 필수 항목을 입력한 뒤 \[생성\] 버튼을 클릭하면 생성 요청이 전송되고 드로어가 닫힙니다. 생성 요청 결과와 완료 여부는 화면 상단에 표시되는 토스트 메시지로 확인합니다.
+Clicking the [Create] button opens the database creation drawer on the right side of the screen. After entering the required fields, clicking the [Create] button sends the creation request and closes the drawer. The result of the creation request and whether it completed are confirmed via a toast message displayed at the top of the screen.
 
 {% hint style="warning" %}
-**주의**
-\[취소\]를 클릭하거나 드로어를 닫으면 입력한 내용이 모두 초기화됩니다. \[생성\] 버튼을 클릭하기 전까지 변경사항이 저장되지 않습니다.
+**Caution**
+
+Clicking [Cancel] or closing the drawer resets all entered content. Changes are not saved until you click the [Create] button.
 {% endhint %}
 
-### 입력 항목
+### Input Items
 
-| 항목  | 설명  | 입력 규칙 |
-|-----|-----|-------|
-| Database Name \* | 생성할 데이터베이스 이름 | 30자 이내, 영어 소문자(a-z)·숫자(0-9)·언더바(`_`)만 사용 가능. 동일 인스턴스 내 중복 불가 |
-| Owner \* | 데이터베이스 소유 사용자 | `postgres` (고정값) |
-| Encoding | 데이터베이스 Character Set | 기본값: `UTF8` |
-| Connection Limit | 동시 접속 가능한 최대 연결 수 | 기본값: Unlimited. **Unlimited** 체크박스를 해제하면 직접 입력 가능 (0 이상의 정수) |
+<table data-full-width="true"><thead><tr><th>Item</th><th>Description</th><th>Input Rules</th></tr></thead><tbody><tr><td>Database Name *</td><td>The name of the database to create</td><td><ul><li>Up to 30 characters, using only lowercase English letters (a-z), numbers (0-9), and underscores (<code>_</code>) are allowed</li><li>Duplicates are not allowed within the same instance</li></ul></td></tr><tr><td>Owner *</td><td>The user who owns the database</td><td><code>postgres</code> (fixed value)</td></tr><tr><td>Encoding</td><td>Database Character Set</td><td>Default value: <code>UTF8</code></td></tr><tr><td>Connection Limit</td><td>The maximum number of connections that can access concurrently</td><td><ul><li>Default value: Unlimited</li><li>Can be entered directly when Unlimited is unchecked (integer of 0 or greater)</li></ul></td></tr></tbody></table>
 
-\* 필수 항목
+*표기는 필수 입력 항목을 의미합니다.
 
-**Unlimited** 체크 상태에서는 인스턴스의 `max_connections` 범위 내에서 무제한으로 연결됩니다. 연결 수를 제한하려면 체크박스를 해제한 뒤 원하는 값을 입력합니다.
+The * mark indicates a required input item.
 
+**Unlimited** When checked, within the instance's `max_connections` range, connections are unlimited. To limit the number of connections, uncheck the checkbox and enter the desired value.
 
-1. **관리 > 데이터 공간 관리** 페이지에서 \[생성\] 버튼을 클릭합니다.
-2. 데이터베이스 생성 드로어에서 **Database Name**과 필요한 항목을 입력합니다.
-3. \[생성\] 버튼을 클릭합니다.
-4. 드로어가 닫히면 토스트 메시지로 생성 요청 결과와 완료 여부를 확인합니다.
+1. **Management > Data Space Management** Click the [Create] button on the page.
+2. In the database creation drawer, **Database Name**and enter the required items.
+3. Click the [Create] button.
+4. When the drawer closes, check the creation request result and completion status via the toast message.
 
-## 데이터베이스 상세 정보 조회
+## Viewing Database Details
 
-목록에서 데이터베이스 별칭을 클릭하면 해당 데이터베이스의 상세 정보 페이지로 이동합니다. 페이지는 기본 정보(Info), Database Activity, Trend Metrics 세 영역으로 구성됩니다.
+Clicking a database alias in the list navigates to the detail page for that database. The page consists of three areas: basic information (Info), Database Activity, and Trend Metrics.
 
-🔃 아이콘을 클릭하면 페이지 데이터를 수동으로 새로 고침합니다. 페이지 상단 브레드크럼에서 상위 메뉴 이름을 클릭하면 데이터 공간 관리 목록으로 돌아갑니다.
+Clicking the 🔃 icon manually refreshes the page data. Clicking the parent menu name in the breadcrumb at the top of the page returns you to the Data Space Management list.
 
+1. **Management > Data Space Management** From the database list on the page, for the database you want to view, its **alias**Click it.
+2. Check the status and current state in the basic information, Database Activity, and Trend Metrics areas.
 
-1. **관리 > 데이터 공간 관리** 페이지의 데이터베이스 목록에서 조회할 데이터베이스의 **별칭**을 클릭합니다.
-2. 기본 정보, Database Activity, Trend Metrics 영역에서 상태와 현황을 확인합니다.
+### Displayed Items
 
-### 표시 항목
+**Basic Information (Info)**
 
-**기본 정보 (Info)**
-
-| 항목  | 설명  |
-|-----|-----|
-| 생성일 | 데이터베이스 생성 일시 |
-| Tuple Health | Dead Tuple 비율과 Vacuum 수행 시간을 기반으로 한 상태 지표 (Healthy / Watch / Critical) |
-| 마지막 Vacuum 수행 시간 | 마지막 Vacuum이 수행된 일시 |
-| Owner | 데이터베이스 소유 사용자 |
-| Encoding | 데이터베이스에 설정된 Character Set |
-| Connection Limit | 동시 접속 가능한 최대 연결 수 |
+| Item | Description |
+| --- | --- |
+| Creation Date | The date and time the database was created |
+| Tuple Health | A status indicator based on the Dead Tuple ratio and Vacuum execution time (Healthy / Watch / Critical) |
+| Last Vacuum Execution Time | The date and time the last Vacuum was executed |
+| Owner | The user who owns the database |
+| Encoding | The Character Set configured for the database |
+| Connection Limit | The maximum number of connections that can access concurrently |
 
 **Database Activity**
 
-| 항목  | 설명  |
-|-----|-----|
-| DB Size | 실제 데이터가 차지하는 용량 (GB) |
-| 활성 세션 수 | 현재 활성화된 세션 수 (라인 차트). HA 구성 시 노드별 세션이 개별 라인으로 구분되어 표시됩니다. |
+<table data-full-width="true"><thead><tr><th>Item</th><th>Description</th></tr></thead><tbody><tr><td>DB Size</td><td>The capacity occupied by actual data (GB)</td></tr><tr><td>Active Session Count</td><td><ul><li>The number of currently active sessions (line chart)</li><li>In an HA configuration, sessions are displayed as individual lines per node</li></ul></td></tr></tbody></table>
 
 **Trend Metrics**
 
-| 항목  | 설명  |
-|-----|-----|
-| Bloat Ratio (%) | 전체 크기 대비 Dead Tuple이 차지하는 비율 |
-| Live Tuple Count (CNT) | 데이터베이스의 Live Tuple 수 |
-| Dead Tuple Count (CNT) | 데이터베이스의 Dead Tuple 수 |
-| Live/Dead Tuple Rate (%) | Live Tuple 대비 Dead Tuple 비율 |
+| Item | Description |
+| --- | --- |
+| Bloat Ratio (%) | The ratio of Dead Tuples relative to the total size |
+| Live Tuple Count (CNT) | The number of Live Tuples in the database |
+| Dead Tuple Count (CNT) | The number of Dead Tuples in the database |
+| Live/Dead Tuple Rate (%) | The ratio of Dead Tuples relative to Live Tuples |
 
+## Deleting a Database
 
-## 데이터베이스 삭제
-
-데이터베이스는 목록 페이지와 상세 정보 페이지 두 곳에서 삭제할 수 있습니다. 삭제 버튼을 클릭하면 확인 모달이 나타나며, 모달에서 최종 확인 후 삭제가 진행됩니다.
+A database can be deleted from two locations: the list page and the detail page. Clicking the delete button displays a confirmation modal, and deletion proceeds after final confirmation in the modal.
 
 {% hint style="warning" %}
-**주의**
-삭제 작업은 되돌릴 수 없습니다. 데이터베이스에 포함된 모든 데이터와 객체가 영구적으로 삭제되며, 연결 중인 애플리케이션에 즉시 장애가 발생할 수 있습니다.
+**Caution**
+
+The deletion operation cannot be undone. All data and objects contained in the database are permanently deleted, and connected applications may experience an immediate failure.
 {% endhint %}
 
-**목록 페이지에서 삭제**
-
-
-1. **관리 > 데이터 공간 관리** 페이지에서 삭제할 데이터베이스를 라디오 버튼으로 선택합니다.
-2. \[삭제\] 버튼을 클릭합니다.
-3. 삭제 확인 모달에서 내용을 확인한 뒤 \[삭제\] 버튼을 클릭합니다.
-4. 토스트 메시지로 삭제 결과를 확인합니다.
-
-**상세 정보 페이지에서 삭제**
-
-
-1. 목록에서 삭제할 데이터베이스의 **별칭**을 클릭해 상세 정보 페이지로 이동합니다.
-2. \[삭제\] 버튼을 클릭합니다.
-3. 삭제 확인 모달에서 내용을 확인한 뒤 \[삭제\] 버튼을 클릭합니다.
-4. 토스트 메시지로 삭제 결과를 확인합니다.
-
-{% hint style="info" %}
-**참고**
-`postgres`, `template0`, `template1`은 라디오 버튼으로 선택할 수 없어 삭제할 수 없습니다.
-{% endhint %}
+1. **Management > Data Space Management** Enter the database you want to delete on the page. **[List Page]** Select the database to delete using the radio button. **[Details Page]** Click the **alias**of the database to delete to navigate to the details page.
+2. Click the [Delete] button.
+3. In the deletion confirmation modal, verify the deletion target and scope of impact.
+4. Click the [Delete] button.
+5. Verify the deletion result via the toast message.

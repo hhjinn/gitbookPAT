@@ -1,352 +1,321 @@
-# 연결 정보 관리
+Connection information management is a menu for checking the DB Service connection address and centrally managing access control and external integration settings.
 
-연결 정보 관리는 DB 서비스의 접속 주소를 확인하고, 접근 제어 및 외부 연동 설정을 통합 관리하는 메뉴입니다.
+The tabs provided in this menu differ depending on the DB engine.
 
-메뉴는 DB 엔진에 따라 제공되는 탭이 다릅니다.
+| Tab | Description | Tibero | OpenSQL |
+| --- | --- | --- | --- |
+| Endpoint | Check the endpoint address accessible to external applications | ✓ | ✓ |
+| Access Control | View and manage IP-based access allow/block rules (pg_hba) | — | ✓ |
+| OpenProxy | View and modify OpenProxy parameters and Pool, User, Shard configurations | — | ✓ |
+| Replication Slot | View and manage Replication Slots used for integration with external systems | — | ✓ |
 
-| 탭   | 설명  | Tibero | OpenSQL |
-|-----|-----|:------:|:-------:|
-| Endpoint | 외부 애플리케이션이 접속 가능한 엔드포인트 주소를 확인합니다. | ✓      | ✓       |
-| Access Control | IP 기반 접근 허용·차단 규칙(pg_hba)을 조회하고 관리합니다. | —      | ✓       |
-| OpenProxy | OpenProxy 파라미터와 Pool, User, Shard 구성을 조회하고 수정합니다. | —      | ✓       |
-| Replication Slot | 외부 시스템과의 연동에 사용하는 Replication Slot을 조회하고 관리합니다. | —      | ✓       |
+### Common top area
 
-## 공통 상단 영역
+At the top of the connection information management screen, the identification information of the currently selected DB Service is displayed persistently across all tabs.
 
-연결 정보 관리 화면 상단에는 현재 선택된 DB 서비스의 식별 정보가 모든 탭에 걸쳐 고정으로 표시됩니다.
-
-| 항목  | 설명  |
-|-----|-----|
-| Status | DB 서비스의 현재 상태 |
-| DB Type | 데이터베이스 엔진 유형 |
-| Topology | 데이터베이스 클러스터 구성 방식 |
-
+| Item | Description |
+| --- | --- |
+| Status | Current status of the DB Service |
+| DB Type | Database engine type |
+| Topology | Database cluster configuration method |
 
 ---
 
-## Endpoint 탭
+### Endpoint tab
 
-Endpoint 탭은 **Service Endpoint**와 **Endpoint Details** 두 영역으로 구성되며, DB 서비스의 대표 접속 주소와 인스턴스별 상세 정보를 조회합니다.
+The Endpoint tab **Service Endpoint**and **Endpoint Details** consists of two areas, where you can view the DB Service's representative connection address and detailed information for each instance.
 
 **Service Endpoint**
 
-| 항목  | 설명  |
-|-----|-----|
-| Endpoint | 서비스 대표 접속 주소. **Single 토폴로지**는 VIP가 없으므로 Private IP로 표시하고, **HA·TAC·DR 토폴로지**는 VIP로 표시 |
-| Port | DB Listener 포트 번호 |
+<table data-full-width="true"><thead><tr><th>Item</th><th>Description</th></tr></thead><tbody><tr><td>Endpoint</td><td><ul><li>Service representative connection address</li><li>Single: displays Private IP</li><li>HA·TAC·DR: displays VIP</li></ul></td></tr><tr><td>Port</td><td>DB Listener port number</td></tr></tbody></table>
 
 **Endpoint Details**
 
-| 컬럼  | 설명  |
-|-----|-----|
-| 별칭  | 인스턴스 별칭 |
-| 역할  | Primary / Standby(Recovery) / Standby(Read Only) |
-| AZ  | 인스턴스가 위치한 가용영역 |
-| VIP | 인스턴스 접속용 VIP 주소 |
-| Private IP | 인스턴스 내부 네트워크 주소 |
-| Port | DB Listener 포트 번호 |
-| Health | 인스턴스 상태 |
+| Column | Description |
+| --- | --- |
+| Alias | Instance alias |
+| Role | Primary / Standby(Recovery) / Standby(Read Only) |
+| AZ | Availability zone where the instance is located |
+| VIP | VIP address for connecting to the instance |
+| Private IP | Instance internal network address |
+| Port | DB Listener port number |
+| Health | Instance status |
 
-생성이 완료된 인스턴스만 목록에 나타나며, 생성 중인 인스턴스는 표시되지 않습니다. Failover 또는 Switchover가 발생하더라도 Service Endpoint는 항상 **현재 Primary 인스턴스를 기준**으로 표시됩니다.
+Only instances that have completed creation appear in the list; instances that are being created are not displayed. Even if a Failover or Switchover occurs, the Service Endpoint is always displayed based on the current Primary instance.
 
 {% hint style="info" %}
-**참고**
-스펙 변경 작업이 진행 중인 경우 화면 상단에 진행 중 배너가 표시되며, 이 상태에서 상단 공통 영역의 **Topology** 항목은 변경 적용 이전의 토폴로지를 표시합니다.
+**Note**
+
+If a spec change operation is in progress, an in-progress banner is displayed at the top of the screen, and in this state the **Topology** item in the common top area displays the topology from before the change was applied.
 {% endhint %}
 
-### Endpoint 조회 방법
+**How to check the Endpoint**
 
-
-1. 상단 메뉴에서 **관리 > 연결 정보 관리**를 클릭합니다.
-2. **Endpoint** 탭을 클릭합니다.
-3. **Service Endpoint** 영역에서 DB 서비스의 대표 접속 주소와 포트를 확인합니다.
-   * Single 토폴로지: Private IP 주소가 표시됩니다.
-   * DR / TAC / HA 토폴로지: VIP 주소가 표시됩니다.
-4. **Endpoint Details** 목록에서 인스턴스별 별칭, 역할, VIP, Private IP, 포트, Health 상태를 확인합니다.
-5. Endpoint 주소를 복사하려면 해당 행의 📋 아이콘을 클릭합니다. 상단의 🔃 아이콘으로 목록을 수동 새로고침할 수 있습니다.
-
+1. From the top menu, **Management > Connection Information Management**click.
+2. **Endpoint** Click the tab.
+3. **Service Endpoint** In this area, check the DB Service's representative connection address and port. **Single**: displays Private IP **HA·TAC·DR**: VIP indication
+4. **Endpoint Details** Check the alias, role, VIP, Private IP, port, and Health status for each instance in the list.
+5. Copy the Endpoint address using the 📋 icon in the row you want to copy.
+6. Manually refresh the list using the 🔃 icon at the top.
 
 ---
 
-## Access Control 탭
+### Access Control tab
 
 {% hint style="info" %}
-**참고**
-Access Control 탭은 **OpenSQL** 환경에서만 제공됩니다.
+**Note**
+
+The Access Control tab is **OpenSQL** only available in the environment.
 {% endhint %}
 
-현재 DB 서비스에 적용된 pg_hba 규칙 목록을 테이블 형식으로 표시합니다. 규칙은 Priority 오름차순으로 고정 정렬되며, 위에 위치한 규칙일수록 먼저 적용됩니다.
+Displays the list of pg_hba rules currently applied to the DB Service in table format. Rules are fixed-sorted in ascending order of Priority, and rules positioned higher are applied first.
 
-| 컬럼  | 설명  |
-|-----|-----|
-| Priority | 규칙의 적용 순서. 번호가 작을수록 먼저 적용 |
-| Type | 연결 유형 (`local` / `host` / `hostssl` / `hostnossl`) |
-| 데이터베이스 | 규칙이 적용되는 데이터베이스 |
-| User | 규칙이 적용되는 사용자 |
-| Address | 허용 또는 차단할 클라이언트 주소 |
-| Method | 인증 방식 |
-| Auth Option | Method에 따른 세부 인증 옵션 |
-| Comment | 규칙에 대한 설명 |
+| Column | Description |
+| --- | --- |
+| Priority | The order in which rules are applied. The lower the number, the earlier it is applied |
+| Type | Connection type (`local` / `host` / `hostssl` / `hostnossl`) |
+| Database alias | The name of the database to which the rule applies |
+| User | The name of the user to which the rule applies |
+| Address | The client address to allow or block |
+| Method | Authentication method |
+| Auth Option | Detailed authentication options according to the Method |
+| Comment | Description of the rule |
 
-화면은 **조회 모드**와 **수정 모드** 두 가지 상태로 동작합니다. 조회 모드에서는 **생성**/**삭제** 버튼으로 규칙을 추가·제거하고, 수정 모드에서는 테이블 전체가 인라인 편집 가능한 상태로 전환되어 기존 규칙 값이나 Priority(순서)를 변경합니다.
+The screen operates in two states: view mode and edit mode. In view mode, **Create**/**Delete** you add or remove rules using the buttons, and in edit mode, the entire table switches to an inline-editable state, allowing you to change existing rule values or Priority (order).
 
 {% hint style="warning" %}
-**주의**
-시스템이 자동으로 생성한 고정 규칙은 수정 모드에서도 편집 및 순서 변경이 불가합니다. Cloud 환경에서는 상위 3개 규칙이 시스템 고정 규칙에 해당하며, 사용자가 추가하는 규칙의 Priority는 시스템 고정 규칙 다음 번호부터 지정할 수 있습니다.
+**Caution**
+
+Fixed rules automatically generated by the system cannot be edited or reordered even in edit mode. The top 3 rules at minimum correspond to system fixed rules, and there may be up to 4 depending on the Barman configuration. The Priority of rules added by the user can be assigned starting from the number after the system fixed rules.
 {% endhint %}
 
-### 규칙 조회
+**Viewing Rules**
 
+1. **Management > Connection Information Management**in **Access Control** Click the tab.
+2. Check the list of currently applied pg_hba rules in ascending order of Priority. The system rules fixed at the top of the list cannot be modified or deleted.
 
-1. **관리 > 연결 정보 관리**에서 **Access Control** 탭을 클릭합니다.
-2. 현재 적용된 pg_hba 규칙 목록을 Priority 오름차순으로 확인합니다. 목록 상단에 고정된 시스템 규칙은 수정 및 삭제할 수 없습니다.
+**Creating Rules**
 
-### 규칙 생성
+1. **Create** Click the button.
+2. Enter the following items in the drawer on the right.
 
+<table data-full-width="true"><thead><tr><th>Item</th><th>Description</th><th>Input rules</th></tr></thead><tbody><tr><td>Priority</td><td>The order in which rules are applied (the lower the number, the higher the priority)</td><td><ul><li>If not entered, it is added as the last in order</li><li>Can be entered starting after the system fixed rule number</li></ul></td></tr><tr><td>Type *</td><td>Connection type</td><td><ul><li><code>local</code> / <code>host</code> / <code>hostssl</code> / <code>hostnossl</code>Select one of</li><li>Default value<code>host</code></li></ul></td></tr><tr><td>Database *</td><td>The database to which the rule applies</td><td><ul><li>Select one or more from the database list, or a special keyword (<code>all</code>, <code>sameuser</code>, <code>samerole</code>) select one of</li><li>A special keyword and the database list cannot be selected simultaneously</li></ul></td></tr><tr><td>User *</td><td>The user to which the rule applies</td><td>Select one or more from the user list, or <code>all</code> Select</td></tr><tr><td>Address *</td><td>The client address to allow access</td><td><ul><li>Enter CIDR or Hostname directly, or select a special keyword (<code>all</code>, <code>samehost</code>, <code>samenet</code>)</li><li>If Type is<code>local</code>, it is disabled</li><li>Automatic CIDR format conversion when a single IP is entered (IPv4:<code>/32</code>, IPv6: <code>/128</code>)</li></ul></td></tr><tr><td>Method *</td><td>Authentication method</td><td><ul><li>Select from the dropdown</li><li>Default value<code>scram-sha-256</code></li></ul></td></tr><tr><td>Auth Option</td><td>Detailed authentication options for the Method</td><td><ul><li>Input method varies depending on the Method</li><li><code>trust</code> or <code>reject</code>Disabled when selected</li><li><code>scram-sha-256</code> or <code>md5</code>Select from the dropdown when selected</li><li>Other Methods<code>key=value</code> Enter in the format</li></ul></td></tr><tr><td>Comment</td><td>A note about the rule</td><td>Line breaks cannot be entered</td></tr></tbody></table>
 
-1. **\[생성\]** 버튼을 클릭합니다.
-2. 오른쪽 드로어에서 아래 항목을 입력합니다.
+*표기는 필수 입력 항목을 의미합니다.
 
-| 항목  | 설명  | 입력 규칙 |
-|-----|-----|-------|
-| Priority | 규칙 적용 순서 (숫자가 작을수록 우선 적용) | 미입력 시 마지막 순서로 추가됩니다. 시스템 고정 규칙 번호 이후부터 입력 가능합니다. |
-| Type \* | 연결 유형 | `local` / `host` / `hostssl` / `hostnossl` 중 선택. 기본값: `host` |
-| Database \* | 규칙을 적용할 데이터베이스 | 데이터베이스 목록에서 하나 이상 선택하거나 특수 키워드(`all`, `sameuser`, `samerole`) 중 하나를 선택합니다. 특수 키워드와 데이터베이스 목록은 동시에 선택할 수 없습니다. |
-| User \* | 규칙을 적용할 사용자 | 사용자 목록에서 하나 이상 선택하거나 `all`을 선택합니다. |
-| Address \* | 접근을 허용할 클라이언트 주소 | CIDR 또는 Hostname을 직접 입력하거나 특수 키워드(`all`, `samehost`, `samenet`)를 선택합니다. Type이 `local`이면 비활성화됩니다. 단일 IP 입력 시 자동으로 CIDR 형식으로 변환됩니다 (IPv4: `/32`, IPv6: `/128`). |
-| Method \* | 인증 방식 | 드롭다운에서 선택합니다. 기본값: `scram-sha-256` |
-| Auth Option | Method에 대한 세부 인증 옵션 | Method에 따라 입력 방식이 달라집니다. `trust` 또는 `reject` 선택 시 비활성화됩니다. `scram-sha-256` 또는 `md5` 선택 시 드롭다운으로 선택합니다. 그 외 Method는 `key=value` 형식으로 입력합니다. |
-| Comment | 규칙에 대한 메모 | 줄바꿈 입력 불가 |
+The * mark indicates a required input field.
 
-\* 필수 항목
+1. After completing the input, click the **Create** button.
 
+**Editing a rule**
 
-3. 입력을 완료한 후 **생성** 버튼을 클릭합니다.
+1. **Edit** button.
+2. Once in edit mode, edit each item in the table inline. Changing the Priority automatically adjusts the order of other affected rules. Changing the Type to `local`disables the Address field.
+3. Once editing is complete, click the **Save** button.
+4. Review the before and after changes in the change comparison modal.
+5. **Save** button.
 
-### 규칙 수정
-
-
-1. **\[수정\]** 버튼을 클릭합니다.
-2. 수정 모드로 전환되면 테이블의 각 항목을 인라인으로 수정합니다.
-   * Priority를 변경하면 영향을 받는 다른 규칙의 순서가 자동으로 조정됩니다.
-   * Type을 `local`로 변경하면 Address 필드가 비활성화됩니다.
-3. 수정이 완료되면 **저장** 버튼을 클릭합니다.
-4. 변경사항 비교 모달에서 수정 전후 내용을 확인한 후 **저장** 버튼을 클릭합니다. 저장이 완료되면 pg_hba에 즉시 반영됩니다.
+Once saving is complete, the changes are immediately reflected in pg_hba.
 
 {% hint style="warning" %}
-**주의**
-저장 시 연결이 다시 검증될 수 있습니다. 변경사항 비교 모달에서 내용을 충분히 확인한 후 저장합니다.
+**Caution**
+
+The connection may be re-validated upon saving. Save after thoroughly reviewing the content in the change comparison modal.
 {% endhint %}
 
-### 규칙 삭제
+**Deleting a rule**
 
-
-1. 삭제할 규칙의 체크박스를 선택합니다.
-2. **삭제** 버튼을 클릭합니다.
-3. 삭제 확인 모달에서 **삭제** 버튼을 클릭합니다.
-
+1. Select the checkbox of the rule to delete.
+2. **Delete** button.
+3. In the deletion confirmation modal, click the **Delete** button.
 
 ---
 
-## OpenProxy 탭
+### OpenProxy tab
 
 {% hint style="info" %}
-**참고**
-OpenProxy 탭은 **OpenSQL** 환경에서만 제공됩니다.
+**Note**
+
+The OpenProxy tab is **OpenSQL** provided only in the environment.
 {% endhint %}
 
-OpenProxy 파라미터를 **Scope** 단위로 조회하고 수정합니다. 화면 왼쪽의 **Select Scope** 영역에서 조회 범위를 선택하면 오른쪽 테이블에 해당 Scope의 파라미터 목록이 표시됩니다. 기본 선택값은 **General**입니다.
+Queries and edits OpenProxy parameters by Scope. When you select a query range in the **Select Scope** area on the left side of the screen, the parameter list for that Scope is displayed in the table on the right. The default selection is **General**.
 
-| Scope | 설명  |
-|-------|-----|
-| General | 전역 설정 파라미터 |
-| Virtual Router | HA/VIP 관련 설정 파라미터 |
-| Pool  | 특정 Pool 단위 파라미터 |
-| User  | 특정 Pool 내 특정 사용자 단위 파라미터 |
-| Shard | 특정 Pool 내 특정 Shard 단위 파라미터 |
+| Scope | Description |
+| --- | --- |
+| General | Global configuration parameters |
+| Virtual Router | HA/VIP-related configuration parameters |
+| Pool | Parameters at the specific Pool level |
+| User | Parameters at the specific user level within a specific Pool |
+| Shard | Parameters at the specific Shard level within a specific Pool |
 
-Pool, User, Shard는 트리 구조로 표시됩니다.
+Pool, User, and Shard are displayed in an accordion structure.
 
-**파라미터 목록 테이블**
+**Parameter list table**
 
-| 컬럼  | 설명  |
-|-----|-----|
-| 이름  | 파라미터명 |
-| 형식  | 파라미터 데이터 형식 |
-| 기본값 | 사용자가 설정하지 않았을 때 적용되는 기본값 |
-| 현재값 | 현재 적용된 값 |
-| 동적 파라미터 | 재시작 없이 즉시 적용 가능 여부 (`예` / `아니요`) |
+| Column | Description |
+| --- | --- |
+| Name | Parameter name |
+| Type | Parameter data type |
+| Default value | The default value applied when the user has not set it |
+| Current value | Currently applied value |
+| Dynamic parameter | Whether it can be applied immediately without a restart (`예` / `아니요`) |
 
-수정 모드는 화면 단위가 아닌 **세션 단위**로 동작하여, Scope를 변경하더라도 이미 수정한 내용은 유지됩니다. 저장 시 **동적 파라미터만 수정한 경우**는 재시작 없이 즉시 반영되고, **정적 파라미터(예: Port)도 함께 수정한 경우**는 OpenProxy 재기동 후 반영됩니다.
+Edit mode operates on a per-session basis rather than a per-screen basis, so already-edited content is retained even if you change the Scope. When saving, the result depends on the parameter type.
 
-### 파라미터 조회
+- **Editing only dynamic parameters**: Applied immediately without a restart
+- **Including static parameters**: Applied after restarting OpenProxy
 
+**Viewing parameters**
 
-1. **관리 > 연결 정보 관리**에서 **OpenProxy** 탭을 클릭합니다.
-2. 기본적으로 **General** Scope의 파라미터 목록이 표시됩니다.
-3. **Select Scope**에서 원하는 조회 범위를 선택합니다.
-4. 이름, 기본값, 현재값으로 파라미터를 검색하거나, **동적 파라미터** 여부로 필터링합니다.
+1. **In Management > Connection Information Management**, click the **OpenProxy** tab.
+2. By default, **General** the parameter list for the Scope is displayed.
+3. **Select Scope**Select the desired query scope from.
+4. Search parameters by name, default value, or current value, or **Dynamic parameter** filter by whether they are dynamic.
 
-### 파라미터 수정
+**Editing parameters**
 
-
-1. **수정** 버튼을 클릭합니다.
-
-   {% hint style="info" %}
-**참고**
-OpenProxy Status가 `Running` 상태일 때만 **수정** 버튼이 활성화됩니다.
-{% endhint %}
-2. 수정 모드로 전환되면 테이블에서 변경할 파라미터의 **현재값**을 직접 수정합니다. 임시 변경된 파라미터는 파란색으로 표시됩니다.
-3. Scope를 변경해도 수정 중인 내용은 유지됩니다.
-4. 수정이 완료되면 **저장** 버튼을 클릭합니다.
-5. 저장 확인 모달에서 수정 사항을 확인한 후 **적용** 버튼을 클릭합니다.
-   * 동적 파라미터만 수정한 경우: OpenProxy 재기동 없이 즉시 반영됩니다.
-   * 정적 파라미터가 포함된 경우: OpenProxy 재기동 후 반영됩니다.
+1. **Edit** Click the button.
 
 {% hint style="info" %}
-**참고** **저장** 버튼을 클릭하기 전까지 변경 사항은 서버에 반영되지 않습니다. **\[취소\]** 버튼을 클릭하면 모든 변경 사항이 초기화됩니다.
+**Note**
+
+Only when the DB Service status is `Running` the state **Edit** the button is enabled.
 {% endhint %}
 
-### Pool / User / Shard 생성
+2. Once switched to edit mode, directly edit the **current value**of the parameter you want to change in the table. Parameters pending changes are displayed in blue.
+3. Content being edited is retained even if you change the Scope.
+4. When editing is complete, **Save** click the button.
+5. Review the changes in the save confirmation modal.
+6. **Apply** Click the button. **Editing only dynamic parameters**: Applied immediately **Including static parameters**: Applied after restart
 
+{% hint style="info" %}
+**Note**
 
-1. **수정** 버튼을 클릭하여 수정 모드로 전환합니다.
-2. Select Scope 영역에서 생성할 유형(Pool, User, Shard)의 ➕ 아이콘을 클릭합니다.
-3. 생성 모달에서 아래 항목을 입력합니다.
+**Apply** Changes are not applied to the server until you click the button. **Cancel** Clicking the button resets all changes.
+{% endhint %}
+
+**Creating Pool / User / Shard**
+
+1. **Edit** Click the button to switch to edit mode.
+2. **Select Scope** In the area, click the ➕ icon for the type you want to create (Pool, User, Shard).
+3. Enter the following items in the creation modal.
 
 {% tabs %}
-{% tab title="Pool 생성" %}
+{% tab title="Creating a Pool" %}
+<table data-full-width="true"><thead><tr><th>Item</th><th>Description</th><th>Input Rules</th></tr></thead><tbody><tr><td>Pool Name *</td><td>Pool name</td><td>1–63 characters, lowercase English letters (a-z), digits (0-9), and underscore (<code>_</code>) can be used. The first character cannot be a digit. Must be unique within the DB Service.</td></tr><tr><td>User Name *</td><td>Name of the user that will belong to the Pool</td><td>1–63 characters, lowercase English letters (a-z), digits (0-9), and underscore (<code>_</code>) can be used. The first character cannot be a digit.</td></tr><tr><td>Pool Size *</td><td>The maximum number of DB server connections that the user can occupy simultaneously</td><td>Enter an integer. Range: 1 ~ max connections. Default: 9</td></tr><tr><td>Password *</td><td>User password</td><td>1–30 characters, lowercase English letters (a-z), digits (0-9), and special characters (<code>-</code>, <code>_</code>, <code>#</code>, <code>$</code>) can be used</td></tr><tr><td>Shard Name *</td><td>Shard name to create in the Pool</td><td>1–30 characters, lowercase English letters (a-z), digits (0-9), and underscore (<code>_</code>) allowed. Cannot be duplicated within the same Pool.</td></tr><tr><td>Database Name *</td><td>Database to connect to the Pool</td><td>Select from the dropdown</td></tr><tr><td>Servers *</td><td>DB server to connect to</td><td><ul><li>Select one or more from the dropdown</li><li>Displays the instance Role and Instance Alias</li></ul></td></tr><tr><td>Use Patroni</td><td>Whether to use Auto Failover through Patroni</td><td>Always enabled (cannot be changed)</td></tr></tbody></table>
 
-| 항목  | 설명  | 입력 규칙 |
-|-----|-----|-------|
-| Pool Name \* | Pool 이름 | 1\~63자, 영어 소문자(a-z)·숫자(0-9)·언더바(`_`) 사용 가능. 첫 글자는 숫자 불가. DB 서비스 내 중복 불가. |
-| User Name \* | Pool에 속할 사용자 이름 | 1\~63자, 영어 소문자(a-z)·숫자(0-9)·언더바(`_`) 사용 가능. 첫 글자는 숫자 불가. |
-| Pool Size \* | 해당 사용자가 동시에 점유할 수 있는 DB 서버 연결 최대 개수 | 정수 입력. 범위: 1 \~ max connections. 기본값: 9 |
-| Password \* | 사용자 비밀번호 | 1\~30자, 영어 소문자(a-z)·숫자(0-9)·특수문자(`-`, `_`, `#`, `$`) 사용 가능 |
-| Shard Name \* | Pool에 생성할 Shard 이름 | 1\~30자, 영어 소문자(a-z)·숫자(0-9)·언더바(`_`) 사용 가능. 동일 Pool 내 중복 불가. |
-| Database Name \* | Pool에 연결할 데이터베이스 | 드롭다운에서 선택 |
-| Servers \* | 접속할 DB 서버 | 드롭다운에서 1개 이상 선택. 인스턴스의 역할(Role)과 별칭(Instance Alias)이 표시됩니다. |
-| Use Patroni | Patroni를 통한 Auto Failover 사용 여부 | 항상 활성화(변경 불가) |
+*표기는 필수 입력 항목을 의미합니다.
 
-\* 필수 항목
-
+An asterisk (*) indicates a required field.
 {% endtab %}
-{% tab title="User 생성" %}
+{% tab title="Creating a User" %}
+| Item | Description | Input Rules |
+| --- | --- | --- |
+| User Name * | User name to add | 1–63 characters, lowercase English letters (a-z), digits (0-9), and underscore (`_`) allowed. The first character cannot be a digit. Cannot be duplicated within the same Pool. |
+| Pool Size * | Maximum number of DB server connections the user can hold simultaneously | Enter an integer. Range: 1 ~ max connections. Default: 9 |
+| Password * | User password | 1–30 characters, lowercase English letters (a-z), digits (0-9), and special characters (`-`, `_`, `#`, `$`) allowed |
 
-| 항목  | 설명  | 입력 규칙 |
-|-----|-----|-------|
-| User Name \* | 추가할 사용자 이름 | 1\~63자, 영어 소문자(a-z)·숫자(0-9)·언더바(`_`) 사용 가능. 첫 글자는 숫자 불가. 동일 Pool 내 중복 불가. |
-| Pool Size \* | 해당 사용자가 동시에 점유할 수 있는 DB 서버 연결 최대 개수 | 정수 입력. 범위: 1 \~ max connections. 기본값: 9 |
-| Password \* | 사용자 비밀번호 | 1\~30자, 영어 소문자(a-z)·숫자(0-9)·특수문자(`-`, `_`, `#`, `$`) 사용 가능 |
+*표기는 필수 입력 항목을 의미합니다.
 
-\* 필수 항목
-
+An asterisk (*) indicates a required field.
 {% endtab %}
-{% tab title="Shard 생성" %}
+{% tab title="Creating a Shard" %}
+<table data-full-width="true"><thead><tr><th>Item</th><th>Description</th><th>Input Rules</th></tr></thead><tbody><tr><td>Shard Name *</td><td>Shard name to add</td><td>1–30 characters, lowercase English letters (a-z), digits (0-9), and underscore (<code>_</code>) allowed. Cannot be duplicated within the same Pool.</td></tr><tr><td>Database Name *</td><td>Database to connect to the Shard</td><td>Select from the dropdown</td></tr><tr><td>Servers *</td><td>DB server to connect to</td><td><ul><li>Select one or more from the dropdown</li><li>Displays the instance Role, Instance Alias, and Health</li><li>Health is for reference only and does not affect server selection</li></ul></td></tr><tr><td>Use Patroni</td><td>Whether to use Auto Failover through Patroni</td><td>Always enabled (cannot be changed)</td></tr></tbody></table>
 
-| 항목  | 설명  | 입력 규칙 |
-|-----|-----|-------|
-| Shard Name \* | 추가할 Shard 이름 | 1\~30자, 영어 소문자(a-z)·숫자(0-9)·언더바(`_`) 사용 가능. 동일 Pool 내 중복 불가. |
-| Database Name \* | Shard에 연결할 데이터베이스 | 드롭다운에서 선택 |
-| Servers \* | 접속할 DB 서버 | 드롭다운에서 1개 이상 선택. 인스턴스의 역할(Role), 별칭(Instance Alias), Health 정보가 표시됩니다. Health는 참고용 정보이며 서버 선택에는 영향을 미치지 않습니다. |
-| Use Patroni | Patroni를 통한 Auto Failover 사용 여부 | 항상 활성화(변경 불가) |
+*표기는 필수 입력 항목을 의미합니다.
 
-\* 필수 항목
-
+An asterisk (*) indicates a required field.
 {% endtab %}
 {% endtabs %}
 
-
-4. 필수 항목을 모두 입력한 후 **생성** 버튼을 클릭합니다. 생성된 항목이 목록에 임시로 추가됩니다.
-5. 최종 반영을 위해 **저장** 버튼을 클릭합니다.
+4. After entering all required fields, **Create** click the button. The created item is temporarily added to the list.
+5. To apply the final changes, **Save** click the button.
 
 {% hint style="info" %}
-**참고** **저장** 버튼을 클릭하기 전까지 생성한 항목은 서버에 반영되지 않습니다. 저장 전 페이지를 이탈하면 변경 사항이 초기화됩니다.
+**Note**
+
+**Save** Items you create are not applied to the server until you click the button. If you leave the page before saving, your changes are reset.
 {% endhint %}
 
-### Pool / User / Shard 삭제
+**Deleting a Pool / User / Shard**
 
-
-1. **수정** 버튼을 클릭하여 수정 모드로 전환합니다.
-2. Select Scope 영역에서 삭제할 Pool, User 또는 Shard 항목의 🗑️ 아이콘을 클릭합니다. 해당 항목이 비활성화되고 아이콘이 🔃로 변경됩니다.
-   * Pool을 삭제하면 해당 Pool 하위의 User와 Shard도 함께 비활성화됩니다.
-3. 삭제를 취소하려면 🔃 아이콘을 클릭합니다.
-4. 삭제를 확정하려면 **저장** 버튼을 클릭합니다.
+1. **Edit** Click the button to switch to edit mode.
+2. **Select Scope** In the area, click the 🗑️ icon of the Pool, User, or Shard item you want to delete. The item is disabled and the icon changes to 🔃. If you delete a Pool, the Users and Shards under that Pool are also disabled.
+3. To cancel the deletion, click the 🔃 icon.
+4. To confirm the deletion, **Save** click the button.
 
 {% hint style="info" %}
-**참고**
-🗑️ 아이콘은 Pool이 2개 이상일 때 활성화됩니다. User와 Shard는 해당 Pool 내에 각각 2개 이상 존재할 때 삭제할 수 있습니다.
+**Note**
+
+The 🗑️ icon is enabled when there are two or more Pools. Users and Shards can be deleted when there are two or more of each within the Pool.
 {% endhint %}
 
 {% hint style="warning" %}
-**주의**
-저장 전 페이지를 이탈하면 삭제 설정이 초기화됩니다. 현재 선택 중인 Pool, User 또는 Shard를 삭제하면 Scope가 자동으로 General로 변경됩니다.
-{% endhint %}
+**Caution**
 
+If you leave the page before saving, the deletion settings are reset. If you delete the currently selected Pool, User, or Shard, the Scope automatically changes to General.
+{% endhint %}
 
 ---
 
-## Replication Slot 탭
+### Replication Slot Tab
 
 {% hint style="info" %}
-**참고**
-Replication Slot 탭은 **OpenSQL** 환경에서만 제공됩니다.
+**Note**
+
+- The Replication Slot tab is **OpenSQL** Available only in the environment.
+- **Logical Type Slot**does not support creation; querying and deletion are available.
+- **Permanent Scope Slot**can only be created, and **Temporary Scope Slot**can only be queried and cannot be selected or deleted.
 {% endhint %}
 
-OpenSQL Primary 인스턴스에 생성된 Replication Slot 목록을 테이블 형식으로 표시합니다. Failover 또는 Switchover가 발생하더라도 항상 **현재 Primary 인스턴스를 기준**으로 조회됩니다.
+Displays the list of Replication Slots created on the OpenSQL Primary instance in table format. Even if a Failover or Switchover occurs, it is always queried based on the current Primary instance.
 
-| 컬럼  | 설명  |
-|-----|-----|
-| 이름  | Replication Slot 이름 |
-| Type | `Physical`(WAL 로그를 그대로 저장) 또는 `Logical`(INSERT·UPDATE·DELETE 형태로 변환하여 저장) |
-| Scope | `Permanent`(영구 유지) 또는 `Temporary`(세션 종료 시 자동 삭제) |
-| Status | `Connected`(Replication Client 연결 중) 또는 `Disconnected`(연결된 Client 없음) |
-| Backlog(MB) | 아직 소비되지 않고 보존 중인 WAL 데이터 용량 |
-
-OwlDB 콘솔에서는 **Permanent** Slot만 생성할 수 있으며, Temporary 타입 Slot은 조회만 가능하고 선택하거나 삭제할 수 없습니다.
+<table data-full-width="true"><thead><tr><th>Column</th><th>Description</th></tr></thead><tbody><tr><td>Name</td><td>Replication Slot name</td></tr><tr><td>Type</td><td><ul><li><code>Physical</code>(Stores WAL logs as-is)</li><li><code>Logical</code> (Converts and stores in INSERT/UPDATE/DELETE format)</li></ul></td></tr><tr><td>Scope</td><td><ul><li><code>Permanent</code>(Permanently retained)</li><li><code>Temporary</code> (Automatically deleted when the session ends)</li></ul></td></tr><tr><td>Status</td><td><ul><li><code>Connected</code>(Replication Client connected)</li><li><code>Disconnected</code> (No connected Client)</li></ul></td></tr><tr><td>Backlog(MB)</td><td>Volume of WAL data that has not yet been consumed and is being retained</td></tr></tbody></table>
 
 {% hint style="warning" %}
-**주의**
-OwlDB 관리 범위를 벗어나 PostgreSQL에 직접 생성하거나 삭제한 Replication Slot은 OwlDB 콘솔에 반영되지 않습니다. 이 경우 Slot 상태 조회, 삭제, 장애 대응 등 관련 관리 기능이 정상적으로 동작하지 않을 수 있습니다. Replication Slot 생성 및 삭제는 반드시 OwlDB 콘솔에서 수행합니다.
+**Caution**
+
+Replication Slots created or deleted directly in PostgreSQL, outside the scope of OwlDB management, are not reflected in the OwlDB console. In this case, related management functions such as Slot status query, deletion, and failure handling may not operate normally. Replication Slot creation and deletion must always be performed in the OwlDB console.
 {% endhint %}
 
-### Replication Slot 조회
+**Querying Replication Slots**
 
+1. **Management > Connection Information Management**in **Replication Slot** Click the tab.
+2. Check the list of Replication Slots created on the current Primary instance.
+3. **Type**(Physical / Logical) or **Status**Use the (Connected / Disconnected) filter to narrow the list.
 
-1. **관리 > 연결 정보 관리**에서 **Replication Slot** 탭을 클릭합니다.
-2. 현재 Primary 인스턴스에 생성된 Replication Slot 목록을 확인합니다.
-3. **Type**(Physical / Logical) 또는 **Status**(Connected / Disconnected) 필터를 사용하여 목록을 좁힙니다.
+**Creating a Replication Slot**
 
-### Replication Slot 생성
+1. **Create** Click the button.
+2. Enter the following items in the drawer on the right.
 
+| Item | Description | Input rules |
+| --- | --- | --- |
+| Name * | Unique name of the Replication Slot | Up to 30 characters using lowercase English letters (a-z), numbers (0-9), and underscores (`_`) are allowed. Spaces and tabs cannot be entered. Duplicates are not allowed. |
+| Type * | Slot type | `Physical` Fixed to |
+| Scope | Operations management target | `Permanent`Fixed to |
 
-1. **\[생성\]** 버튼을 클릭합니다.
-2. 오른쪽 드로어에서 아래 항목을 입력합니다.
+*표기는 필수 입력 항목을 의미합니다.
 
-| 항목  | 설명  | 입력 규칙 |
-|-----|-----|-------|
-| 이름 \* | Replication Slot의 고유 이름 | 30자 이내 영어 소문자(a-z)·숫자(0-9)·언더바(`_`) 사용 가능. 공백 및 탭 입력 불가. 중복 불가. |
-| Type \* | Slot 유형 | Physical 또는 Logical 중 선택. 기본값: Physical |
-| Scope | 운영 관리 대상 | Permanent로 고정. Temporary Slot은 생성할 수 없습니다. |
+The * mark indicates a required input item.
 
-\* 필수 항목
-
-
-3. 항목을 입력한 후 **생성** 버튼을 클릭합니다.
+1. After entering the items, **Create** Click the button.
 
 {% hint style="info" %}
-**참고**
-DB 서비스 상태가 `Updating` 또는 `Failover`인 경우 **생성** 버튼이 비활성화됩니다.
+**Note**
+
+If the DB Service status is `Updating` or `Failover`, **Create** the button is disabled.
 {% endhint %}
 
-### Replication Slot 삭제
+**Deleting a Replication Slot**
 
-
-1. 삭제할 Slot을 선택합니다.
-2. **삭제** 버튼을 클릭합니다.
-3. 삭제 확인 모달에서 내용을 확인한 후 **삭제** 버튼을 클릭합니다.
+1. Select the Slot to delete.
+2. **Delete** Click the button.
+3. After reviewing the content in the deletion confirmation modal, **Delete** Click the button.
 
 {% hint style="info" %}
-**참고**
-Status가 `Connected`인 Slot과 DB 서비스 상태가 `Updating` 또는 `Failover`인 경우에는 **\[삭제\]** 버튼이 비활성화됩니다.
+**Note**
+
+For Slots with a Status of `Connected`and when the DB Service status is `Updating` or `Failover`, **Delete** the button is disabled.
 {% endhint %}
