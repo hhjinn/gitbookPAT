@@ -57,6 +57,16 @@ sudo bash install_opensql_package.sh
 이 스크립트는 다음 패키지를 설치합니다.
 
 ```bash
+#!/bin/bash
+
+exec 5> /dev/null
+BASH_XTRACEFD=5
+
+V_USER=$(whoami)
+BASE_DIR="$(cd "$(dirname "$0")" && pwd)"
+
+set -x
+
 # PostgreSQL 공식(pgdg) 저장소
 dnf install -y https://download.postgresql.org/pub/repos/yum/reporpms/EL-9-x86_64/pgdg-redhat-repo-latest.noarch.rpm
 
@@ -113,9 +123,16 @@ dnf install -y \
     cronie
 
 dnf --enablerepo=pgdg-common install -y SFCGAL
+
+# geos-devel: AppStream 에는 geos 런타임만 있고 devel 서브패키지가 없다. pgdg-common 은 버전
+# 접미사가 붙은 이름(geos313-devel)으로 배포하고, opensql-installer 는 geos*-devel 패턴으로
+# 검사하므로 이 이름으로도 필수 패키지 요건을 충족한다. AppStream geos 와 같은 3.13.1 을 맞춘다.
 dnf --enablerepo=pgdg-common install -y geos313-devel
 
 pip3 install pyyaml etcd3 requests psycopg2-binary 'protobuf<4.0.0' tabulate
+
+#BINARY
+set +x
 ```
 
 ## **5. owlagent 설치**
@@ -130,7 +147,7 @@ pip3 install pyyaml etcd3 requests psycopg2-binary 'protobuf<4.0.0' tabulate
     ├── owlagent 
     ├── owlagent.env 
     ├── owlagent_start.sh 
-    └── owlagent_stop.shh
+    └── owlagent_stop.sh
     ```
 
 

@@ -1,6 +1,7 @@
 # Table of contents
 
 * [서비스 개요](README.md)
+* [Copy of 서비스 개요](readme-1.md)
 * [설치 가이드](undefined/README.md)
   * [설치 소개](undefined/undefined.md)
   * [OwlDB 서버 준비 및 설치](undefined/owldb/README.md)

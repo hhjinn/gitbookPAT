@@ -1,4 +1,8 @@
-# 서비스 개요
+---
+hidden: true
+---
+
+# Copy of 서비스 개요
 
 OwlDB는 클라우드와 온프레미스 환경에서 데이터베이스를 설치하고 DB Service로 등록·통합 관리하는 관리형 데이터베이스 플랫폼입니다. 이 페이지에서는 OwlDB의 운영 환경과 주요 기능, 지원 엔진·토폴로지를 확인합니다.
 
@@ -49,9 +53,13 @@ OwlDB가 지원하는 관계형 데이터베이스(RDBMS) 엔진 사양 및 환�
 
 {% tabs %}
 {% tab title="Cloud" %}
+#### AWS
+
+<table data-full-width="true"><thead><tr><th>데이터베이스 엔진</th><th>버전</th><th>토폴로지</th></tr></thead><tbody><tr><td>Tibero</td><td>7.2.5</td><td><ul><li>Single</li><li>Single + DR</li><li>TAC</li><li>TAC + DR</li></ul></td></tr></tbody></table>
+
 #### Azure
 
-<table data-full-width="true"><thead><tr><th>데이터베이스 엔진</th><th>버전</th><th>토폴로지</th></tr></thead><tbody><tr><td>Tibero</td><td>7.2.6</td><td><ul><li>Single</li><li>Single + DR</li><li>TAC</li><li>TAC + DR</li></ul></td></tr><tr><td>OpenSQL</td><td><ul><li>3.16.12.5</li><li>3.17.8.5</li></ul></td><td><ul><li>Single</li><li>HA</li></ul></td></tr></tbody></table>
+<table data-full-width="true"><thead><tr><th>데이터베이스 엔진</th><th>버전</th><th>토폴로지</th></tr></thead><tbody><tr><td>Tibero</td><td>7.2.5</td><td><ul><li>Single</li><li>Single + DR</li><li>TAC</li><li>TAC + DR</li></ul></td></tr><tr><td>OpenSQL</td><td><ul><li>3.16.12.5</li><li>3.17.8.5</li></ul></td><td><ul><li>Single</li><li>HA</li></ul></td></tr></tbody></table>
 {% endtab %}
 
 {% tab title="On-Premise" %}
@@ -61,6 +69,6 @@ OwlDB가 지원하는 관계형 데이터베이스(RDBMS) 엔진 사양 및 환�
 
 #### OwlDB Automation
 
-<table data-full-width="true"><thead><tr><th>데이터베이스 엔진</th><th>버전</th><th>토폴로지</th></tr></thead><tbody><tr><td>Tibero</td><td><ul><li>등록: 7 패치셋 이후</li><li>설치: 7.2.6</li></ul></td><td><ul><li>Single</li><li>Single + DR</li><li>TAC</li><li>TAC + DR</li></ul></td></tr><tr><td>OpenSQL</td><td>3.0(PostgreSQL 17.9)</td><td><ul><li>Single</li><li>HA</li></ul></td></tr></tbody></table>
+<table data-full-width="true"><thead><tr><th>데이터베이스 엔진</th><th>버전</th><th>토폴로지</th></tr></thead><tbody><tr><td>Tibero</td><td><ul><li>등록: 7 패치셋 이후</li><li>설치: 7.2.5</li></ul></td><td><ul><li>Single</li><li>Single + DR</li><li>TAC</li><li>TAC + DR</li></ul></td></tr><tr><td>OpenSQL</td><td>3.0(PostgreSQL 17.9)</td><td><ul><li>Single</li><li>HA</li></ul></td></tr></tbody></table>
 {% endtab %}
 {% endtabs %}
