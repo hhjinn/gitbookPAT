@@ -56,8 +56,17 @@ sudo bash install_opensql_package.sh
 
 This script installs the following packages.
 
-```bash
-# PostgreSQL official (pgdg) repository
+<pre class="language-bash"><code class="lang-bash"><strong>#!/bin/bash
+</strong>
+exec 5> /dev/null
+BASH_XTRACEFD=5
+
+V_USER=$(whoami)
+BASE_DIR="$(cd "$(dirname "$0")" &#x26;&#x26; pwd)"
+
+set -x
+
+# PostgreSQL official (PGDG) repository
 dnf install -y https://download.postgresql.org/pub/repos/yum/reporpms/EL-9-x86_64/pgdg-redhat-repo-latest.noarch.rpm
 
 # EPEL
@@ -113,14 +122,21 @@ dnf install -y \
     cronie
 
 dnf --enablerepo=pgdg-common install -y SFCGAL
+
+# geos-devel: AppStream includes only the GEOS runtime package, not a development subpackage.
+# pgdg-common distributes it with a version suffix (geos313-devel). opensql-installer checks
+# the geos*-devel pattern, so this package meets the requirement. Match AppStream GEOS 3.13.1.
 dnf --enablerepo=pgdg-common install -y geos313-devel
 
-pip3 install pyyaml etcd3 requests psycopg2-binary 'protobuf<4.0.0' tabulate
-```
+pip3 install pyyaml etcd3 requests psycopg2-binary 'protobuf&#x3C;4.0.0' tabulate
+
+#BINARY
+set +x
+</code></pre>
 
 ## **5. Install owlagent**
 
-1.  Extract the owlagent binary. <br>
+1.  Extract the owlagent binary.<br>
 
     ```bash
     tar -zxvf owlagent_dist_latest.tar.gz -C $OPENSQL_HOME owlagent_dist_latest.tar.gz 
@@ -132,8 +148,6 @@ pip3 install pyyaml etcd3 requests psycopg2-binary 'protobuf<4.0.0' tabulate
     ├── owlagent_start.sh 
     └── owlagent_stop.sh
     ```
-
-
 2. Enter the configuration values in owlagent.env.
 
 | KEY           | VALUE                                                                                                   |
