@@ -1,6 +1,7 @@
 # Table of contents
 
-* [서비스 개요](README.md)
+* [Page 1](README.md)
+* [서비스 개요](<README (1).md>)
 * [Copy of 서비스 개요](readme-1.md)
 * [설치 가이드](undefined/README.md)
   * [설치 소개](undefined/undefined.md)
