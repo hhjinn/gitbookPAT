@@ -1,6 +1,7 @@
 # Table of contents
 
-* [서비스 개요](README.md)
+* [OwlDB Manual](README.md)
+* [서비스 개요](<README (1).md>)
 * [Copy of 서비스 개요](readme-1.md)
 * [환경 준비](undefined/README.md)
   * [AWS](undefined/aws/README.md)
