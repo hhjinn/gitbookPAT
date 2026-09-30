@@ -1,66 +1,70 @@
-# Service Overview
+# OwlDB Manual
 
-OwlDB is a managed database platform that deploys databases in cloud and on-premises environments. It registers and integrates them as managed database services. This page describes OwlDB's operating environments, key features, and supported engines and topologies.
+> **Guide Information**
+>
+> Guide Title: OwlDB User Guide
+>
+> Publication Date: 2026-09-30
+>
+> Software Version: OwlDB v.2.0.0
+>
+> Guide Version: v.2.0.0
 
-## Operating Environments
+### **Overview**
 
-### Cloud Environment Support
+This guide is written for all users who wish to conveniently operate and manage databases using the features provided by OwlDB.​
 
-OwlDB dynamically creates and operates databases using cloud infrastructure resources. Using infrastructure as code (IaC), it automates infrastructure provisioning and database configuration. You can build and scale database environments to your required specifications from the console.
+#### **Prerequisite Knowledge**
 
-### On-Premises Environment Support
+* Understanding of databases
+* Understanding of RDBMS
 
-This method operates databases on customer-owned physical infrastructure, including servers, networks, and storage. It efficiently uses fixed infrastructure resources and supports closed networks isolated from external networks. Through OwlDB, you can install a new database on a host or register an existing database as a managed target.
+​
 
-## Key Features
+***
 
-OwlDB provides common management features across both environments. It also provides features optimized for cloud and on-premises infrastructure.
+### **Guide Structure**
 
-**Common Features**
-
-| Feature                       | Description                                                                                                          |
-| ----------------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| **Database Status Query**     | Real-time verification of database and instance status                                                               |
-| **Monitoring & Alerts**       | <p>- Monitors key performance metrics and operational status<br>- Sends immediate alerts for anomalies or events</p> |
-| **Migration**                 | Pre-migration compatibility validation and guided migration support between heterogeneous databases                  |
-| **Account Management (RBAC)** | Per-user privilege separation and security management through role-based access control                              |
+This document consists of a total of 5 chapters.
 
 {% tabs %}
-{% tab title="Cloud-Specific" %}
-| Feature                               | Description                                                                               |
-| ------------------------------------- | ----------------------------------------------------------------------------------------- |
-| **Automated Provisioning**            | End-to-end automation from cloud resource creation to database architecture configuration |
-| **Resource Scaling and Modification** | Instance and storage scaling aligned with workload changes                                |
-| **Cloud Snapshot Backup**             | Backup and recovery by integrating CSP snapshot features                                  |
+{% tab title="Service Overview" %}
+Provides prerequisite knowledge helpful for using OwlDB.
+
+🔎 [Go to Service Overview](<README (1).md>)
 {% endtab %}
 
-{% tab title="On-Premises-Specific" %}
-| Feature                                    | Description                                                                                                             |
-| ------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------- |
-| **Database Installation and Registration** | <p>- Remotely deploys new databases to customer hosts<br>- Registers existing external databases as managed targets</p> |
-| **Infrastructure Resource Discovery**      | Automatically collects hardware specifications and configuration data, and identifies status through the agent          |
-| **Physical Backup and Recovery**           | Backup and recovery using native database utilities, such as Tibero RMGR                                                |
+{% tab title="Installation Guide" %}
+​Provides an installation guide for using OwlDB.
+
+🔎 [Go to Installation Guide](undefined/)
+{% endtab %}
+
+{% tab title="Feature-Specific Usage Guide" %}
+Provides guidance on how to use OwlDB by feature, from getting started to database creation, management, and monitoring.
+
+🔎 [Go to Getting Started](undefined-2/)
+
+🔎 [Go to Dashboard](undefined-3/)
+
+🔎 [Go to Management](undefined-4/)
+
+🔎 [Go to Monitoring](undefined-5/)
+
+🔎[ Go to My Page](undefined-7/)
+{% endtab %}
+
+{% tab title="Reference Materials" %}
+You can find reference materials that may be helpful when using OwlDB.
+
+🔎 [Go to Reference Materials](./#reference-materials)
+{% endtab %}
+
+{% tab title="Legal Notice" %}
+Provides information about licenses and legal notices related to the use of OwlDB.
+
+🔎[ Go to Legal Notice](./#legal-notice)
 {% endtab %}
 {% endtabs %}
 
-### Database Engines and Topologies
-
-The following tables list the RDBMS engine specifications and topologies supported in each environment.
-
-{% tabs %}
-{% tab title="Cloud" %}
-#### Azure
-
-<table data-full-width="true"><thead><tr><th>Database Engine</th><th>Version</th><th>Topology</th></tr></thead><tbody><tr><td>Tibero</td><td>7.2.6</td><td><ul><li>Single</li><li>Single + DR</li><li>TAC</li><li>TAC + DR</li></ul></td></tr><tr><td>OpenSQL</td><td><ul><li>3.16.12.5</li><li>3.17.8.5</li></ul></td><td><ul><li>Single</li><li>HA</li></ul></td></tr></tbody></table>
-{% endtab %}
-
-{% tab title="On-Premises" %}
-#### OwlDB Operation
-
-<table data-full-width="true"><thead><tr><th>Database Engine</th><th>Version</th><th>Topology</th></tr></thead><tbody><tr><td>Tibero</td><td>Tibero 7 patch set or later</td><td><ul><li>Single</li><li>Single + DR</li><li>TAC</li><li>TAC + DR</li></ul></td></tr><tr><td>OpenSQL</td><td>3.0 (PostgreSQL 17.9)</td><td><ul><li>Single</li><li>HA</li></ul></td></tr></tbody></table>
-
-#### OwlDB Automation
-
-<table data-full-width="true"><thead><tr><th>Database Engine</th><th>Version</th><th>Topology</th></tr></thead><tbody><tr><td>Tibero</td><td><ul><li>Registered: Tibero 7 patch set or later</li><li>Installed: 7.2.6</li></ul></td><td><ul><li>Single</li><li>Single + DR</li><li>TAC</li><li>TAC + DR</li></ul></td></tr><tr><td>OpenSQL</td><td>3.0 (PostgreSQL 17.9)</td><td><ul><li>Single</li><li>HA</li></ul></td></tr></tbody></table>
-{% endtab %}
-{% endtabs %}
+#### ​
