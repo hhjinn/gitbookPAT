@@ -29,7 +29,7 @@ description: OwlDB에 대해 소개하고 기능별 사용 방법을 안내합�
 
 ### **안내서 구성** <a href="#undefined-2" id="undefined-2"></a>
 
-본 문서는 총 4개의 장으로 구성됩니다.
+본 문서는 총 5개의 장으로 구성됩니다.
 
 {% tabs %}
 {% tab title="서비스 개요" %}
