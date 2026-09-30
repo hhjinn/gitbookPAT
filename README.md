@@ -1,3 +1,7 @@
+---
+description: Learn about OwlDB and how to use its features.
+---
+
 # OwlDB Manual
 
 > **Guide Information**
