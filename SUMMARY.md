@@ -1,6 +1,7 @@
 # Table of contents
 
 * [서비스 개요](README.md)
+* [Copy of 서비스 개요](readme-1.md)
 * [환경 준비](undefined/README.md)
   * [AWS](undefined/aws/README.md)
     * [마켓플레이스 구독 안내](undefined/aws/undefined.md)
