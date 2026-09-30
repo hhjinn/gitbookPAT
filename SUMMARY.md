@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Page 1](README.md)
+* [OwlDB Manual](README.md)
 * [서비스 개요](<README (1).md>)
 * [Copy of 서비스 개요](readme-1.md)
 * [설치 가이드](undefined/README.md)
