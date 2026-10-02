@@ -1,5 +1,25 @@
 ---
 description: OwlDB에 대해 소개하고 기능별 사용 방법을 안내합니다.​
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+  metadata:
+    visible: true
+  tags:
+    visible: true
+  actions:
+    visible: true
+  anchors:
+    visible: true
 ---
 
 # OwlDB Manual

@@ -1,3 +1,26 @@
+---
+layout:
+  width: wide
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+  metadata:
+    visible: true
+  tags:
+    visible: true
+  actions:
+    visible: true
+  anchors:
+    visible: true
+---
+
 # 설치 DB 환경 준비 가이드
 
 이 페이지에서는 OpenSQL 기반 데이터베이스 설치를 위한 서버 환경을 준비합니다. 배포 파일을 내려받아 설치 디렉터리에 배치하고, 필수 패키지와 owlagent를 설치한 뒤 환경 검증까지 수행합니다.
