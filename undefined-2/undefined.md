@@ -1,76 +1,77 @@
-# Login
+<figure>
+<img src="../.gitbook/assets/image-c165935a.png" alt="">
+<figcaption>Figure 1. Login</figcaption>
+</figure>
 
-<figure><img src="../.gitbook/assets/image-c165935a.png" alt=""><figcaption><p>Figure 1. Login</p></figcaption></figure>
-
-### Root Initial Login
+## Root first login
 
 The initial ID and password for the Root account are as follows.
 
-| Item     | Initial Value |
-| -------- | ------------- |
-| ID       | admin         |
-| Password | admin         |
+| Item | Initial value |
+| --- | --- |
+| ID | admin |
+| Password | admin |
 
 1. Enter the initial ID and password.
-2. Click **Login**.
-3. For security purposes, you are automatically redirected to the **Change Password** page upon your first login.
-4. Enter a new password and change it.
+2. **Login** Click the button.
+3. For security purposes upon first login, **Change Password** you are automatically redirected to the page.
+4. Enter and change a new password.
 5. Log in again with the changed password.
 
 {% hint style="warning" %}
 **Caution**
 
-Be sure to change the password after your first login.
+Be sure to change your password after the first login.
 
-You cannot navigate to other pages until you change the password.
+You cannot navigate to other pages until you change your password.
 {% endhint %}
 
-***
+---
 
-### Login
+## Login
 
 1. Enter your ID and password on the login page.
-2. Click **Login**.
-3. Once authentication is complete, you are directed to the dashboard page.
+2. **Login** Click the button.
+3. Once authentication is complete, you are moved to the dashboard page.
 
 {% hint style="info" %}
 **Note**
 
-If you do not have a Member account, click **Request Account Creation** on the login page. For details, refer to **Request Account Creation**.
+If you do not have a Member account, on the login page, **Request Account Creation** you can click the button to request account creation. For more details, **Request Account Creation**refer to .
 {% endhint %}
 
-***
+---
 
-### ID/Password Guide
+## ID and Password Guide
 
-The on-premises environment does not provide ID recovery or password reset features. If you have forgotten your ID or need to reset your password, contact the Root administrator for assistance.
+In the On-Premise environment, the Find ID and Reset Password features are not provided. If you forget your ID or need to reset your password, you must contact the Root (administrator) to resolve it.
 
 {% hint style="info" %}
 **Note**
 
-The ID recovery and password reset features via email authentication are provided only in the Cloud environment.
+The Find ID and Reset Password features via email authentication are provided only in the Cloud environment.
 {% endhint %}
 
-#### If You Have Forgotten Your Account Information
+### If You Forget Your Account Information
 
-* If you have forgotten your ID: Contact the Root (administrator) to verify your registered ID.
-* If you have forgotten your password: Request a password reset from the Root (administrator).
+- If you forget your ID: Contact the Root (administrator) to confirm your registered ID.
+- If you forget your password: Request a password reset from the Root (administrator).
 
-### Resetting a Member Password
+## Resetting a Member Password
 
-On the **My Page > Account Management** page, the Root can verify a Member account ID and reset its password.
+Root can **My Page > Account Management** confirm the ID of a Member account and reset the password directly on the page.
 
 1. Log in with the administrator (Root) account.
-2. Navigate to **My Page > Account Management**.
+2. **My Page > Account Management** Move to the page.
 3. Select the Member account whose password you want to reset.
-4. Click **Edit**.
-5. Automatically generate a temporary password, or enter a password to modify it.
-6. Deliver the reset password to the corresponding Member.
+4. **Edit** Click the button.
+5. Automatically generate a temporary password or enter a password to edit it.
+6. Deliver the reset password to the relevant Member.
 
-The Member logs in again on the login page using the password received from the Root.
+The Member logs in again on the login page with the password received from Root.
 
 {% hint style="info" %}
 **Note**
 
-For detailed instructions on account management, refer to **Account Management**.
+For detailed account management methods, **Account Management**respectively.
 {% endhint %}

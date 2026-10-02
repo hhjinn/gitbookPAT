@@ -1,17 +1,17 @@
 {% hint style="info" %}
 **Note**
 
-- This guide is intended for customer infrastructure administrators.
-- To register and manage an existing operational Tibero in OwlDB, **Tibero 7 or later**is required
+- This guide is intended for the customer's infrastructure administrators.
+- To register and manage an existing Tibero in production with OwlDB **Tibero 7 or later**must be met
 {% endhint %}
 
 ---
 
-This page describes the system, network, and database settings you must prepare, and how to place the deployment files, before registering an existing operational Tibero in OwlDB.
+This page explains the system, network, and database settings that must be prepared before registering an existing Tibero in production with OwlDB, as well as how to place the deployment files.
 
-## System Requirements
+# System Requirements
 
-### Disk (Volume) Requirements
+### Disk (volume) requirements
 
 Since the existing database is already configured, no separate preparation is required for the Data/Archive/Redo disks. Only the Backup disk needs to be checked.
 
@@ -23,65 +23,65 @@ The Backup disk must have an xfs filesystem created and be mounted.
 For a TAC configuration, the Backup disk must be a shared volume accessible from all nodes.
 {% endhint %}
 
-## Network Requirements
+# Network Requirements
 
-### **Required Port Configuration for the Database Server**
+### **Required port configuration for the database server**
 
-The following ports are required to register an existing database in OwlDB.
+The following ports are required to register an existing database with OwlDB.
 
-<table data-full-width="true"><thead><tr><th>Port Type</th><th>Port Number</th><th>Purpose</th><th>Remarks</th></tr></thead><tbody><tr><td><strong>DB Listener Port</strong></td><td>Existing DB Setting Value</td><td><ul><li>Database Connection Port</li><li>Tibero: e.g., 8629/tcp</li></ul></td><td><ul><li>Allow inbound DB Listener port from the OwlDB server</li></ul></td></tr></tbody></table>
+<table><thead><tr><th>Port Type</th><th>Port Number</th><th>Purpose</th><th>Remarks</th></tr></thead><tbody><tr><td><strong>DB Listener Port</strong></td><td>Existing DB configuration value</td><td><ul><li>Database connection port</li><li>Tibero: e.g., 8629/tcp</li></ul></td><td><ul><li>Allow inbound DB Listener port from the OwlDB server</li></ul></td></tr></tbody></table>
 
 {% hint style="warning" %}
 **Caution**
 
-Do not change the ports currently used by the existing database. Additionally open port 40001 for Agent communication and the Listener port for DB connections.
+Do not change the ports currently used by the existing database. Additionally open port 40001 for Agent communication and the Listener port for DB connection.
 {% endhint %}
 
-### Firewall Settings
+### Firewall Configuration
 
-Firewall settings are required for communication between the OwlDB server and the database server.
+Firewall configuration is required for communication between the OwlDB server and the database server.
 
 ---
 
-## Database Configuration Requirements
+# Database configuration requirements
 
-### Required Settings for TAC and DR Configurations
+### Required settings for TAC and DR configurations
 
-For databases operating in a TAC (Tibero Active Cluster) or DR configuration, please configure the following parameters in advance.
+For databases operating in a TAC (Tibero Active Cluster) or DR configuration, please set the following parameters in advance.
 
-**DB Parameter**
+**DB parameter**
 
-| DB Parameter | Value | Description |
+| DB parameter | Value | Description |
 | --- | --- | --- |
 | LOG_ARCHIVE_FORMAT | - | Set to the same value on all nodes |
 | STANDBY_USE_OBSERVER | Y | Required for DR configuration |
 
-**CM Parameter**
+**CM parameter**
 
-| CM Parameter | Value | Description |
+| CM parameter | Value | Description |
 | --- | --- | --- |
 | _CM_REDIRECT_STDOUT_TO_OUTFILE | Y | FS07PS_341175b patch required |
 
 ---
 
-## Deployment File Preparation and Placement
+# Preparing and Placing Deployment Files
 
 ### 1. List of Required Files
 
 - owldb dp binary (`owldb-dp-installer-*.tar.gz`)
-- License file (`license.xml`)
+- license file (`license.xml`)
 
 {% hint style="info" %}
 **Note**
 
-Since Tibero is already installed on the registered DB, the Tibero binary is not required.
+Since Tibero is already installed on the DB being registered, the Tibero binary is not required.
 {% endhint %}
 
-### 2. File Placement
+### 2. File placement
 
-Move to the path where the existing database is installed (hereafter `설치 디렉터리`). (Example: `/home/rocky/owldb`)
+Move to the path where the existing database is installed (hereinafter `설치 디렉터리`). (Example: `/home/rocky/owldb`)
 
-Extract the DP binary at the same level as the existing database's `TB_HOME`.
+Of the existing database `TB_HOME`Extract the DP binary at the same level as.
 
 ```bash
 # Extract the DP binary
@@ -91,7 +91,7 @@ tar -zxvf owldb-dp-installer-%Y%m%d-%H.tar.gz -C $TB_HOME --strip-components=2
 mv {license file} $TB_HOME/license.xml
 ```
 
-After preparation is complete, the `$TB_HOME` structure is as follows.
+Once preparation is complete, `$TB_HOME` the structure is as follows.
 
 ```bash
 $TB_HOME/
@@ -102,4 +102,4 @@ $TB_HOME/
  └── tbagent_dist_latest.tar.gz  # tbagent binary
 ```
 
-Afterward, proceed to the [Database Server Agent Installation document](agent.md)and continue.
+Afterwards [Database server Agent installation document](agent.md)and proceed.

@@ -1,41 +1,41 @@
 **My Page > My Information Management**allows you to view and manage the basic profile and permission status of the currently logged-in account.
 
-Through My Information, users can view in real time not only their basic information such as their ID, name, and email, but also their currently assigned role (Root/Member) and the list of DB Service permissions they belong to.
+Through My Information lookup, users can view in real time not only basic information such as their own ID, name, and email, but also their currently assigned role (Root/Member) and the list of DB Service permissions they belong to.
 
-## Viewing My Account Information
+## View My Account Information
 
-View the detailed information of your account.
+View detailed information about your own account.
 
 | Item | Description |
 | --- | --- |
-| ID | The ID used when logging in |
+| ID | The ID used for login |
 | Name | User display name |
 | Role | `Root` or `Member` |
-| Permissions | The permissions held by the account (DB Service list) |
+| Permission | The permissions held by the account (DB Service list) |
 | Email | Email information |
 | Status | Account status |
-| Creation Date | Account creation time |
-| Last Access Date | Last login time |
-| Modification Date | Last modification time |
+| Creation date | Account creation time |
+| Last access date | Last login time |
+| Change date | Last modified time |
 
-## Editing My Account Information
+## Edit My Account Information
 
-Edit the detailed information of your account. The ID, role, and permissions are displayed for information purposes only and cannot be edited.
+Edit detailed information about your own account. The ID, role, and permissions are displayed for information purposes only and cannot be edited.
 
-| Item | Description | Input Rules |
+| Item | Description | Input rules |
 | --- | --- | --- |
-| ID | The ID used when logging in | Cannot be edited |
-| Role | `Root` or `Member` | Cannot be edited |
-| Permissions | The permissions held by the account (DB Service list) | Cannot be edited |
+| ID | The ID used for login | Cannot be modified |
+| Role | `Root` or `Member` | Cannot be modified |
+| Permission | The permissions held by the account (DB Service list) | Cannot be modified |
 | Name | User display name | Editable |
-| Current Password* | The previously set password | Input for identity verification |
-| New Password* | The password to be changed | 8–20 characters, combination of letters, numbers, and special characters |
-| Confirm Password* | Confirm the password to be changed | Enter the same value as the new password |
+| Current password* | The previously set password | Input for identity verification |
+| New password* | The password to change to | 8–20 characters, a combination of letters, numbers, and special characters |
+| Confirm password* | Confirm the password to change to | Enter the same value as the new password |
 | Email | Email information | Editable |
 
 *표기는 필수 입력 항목을 의미합니다.
 
-The * mark indicates a required input field.
+* indicates a required input field.
 
 {% hint style="info" %}
 **Note**

@@ -1,16 +1,16 @@
 ## Discovery Process
 
-On the OwlDB screen **Discover** When you click the button, OwlDB Agent automatically collects the configuration information of the customer infrastructure where it is installed, allowing you to check the current status on the dashboard.
+On the OwlDB screen **Explore** clicking the button automatically collects the configuration information of the customer infrastructure where the OwlDB Agent is installed, allowing you to check the status on the dashboard.
 
-1. **OwlDB console screen** > **Dashboard**Navigate to.
-2. Click the Discover button.
-3. Discovery results are displayed in a total of four categories. For details on each category, refer to the **Discovery Results** section below.
-4. Review the results and proceed with the appropriate follow-up actions for each category.
+1. **OwlDB console screen** > **Dashboard**to navigate to.
+2. Click the Discovery button.
+3. Discovery results are retrieved as a total of 4 items, and for details on each item, refer to the **Discovery Results** section below.
+4. Check the results and proceed with the follow-up tasks appropriate for each item.
 
 {% hint style="info" %}
 **Note**
 
-The database discovery feature is only available with the Root account.
+The database discovery feature is available only from the Root account.
 {% endhint %}
 
 ---
@@ -20,29 +20,29 @@ The database discovery feature is only available with the Root account.
 {% hint style="info" %}
 **Note**
 
-Categories with no discovery results are not displayed as cards.
+Items with no discovery results are not displayed as cards.
 {% endhint %}
 
-### **Available Installation Hosts**
+### **Installable Host Lookup**
 
-You can view the list of hosts on which databases can be installed. Each engine, such as Tibero and OpenSQL, is displayed as a separate card, and hosts of engines not found during the discovery process are not displayed as cards. The Available Installation Hosts category is view-only and does not require any separate follow-up actions.
+You can check the list of hosts where a database can be installed. They are displayed as separate cards by engine, such as Tibero and OpenSQL, and hosts of engines not found during the discovery process are not displayed as cards. The installable host item is view-only and does not require any separate follow-up tasks.
 
 | Item | Description |
 | --- | --- |
-| Hostname | Available installation host name |
+| Hostname | Installable host name |
 | CPU | Host CPU information |
 | Memory | Host Memory information |
 | OS | Host OS information |
 
 ---
 
-### **Registerable Databases**
+### **Registrable Databases**
 
-Databases already in operation in the customer environment are automatically discovered and provided as a list. You can select the desired database from the list and click the **Register** button to proceed with the registration process.
+It automatically discovers databases already running in the customer environment and provides them as a list. Select the desired database from the list and **Registered** click the button to proceed with the registration process.
 
 | Column | Description |
 | --- | --- |
-| Database Name | Discovered cluster name |
+| Database name | Discovered cluster name |
 | Engine | Database engine type |
 | Configuration Information | Basic configuration information such as number of nodes and roles |
 | Action | Register button |
@@ -51,61 +51,61 @@ Databases already in operation in the customer environment are automatically dis
 
 ### Change Detection
 
-If a database registered in OwlDB is directly changed outside of OwlDB, the change history is detected and notified.
+When a database registered in OwlDB is changed directly outside of OwlDB, it detects the changes and notifies you.
 
-Change Detection detects the following two types of changes.
+Change detection detects the following two types of changes.
 
-| Type | Description | Example | Follow-up Action |
+| Type | Description | Example | Follow-up Tasks |
 | --- | --- | --- | --- |
-| **Spec Change** | When the configuration information of a database is changed | Increase/decrease in number of nodes | **Spec Change** Reflect change history after clicking the button |
-| **Status Change** | When the role of a node is changed in a DR configuration | Primary ↔ Standby role switch | **Status Change** Reflect change history after clicking the button |
+| **Spec Change** | When the configuration information of a database is changed | Increase/decrease in number of nodes | **Spec Change** Changes are applied after clicking the button |
+| **Status Change** | When the role of a node is changed in a DR configuration | Primary ↔ Standby role switch | **Status Change** Changes are applied after clicking the button |
 
 The card view display rules differ depending on the type of change.
 
-- **Status Change**: Until the changes are applied, the card displays the existing status stored in OwlDB as is.
+- **Status Change**: Until the changes are applied, the card displays the existing state stored in OwlDB as is.
 - **Spec Change**: Scale-in instances are not displayed on the card, and Scale-out instances are additionally displayed at the bottom of the list.
 
-**Status Change** When you click the button, a modal comparing the state before and after the change appears.
+**Status Change** Clicking the button brings up a modal comparing before and after the change.
 
-- **Current (left)**: Existing status stored in OwlDB
-- **Updated (right)**: Current status detected through discovery (however, detailed information such as Eventlog, Status, Health, CPU, Memory, and Active Session is not displayed.)
+- **Current (left)**: Existing state stored in OwlDB
+- **Updated (right)**: Current state detected through discovery (however, detailed information such as Eventlog, Status, Health, CPU, Memory, and Active Session is not displayed.)
 
-In the modal **Apply**When you click, the status change history is reflected in OwlDB, and **Go to Spec Change**When you click, the status change is reflected and then you are navigated to the Spec Change page.
+In the modal **Apply**clicking it reflects the status change details in OwlDB, and **Go to Spec Change**clicking it reflects the status change and then navigates to the spec change page.
 
 {% hint style="info" %}
 **Note**
 
 - **Databases installed through OwlDB are excluded from change detection.**
-- If a spec change and a status change are detected at the same time, the status change is processed first.
-- When only a status change is applied in the modal, the spec change follow-up task disappears from the screen, and if unreflected spec changes remain, they are marked again as spec change targets upon re-scanning.
+- When a spec change and a status change are detected simultaneously, the status change is processed first.
+- If only the status change is applied in the modal, the spec change follow-up task disappears from the screen, and if there are unreflected spec changes remaining, they are displayed again as spec change targets upon re-discovery.
 {% endhint %}
 
 {% hint style="warning" %}
 **Caution**
 
-When a topology change is detected, it is handled as an unsupported target for change detection, and the reflection function is not provided.
+When a topology change is detected, it is treated as a target not supported by change detection, and the reflection feature is not provided.
 {% endhint %}
 
 ---
 
 ### Abnormal Node
 
-Nodes whose configuration information OwlDB could not properly identify during the scan process are marked as abnormal nodes.
+Nodes for which OwlDB failed to properly identify the configuration information during the discovery process are displayed as abnormal nodes.
 
 The abnormal node card displays the following information.
 
 | Item | Description |
 | --- | --- |
-| Node Identifier | Identifier value of the node or node group classified as abnormal |
-| Abnormal Type | Configuration Unidentifiable / Partially Identified |
-| Description | Reason for being classified as abnormal |
+| Node identifier | Identifier value of the node or node group classified as abnormal |
+| Abnormal type | Configuration unidentifiable / Partially identified |
+| Description | Reason classified as abnormal |
 | Guide | Handling guide link or button |
 
 Abnormal nodes occur in the following two cases.
 
 | Case | Description |
 | --- | --- |
-| When the DB configuration cannot be identified at all | Marks that single node as an abnormal node |
-| When the DB configuration is only partially identified | Groups the identified nodes into a single abnormal node for display |
+| When the DB configuration cannot be identified at all | Mark that single node as an abnormal node |
+| When the DB configuration is only partially identified | Group the identified nodes together and display them as a single abnormal node |
 
-When an abnormal node occurs, take action by referring to the separate handling guide.
+If an abnormal node occurs, take action by referring to the separate handling guide.

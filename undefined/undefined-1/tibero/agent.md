@@ -1,22 +1,22 @@
-This page explains how to install and start the Agent on a database server.
+This page explains how to install and start the Agent on the database server.
 
 {% hint style="info" %}
 **Note**
 
-This guide [Install DB Environment Preparation Guide](db.md) or [Registration DB Environment Preparation Guide](db-1.md)after completing it.
+This guide [Installed DB Environment Preparation Guide](db.md) or [Registered DB Environment Preparation Guide](db-1.md)should be performed after completing.
 {% endhint %}
 
-### Agent Installation and Startup
+### Agent installation and startup
 
-**1. Extract the Agent Binary**
+**1. Extract the Agent binary**
 
 ```bash
 tar -zxvf $TB_HOME/tbagent_dist_latest.tar.gz -C $TB_HOME
 ```
 
-**2. Create the agent.env File**
+**2. Create the agent.env file**
 
-Enter the information required to start the agent in the env file.
+Enter the information required to start the agent into the env file.
 
 ```bash
 ############################################################
@@ -56,39 +56,39 @@ CM_HOME=
 ############################################################
 ```
 
-Whether parameters need to be entered varies depending on the configuration method.
+Whether a parameter needs to be entered varies depending on the configuration method.
 
 {% tabs %}
-{% tab title="Install DB" %}
+{% tab title="Installed DB" %}
 | Option | Description | Required |
 | --- | --- | --- |
 | `IP` | OwlDB server IP address | Required |
 | `PORT` | OwlDB server port (SERVER_PORT) | Required |
 | `USERNAME` | DB OS user name | Required |
 | `TB_HOME` | Tibero home directory path | Required |
-| `TB_SID` | TB_SID value | Not required for installation |
-| `TAS_SID` | TAS_SID value | Not required for installation |
-| `CM_SID` | CM_SID value | Not required for installation |
-| `CM_HOME` | CM_HOME value | Not required for installation |
+| `TB_SID` | TB_SID value | Not required during installation |
+| `TAS_SID` | TAS_SID value | Not required during installation |
+| `CM_SID` | CM_SID value | Not required during installation |
+| `CM_HOME` | CM_HOME value | Not required during installation |
 
 {% hint style="info" %}
 **Note**
 
-`TB_SID` DB identifier values such as these are automatically set by OwlDB during the installation process. They do not need to be entered in the pre-installation stage.
+`TB_SID` and other DB identification values are automatically set by OwlDB during the installation process. They do not need to be entered in the pre-installation step.
 {% endhint %}
 {% endtab %}
-{% tab title="Registration DB" %}
-<table data-full-width="true"><thead><tr><th>Option</th><th>Description</th><th>Required</th></tr></thead><tbody><tr><td><code>IP</code></td><td>OwlDB server IP address</td><td>Required</td></tr><tr><td><code>PORT</code></td><td>OwlDB server port (SERVER_PORT)</td><td>Required</td></tr><tr><td><code>USERNAME</code></td><td>OS user name that installed Tibero</td><td>Required</td></tr><tr><td><code>TB_HOME</code></td><td>Tibero home directory path</td><td>Required</td></tr><tr><td><code>TB_SID</code></td><td>TB_SID value</td><td><strong>Required</strong></td></tr><tr><td><code>TAS_SID</code></td><td>TAS_SID value</td><td><ul><li>Required when configuring TAC</li><li>Not required when not used</li></ul></td></tr><tr><td><code>CM_SID</code></td><td>CM_SID value</td><td><ul><li>Required when configuring CM</li><li>Not required when not used</li></ul></td></tr><tr><td><code>CM_HOME</code></td><td>CM_HOME value</td><td><ul><li>Required when configuring CM</li><li>Not required when not used</li></ul></td></tr></tbody></table>
+{% tab title="Registered DB" %}
+<table><thead><tr><th>Option</th><th>Description</th><th>Required</th></tr></thead><tbody><tr><td><code>IP</code></td><td>OwlDB server IP address</td><td>Required</td></tr><tr><td><code>PORT</code></td><td>OwlDB server port (SERVER_PORT)</td><td>Required</td></tr><tr><td><code>USERNAME</code></td><td>OS user name that installed Tibero</td><td>Required</td></tr><tr><td><code>TB_HOME</code></td><td>Tibero home directory path</td><td>Required</td></tr><tr><td><code>TB_SID</code></td><td>TB_SID value</td><td><strong>Required</strong></td></tr><tr><td><code>TAS_SID</code></td><td>TAS_SID value</td><td><ul><li>Required for TAC configuration</li><li>Not required when unused</li></ul></td></tr><tr><td><code>CM_SID</code></td><td>CM_SID value</td><td><ul><li>Required for CM configuration</li><li>Not required when unused</li></ul></td></tr><tr><td><code>CM_HOME</code></td><td>CM_HOME value</td><td><ul><li>Required for CM configuration</li><li>Not required when unused</li></ul></td></tr></tbody></table>
 
 {% hint style="warning" %}
 **Caution**
 
-Since the Registration DB targets an existing database that is already in operation, `TB_SID`must be entered with the SID value of the existing Tibero instance.
+Since the registered DB targets an existing database in production, `TB_SID`must be entered with the SID value of the existing Tibero instance.
 {% endhint %}
 {% endtab %}
 {% endtabs %}
 
-**3. Run the Agent Installation Script**
+**3. Run the Agent installation script**
 
 ```bash
 cd $TB_HOME/tbagent_dist
@@ -100,15 +100,15 @@ sh tbagent_start.sh
 
 `tbagent_start.sh` The script registers the Agent as a systemd service and timer, and sudo privileges are used during this process.
 
-When restarting the Agent [Reference Materials > Precautions When Restarting the Agent](#nql9NMu6dh160KsnoVKa)be sure to check it.
+If restarting the Agent [Reference Material > Precautions When Restarting the Agent](#nql9NMu6dh160KsnoVKa)Be sure to review.
 {% endhint %}
 
-**4. OS user sudoers Configuration**
+**4. OS user sudoers configuration**
 
-Some commands are run with sudo during the database installation and operation process. Since the task may be interrupted if a password prompt is required during script execution, set NOPASSWD for the OS user used for installation.
+Some commands are run with sudo during database installation and operation. Since the task may be interrupted if a password prompt appears during script execution, configure NOPASSWD for the OS user used for installation.
 
 ```bash
-# 1. Create the sudoers configuration file
+# 1. Create sudoers configuration file
 sudo tee /etc/sudoers.d/{username} << 'EOF'
 {username} ALL=(ALL) NOPASSWD: \
         /usr/bin/systemctl \
@@ -136,6 +136,6 @@ EOF
 # 2. Set file permissions
 sudo chmod 440 /etc/sudoers.d/{username}
 
-# 3. Verify the application
+# 3. Verify application
 sudo -l -U {username}
 ```

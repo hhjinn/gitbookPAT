@@ -1,3 +1,2 @@
-# Overview
-
-The **Overview** page provides an at-a-glance view of the selected database. You can view database, instance, and version details. You can also start, stop, and delete the database.
+**Overview** On this page, you can view the overall overview of the selected database at a glance.
+You can view detailed information such as database information, instance information, and version information, and perform various operations such as starting, stopping, and deleting the database.

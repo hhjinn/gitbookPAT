@@ -4,19 +4,19 @@
 This guide is intended for the customer's infrastructure administrators.
 {% endhint %}
 
-Before installing OwlDB, verify the system and network requirements that the server must meet, and prepare the environment in advance.
+Before installing OwlDB, check the system and network requirements that the server must meet and prepare the environment in advance.
 
 ---
 
 ## System Requirements
 
-Verify that the following requirements are met on the server where OwlDB will be installed.
+Verify that the server on which OwlDB will be installed meets the requirements below.
 
 ### 1. Hardware Requirements
 
 | Item | Minimum Specification | Remarks |
 | --- | --- | --- |
-| CPU | 2 Cores or more | - |
+| CPU | 2 cores or more | - |
 | Memory | 8GB or more | - |
 | Disk | 50GB or more | Includes storage space for logs and backup files |
 
@@ -26,14 +26,14 @@ Since OwlDB runs on Docker, the following software must be installed before inst
 
 **Docker**
 
-| Item | Requirement |
+| Item | Requirements |
 | --- | --- |
-| Docker | 29.3.1 or higher |
+| Docker | 29.3.1 or later |
 | Docker Compose | V2 (2.x) |
 
 ### 3. Disk Configuration
 
-A minimum of 50GB of disk space is required to install OwlDB, and it is recommended to configure it separately by purpose as shown below.
+A minimum of 50GB or more of disk space is required to install OwlDB, and it is recommended to configure it separately by purpose as shown below.
 
 | Area | Purpose | Recommended Size |
 | --- | --- | --- |
@@ -46,7 +46,7 @@ A minimum of 50GB of disk space is required to install OwlDB, and it is recommen
 
 ## Network Requirements
 
-The OwlDB server communicates with both users (web browsers) and each database server. Complete the following port configuration and communication permission settings in advance.
+The OwlDB server communicates with both users (web browsers) and each database server. Complete the following port configuration and communication allowance settings in advance.
 
 ### 1. OwlDB Server Port Configuration
 
@@ -58,4 +58,4 @@ The following ports must be open on the OwlDB server.
 
 ### 2. Firewall Settings
 
-Based on the port configuration above, firewall permission settings between the OwlDB server and the database server are required. Configure the inbound and outbound rules according to the firewall policy of the customer environment.
+Based on the port configuration above, firewall allowance settings between the OwlDB server and the database server are required. Configure inbound and outbound rules according to the customer environment's firewall policy.
