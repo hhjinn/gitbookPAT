@@ -22,7 +22,7 @@ At the top of the screen, set the period to look up. Choose from the last 1 day,
 The mode filter is provided only in the Tibero engine.
 {% endhint %}
 
-### Auto Refresh <a href="#undefined" id="undefined"></a>
+# Auto Refresh <a href="#auto-refresh" id="auto-refresh"></a>
 
 To enable real-time updates of the monitoring screen, an auto refresh feature is supported.
 

@@ -1,4 +1,4 @@
-### During installation `Error: Environment variable 'OPENSQL_HOME' is not set.` if is displayed <a href="#error-environment-variable-opensql_home-is-not-set" id="error-environment-variable-opensql_home-is-not-set"></a>
+# During installation `Error: Environment variable 'OPENSQL_HOME' is not set.` if is displayed <a href="#opensql-home-not-set" id="opensql-home-not-set"></a>
 
 The environment variables required by the installation script are not set. `OPENSQL_HOME`, `PG_HOME`, `PG_DATA_DIR` Set all three and run again.
 
@@ -8,7 +8,7 @@ export PG_HOME=/opt/postgresql
 export PG_DATA_DIR=/opt/postgresql/data
 ```
 
-### If the server is not displayed in the backup server list <a href="#undefined" id="undefined"></a>
+# If the server is not displayed in the backup server list <a href="#server-missing-from-backup-list" id="server-missing-from-backup-list"></a>
 
 The OwlDB Agent is not registered with the OwlDB server.
 
@@ -19,7 +19,7 @@ cat /var/lib/barman/owlagent_dist/owlagent.env
 
 `AGENT_TYPE` If `barman` whether it is, `IP` and `PORT` Check whether it matches the OwlDB server address. If modified, `owlagent_stop.sh` stop it with, then `owlagent_start.sh` run again.
 
-### If it fails at the Barman Agent startup step during integration <a href="#barman-agent" id="barman-agent"></a>
+# If it fails at the Barman Agent startup step during integration <a href="#barman-agent-fails-during-integration" id="barman-agent-fails-during-integration"></a>
 
 `barman` There is no NOPASSWD sudo configuration for the account.
 
@@ -29,11 +29,11 @@ su - barman -c 'sudo -n true' && echo OK
 
 `OK` If is not displayed `sudo` Check whether the package is installed (`rpm -q sudo`) and `/etc/sudoers.d/barman` verify the file exists.
 
-### During integration, `barman-wal-archive` If it fails with an error that does not exist <a href="#barman-wal-archive" id="barman-wal-archive"></a>
+# During integration, `barman-wal-archive` If it fails with an error that does not exist <a href="#barman-wal-archive-missing" id="barman-wal-archive-missing"></a>
 
 WAL retention method `archiver` or `archiver+streaming` You selected, but on the database server `barman-cli` is not installed. Refer to 1-2 to install it.
 
-### If the Barman Agent does not start <a href="#barman-agent-1" id="barman-agent-1"></a>
+# If the Barman Agent does not start <a href="#barman-agent-not-starting" id="barman-agent-not-starting"></a>
 
 The name of the systemd template unit or the configuration file path may differ from OwlDB's fixed value.
 
@@ -49,7 +49,7 @@ After writing the unit file, `systemctl daemon-reload` you may not have run. `sy
 systemctl daemon-reload
 ```
 
-### If Health is displayed as Not Connected <a href="#health" id="health"></a>
+# If Health is displayed as Not Connected <a href="#health-not-connected" id="health-not-connected"></a>
 
 `barman check` Among the items, **WAL archive** and **continuous archiving** If fails, Health is displayed as Not Connected. WAL is not being transmitted from the database server to the Barman server.
 
@@ -81,7 +81,7 @@ ssh -o BatchMode=yes <OpenSQL account>@<database server IP> hostname
 
 If the connection fails, check whether the private key file path is `owlagent.env` of `BARMAN_SSH_KEYPATH` the same as, and whether the database server allows the key.
 
-### When Health shows as Disconnected after rebuilding the OpenBackup server <a href="#openbackup-health" id="openbackup-health"></a>
+# When Health shows as Disconnected after rebuilding the OpenBackup server <a href="#health-not-connected-after-rebuild" id="health-not-connected-after-rebuild"></a>
 
 The database server remembers the host key of the previous OpenBackup server and refuses the connection. This occurs when the OpenBackup server is reinstalled with the same IP.
 
@@ -100,7 +100,7 @@ ssh-keygen -R <Barman server IP>
 
 The connection configuration created by OwlDB only automatically accepts the host key of a server on first connection, so when the host key has been **changed,** you must clean it up manually as shown above.
 
-### WAL is not collected and the log shows `pg_receivewal not present in $PATH` if is displayed <a href="#wal-pg_receivewal-not-present-in-usdpath" id="wal-pg_receivewal-not-present-in-usdpath"></a>
+# WAL is not collected and the log shows `pg_receivewal not present in $PATH` if is displayed <a href="#pg-receivewal-not-in-path" id="pg-receivewal-not-in-path"></a>
 
 `/etc/barman.conf` in `path_prefix` is not set. Set it to the path of the PostgreSQL client executable. Since cron re-reads the configuration file each time, you do not need to restart the service.
 
@@ -109,7 +109,7 @@ The connection configuration created by OwlDB only automatically accepts the hos
 path_prefix = /opt/postgresql/bin
 ```
 
-### When a Barman version-related error occurs during backup <a href="#barman" id="barman"></a>
+# When a Barman version-related error occurs during backup <a href="#barman-version-error" id="barman-version-error"></a>
 
 The OpenBackup server's `barman` and the database server's `barman-cli` versions differ. Verify that both are `3.11.1` on both sides.
 

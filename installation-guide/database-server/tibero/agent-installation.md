@@ -6,7 +6,7 @@ This page explains how to install and start the Agent on the database server.
 This guide [Installation DB Environment Preparation Guide](install-db-prerequisites.md) or [Registration DB Environment Preparation Guide](register-db-prerequisites.md)proceeds after completing.
 {% endhint %}
 
-### Agent Installation and Startup <a href="#agent" id="agent"></a>
+# Agent Installation and Startup <a href="#install-and-start-agent" id="install-and-start-agent"></a>
 
 **1. Decompress the Agent binary**
 

@@ -4,7 +4,7 @@ Install the database to operate it in OwlDB. Once the database installation is c
 
 - The installation feature can only be used by the administrator account.
 
-### Standard Architecture <a href="#undefined" id="undefined"></a>
+# Standard Architecture <a href="#standard-architecture" id="standard-architecture"></a>
 
 OwlDB provides a new database installation feature based on standard architecture. The standard architectures provided by OwlDB On-premise are as follows.
 
@@ -34,11 +34,11 @@ If you change the database configuration directly from outside without going thr
 
 ---
 
-### **Installation Process** <a href="#undefined-1" id="undefined-1"></a>
+# **Installation Process** <a href="#installation-process" id="installation-process"></a>
 
 1. **OwlDB Console Screen** > **Dashboard**to navigate.
 2. At the top of the dashboard, **Install** Click the button to move to the installation page.
-3. Enter the installation options step by step. The installation option entry consists of a total of 5 steps, and for details on each step, please refer to the [**Installation Option Steps** ](#undefined-2)section below.
+3. Enter the installation options step by step. The installation option entry consists of a total of 5 steps, and for details on each step, please refer to the [**Installation Option Steps** ](#installation-option-steps)section below.
 4. Once you verify the entered information and the installation feasibility validation is complete, **Install** Click the button.
 5. When installation starts, you can check the progress status in the dashboard list. When the status changes to **Running**the installation has been completed normally.
 
@@ -69,7 +69,7 @@ Once the installation request is received, you can check the installation start,
 
 ---
 
-### **Installation Option Steps** <a href="#undefined-2" id="undefined-2"></a>
+# **Installation Option Steps** <a href="#installation-option-steps" id="installation-option-steps"></a>
 
 **Engine options**
 
@@ -381,7 +381,7 @@ If the validation fails, an error message is displayed for the item where the er
 
 ---
 
-### Installation Progress Status <a href="#undefined-6" id="undefined-6"></a>
+# Installation Progress Status <a href="#installation-progress-status" id="installation-progress-status"></a>
 
 You can check the installation progress of the database in real time from the dashboard. The installation proceeds divided into major steps and detailed steps as shown in the table below, and the steps actually performed may differ depending on the selected topology.
 
