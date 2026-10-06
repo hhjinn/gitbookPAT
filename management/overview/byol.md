@@ -13,7 +13,7 @@
 3. 확인 모달에서 현재 운영 중인 인스턴스 수와 재구축 후 최종 구성을 비교합니다.
 4. **확인** 버튼을 클릭합니다.
 
-### 라이선스 타입 별 재구축 동작
+### 라이선스 타입 별 재구축 동작 <a href="#rebuild-by-license-type" id="rebuild-by-license-type"></a>
 
 <table><thead><tr><th>라이선스 타입</th><th>복구 내용</th></tr></thead><tbody><tr><td>Single</td><td>Standby 인스턴스 추가 생성 후 Recovery Standby로 할당</td></tr><tr><td>TSC</td><td>Standby 인스턴스 추가 생성 후 Read Only Standby로 할당</td></tr><tr><td>TAC</td><td><ul><li><strong>Primary 노드 수 불일치</strong>: Primary로 추가 생성 후 할당</li><li><strong>일치</strong>: Standby로 추가 생성 후 할당</li></ul></td></tr></tbody></table>
 
@@ -34,7 +34,7 @@ BYOL 라이선스의 만료일이 90일 이내로 남으면 Overview 페이지�
 4. **검증** 버튼을 클릭하여 라이선스 파일의 유효성을 확인합니다.
 5. 검증 성공 후 **갱신** 버튼을 클릭합니다.
 
-### 라이선스 파일 업로드 및 검증
+### 라이선스 파일 업로드 및 검증 <a href="#upload-license-file" id="upload-license-file"></a>
 
 업로드한 파일은 목록에서 다음 정보를 확인할 수 있습니다.
 

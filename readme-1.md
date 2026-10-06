@@ -8,11 +8,11 @@ OwlDB는 클라우드와 온프레미스 환경에서 데이터베이스를 설�
 
 ## 운영 환경 <a href="#operating-environment" id="operating-environment"></a>
 
-### 클라우드 환경 지원
+### 클라우드 환경 지원 <a href="#cloud-support" id="cloud-support"></a>
 
 클라우드 인프라 자원을 활용하여 데이터베이스를 동적으로 생성하고 운영하는 방식입니다. IaC(Infrastructure as Code) 기반으로 인프라 프로비저닝과 데이터베이스 설정을 자동화하여, 사용자가 콘솔에서 원하는 사양의 데이터베이스 환경을 구축하고 확장할 수 있습니다.
 
-### 온프레미스 환경 지원
+### 온프레미스 환경 지원 <a href="#on-premise-support" id="on-premise-support"></a>
 
 고객이 자체 보유한 서버, 네트워크, 스토리지 등 물리적 인프라 자원을 기반으로 데이터베이스를 운영하는 방식입니다. 고정된 인프라 리소스를 효율적으로 활용할 수 있도록 설계되었으며, 외부 네트워크와 단절된 폐쇄망 환경을 지원합니다. OwlDB를 통해 호스트에 신규 데이터베이스를 설치하거나, 기존에 이미 운영 중인 데이터베이스를 OwlDB 관리 대상으로 연동하여 통합 제어할 수 있습니다.
 
@@ -47,7 +47,7 @@ OwlDB는 두 환경에서 보편적으로 사용되는 공통 관리 기능을 �
 {% endtab %}
 {% endtabs %}
 
-### 데이터베이스 엔진 및 토폴로지
+### 데이터베이스 엔진 및 토폴로지 <a href="#engines-and-topologies" id="engines-and-topologies"></a>
 
 OwlDB가 지원하는 관계형 데이터베이스(RDBMS) 엔진 사양 및 환경별 아키텍처 구성은 다음과 같습니다.
 

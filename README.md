@@ -14,7 +14,7 @@ description: OwlDB에 대해 소개하고 기능별 사용 방법을 안내합�
 >
 > 안내서 버전 : v.2.0.0
 
-### **개요** <a href="#undefined" id="undefined"></a>
+### **개요** <a href="#overview" id="overview"></a>
 
 본 안내서는 OwlDB에서 제공하는 기능을 이용하여 데이터베이스를 편리하게 운영하고 관리하려는 모든 이용자를 대상으로 기술합니다.​
 
@@ -27,7 +27,7 @@ description: OwlDB에 대해 소개하고 기능별 사용 방법을 안내합�
 
 ***
 
-### **안내서 구성** <a href="#undefined-2" id="undefined-2"></a>
+### **안내서 구성** <a href="#guide-structure" id="guide-structure"></a>
 
 본 문서는 총 5개의 장으로 구성됩니다.
 
