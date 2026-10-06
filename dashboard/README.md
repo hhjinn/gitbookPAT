@@ -31,8 +31,6 @@ Status, the top-level status, is displayed on a per-database basis.
 | Unregistering | Deregistering a registered DB Service (excluded from management targets upon completion) |
 | Terminating | Permanently deleting all resources/data (access/recovery impossible upon completion) |
 
-*표기는 필수 입력 항목을 의미합니다.
-
 The * notation indicates a required input field.
 {% endtab %}
 {% tab title="Health" %}

@@ -77,8 +77,6 @@ This is the step for setting the database name, engine, and topology information
 
 <table><thead><tr><th>Item</th><th>Description</th></tr></thead><tbody><tr><td>Service Name*</td><td>A name for identifying the DB Service<ul><li>Only 6 to 30 characters consisting of uppercase/lowercase English letters, numbers, and hyphens (-) can be entered</li><li>Cannot be created in duplicate within an OwlDB account</li><li>Default value :<code>owldb-001</code>Assigned sequentially starting from</li></ul></td></tr><tr><td>DB Engine Type*</td><td>The database engine to be used<ul><li><strong>Tibero</strong>: An RDBMS that enables stable service operation and DB scaling through a multiplexed configuration</li><li><strong>OpenSQL</strong> : Open Source-based DBMS</li></ul></td></tr><tr><td>Topology*</td><td><ul><li><strong>Tibero</strong>: Single, TAC</li><li><strong>OpenSQL</strong> : Single, HA</li></ul></td></tr><tr><td>Node Count*</td><td><ul><li><strong>Tibero</strong>: Single (1, fixed), TAC (select from 2 to 4)</li><li><strong>OpenSQL</strong> : Single, HA (1, fixed)</li></ul></td></tr><tr><td>PostgreSQL Version</td><td>The PostgreSQL version to use in OpenSQL (not applicable to Tibero)<ul><li>Default value :<strong>17.9</strong></li></ul></td></tr></tbody></table>
 
-*표기는 필수 입력 항목을 의미합니다.
-
 The * notation indicates a required input field.
 
 ---
@@ -91,14 +89,10 @@ This is the step for setting whether to use DR and the failover automation level
 {% tab title="Tibero" %}
 <table><thead><tr><th>Item</th><th>Description</th></tr></thead><tbody><tr><td>Enable DR*</td><td>Whether to use DR configuration (can be selected directly)</td></tr><tr><td>Failover Automation Level*</td><td><a href="https://github.com/hhjinn/gitbookPAT/tree/dori/SNGSMUVdPJMBNhWqlXnC/dashboard/db-1.md#undefined">Automatic failover level</a><ul><li>Level 0: Manual</li><li>Level 1: Automatic failover</li><li>Level 2 : Automatic configuration recovery (not supported in OwlDB v1.3)</li><li>Level 3: Fully automated</li><li>Single : Levels 0, 1, and 3 supported</li><li>TAC : Levels 0 and 1 supported</li></ul></td></tr><tr><td>Standby Count*</td><td>Number of Standby DBs (fixed at a maximum of 1 based on the standard architecture)</td></tr><tr><td>Standby Mode*</td><td>Standby Mode option<ul><li><strong>Recovery</strong></li><li><strong>Read Only</strong></li></ul></td></tr><tr><td>Log Replication Type</td><td>The log transmission method from Primary to Standby<ul><li><strong>LGWR ASYNC</strong>: A replication mode that transmits Redo logs generated in real time when transactions occur</li><li><strong>ARCH ASYNC</strong> : A replication mode that, after a log switch, collects and transmits archive log files once they are generated</li></ul></td></tr></tbody></table>
 
-*표기는 필수 입력 항목을 의미합니다.
-
 The * notation indicates a required input field.
 {% endtab %}
 {% tab title="OpenSQL" %}
 <table><thead><tr><th>Item</th><th>Description</th></tr></thead><tbody><tr><td>Enable DR*</td><td>Single is automatically set to not use DR, and HA to use DR, and cannot be modified</td></tr><tr><td>Failover Automation Level*</td><td><a href="https://github.com/hhjinn/gitbookPAT/tree/dori/SNGSMUVdPJMBNhWqlXnC/dashboard/db-1.md#undefined">Automatic failover level</a><ul><li>Level 0: Manual</li><li>Level 2 : Automatic configuration recovery (not supported in OwlDB v1.3)</li><li>Level 3: Fully automated</li><li>Levels 0 and 3 supported (default: Level 3)</li></ul></td></tr><tr><td>Standby Count*</td><td>Number of Replica DBs (fixed at a maximum of 1 based on the standard architecture)</td></tr><tr><td>Log Replication Type</td><td>Fixed to the ASYNC method and cannot be modified</td></tr></tbody></table>
-
-*표기는 필수 입력 항목을 의미합니다.
 
 The * notation indicates a required input field.
 {% endtab %}
@@ -139,8 +133,6 @@ The node role is displayed as **Primary/Standby**.
 | Archive Path* | Enter the Archive Path | Only a file system path can be entered |
 | Backup Path* | Enter the Backup Path | Only a file system path can be entered |
 
-*표기는 필수 입력 항목을 의미합니다.
-
 The * notation indicates a required input field.
 
 **Each Path**accepts only file system paths. Entering the same path or different paths in duplicate is also permitted.
@@ -171,8 +163,6 @@ However, the following conditions must be met.
 | SSH User* | SSH User | - |
 | SSH Key File Path* | Enter the private key path to use for SSH connections between instances | Enter a common private key path so that the same private key is used for SSH connections between instances |
 
-*표기는 필수 입력 항목을 의미합니다.
-
 The * notation indicates a required input field.
 
 {% hint style="info" %}
@@ -202,8 +192,6 @@ However, the following conditions must be met.
 | Redo Path* | Enter the Redo Path | Enter a raw device or partition path, using a shared volume |
 | Archive Path* | Enter the Archive Path | Enter a raw device or partition path, using a shared volume |
 | Backup Path* | Enter the Backup Path | Only a file system path can be entered |
-
-*표기는 필수 입력 항목을 의미합니다.
 
 The * notation indicates a required input field.
 
@@ -236,8 +224,6 @@ However, the following conditions must be met.
 | SSH Port* | SSH port | - |
 | SSH User* | SSH User | - |
 | SSH Key File Path* | Enter the private key path to use for SSH connections between instances | Enter a common private key path so that the same private key is used for SSH connections between instances |
-
-*표기는 필수 입력 항목을 의미합니다.
 
 The * notation indicates a required input field.
 
@@ -277,8 +263,6 @@ The node role is displayed as **Leader/Replica**.
 | SSH User* | SSH User | - |
 | SSH Key File Path* | Enter the private key path to use for SSH connections between instances | Enter a common private key path so that the same private key is used for SSH connections between instances |
 
-*표기는 필수 입력 항목을 의미합니다.
-
 The * notation indicates a required input field.
 
 **Each Path**accepts only file system paths. Entering the same path or different paths in duplicate is also permitted.
@@ -303,8 +287,6 @@ However, the following conditions must be met.
 | SSH Port* | SSH port | - |
 | SSH User* | SSH User | - |
 | SSH Key File Path* | Enter the private key path to use for SSH connections between instances | Enter a common private key path so that the same private key is used for SSH connections between instances |
-
-*표기는 필수 입력 항목을 의미합니다.
 
 The * notation indicates a required input field.
 
@@ -350,14 +332,10 @@ This is the step for entering the database configuration information.
 | Temporary Tablespace Data File Size (MB) | The size of the temporary tablespace data file used for large-scale operations |
 | Undo Tablespace Data File Size (MB) | Undo tablespace size |
 
-*표기는 필수 입력 항목을 의미합니다.
-
 The * notation indicates a required input field.
 {% endtab %}
 {% tab title="OpenSQL" %}
 <table><thead><tr><th>Item</th><th>Description</th></tr></thead><tbody><tr><td>Database Name*</td><td>The name of the database to be used</td></tr><tr><td>User Id*</td><td>The ID of the database's highest-privilege administrator account</td></tr><tr><td>User Password*</td><td>The password of the database's highest-privilege administrator account</td></tr><tr><td>Character Set*</td><td>The character encoding to be used for the database</td></tr><tr><td>Timezone*</td><td>The OS time zone where the database will be installed</td></tr><tr><td>VIP*</td><td>Database virtual IP</td></tr><tr><td>Database Listener Port</td><td>Database listener port for network communication</td></tr><tr><td>Max Session Count</td><td>Maximum number of concurrently allowed sessions</td></tr><tr><td>Shared Buffers</td><td>Shared memory size (not modifiable)</td></tr><tr><td>WAL File Size (MB)</td><td>WAL file size<br>Displayed as an empty value and cannot be modified because the value could not be determined during the detection process</td></tr><tr><td>Connection Pooler Port</td><td>The port on which the connection pool receives client connections in OpenSQL<ul><li>Default value : 6432</li><li>Input range : 1024 to 65535</li></ul></td></tr><tr><td>Extension</td><td>Select the Extensions to install together when creating the OpenSQL database (multiple selections possible)</td></tr></tbody></table>
-
-*표기는 필수 입력 항목을 의미합니다.
 
 The * notation indicates a required input field.
 
