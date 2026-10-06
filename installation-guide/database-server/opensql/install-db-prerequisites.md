@@ -182,7 +182,7 @@ set +x
 | IP            | OwlDB CP의 IP                                                    |
 | PORT          | OwlDB CP의 port                                                  |
 | USERNAME      | opensql을 실행할 user의 이름                                           |
-| OPENSQL\_HOME | [2.설치 디렉터리 생성](install-db-prerequisites.md#h-2-설치-디렉터리-생성) 단계에서 입력한 $OPENSQL\_HOME 사용 |
+| OPENSQL\_HOME | [2.설치 디렉터리 생성](install-db-prerequisites.md#create-install-directory) 단계에서 입력한 $OPENSQL\_HOME 사용 |
 
 3. owlagent를 실행합니다. sh owlagent\_start.sh
 
