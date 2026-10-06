@@ -6,7 +6,7 @@
 
 ## 전체 상태 요약 정보 확인 <a href="#status-summary" id="status-summary"></a>
 
-운영 중인 전체 데이터베이스/인스턴스에 대해 최상위 상태 값(**Status**)과 세부 상태 값(**Health**)을 확인합니다. 각 상태를 클릭하면 '[DB Service/인스턴스 목록 확인](./#db-service인스턴스-목록-확인)'에서 해당 상태 값을 가진 DB Service/인스턴스 목록을 확인할 수 있습니다.
+운영 중인 전체 데이터베이스/인스턴스에 대해 최상위 상태 값(**Status**)과 세부 상태 값(**Health**)을 확인합니다. 각 상태를 클릭하면 '[DB Service/인스턴스 목록 확인](./#service-instance-list)'에서 해당 상태 값을 가진 DB Service/인스턴스 목록을 확인할 수 있습니다.
 
 {% tabs %}
 {% tab title="Status" %}
@@ -88,7 +88,7 @@ OpenSQL 인스턴스 노드의 Health는 Patroni, OpenProxy, etcd, Agent 상태�
 
 ## DB Service/인스턴스 목록 확인 <a href="#service-instance-list" id="service-instance-list"></a>
 
-전체 DB Service와 하위 인스턴스 목록을 확인합니다. '[전체 상태 요약 정보 확인](./#전체-상태-요약-정보-확인)'에서 선택한 상태값에 따라 표시되는 DB Service 및 인스턴스 목록이 달라집니다.
+전체 DB Service와 하위 인스턴스 목록을 확인합니다. '[전체 상태 요약 정보 확인](./#status-summary)'에서 선택한 상태값에 따라 표시되는 DB Service 및 인스턴스 목록이 달라집니다.
 
 * 선택한 데이터베이스의 하위 인스턴스에 대해 재시작 작업을 수행할 수 있습니다.
 * 선택한 데이터베이스에 대해 시작, 중지, 삭제, 역할 전환, 라이선스 갱신 관리 작업을 수행할 수 있습니다.
