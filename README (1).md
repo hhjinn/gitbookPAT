@@ -14,12 +14,6 @@ OwlDB는 클라우드와 온프레미스 환경에서 데이터베이스를 설�
 
 ### 라이선스별 제공 범위
 
-OwlDB는 라이선스에 따라 제공하는 기능에 차이가 있습니다.
-
-<table><thead><tr><th width="110">구분</th><th>OwlDB DBaaS</th><th>OwlDB Automation</th><th>OwlDB Operation</th></tr></thead><tbody><tr><td>제공 환경</td><td>AWS, Azure (Marketplace 구독)</td><td colspan="2"><ul><li>On-Premise</li><li>Public Cloud (구축형)</li><li>Private Cloud</li></ul></td></tr><tr><td>제공 기능</td><td>배포 및 설치 자동화</td><td><ul><li>등록 DB 운영 관리 </li><li>설치 자동화</li></ul></td><td>등록 DB 운영 관리</td></tr></tbody></table>
-
-### 라이선스별 제공 범위
-
 OwlDB는 라이선스에 따라 제공 환경과 기능에 차이가 있습니다.
 
 <table><thead><tr><th width="161">구분</th><th>OwlDB Operation</th><th width="149">OwlDB Automation</th><th>OwlDB DBaaS</th></tr></thead><tbody><tr><td><strong>제공 환경</strong></td><td colspan="2"><ul><li>On-Premise</li><li>Private Cloud</li><li>Public Cloud (구축형)</li></ul></td><td>AWS, Azure<br>(Marketplace 구독)</td></tr><tr><td><strong>등록 DB 운영 관리</strong></td><td>○</td><td>○</td><td>X (<em>BYOL 신규 구축*</em>)</td></tr><tr><td><strong>설치 자동화</strong></td><td>X</td><td>○</td><td>○</td></tr></tbody></table>
