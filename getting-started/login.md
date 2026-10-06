@@ -1,8 +1,8 @@
-# 로그인
+# 로그인 <a href="#login" id="login"></a>
 
 <figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>그림 1. 로그인</p></figcaption></figure>
 
-### Root 최초 로그인
+### Root 최초 로그인 <a href="#root-first-login" id="root-first-login"></a>
 
 Root 계정의 초기 아이디와 비밀번호는 아래와 같습니다.
 
@@ -41,7 +41,7 @@ Member 계정이 없는 경우, 로그인 페이지에서 **계정 생성 요청
 
 ***
 
-### 아이디·비밀번호 안내
+### 아이디·비밀번호 안내 <a href="#id-password-guide" id="id-password-guide"></a>
 
 On-Premise 환경에서는 아이디 찾기와 비밀번호 재설정 기능을 제공하지 않습니다. 아이디를 잊어버렸거나 비밀번호를 재설정해야 하는 경우, Root(관리자)에게 문의하여 처리해야 합니다.
 
@@ -56,7 +56,7 @@ On-Premise 환경에서는 아이디 찾기와 비밀번호 재설정 기능을 
 * 아이디를 잊어버린 경우 : Root(관리자)에게 문의하여 등록된 아이디를 확인합니다.
 * 비밀번호를 잊어버린 경우 : Root(관리자)에게 비밀번호 재설정을 요청합니다.
 
-### Member 비밀번호 재설정
+### Member 비밀번호 재설정 <a href="#member-reset-password" id="member-reset-password"></a>
 
 Root는 **마이페이지 > 계정 관리** 페이지에서 Member 계정의 아이디를 확인하고 비밀번호를 직접 재설정할 수 있습니다.
 

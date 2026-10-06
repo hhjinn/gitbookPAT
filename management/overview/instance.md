@@ -9,7 +9,7 @@
 * AWS 환경에서는 Tibero 엔진만 지원합니다.
 {% endhint %}
 
-### 인스턴스 목록 조회
+### 인스턴스 목록 조회 <a href="#instance-list" id="instance-list"></a>
 
 1. **관리 > Overview**로 이동합니다.
 2. **인스턴스** 탭을 클릭합니다.
@@ -95,7 +95,7 @@
 인스턴스 상태가 `Available`이 아닌 경우, 화면 상단에 배너가 나타나 현재 상태에 대한 안내를 제공합니다.
 {% endhint %}
 
-### 인스턴스 상세 정보 조회
+### 인스턴스 상세 정보 조회 <a href="#instance-details" id="instance-details"></a>
 
 <figure><img src="../../.gitbook/assets/image (7).png" alt=""><figcaption><p>그림 1. 인스턴스 상세 정보</p></figcaption></figure>
 

@@ -8,7 +8,7 @@
 On-Premise 환경에서는 Full/Incremental Backup을 지원하며, 보관(Archive) 기능은 제공하지 않습니다.
 {% endhint %}
 
-### 백업 목록 조회
+### 백업 목록 조회 <a href="#backup-list" id="backup-list"></a>
 
 **관리 > 백업/복구 > 백업** 메뉴에 진입하면 현재 데이터베이스의 백업 목록이 나타납니다. Full Backup을 루트로 하여 Incremental Backup이 트리 구조로 중첩되어 표시됩니다.
 
@@ -26,7 +26,7 @@ On-Premise 환경에서는 Full/Incremental Backup을 지원하며, 보관(Archi
 OpenSQL에서 OpenBackup 사용을 **미사용**으로 전환하면 상태는 삭제됨으로 표시됩니다.
 {% endhint %}
 
-### 백업 생성
+### 백업 생성 <a href="#create-backup" id="create-backup"></a>
 
 이름과 보존 기간을 입력하면 원하는 시점의 단일 백업 이미지가 생성됩니다. Tibero는 RMGR 기반으로 Full Backup 단위를 관리하며, OpenSQL은 rsync 또는 postgres 방식 중 선택한 방식에 따라 백업 단위가 달라집니다.
 
@@ -43,7 +43,7 @@ OpenSQL에서 OpenBackup 사용을 **미사용**으로 전환하면 상태는 �
 * Incremental Backup은 사용 가능한 Full Backup이 있어야 생성할 수 있습니다.
 {% endhint %}
 
-### 복구
+### 복구 <a href="#restore" id="restore"></a>
 
 백업 목록에서 백업을 하나 선택하고 **복구** 버튼을 클릭하면 복구 모달이 나타납니다. 복구 유형을 선택하여 데이터베이스를 특정 시점으로 복구합니다.
 
@@ -78,7 +78,7 @@ OpenSQL에서 OpenBackup 사용을 **미사용**으로 전환하면 상태는 �
 * 복구가 실패하는 경우 이전에 선택한 시점보다 더 이전 시점을 선택해 다시 시도해 주세요. 여러 차례 시도해도 복구되지 않으면 기술지원을 요청해 주세요.
 {% endhint %}
 
-### 백업 수정
+### 백업 수정 <a href="#modify-backup" id="modify-backup"></a>
 
 백업의 이름과 보존 기간을 수정합니다.
 
@@ -87,7 +87,7 @@ OpenSQL에서 OpenBackup 사용을 **미사용**으로 전환하면 상태는 �
 3. **이름** 또는 **보존 기간**을 변경합니다.
 4. **저장** 버튼을 클릭합니다.
 
-### 백업 삭제
+### 백업 삭제 <a href="#delete-backup" id="delete-backup"></a>
 
 선택한 백업 이미지를 영구적으로 삭제합니다.
 

@@ -11,7 +11,7 @@
 
 ## OpenBackup 설치 <a href="#install-openbackup" id="install-openbackup"></a>
 
-### 1. OpenBackup 설치
+### 1. OpenBackup 설치 <a href="#install-openbackup-package" id="install-openbackup-package"></a>
 
 OpenBackup은 `3.1.1` 버전으로 설치합니다. 데이터베이스 서버에 설치하는 `barman-cli` 도 동일하게 `3.11.1` 이어야 합니다.&#x20;
 
@@ -81,7 +81,7 @@ $ barman --version
 3.11.1 Barman by EnterpriseDB (www.enterprisedb.com)
 ```
 
-### 2. OpenBackup 실행 계정 설정
+### 2. OpenBackup 실행 계정 설정 <a href="#openbackup-account" id="openbackup-account"></a>
 
 #### 2-1. 계정 생성
 
@@ -118,7 +118,7 @@ exit
 
 이 설정은 운영자가 직접 명령을 실행할 때 사용됩니다. Barman cron은 이 PATH를 사용하지 않으므로 3번 단계의 `path_prefix` 를 별도로 설정해야 합니다.
 
-### 3. OpenBackup 전역 설정
+### 3. OpenBackup 전역 설정 <a href="#openbackup-global-settings" id="openbackup-global-settings"></a>
 
 `/etc/barman.conf` 파일을 아래와 같이 작성합니다.
 
@@ -156,7 +156,7 @@ chmod 700 /var/lib/barman
 
 백업 데이터는 `<barman_home>/<데이터베이스 ID>` 에 저장됩니다. 단 4번 단계의 Agent 설정 파일 경로는 `barman_home` 과 무관하게 고정입니다.
 
-### 4. Barman Agent 등록
+### 4. Barman Agent 등록 <a href="#register-barman-agent" id="register-barman-agent"></a>
 
 Barman Agent는 Patroni 클러스터의 리더 변경을 감지하여 Barman 설정을 갱신하는 프로세스입니다. OpenSQL 배포본의 `barman_agent/server.py` 를 사용합니다.
 
@@ -213,7 +213,7 @@ systemctl daemon-reload
 설정 파일의 내용은 OwlDB가 연동 시점에 생성합니다. 이 단계에서는 유닛 파일만 작성하고 기동하지 않습니다.
 {% endhint %}
 
-### 5. Barman cron 등록
+### 5. Barman cron 등록 <a href="#register-barman-cron" id="register-barman-cron"></a>
 
 WAL 수집과 아카이빙이 1분 주기로 수행되도록 cron을 등록합니다.
 
@@ -230,7 +230,7 @@ systemctl enable --now sshd crond
 
 `sshd` 를 함께 기동합니다. 데이터베이스 서버가 WAL 아카이브를 전송할 때 OpenBackup 서버의  `sshd` 로 접속합니다. 이미 기동 중인 서버에서는 그대로 유지됩니다.
 
-### 6. OwlDB Agent 설치
+### 6. OwlDB Agent 설치 <a href="#install-owldb-agent" id="install-owldb-agent"></a>
 
 OwlDB Agent는 OwlDB 서버의 명령을 받아 OpenBackup 서버에서 작업을 수행합니다. OpenBackup 서버의 모든 연동 작업이 이 Agent를 통해 이루어지므로 반드시 설치해주십시오.
 
@@ -279,7 +279,7 @@ BARMAN_CONF_DIR=/etc/barman.d
 `AGENT_TYPE` 이 `barman` 이 아니면 OwlDB가 OpenBackup 서버로 인식하지 않아 **백업 서버** 목록에 표시되지 않습니다.
 {% endhint %}
 
-### 7. SSH 설정
+### 7. SSH 설정 <a href="#ssh-settings" id="ssh-settings"></a>
 
 OpenBackup 서버와 데이터베이스 서버는 **양방향**으로 SSH 접속이 필요합니다. 방향별로 준비할 내용이 다릅니다.
 
@@ -374,7 +374,7 @@ ssh -o BatchMode=yes <OpenSQL 계정>@<데이터베이스 서버 IP> hostname
 
 OpenBackup 서버 설치를 완료한 상태에서 진행합니다.
 
-### 1. 데이터베이스 서버 설정
+### 1. 데이터베이스 서버 설정 <a href="#configure-database-server" id="configure-database-server"></a>
 
 OpenBackup 서버 외에 데이터베이스 서버에도 아래 항목이 준비되어 있어야 합니다.
 
@@ -439,7 +439,7 @@ dnf install -y ./barman-cli-3.11.1-*.rpm
 버전을 지정하지 않고 `dnf install barman-cli` 또는 `pip install barman-cli` 로 설치하면 최신 버전이 설치되어 Barman 서버와 버전이 어긋납니다. 반드시 `barman-cli-3.11.1` 처럼 버전을 지정해주십시오.
 {% endhint %}
 
-### 2. OpenBackup 서버 설치 결과 확인
+### 2. OpenBackup 서버 설치 결과 확인 <a href="#check-openbackup-installation" id="check-openbackup-installation"></a>
 
 OpenBackup 서버에서 아래 명령으로 점검합니다.
 
@@ -480,7 +480,7 @@ OK
 NOPASSWD sudo 확인을 빠뜨리지 마십시오. 이 설정이 없으면 설치는 끝난 것처럼 보이지만, 연동할 때 OwlDB가 Barman Agent를 기동하는 단계에서 실패합니다.
 {% endhint %}
 
-### 3. OwlDB 연동
+### 3. OwlDB 연동 <a href="#connect-owldb" id="connect-owldb"></a>
 
 OwlDB 웹 UI에서 아래 순서로 연동합니다.
 

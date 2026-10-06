@@ -16,7 +16,7 @@ hidden: true
 
 OwlDB에서 제공하는 마이그레이션 기능의 지원 범위와 상세 정보를 확인합니다.
 
-### **지원 데이터베이스**
+### **지원 데이터베이스** <a href="#supported-databases" id="supported-databases"></a>
 
 | 소스 데이터베이스                 | 타겟 데이터베이스 |
 | ------------------------- | --------- |
@@ -87,7 +87,7 @@ Oracle에서 Tibero로 이관할 때 변환되는 데이터 타입에 대해 안
 5. **분석** 버튼을 클릭합니다.
 6. **OwlDB 콘솔 화면 > 관리 > 마이그레이션 > Analyzer > 상태** 클릭 시, 진행 정보를 확인할 수 있습니다.
 
-### **Analyzer 결과**
+### **Analyzer 결과** <a href="#analyzer-results" id="analyzer-results"></a>
 
 **OwlDB 콘솔 화면 > 관리 > 마이그레이션 > Analyzer > Analyzer Title** 클릭 시, Analyzer 결과를 확인할 수 있습니다.
 
@@ -136,6 +136,6 @@ Oracle에서 Tibero로 이관할 때 변환되는 데이터 타입에 대해 안
 5. **이관** 버튼을 클릭합니다.
 6. **OwlDB 콘솔 화면 > 관리 > 마이그레이션 > Migrator > 상태** 클릭 시, 진행 정보를 확인할 수 있습니다.
 
-### **Migrator 결과**
+### **Migrator 결과** <a href="#migrator-results" id="migrator-results"></a>
 
 **OwlDB 콘솔 화면 > 관리 > 마이그레이션 > Migrator > Migrator Title** 클릭 시, **Migrator 결과**를 확인할 수 있습니다.

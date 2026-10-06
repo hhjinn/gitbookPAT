@@ -11,7 +11,7 @@ OwlDB에서 운영 중인 데이터베이스의 상태를 조회하고, 수정·
 
 ***
 
-### 데이터베이스 정보 조회
+### 데이터베이스 정보 조회 <a href="#database-info" id="database-info"></a>
 
 1. **관리 > Overview** 메뉴를 클릭합니다.
 2. **DB Service Name** 드롭다운 버튼을 클릭하여 정보를 조회할 데이터베이스를 선택합니다.
@@ -82,7 +82,7 @@ OpenSQL의 역할 전환은 Patroni가 수행하며, OwlDB는 노드 역할(Role
 
 ***
 
-### DB Service 정보 수정
+### DB Service 정보 수정 <a href="#edit-db-service" id="edit-db-service"></a>
 
 1. DB Service 별칭 옆 **연필 아이콘**을 클릭합니다.
 2. DB Service 별칭과 설명을 수정합니다.

@@ -1,6 +1,6 @@
 **관리 > Overview** 또는 **대시보드**에서 DB Service를 선택한 후 **작업** 버튼을 클릭하여 아래 기능들을 수행할 수 있습니다.
 
-# DB Service 중지 및 시작
+# DB Service 중지 및 시작 <a href="#stop-start-db-service" id="stop-start-db-service"></a>
 
 **중지** 버튼을 클릭하면 DB Service를 일시적으로 중지할 수 있으며, 중지된 DB Service는 **시작** 버튼을 클릭하여 다시 시작할 수 있습니다.
 
