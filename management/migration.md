@@ -9,7 +9,7 @@ hidden: true
 {% hint style="info" %}
 **참고**
 
-호환성 분석 및 마이그레이션 기능은 현재 Tibero에 한하여 Oracle만 지원합니다. '[지원 범위 및 사양](undefined-4.md#JKEmRa7PUCKiF4VoFAVy)' 페이지를 참고하시기 바랍니다.
+호환성 분석 및 마이그레이션 기능은 현재 Tibero에 한하여 Oracle만 지원합니다. '[지원 범위 및 사양](migration.md#JKEmRa7PUCKiF4VoFAVy)' 페이지를 참고하시기 바랍니다.
 {% endhint %}
 
 ## 지원 범위 및 사양

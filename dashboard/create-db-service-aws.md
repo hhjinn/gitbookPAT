@@ -13,7 +13,7 @@ OwlDB에서 데이터베이스를 생성(이하 프로비저닝)하는 방법을
 * AWS 환경에서는 OpenSQL 엔진을 지원하지 않습니다.
 * **OwlDB 콘솔 화면 > 대시보드 > 카드뷰 > + 아이콘** 또는 **GNB > DB Alias 드롭다운 > DB Service 생성 버튼**을 클릭하여 데이터베이스 생성 페이지로 이동할 수 있습니다.
 * 프로비저닝 진행 상태는 콘솔 화면 우측 상단 알림(벨) 아이콘을 클릭하거나 대시보드에서 확인할 수 있습니다.
-* OwlDB에서 지원하는 데이터베이스 엔진 및 인스턴스 타입에 대한 내용은 '[AWS](db-aws.md#XDj4D6jZeLIG3hl9e9W4)', '[Azure](db-aws.md#azure)' 페이지를 참고하시기 바랍니다.
+* OwlDB에서 지원하는 데이터베이스 엔진 및 인스턴스 타입에 대한 내용은 '[AWS](create-db-service-aws.md#XDj4D6jZeLIG3hl9e9W4)', '[Azure](create-db-service-aws.md#azure)' 페이지를 참고하시기 바랍니다.
 {% endhint %}
 
 {% hint style="warning" %}
@@ -39,7 +39,7 @@ AWS 환경에서는 데이터베이스 생성 페이지에 진입하면 사용�
 {% hint style="info" %}
 **참고**
 
-License Option을 BYOL로 선택한 경우 라이선스 파일 등록이 필요합니다. 자세한 내용은 [BYOL 라이선스 등록](db-aws.md#byol-라이선스-등록)을 참고하세요.
+License Option을 BYOL로 선택한 경우 라이선스 파일 등록이 필요합니다. 자세한 내용은 [BYOL 라이선스 등록](create-db-service-aws.md#byol-라이선스-등록)을 참고하세요.
 {% endhint %}
 
 ***
