@@ -10,7 +10,7 @@ OwlDB에서 데이터베이스를 생성(이하 프로비저닝)하는 방법을
 * OwlDB에서 지원하는 데이터베이스 엔진 및 인스턴스 타입에 대한 내용은 '[AWS](#XDj4D6jZeLIG3hl9e9W4)', '[Azure](#azure)' 페이지를 참고하시기 바랍니다.
 {% endhint %}
 
-# 새로운 DB Service 생성
+# 새로운 DB Service 생성 <a href="#create-new" id="create-new"></a>
 
 1. **OwlDB 콘솔 화면** > **대시보드** 메뉴로 이동합니다.
 2. **생성** 버튼을 클릭합니다.
@@ -28,16 +28,16 @@ OwlDB에서 데이터베이스를 생성(이하 프로비저닝)하는 방법을
 **참고**
 
 * **OwlDB 콘솔 화면 > 대시보드 > 카드뷰 > + 아이콘** 또는 **GNB > DB Alias 드롭다운 > DB Service 생성 버튼**을 클릭하여 데이터베이스 생성 페이지로 이동할 수 있습니다.
-* Azure 환경에서는 라이선스 옵션이 BYOL(Bring Your Own License)로 고정되어 있어, 데이터베이스 생성을 완료하려면 보유한 라이선스 파일을 등록해야 합니다. 자세한 내용은 [BYOL 라이선스 등록](#byol-%EB%9D%BC%EC%9D%B4%EC%84%A0%EC%8A%A4-%EB%93%B1%EB%A1%9D)을 참고하시기 바랍니다.
+* Azure 환경에서는 라이선스 옵션이 BYOL(Bring Your Own License)로 고정되어 있어, 데이터베이스 생성을 완료하려면 보유한 라이선스 파일을 등록해야 합니다. 자세한 내용은 [BYOL 라이선스 등록](#byol)을 참고하시기 바랍니다.
 {% endhint %}
 
 ---
 
-# **생성 옵션**
+# **생성 옵션** <a href="#creation-options" id="creation-options"></a>
 
 데이터베이스 생성 시 선택한 옵션에 따른 예상 금액을 확인할 수 있습니다. 해당 금액은 서울 리전을 기준으로 산정된 값이며, 실제 금액은 리전이나 실사용량 등 여러 요소에 따라 달라질 수 있습니다.
 
-### 1단계: 엔진 옵션
+### 1단계: 엔진 옵션 <a href="#step-1-engine" id="step-1-engine"></a>
 
 <table data-full-width="true"><thead><tr><th>항목</th><th>설명</th></tr></thead><tbody><tr><td>DB Service Name*</td><td>DB Service를 식별하기 위한 이름<ul><li>OwlDB 계정 내 중복 사용 불가</li><li>6~30자 이내, 영어 대소문자(a-z, A-Z), 숫자(0-9), 하이픈(-)만 사용 가능, 공백 사용 불가</li></ul></td></tr><tr><td>Database Engine Type*</td><td>사용할 데이터베이스 엔진<ul><li><strong>Tibero</strong></li><li><strong>OpenSQL</strong></li></ul></td></tr><tr><td>License Option*</td><td>사용할 라이선스 옵션<ul><li><strong>LI</strong>(License Included)</li><li><strong>BYOL</strong> (Bring Your Own License)</li></ul></td></tr><tr><td>Topology*</td><td>데이터베이스 구조를 결정할 토폴로지 유형<ul><li><strong>Tibero</strong>: Single, TAC</li><li><strong>OpenSQL</strong>: Single, HA</li></ul></td></tr><tr><td>Edition*</td><td>라이선스의 에디션<ul><li><strong>Standard Edition (SE)</strong>: 단일 서버 구성 전용, 최대 8vCPU까지 사용 가능</li><li><strong>Enterprise Edition (EE)</strong>: 고가용성 및 대규모 구성 지원, vCPU 제한 없음</li><li>Topology를 TAC 또는 HA로 선택하면 Enterprise Edition으로 자동 적용되며 변경할 수 없음</li></ul></td></tr><tr><td>Node Count*</td><td>클러스터 구성 노드 수<ul><li><strong>Tibero</strong>: Single 1개 (고정), TAC 2~4개 중 선택</li><li><strong>OpenSQL</strong>: Single, HA 모두 1개로 고정</li></ul></td></tr><tr><td>PostgreSQL Version</td><td>OpenSQL 선택 시 사용할 PostgreSQL 버전<ul><li>3.16.12.5 (기본값)</li><li>3.17.8.5</li></ul></td></tr></tbody></table>
 
@@ -50,7 +50,7 @@ OwlDB에서 데이터베이스를 생성(이하 프로비저닝)하는 방법을
 * Edition에서 Standard Edition(SE)을 선택하면 인스턴스 구성 단계에서 최대 8vCPU까지의 인스턴스 유형만 선택할 수 있습니다.
 {% endhint %}
 
-### 2단계: DR 구성
+### 2단계: DR 구성 <a href="#step-2-dr" id="step-2-dr"></a>
 
 <table data-full-width="true"><thead><tr><th>항목</th><th>설명</th></tr></thead><tbody><tr><td>Enable DR*</td><td>DR 구성 사용 여부<ul><li><strong>Tibero</strong>: 사용자가 직접 선택</li><li><strong>OpenSQL</strong>: Topology에 따라 자동으로 결정되며 수정할 수 없음 (Single: DR 미사용 / HA: DR 사용)</li></ul></td></tr><tr><td>Failover Automation Level*</td><td>장애 조치 자동화 레벨<ul><li><strong>0단계 : 수동</strong></li><li><strong>1단계 : 자동 장애 조치</strong></li><li><strong>2단계 : 자동 구성 복구</strong></li><li><strong>3단계 : 완전 자동화</strong></li></ul></td></tr><tr><td>Standby/Replica Count*</td><td>Standby(또는 Replica) DB 개수<ul><li><strong>Tibero</strong>: 최대 2개까지 선택 가능</li><li><strong>OpenSQL</strong>: 1개로 고정</li></ul></td></tr><tr><td>Standby Mode*</td><td>Standby Mode 옵션 (Tibero 엔진에서만 노출되며, Standby 노드별로 개별 설정 가능)<ul><li><strong>Recovery</strong></li><li><strong>Read Only</strong></li></ul></td></tr><tr><td>Log Replication Type</td><td>Primary(Leader)의 로그를 Standby(Replica)에 전송하는 방식<ul><li><strong>LGWR ASYNC</strong>: 트랜잭션이 발생하면 실시간으로 생성되는 Redo log를 곧바로 전송하는 복제 모드</li><li><strong>ARCH ASYNC</strong>: 로그 스위치가 일어난 뒤, 아카이브 로그 파일이 생성되면 그 파일을 모아서 전송하는 복제 모드</li><li>OpenSQL 엔진은<strong>ASYNC 방식</strong>으로 고정되며 수정할 수 없음.</li></ul></td></tr></tbody></table>
 
@@ -65,7 +65,7 @@ OwlDB에서 데이터베이스를 생성(이하 프로비저닝)하는 방법을
 * Standby Mode와 Log Replication Type은 Standby 노드별로 개별 설정이 가능합니다.
 {% endhint %}
 
-### 3단계: AZ 구성
+### 3단계: AZ 구성 <a href="#step-3-az" id="step-3-az"></a>
 
 <table data-full-width="true"><thead><tr><th>항목</th><th>설명</th></tr></thead><tbody><tr><td>OwlDB Availability Zone(AZ)* (disabled)</td><td>OwlDB의 가용 영역</td></tr><tr><td>Primary(Leader) DB Availability Zone(AZ)*</td><td>Primary(Leader) DB의 가용 영역<br><strong>기본값</strong><ul><li>DR 사용 안함 : OwlDB와 같은 영역</li><li>DR 사용 : OwlDB와 다른 영역</li></ul></td></tr><tr><td>Standby(Replica) DB Availability Zone(AZ)*</td><td>Standby(Replica) DB의 가용 영역<ul><li>기본값 : OwlDB와 같은 가용 영역에 배치, 이후 다른 영역에 자동 배치</li></ul></td></tr></tbody></table>
 
@@ -78,7 +78,7 @@ OwlDB에서 데이터베이스를 생성(이하 프로비저닝)하는 방법을
 * Primary(Leader) DB의 가용 영역은 사용자가 선택할 수 있으나, 안정적인 장애 대응 및 Failover를 위해 Primary(Leader) DB는 OwlDB와 다른 가용 영역에 배치하는 것을 권장합니다.
 {% endhint %}
 
-### 4단계: 인스턴스 구성
+### 4단계: 인스턴스 구성 <a href="#step-4-instance" id="step-4-instance"></a>
 
 {% tabs %}
 {% tab title="Tibero" %}
@@ -113,7 +113,7 @@ OwlDB에서 데이터베이스를 생성(이하 프로비저닝)하는 방법을
 * Redo Log Disk, Archive Log Volume은 Tibero 엔진에서만 노출됩니다.
 {% endhint %}
 
-### 5단계: 데이터베이스 구성
+### 5단계: 데이터베이스 구성 <a href="#step-5-database" id="step-5-database"></a>
 
 {% tabs %}
 {% tab title="Tibero" %}
@@ -163,7 +163,7 @@ Database Name, Character Set, Timezone, Database Listener Port는 최초 설정 
 
 ---
 
-# BYOL 라이선스 등록
+# BYOL 라이선스 등록 <a href="#byol" id="byol"></a>
 
 Azure 환경에서는 라이선스 옵션이 BYOL(Bring Your Own License)로 고정되어 있어, 데이터베이스를 생성하려면 보유한 라이선스 파일을 등록해야 합니다.
 
@@ -173,7 +173,7 @@ Azure 환경에서는 라이선스 옵션이 BYOL(Bring Your Own License)로 고
 4. 검증할 파일을 **선택**한 후, **검증** 버튼을 클릭하여 업로드한 라이선스 파일의 유효성을 확인합니다.
 5. 검증에 성공하면 **생성** 버튼을 클릭하여 데이터베이스 생성을 요청합니다.
 
-### 업로드 파일 목록 항목
+### 업로드 파일 목록 항목 <a href="#upload-files" id="upload-files"></a>
 
 | 항목  | 설명  |
 |-----|-----|
@@ -206,7 +206,7 @@ Azure 환경에서는 라이선스 옵션이 BYOL(Bring Your Own License)로 고
 
 ---
 
-# 생성 결과 확인
+# 생성 결과 확인 <a href="#check-result" id="check-result"></a>
 
 데이터베이스 생성 요청이 접수되면 시스템 알림을 통해 진행 상태를 확인할 수 있습니다.
 

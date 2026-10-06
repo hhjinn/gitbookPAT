@@ -22,7 +22,7 @@ OwlDB에서 데이터베이스를 생성(이하 프로비저닝)하는 방법을
 AWS 환경에서는 데이터베이스 생성 페이지에 진입하면 사용자의 **Rocky 구독 상태**를 확인하며, 구독되어 있지 않은 경우 **구독 필수에 대한 안내 모달**이 나타납니다.
 {% endhint %}
 
-## 새로운 DB Service 생성
+## 새로운 DB Service 생성 <a href="#create-new" id="create-new"></a>
 
 1. **OwlDB 콘솔 화면 > 대시보드** 메뉴로 이동합니다.
 2. **생성** 버튼을 클릭합니다.
@@ -39,16 +39,16 @@ AWS 환경에서는 데이터베이스 생성 페이지에 진입하면 사용�
 {% hint style="info" %}
 **참고**
 
-License Option을 BYOL로 선택한 경우 라이선스 파일 등록이 필요합니다. 자세한 내용은 [BYOL 라이선스 등록](create-db-service-aws.md#byol-라이선스-등록)을 참고하세요.
+License Option을 BYOL로 선택한 경우 라이선스 파일 등록이 필요합니다. 자세한 내용은 [BYOL 라이선스 등록](create-db-service-aws.md#byol)을 참고하세요.
 {% endhint %}
 
 ***
 
-## **생성 옵션**
+## **생성 옵션** <a href="#creation-options" id="creation-options"></a>
 
 데이터베이스 생성 시 선택한 옵션에 따른 예상 금액을 확인할 수 있습니다. 해당 금액은 서울 리전을 기준으로 산정된 값이며, 실제 금액은 리전이나 실사용량 등 여러 요소에 따라 달라질 수 있습니다.
 
-#### 1단계: 엔진 옵션
+#### 1단계: 엔진 옵션 <a href="#step-1-engine" id="step-1-engine"></a>
 
 <table data-full-width="true"><thead><tr><th>항목</th><th>설명</th></tr></thead><tbody><tr><td>DB Service Name*</td><td><p>DB Service를 식별하기 위한 이름</p><ul><li>OwlDB 계정 내 중복 사용 불가</li><li>6~30자 이내, 영어 대소문자(a-z, A-Z), 숫자(0-9), 하이픈(-)만 사용 가능, 공백 사용 불가</li></ul></td></tr><tr><td>Database Engine Type*</td><td><p>사용할 데이터베이스 엔진</p><ul><li><strong>Tibero</strong></li><li><strong>OpenSQL</strong> (추후 지원 예정)</li></ul></td></tr><tr><td>License Option*</td><td><p>사용할 라이선스 옵션</p><ul><li><strong>LI</strong>(License Included)</li><li><strong>BYOL</strong> (Bring Your Own License)</li></ul></td></tr><tr><td>Topology*</td><td><p>데이터베이스 구조를 결정할 토폴로지 유형</p><ul><li><strong>Tibero</strong>: Single, TAC</li></ul></td></tr><tr><td>Edition*</td><td><p>라이선스의 에디션</p><ul><li><strong>Standard Edition (SE)</strong>: 단일 서버 구성 전용, 최대 8vCPU까지 사용 가능</li><li><strong>Enterprise Edition (EE)</strong>: 고가용성 및 대규모 구성 지원, vCPU 제한 없음</li><li>Topology를 TAC로 선택하면 Enterprise Edition으로 자동 적용되며 변경할 수 없음</li></ul></td></tr><tr><td>Node Count*</td><td><p>클러스터 구성 노드 수</p><ul><li><strong>Tibero</strong>: Single 1개 (고정), TAC 2~4개 중 선택</li></ul></td></tr></tbody></table>
 
@@ -60,7 +60,7 @@ License Option을 BYOL로 선택한 경우 라이선스 파일 등록이 필요�
 Edition에서 Standard Edition(SE)을 선택하면 인스턴스 구성 단계에서 최대 8vCPU까지의 인스턴스 유형만 선택할 수 있습니다.
 {% endhint %}
 
-#### 2단계: DR 구성
+#### 2단계: DR 구성 <a href="#step-2-dr" id="step-2-dr"></a>
 
 <table data-full-width="true"><thead><tr><th>항목</th><th>설명</th></tr></thead><tbody><tr><td>Enable DR*</td><td><p>DR 구성 사용 여부</p><ul><li><strong>Tibero</strong>: 사용자가 직접 선택</li></ul></td></tr><tr><td>Failover Automation Level*</td><td><p>장애 조치 자동화 레벨</p><ul><li><strong>0단계 : 수동</strong></li><li><strong>1단계 : 자동 장애 조치</strong></li><li><strong>2단계 : 자동 구성 복구</strong></li><li><strong>3단계 : 완전 자동화</strong></li></ul></td></tr><tr><td>Standby/Replica Count*</td><td><p>Standby(또는 Replica) DB 개수</p><ul><li><strong>Tibero</strong>: 최대 2개까지 선택 가능</li></ul></td></tr><tr><td>Standby Mode*</td><td><p>Standby Mode 옵션 (Standby 노드별로 개별 설정 가능)</p><ul><li><strong>Recovery</strong></li><li><strong>Read Only</strong></li></ul></td></tr><tr><td>Log Replication Type</td><td><p>Primary의 로그를 Standby에 전송하는 방식</p><ul><li><strong>LGWR ASYNC</strong>: 트랜잭션이 발생하면 실시간으로 생성되는 Redo log를 곧바로 전송하는 복제 모드</li><li><strong>ARCH ASYNC</strong>: 로그 스위치가 일어난 뒤, 아카이브 로그 파일이 생성되면 그 파일을 모아서 전송하는 복제 모드</li></ul></td></tr></tbody></table>
 
@@ -74,7 +74,7 @@ Edition에서 Standard Edition(SE)을 선택하면 인스턴스 구성 단계에
 * Standby Mode와 Log Replication Type은 Standby 노드별로 개별 설정이 가능합니다.
 {% endhint %}
 
-#### 3단계: AZ 구성
+#### 3단계: AZ 구성 <a href="#step-3-az" id="step-3-az"></a>
 
 <table data-full-width="true"><thead><tr><th>항목</th><th>설명</th></tr></thead><tbody><tr><td>OwlDB Availability Zone(AZ)* (disabled)</td><td>OwlDB의 가용 영역</td></tr><tr><td>Primary(Leader) DB Availability Zone(AZ)*</td><td><p>Primary(Leader) DB의 가용 영역<br><strong>기본값</strong></p><ul><li>DR 사용 안함 : OwlDB와 같은 영역</li><li>DR 사용 : OwlDB와 다른 영역</li></ul></td></tr><tr><td>Standby(Replica) DB Availability Zone(AZ)*</td><td><p>Standby(Replica) DB의 가용 영역</p><ul><li>기본값 : OwlDB와 같은 가용 영역에 배치, 이후 다른 영역에 자동 배치</li></ul></td></tr></tbody></table>
 
@@ -87,7 +87,7 @@ Edition에서 Standard Edition(SE)을 선택하면 인스턴스 구성 단계에
 * Primary(Leader) DB의 가용 영역은 사용자가 선택할 수 있으나, 안정적인 장애 대응 및 Failover를 위해 Primary(Leader) DB는 OwlDB와 다른 가용 영역에 배치하는 것을 권장합니다.
 {% endhint %}
 
-#### 4단계: 인스턴스 구성
+#### 4단계: 인스턴스 구성 <a href="#step-4-instance" id="step-4-instance"></a>
 
 <table data-full-width="true"><thead><tr><th>구분</th><th>항목</th><th>설명</th></tr></thead><tbody><tr><td>Instance Setting</td><td>DB Virtual Machine Size*</td><td>성능과 사양을 결정할 인스턴스 유형</td></tr><tr><td>Instance Access Setting</td><td>DB Instance SSH Key Name*</td><td>DB 인스턴스에 접근하기 위한 설정</td></tr><tr><td>Data Disk</td><td>Data Disk Type*</td><td>주요 데이터를 저장할 디스크의 유형</td></tr><tr><td></td><td>Data Disk Size*</td><td>주요 데이터를 저장할 디스크의 크기</td></tr><tr><td></td><td>Data Disk IOPS*</td><td>주요 데이터를 저장할 디스크의 입출력 처리량</td></tr><tr><td></td><td>Data Disk MBps</td><td>주요 데이터를 저장할 디스크의 최대 처리 속도</td></tr><tr><td>Redo Log Disk</td><td>Redo Log Disk Type</td><td>Redo log를 저장할 디스크의 유형</td></tr><tr><td></td><td>Redo Log Disk Size (disabled)</td><td><p>Redo log를 저장할 디스크의 크기</p><ul><li>입력한 Redo Log File Size(GB)에 따라 자동 계산</li></ul></td></tr><tr><td></td><td>Redo Log Disk IOPS</td><td>Redo log를 저장할 디스크의 입출력 처리량</td></tr><tr><td></td><td>Redo Log Disk MBps</td><td>Redo log를 저장할 디스크의 최대 처리 속도</td></tr><tr><td>Archive Log Volume</td><td>Archive Log Disk Type</td><td>Archive log를 저장할 디스크의 유형</td></tr><tr><td></td><td>Archive Log Disk Size</td><td>Archive log를 저장할 디스크의 크기</td></tr><tr><td></td><td>Archive Log Disk IOPS</td><td>Archive log를 저장할 디스크의 입출력 처리량</td></tr><tr><td></td><td>Archive Log Disk MBps</td><td>Archive log를 저장할 디스크의 최대 처리 속도</td></tr><tr><td>Auto Scale</td><td>사용 여부*</td><td>데이터 볼륨 사용량에 따라 데이터 디스크 크기를 자동으로 확장할지 여부</td></tr><tr><td></td><td>최대 확장 한도*</td><td>Auto Scale 사용 시 증가할 수 있는 데이터 디스크의 최대 크기</td></tr></tbody></table>
 
@@ -103,7 +103,7 @@ Edition에서 Standard Edition(SE)을 선택하면 인스턴스 구성 단계에
 * Redo Log Disk, Archive Log Volume은 Tibero 엔진에서만 노출됩니다.
 {% endhint %}
 
-#### 5단계: 데이터베이스 구성
+#### 5단계: 데이터베이스 구성 <a href="#step-5-database" id="step-5-database"></a>
 
 | 항목                                       | 설명                                  |
 | ---------------------------------------- | ----------------------------------- |
@@ -132,7 +132,7 @@ Database Name, Character Set, Timezone, Database Listener Port는 최초 설정 
 
 ***
 
-## BYOL 라이선스 등록
+## BYOL 라이선스 등록 <a href="#byol" id="byol"></a>
 
 License Option을 **BYOL**로 선택한 경우, 구성 정보 확인 단계에서 라이선스 파일을 등록해야 데이터베이스 생성을 요청할 수 있습니다.
 
@@ -150,7 +150,7 @@ License Option을 **BYOL**로 선택한 경우, 구성 정보 확인 단계에�
 * 업로드한 라이선스 파일을 삭제하려면 목록에서 파일을 선택한 후 **삭제** 버튼을 클릭합니다.
 {% endhint %}
 
-#### 업로드 파일 목록 항목
+#### 업로드 파일 목록 항목 <a href="#upload-files" id="upload-files"></a>
 
 | 항목           | 설명                           |
 | ------------ | ---------------------------- |
@@ -176,7 +176,7 @@ License Option을 **BYOL**로 선택한 경우, 구성 정보 확인 단계에�
 
 ***
 
-## 생성 결과 확인
+## 생성 결과 확인 <a href="#check-result" id="check-result"></a>
 
 데이터베이스 생성 요청이 접수되면 시스템 알림을 통해 진행 상태를 확인할 수 있습니다.
 

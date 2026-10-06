@@ -1,6 +1,6 @@
 Azure 마켓플레이스에서 OwlDB를 이용하기 위한 정보를 확인합니다.
 
-## 클라우드 환경 및 서버 사양
+## 클라우드 환경 및 서버 사양 <a href="#server-specs" id="server-specs"></a>
 
 | 항목  | 상세  |
 |-----|-----|
@@ -11,7 +11,7 @@ Azure 마켓플레이스에서 OwlDB를 이용하기 위한 정보를 확인합�
 | 권장 브라우저 | Google Chrome |
 | 최적 해상도 | Full HD (1920\*1080) |
 
-## 리전 가용성
+## 리전 가용성 <a href="#region-availability" id="region-availability"></a>
 
 | 리전 이름 | 지역  |
 |-------|-----|
@@ -44,7 +44,7 @@ Azure 마켓플레이스에서 OwlDB를 이용하기 위한 정보를 확인합�
 | West US 2 | westus2 |
 | West US 3 | westus3 |
 
-## 인스턴스 유형
+## 인스턴스 유형 <a href="#instance-types" id="instance-types"></a>
 
 OwlDB는 워크로드 요구 사항에 맞춰 여러 인스턴스 유형을 지원합니다. 아래 표에서 vCPU와 메모리 구성을 확인해 선택합니다.
 
@@ -86,7 +86,7 @@ OwlDB는 워크로드 요구 사항에 맞춰 여러 인스턴스 유형을 지�
 * Tibero TAC: 4vCPU 이상만 사용 가능하며, 8vCPU 이상 권장합니다.
 {% endhint %}
 
-## 스토리지/디스크 유형
+## 스토리지/디스크 유형 <a href="#storage-types" id="storage-types"></a>
 
 워크로드에 맞춰 선택 가능한 스토리지/디스크 유형과 크기·IOPS 범위를 확인합니다.
 

@@ -6,7 +6,7 @@ hidden: true
 
 AWS 마켓플레이스에서 OwlDB를 이용하기 위한 정보를 확인합니다.
 
-### 클라우드 환경 및 서버 사양
+### 클라우드 환경 및 서버 사양 <a href="#server-specs" id="server-specs"></a>
 
 OwlDB가 제공되는 클라우드 환경과 서버 사양을 확인합니다.
 
@@ -19,7 +19,7 @@ OwlDB가 제공되는 클라우드 환경과 서버 사양을 확인합니다.
 | 권장 브라우저 | Google Chrome        |
 | 최적 해상도  | Full HD (1920\*1080) |
 
-### 리전 가용성
+### 리전 가용성 <a href="#region-availability" id="region-availability"></a>
 
 지원 리전과 지역 코드를 확인합니다.
 
@@ -43,7 +43,7 @@ OwlDB가 제공되는 클라우드 환경과 서버 사양을 확인합니다.
 | 아시아 태평양(서울)     | ap-northeast-2 |
 | 아시아 태평양(도쿄)     | ap-northeast-1 |
 
-### 인스턴스 유형
+### 인스턴스 유형 <a href="#instance-types" id="instance-types"></a>
 
 선택 가능한 인스턴스 유형별 vCPU와 메모리 사양을 확인합니다.
 
@@ -85,7 +85,7 @@ OwlDB가 제공되는 클라우드 환경과 서버 사양을 확인합니다.
 * **Tibero TAC**: large 이상만 사용 가능하며, xlarge 이상을 권장합니다.
 {% endhint %}
 
-### 스토리지/디스크 유형
+### 스토리지/디스크 유형 <a href="#storage-types" id="storage-types"></a>
 
 OwlDB에서 사용 가능한 스토리지 유형과 각 유형의 용량·IOPS 범위를 확인합니다.
 
