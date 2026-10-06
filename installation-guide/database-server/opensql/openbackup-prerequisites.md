@@ -21,7 +21,7 @@ OwlDB는 OpenSQL 데이터베이스의 백업 및 복구를 OpenBackup인 Barman
 {% hint style="info" %}
 **참고**
 
-OpenBackup은 **OpenSQL 배포본으로 설치**하며, 버전은 데이터베이스 서버의 `barman-cli` 와 반드시 같아야 합니다. 자세한 내용은 [OpenBackup 설치](openbackup-1.md)를 참고합니다.
+OpenBackup은 **OpenSQL 배포본으로 설치**하며, 버전은 데이터베이스 서버의 `barman-cli` 와 반드시 같아야 합니다. 자세한 내용은 [OpenBackup 설치](openbackup-installation.md)를 참고합니다.
 {% endhint %}
 
 #### 3. OS 패키지

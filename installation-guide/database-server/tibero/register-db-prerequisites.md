@@ -104,4 +104,4 @@ $TB_HOME/
  └── tbagent_dist_latest.tar.gz  # tbagent 바이너리
 ```
 
-이후 [데이터베이스 서버 Agent 설치 문서](agent.md)로 이동하여 진행합니다.
+이후 [데이터베이스 서버 Agent 설치 문서](agent-installation.md)로 이동하여 진행합니다.

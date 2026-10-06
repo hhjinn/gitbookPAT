@@ -52,7 +52,7 @@ owlagent_dist_latest.tar.gz
 {% hint style="info" %}
 **참고**
 
-DB Service 등록 시점에 `DB_LOG_DIR` 경로에 로그 파일이 존재하지 않아도 무방합니다. 등록 이후 로그 파일이 생성되면 [Syslog](../../../undefined-5/undefined-2/syslog.md) 메뉴에서 조회합니다.
+DB Service 등록 시점에 `DB_LOG_DIR` 경로에 로그 파일이 존재하지 않아도 무방합니다. 등록 이후 로그 파일이 생성되면 [Syslog](../../../monitoring/log/syslog.md) 메뉴에서 조회합니다.
 {% endhint %}
 
 3. owlagent 실행

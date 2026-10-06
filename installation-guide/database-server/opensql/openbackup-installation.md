@@ -1,6 +1,6 @@
 # OpenBackup 서버 설치 가이드
 
-[OpenBackup 서버 환경 준비](openbackup.md)의 시스템 및 네트워크 요구사항을 충족한 상태에서 진행합니다.\
+[OpenBackup 서버 환경 준비](openbackup-prerequisites.md)의 시스템 및 네트워크 요구사항을 충족한 상태에서 진행합니다.\
 아래 절차를 완료하면 OwlDB에서 OpenBackup 서버를 연동할 수 있는 상태가 됩니다.&#x20;
 
 {% hint style="info" %}
@@ -510,5 +510,5 @@ OwlDB 웹 UI에서 아래 순서로 연동합니다.
 {% hint style="info" %}
 참고
 
-OpenBackup 서버 설치 및 운영에 문제가 있는 경우, [참고 자료 > OpenBackup 조치 가이드](../../../undefined-8/openbackup.md)를 참고 바랍니다.
+OpenBackup 서버 설치 및 운영에 문제가 있는 경우, [참고 자료 > OpenBackup 조치 가이드](../../../references/openbackup-troubleshooting.md)를 참고 바랍니다.
 {% endhint %}

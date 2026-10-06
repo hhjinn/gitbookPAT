@@ -45,7 +45,7 @@ OwlDB가 Data/Archive/Redo 디스크에 Tibero 전용 파일 시스템(TAS)을 �
 
 #### 4. 커널 파라미터 설정
 
-Tibero 데이터베이스 구동을 위해 아래 커널 파라미터를 설정해야 합니다. Tibero **설치가이드** 내 [커널 파라미터 설정](db.md#id-4)을 통해 설정합니다.
+Tibero 데이터베이스 구동을 위해 아래 커널 파라미터를 설정해야 합니다. Tibero **설치가이드** 내 [커널 파라미터 설정](install-db-prerequisites.md#id-4)을 통해 설정합니다.
 
 ## 네트워크 요구사항
 
@@ -164,4 +164,4 @@ sudo bash install_pkg.sh
 {% endtab %}
 {% endtabs %}
 
-이후 [데이터베이스 서버 Agent 설치 문서](agent.md)로 이동하여 진행합니다.
+이후 [데이터베이스 서버 Agent 설치 문서](agent-installation.md)로 이동하여 진행합니다.

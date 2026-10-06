@@ -42,7 +42,7 @@ OwlDB를 통하지 않고 외부에서 직접 데이터베이스 구성을 변�
 
 1. **OwlDB 콘솔 화면** > **대시보드**로 이동합니다.
 2. 대시보드 상단의 **설치** 버튼을 눌러 설치 페이지로 이동합니다.
-3. 설치 옵션을 단계별로 입력합니다. 설치 옵션 입력은 총 5단계로 이루어지며, 각 단계에 대한 상세 내용은 아래의 [**설치 옵션 단계** ](db-1.md#undefined-2)섹션을 참고해 주세요.
+3. 설치 옵션을 단계별로 입력합니다. 설치 옵션 입력은 총 5단계로 이루어지며, 각 단계에 대한 상세 내용은 아래의 [**설치 옵션 단계** ](install-db-service.md#undefined-2)섹션을 참고해 주세요.
 4. 입력한 정보를 확인하고 설치 가능 여부 검증이 완료되면, **설치** 버튼을 클릭합니다.
 5. 설치가 시작되면 대시보드 목록에서 진행 상태를 확인할 수 있습니다. 상태가 **Running**으로 변경되면 설치가 정상적으로 완료된 것입니다.
 
@@ -173,7 +173,7 @@ Failover Automation Level을 3단계(완전 자동화)로 설정하면 장애 �
 {% hint style="info" %}
 **참고**
 
-DR 구성을 사용하는 경우에는 SSH Key File을 지정된 경로에 미리 배치해야 합니다. 자세한 설정 방법은 [노드 간 SSH 공용키 설정](db-1.md#4VCx1BdX0fpROq6CwGnH)에서 확인하세요.
+DR 구성을 사용하는 경우에는 SSH Key File을 지정된 경로에 미리 배치해야 합니다. 자세한 설정 방법은 [노드 간 SSH 공용키 설정](install-db-service.md#4VCx1BdX0fpROq6CwGnH)에서 확인하세요.
 {% endhint %}
 
 **모든 Path**는 파일 시스템 경로만 입력할 수 있습니다. 동일한 경로 또는 서로 다른 경로를 중복 입력하는 것도 허용됩니다.
@@ -235,7 +235,7 @@ DR 구성을 사용하는 경우에는 SSH Key File을 지정된 경로에 미�
 {% hint style="info" %}
 **참고**
 
-DR 구성을 사용하는 경우에는 SSH Key File을 지정된 경로에 미리 배치해야 합니다. 자세한 설정 방법은 [노드 간 SSH 공용키 설정](db-1.md#4VCx1BdX0fpROq6CwGnH)에서 확인하세요.
+DR 구성을 사용하는 경우에는 SSH Key File을 지정된 경로에 미리 배치해야 합니다. 자세한 설정 방법은 [노드 간 SSH 공용키 설정](install-db-service.md#4VCx1BdX0fpROq6CwGnH)에서 확인하세요.
 {% endhint %}
 
 **Data Path, Redo Path, Archive Path**는 로우 디바이스 경로(`/dev/sdb`) 또는 파티션 경로(`/dev/sdb1`)를 입력합니다. **Backup Path**의 경우 파일 시스템 경로만 입력할 수 있습니다.
@@ -299,7 +299,7 @@ DR 구성을 사용하는 경우에는 SSH Key File을 지정된 경로에 미�
 {% hint style="info" %}
 **참고**
 
-DR 구성을 사용하는 경우에는 SSH Key File을 지정된 경로에 미리 배치해야 합니다. 자세한 설정 방법은 [노드 간 SSH 공용키 설정](db-1.md#4VCx1BdX0fpROq6CwGnH)에서 확인하세요.
+DR 구성을 사용하는 경우에는 SSH Key File을 지정된 경로에 미리 배치해야 합니다. 자세한 설정 방법은 [노드 간 SSH 공용키 설정](install-db-service.md#4VCx1BdX0fpROq6CwGnH)에서 확인하세요.
 {% endhint %}
 
 **모든 Path**는 파일 시스템 경로만 입력할 수 있습니다. 동일한 경로 또는 서로 다른 경로를 중복 입력하는 것도 허용됩니다.

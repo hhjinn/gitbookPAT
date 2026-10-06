@@ -13,7 +13,7 @@ DB Syslog는 최근 7일 이내의 데이터만 조회할 수 있습니다. 7일
 {% hint style="info" %}
 **참고**
 
-등록을 통해 추가한 OpenSQL DB Service는 초기 등록 시 사용되는 `owl.env`의 `DB_LOG_DIR`를 OpenSQL DB 로그 폴더로 지정하지 않았을 경우 DB Syslog가 정상적으로 동작하지 않을 수 있습니다. 자세한 내용은 [등록 매뉴얼](../../undefined/undefined-1/opensql/db-1.md)을 참고해주세요.
+등록을 통해 추가한 OpenSQL DB Service는 초기 등록 시 사용되는 `owl.env`의 `DB_LOG_DIR`를 OpenSQL DB 로그 폴더로 지정하지 않았을 경우 DB Syslog가 정상적으로 동작하지 않을 수 있습니다. 자세한 내용은 [등록 매뉴얼](../../installation-guide/database-server/opensql/register-db-prerequisites.md)을 참고해주세요.
 {% endhint %}
 
 {% hint style="warning" %}
