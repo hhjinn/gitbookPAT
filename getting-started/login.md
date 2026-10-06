@@ -1,4 +1,4 @@
-# 로그인 <a href="#login" id="login"></a>
+# 로그인
 
 <figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>그림 1. 로그인</p></figcaption></figure>
 
@@ -27,7 +27,7 @@ Root 계정의 초기 아이디와 비밀번호는 아래와 같습니다.
 
 ***
 
-### 로그인
+### 로그인 <a href="#login" id="login"></a>
 
 1. 로그인 페이지에서 아이디와 비밀번호를 입력합니다.
 2. **로그인** 버튼을 클릭합니다.

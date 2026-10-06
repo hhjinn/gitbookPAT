@@ -1,4 +1,4 @@
-# 세션 모니터링 <a href="#session-monitoring" id="session-monitoring"></a>
+# 세션 모니터링
 
 {% hint style="info" %}
 **참고**
@@ -8,7 +8,7 @@ AWS 환경에서는 Tibero 엔진에만 지원되며, Azure 환경에서는 Tibe
 
 세션 모니터링은 데이터베이스에 연결된 세션의 현재 상태를 실시간으로 확인하는 기능입니다. 접속 사용자, 실행 중인 SQL, 대기 이벤트, 경과 시간 등 세션 주요 지표를 테이블 형태로 조회하여 이상 세션을 빠르게 파악합니다.
 
-### 세션 모니터링
+### 세션 모니터링 <a href="#session-monitoring" id="session-monitoring"></a>
 
 **모니터링 > 세션 모니터링** 메뉴에서 현재 DB 인스턴스에 연결된 세션 목록을 실시간 테이블로 조회합니다. GNB의 **DB Type** 토글로 Tibero 또는 OpenSQL을 전환하면 해당 엔진의 세션 지표가 표시됩니다.
 
