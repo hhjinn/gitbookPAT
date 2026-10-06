@@ -6,7 +6,7 @@
 본 가이드는 [설치 DB 환경 준비 가이드](install-db-prerequisites.md) 또는 [등록 DB 환경 준비 가이드](register-db-prerequisites.md)를 완료한 후 진행합니다.
 {% endhint %}
 
-### Agent 설치 및 기동
+# Agent 설치 및 기동 <a href="#install-and-start-agent" id="install-and-start-agent"></a>
 
 **1. Agent 바이너리 압축 해제**
 

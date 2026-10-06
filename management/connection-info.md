@@ -9,7 +9,7 @@
 | OpenProxy | OpenProxy 파라미터와 Pool, User, Shard 구성 조회·수정 | —      | ✓       |
 | Replication Slot | 외부 시스템과의 연동에 사용하는 Replication Slot 조회·관리 | —      | ✓       |
 
-### 공통 상단 영역
+# 공통 상단 영역 <a href="#common-top-area" id="common-top-area"></a>
 
 연결 정보 관리 화면 상단에는 현재 선택된 DB Service의 식별 정보가 모든 탭에 걸쳐 고정으로 표시됩니다.
 
@@ -21,7 +21,7 @@
 
 ***
 
-### Endpoint 탭
+# Endpoint 탭 <a href="#endpoint" id="endpoint"></a>
 
 Endpoint 탭은 **Service Endpoint**와 **Endpoint Details** 두 영역으로 구성되며, DB Service의 대표 접속 주소와 인스턴스별 상세 정보를 조회합니다.
 
@@ -48,7 +48,7 @@ Endpoint 탭은 **Service Endpoint**와 **Endpoint Details** 두 영역으로 �
 스펙 변경 작업이 진행 중인 경우 화면 상단에 진행 중 배너가 표시되며, 이 상태에서 상단 공통 영역의 **Topology** 항목은 변경 적용 이전의 토폴로지를 표시합니다.
 {% endhint %}
 
-#### Endpoint 조회 방법
+## Endpoint 조회 방법 <a href="#how-to-view-the-endpoint" id="how-to-view-the-endpoint"></a>
 
 1. 상단 메뉴에서 **관리 > 연결 정보 관리**를 클릭합니다.
 2. **Endpoint** 탭을 클릭합니다.
@@ -61,7 +61,7 @@ Endpoint 탭은 **Service Endpoint**와 **Endpoint Details** 두 영역으로 �
 
 ***
 
-### Access Control 탭
+# Access Control 탭 <a href="#access-control" id="access-control"></a>
 
 {% hint style="info" %}
 **참고**
@@ -90,12 +90,12 @@ Access Control 탭은 **OpenSQL** 환경에서만 제공됩니다.
 시스템이 자동으로 생성한 고정 규칙은 수정 모드에서도 편집 및 순서 변경이 불가합니다. 최소 상위 3개 규칙이 시스템 고정 규칙에 해당하며, Barman 설정에 따라 최대 4개가 될 수 있습니다. 사용자가 추가하는 규칙의 Priority는 시스템 고정 규칙 다음 번호부터 지정할 수 있습니다.
 {% endhint %}
 
-#### 규칙 조회
+## 규칙 조회 <a href="#view-rules" id="view-rules"></a>
 
 1. **관리 > 연결 정보 관리**에서 **Access Control** 탭을 클릭합니다.
 2. 현재 적용된 pg_hba 규칙 목록을 Priority 오름차순으로 확인합니다. 목록 상단에 고정된 시스템 규칙은 수정 및 삭제할 수 없습니다.
 
-#### 규칙 생성
+## 규칙 생성 <a href="#create-a-rule" id="create-a-rule"></a>
 
 1. **생성** 버튼을 클릭합니다.
 2. 오른쪽 드로어에서 아래 항목을 입력합니다.
@@ -106,7 +106,7 @@ Access Control 탭은 **OpenSQL** 환경에서만 제공됩니다.
 
 3. 입력을 완료한 후 **생성** 버튼을 클릭합니다.
 
-#### 규칙 수정
+## 규칙 수정 <a href="#edit-rule" id="edit-rule"></a>
 
 1. **수정** 버튼을 클릭합니다.
 2. 수정 모드로 전환되면 테이블의 각 항목을 인라인으로 수정합니다.
@@ -124,7 +124,7 @@ Access Control 탭은 **OpenSQL** 환경에서만 제공됩니다.
 저장 시 연결이 다시 검증될 수 있습니다. 변경사항 비교 모달에서 내용을 충분히 확인한 후 저장합니다.
 {% endhint %}
 
-#### 규칙 삭제
+## 규칙 삭제 <a href="#delete-rule" id="delete-rule"></a>
 
 1. 삭제할 규칙의 체크박스를 선택합니다.
 2. **삭제** 버튼을 클릭합니다.
@@ -132,7 +132,7 @@ Access Control 탭은 **OpenSQL** 환경에서만 제공됩니다.
 
 ***
 
-### OpenProxy 탭
+# OpenProxy 탭 <a href="#openproxy" id="openproxy"></a>
 
 {% hint style="info" %}
 **참고**
@@ -167,14 +167,14 @@ Pool, User, Shard는 아코디언 구조로 표시됩니다.
 * **동적 파라미터만 수정**: 재시작 없이 즉시 반영
 * **정적 파라미터 포함**: OpenProxy 재기동 후 반영
 
-#### 파라미터 조회
+## 파라미터 조회 <a href="#view-parameters" id="view-parameters"></a>
 
 1. **관리 > 연결 정보 관리**에서 **OpenProxy** 탭을 클릭합니다.
 2. 기본적으로 **General** Scope의 파라미터 목록이 표시됩니다.
 3. **Select Scope**에서 원하는 조회 범위를 선택합니다.
 4. 이름, 기본값, 현재값으로 파라미터를 검색하거나, **동적 파라미터** 여부로 필터링합니다.
 
-#### 파라미터 수정
+## 파라미터 수정 <a href="#modify-parameters" id="modify-parameters"></a>
 
 1. **수정** 버튼을 클릭합니다.
 
@@ -198,7 +198,7 @@ DB Service 상태가 `Running` 상태일 때만 **수정** 버튼이 활성화�
 **적용** 버튼을 클릭하기 전까지 변경 사항은 서버에 반영되지 않습니다. **취소** 버튼을 클릭하면 모든 변경 사항이 초기화됩니다.
 {% endhint %}
 
-#### Pool / User / Shard 생성
+## Pool / User / Shard 생성 <a href="#creating-a-pool-user-shard" id="creating-a-pool-user-shard"></a>
 
 1. **수정** 버튼을 클릭하여 수정 모드로 전환합니다.
 2. **Select Scope** 영역에서 생성할 유형(Pool, User, Shard)의 ➕ 아이콘을 클릭합니다.
@@ -237,7 +237,7 @@ DB Service 상태가 `Running` 상태일 때만 **수정** 버튼이 활성화�
 **저장** 버튼을 클릭하기 전까지 생성한 항목은 서버에 반영되지 않습니다. 저장 전 페이지를 이탈하면 변경 사항이 초기화됩니다.
 {% endhint %}
 
-#### Pool / User / Shard 삭제
+## Pool / User / Shard 삭제 <a href="#deleting-a-pool-user-shard" id="deleting-a-pool-user-shard"></a>
 
 1. **수정** 버튼을 클릭하여 수정 모드로 전환합니다.
 2. **Select Scope** 영역에서 삭제할 Pool, User 또는 Shard 항목의 🗑️ 아이콘을 클릭합니다. 해당 항목이 비활성화되고 아이콘이 🔃로 변경됩니다. Pool을 삭제하면 해당 Pool 하위의 User와 Shard도 함께 비활성화됩니다.
@@ -258,7 +258,7 @@ DB Service 상태가 `Running` 상태일 때만 **수정** 버튼이 활성화�
 
 ***
 
-### Replication Slot 탭
+# Replication Slot 탭 <a href="#replication-slot" id="replication-slot"></a>
 
 {% hint style="info" %}
 **참고**
@@ -278,13 +278,13 @@ OpenSQL Primary 인스턴스에 생성된 Replication Slot 목록을 테이블 �
 OwlDB 관리 범위를 벗어나 PostgreSQL에 직접 생성하거나 삭제한 Replication Slot은 OwlDB 콘솔에 반영되지 않습니다. 이 경우 Slot 상태 조회, 삭제, 장애 대응 등 관련 관리 기능이 정상적으로 동작하지 않을 수 있습니다. Replication Slot 생성 및 삭제는 반드시 OwlDB 콘솔에서 수행합니다.
 {% endhint %}
 
-#### Replication Slot 조회
+## Replication Slot 조회 <a href="#query-replication-slot" id="query-replication-slot"></a>
 
 1. **관리 > 연결 정보 관리**에서 **Replication Slot** 탭을 클릭합니다.
 2. 현재 Primary 인스턴스에 생성된 Replication Slot 목록을 확인합니다.
 3. **Type**(Physical / Logical) 또는 **Status**(Connected / Disconnected) 필터를 사용하여 목록을 좁힙니다.
 
-#### Replication Slot 생성
+## Replication Slot 생성 <a href="#create-replication-slot" id="create-replication-slot"></a>
 
 1. **생성** 버튼을 클릭합니다.
 2. 오른쪽 드로어에서 아래 항목을 입력합니다.
@@ -305,7 +305,7 @@ OwlDB 관리 범위를 벗어나 PostgreSQL에 직접 생성하거나 삭제한 
 DB Service 상태가 `Updating` 또는 `Failover`인 경우 **생성** 버튼이 비활성화됩니다.
 {% endhint %}
 
-#### Replication Slot 삭제
+## Replication Slot 삭제 <a href="#delete-replication-slot" id="delete-replication-slot"></a>
 
 1. 삭제할 Slot을 선택합니다.
 2. **삭제** 버튼을 클릭합니다.

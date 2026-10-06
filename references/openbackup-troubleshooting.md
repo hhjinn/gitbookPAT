@@ -1,6 +1,6 @@
 # OpenBackup 조치 가이드
 
-#### 설치 중 `Error: Environment variable 'OPENSQL_HOME' is not set.` 가 출력되는 경우
+## 설치 중 `Error: Environment variable 'OPENSQL_HOME' is not set.` 가 출력되는 경우 <a href="#opensql-home-not-set" id="opensql-home-not-set"></a>
 
 설치 스크립트가 요구하는 환경 변수가 설정되지 않았습니다. `OPENSQL_HOME`, `PG_HOME`, `PG_DATA_DIR` 세 개를 설정한 뒤 다시 실행합니다.
 
@@ -10,7 +10,7 @@ export PG_HOME=/opt/postgresql
 export PG_DATA_DIR=/opt/postgresql/data
 ```
 
-#### 백업 서버 목록에 서버가 표시되지 않는 경우
+## 백업 서버 목록에 서버가 표시되지 않는 경우 <a href="#server-missing-from-backup-list" id="server-missing-from-backup-list"></a>
 
 OwlDB Agent가 OwlDB 서버에 등록되지 않은 상태입니다.
 
@@ -21,7 +21,7 @@ cat /var/lib/barman/owlagent_dist/owlagent.env
 
 `AGENT_TYPE` 이 `barman` 인지, `IP` 와 `PORT` 가 OwlDB 서버 주소와 일치하는지 확인합니다. 수정한 경우 `owlagent_stop.sh` 로 중지한 뒤 `owlagent_start.sh` 를 다시 실행합니다.
 
-#### 연동 시 Barman Agent 기동 단계에서 실패하는 경우
+## 연동 시 Barman Agent 기동 단계에서 실패하는 경우 <a href="#barman-agent-fails-during-integration" id="barman-agent-fails-during-integration"></a>
 
 `barman` 계정의 NOPASSWD sudo 설정이 없습니다.
 
@@ -31,11 +31,11 @@ su - barman -c 'sudo -n true' && echo OK
 
 `OK` 가 출력되지 않으면 `sudo` 패키지 설치 여부(`rpm -q sudo`)와 `/etc/sudoers.d/barman` 파일 존재를 확인합니다.
 
-#### 연동 시 `barman-wal-archive` 가 없다는 오류로 실패하는 경우
+## 연동 시 `barman-wal-archive` 가 없다는 오류로 실패하는 경우 <a href="#barman-wal-archive-missing" id="barman-wal-archive-missing"></a>
 
 WAL 보관방식을 `archiver` 또는 `archiver+streaming` 으로 선택했으나 데이터베이스 서버에 `barman-cli` 가 설치되지 않았습니다. 1-2를 참고하여 설치합니다.
 
-#### Barman Agent가 기동되지 않는 경우
+## Barman Agent가 기동되지 않는 경우 <a href="#barman-agent-not-starting" id="barman-agent-not-starting"></a>
 
 systemd 템플릿 유닛의 이름 또는 설정 파일 경로가 OwlDB의 고정 값과 다를 수 있습니다.
 
@@ -51,7 +51,7 @@ systemctl cat barman-agent@
 systemctl daemon-reload
 ```
 
-#### Health가 연결안됨으로 표시되는 경우
+## Health가 연결안됨으로 표시되는 경우 <a href="#health-not-connected" id="health-not-connected"></a>
 
 `barman check` 항목 중 **WAL archive** 와 **continuous archiving** 이 실패하면 Health가 연결안됨으로 표시됩니다. 데이터베이스 서버에서 Barman 서버로 WAL이 전송되지 않는 상태입니다.
 
@@ -79,7 +79,7 @@ ssh -o BatchMode=yes <OpenSQL 계정>@<데이터베이스 서버 IP> hostname
 
 접속되지 않으면 개인키 파일 경로가 `owlagent.env` 의 `BARMAN_SSH_KEYPATH` 와 같은지, 데이터베이스 서버가 해당 키를 허용하는지 확인합니다.
 
-#### OpenBackup 서버를 재구축한 뒤 Health가 연결안됨으로 표시되는 경우
+## OpenBackup 서버를 재구축한 뒤 Health가 연결안됨으로 표시되는 경우 <a href="#health-not-connected-after-rebuild" id="health-not-connected-after-rebuild"></a>
 
 데이터베이스 서버가 이전 OpenBackup 서버의 호스트 키를 기억하고 있어 접속을 거부합니다. OpenBackup 서버를 같은 IP로 다시 설치한 경우에 발생합니다.
 
@@ -98,7 +98,7 @@ ssh-keygen -R <Barman 서버 IP>
 
 OwlDB가 생성하는 접속 설정은 처음 접속하는 서버의 호스트 키만 자동으로 받아들이므로, 호스트 키가 **변경된** 경우는 위와 같이 직접 정리해야 합니다.
 
-#### WAL이 수집되지 않고 로그에 `pg_receivewal not present in $PATH` 가 출력되는 경우
+## WAL이 수집되지 않고 로그에 `pg_receivewal not present in $PATH` 가 출력되는 경우 <a href="#pg-receivewal-not-in-path" id="pg-receivewal-not-in-path"></a>
 
 `/etc/barman.conf` 에 `path_prefix` 가 설정되지 않았습니다. PostgreSQL 클라이언트 실행 파일 경로로 설정합니다. cron이 매회 설정 파일을 다시 읽으므로 서비스를 재기동하지 않아도 됩니다.
 
@@ -107,7 +107,7 @@ OwlDB가 생성하는 접속 설정은 처음 접속하는 서버의 호스트 �
 path_prefix = /opt/postgresql/bin
 ```
 
-#### 백업 시 Barman 버전 관련 오류가 발생하는 경우
+## 백업 시 Barman 버전 관련 오류가 발생하는 경우 <a href="#barman-version-error" id="barman-version-error"></a>
 
 OpenBackup 서버의 `barman` 과 데이터베이스 서버의 `barman-cli` 버전이 다릅니다. 양쪽 모두 `3.11.1` 인지 확인합니다.
 
