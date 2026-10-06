@@ -11,7 +11,7 @@ The OpenSQL engine is not supported in the AWS environment.
 - For information on the database engines and instance types supported by OwlDB, refer to the '[AWS](#XDj4D6jZeLIG3hl9e9W4)', '[Azure](#azure)' pages.
 {% endhint %}
 
-# Creating a New DB Service
+# Creating a New DB Service <a href="#create-new" id="create-new"></a>
 
 1. **OwlDB console screen** > **Dashboard** Navigate to the menu.
 2. **Create** Click the button.
@@ -27,16 +27,16 @@ The OpenSQL engine is not supported in the AWS environment.
 **Note**
 
 - **OwlDB console screen > Dashboard > Card view > + icon** or **GNB > DB Alias dropdown > Create DB Service button**You can navigate to the database creation page by clicking it.
-- In the Azure environment, the license option is fixed to BYOL (Bring Your Own License), so you must register your own license file to complete database creation. For details, refer to [BYOL License Registration](#byol-라이선스-등록)Please refer to it.
+- In the Azure environment, the license option is fixed to BYOL (Bring Your Own License), so you must register your own license file to complete database creation. For details, refer to [BYOL License Registration](#byol)Please refer to it.
 {% endhint %}
 
 ---
 
-# **Creation Options**
+# **Creation Options** <a href="#creation-options" id="creation-options"></a>
 
 You can check the estimated cost based on the options selected during database creation. This amount is calculated based on the Seoul region, and the actual amount may vary depending on various factors such as the region and actual usage.
 
-### Step 1: Engine Options
+### Step 1: Engine Options <a href="#step-1-engine" id="step-1-engine"></a>
 
 <table data-full-width="true"><thead><tr><th>Item</th><th>Description</th></tr></thead><tbody><tr><td>DB Service Name*</td><td>A name to identify the DB Service<ul><li>Cannot be used more than once within an OwlDB account</li><li>Must be 6–30 characters, using only English uppercase and lowercase letters (a-z, A-Z), numbers (0-9), and hyphens (-); spaces are not allowed</li></ul></td></tr><tr><td>Database Engine Type*</td><td>The database engine to use<ul><li><strong>Tibero</strong></li><li><strong>OpenSQL</strong></li></ul></td></tr><tr><td>License Option*</td><td>The license option to use<ul><li><strong>LI</strong>(License Included)</li><li><strong>BYOL</strong> (Bring Your Own License)</li></ul></td></tr><tr><td>Topology*</td><td>The topology type that will determine the database structure<ul><li><strong>Tibero</strong>: Single, TAC</li><li><strong>OpenSQL</strong>: Single, HA</li></ul></td></tr><tr><td>Edition*</td><td>The edition of the license<ul><li><strong>Standard Edition (SE)</strong>: For single-server configuration only, up to 8vCPU available</li><li><strong>Enterprise Edition (EE)</strong>: High availability and large-scale configuration support, no vCPU limit</li><li>Selecting TAC or HA for the Topology automatically applies the Enterprise Edition, which cannot be changed</li></ul></td></tr><tr><td>Node Count*</td><td>Number of nodes in the cluster configuration<ul><li><strong>Tibero</strong>: Single fixed at 1, TAC selectable from 2 to 4</li><li><strong>OpenSQL</strong>: Both Single and HA fixed at 1</li></ul></td></tr><tr><td>PostgreSQL Version</td><td>PostgreSQL version to use when OpenSQL is selected<ul><li>3.16.12.5 (default)</li><li>3.17.8.5</li></ul></td></tr></tbody></table>
 
@@ -51,7 +51,7 @@ The * mark indicates a required input field.
 - If you select Standard Edition (SE) for the Edition, only instance types up to 8 vCPU can be selected during the instance configuration step.
 {% endhint %}
 
-### Step 2: DR Configuration
+### Step 2: DR Configuration <a href="#step-2-dr" id="step-2-dr"></a>
 
 <table data-full-width="true"><thead><tr><th>Item</th><th>Description</th></tr></thead><tbody><tr><td>Enable DR*</td><td>Whether to use DR configuration<ul><li><strong>Tibero</strong>: Selected directly by the user</li><li><strong>OpenSQL</strong>: Automatically determined by the Topology and cannot be modified (Single: DR not used / HA: DR used)</li></ul></td></tr><tr><td>Failover Automation Level*</td><td>Failover automation level<ul><li><strong>Level 0: Manual</strong></li><li><strong>Level 1: Automatic failover</strong></li><li><strong>Level 2: Automatic configuration recovery</strong></li><li><strong>Level 3: Full automation</strong></li></ul></td></tr><tr><td>Standby/Replica Count*</td><td>Number of Standby (or Replica) DBs<ul><li><strong>Tibero</strong>: Up to 2 can be selected</li><li><strong>OpenSQL</strong>: Fixed at 1</li></ul></td></tr><tr><td>Standby Mode*</td><td>Standby Mode option (exposed only in the Tibero engine and can be set individually per Standby node)<ul><li><strong>Recovery</strong></li><li><strong>Read Only</strong></li></ul></td></tr><tr><td>Log Replication Type</td><td>The method of transmitting logs from the Primary (Leader) to the Standby (Replica)<ul><li><strong>LGWR ASYNC</strong>: A replication mode that immediately transmits the Redo log generated in real time when a transaction occurs</li><li><strong>ARCH ASYNC</strong>: A replication mode that, after a log switch occurs and an archive log file is created, collects and transmits those files</li><li>The OpenSQL engine is<strong>ASYNC mode</strong>is fixed and cannot be modified.</li></ul></td></tr></tbody></table>
 
@@ -68,7 +68,7 @@ The * mark indicates a required input field.
 - Standby Mode and Log Replication Type can be set individually per Standby node.
 {% endhint %}
 
-### Step 3: AZ Configuration
+### Step 3: AZ Configuration <a href="#step-3-az" id="step-3-az"></a>
 
 <table data-full-width="true"><thead><tr><th>Item</th><th>Description</th></tr></thead><tbody><tr><td>OwlDB Availability Zone (AZ)* (disabled)</td><td>Availability zone of OwlDB</td></tr><tr><td>Primary (Leader) DB Availability Zone (AZ)*</td><td>Availability zone of the Primary (Leader) DB<br><strong>Default</strong><ul><li>DR not used: Same zone as OwlDB</li><li>DR used: Different zone from OwlDB</li></ul></td></tr><tr><td>Standby (Replica) DB Availability Zone (AZ)*</td><td>Availability zone of the Standby (Replica) DB<ul><li>Default: Placed in the same availability zone as OwlDB, then automatically placed in a different zone afterward</li></ul></td></tr></tbody></table>
 
@@ -83,7 +83,7 @@ The * mark indicates a required input field.
 - The availability zone of the Primary (Leader) DB can be selected by the user, but for stable failure response and Failover, it is recommended to place the Primary (Leader) DB in a different availability zone from OwlDB.
 {% endhint %}
 
-### Step 4: Instance Configuration
+### Step 4: Instance Configuration <a href="#step-4-instance" id="step-4-instance"></a>
 
 {% tabs %}
 {% tab title="Tibero" %}
@@ -117,7 +117,7 @@ The * mark indicates a required input field.
 - Redo Log Disk and Archive Log Volume are exposed only in the Tibero engine.
 {% endhint %}
 
-### Step 5: Database Configuration
+### Step 5: Database Configuration <a href="#step-5-database" id="step-5-database"></a>
 
 {% tabs %}
 {% tab title="Tibero" %}
@@ -170,7 +170,7 @@ Database Name, Character Set, Timezone, and Database Listener Port cannot be mod
 
 ---
 
-# BYOL License Registration
+# BYOL License Registration <a href="#byol" id="byol"></a>
 
 In the Azure environment, the license option is fixed to BYOL (Bring Your Own License), so you must register the license file you hold to create a database.
 
@@ -180,7 +180,7 @@ In the Azure environment, the license option is fixed to BYOL (Bring Your Own Li
 4. The file to validate **Select**after **Validate** click the button to verify the validity of the uploaded license file.
 5. If validation succeeds, **Create** click the button to request database creation.
 
-### Upload File List Items
+### Upload File List Items <a href="#upload-files" id="upload-files"></a>
 
 | Item | Description |
 | --- | --- |
@@ -213,7 +213,7 @@ License verification fails in the following cases.
 
 ---
 
-# Checking the Creation Result
+# Checking the Creation Result <a href="#check-result" id="check-result"></a>
 
 Once the database creation request is received, you can check the progress status through system notifications.
 

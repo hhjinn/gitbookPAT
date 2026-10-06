@@ -22,7 +22,7 @@ This guide explains how to create a database (hereafter referred to as provision
 In the AWS environment, when you enter the database creation page, the user's **Rocky subscription status**is checked, and if not subscribed, **a guidance modal about the required subscription**appears.
 {% endhint %}
 
-## Creating a New DB Service
+## Creating a New DB Service <a href="#create-new" id="create-new"></a>
 
 1. **OwlDB Console Screen > Dashboard** Navigate to the menu.
 2. **Create** Click the button.
@@ -37,16 +37,16 @@ In the AWS environment, when you enter the database creation page, the user's **
 {% hint style="info" %}
 **Note**
 
-If you select BYOL as the License Option, license file registration is required. For details, refer to [BYOL License Registration](create-db-service-aws.md#byol-라이선스-등록).
+If you select BYOL as the License Option, license file registration is required. For details, refer to [BYOL License Registration](create-db-service-aws.md#byol).
 {% endhint %}
 
 ***
 
-## **Creation Options**
+## **Creation Options** <a href="#creation-options" id="creation-options"></a>
 
 You can check the estimated cost based on the options selected when creating the database. This amount is calculated based on the Seoul region, and the actual amount may vary depending on various factors such as the region and actual usage.
 
-#### Step 1: Engine Options
+#### Step 1: Engine Options <a href="#step-1-engine" id="step-1-engine"></a>
 
 <table data-full-width="true"><thead><tr><th>Item</th><th>Description</th></tr></thead><tbody><tr><td>DB Service Name*</td><td><p>A name to identify the DB Service</p><ul><li>Cannot be duplicated within the OwlDB account</li><li>Must be 6–30 characters, only English letters (a-z, A-Z), numbers (0-9), and hyphens (-) are allowed, spaces are not allowed</li></ul></td></tr><tr><td>Database Engine Type*</td><td><p>The database engine to use</p><ul><li><strong>Tibero</strong></li><li><strong>OpenSQL</strong> (to be supported later)</li></ul></td></tr><tr><td>License Option*</td><td><p>The license option to use</p><ul><li><strong>LI</strong>(License Included)</li><li><strong>BYOL</strong> (Bring Your Own License)</li></ul></td></tr><tr><td>Topology*</td><td><p>The topology type that determines the database structure</p><ul><li><strong>Tibero</strong>: Single, TAC</li></ul></td></tr><tr><td>Edition*</td><td><p>The edition of the license</p><ul><li><strong>Standard Edition (SE)</strong>: For single-server configuration only, up to 8vCPU available</li><li><strong>Enterprise Edition (EE)</strong>: Supports high availability and large-scale configurations, no vCPU limit</li><li>Selecting TAC for Topology automatically applies Enterprise Edition, which cannot be changed.</li></ul></td></tr><tr><td>Node Count*</td><td><p>Number of nodes composing the cluster</p><ul><li><strong>Tibero</strong>: Single fixed at 1, TAC selectable from 2 to 4</li></ul></td></tr></tbody></table>
 
@@ -60,7 +60,7 @@ The \* mark indicates a required input field.
 If you select Standard Edition (SE) for Edition, only instance types up to 8 vCPU can be selected in the instance configuration step.
 {% endhint %}
 
-#### Step 2: DR Configuration
+#### Step 2: DR Configuration <a href="#step-2-dr" id="step-2-dr"></a>
 
 <table data-full-width="true"><thead><tr><th>Item</th><th>Description</th></tr></thead><tbody><tr><td>Enable DR*</td><td><p>Whether to use DR configuration</p><ul><li><strong>Tibero</strong>: Selected directly by the user</li></ul></td></tr><tr><td>Failover Automation Level*</td><td><p>Failover automation level</p><ul><li><strong>Level 0: Manual</strong></li><li><strong>Level 1: Automatic failover</strong></li><li><strong>Level 2: Automatic configuration recovery</strong></li><li><strong>Level 3: Full automation</strong></li></ul></td></tr><tr><td>Standby/Replica Count*</td><td><p>Number of Standby (or Replica) DBs</p><ul><li><strong>Tibero</strong>: Up to 2 can be selected</li></ul></td></tr><tr><td>Standby Mode*</td><td><p>Standby Mode option (can be configured individually per Standby node)</p><ul><li><strong>Recovery</strong></li><li><strong>Read Only</strong></li></ul></td></tr><tr><td>Log Replication Type</td><td><p>The method of transmitting the Primary's logs to the Standby</p><ul><li><strong>LGWR ASYNC</strong>: A replication mode that immediately transmits the Redo log generated in real time when a transaction occurs</li><li><strong>ARCH ASYNC</strong>: A replication mode that, after a log switch occurs and archive log files are generated, collects and transmits those files</li></ul></td></tr></tbody></table>
 
@@ -76,7 +76,7 @@ The \* mark indicates a required input field.
 * Standby Mode and Log Replication Type can be configured individually per Standby node.
 {% endhint %}
 
-#### Step 3: AZ Configuration
+#### Step 3: AZ Configuration <a href="#step-3-az" id="step-3-az"></a>
 
 <table data-full-width="true"><thead><tr><th>Item</th><th>Description</th></tr></thead><tbody><tr><td>OwlDB Availability Zone (AZ)* (disabled)</td><td>Availability zone of OwlDB</td></tr><tr><td>Primary (Leader) DB Availability Zone (AZ)*</td><td><p>Availability zone of the Primary (Leader) DB<br><strong>Default value</strong></p><ul><li>DR not used: Same zone as OwlDB</li><li>DR used: Different zone from OwlDB</li></ul></td></tr><tr><td>Standby (Replica) DB Availability Zone (AZ)*</td><td><p>Availability zone of the Standby (Replica) DB</p><ul><li>Default value: Placed in the same availability zone as OwlDB, then automatically placed in a different zone afterward</li></ul></td></tr></tbody></table>
 
@@ -91,7 +91,7 @@ The \* mark indicates a required input field.
 * The availability zone of the Primary (Leader) DB can be selected by the user, but for stable fault response and Failover, it is recommended to place the Primary (Leader) DB in a different availability zone from OwlDB.
 {% endhint %}
 
-#### Step 4: Instance Configuration
+#### Step 4: Instance Configuration <a href="#step-4-instance" id="step-4-instance"></a>
 
 <table data-full-width="true"><thead><tr><th>Category</th><th>Item</th><th>Description</th></tr></thead><tbody><tr><td>Instance Setting</td><td>DB Virtual Machine Size*</td><td>The instance type that will determine performance and specifications</td></tr><tr><td>Instance Access Setting</td><td>DB Instance SSH Key Name*</td><td>Settings for accessing the DB instance</td></tr><tr><td>Data Disk</td><td>Data Disk Type*</td><td>The type of disk that will store the main data</td></tr><tr><td></td><td>Data Disk Size*</td><td>The size of the disk that will store the main data</td></tr><tr><td></td><td>Data Disk IOPS*</td><td>The I/O throughput of the disk that will store the main data</td></tr><tr><td></td><td>Data Disk MBps</td><td>The maximum processing speed of the disk that will store the main data</td></tr><tr><td>Redo Log Disk</td><td>Redo Log Disk Type</td><td>The type of disk that will store the Redo log</td></tr><tr><td></td><td>Redo Log Disk Size (disabled)</td><td><p>The size of the disk that will store the Redo log</p><ul><li>Automatically calculated based on the entered Redo Log File Size (GB)</li></ul></td></tr><tr><td></td><td>Redo Log Disk IOPS</td><td>I/O throughput of the disk that stores the Redo log</td></tr><tr><td></td><td>Redo Log Disk MBps</td><td>Maximum processing speed of the disk that stores the Redo log</td></tr><tr><td>Archive Log Volume</td><td>Archive Log Disk Type</td><td>Type of the disk that stores the Archive log</td></tr><tr><td></td><td>Archive Log Disk Size</td><td>Size of the disk that stores the Archive log</td></tr><tr><td></td><td>Archive Log Disk IOPS</td><td>I/O throughput of the disk that stores the Archive log</td></tr><tr><td></td><td>Archive Log Disk MBps</td><td>Maximum processing speed of the disk that stores the Archive log</td></tr><tr><td>Auto Scale</td><td>Enable/Disable*</td><td>Whether to automatically expand the data disk size based on data volume usage</td></tr><tr><td></td><td>Maximum Expansion Limit*</td><td>Maximum size the data disk can grow to when Auto Scale is enabled</td></tr></tbody></table>
 
@@ -107,7 +107,7 @@ The \* mark indicates a required input field.
 * Redo Log Disk and Archive Log Volume are exposed only in the Tibero engine.
 {% endhint %}
 
-#### Step 5: Database Configuration
+#### Step 5: Database Configuration <a href="#step-5-database" id="step-5-database"></a>
 
 | Item                                     | Description                                                                   |
 | ---------------------------------------- | ----------------------------------------------------------------------------- |
@@ -138,7 +138,7 @@ Database Name, Character Set, Timezone, and Database Listener Port cannot be mod
 
 ***
 
-## BYOL License Registration
+## BYOL License Registration <a href="#byol" id="byol"></a>
 
 License Option **BYOL**When selected, you must register a license file in the configuration information review step before you can request database creation.
 
@@ -156,7 +156,7 @@ License Option **BYOL**When selected, you must register a license file in the co
 * To delete an uploaded license file, select the file from the list and then **Delete** click the button.
 {% endhint %}
 
-#### Upload File List Items
+#### Upload File List Items <a href="#upload-files" id="upload-files"></a>
 
 | Item         | Description                                                      |
 | ------------ | ---------------------------------------------------------------- |
@@ -182,7 +182,7 @@ License validation fails in the following cases.
 
 ***
 
-## Checking the Creation Result
+## Checking the Creation Result <a href="#check-result" id="check-result"></a>
 
 Once the database creation request is received, you can check the progress status through system notifications.
 

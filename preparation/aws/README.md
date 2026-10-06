@@ -6,7 +6,7 @@ hidden: true
 
 Provides information for using OwlDB on AWS Marketplace.
 
-### Cloud Environment and Server Specifications
+### Cloud Environment and Server Specifications <a href="#server-specs" id="server-specs"></a>
 
 Check the cloud environment and server specifications in which OwlDB is provided.
 
@@ -19,7 +19,7 @@ Check the cloud environment and server specifications in which OwlDB is provided
 | Recommended Browser    | Google Chrome        |
 | Optimal Resolution     | Full HD (1920\*1080) |
 
-### Region Availability
+### Region Availability <a href="#region-availability" id="region-availability"></a>
 
 Check the supported regions and region codes.
 
@@ -43,7 +43,7 @@ Check the supported regions and region codes.
 | Asia Pacific (Seoul)      | ap-northeast-2 |
 | Asia Pacific (Tokyo)      | ap-northeast-1 |
 
-### Instance Type
+### Instance Type <a href="#instance-types" id="instance-types"></a>
 
 Check the vCPU and memory specifications for each selectable instance type.
 
@@ -85,7 +85,7 @@ Check the vCPU and memory specifications for each selectable instance type.
 * **Tibero TAC**: Only large or higher can be used, and xlarge or higher is recommended.
 {% endhint %}
 
-### Storage/Disk Type
+### Storage/Disk Type <a href="#storage-types" id="storage-types"></a>
 
 Check the storage types available in OwlDB and the capacity and IOPS range of each type.
 

@@ -1,6 +1,6 @@
 Provides information for using OwlDB on the Azure Marketplace.
 
-## Cloud environment and server specifications
+## Cloud environment and server specifications <a href="#server-specs" id="server-specs"></a>
 
 | Item | Details |
 | --- | --- |
@@ -11,7 +11,7 @@ Provides information for using OwlDB on the Azure Marketplace.
 | Recommended browser | Google Chrome |
 | Optimal resolution | Full HD (1920*1080) |
 
-## Region availability
+## Region availability <a href="#region-availability" id="region-availability"></a>
 
 | Region name | Region |
 | --- | --- |
@@ -44,7 +44,7 @@ Provides information for using OwlDB on the Azure Marketplace.
 | West US 2 | westus2 |
 | West US 3 | westus3 |
 
-## Instance type
+## Instance type <a href="#instance-types" id="instance-types"></a>
 
 OwlDB supports multiple instance types to match workload requirements. Refer to the table below to check the vCPU and memory configurations before making a selection.
 
@@ -86,7 +86,7 @@ OwlDB supports multiple instance types to match workload requirements. Refer to 
 - Tibero TAC: Only 4vCPU or higher can be used, and 8vCPU or higher is recommended.
 {% endhint %}
 
-## Storage/disk type
+## Storage/disk type <a href="#storage-types" id="storage-types"></a>
 
 Check the storage/disk types and size/IOPS ranges available for selection according to the workload.
 
