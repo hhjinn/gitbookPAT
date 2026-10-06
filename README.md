@@ -41,21 +41,21 @@ Provides prerequisite knowledge helpful for using OwlDB.
 {% tab title="Environment Setup" %}
 ​Provides preparation requirements for each environment for using OwlDB.
 
-🔎 [Go to Environment Setup](undefined/)
+🔎 [Go to Environment Setup](preparation/)
 {% endtab %}
 
 {% tab title="Feature-specific Usage Guide" %}
 Provides OwlDB usage by feature, from getting started to database creation, management, monitoring, and more.
 
-🔎 [Go to Getting Started](undefined-2/)
+🔎 [Go to Getting Started](getting-started/)
 
-🔎 [Go to Dashboard](undefined-3/)
+🔎 [Go to Dashboard](dashboard/)
 
-🔎 [Go to Management](undefined-4/)
+🔎 [Go to Management](management/)
 
-🔎 [Go to Monitoring](undefined-5/)
+🔎 [Go to Monitoring](monitoring/)
 
-🔎 [Go to My Page](undefined-7/)
+🔎 [Go to My Page](my-page/)
 {% endtab %}
 
 {% tab title="Reference Materials" %}
