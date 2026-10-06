@@ -18,8 +18,8 @@ The event log types displayed in the message column are as follows.
 
 | Status | Trigger condition | Message |
 | --- | --- | --- |
-| Info | Instance status change | 인스턴스 상태가 {변경된 상태}로 변경되었습니다. ({상태 코드}) |
-| Warning | CPU usage exceeds 50% | CPU 사용량 주의 수준(50%)를 초과했습니다. (현재 : {사용량}%) |
-|   | Memory usage exceeds 50% | Memory 사용량 주의 수준(50%)를 초과했습니다. (현재 : {사용량}%) |
-| Error | CPU usage exceeds 90% | CPU 사용량 경고 수준(90%)를 초과했습니다. (현재 : {사용량}%) |
-|   | Memory usage exceeds 90% | Memory 사용량 경고 수준(90%)를 초과했습니다. (현재 : {사용량}%) |
+| Info | Instance status change | The instance status has changed to {changed status}. ({status code}) |
+| Warning | CPU usage exceeds 50% | CPU usage has exceeded the caution level (50%). (Current: {usage}%) |
+|   | Memory usage exceeds 50% | Memory usage has exceeded the caution level (50%). (Current: {usage}%) |
+| Error | CPU usage exceeds 90% | CPU usage has exceeded the warning level (90%). (Current: {usage}%) |
+|   | Memory usage exceeds 90% | Memory usage has exceeded the warning level (90%). (Current: {usage}%) |

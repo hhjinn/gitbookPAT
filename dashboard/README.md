@@ -29,8 +29,6 @@ The top-level status, Status, is displayed per database.
 | Stopped | All resources are temporarily not in use (resource deactivation) |
 | Terminating | Permanently deleting all resources and data (access and recovery are not possible once complete) |
 
-*표기는 필수 입력 항목을 의미합니다.
-
 The * mark indicates a required input field.
 {% endtab %}
 {% tab title="Health" %}

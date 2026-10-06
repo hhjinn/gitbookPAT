@@ -72,8 +72,6 @@ Clicking [Cancel] or closing the drawer resets all entered content. Changes are 
 
 <table><thead><tr><th>Item</th><th>Description</th><th>Input rules</th></tr></thead><tbody><tr><td>Database Name *</td><td>Name of the database to create</td><td><ul><li>Only lowercase English letters (a-z), numbers (0-9), and underscores (<code>_</code>) up to 30 characters can be used</li><li>Duplicates not allowed within the same instance</li></ul></td></tr><tr><td>Owner *</td><td>Database Owner User</td><td><code>postgres</code> (fixed value)</td></tr><tr><td>Encoding</td><td>Database Character Set</td><td>Default value: <code>UTF8</code></td></tr><tr><td>Connection Limit</td><td>Maximum number of concurrent connections allowed</td><td><ul><li>Default value: Unlimited</li><li>Can be entered directly when Unlimited is unchecked (integer of 0 or greater)</li></ul></td></tr></tbody></table>
 
-*표기는 필수 입력 항목을 의미합니다.
-
 The * mark indicates a required input field.
 
 **Unlimited** When checked, the instance's `max_connections` connects without limit within the range. To limit the number of connections, uncheck the checkbox and enter the desired value.

@@ -39,8 +39,6 @@ You can check the estimated cost based on the options selected when creating the
 
 <table><thead><tr><th>Item</th><th>Description</th></tr></thead><tbody><tr><td>DB Service Name*</td><td>Name to identify the DB Service<ul><li>Cannot be duplicated within an OwlDB account</li><li>6–30 characters, only uppercase and lowercase English letters (a-z, A-Z), numbers (0-9), and hyphens (-) are allowed; spaces are not allowed</li></ul></td></tr><tr><td>Database Engine Type*</td><td>Database engine to use<ul><li><strong>Tibero</strong></li><li><strong>OpenSQL</strong></li></ul></td></tr><tr><td>License Option*</td><td>License option to use<ul><li><strong>LI</strong>(License Included)</li><li><strong>BYOL</strong> (Bring Your Own License)</li></ul></td></tr><tr><td>Topology*</td><td>Topology type that determines the database structure<ul><li><strong>Tibero</strong>: Single, TAC</li><li><strong>OpenSQL</strong>: Single, HA</li></ul></td></tr><tr><td>Edition*</td><td>License edition<ul><li><strong>Standard Edition (SE)</strong>: For single-server configuration only, supports up to 8 vCPU</li><li><strong>Enterprise Edition (EE)</strong>: Supports high availability and large-scale configurations, no vCPU limit</li><li>If you select TAC or HA for Topology, Enterprise Edition is automatically applied and cannot be changed.</li></ul></td></tr><tr><td>Node Count*</td><td>Number of cluster configuration nodes<ul><li><strong>Tibero</strong>: 1 for Single (fixed), 2–4 selectable for TAC</li><li><strong>OpenSQL</strong>: Fixed to 1 for both Single and HA</li></ul></td></tr><tr><td>PostgreSQL Version</td><td>The PostgreSQL version to use when OpenSQL is selected<ul><li>3.16.12.5 (default)</li><li>3.17.8.5</li></ul></td></tr></tbody></table>
 
-*표기는 필수 입력 항목을 의미합니다.
-
 The * mark indicates a required input field.
 
 {% hint style="info" %}
@@ -53,8 +51,6 @@ The * mark indicates a required input field.
 ### Step 2: DR Configuration <a href="#step-2-dr" id="step-2-dr"></a>
 
 <table><thead><tr><th>Item</th><th>Description</th></tr></thead><tbody><tr><td>Enable DR*</td><td>Whether to use DR configuration<ul><li><strong>Tibero</strong>: Selected directly by the user</li><li><strong>OpenSQL</strong>: Automatically determined by the Topology and cannot be modified (Single: DR not used / HA: DR used)</li></ul></td></tr><tr><td>Failover Automation Level*</td><td>Failover automation level<ul><li><strong>Level 0: Manual</strong></li><li><strong>Level 1: Automatic failover</strong></li><li><strong>Level 2: Automatic configuration recovery</strong></li><li><strong>Level 3: Full automation</strong></li></ul></td></tr><tr><td>Standby/Replica Count*</td><td>Number of Standby (or Replica) DBs<ul><li><strong>Tibero</strong>: Up to 2 can be selected</li><li><strong>OpenSQL</strong>: Fixed to 1</li></ul></td></tr><tr><td>Standby Mode*</td><td>Standby Mode option (exposed only in the Tibero engine, and can be set individually for each Standby node)<ul><li><strong>Recovery</strong></li><li><strong>Read Only</strong></li></ul></td></tr><tr><td>Log Replication Type</td><td>The method of transmitting the Primary (Leader)'s logs to the Standby (Replica)<ul><li><strong>LGWR ASYNC</strong>: A replication mode that immediately transmits the Redo log generated in real time when a transaction occurs</li><li><strong>ARCH ASYNC</strong>: A replication mode that, after a log switch occurs and an archive log file is created, collects and transmits those files</li><li>The OpenSQL engine<strong>ASYNC method</strong>is fixed and cannot be modified.</li></ul></td></tr></tbody></table>
-
-*표기는 필수 입력 항목을 의미합니다.
 
 The * mark indicates a required input field.
 
@@ -70,8 +66,6 @@ The * mark indicates a required input field.
 ### Step 3: AZ Configuration <a href="#step-3-az" id="step-3-az"></a>
 
 <table><thead><tr><th>Item</th><th>Description</th></tr></thead><tbody><tr><td>OwlDB Availability Zone(AZ)* (disabled)</td><td>Availability zone of OwlDB</td></tr><tr><td>Primary(Leader) DB Availability Zone(AZ)*</td><td>Availability zone of the Primary (Leader) DB<br><strong>Default value</strong><ul><li>DR not used: Same zone as OwlDB</li><li>DR used: Different zone from OwlDB</li></ul></td></tr><tr><td>Standby(Replica) DB Availability Zone(AZ)*</td><td>Availability zone of the Standby (Replica) DB<ul><li>Default: Placed in the same availability zone as OwlDB, then automatically placed in a different zone afterward</li></ul></td></tr></tbody></table>
-
-*표기는 필수 입력 항목을 의미합니다.
 
 The * mark indicates a required input field.
 
@@ -137,8 +131,6 @@ The * mark indicates a required input field.
 | Temporary Tablespace Data File Size (GB) | The temporary tablespace data file size used for large-scale operations |
 | Undo Tablespace Data File Size (GB) | Undo tablespace size |
 
-*표기는 필수 입력 항목을 의미합니다.
-
 The * mark indicates a required input field.
 {% endtab %}
 {% tab title="OpenSQL" %}
@@ -154,8 +146,6 @@ The * mark indicates a required input field.
 | Wal File Size | The size of a single WAL file |
 | Connection Pooler Port | Port on which OpenProxy accepts client connections |
 | Extensions | Extension to install |
-
-*표기는 필수 입력 항목을 의미합니다.
 
 The * mark indicates a required input field.
 {% endtab %}

@@ -44,8 +44,6 @@ You can check the estimated cost based on the options selected when creating the
 
 <table><thead><tr><th>Item</th><th>Description</th></tr></thead><tbody><tr><td>DB Service Name*</td><td>Name to identify the DB Service<ul><li>Cannot be duplicated within an OwlDB account</li><li>6–30 characters, only uppercase and lowercase English letters (a-z, A-Z), numbers (0-9), and hyphens (-) are allowed; spaces are not allowed</li></ul></td></tr><tr><td>Database Engine Type*</td><td>Database engine to use<ul><li><strong>Tibero</strong></li><li><strong>OpenSQL</strong> (To be supported later)</li></ul></td></tr><tr><td>License Option*</td><td>License option to use<ul><li><strong>LI</strong>(License Included)</li><li><strong>BYOL</strong> (Bring Your Own License)</li></ul></td></tr><tr><td>Topology*</td><td>Topology type that determines the database structure<ul><li><strong>Tibero</strong>: Single, TAC</li></ul></td></tr><tr><td>Edition*</td><td>License edition<ul><li><strong>Standard Edition (SE)</strong>: For single-server configuration only, supports up to 8 vCPU</li><li><strong>Enterprise Edition (EE)</strong>: Supports high availability and large-scale configurations, no vCPU limit</li><li>If you select TAC as the Topology, Enterprise Edition is automatically applied and cannot be changed</li></ul></td></tr><tr><td>Node Count*</td><td>Number of cluster configuration nodes<ul><li><strong>Tibero</strong>: 1 for Single (fixed), 2–4 selectable for TAC</li></ul></td></tr></tbody></table>
 
-*표기는 필수 입력 항목을 의미합니다.
-
 The * mark indicates a required input field.
 
 {% hint style="info" %}
@@ -57,8 +55,6 @@ If you select Standard Edition (SE) for Edition, you can only select instance ty
 ### Step 2: DR Configuration <a href="#step-2-dr" id="step-2-dr"></a>
 
 <table><thead><tr><th>Item</th><th>Description</th></tr></thead><tbody><tr><td>Enable DR*</td><td>Whether to use DR configuration<ul><li><strong>Tibero</strong>: Selected directly by the user</li></ul></td></tr><tr><td>Failover Automation Level*</td><td>Failover automation level<ul><li><strong>Level 0: Manual</strong></li><li><strong>Level 1: Automatic failover</strong></li><li><strong>Level 2: Automatic configuration recovery</strong></li><li><strong>Level 3: Full automation</strong></li></ul></td></tr><tr><td>Standby/Replica Count*</td><td>Number of Standby (or Replica) DBs<ul><li><strong>Tibero</strong>: Up to 2 can be selected</li></ul></td></tr><tr><td>Standby Mode*</td><td>Standby Mode option (can be set individually for each Standby node)<ul><li><strong>Recovery</strong></li><li><strong>Read Only</strong></li></ul></td></tr><tr><td>Log Replication Type</td><td>Method of transmitting Primary logs to Standby<ul><li><strong>LGWR ASYNC</strong>: A replication mode that immediately transmits the Redo log generated in real time when a transaction occurs</li><li><strong>ARCH ASYNC</strong>: A replication mode that, after a log switch occurs and an archive log file is created, collects and transmits those files</li></ul></td></tr></tbody></table>
-
-*표기는 필수 입력 항목을 의미합니다.
 
 The * mark indicates a required input field.
 
@@ -73,8 +69,6 @@ The * mark indicates a required input field.
 ### Step 3: AZ Configuration <a href="#step-3-az" id="step-3-az"></a>
 
 <table><thead><tr><th>Item</th><th>Description</th></tr></thead><tbody><tr><td>OwlDB Availability Zone(AZ)* (disabled)</td><td>Availability zone of OwlDB</td></tr><tr><td>Primary(Leader) DB Availability Zone(AZ)*</td><td>Availability zone of the Primary (Leader) DB<br><strong>Default value</strong><ul><li>DR not used: Same zone as OwlDB</li><li>DR used: Different zone from OwlDB</li></ul></td></tr><tr><td>Standby(Replica) DB Availability Zone(AZ)*</td><td>Availability zone of the Standby (Replica) DB<ul><li>Default: Placed in the same availability zone as OwlDB, then automatically placed in a different zone afterward</li></ul></td></tr></tbody></table>
-
-*표기는 필수 입력 항목을 의미합니다.
 
 The * mark indicates a required input field.
 
@@ -119,8 +113,6 @@ The * mark indicates a required input field.
 | User Tablespace Data File Size (GB) | The tablespace data file size for storing user data |
 | Temporary Tablespace Data File Size (GB) | The temporary tablespace data file size used for large-scale operations |
 | Undo Tablespace Data File Size (GB) | Undo tablespace size |
-
-*표기는 필수 입력 항목을 의미합니다.
 
 The * mark indicates a required input field.
 

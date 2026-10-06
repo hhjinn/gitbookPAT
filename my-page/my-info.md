@@ -23,8 +23,6 @@ Edit the detailed information of your own account. The ID, role, and permissions
 | Confirm password* | Confirm the password to change | Enter the same value as the new password |
 | Email | Email information | Editable |
 
-*표기는 필수 입력 항목을 의미합니다.
-
 The * mark indicates a required input field.
 
 {% hint style="info" %}
