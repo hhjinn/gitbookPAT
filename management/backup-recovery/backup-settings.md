@@ -6,7 +6,7 @@
 OpenSQL은 백업/복구 기능을 사용하기 위해 OpenBackup을 사용해야 합니다.
 {% endhint %}
 
-## 백업 설정
+## 백업 설정 <a href="#backup-settings" id="backup-settings"></a>
 
 **관리 > 백업 설정**을 클릭하면 현재 자동 백업 구성 정보를 확인합니다. On-Premise 환경에서는 Full Backup과 Incremental Backup이 구분되어 표시됩니다.
 
@@ -48,7 +48,7 @@ Incremental Backup 설정 시 다음 사항에 유의합니다.
 OpenSQL On-Premise에서 PostgreSQL 16 이하 버전이고 WAL 보관 방식이 `streaming`인 경우 Incremental Backup을 사용할 수 없습니다.
 {% endhint %}
 
-## 백업 스케줄러 운영 상태
+## 백업 스케줄러 운영 상태 <a href="#backup-scheduler-status" id="backup-scheduler-status"></a>
 
 백업 설정 페이지 하단의 **백업 스케줄러 운영 상태** 섹션에서 자동 백업의 최근 실행 이력과 안정성 지표를 확인합니다. 자동 백업이 꺼진 상태에서도 마지막 실행 정보가 표시될 수 있습니다.
 
@@ -71,7 +71,7 @@ OpenSQL On-Premise에서 PostgreSQL 16 이하 버전이고 WAL 보관 방식이 
 2. 페이지 하단 **백업 스케줄러 운영 상태** 섹션에서 최근 실행 결과, 최근 7일 성공률, 연속 실패 횟수를 확인합니다.
 3. 차트에서 막대 위에 마우스를 올려 일자별 상세 실행 결과를 확인합니다.
 
-## 백업 스토리지 사용량
+## 백업 스토리지 사용량 <a href="#backup-storage-usage" id="backup-storage-usage"></a>
 
 백업 스토리지 사용량 섹션에서 현재 백업에 사용 중인 디스크 스토리지 현황을 가로 막대 차트로 확인합니다. 차트 중앙에 전체 스토리지 대비 사용량 비율이 표시되며, 각 항목은 색상과 범례로 구분됩니다.
 

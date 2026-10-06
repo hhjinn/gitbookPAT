@@ -11,14 +11,14 @@
 * `Degraded` 상태이면서 Failover된 Primary로 인한 이슈만 존재하는 경우에는 스펙 변경 버튼을 사용할 수 있습니다.
 {% endhint %}
 
-## 스펙 변경 진입 방법
+## 스펙 변경 진입 방법 <a href="#spec-change-entry" id="spec-change-entry"></a>
 
 스펙 변경 페이지는 다음 두 가지 방법으로 진입할 수 있습니다.
 
 * **Overview에서 진입** : Overview 페이지 > 작업 > **스펙 변경** 클릭
 * **변경 감지 DB에서 진입** : 대시보드 > 탐색 > 변경 감지 DB > **스펙 변경** 클릭
 
-## 스펙 변경
+## 스펙 변경 <a href="#spec-change" id="spec-change"></a>
 
 Overview에서 진입한 경우 다음 순서로 진행합니다.
 
@@ -29,7 +29,7 @@ Overview에서 진입한 경우 다음 순서로 진행합니다.
 5. **데이터베이스 구성** 단계에서 추가된 노드의 VIP 등 구성 정보를 입력합니다.
 6. **구성 정보 확인** 단계에서 변경 내용을 검토한 후 **완료**를 클릭합니다.
 
-## Overview에서 스펙 변경 진입
+## Overview에서 스펙 변경 진입 <a href="#spec-change-from-overview" id="spec-change-from-overview"></a>
 
 Overview 페이지의 작업 메뉴를 통해 진입한 경우, DB 노드 구성 변경과 DR 수정 두 가지 작업을 수행할 수 있습니다.
 
@@ -77,7 +77,7 @@ Overview 페이지의 작업 메뉴를 통해 진입한 경우, DB 노드 구성
 지원하는 장애 조치 자동화 레벨은 [**장애 조치 자동화 문서**](#GDPaQdLZBmgq4vRqB2Sz)를 참고하십시오.
 {% endhint %}
 
-## 스펙 변경 단계
+## 스펙 변경 단계 <a href="#spec-change-steps" id="spec-change-steps"></a>
 
 각 단계에서 설정할 수 있는 항목은 엔진에 따라 다릅니다.
 
@@ -259,7 +259,7 @@ VIP를 사용 중인 DB에서 Scale Out이 발생한 경우, 추가된 노드에
 {% endtab %}
 {% endtabs %}
 
-## 변경 감지 DB에서 스펙 변경 진입
+## 변경 감지 DB에서 스펙 변경 진입 <a href="#spec-change-from-detected-db" id="spec-change-from-detected-db"></a>
 
 등록 DB에 한하여, OwlDB 외부에서 DB 구성이 변경된 경우 OwlDB가 이를 자동으로 감지합니다. 대시보드 탐색에서 변경이 감지된 DB를 확인하고 **스펙 변경**을 클릭하여 진입할 수 있습니다.
 
@@ -273,7 +273,7 @@ VIP를 사용 중인 DB에서 Scale Out이 발생한 경우, 추가된 노드에
 
 각 단계에서 내용을 확인하고 입력을 완료한 후 **완료**를 클릭하면 변경 사항이 OwlDB에 반영됩니다.
 
-## 스펙 변경 최대 처리 시간
+## 스펙 변경 최대 처리 시간 <a href="#spec-change-max-duration" id="spec-change-max-duration"></a>
 
 스펙 변경 처리 시간은 데이터베이스의 용량, 부하 상태 및 구성 환경에 따라 달라질 수 있습니다. 일반적인 환경에서는 수 분 내 처리되며, 조건에 따라 다음과 같이 최대 처리 시간이 상이할 수 있습니다.
 

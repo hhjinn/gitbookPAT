@@ -9,7 +9,7 @@
 
 ---
 
-# DB Service 삭제
+# DB Service 삭제 <a href="#delete-db-service" id="delete-db-service"></a>
 
 1. **작업** 버튼을 클릭합니다.
 2. **삭제** 버튼을 클릭합니다.
@@ -24,7 +24,7 @@
 
 ---
 
-# 등록 해제
+# 등록 해제 <a href="#unregister" id="unregister"></a>
 
 등록 DB Service에서만 활성화되는 기능입니다.
 
@@ -41,7 +41,7 @@
 
 ---
 
-# [역할 전환](#switchover) (Switchover)
+# [역할 전환](#switchover) (Switchover) <a href="#switchover" id="switchover"></a>
 
 DR 구성 시에만 활성화되는 기능입니다.
 

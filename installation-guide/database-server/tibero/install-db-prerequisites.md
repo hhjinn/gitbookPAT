@@ -10,7 +10,7 @@ OwlDB 데이터베이스 설치를 위한 시스템·네트워크 요구사항�
 
 ***
 
-## 시스템 요구사항
+## 시스템 요구사항 <a href="#system-requirements" id="system-requirements"></a>
 
 #### 1. 하드웨어 요구사항
 
@@ -47,7 +47,7 @@ OwlDB가 Data/Archive/Redo 디스크에 Tibero 전용 파일 시스템(TAS)을 �
 
 Tibero 데이터베이스 구동을 위해 아래 커널 파라미터를 설정해야 합니다. Tibero **설치가이드** 내 [커널 파라미터 설정](install-db-prerequisites.md#id-4)을 통해 설정합니다.
 
-## 네트워크 요구사항
+## 네트워크 요구사항 <a href="#network-requirements" id="network-requirements"></a>
 
 #### 데이터베이스 서버 필수 포트 구성
 
@@ -74,7 +74,7 @@ OwlDB 서버와 데이터베이스 서버 간 통신을 위해 방화벽 설정�
 
 ***
 
-## 배포 파일 준비 및 배치
+## 배포 파일 준비 및 배치 <a href="#prepare-deployment-files" id="prepare-deployment-files"></a>
 
 #### 1. 필요 파일 목록
 
@@ -120,7 +120,7 @@ $TB_HOME/
  └── tbagent_dist_latest.tar.gz  # tbagent 바이너리
 ```
 
-## 인프라 검증 스크립트 실행
+## 인프라 검증 스크립트 실행 <a href="#run-infra-check-script" id="run-infra-check-script"></a>
 
 설치 DB 환경의 인프라 설정이 올바르게 구성되어 있는지 검증합니다.
 
@@ -144,7 +144,7 @@ sh validate_infra.sh --mode DP
 통과하지 못한 항목이 있는 경우, 조치 완료 후 반드시 재검증을 진행합니다. 모든 항목을 통과한 후에 패키지 설치 및 Agent 설치를 진행합니다.
 {% endhint %}
 
-## 패키지 설치
+## 패키지 설치 <a href="#install-packages" id="install-packages"></a>
 
 인프라 검증을 모두 통과한 후 패키지를 설치합니다.
 

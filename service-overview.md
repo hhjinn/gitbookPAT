@@ -2,7 +2,7 @@
 
 OwlDB는 클라우드와 온프레미스 환경에서 데이터베이스를 설치하고 DB Service로 등록·통합 관리하는 관리형 데이터베이스 플랫폼입니다. 이 페이지에서는 OwlDB의 운영 환경과 주요 기능, 지원 엔진·토폴로지를 확인합니다.
 
-## 운영 환경
+## 운영 환경 <a href="#operating-environment" id="operating-environment"></a>
 
 ### 클라우드 환경 지원
 
@@ -24,7 +24,7 @@ OwlDB는 라이선스에 따라 제공 환경과 기능에 차이가 있습니�
 OwlDB DBaaS는 OwlDB를 통해 신규 구축한 DB만 관리할 수 있으며, 기존 운영 중인 DB를 등록하는 방식은 지원하지 않습니다. **이미 보유한 DB 라이선스는 BYOL(Bring Your Own License) 방식으로 이관**하여, OwlDB DBaaS에서 신규 구축하는 DB에 적용할 수 있습니다.
 {% endhint %}
 
-## 주요 기능
+## 주요 기능 <a href="#key-features" id="key-features"></a>
 
 OwlDB는 두 환경에서 보편적으로 사용되는 공통 관리 기능을 바탕으로, 클라우드와 온프레미스 각각의 인프라 특성에 최적화된 전용 기능을 제공합니다.
 

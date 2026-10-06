@@ -12,7 +12,7 @@ hidden: true
 호환성 분석 및 마이그레이션 기능은 현재 Tibero에 한하여 Oracle만 지원합니다. '[지원 범위 및 사양](migration.md#JKEmRa7PUCKiF4VoFAVy)' 페이지를 참고하시기 바랍니다.
 {% endhint %}
 
-## 지원 범위 및 사양
+## 지원 범위 및 사양 <a href="#support-scope" id="support-scope"></a>
 
 OwlDB에서 제공하는 마이그레이션 기능의 지원 범위와 상세 정보를 확인합니다.
 

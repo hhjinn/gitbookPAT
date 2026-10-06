@@ -4,7 +4,7 @@
 
 <figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>그림 1. 대시보드</p></figcaption></figure>
 
-## 전체 상태 요약 정보 확인
+## 전체 상태 요약 정보 확인 <a href="#status-summary" id="status-summary"></a>
 
 운영 중인 전체 데이터베이스/인스턴스에 대해 최상위 상태 값(**Status**)과 세부 상태 값(**Health**)을 확인합니다. 각 상태를 클릭하면 '[DB Service/인스턴스 목록 확인](./#db-service인스턴스-목록-확인)'에서 해당 상태 값을 가진 DB Service/인스턴스 목록을 확인할 수 있습니다.
 
@@ -86,7 +86,7 @@ OpenSQL 인스턴스 노드의 Health는 Patroni, OpenProxy, etcd, Agent 상태�
 {% endtab %}
 {% endtabs %}
 
-## DB Service/인스턴스 목록 확인
+## DB Service/인스턴스 목록 확인 <a href="#service-instance-list" id="service-instance-list"></a>
 
 전체 DB Service와 하위 인스턴스 목록을 확인합니다. '[전체 상태 요약 정보 확인](./#전체-상태-요약-정보-확인)'에서 선택한 상태값에 따라 표시되는 DB Service 및 인스턴스 목록이 달라집니다.
 
@@ -176,7 +176,7 @@ List View에서는 목록에 표시할 컬럼을 선택하거나 컬럼 순서�
 {% endtab %}
 {% endtabs %}
 
-## Top N 차트 조회
+## Top N 차트 조회 <a href="#top-n-charts" id="top-n-charts"></a>
 
 대시보드 화면에서 조회 권한을 가진 DB Service를 대상으로 CPU Usage, Memory Usage, Session Load 기준 상위 인스턴스를 차트로 확인합니다. Top N 차트는 대시보드 우측 영역에 노출되며, 별도 설정 없이 로그인한 사용자의 조회 권한 범위에 맞춰 자동으로 데이터가 구성됩니다. 조회 권한을 가진 DB Service가 없는 경우 차트 영역에 데이터 없음 상태가 표시됩니다.
 

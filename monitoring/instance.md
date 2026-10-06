@@ -8,7 +8,7 @@ CPU 사용률, 메모리 사용률, 활성 세션 수 등 핵심 지표는 화�
 DB Type에 따라 모니터링 대상 리소스 계층이 다릅니다. Tibero는 Service → Instance 단위로 지표를 표시하며, OpenSQL은 Service → Instance → Database 단위까지 선택합니다.
 {% endhint %}
 
-## 인스턴스 모니터링 조회
+## 인스턴스 모니터링 조회 <a href="#view-instance-monitoring" id="view-instance-monitoring"></a>
 
 인스턴스 모니터링 페이지는 GNB 상단에서 DB Type과 조회 대상 리소스를 선택하는 것으로 시작합니다. DB Type에 따라 선택 가능한 리소스 계층과 표시되는 지표가 달라집니다.
 

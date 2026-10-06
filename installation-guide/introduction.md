@@ -1,6 +1,6 @@
 OwlDB 온프레미스를 사용하기 위해서는 고객 환경에 몇 가지 사전 준비가 필요합니다. 이 페이지에서는 OwlDB의 구성을 먼저 설명하고, 각 구성 요소별로 어떤 준비가 필요한지 안내합니다.
 
-## 시스템 구성
+## 시스템 구성 <a href="#system-architecture" id="system-architecture"></a>
 
 OwlDB는 두 종류의 서버로 구성됩니다.
 
@@ -32,7 +32,7 @@ OwlDB 서버와 데이터베이스 서버는 각 서버에 설치된 Agent를 �
 
 Agent는 데이터베이스 서버에 설치되어 OwlDB 서버로부터 연결을 수신하고 Tibero 설치/구동/관제에 필요한 작업을 로컬에서 실행합니다.
 
-## 데이터베이스 구성 방식
+## 데이터베이스 구성 방식 <a href="#database-configuration-types" id="database-configuration-types"></a>
 
 OwlDB 온프레미스는 데이터베이스를 사용하는 방식에 따라 두 가지 구성을 지원합니다.
 
@@ -68,13 +68,13 @@ OwlDB에서 데이터베이스를 사용하기 위해서는 아래와 같은 패
 * FS02PS_339919c 미적용 시 **failover**/**switchover** 기능이 미동작합니다.
 {% endhint %}
 
-## 설치 흐름
+## 설치 흐름 <a href="#installation-flow" id="installation-flow"></a>
 
 본 가이드는 아래 순서로 진행됩니다. OwlDB 서버와 데이터베이스 서버 준비는 병렬로 진행할 수 있으며, 모두 준비된 후 연결 확인을 수행합니다.
 
 > 📷 **\[이미지\]** 이미지
 
-## 배포 파일 구성
+## 배포 파일 구성 <a href="#deployment-files" id="deployment-files"></a>
 
 설치에 앞서 아래 두 종류의 배포 파일을 준비합니다.
 

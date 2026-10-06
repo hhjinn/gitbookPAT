@@ -8,7 +8,7 @@ OwlDB를 설치하기 전에 서버가 갖춰야 할 시스템·네트워크 요
 
 ---
 
-## 시스템 요구사항
+## 시스템 요구사항 <a href="#system-requirements" id="system-requirements"></a>
 
 OwlDB를 설치할 서버에 아래 요구사항이 충족되어 있는지 확인합니다.
 
@@ -44,7 +44,7 @@ OwlDB 설치를 위해 최소 50GB 이상의 디스크 공간이 필요하며, �
 
 ---
 
-## 네트워크 요구사항
+## 네트워크 요구사항 <a href="#network-requirements" id="network-requirements"></a>
 
 OwlDB 서버는 사용자(웹 브라우저)와 각 데이터베이스 서버 양쪽과 통신합니다. 아래 포트 구성과 통신 허용 설정을 사전에 완료합니다.
 

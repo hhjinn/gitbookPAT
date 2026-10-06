@@ -4,7 +4,7 @@
 
 * owldb dp 바이너리 (`owldb_dp_installer_owl_x.x.x.tar.gz`)
 
-# **2. 파일 배치**
+# **2. 파일 배치** <a href="#place-files" id="place-files"></a>
 
 DP 바이너리를 `$OPENSQL_HOME`에 압축 해제합니다.
 
@@ -24,7 +24,7 @@ $OPENSQL_HOME/
      └── validate_infra.sh
 ```
 
-# 3. owlagent 설치
+# 3. owlagent 설치 <a href="#install-owlagent" id="install-owlagent"></a>
 
 1. agent 바이너리를 압축 해제합니다.
 
@@ -63,7 +63,7 @@ sh owlagent_start.sh
 
 `owlagent_start` 스크립트는 Agent를 systemd 서비스 및 타이머로 등록하며, 이 과정에서 sudo 권한이 사용됩니다.
 
-# 4. patroni 서비스 명 점검
+# 4. patroni 서비스 명 점검 <a href="#check-patroni-service-name" id="check-patroni-service-name"></a>
 
 Patroni를 systemd로 기동한 환경에서는 `systemctl start|stop|status patroni` 형태로 Patroni를 제어합니다. 유닛명이 `patroni.service`가 아니면 기동·정지 제어와 상태 수집이 동작하지 않으므로 사전에 유닛명을 확인해야 합니다.
 

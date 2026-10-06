@@ -11,7 +11,7 @@
 
 이 페이지에서는 기존 운영 중인 Tibero를 OwlDB에 등록하기 전에 준비해야 할 시스템·네트워크·데이터베이스 설정과 배포 파일 배치 방법을 설명합니다.
 
-## 시스템 요구사항
+## 시스템 요구사항 <a href="#system-requirements" id="system-requirements"></a>
 
 #### 디스크(볼륨) 요구사항
 
@@ -25,7 +25,7 @@ Backup 디스크는 xfs 파일시스템 생성 및 마운트가 완료되어 있
 TAC 구성의 경우 Backup 디스크는 모든 노드에서 접근 가능한 공유 볼륨이어야 합니다.
 {% endhint %}
 
-## 네트워크 요구사항
+## 네트워크 요구사항 <a href="#network-requirements" id="network-requirements"></a>
 
 #### **데이터베이스 서버의 필수 포트 구성**
 
@@ -45,7 +45,7 @@ OwlDB 서버와 데이터베이스 서버 간 통신을 위해 방화벽 설정�
 
 ***
 
-## 데이터베이스 설정 요구사항
+## 데이터베이스 설정 요구사항 <a href="#database-requirements" id="database-requirements"></a>
 
 #### TAC, DR 구성 시 필수 설정
 
@@ -66,7 +66,7 @@ TAC(Tibero Active Cluster) 또는 DR 구성으로 운영 중인 데이터베이�
 
 ***
 
-## 배포 파일 준비 및 배치
+## 배포 파일 준비 및 배치 <a href="#prepare-deployment-files" id="prepare-deployment-files"></a>
 
 #### 1. 필요 파일 목록
 

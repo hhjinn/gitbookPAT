@@ -2,7 +2,7 @@
 
 OwlDB는 OpenSQL 데이터베이스의 백업 및 복구를 OpenBackup인 Barman(Backup and Recovery Manager)으로 수행합니다. OpenBackup 서버는 백업 데이터와 WAL(Write-Ahead Log)을 보관하는 서버로, OwlDB와는 별도의 서버에 설치합니다.
 
-## 시스템 요구사항
+## 시스템 요구사항 <a href="#system-requirements" id="system-requirements"></a>
 
 #### 1. 하드웨어 요구사항
 
@@ -51,7 +51,7 @@ dnf install -y systemd sudo cronie rsync openssh-server openssh-clients \
 | OwlDB Agent | OwlDB 서버와 통신하는 Agent                                                                    | `owlagent_dist_latest.tar.gz` |
 | SSH 키       | 양방향 접속에 사용할 키. Barman 서버에는 **공개키**(데이터베이스 서버의 접속을 허용)와 **개인키**(데이터베이스 서버로 접속)가 모두 필요합니다 | -                             |
 
-## 네트워크 요구사항
+## 네트워크 요구사항 <a href="#network-requirements" id="network-requirements"></a>
 
 아래 통신이 가능하도록 방화벽을 설정합니다.
 

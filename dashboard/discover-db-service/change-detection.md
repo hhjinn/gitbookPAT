@@ -4,7 +4,7 @@
 
 ---
 
-## 변경 유형
+## 변경 유형 <a href="#change-types" id="change-types"></a>
 
 변경 감지는 아래 두 가지 유형으로 구분됩니다.
 
@@ -23,7 +23,7 @@
 
 ---
 
-## 스펙 변경된 DB
+## 스펙 변경된 DB <a href="#spec-changed-db" id="spec-changed-db"></a>
 
 OwlDB 외부에서 수동으로 Scale In/Out이 발생한 경우, 탐색 후 대시보드에 **스펙 변경** 버튼이 활성화된 카드뷰로 표시됩니다.
 
@@ -38,7 +38,7 @@ OwlDB 외부에서 수동으로 Scale In/Out이 발생한 경우, 탐색 후 대
 
 ---
 
-## 상태 변경된 DB
+## 상태 변경된 DB <a href="#status-changed-db" id="status-changed-db"></a>
 
 OwlDB 외부에서 수동으로 역할 전환 또는 Failover가 발생한 경우, 탐색 후 대시보드에 **상태 변경** 버튼이 활성화된 카드뷰로 표시됩니다. 상태 변경 조치는 Tibero DB에서만 제공됩니다.
 

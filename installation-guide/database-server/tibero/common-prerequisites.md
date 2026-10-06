@@ -1,6 +1,6 @@
 OwlDB에서 관제하는 데이터베이스 서버에 해당하는 공통 준비 절차입니다. 디스크 요구사항, 네트워크 설정, 배포 파일 구성 등 구성 방식에 따른 다른 절차는 각각 [설치 DB 환경 준비 가이드](#W2TxdEHwoC3mStsQfJdo)와 [등록 DB 환경 준비 가이드](#pvI81bWJlNtie4nv4stI)를 참고합니다.
 
-## Timezone 설정
+## Timezone 설정 <a href="#timezone-settings" id="timezone-settings"></a>
 
 데이터베이스 서버의 Timezone을 올바르게 설정합니다. TAC, DR 등 다중 노드 구성의 경우 **모든 노드의 Timezone이 반드시 동일**해야 합니다. Timezone이 다를 경우 데이터 정합성 문제 및 로그 시간 불일치가 발생할 수 있습니다.
 
@@ -15,7 +15,7 @@ sudo timedatectl set-timezone Asia/Seoul
 timedatectl
 ```
 
-## OS 사용자 / SSH 키 설정
+## OS 사용자 / SSH 키 설정 <a href="#os-user-ssh-key" id="os-user-ssh-key"></a>
 
 {% hint style="info" %}
 **참고**

@@ -9,7 +9,7 @@
 데이터베이스별 설정 파일과 Agent 프로세스는 OwlDB가 연동 시점에 자동으로 생성하므로 직접 작성하지 않습니다.
 {% endhint %}
 
-## OpenBackup 설치
+## OpenBackup 설치 <a href="#install-openbackup" id="install-openbackup"></a>
 
 ### 1. OpenBackup 설치
 
@@ -370,7 +370,7 @@ ssh -o BatchMode=yes <OpenSQL 계정>@<데이터베이스 서버 IP> hostname
 
 
 
-## OpenBackup 서버 연동 확인
+## OpenBackup 서버 연동 확인 <a href="#check-openbackup-connection" id="check-openbackup-connection"></a>
 
 OpenBackup 서버 설치를 완료한 상태에서 진행합니다.
 

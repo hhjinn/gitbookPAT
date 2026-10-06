@@ -10,7 +10,7 @@ DB 엔진에 따라 조회·수정할 수 있는 파라미터 범위가 다릅�
 Standby(Recovery) 인스턴스가 선택된 상태에서는 파라미터를 수정할 수 없습니다. 수정하려면 Primary 인스턴스를 선택해야 합니다.
 {% endhint %}
 
-# 파라미터 조회
+# 파라미터 조회 <a href="#view-parameters" id="view-parameters"></a>
 
 **관리 > 파라미터 > 설정** 메뉴에 진입하면 파라미터 목록이 나타납니다.
 
@@ -29,7 +29,7 @@ Tibero는 DB 파라미터 목록을 바로 표시합니다. OpenSQL(Azure)은 **
 * OpenSQL **OpenHA** 탭에서 `pg_hba`와 `slot` 파라미터는 조회하거나 수정할 수 없습니다. 해당 파라미터는 **연결 정보 관리** 메뉴에서만 설정합니다.
 {% endhint %}
 
-# 파라미터 수정
+# 파라미터 수정 <a href="#modify-parameters" id="modify-parameters"></a>
 
 파라미터 목록에서 **수정** 버튼을 클릭하면 수정 모드로 전환되며, 목록에서 파라미터 값을 직접 편집할 수 있습니다.
 
@@ -61,7 +61,7 @@ OpenSQL에서 수정 모드에 진입하면 **수정** 버튼을 클릭할 당�
 파란색으로 강조된 파라미터 이름은 현재 수정 중인 값입니다.
 {% endhint %}
 
-## 인스턴스 상태별 수정 가능 대상
+## 인스턴스 상태별 수정 가능 대상 <a href="#editable-by-instance-status" id="editable-by-instance-status"></a>
 
 <table data-full-width="true"><thead><tr><th>수정 대상</th><th>수정 가능 조건</th></tr></thead><tbody><tr><td>현재값</td><td>인스턴스 상태가 정상(<code>Available</code> 또는 <code>Limited</code>)일 때</td></tr><tr><td>Config 값</td><td><ul><li>인스턴스 상태 <code>Unavailable</code>(DB Down/Nomount)일 때</li><li>Config 값 없는 파라미터는 수정 불가</li></ul></td></tr></tbody></table>
 
@@ -73,7 +73,7 @@ OpenSQL에서 수정 모드에 진입하면 **수정** 버튼을 클릭할 당�
 Tibero 다중 노드 구성에서 글로벌 파라미터는 수정할 수 없습니다.
 {% endhint %}
 
-## 수정한 파라미터 유형별 저장 방식
+## 수정한 파라미터 유형별 저장 방식 <a href="#save-method-by-parameter-type" id="save-method-by-parameter-type"></a>
 
 <table data-full-width="true"><thead><tr><th>수정한 파라미터 유형</th><th>저장 방식</th></tr></thead><tbody><tr><td>동적 + 정적 파라미터 혼합</td><td><ul><li><strong>적용</strong>: DB 재시작 후 변경 사항 반영 (연결 세션 종료, 수 분 소요)</li></ul></td></tr><tr><td>동적 파라미터만</td><td><ul><li><strong>적용</strong>: 재시작 없이 현재값에 즉시 반영</li><li><strong>임시 적용</strong>: 재시작 없이 현재값에 반영, DB 재시작 시 기존 Config 값으로 복원</li></ul></td></tr></tbody></table>
 
@@ -93,7 +93,7 @@ OpenHA 파라미터는 수정 시 유효성 검사를 하지 않습니다. 잘�
 * `[ERROR]: Unexpected exception raised, please report it as a BUG` — `maximum_lag_on_failover`처럼 저장 시점에는 걸러지지 않는 값이 실제 동작 시점에 예외를 일으켰습니다. 값을 확인하고 다시 설정하세요.
 {% endhint %}
 
-## 템플릿 불러오기
+## 템플릿 불러오기 <a href="#load-template" id="load-template"></a>
 
 Tibero 파라미터 수정 모드에서 미리 저장된 파라미터 템플릿을 불러와 수정 목록에 일괄 반영합니다.
 
@@ -111,7 +111,7 @@ Tibero 파라미터 수정 모드에서 미리 저장된 파라미터 템플릿�
 
 ---
 
-# 파라미터 템플릿
+# 파라미터 템플릿 <a href="#parameter-templates" id="parameter-templates"></a>
 
 **관리 > 파라미터 > 템플릿** 페이지에서 파라미터 템플릿을 조회하고 적용합니다. 미리 정의된 템플릿을 불러와 여러 파라미터를 한 번에 설정할 수 있습니다.
 
@@ -141,7 +141,7 @@ Tibero 파라미터 수정 모드에서 미리 저장된 파라미터 템플릿�
 
 ---
 
-# 파라미터 수정 내역
+# 파라미터 수정 내역 <a href="#parameter-change-history" id="parameter-change-history"></a>
 
 **관리 > 파라미터 > 수정내역** 페이지에서는 데이터베이스 파라미터의 변경 이력을 조회합니다.
 
@@ -151,13 +151,13 @@ Tibero 파라미터 수정 모드에서 미리 저장된 파라미터 템플릿�
 2. 조회 기간 드롭다운에서 원하는 기간을 선택합니다.
 3. 테이블에서 파라미터 수정 내역을 확인합니다.
 
-## 수정 내역 상세 확인
+## 수정 내역 상세 확인 <a href="#change-history-details" id="change-history-details"></a>
 
 1. 수정 내역 테이블에서 확인할 **수정일**을 클릭합니다.
 2. 화면 오른쪽에 나타나는 드로어에서 변경된 파라미터 목록을 확인합니다.
 3. 필요한 경우 테이블 필터 또는 검색으로 특정 파라미터를 찾습니다.
 
-## 수정 내역 설명 수정
+## 수정 내역 설명 수정 <a href="#edit-change-description" id="edit-change-description"></a>
 
 {% hint style="warning" %}
 **주의**

@@ -1,4 +1,4 @@
-## 탐색 프로세스
+## 탐색 프로세스 <a href="#discovery-process" id="discovery-process"></a>
 
 OwlDB 화면에서 **탐색** 버튼을 클릭하면, OwlDB Agent가 설치된 고객 인프라의 구성 정보를 자동으로 수집하여 대시보드에서 현황을 파악할 수 있습니다.
 
@@ -15,7 +15,7 @@ OwlDB 화면에서 **탐색** 버튼을 클릭하면, OwlDB Agent가 설치된 �
 
 ---
 
-## 탐색 결과
+## 탐색 결과 <a href="#discovery-results" id="discovery-results"></a>
 
 {% hint style="info" %}
 **참고**
