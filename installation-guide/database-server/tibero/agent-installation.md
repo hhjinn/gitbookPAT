@@ -3,7 +3,7 @@ This page explains how to install and start the Agent on the database server.
 {% hint style="info" %}
 **Note**
 
-This guide [Installed DB Environment Preparation Guide](db.md) or [Registered DB Environment Preparation Guide](db-1.md)should be performed after completing.
+This guide [Installed DB Environment Preparation Guide](install-db-prerequisites.md) or [Registered DB Environment Preparation Guide](register-db-prerequisites.md)should be performed after completing.
 {% endhint %}
 
 ### Agent installation and startup

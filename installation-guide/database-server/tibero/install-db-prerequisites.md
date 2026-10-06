@@ -158,4 +158,4 @@ Manually install the following packages in advance.
 {% endtab %}
 {% endtabs %}
 
-Afterwards [Database server Agent installation document](agent.md)and proceed.
+Afterwards [Database server Agent installation document](agent-installation.md)and proceed.

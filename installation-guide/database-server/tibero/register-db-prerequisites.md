@@ -102,4 +102,4 @@ $TB_HOME/
  └── tbagent_dist_latest.tar.gz  # tbagent binary
 ```
 
-Afterwards [Database server Agent installation document](agent.md)and proceed.
+Afterwards [Database server Agent installation document](agent-installation.md)and proceed.

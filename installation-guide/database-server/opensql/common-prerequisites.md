@@ -1,4 +1,4 @@
-This is the common preparation procedure for database servers monitored by OwlDB. For procedures that differ by configuration method, such as disk requirements, network settings, and deployment file configuration, refer to [Installed DB Environment Preparation Guide](db.md)and [Registered DB Environment Preparation Guide](db-1.md)respectively.
+This is the common preparation procedure for database servers monitored by OwlDB. For procedures that differ by configuration method, such as disk requirements, network settings, and deployment file configuration, refer to [Installed DB Environment Preparation Guide](install-db-prerequisites.md)and [Registered DB Environment Preparation Guide](register-db-prerequisites.md)respectively.
 
 ## OS user / SSH key configuration
 

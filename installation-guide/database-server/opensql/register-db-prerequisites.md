@@ -54,7 +54,7 @@ owlagent_dist_latest.tar.gz
 {% hint style="info" %}
 **Note**
 
-At the time of DB Service registration `DB_LOG_DIR` It is acceptable if no log file exists at the path. Once a log file is created after registration [Syslog](../../../undefined-5/undefined-2/syslog.md) query it from the menu.
+At the time of DB Service registration `DB_LOG_DIR` It is acceptable if no log file exists at the path. Once a log file is created after registration [Syslog](../../../monitoring/log/syslog.md) query it from the menu.
 {% endhint %}
 
 1. Run owlagent

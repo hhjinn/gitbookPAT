@@ -13,7 +13,7 @@ DB Syslog can only query data from within the last 7 days. Logs older than 7 day
 {% hint style="info" %}
 **Note**
 
-For an OpenSQL DB Service added through registration, the one used during initial registration `owl.env`of `DB_LOG_DIR`If you did not designate as the OpenSQL DB log folder, DB Syslog may not work properly. For more details, [registration manual](../../undefined/undefined-1/opensql/db-1.md)please refer to.
+For an OpenSQL DB Service added through registration, the one used during initial registration `owl.env`of `DB_LOG_DIR`If you did not designate as the OpenSQL DB log folder, DB Syslog may not work properly. For more details, [registration manual](../../installation-guide/database-server/opensql/register-db-prerequisites.md)please refer to.
 {% endhint %}
 
 {% hint style="warning" %}

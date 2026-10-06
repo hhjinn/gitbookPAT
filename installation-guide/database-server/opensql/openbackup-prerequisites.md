@@ -30,7 +30,7 @@ When linking multiple databases to a single OpenBackup server, sum the capacity 
 {% hint style="info" %}
 **Note**
 
-OpenBackup is **installed from the OpenSQL distribution**and its version must be the same as the database server's `barman-cli` For details, see [OpenBackup installation](openbackup-1.md)respectively.
+OpenBackup is **installed from the OpenSQL distribution**and its version must be the same as the database server's `barman-cli` For details, see [OpenBackup installation](openbackup-installation.md)respectively.
 {% endhint %}
 
 ### 3. OS packages

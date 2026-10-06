@@ -1,6 +1,6 @@
 # OpenBackup Server Installation Guide
 
-[Preparing the OpenBackup server environment](openbackup.md)Proceed after meeting the system and network requirements. Completing the procedure below brings OwlDB to a state where it can integrate with the OpenBackup server.
+[Preparing the OpenBackup server environment](openbackup-prerequisites.md)Proceed after meeting the system and network requirements. Completing the procedure below brings OwlDB to a state where it can integrate with the OpenBackup server.
 
 {% hint style="info" %}
 **Note**
@@ -520,5 +520,5 @@ The items below are automatically created or configured by OwlDB at the time of 
 {% hint style="info" %}
 Note
 
-If there is a problem with the OpenBackup server installation or operation, [Reference Materials > OpenBackup Troubleshooting Guide](../../../undefined-8/openbackup.md)Please refer to.
+If there is a problem with the OpenBackup server installation or operation, [Reference Materials > OpenBackup Troubleshooting Guide](../../../references/openbackup-troubleshooting.md)Please refer to.
 {% endhint %}

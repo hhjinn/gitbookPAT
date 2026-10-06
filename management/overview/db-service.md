@@ -41,8 +41,8 @@ All items that display a date and time are displayed based on the database timez
 
 Check the list and information of configured instances.
 
-* **Instance alias**Clicking it takes you to the "[Instance management](db.md#dF57s45IXBUgU7RX1UvL)" page.
-* After first selecting one or more instances with the ☑️ icon, **Restart** click the button, or without selecting, **Restart** click the button directly to open a modal where you can select the instances to restart and the restart options. For details, please refer to "[Restarting an Instance](db.md#undefined-2)".
+* **Instance alias**Clicking it takes you to the "[Instance management](db-service.md#dF57s45IXBUgU7RX1UvL)" page.
+* After first selecting one or more instances with the ☑️ icon, **Restart** click the button, or without selecting, **Restart** click the button directly to open a modal where you can select the instances to restart and the restart options. For details, please refer to "[Restarting an Instance](db-service.md#undefined-2)".
 
 {% hint style="info" %}
 **Note**
