@@ -41,33 +41,33 @@ OwlDB 이용에 도움이 되는 사전 지식에 대해 안내합니다.
 {% tab title="환경 준비" %}
 ​OwlDB 이용을 위한 환경별 준비 사항을 안내합니다.
 
-🔎 [환경 준비 바로가기](undefined/)
+🔎 [환경 준비 바로가기](preparation/)
 {% endtab %}
 
 {% tab title="기능별 사용 안내" %}
 시작하기부터 데이터베이스 생성, 관리, 모니터링 등 OwlDB 사용법을 기능별로 안내합니다.
 
-🔎 [시작하기 바로가기](undefined-2/)
+🔎 [시작하기 바로가기](getting-started/)
 
-🔎 [대시보드 바로가기](undefined-3/)
+🔎 [대시보드 바로가기](dashboard/)
 
-🔎 [관리 바로가기](undefined-4/)
+🔎 [관리 바로가기](management/)
 
-🔎 [모니터링 바로가기](undefined-5/)
+🔎 [모니터링 바로가기](monitoring/)
 
-🔎 [마이페이지 바로가기](undefined-7/)
+🔎 [마이페이지 바로가기](my-page/)
 {% endtab %}
 
 {% tab title="참고 자료" %}
 OwlDB 이용 시 도움이 될 수 있는 참고자료를 확인하실 수 있습니다.
 
-🔎 [참고 자료 바로가기](undefined-8/)
+🔎 [참고 자료 바로가기](references/)
 {% endtab %}
 
 {% tab title="법적 고지" %}
 OwlDB 이용과 관련된 라이선스 및 법적 고지 사항에 대해 안내합니다.
 
-🔎 [법적 고지 바로가기](undefined-1/)
+🔎 [법적 고지 바로가기](legal-notice/)
 {% endtab %}
 {% endtabs %}
 
