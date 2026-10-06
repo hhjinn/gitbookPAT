@@ -1,6 +1,6 @@
 # Table of contents
 
-* [OwlDB Manual](README.md)
+* [OwlDB Manual](owldb-manual.md)
 * [Service Overview](service-overview.md)
 * [Copy of Service Overview](readme-1.md)
 * [Installation Guide](installation-guide/README.md)
@@ -10,13 +10,13 @@
     * [OwlDB Installation](installation-guide/owldb-server/installation.md)
   * [Database Server Preparation and Installation](installation-guide/database-server/README.md)
     * [Tibero](installation-guide/database-server/tibero/README.md)
-      * [Common Database Server Preparations](installation-guide/database-server/tibero/common-prerequisites.md)
+      * [Database Server Common Preparations](installation-guide/database-server/tibero/common-prerequisites.md)
       * [Installation DB Environment Preparation Guide](installation-guide/database-server/tibero/install-db-prerequisites.md)
       * [Registration DB Environment Preparation Guide](installation-guide/database-server/tibero/register-db-prerequisites.md)
       * [Database Server Agent Installation](installation-guide/database-server/tibero/agent-installation.md)
       * [OwlDB Connection Verification](installation-guide/database-server/tibero/connection-check.md)
     * [OpenSQL](installation-guide/database-server/opensql/README.md)
-      * [Common Database Server Preparation](installation-guide/database-server/opensql/common-prerequisites.md)
+      * [Database Server Common Preparation](installation-guide/database-server/opensql/common-prerequisites.md)
       * [Installation DB Environment Preparation Guide](installation-guide/database-server/opensql/install-db-prerequisites.md)
       * [Registration DB Environment Preparation Guide](installation-guide/database-server/opensql/register-db-prerequisites.md)
       * [OwlDB Connection Verification](installation-guide/database-server/opensql/connection-check.md)

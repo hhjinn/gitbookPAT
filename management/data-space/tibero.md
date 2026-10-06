@@ -1,9 +1,9 @@
-Query, create, modify, and delete the storage space (tablespaces and data files) of databases running in OwlDB. A single tablespace can contain multiple data files.
+View, create, modify, and delete the storage space (tablespaces and data files) of databases operating in OwlDB. A single tablespace can contain multiple data files.
 
 {% hint style="info" %}
 **Note**
 
-- When the database status is `Running`Only in this case are querying, modifying, and deleting tablespaces possible.
+- Only when the database status is `Running`can tablespaces be viewed, modified, and deleted.
 - When the DB engine is set to OpenSQL, the database management screen is displayed instead of this page.
 {% endhint %}
 
@@ -12,17 +12,17 @@ Query, create, modify, and delete the storage space (tablespaces and data files)
 <figcaption>Figure 1. Data Space - Tibero</figcaption>
 </figure>
 
-# Querying Tablespaces
+# Viewing Tablespaces <a href="#view-tablespaces" id="view-tablespaces"></a>
 
 1. **OwlDB Console Screen > Management > Tablespaces** Navigate to the menu.
-2. **DB Alias** Click the dropdown button to select the database whose tablespaces you want to query.
-3. Query the list of tablespaces. You can filter the list by type. You can also search directly by name.
+2. **DB Alias** Click the dropdown button to select the database whose tablespaces you want to view.
+3. View the tablespace list. You can filter the list by type. You can also search directly by name.
 
-<table><thead><tr><th>Item</th><th>Description</th></tr></thead><tbody><tr><td>Name</td><td>Tablespace Name</td></tr><tr><td>Type</td><td>Tablespace Type<ul><li><strong>Permanent</strong>: Stores permanent data and is generally the most commonly used type</li><li><strong>Temporary</strong>: Stores temporary data; data is deleted when the session ends or the task is completed</li><li><strong>Undo</strong>: Stores modified data</li></ul></td></tr><tr><td>Status</td><td>Tablespace Status<ul><li><strong>ONLINE</strong>: A state in which it is normally connected to the database and available for use</li><li><strong>OFFLINE</strong>: A state in which the connection to the database is lost (objects stored in the tablespace cannot be accessed)</li></ul></td></tr><tr><td>Used/Total Size</td><td><ul><li><strong>Used Size</strong>: The total amount of space in use by the data files belonging to the tablespace</li><li><strong>Total Size</strong>: The total amount of space allocated to the data files belonging to the tablespace</li></ul></td></tr><tr><td>Total/Max Size</td><td><ul><li><strong>Total Size</strong>: The total amount of space allocated to the data files belonging to the tablespace</li><li><strong>Max Size</strong>: The total amount of the maximum space that can be allocated to the data files belonging to the tablespace</li></ul></td></tr><tr><td>Logging</td><td>Logging Status</td></tr><tr><td>Allocation Type</td><td>Extent Allocation Method<ul><li><strong>SYSTEM</strong>: A method that dynamically allocates extent size according to system requirements</li><li><strong>UNIFORM</strong>: A method that stores objects using Extents of the same size</li></ul></td></tr><tr><td>Next Extent</td><td>Next Allocated Extent Size</td></tr></tbody></table>
+<table><thead><tr><th>Item</th><th>Description</th></tr></thead><tbody><tr><td>Name</td><td>Tablespace name</td></tr><tr><td>Type</td><td>Tablespace type<ul><li><strong>Permanent</strong>: Stores permanent data and is generally the most commonly used type</li><li><strong>Temporary</strong>: Stores temporary data, which is deleted when the session ends or the task is completed</li><li><strong>Undo</strong>: Stores modified data</li></ul></td></tr><tr><td>Status</td><td>Tablespace status<ul><li><strong>ONLINE</strong>: A state in which it is properly connected to the database and can be used</li><li><strong>OFFLINE</strong>: A state in which the connection to the database is lost (objects stored in the tablespace cannot be accessed)</li></ul></td></tr><tr><td>Used/Total Size</td><td><ul><li><strong>Used Size</strong>: The total amount of space in use by the data files belonging to the tablespace</li><li><strong>Total Size</strong>: The total amount of space allocated to the data files belonging to the tablespace</li></ul></td></tr><tr><td>Total/Max Size</td><td><ul><li><strong>Total Size</strong>: The total amount of space allocated to the data files belonging to the tablespace</li><li><strong>Max Size</strong>: The total amount of space that the data files belonging to the tablespace can be allocated at maximum</li></ul></td></tr><tr><td>Logging</td><td>Logging status</td></tr><tr><td>Allocation Type</td><td>Extent allocation method<ul><li><strong>SYSTEM</strong>: A method that dynamically allocates extent sizes according to system demand</li><li><strong>UNIFORM</strong>: A method that stores objects using extents of the same size</li></ul></td></tr><tr><td>Next Extent</td><td>Next allocated extent size</td></tr></tbody></table>
 
 ---
 
-# Creating a Tablespace
+# Creating Tablespaces <a href="#create-tablespace" id="create-tablespace"></a>
 
 1. **OwlDB Console Screen > Management > Tablespaces** Navigate to the menu.
 2. **DB Alias** Click the dropdown button to select the database in which to create the tablespace.
@@ -31,12 +31,12 @@ Query, create, modify, and delete the storage space (tablespaces and data files)
 {% hint style="info" %}
 **Note**
 
-Based on a data block size of 8KB, even if UNIFORM SIZE is set smaller than 128KB, it is set to the minimum Extent size of 128KB.
+Based on a data block size of 8KB, even if UNIFORM SIZE is set smaller than 128KB, it will be set to the minimum extent size of 128KB.
 {% endhint %}
 
 ---
 
-# Modifying a Tablespace
+# Modifying Tablespaces <a href="#modify-tablespace" id="modify-tablespace"></a>
 
 1. **OwlDB Console Screen > Management > Tablespaces** Navigate to the menu.
 2. **DB Alias** Click the dropdown button to select the database whose tablespace you want to modify.
@@ -44,7 +44,7 @@ Based on a data block size of 8KB, even if UNIFORM SIZE is set smaller than 128K
 
 ---
 
-# Deleting a Tablespace
+# Deleting Tablespaces <a href="#delete-tablespace" id="delete-tablespace"></a>
 
 1. **OwlDB Console Screen > Management > Tablespaces** Navigate to the menu.
 2. **DB Alias** Click the dropdown button to select the database whose tablespace you want to delete.
@@ -52,31 +52,31 @@ Based on a data block size of 8KB, even if UNIFORM SIZE is set smaller than 128K
 
 ---
 
-# Querying Data Files
+# Viewing Data Files <a href="#view-data-files" id="view-data-files"></a>
 
-1. '[Querying Tablespaces](#테이블스페이스-조회)' to select the database whose data files you want to query.
-2. **Tablespace** Click the radio button to select the tablespace whose data files you want to query.
-3. Query the list of data files. You can filter the list by whether auto-extend is enabled. You can also search directly by data file name.
+1. '[Viewing Tablespaces](#view-tablespaces)' to select the database whose data files you want to view.
+2. **Tablespace** Click the radio button to select the tablespace whose data files you want to view.
+3. View the data file list. You can filter the list by auto-extend status. You can also search directly by data file name.
 
-<table><thead><tr><th>Item</th><th>Description</th></tr></thead><tbody><tr><td>Tablespace Name</td><td>Tablespace Name</td></tr><tr><td>Name</td><td>Data File Name</td></tr><tr><td>Online Status</td><td>Data File Status<ul><li><strong>SYSOFF</strong>: System offline file</li><li><strong>SYSTEM</strong>: System online file</li><li><strong>OFFLINE</strong>: Offline state</li><li><strong>ONLINE</strong>: Online state</li><li><strong>RECOVER</strong>: A state that requires recovery</li><li><strong>AVAILABLE</strong>: An available state</li></ul></td></tr><tr><td>Used/Total Size</td><td><ul><li><strong>Used Size</strong>: The amount of space in use by the data file</li><li><strong>Total Size</strong>: The amount of space allocated to the data file</li></ul></td></tr><tr><td>Total/Max Size</td><td><ul><li><strong>Total Size</strong>: The amount of space allocated to the data file</li><li><strong>Max Size</strong>: The maximum amount of space that can be allocated to the data file</li></ul></td></tr><tr><td>Auto Extend</td><td>Auto-Extend Status</td></tr><tr><td>Next</td><td>Next extent size</td></tr><tr><td>Physical Reads</td><td>Number of physical reads</td></tr><tr><td>Physical Writes</td><td>Number of physical writes</td></tr><tr><td>Single Block Reads</td><td>Number of single block reads</td></tr></tbody></table>
+<table><thead><tr><th>Item</th><th>Description</th></tr></thead><tbody><tr><td>Tablespace Name</td><td>Tablespace name</td></tr><tr><td>Name</td><td>Data file name</td></tr><tr><td>Online Status</td><td>Data File Status<ul><li><strong>SYSOFF</strong>: System offline file</li><li><strong>SYSTEM</strong>: System online file</li><li><strong>OFFLINE</strong>: Offline status</li><li><strong>ONLINE</strong>: Online status</li><li><strong>RECOVER</strong>: Recovery-required status</li><li><strong>AVAILABLE</strong>: Available status</li></ul></td></tr><tr><td>Used/Total Size</td><td><ul><li><strong>Used Size</strong>: The amount of space currently in use by the data file</li><li><strong>Total Size</strong>: The amount of space allocated to the data file</li></ul></td></tr><tr><td>Total/Max Size</td><td><ul><li><strong>Total Size</strong>: The amount of space allocated to the data file</li><li><strong>Max Size</strong>: The maximum amount of space that can be allocated to the data file</li></ul></td></tr><tr><td>Auto Extend</td><td>Auto-Extend Enabled</td></tr><tr><td>Next</td><td>Next Extent Size</td></tr><tr><td>Physical Reads</td><td>Physical Read Count</td></tr><tr><td>Physical Writes</td><td>Physical Write Count</td></tr><tr><td>Single Block Reads</td><td>Single Block Read Count</td></tr></tbody></table>
 
 ---
 
-# Create data file
+# Create Data File <a href="#create-data-file" id="create-data-file"></a>
 
-1. '[Querying Data Files](#데이터-파일-조회)' to select the tablespace in which to create the data file.
+1. '[Viewing Data Files](#view-data-files)' to select the tablespace in which to create the data file.
 2. **Create** Click the button.
 
 ---
 
-# Modify data file
+# Modify Data File <a href="#modify-data-file" id="modify-data-file"></a>
 
-1. '[Querying Data Files](#데이터-파일-조회)' to select the tablespace in which to modify the data file.
+1. '[Viewing Data Files](#view-data-files)' to select the tablespace whose data file is to be modified.
 2. **Edit** Click the button.
 
 ---
 
-# Delete data file
+# Delete Data File <a href="#delete-data-file" id="delete-data-file"></a>
 
-1. '[Querying Data Files](#데이터-파일-조회)' to select the tablespace from which to delete the data file.
+1. '[Viewing Data Files](#view-data-files)' to select the tablespace whose data file is to be deleted.
 2. **Delete** Click the button.

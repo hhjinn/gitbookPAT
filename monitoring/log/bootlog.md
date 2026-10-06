@@ -1,20 +1,20 @@
-**Bootlog** On this page, you can check status and error information related to the DB boot procedure and diagnose the cause of problems. You can query logs by boot·down event, and clicking each message lets you view the full detailed log in the right side panel.
+**Bootlog** On this page, you can check the status and error information related to the DB boot procedure and diagnose the cause of problems. You can look up logs by boot/down event, and clicking each message shows the full detailed log in the right side panel.
 
 {% hint style="info" %}
 **Note**
 
-When the instance is in `Terminating` state, Bootlog cannot be queried.
+When the instance is in the `Terminating` state, Bootlog cannot be looked up.
 {% endhint %}
 
-**Query Period**
+**Query period**
 
-Set the query period at the top of the screen. Select from the last 1 day, 3 days, 7 days, or 1 month, or specify the start and end dates by direct input.
+At the top of the screen, set the period to look up. Choose from the last 1 day, 3 days, 7 days, or 1 month, or specify the start and end dates by direct input.
 
 1. **Monitoring > Log Monitoring > Bootlog**Click.
-2. Select the query period.
-3. Set the event, mode, and status filters to narrow down the query scope.
-4. Of the log you want to check, the **Message** click the link.
-5. Check the detailed content of the log in the right side panel of the screen.
+2. Select the period to look up.
+3. Set the event, mode, and status filters to narrow the lookup scope.
+4. Click the **Message** link of the log you want to check.
+5. Check the detailed contents of the log in the right side panel of the screen.
 
 {% hint style="info" %}
 **Note**
@@ -22,9 +22,9 @@ Set the query period at the top of the screen. Select from the last 1 day, 3 day
 The mode filter is provided only in the Tibero engine.
 {% endhint %}
 
-### Auto refresh
+### Auto Refresh <a href="#undefined" id="undefined"></a>
 
-For real-time updates of the monitoring screen, an auto refresh function is supported.
+To enable real-time updates of the monitoring screen, an auto refresh feature is supported.
 
-1. Click the ⚙️ icon at the top left.
-2. Set the refresh interval.
+1. Click the ⚙️ icon in the upper left.
+2. Sets the refresh interval.

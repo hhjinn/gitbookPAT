@@ -1,25 +1,25 @@
-On the Eventlog page, you can query event logs that occurred according to the rules defined by OwlDB.
+The Eventlog page displays event logs generated according to rules defined by OwlDB.
 
-**Monitoring > Log Monitoring > Eventlog** In this menu, you can check logs that occurred in the DB Service, and by combining the query period and filters, you can filter out only the events you want. Results are displayed in order of the most recent received date.
+**Monitoring > Log Monitoring > Eventlog** In this menu, you can check logs generated for the DB Service and filter out only the desired events by combining the query period and filters. Results are displayed in order of most recent received date.
 
 {% hint style="info" %}
 **Note**
 
-If the DB Service is in `Terminating` If it is in state, Eventlog cannot be queried. A notice banner is displayed at the top of the screen.
+If the DB Service is in the `Terminating` In this state, Eventlog cannot be queried. An information banner is displayed at the top of the screen.
 {% endhint %}
 
 1. **Monitoring > Log Monitoring > Eventlog** Click the menu.
-2. Select the query period. To specify a particular range, **direct input**after selecting, set the start date and end date.
-3. Select the status or message filter to narrow down the event types to query.
+2. Select the query period. To specify a particular range, **Direct input**after selecting it, set the start date and end date.
+3. Select a status or message filter to narrow down the event types to query.
 4. To find a specific message, enter a keyword in the search box.
-5. In the query results, **DB Service** or **Instance** click the name to move to its detail page.
+5. In the query results, **DB Service** or **Instance** click the name to navigate to the corresponding detail page.
 
 The event log types displayed in the message column are as follows.
 
 | Status | Trigger condition | Message |
 | --- | --- | --- |
-| Info | Instance status change | The instance status has changed to {변경된 상태}. ({상태 코드}) |
-| Warning | CPU usage exceeded 50% | CPU usage has exceeded the caution level (50%). (Current: {사용량}%) |
-|   | Memory usage exceeded 50% | Memory usage has exceeded the caution level (50%). (Current: {사용량}%) |
-| Error | CPU usage exceeded 90% | CPU usage has exceeded the warning level (90%). (Current: {사용량}%) |
-|   | Memory usage exceeded 90% | Memory usage has exceeded the warning level (90%). (Current: {사용량}%) |
+| Info | Instance status change | 인스턴스 상태가 {변경된 상태}로 변경되었습니다. ({상태 코드}) |
+| Warning | CPU usage exceeds 50% | CPU 사용량 주의 수준(50%)를 초과했습니다. (현재 : {사용량}%) |
+|   | Memory usage exceeds 50% | Memory 사용량 주의 수준(50%)를 초과했습니다. (현재 : {사용량}%) |
+| Error | CPU usage exceeds 90% | CPU 사용량 경고 수준(90%)를 초과했습니다. (현재 : {사용량}%) |
+|   | Memory usage exceeds 90% | Memory 사용량 경고 수준(90%)를 초과했습니다. (현재 : {사용량}%) |

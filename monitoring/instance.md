@@ -1,6 +1,6 @@
-On the instance monitoring page, you can check the key performance indicators of the database instance in real-time line charts.
+On the instance monitoring page, you can check the key performance metrics of the database instance in real-time line charts.
 
-Core metrics such as CPU utilization, memory utilization, and active session count are always displayed at the top of the screen. Select the Quick Insight, Load, I/O, Writes, or All tabs to focus on situation-specific metrics, and switching between Tibero and OpenSQL using the DB Type toggle in the GNB applies the metric configuration suited to that engine.
+Core metrics such as CPU usage, memory usage, and active session count are always displayed at the top of the screen. Select the Quick Insight, Load, I/O, Writes, and All tabs to focus on situational metrics, and when you switch between Tibero and OpenSQL using the DB Type toggle in the GNB, the metric configuration suited to that engine is applied.
 
 {% hint style="info" %}
 **Note**
@@ -8,67 +8,67 @@ Core metrics such as CPU utilization, memory utilization, and active session cou
 The monitoring target resource hierarchy differs depending on the DB Type. Tibero displays metrics at the Service → Instance level, while OpenSQL allows selection down to the Service → Instance → Database level.
 {% endhint %}
 
-## Instance Monitoring Query
+## Query Instance Monitoring <a href="#view-instance-monitoring" id="view-instance-monitoring"></a>
 
-The instance monitoring page begins by selecting the DB Type and the resource to query at the top of the GNB. The selectable resource hierarchy and the metrics displayed vary depending on the DB Type.
+The instance monitoring page begins by selecting the DB Type and the resource to query at the top of the GNB. The selectable resource hierarchy and displayed metrics vary depending on the DB Type.
 
-1. From the left menu, **Monitoring > Instance Monitoring**Click it.
-2. In the DB Type toggle of the GNB, **Tibero** or **OpenSQL**.
-3. Select the Service and Instance to query in the DB Select tree. OpenSQL allows selection down to the Database level.
-4. **(OpenSQL only)** As needed, **Instance View** or **Database View** Click the button.
+1. From the left menu **Monitoring > Instance Monitoring**.
+2. In the DB Type toggle of the GNB **Tibero** or **OpenSQL**Select.
+3. Select the Service and Instance to query in the DB Select tree. OpenSQL can select down to the Database level.
+4. **(OpenSQL only)** As needed **Instance View** or **Database View** Click the button.
 5. tab (**Quick Insight** / **Load** / **I/O** / **Writes** / **All**) to query the desired metrics.
-6. Click the ⚙️ icon to configure automatic refresh.
+6. Click the ⚙️ icon to set up automatic refresh.
 7. Click the 🔃 icon to manually refresh the data.
 
-### DB Type and Resource Selection
+### DB Type and Resource Selection <a href="#db-type" id="db-type"></a>
 
-In the DB Type toggle of the GNB, **Tibero** or **OpenSQL**When selected, the DB Select tree and metrics suited to that DB Type are displayed. When switching the DB Type, the DB Select is reset to Select All.
+In the DB Type toggle of the GNB **Tibero** or **OpenSQL**When selected, the DB Select tree and metrics suited to that DB Type are displayed. When you switch the DB Type, the DB Select is reset to Select All.
 
 {% tabs %}
 {% tab title="Tibero" %}
-The DB Select tree is **Service → Instance** a 2-level structure. You can select at the Select All, Primary DB, or Standby DB level.
+The DB Select tree is a **Service → Instance** two-level structure. You can select by All, Primary DB, or Standby DB.
 
-- Instance Alias is displayed up to a maximum of 30 characters, and if exceeded, it is shortened with an ellipsis (…).
-- Sort order: Service creation date newest first → Instance Role (Primary → Standby(Read Only) → Standby(Recovery)) → ascending alias order within the same role
+- Instance Alias is displayed up to 30 characters; if exceeded, it is truncated with an ellipsis (…).
+- Sort order: newest Service creation date → Instance Role (Primary → Standby(Read Only) → Standby(Recovery)) → ascending alias within the same role
 {% endtab %}
 {% tab title="OpenSQL" %}
-The DB Select tree is **Service → Instance → Database** a 3-level structure. You can select down to the Database level, and when a Database is selected, its parent Instance is automatically included.
+The DB Select tree is a **Service → Instance → Database** It is a three-level structure. You can select down to the Database level, and selecting a Database automatically includes its parent Instance.
 
-- If only some Databases are selected, the Instance View also aggregates metrics based only on the selected Databases.
-- Instance Alias and Database names are each displayed up to a maximum of 10 characters, and if exceeded, they are shortened with an ellipsis (…).
+- If you select only some Databases, the Instance View also aggregates metrics based only on the selected Databases.
+- Instance Alias and Database name are each displayed up to 10 characters; if exceeded, they are truncated with an ellipsis (…).
 {% endtab %}
 {% endtabs %}
 
 {% hint style="info" %}
 **Note**
 
-If there are no resources in the selected DB Type or no collected data, the No Data screen is displayed. If an instance's Health is abnormal, a ⚠️ icon is displayed in the DB Select tree, and selecting only that resource switches to the No Data screen.
+If the selected DB Type has no resources or no collected data, the No Data screen is displayed. If an instance's Health is abnormal, a ⚠️ icon is shown in the DB Select tree, and selecting only that resource switches to the No Data screen.
 {% endhint %}
 
-### Top Fixed Metrics
+### Pinned Top Metrics <a href="#undefined-1" id="undefined-1"></a>
 
-These are the core metrics always displayed at the top of the page regardless of DB Type. The overall instance Health status is `Available(n)`, `Limited(n)`, `Unavailable(n)`, `In Progress(n)`is also displayed together.
+These are the key metrics always displayed at the top of the page regardless of DB Type. The overall instance Health status is `Available(n)`, `Limited(n)`, `Unavailable(n)`, `In Progress(n)`displayed together.
 
-| Metric Name | Description |
+| Metric name | Description |
 | --- | --- |
-| CPU Usage (%) | CPU Utilization |
-| Memory Usage (%) | Memory Usage |
+| CPU Usage (%) | CPU usage |
+| Memory Usage (%) | Memory usage |
 | Active Session Count (CNT) | Number of currently active sessions |
 | Replication Lag (sec) | Replication lag between Primary and Standby (displayed only when a Standby exists) |
 
-### Metric Lookup by Tab
+### Metric lookup by tab <a href="#undefined-2" id="undefined-2"></a>
 
-The default tab when entering the page is **Quick Insight**. When you switch tabs, only the metrics relevant to that situation are retrieved.
+When entering the page, the default tab is **Quick Insight**. When you switch tabs, only the metrics relevant to that situation are queried.
 
-| Tab | Purpose |
+| Tab | Purpose of inspection |
 | --- | --- |
 | Quick Insight | Quickly identify overall anomalies |
 | Load | Identify the cause of session/query load and CPU/Memory increases |
-| I/O | Identify disk read/write activity and the cause of response latency |
+| I/O | Identify the cause of disk read/write activity volume and response latency |
 | Writes | Identify bulk write operations and spikes in transaction rollbacks |
-| All | Retrieve all metrics at once to diagnose complex causes |
+| All | Query all metrics at once to diagnose complex causes |
 
-You can pin frequently used tabs. When you hover over a tab, a pin icon appears, and clicking it sets that tab as the default entry tab. Only one tab can be pinned at a time, and pinning another tab automatically unpins the existing one.
+You can pin frequently used tabs. Hovering over a tab displays a pin icon, and clicking it sets that tab as the default entry tab. Only one tab can be pinned; pinning another tab automatically unpins the existing one.
 
 The metrics displayed per tab vary depending on the DB engine.
 
@@ -76,7 +76,7 @@ The metrics displayed per tab vary depending on the DB engine.
 {% tab title="Tibero" %}
 **Quick Insight**
 
-| Metric Name | Description |
+| Metric name | Description |
 | --- | --- |
 | Total Session Count (CNT) | Total number of currently connected sessions |
 | Execute Count (CNT) | Number of queries executed within a unit of time |
@@ -87,7 +87,7 @@ The metrics displayed per tab vary depending on the DB engine.
 
 **Load**
 
-| Metric Name | Description |
+| Metric name | Description |
 | --- | --- |
 | Total Session Count (CNT) | Total number of currently connected sessions |
 | Execute Count (CNT) | Number of queries executed within a unit of time |
@@ -98,17 +98,17 @@ The metrics displayed per tab vary depending on the DB engine.
 
 **I/O**
 
-| Metric Name | Description |
+| Metric name | Description |
 | --- | --- |
 | Physical Reads (CNT) | Number of pages read directly from disk |
-| Disk Read Rate (MB/s) | Amount of data processed for read requests from disk per unit of time |
-| Disk Write Rate (MB/s) | Amount of data processed for write requests to disk per unit of time |
+| Disk Read Rate (MB/s) | Amount of data served from disk read requests per unit of time |
+| Disk Write Rate (MB/s) | Amount of data served from disk write requests per unit of time |
 | Multi Block Disk Read (block/s) | Number of multi-block disk read blocks within a unit of time (per second) |
 | Physical Write (block/s) | Number of DBWR written blocks within a unit of time (per second) |
 
 **Writes**
 
-| Metric Name | Description |
+| Metric name | Description |
 | --- | --- |
 | Execute Count (CNT) | Number of queries executed within a unit of time |
 | Redo Entries (CNT) | Number of Redo records written to the log buffer |
@@ -118,7 +118,7 @@ The metrics displayed per tab vary depending on the DB engine.
 {% tab title="OpenSQL" %}
 **Quick Insight**
 
-| Metric Name | Description |
+| Metric name | Description |
 | --- | --- |
 | Total Session Count (CNT) | Total number of currently connected sessions |
 | Execute Count (CNT) | Number of queries executed within a unit of time |
@@ -129,7 +129,7 @@ The metrics displayed per tab vary depending on the DB engine.
 
 **Load**
 
-| Metric Name | Description |
+| Metric name | Description |
 | --- | --- |
 | Total Session Count (CNT) | Total number of currently connected sessions |
 | Execute Count (CNT) | Number of queries executed within a unit of time |
@@ -140,17 +140,17 @@ The metrics displayed per tab vary depending on the DB engine.
 
 **I/O**
 
-| Metric Name | Description |
+| Metric name | Description |
 | --- | --- |
 | Physical Reads (CNT) | Number of pages read directly from disk |
-| Disk Read Rate (MB/s) | Amount of data processed for read requests from disk per unit of time |
-| Disk Write Rate (MB/s) | Amount of data processed for write requests to disk per unit of time |
-| Block Read Latency (ms/block) | Average time taken to read one data block |
-| Block Write Latency (ms/block) | Average time taken to write one data block |
+| Disk Read Rate (MB/s) | Amount of data served from disk read requests per unit of time |
+| Disk Write Rate (MB/s) | Amount of data served from disk write requests per unit of time |
+| Block Read Latency (ms/block) | Average time taken to read a single data block |
+| Block Write Latency (ms/block) | Average time taken to write a single data block |
 
 **Writes**
 
-| Metric Name | Description |
+| Metric name | Description |
 | --- | --- |
 | Execute Count (CNT) | Number of queries executed within a unit of time |
 | Transactions (CNT) | Number of transactions completed within a unit of time |
@@ -159,14 +159,14 @@ The metrics displayed per tab vary depending on the DB engine.
 {% endtab %}
 {% endtabs %}
 
-### OpenSQL View Switching
+### OpenSQL View switching <a href="#opensql-view" id="opensql-view"></a>
 
-When OpenSQL is selected, the screen additionally displays a **Instance View**and **Database View** toggle button.
+When OpenSQL is selected, a **Instance View**and **Database View** switch button is additionally displayed on the screen.
 
-<table><thead><tr><th>View</th><th>Description</th></tr></thead><tbody><tr><td>Instance View (default)</td><td><ul><li>Displays metrics for the selected Database aggregated or averaged at the Instance level</li><li>The DB Select tree is displayed in 2 levels</li></ul></td></tr><tr><td>Database View</td><td><ul><li>Displays metrics separated by each selected Database</li><li>The DB Select tree switches to 3 levels</li></ul></td></tr></tbody></table>
+<table><thead><tr><th>View</th><th>Description</th></tr></thead><tbody><tr><td>Instance View (default)</td><td><ul><li>Displays metrics at the Instance level by summing or averaging the selected Databases' metrics</li><li>The DB Select tree is displayed in two levels</li></ul></td></tr><tr><td>Database View</td><td><ul><li>Displays metrics separately for each selected Database</li><li>The DB Select tree switches to three levels</li></ul></td></tr></tbody></table>
 
 {% hint style="info" %}
 **Note**
 
-Even when switching to Database View, metrics that are only provided at the Instance level are still displayed on an Instance basis.
+Even when switching to Database View, metrics provided only at the Instance level are displayed as-is on an Instance basis.
 {% endhint %}

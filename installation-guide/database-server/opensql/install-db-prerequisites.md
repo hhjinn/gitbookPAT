@@ -1,28 +1,28 @@
-This page prepares the server environment for an OpenSQL-based database installation. It covers downloading the distribution files and placing them in the installation directory, installing the required packages and owlagent, and then performing environment validation.
+This page prepares the server environment for an OpenSQL-based database installation. It downloads the distribution file and places it in the installation directory, installs the required packages and owlagent, and then performs environment verification.
 
-# **1. List of Required Files**
+# **1. List of required files** <a href="#required-files" id="required-files"></a>
 
 - owldb dp binary (`owldb_dp_installer_owl_x.x.x.tar.gz`)
 - OpenSQL binary (`Tmax_OpenSQL_*.tar.gz`)
-- license file (`license.xml`)
+- License file (`license.xml`)
 
-# **2. Creating the Installation Directory**
+# **2. Creating the installation directory** <a href="#create-install-directory" id="create-install-directory"></a>
 
-Create the path where the database will be installed (hereafter `설치 디렉터리`). (Example: `/home/rocky/owldb`)
+The path where the database will be installed (hereafter `installation directory`) is created. (Example: `/home/rocky/owldb`)
 
 ```bash
 mkdir -p {installation directory}/opensql
 chmod 755 {installation directory}/opensql
 ```
 
-`{설치 디렉터리}/opensql` This path is used as `$OPENSQL_HOME`in the subsequent procedures.
+`{installation directory}/opensql` The path, in subsequent procedures, `$OPENSQL_HOME`Used as.
 
-# **3. File Placement**
+# **3. File Placement** <a href="#place-files" id="place-files"></a>
 
-Extract the DP binary to `$OPENSQL_HOME`extract into it, then place the OpenSQL binary and license file.
+Decompress the DP binary `$OPENSQL_HOME`extract it to, and place the OpenSQL binary and license file.
 
 ```bash
-# Extract the DP binary
+# Decompress the DP binary
 tar -zxvf owldb_dp_installer_owl_x.x.x.tar.gz -C $OPENSQL_HOME
 # Place the OpenSQL binary
 mv {OpenSQL binary file} $OPENSQL_HOME/
@@ -31,21 +31,21 @@ mv {OpenSQL binary file} $OPENSQL_HOME/
 mv {license file} $OPENSQL_HOME/license.xml
 ```
 
-Once preparation is complete, `$OPENSQL_HOME` the structure is as follows.
+After preparation is complete, `$OPENSQL_HOME` the structure is as follows.
 
 ```bash
 $OPENSQL_HOME/
  ├── Tmax_OpenSQL_*.tar.gz            # OpenSQL binary
- ├── license.xml                      # License file
+ ├── license.xml                      # license file
  └── owldb_dp_installer
      ├── owlagent_dist_latest.tar.gz
      ├── install_opensql_package.sh
      └── validate_infra.sh
 ```
 
-# **4. Install required packages**
+# **4. Install required packages** <a href="#install-required-packages" id="install-required-packages"></a>
 
-`owldb_dp_installer` Move to the directory and run the script. Subsequently, perform steps 5 and 6 in the same directory as well.
+`owldb_dp_installer` Move to the directory and run the script. The subsequent procedures 5 and 6 are also performed continuously in the same directory.
 
 ```bash
 cd $OPENSQL_HOME/owldb_dp_installer
@@ -122,9 +122,9 @@ dnf install -y \
 
 dnf --enablerepo=pgdg-common install -y SFCGAL
 
-# geos-devel: AppStream only has the geos runtime and no devel subpackage. pgdg-common provides the version
-# with a name bearing a suffix (geos313-devel), and opensql-installer checks with the geos*-devel pattern,
-# so this name also satisfies the required package requirement. Matches 3.13.1, the same as AppStream geos.
+# geos-devel: AppStream only has the geos runtime and does not have the devel subpackage. pgdg-common uses a version
+# distributed under a name with a suffix (geos313-devel), and opensql-installer
+# inspects with the geos*-devel pattern, so this name also satisfies the required package requirement. Match it to 3.13.1, the same as AppStream geos.
 dnf --enablerepo=pgdg-common install -y geos313-devel
 
 pip3 install pyyaml etcd3 requests psycopg2-binary 'protobuf<4.0.0' tabulate
@@ -133,9 +133,9 @@ pip3 install pyyaml etcd3 requests psycopg2-binary 'protobuf<4.0.0' tabulate
 set +x
 ```
 
-# **5. Install owlagent**
+# **5. Install owlagent** <a href="#install-owlagent" id="install-owlagent"></a>
 
-1. Extract the owlagent binary. 
+1. Extract the owlagent binary.
  tar -zxvf owlagent_dist_latest.tar.gz -C $OPENSQL_HOME owlagent_dist_latest.tar.gz └── owlagent_dist/ ├── config.json.description ├── manifest ├── owlagent ├── owlagent.env ├── owlagent_start.sh └── owlagent_stop.sh
 2. Enter the configuration values in owlagent.env.
 
@@ -144,8 +144,8 @@ set +x
 | AGENT_TYPE | pg |
 | IP | IP of the OwlDB CP |
 | PORT | port of the OwlDB CP |
-| USERNAME | Name of the user that will run opensql |
-| OPENSQL_HOME | [2. Create installation directory](#h-2-설치-디렉터리-생성) Use $OPENSQL_HOME entered in the step |
+| USERNAME | name of the user that will run opensql |
+| OPENSQL_HOME | [2. Create the installation directory](#create-install-directory) Use the $OPENSQL_HOME entered in the step |
 
 3. Run owlagent. sh owlagent_start.sh
 
@@ -155,9 +155,9 @@ set +x
 `owlagent_start.sh` The script registers owlagent as a systemd service and timer, and sudo privileges are used during this process.
 {% endhint %}
 
-# **6. Perform environment validation**
+# **6. Perform Environment Verification** <a href="#verify-environment" id="verify-environment"></a>
 
-Run the script that validates whether the current server is ready for database installation.
+Runs a script that verifies whether the current server is ready for database installation.
 
 ```bash
 bash validate_infra.sh --mode DP --db-type opensql

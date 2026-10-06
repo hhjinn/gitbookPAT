@@ -1,7 +1,7 @@
-This describes how to connect to the OwlDB UI and check the Agent connection status.
+Describes how to access the OwlDB UI and check the Agent connection status.
 
-## 1. Verify Agent connection
+## 1. Verify Agent connection <a href="#check-agent-connection" id="check-agent-connection"></a>
 
-After accessing the OwlDB UI **Explore** Click the button to verify the Agent connection status.
+After connecting to the OwlDB UI, **Explore** button to check the Agent connection status.
 
-The connection address is `http://<OwlDB 서버 IP>:<UI_PORT>/owldb/#/auth/login`.
+The access address is `http://<OwlDB Server IP>:<UI_PORT>/owldb/#/auth/login`.

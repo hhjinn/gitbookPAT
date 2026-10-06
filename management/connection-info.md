@@ -1,17 +1,17 @@
-Connection Information Management is a menu that lets you check the connection address of a DB Service and centrally manage access control and external integration settings.
+Connection information management is a menu for checking the DB Service's connection address and integrally managing access control and external integration settings.
 
-The tabs provided in this menu differ depending on the DB engine.
+The tabs provided in the menu differ depending on the DB engine.
 
 | Tab | Description | Tibero | OpenSQL |
 | --- | --- | --- | --- |
-| Endpoint | Check the endpoint address accessible by external applications | ✓ | ✓ |
+| Endpoint | Check the endpoint address that external applications can connect to | ✓ | ✓ |
 | Access Control | View and manage IP-based access allow/block rules (pg_hba) | — | ✓ |
-| OpenProxy | View and edit OpenProxy parameters and Pool, User, and Shard configurations | — | ✓ |
+| OpenProxy | View and edit OpenProxy parameters and Pool, User, Shard configurations | — | ✓ |
 | Replication Slot | View and manage Replication Slots used for integration with external systems | — | ✓ |
 
-### Common Top Area
+### Common top area <a href="#undefined" id="undefined"></a>
 
-At the top of the Connection Information Management screen, the identification information of the currently selected DB Service is displayed fixed across all tabs.
+At the top of the connection information management screen, the identification information of the currently selected DB Service is fixed and displayed across all tabs.
 
 | Item | Description |
 | --- | --- |
@@ -21,9 +21,9 @@ At the top of the Connection Information Management screen, the identification i
 
 ---
 
-### Endpoint Tab
+### Endpoint tab <a href="#endpoint" id="endpoint"></a>
 
-The Endpoint tab **Service Endpoint**and **Endpoint Details** It consists of two areas and lets you view the representative connection address of the DB Service and detailed information for each instance.
+The Endpoint tab is **Service Endpoint**and **Endpoint Details** It consists of two areas and displays the DB Service's representative connection address and detailed information per instance.
 
 **Service Endpoint**
 
@@ -38,193 +38,193 @@ The Endpoint tab **Service Endpoint**and **Endpoint Details** It consists of two
 | VIP | VIP address for instance connection |
 | Private IP | Instance internal network address |
 | Port | DB Listener port number |
-| Health | Instance status |
+| Health | Instance Status |
 
 Only instances that have completed creation appear in the list; instances being created are not displayed. Even if a Failover or Switchover occurs, the Service Endpoint is always displayed based on the current Primary instance.
 
 {% hint style="info" %}
 **Note**
 
-If a spec change operation is in progress, an in-progress banner is displayed at the top of the screen, and in this state the **Topology** item in the common top area displays the topology before the change is applied.
+If a spec change operation is in progress, an in-progress banner is displayed at the top of the screen, and in this state the **Topology** item in the top common area displays the topology prior to applying the change.
 {% endhint %}
 
-**How to View the Endpoint**
+**How to view the Endpoint**
 
 1. From the top menu, **Management > Connection Information Management**Click.
 2. **Endpoint** Click the tab.
-3. **Service Endpoint** In this area, check the representative connection address and port of the DB Service. **Single**: Displays Private IP **HA·TAC·DR**: Displays VIP
-4. **Endpoint Details** In the list, check the alias, role, VIP, Private IP, port, and Health status for each instance.
-5. Copy the Endpoint address using the 📋 icon in the row you want to copy.
+3. **Service Endpoint** In the area, check the DB Service's representative connection address and port. **Single**: Displays Private IP **HA·TAC·DR**: Displays VIP
+4. **Endpoint Details** In the list, check each instance's alias, role, VIP, Private IP, port, and Health status.
+5. Copy the Endpoint address using the 📋 icon on the row you want to copy.
 6. Manually refresh the list using the 🔃 icon at the top.
 
 ---
 
-### Access Control Tab
+### Access Control tab <a href="#access-control" id="access-control"></a>
 
 {% hint style="info" %}
 **Note**
 
-The Access Control tab **OpenSQL** It is provided only in the environment.
+The Access Control tab is **OpenSQL** Provided only in the environment
 {% endhint %}
 
-Displays the list of pg_hba rules currently applied to the DB Service in table format. Rules are fixed-sorted in ascending order of Priority, and rules positioned higher are applied first.
+Displays the list of pg_hba rules currently applied to the DB Service in table format. Rules are fixed and sorted in ascending order of Priority, and rules positioned higher are applied first.
 
 | Column | Description |
 | --- | --- |
-| Priority | The order in which rules are applied. The lower the number, the earlier it is applied |
+| Priority | The order in which rules are applied. The smaller the number, the earlier it is applied |
 | Type | Connection type (`local` / `host` / `hostssl` / `hostnossl`) |
-| Database alias | The database name to which the rule applies |
-| User | The user name to which the rule applies |
-| Address | The client address to allow or block |
+| Database alias | Name of the database to which the rule applies |
+| User | Name of the user to which the rule applies |
+| Address | Client address to allow or block |
 | Method | Authentication method |
-| Auth Option | Detailed authentication options according to Method |
+| Auth Option | Detailed authentication options based on Method |
 | Comment | Description of the rule |
 
-The screen operates in two states: view mode and edit mode. In view mode, **Create**/**Delete** Add and remove rules using the button, and in edit mode, the entire table switches to an inline-editable state so you can change existing rule values or the Priority (order).
+The screen operates in two states: view mode and edit mode. In view mode, **Create**/**Delete** buttons are used to add and remove rules, while in edit mode the entire table switches to an inline-editable state, allowing you to change existing rule values or the Priority (order).
 
 {% hint style="warning" %}
 **Caution**
 
-Fixed rules automatically generated by the system cannot be edited or reordered even in edit mode. At minimum, the top 3 rules are system fixed rules, and there can be up to 4 depending on the Barman configuration. The Priority of rules added by the user can be assigned starting from the number following the system fixed rules.
+Fixed rules automatically generated by the system cannot be edited or reordered even in edit mode. At least the top 3 rules are system fixed rules, and there can be up to 4 depending on the Barman settings. The Priority of rules added by users can be assigned starting from the number after the system fixed rules.
 {% endhint %}
 
-**Viewing Rules**
+**View rules**
 
-1. **Management > Connection Information Management**From **Access Control** Click the tab.
-2. Check the list of currently applied pg_hba rules in ascending order of Priority. System rules pinned at the top of the list cannot be modified or deleted.
+1. **Management > Connection Information Management**In **Access Control** Click the tab.
+2. Check the list of currently applied pg_hba rules in ascending order of Priority. The system rules pinned at the top of the list cannot be edited or deleted.
 
-**Creating a Rule**
+**Create a rule**
 
 1. **Create** Click the button.
-2. Enter the following items in the right-side drawer.
+2. Enter the following items in the drawer on the right.
 
-<table><thead><tr><th>Item</th><th>Description</th><th>Input rules</th></tr></thead><tbody><tr><td>Priority</td><td>Rule application order (lower numbers are applied first)</td><td><ul><li>If left blank, added as the last entry</li><li>Can be entered starting after the system-fixed rule numbers</li></ul></td></tr><tr><td>Type *</td><td>Connection type</td><td><ul><li><code>local</code> / <code>host</code> / <code>hostssl</code> / <code>hostnossl</code>Select one of</li><li>Default value<code>host</code></li></ul></td></tr><tr><td>Database *</td><td>Database to apply the rule to</td><td><ul><li>Select one or more from the database list, or select a special keyword (<code>all</code>, <code>sameuser</code>, <code>samerole</code>)</li><li>A special keyword and the database list cannot be selected at the same time</li></ul></td></tr><tr><td>User *</td><td>User to apply the rule to</td><td>Select one or more from the user list, or <code>all</code> Select</td></tr><tr><td>Address *</td><td>Client address to allow access from</td><td><ul><li>Enter a CIDR or Hostname directly, or select a special keyword (<code>all</code>, <code>samehost</code>, <code>samenet</code>)</li><li>If Type is<code>local</code>it is disabled</li><li>When a single IP is entered, it is automatically converted to CIDR format (IPv4:<code>/32</code>, IPv6: <code>/128</code>)</li></ul></td></tr><tr><td>Method *</td><td>Authentication method</td><td><ul><li>Select from the dropdown</li><li>Default value<code>scram-sha-256</code></li></ul></td></tr><tr><td>Auth Option</td><td>Detailed authentication options for the Method</td><td><ul><li>The input method varies depending on the Method</li><li><code>trust</code> or <code>reject</code>Disabled when selected</li><li><code>scram-sha-256</code> or <code>md5</code>Select from the dropdown when selected</li><li>Other Methods are entered in<code>key=value</code> format</li></ul></td></tr><tr><td>Comment</td><td>Note for the rule</td><td>Line breaks cannot be entered</td></tr></tbody></table>
+<table><thead><tr><th>Item</th><th>Description</th><th>Input Rules</th></tr></thead><tbody><tr><td>Priority</td><td>Rule application order (the smaller the number, the higher the priority)</td><td><ul><li>If left empty, it is added as the last in order</li><li>Can be entered starting after the system fixed rule number</li></ul></td></tr><tr><td>Type *</td><td>Connection type</td><td><ul><li><code>local</code> / <code>host</code> / <code>hostssl</code> / <code>hostnossl</code>Select from</li><li>Default<code>host</code></li></ul></td></tr><tr><td>Database *</td><td>Database to which the rule applies</td><td><ul><li>Select one or more from the database list, or select one special keyword (<code>all</code>, <code>sameuser</code>, <code>samerole</code>)</li><li>A special keyword and the database list cannot be selected at the same time</li></ul></td></tr><tr><td>User *</td><td>User to which the rule applies</td><td>Select one or more from the user list, or select <code>all</code> Select</td></tr><tr><td>Address *</td><td>Client address to allow access</td><td><ul><li>Enter CIDR or Hostname directly, or select a special keyword (<code>all</code>, <code>samehost</code>, <code>samenet</code>)</li><li>If Type is<code>local</code>it is disabled</li><li>When a single IP is entered, it is automatically converted to CIDR format (IPv4:<code>/32</code>, IPv6: <code>/128</code>)</li></ul></td></tr><tr><td>Method *</td><td>Authentication method</td><td><ul><li>Select from the dropdown</li><li>Default<code>scram-sha-256</code></li></ul></td></tr><tr><td>Auth Option</td><td>Detailed authentication options for Method</td><td><ul><li>The input method differs depending on Method</li><li><code>trust</code> or <code>reject</code>Disabled when selected</li><li><code>scram-sha-256</code> or <code>md5</code>Select from the dropdown when selected</li><li>Other Methods use<code>key=value</code> format input</li></ul></td></tr><tr><td>Comment</td><td>Note about the rule</td><td>Line breaks cannot be entered</td></tr></tbody></table>
 
 *표기는 필수 입력 항목을 의미합니다.
 
-* indicates a required input field.
+The * notation indicates a required input field.
 
-1. After completing the input **Create** Click the button.
+1. After completing the input, **Create** Click the button.
 
-**Modifying a Rule**
+**Edit rule**
 
 1. **Edit** Click the button.
-2. Once switched to edit mode, modify each item in the table inline. Changing the Priority automatically adjusts the order of other affected rules. Changing the Type `local`to disable the Address field.
-3. Once the modification is complete **Save** Click the button.
-4. Check the content before and after the modification in the change comparison modal.
+2. When switched to edit mode, edit each item in the table inline. When you change the Priority, the order of other affected rules is automatically adjusted. Changing Type to `local`disables the Address field.
+3. When editing is complete, **Save** Click the button.
+4. Check the before-and-after content in the change comparison modal.
 5. **Save** Click the button.
 
-Once the save is complete, the changes are immediately reflected in pg_hba.
+Once saving is complete, the changes are immediately applied to pg_hba.
 
 {% hint style="warning" %}
 **Caution**
 
-The connection may be re-validated upon saving. Save after thoroughly reviewing the content in the change comparison modal.
+Connections may be re-validated upon saving. Save after thoroughly reviewing the content in the change comparison modal.
 {% endhint %}
 
-**Deleting a Rule**
+**Delete rule**
 
 1. Select the checkbox of the rule to delete.
 2. **Delete** Click the button.
-3. In the delete confirmation modal **Delete** Click the button.
+3. In the delete confirmation modal, **Delete** Click the button.
 
 ---
 
-### OpenProxy Tab
+### OpenProxy tab <a href="#openproxy" id="openproxy"></a>
 
 {% hint style="info" %}
 **Note**
 
-The OpenProxy tab **OpenSQL** It is provided only in the environment.
+The OpenProxy tab **OpenSQL** Provided only in the environment
 {% endhint %}
 
-Views and modifies OpenProxy parameters by Scope. When you select a query range in the **Select Scope** area on the left side of the screen, the parameter list for that Scope is displayed in the table on the right. The default selection is **General**.
+Views and edits OpenProxy parameters by Scope. When you select the query range in the **Select Scope** area on the left side of the screen, the parameter list for that Scope is displayed in the table on the right. The default selection is **General**.
 
 | Scope | Description |
 | --- | --- |
 | General | Global configuration parameters |
-| Virtual Router | HA/VIP-related configuration parameters |
-| Pool | Parameters at the specific Pool level |
-| User | Parameters at the specific user level within a specific Pool |
-| Shard | Parameters at the specific Shard level within a specific Pool |
+| Virtual Router | HA/VIP related configuration parameters |
+| Pool | Parameters for a specific Pool |
+| User | Parameters for a specific user within a specific Pool |
+| Shard | Parameters for a specific Shard within a specific Pool |
 
 Pool, User, and Shard are displayed in an accordion structure.
 
-**Parameter List Table**
+**Parameter list table**
 
 | Column | Description |
 | --- | --- |
 | Name | Parameter name |
 | Type | Parameter data type |
-| Default value | The default value applied when not set by the user |
-| Current Value | Currently applied value |
-| Dynamic Parameter | Whether it can be applied immediately without a restart (`예` / `아니요`) |
+| Default | Default value applied when the user has not set it |
+| Current value | Currently applied value |
+| Dynamic parameter | Whether it can be applied immediately without a restart (`Yes` / `No`) |
 
-Edit mode operates at the session level rather than the screen level, so already-modified content is retained even if you change the Scope. Upon saving, the result differs depending on the parameter type.
+Edit mode operates on a per-session basis rather than per-screen, so already edited content is retained even if you change the Scope. Upon saving, the result differs depending on the parameter type.
 
-- **Modifying only dynamic parameters**: Reflected immediately without a restart
-- **Including static parameters**: Reflected after restarting OpenProxy
+- **Editing only dynamic parameters**: Applied immediately without a restart
+- **Including static parameters**: Applied after restarting OpenProxy
 
-**Parameter Lookup**
+**View parameters**
 
-1. **Management > Connection Information Management**From **OpenProxy** Click the tab.
-2. By default **General** The parameter list for the Scope is displayed.
-3. **Select Scope**Select the desired query range from
-4. Search for parameters by name, default value, or current value, or **Dynamic Parameter** Filter by whether it is
+1. **Management > Connection Information Management**In **OpenProxy** Click the tab.
+2. By default, **General** The parameter list of the Scope is displayed.
+3. **Select Scope**Select the desired query scope in .
+4. Search for parameters by name, default value, or current value, or **Dynamic parameter** filter by status.
 
-**Modifying Parameters**
+**Modify parameters**
 
 1. **Edit** Click the button.
 
 {% hint style="info" %}
 **Note**
 
-Only when the DB Service status is `Running` status **Edit** the button is enabled.
+When the DB Service status is `Running` Only when in the status **Edit** the button is enabled.
 {% endhint %}
 
-2. Once switched to edit mode, directly modify the **Current Value**of the parameter to be changed in the table. Parameters pending changes are displayed in blue.
-3. Modified content is retained even if you change the Scope.
-4. Once the modification is complete **Save** Click the button.
-5. Check the modifications in the save confirmation modal.
-6. **Apply** Click the button. **Modifying only dynamic parameters**: Reflected immediately **Including static parameters**: Applied after restart
+2. When switched to edit mode, in the table the **Current value**of the parameter to be changed is edited directly. Parameters pending change are displayed in blue.
+3. Even if the Scope is changed, the content being edited is retained.
+4. When editing is complete, **Save** Click the button.
+5. Review the changes in the save confirmation modal.
+6. **Apply** Click the button. **Editing only dynamic parameters**: Applied immediately **Including static parameters**: Applied after restart
 
 {% hint style="info" %}
 **Note**
 
-**Apply** Changes are not applied to the server until you click the button. **Cancel** Clicking the button resets all changes.
+**Apply** Changes are not applied to the server until the button is clicked. **Cancel** Clicking the button resets all changes.
 {% endhint %}
 
 **Creating a Pool / User / Shard**
 
 1. **Edit** Click the button to switch to edit mode.
-2. **Select Scope** In the area, click the ➕ icon for the type you want to create (Pool, User, Shard).
+2. **Select Scope** In the area, click the ➕ icon for the type to create (Pool, User, Shard).
 3. Enter the following items in the creation modal.
 
 {% tabs %}
-{% tab title="Creating a Pool" %}
-<table><thead><tr><th>Item</th><th>Description</th><th>Input rules</th></tr></thead><tbody><tr><td>Pool Name *</td><td>Pool name</td><td>1–63 characters. Lowercase English letters (a-z), digits (0-9), and underscore (<code>_</code>) are allowed. The first character cannot be a digit. Must be unique within the DB Service.</td></tr><tr><td>User Name *</td><td>Name of the user to belong to the Pool</td><td>1–63 characters. Lowercase English letters (a-z), digits (0-9), and underscore (<code>_</code>) are allowed. The first character cannot be a digit.</td></tr><tr><td>Pool Size *</td><td>Maximum number of DB server connections the user can occupy simultaneously</td><td>Enter an integer. Range: 1 ~ max connections. Default: 9</td></tr><tr><td>Password *</td><td>User password</td><td>1–30 characters. Lowercase English letters (a-z), digits (0-9), and special characters (<code>-</code>, <code>_</code>, <code>#</code>, <code>$</code>) are allowed</td></tr><tr><td>Shard Name *</td><td>Name of the Shard to create in the Pool</td><td>1–30 characters. Lowercase English letters (a-z), digits (0-9), and underscore (<code>_</code>) are allowed. Must be unique within the same Pool.</td></tr><tr><td>Database Name *</td><td>Database to connect to the Pool</td><td>Select from the dropdown</td></tr><tr><td>Servers *</td><td>DB server to connect to</td><td><ul><li>Select one or more from the dropdown</li><li>Displays the instance Role and Instance Alias</li></ul></td></tr><tr><td>Use Patroni</td><td>Whether to use Auto Failover via Patroni</td><td>Always enabled (cannot be changed)</td></tr></tbody></table>
+{% tab title="Create Pool" %}
+<table><thead><tr><th>Item</th><th>Description</th><th>Input Rules</th></tr></thead><tbody><tr><td>Pool Name *</td><td>Pool name</td><td>1–63 characters, lowercase English letters (a-z), digits (0-9), and underscore (<code>_</code>) can be used. The first character cannot be a digit. Cannot be duplicated within the DB Service.</td></tr><tr><td>User Name *</td><td>Name of the user that will belong to the Pool</td><td>1–63 characters, lowercase English letters (a-z), digits (0-9), and underscore (<code>_</code>) can be used. The first character cannot be a digit.</td></tr><tr><td>Pool Size *</td><td>Maximum number of DB server connections the user can occupy simultaneously</td><td>Enter an integer. Range: 1 ~ max connections. Default: 9</td></tr><tr><td>Password *</td><td>User password</td><td>1–30 characters, lowercase English letters (a-z), digits (0-9), and special characters (<code>-</code>, <code>_</code>, <code>#</code>, <code>$</code>) can be used</td></tr><tr><td>Shard Name *</td><td>Name of the Shard to create in the Pool</td><td>1–30 characters, lowercase English letters (a-z), digits (0-9), and underscore (<code>_</code>) can be used. Cannot be duplicated within the same Pool.</td></tr><tr><td>Database Name *</td><td>Database to connect to the Pool</td><td>Select from the dropdown</td></tr><tr><td>Servers *</td><td>DB server to connect to</td><td><ul><li>Select one or more from the dropdown</li><li>Displays the instance Role and Instance Alias</li></ul></td></tr><tr><td>Use Patroni</td><td>Whether to use Auto Failover through Patroni</td><td>Always enabled (cannot be changed)</td></tr></tbody></table>
 
 *표기는 필수 입력 항목을 의미합니다.
 
-* indicates a required input field.
+The * notation indicates a required input field.
 {% endtab %}
-{% tab title="Creating a User" %}
-| Item | Description | Input rules |
+{% tab title="Create User" %}
+| Item | Description | Input Rules |
 | --- | --- | --- |
-| User Name * | Name of the user to add | 1–63 characters. Lowercase English letters (a-z), digits (0-9), and underscore (`_`) are allowed. The first character cannot be a digit. Must be unique within the same Pool. |
+| User Name * | Name of the user to add | 1–63 characters, lowercase English letters (a-z), digits (0-9), and underscore (`_`) can be used. The first character cannot be a digit. Cannot be duplicated within the same Pool. |
 | Pool Size * | Maximum number of DB server connections the user can occupy simultaneously | Enter an integer. Range: 1 ~ max connections. Default: 9 |
-| Password * | User password | 1–30 characters. Lowercase English letters (a-z), digits (0-9), and special characters (`-`, `_`, `#`, `$`) are allowed |
+| Password * | User password | 1–30 characters, lowercase English letters (a-z), digits (0-9), and special characters (`-`, `_`, `#`, `$`) can be used |
 
 *표기는 필수 입력 항목을 의미합니다.
 
-* indicates a required input field.
+The * notation indicates a required input field.
 {% endtab %}
-{% tab title="Creating a Shard" %}
-<table><thead><tr><th>Item</th><th>Description</th><th>Input rules</th></tr></thead><tbody><tr><td>Shard Name *</td><td>Name of the Shard to add</td><td>1–30 characters. Lowercase English letters (a-z), digits (0-9), and underscore (<code>_</code>) are allowed. Must be unique within the same Pool.</td></tr><tr><td>Database Name *</td><td>Database to connect to the Shard</td><td>Select from the dropdown</td></tr><tr><td>Servers *</td><td>DB server to connect to</td><td><ul><li>Select one or more from the dropdown</li><li>Displays the instance Role, Instance Alias, and Health</li><li>Health is for reference only and does not affect server selection</li></ul></td></tr><tr><td>Use Patroni</td><td>Whether to use Auto Failover via Patroni</td><td>Always enabled (cannot be changed)</td></tr></tbody></table>
+{% tab title="Create Shard" %}
+<table><thead><tr><th>Item</th><th>Description</th><th>Input Rules</th></tr></thead><tbody><tr><td>Shard Name *</td><td>Name of the Shard to add</td><td>1–30 characters, lowercase English letters (a-z), digits (0-9), and underscore (<code>_</code>) can be used. Cannot be duplicated within the same Pool.</td></tr><tr><td>Database Name *</td><td>Database to connect to the Shard</td><td>Select from the dropdown</td></tr><tr><td>Servers *</td><td>DB server to connect to</td><td><ul><li>Select one or more from the dropdown</li><li>Displays the instance Role, Instance Alias, and Health</li><li>Health is for reference only and does not affect server selection</li></ul></td></tr><tr><td>Use Patroni</td><td>Whether to use Auto Failover through Patroni</td><td>Always enabled (cannot be changed)</td></tr></tbody></table>
 
 *표기는 필수 입력 항목을 의미합니다.
 
-* indicates a required input field.
+The * notation indicates a required input field.
 {% endtab %}
 {% endtabs %}
 
@@ -234,20 +234,20 @@ Only when the DB Service status is `Running` status **Edit** the button is enabl
 {% hint style="info" %}
 **Note**
 
-**Save** the created items are not applied to the server until you click the button. If you leave the page before saving, the changes are reset.
+**Save** the created item is not applied to the server until the button is clicked. If you leave the page before saving, the changes are reset.
 {% endhint %}
 
 **Deleting a Pool / User / Shard**
 
 1. **Edit** Click the button to switch to edit mode.
-2. **Select Scope** In the area, click the 🗑️ icon for the Pool, User, or Shard item you want to delete. The item is disabled and the icon changes to 🔃. If you delete a Pool, the User and Shard under that Pool are also disabled together.
+2. **Select Scope** In the area, click the 🗑️ icon of the Pool, User, or Shard item to delete. The item is disabled and the icon changes to 🔃. If you delete a Pool, the Users and Shards under that Pool are also disabled together.
 3. To cancel the deletion, click the 🔃 icon.
 4. To confirm the deletion, **Save** Click the button.
 
 {% hint style="info" %}
 **Note**
 
-The 🗑️ icon is enabled when there are two or more Pools. Users and Shards can be deleted when two or more of each exist within the Pool.
+The 🗑️ icon is enabled when there are two or more Pools. Users and Shards can be deleted when there are two or more of each within the corresponding Pool.
 {% endhint %}
 
 {% hint style="warning" %}
@@ -258,63 +258,63 @@ If you leave the page before saving, the deletion settings are reset. If you del
 
 ---
 
-### Replication Slot tab
+### Replication Slot tab <a href="#replication-slot" id="replication-slot"></a>
 
 {% hint style="info" %}
 **Note**
 
-- The Replication Slot tab **OpenSQL** It is provided only in the environment.
+- The Replication Slot tab **OpenSQL** Provided only in the environment
 - **Logical Type Slot**does not support creation, but querying and deletion are possible.
 - **Permanent Scope Slot**can only be created, and **Temporary Scope Slot**can only be queried and cannot be selected or deleted.
 {% endhint %}
 
-Displays the list of Replication Slots created on the OpenSQL Primary instance in a table format. Even if a Failover or Switchover occurs, the query is always based on the current Primary instance.
+Displays the list of Replication Slots created on the OpenSQL Primary instance in table format. Even if a Failover or Switchover occurs, it is always queried based on the current Primary instance.
 
-<table><thead><tr><th>Column</th><th>Description</th></tr></thead><tbody><tr><td>Name</td><td>Replication Slot name</td></tr><tr><td>Type</td><td><ul><li><code>Physical</code>(stores WAL logs as is)</li><li><code>Logical</code> (converts and stores in INSERT, UPDATE, DELETE form)</li></ul></td></tr><tr><td>Scope</td><td><ul><li><code>Permanent</code>(permanently retained)</li><li><code>Temporary</code> (automatically deleted when the session ends)</li></ul></td></tr><tr><td>Status</td><td><ul><li><code>Connected</code>(Replication Client connected)</li><li><code>Disconnected</code> (no connected Client)</li></ul></td></tr><tr><td>Backlog(MB)</td><td>Amount of WAL data retained and not yet consumed</td></tr></tbody></table>
+<table><thead><tr><th>Column</th><th>Description</th></tr></thead><tbody><tr><td>Name</td><td>Replication Slot name</td></tr><tr><td>Type</td><td><ul><li><code>Physical</code>(stores the WAL log as is)</li><li><code>Logical</code> (converts and stores in INSERT, UPDATE, DELETE form)</li></ul></td></tr><tr><td>Scope</td><td><ul><li><code>Permanent</code>(persisted permanently)</li><li><code>Temporary</code> (automatically deleted when the session ends)</li></ul></td></tr><tr><td>Status</td><td><ul><li><code>Connected</code>(Replication Client connected)</li><li><code>Disconnected</code> (no connected Client)</li></ul></td></tr><tr><td>Backlog(MB)</td><td>Amount of WAL data that has not yet been consumed and is being retained</td></tr></tbody></table>
 
 {% hint style="warning" %}
 **Caution**
 
-Replication Slots created or deleted directly in PostgreSQL, outside the scope of OwlDB management, are not reflected in the OwlDB console. In this case, related management functions such as Slot status query, deletion, and failure handling may not work properly. Replication Slot creation and deletion must always be performed in the OwlDB console.
+Replication Slots created or deleted directly in PostgreSQL outside the OwlDB management scope are not reflected in the OwlDB console. In this case, related management functions such as Slot status query, deletion, and failure response may not operate normally. Replication Slot creation and deletion must always be performed in the OwlDB console.
 {% endhint %}
 
-**Querying Replication Slots**
+**Query Replication Slot**
 
-1. **Management > Connection Information Management**From **Replication Slot** Click the tab.
+1. **Management > Connection Information Management**In **Replication Slot** Click the tab.
 2. Check the list of Replication Slots created on the current Primary instance.
-3. **Type**(Physical / Logical) or **Status**Use the (Connected / Disconnected) filter to narrow the list.
+3. **Type**(Physical / Logical) or **Status**(Connected / Disconnected) filters can be used to narrow down the list.
 
-**Creating a Replication Slot**
+**Create Replication Slot**
 
 1. **Create** Click the button.
-2. Enter the following items in the right-side drawer.
+2. Enter the following items in the drawer on the right.
 
-| Item | Description | Input rules |
+| Item | Description | Input Rules |
 | --- | --- | --- |
-| Name * | Unique name of the Replication Slot | Only lowercase English letters (a-z), numbers (0-9), and underscores (`_`) are allowed. Spaces and tabs cannot be entered. Must not be duplicated. |
-| Type * | Slot type | `Physical` Fixed to |
-| Scope | Operational management target | `Permanent`Fixed to |
+| Name * | Unique name of the Replication Slot | Only lowercase English letters (a-z), numbers (0-9), and underscores (`_`) can be used. Spaces and tabs cannot be entered. Cannot be duplicated. |
+| Type * | Slot Type | `Physical` Fixed to |
+| Scope | Operation management target | `Permanent`Fixed to |
 
 *표기는 필수 입력 항목을 의미합니다.
 
-* indicates a required input field.
+The * notation indicates a required input field.
 
-1. After entering the items, **Create** Click the button.
+1. After entering the items **Create** Click the button.
 
 {% hint style="info" %}
 **Note**
 
-Only when the DB Service status is `Updating` or `Failover`If it is **Create** the button is disabled.
+When the DB Service status is `Updating` or `Failover`If it is **Create** the button is disabled.
 {% endhint %}
 
-**Deleting a Replication Slot**
+**Delete Replication Slot**
 
 1. Select the Slot to delete.
 2. **Delete** Click the button.
-3. After reviewing the content in the deletion confirmation modal, **Delete** Click the button.
+3. After reviewing the contents in the deletion confirmation modal **Delete** Click the button.
 
 {% hint style="info" %}
 **Note**
 
-If the Status is `Connected`Slots and the DB Service status is `Updating` or `Failover`, then **Delete** the button is disabled.
+Status is `Connected`Slots with and DB Service status is `Updating` or `Failover`in the case of **Delete** the button is disabled.
 {% endhint %}

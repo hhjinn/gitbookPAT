@@ -1,23 +1,23 @@
 ---
 description: >-
-  This section introduces OwlDB and provides guidance on how to use each feature.
+  This section introduces OwlDB and guides you through how to use each feature.
 ---
 
 > **Guide Information**
 > 
-> Guide Title: OwlDB User Guide 
+> Guide Title: OwlDB User Guide
 > 
-> Publication Date: 2026-09-30 
+> Publication Date: 2026-09-30
 > 
-> Software Version: OwlDB v.2.0.0 
+> Software Version: OwlDB v.2.0.0
 > 
 > Guide Version: v.2.0.0
 
-## **Overview**
+## **Overview** <a href="#overview" id="overview"></a>
 
-This guide is written for all users who wish to conveniently operate and manage databases using the features provided by OwlDB.
+This guide is written for all users who want to conveniently operate and manage databases using the features provided by OwlDB.
 
-### **Prerequisite Knowledge**
+### **Prerequisite Knowledge** <a href="#undefined-1" id="undefined-1"></a>
 
 - Understanding of databases
 - Understanding of RDBMS
@@ -26,9 +26,9 @@ This guide is written for all users who wish to conveniently operate and manage 
 
 ---
 
-## **Guide Structure**
+## **Guide Structure** <a href="#guide-structure" id="guide-structure"></a>
 
-This document consists of a total of five chapters.
+This document consists of a total of 5 chapters.
 
 {% tabs %}
 {% tab title="Service Overview" %}
@@ -41,8 +41,8 @@ This section provides the installation guide for using OwlDB.
 
 🔎 [Go to Installation Guide](installation-guide/README.md)
 {% endtab %}
-{% tab title="Feature-by-Feature Usage Guide" %}
-This section provides feature-by-feature guidance on how to use OwlDB, from getting started to database creation, management, and monitoring.
+{% tab title="Feature-specific Usage Guide" %}
+This section guides you through how to use OwlDB by feature, from getting started to creating, managing, and monitoring databases.
 
 🔎 [Go to Getting Started](getting-started/README.md)
 
@@ -60,10 +60,10 @@ You can find reference materials that may be helpful when using OwlDB.
 🔎 [Go to Reference Materials](references/README.md)
 {% endtab %}
 {% tab title="Legal Notice" %}
-This section provides guidance on licensing and legal notices related to the use of OwlDB.
+This section provides information on licenses and legal notices related to the use of OwlDB.
 
 🔎 [Go to Legal Notice](legal-notice/README.md)
 {% endtab %}
 {% endtabs %}
 
-### ​
+### ​ <a href="#undefined-8" id="undefined-8"></a>

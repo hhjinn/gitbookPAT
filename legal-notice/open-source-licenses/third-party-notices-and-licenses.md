@@ -1112,7 +1112,7 @@ This product includes the third-party software components listed below. Each com
 > - **License**: Apache License 2.0
 > - **Copyright**: Copyright 2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
-## MIT License
+## MIT License <a href="#mit-license" id="mit-license"></a>
 
 **186** **Group:** `com.azure.resourcemanager` **Name:** `azure-resourcemanager-appplatform` **Version:** `2.50.0`
 
@@ -1438,7 +1438,7 @@ This product includes the third-party software components listed below. Each com
 > - **License**: MIT License
 > - **Copyright**: Copyright (c) 2004-2022 QOS.ch Sarl (Switzerland)
 
-## BSD 3-Clause License
+## BSD 3-Clause License <a href="#bsd-3-clause-license" id="bsd-3-clause-license"></a>
 
 **240** **Group:** `org.abego.treelayout` **Name:** `org.abego.treelayout.core` **Version:** `1.0.3`
 
@@ -1476,7 +1476,7 @@ This product includes the third-party software components listed below. Each com
 > - **License**: BSD 3-Clause License
 > - **Copyright**: Copyright (c) 2000-2011 INRIA, France Telecom
 
-## BSD 2-Clause License
+## BSD 2-Clause License <a href="#bsd-2-clause-license" id="bsd-2-clause-license"></a>
 
 **246** **Group:** `org.hdrhistogram` **Name:** `HdrHistogram` **Version:** `2.2.2`
 
@@ -1572,7 +1572,7 @@ This product includes the third-party software components listed below. Each com
 > - **License**: Eclipse Distribution License 1.0
 > - **Copyright**: Copyright (c) 1997, 2021 Oracle and/or its affiliates. All rights reserved.
 
-## MIT No Attribution
+## MIT No Attribution <a href="#mit-no-attribution" id="mit-no-attribution"></a>
 
 **261** **Group:** `org.reactivestreams` **Name:** `reactive-streams` **Version:** `1.0.4`
 
@@ -1588,7 +1588,7 @@ This product includes the third-party software components listed below. Each com
 > - **License**: Creative Commons Zero v1.0 Universal
 > - **Copyright**: Copyright (c) 2012, 2013, 2014 Gil Tene
 
-## Unicode/ICU License
+## Unicode/ICU License <a href="#unicode-icu-license" id="unicode-icu-license"></a>
 
 **263** **Group:** `com.ibm.icu` **Name:** `icu4j` **Version:** `72.1`
 
@@ -1697,7 +1697,7 @@ This product includes the third-party software components listed below. Each com
 
 ---
 
-## License Texts
+## License Texts <a href="#license-texts" id="license-texts"></a>
 
 ### Apache License 2.0
 
@@ -1761,7 +1761,7 @@ http://www.apache.org/licenses/LICENSE-2.0
 
 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
 
-### MIT License
+### MIT License <a href="#mit-license-1" id="mit-license-1"></a>
 
 The copyright notice for each component licensed under this license is listed with that component above.
 
@@ -1773,7 +1773,7 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-### BSD 3-Clause License
+### BSD 3-Clause License <a href="#bsd-3-clause-license-1" id="bsd-3-clause-license-1"></a>
 
 The copyright notice for each component licensed under this license is listed with that component above.
 
@@ -1785,7 +1785,7 @@ Redistribution and use in source and binary forms, with or without modification,
 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-### BSD 2-Clause License
+### BSD 2-Clause License <a href="#bsd-2-clause-license-1" id="bsd-2-clause-license-1"></a>
 
 The copyright notice for each component licensed under this license is listed with that component above.
 
@@ -1812,7 +1812,7 @@ Redistribution and use in source and binary forms, with or without modification,
 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-### MIT No Attribution
+### MIT No Attribution <a href="#mit-no-attribution-1" id="mit-no-attribution-1"></a>
 
 MIT No Attribution
 
@@ -1848,7 +1848,7 @@ i. the right to reproduce, adapt, distribute, perform, display, communicate, and
 
 a. No trademark or patent rights held by Affirmer are waived, abandoned, surrendered, licensed or otherwise affected by this document. b. Affirmer offers the Work as-is and makes no representations or warranties of any kind concerning the Work, express, implied, statutory or otherwise, including without limitation warranties of title, merchantability, fitness for a particular purpose, non infringement, or the absence of latent or other defects, accuracy, or the present or absence of errors, whether or not discoverable, all to the greatest extent permissible under applicable law. c. Affirmer disclaims responsibility for clearing rights of other persons that may apply to the Work or any use thereof, including without limitation any person's Copyright and Related Rights in the Work. Further, Affirmer disclaims responsibility for obtaining any necessary consents, permissions or other rights required for any use of the Work. d. Affirmer understands and acknowledges that Creative Commons is not a party to this document and has no duty or obligation with respect to this CC0 or use of the Work.
 
-### Unicode/ICU License
+### Unicode/ICU License <a href="#unicode-icu-license-1" id="unicode-icu-license-1"></a>
 
 UNICODE, INC. LICENSE AGREEMENT - DATA FILES AND SOFTWARE
 

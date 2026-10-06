@@ -1,87 +1,85 @@
-Change detection is a feature that detects when the database configuration has been changed outside of OwlDB and reflects it in OwlDB.
+Change detection is a feature that detects when a database configuration has been changed outside of OwlDB and reflects it in OwlDB.
 
-At the top of the dashboard, **Explore** When you click the button, if there is a DB with detected changes, it is displayed on the dashboard. **Registered DB**Change detection is provided only for these. The installation DB is excluded from change detection.
+At the top of the dashboard, **Explore** when you click the button, any DBs with detected changes are displayed on the dashboard. **Registration DB**Change detection is provided only for this. Installed DBs are excluded from change detection.
 
 ---
 
-## Change Types
+## Change Type <a href="#change-types" id="change-types"></a>
 
-Change detection is categorized into the following two types.
+Change detection is divided into the following two types.
 
 | Type | Description | Supported Engines |
 | --- | --- | --- |
 | Status Change | When the DB configuration remains the same but a node's role has changed<br>(e.g., Failover occurrence, Primary ↔ Standby role switch) | Tibero |
-| Spec Change | When the DB configuration has been changed outside of OwlDB (e.g., Scale In/Out of a Primary or Standby node) | Tibero, OpenSQL |
+| Spec Change | When the DB configuration has been changed outside of OwlDB (e.g., Primary or Standby node Scale In/Out) | Tibero, OpenSQL |
 
 {% hint style="info" %}
 **Note**
 
-- When a state change and a spec change are detected simultaneously, the state change is processed first, and the DB is displayed on the dashboard only as a state-changed DB.
+- When a status change and a spec change are detected simultaneously, the status change is processed first, and the dashboard displays the corresponding DB only as a status-changed DB.
 - Change detection is not supported for topology changes.
-- For OpenSQL, node role changes (state changes) are performed by Patroni, and OwlDB automatically reflects the detection results, so no user action screen is provided. An automatically reflected role change is recorded as Failover in the switch history, and if a spec change is detected along with it, on the dashboard only the **Spec Change** button is activated.
+- For OpenSQL, node role changes (status changes) are performed by Patroni, and OwlDB automatically reflects the detection results, so no user action screen is provided. Automatically reflected role changes are recorded as Failover in the switchover history, and if a spec change is detected together, the dashboard **Spec Change** activates only the button.
 {% endhint %}
 
 ---
 
-## Spec-Changed DB
+## Spec-changed DB <a href="#spec-changed-db" id="spec-changed-db"></a>
 
-When Scale In/Out occurs manually outside of OwlDB, after discovery it is displayed on the dashboard as a card view with the **Spec Change** button activated.
+When Scale In/Out occurs manually outside of OwlDB, after discovery, the dashboard **Spec Change** displays it as a card view with the button activated.
 
-- A Scale In instance is not displayed in the card view.
-- A Scale Out instance is added and displayed at the bottom of the corresponding role list.
+- Scale In instances are not displayed in the card view.
+- Scale Out instances are added and displayed at the bottom of the corresponding role list.
 
-### Reflection Method
+### Reflection Method <a href="#undefined" id="undefined"></a>
 
-1. Select the DB in which a spec change was detected on the dashboard.
+1. Select the DB with a detected spec change from the dashboard.
 2. **Spec Change** Click the button to move to the spec change page.
-3. Check the changed spec information and enter additional information to reflect it in OwlDB.
+3. Verify the changed spec information, enter additional information, and reflect it in OwlDB.
 
 ---
 
-## State-Changed DB
+## Status-changed DB <a href="#status-changed-db" id="status-changed-db"></a>
 
-When a role switch or Failover occurs manually outside of OwlDB, after discovery it is displayed on the dashboard as a card view with the **Status Change** button activated. State change action is provided only for Tibero DB.
+When a role switch or Failover occurs manually outside of OwlDB, after discovery, the dashboard **Status Change** displays it as a card view with the button activated. Status change actions are provided only for Tibero DB.
 
-The card view displays the existing state stored in OwlDB as is until the state change is applied, and clicking the state change button loads a modal window comparing the state before and after the change.
+The card view displays the existing status stored in OwlDB until the status change is applied, and when you click the status change button, a modal window comparing before and after the change is loaded.
 
-- Left card view: Existing state (state stored in OwlDB)
-- Right card view: Current state detected after discovery
+- Left card view: Existing status (status stored in OwlDB)
+- Right card view: Current status detected after discovery
 
 {% hint style="info" %}
 **Note**
 
-When a state change is detected, only the instance's Health information is retrieved, and detailed information such as CPU, Memory, and active sessions is not displayed.
+When a status change is detected, only the instance's Health information is retrieved, and detailed information such as CPU, Memory, and active sessions is not displayed.
 {% endhint %}
 
-### Reflection Method
+### Reflection Method <a href="#undefined-1" id="undefined-1"></a>
 
-It is divided into cases where only a state change is detected and cases where a state change + spec change are detected simultaneously.
+It is divided into cases where only a status change is detected and cases where a status change and a spec change are detected simultaneously.
 
-**When Only a State Change Is Detected**
+**When only a status change is detected**
 
-1. Select the DB in which a state change was detected on the dashboard.
+1. Select the DB with a detected status change from the dashboard.
 2. **Status Change** Click the button.
-3. Check the state before and after the change in the modal window.
+3. Verify the before and after status in the modal window.
 4. Select the desired action from the following.
 
-- **Apply** : Reflects the state change details in OwlDB and closes the modal.
-- **Cancel** : Closes the modal without reflecting the changes.
+- **Apply** : Reflect the status change details in OwlDB and close the modal.
+- **Cancel** : Close the modal without reflecting the changes.
 
+**When a status change and a spec change are detected simultaneously**
 
-
-**When a State Change + Spec Change Are Detected Simultaneously**
-
-1. Select the DB in which a state change was detected on the dashboard.
+1. Select the DB with a detected status change from the dashboard.
 2. **Status Change** Click the button.
-3. Check the state before and after the change in the modal window.
+3. Verify the before and after status in the modal window.
 4. Select the desired action from the following.
 
-- **Apply** : Reflects only the state change in OwlDB and returns to the dashboard.
-- **Cancel** : Closes the modal without reflecting the changes.
-- **Go to Spec Change** : After reflecting the state change, moves to the spec change page to reflect the spec change as well.
+- **Apply** : Reflect only the status change in OwlDB and return to the dashboard.
+- **Cancel** : Close the modal without reflecting the changes.
+- **Go to Spec Change** : After reflecting the status change, move to the spec change page to reflect the spec change as well.
 
 {% hint style="info" %}
 **Note**
 
-**Apply**When only the state change is reflected by selecting this, the spec change button is not displayed on the dashboard. If there are unreflected spec changes remaining, the DB is displayed again as a spec change target when you run **Explore**again.
+**Apply**If you select this to reflect only the status change, the spec change button is not displayed on the dashboard. If there are unreflected spec changes remaining, the corresponding DB will be displayed again as a spec change target when you run **Explore**again.
 {% endhint %}
