@@ -12,11 +12,27 @@ This method dynamically creates and operates databases by using cloud infrastruc
 
 This method operates databases on customer-owned physical infrastructure, such as servers, networks, and storage. It efficiently uses fixed infrastructure resources and supports closed networks isolated from external networks. Through OwlDB, you can install a new database on a host or integrate an existing database as an OwlDB management target for unified control.
 
+### Coverage by License
+
+OwlDB differs in its provided environments and features depending on the license.
+
+| Category                               | OwlDB Operation                                                                      | OwlDB Automation | OwlDB DBaaS                                     |
+| -------------------------------------- | ------------------------------------------------------------------------------------ | ---------------- | ----------------------------------------------- |
+| **Provided Environment**               | <ul><li>On-Premise</li><li>Private Cloud</li><li>Public Cloud (self-built)</li></ul> |                  | <p>AWS, Azure<br>(Marketplace subscription)</p> |
+| **Registered DB Operation Management** | ○                                                                                    | ○                | X (_BYOL new build_\*)                          |
+| **Installation Automation**            | X                                                                                    | ○                | ○                                               |
+
+{% hint style="info" %}
+**Note**
+
+OwlDB DBaaS can only manage DBs newly built through OwlDB, and does not support registering DBs already in operation. **DB licenses you already own can be transferred via the BYOL (Bring Your Own License) method** and applied to DBs newly built in OwlDB DBaaS.
+{% endhint %}
+
 ## Key Features
 
 In addition to management features used in both environments, OwlDB provides dedicated features optimized for cloud and on-premises infrastructure.
 
-**Common Features**
+### **Common Features**
 
 <table data-full-width="true"><thead><tr><th>Feature</th><th>Description</th></tr></thead><tbody><tr><td><strong>Database Status Inquiry</strong></td><td>Real-time verification of database and instance operational status</td></tr><tr><td><strong>Monitoring &#x26; Alerts</strong></td><td><ul><li>Monitoring of key performance indicators and operational status</li><li>Immediate alert delivery when anomalies or events occur</li></ul></td></tr><tr><td><strong>Migration</strong></td><td>Support for pre-migration compatibility validation and guided migration between heterogeneous databases</td></tr><tr><td><strong>Account Management (RBAC)</strong></td><td>Per-user privilege separation and security management through role-based access control</td></tr></tbody></table>
 
