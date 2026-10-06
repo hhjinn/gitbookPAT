@@ -1,0 +1,6 @@
+# 2.0 slug 정리(2026-10-06)에서 GitBook이 자동 redirect를 만들지 않은 옛 URL
+redirects:
+  undefined/undefined-1/tibero/db: installation-guide/database-server/tibero/install-db-prerequisites.md
+  undefined/undefined-1/tibero/db-1: installation-guide/database-server/tibero/register-db-prerequisites.md
+  undefined/undefined-1/opensql/db: installation-guide/database-server/opensql/install-db-prerequisites.md
+  undefined/undefined-1/opensql/db-1: installation-guide/database-server/opensql/register-db-prerequisites.md
