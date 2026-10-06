@@ -12,11 +12,23 @@ OwlDB는 클라우드와 온프레미스 환경에서 데이터베이스를 설�
 
 고객이 자체 보유한 서버, 네트워크, 스토리지 등 물리적 인프라 자원을 기반으로 데이터베이스를 운영하는 방식입니다. 고정된 인프라 리소스를 효율적으로 활용할 수 있도록 설계되었으며, 외부 네트워크와 단절된 폐쇄망 환경을 지원합니다. OwlDB를 통해 호스트에 신규 데이터베이스를 설치하거나, 기존에 이미 운영 중인 데이터베이스를 OwlDB 관리 대상으로 연동하여 통합 제어할 수 있습니다.
 
+### 라이선스별 제공 범위
+
+OwlDB는 라이선스에 따라 제공 환경과 기능에 차이가 있습니다.
+
+<table><thead><tr><th width="161">구분</th><th>OwlDB Operation</th><th width="149">OwlDB Automation</th><th>OwlDB DBaaS</th></tr></thead><tbody><tr><td><strong>제공 환경</strong></td><td colspan="2"><ul><li>On-Premise</li><li>Private Cloud</li><li>Public Cloud (구축형)</li></ul></td><td>AWS, Azure<br>(Marketplace 구독)</td></tr><tr><td><strong>등록 DB 운영 관리</strong></td><td>○</td><td>○</td><td>X (<em>BYOL 신규 구축*</em>)</td></tr><tr><td><strong>설치 자동화</strong></td><td>X</td><td>○</td><td>○</td></tr></tbody></table>
+
+{% hint style="info" %}
+**참고**
+
+OwlDB DBaaS는 OwlDB를 통해 신규 구축한 DB만 관리할 수 있으며, 기존 운영 중인 DB를 등록하는 방식은 지원하지 않습니다. **이미 보유한 DB 라이선스는 BYOL(Bring Your Own License) 방식으로 이관**하여, OwlDB DBaaS에서 신규 구축하는 DB에 적용할 수 있습니다.
+{% endhint %}
+
 ## 주요 기능
 
 OwlDB는 두 환경에서 보편적으로 사용되는 공통 관리 기능을 바탕으로, 클라우드와 온프레미스 각각의 인프라 특성에 최적화된 전용 기능을 제공합니다.
 
-**공통 기능**
+### **공통 기능**
 
 | **기능**           | **설명**                                                              |
 | ---------------- | ------------------------------------------------------------------- |
