@@ -6,7 +6,7 @@
 계정 관리 메뉴는 Root만 접근할 수 있습니다.
 {% endhint %}
 
-## 계정 역할 안내
+## 계정 역할 안내 <a href="#account-roles" id="account-roles"></a>
 
 ### Root
 
@@ -24,7 +24,7 @@ Member는 Root로부터 접근 권한을 부여받은 DB Service에 한하여 Ow
 
 ---
 
-## 계정 목록 조회
+## 계정 목록 조회 <a href="#account-list" id="account-list"></a>
 
 **계정 관리** 메뉴에 진입하면 OwlDB에 등록된 모든 계정 목록을 확인할 수 있습니다. 계정 상태로 필터링하거나, ID, 이름, 이메일로 검색할 수 있습니다.
 
@@ -39,9 +39,9 @@ Member는 Root로부터 접근 권한을 부여받은 DB Service에 한하여 Ow
 
 ---
 
-# 계정 관리 작업
+# 계정 관리 작업 <a href="#account-management-tasks" id="account-management-tasks"></a>
 
-## 계정 생성
+## 계정 생성 <a href="#create-account" id="create-account"></a>
 
 새로운 Member 계정을 직접 생성할 수 있습니다.
 
@@ -54,7 +54,7 @@ Member는 Root로부터 접근 권한을 부여받은 DB Service에 한하여 Ow
 
 ---
 
-## 계정 상세 조회 및 수정
+## 계정 상세 조회 및 수정 <a href="#account-details" id="account-details"></a>
 
 계정 목록에서 사용자 ID를 클릭하면 해당 계정의 상세 정보를 조회할 수 있습니다. 본인을 포함한 모든 계정의 상세 정보를 조회하고 수정할 수 있습니다.
 
@@ -68,7 +68,7 @@ Member는 Root로부터 접근 권한을 부여받은 DB Service에 한하여 Ow
 
 ---
 
-## 계정 생성 요청 승인
+## 계정 생성 요청 승인 <a href="#approve-account-request" id="approve-account-request"></a>
 
 계정이 없는 사용자가 계정 생성을 요청하면, 요청 내역이 **계정 관리** 메뉴에 `Account Requested` 상태로 표시됩니다.
 
@@ -76,7 +76,7 @@ Root가 해당 계정을 `Active` 상태로 변경하면 계정이 활성화됩�
 
 ---
 
-## 계정 삭제
+## 계정 삭제 <a href="#delete-account" id="delete-account"></a>
 
 1. **계정 관리** 메뉴에서 삭제할 계정을 선택합니다.
 2. **삭제** 버튼을 클릭합니다.

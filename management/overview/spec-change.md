@@ -28,7 +28,7 @@ Azure 환경에서는 현재 BYOL 라이선스 모델만 지원합니다.
 * 화면 오른쪽의 **구성 정보** 플로팅 박스에서 각 탭에 입력한 내용을 요약 확인할 수 있으며, 오류 항목은 빨간색 텍스트로 표시됩니다.
 {% endhint %}
 
-## 변경 가능 항목
+## 변경 가능 항목 <a href="#changeable-items" id="changeable-items"></a>
 
 엔진 유형과 라이선스 옵션에 따라 변경할 수 있는 항목이 다릅니다.
 
@@ -57,7 +57,7 @@ Azure 환경에서는 현재 BYOL 라이선스 모델만 지원합니다.
 * OpenSQL은 AWS 환경에서 지원되지 않습니다.
 {% endhint %}
 
-## 엔진 옵션
+## 엔진 옵션 <a href="#engine-options" id="engine-options"></a>
 
 DB Service Name, DB Engine Type, License Option, Node Count는 현재 설정값이 표시되며 변경할 수 없습니다.
 
@@ -82,7 +82,7 @@ TAC 노드 Scale In/Out은 Tibero 엔진에서만 제공됩니다. OpenSQL은 DR
 운영 중인 TAC 인스턴스를 삭제(Scale In)하면 해당 인스턴스에 기록된 모든 데이터가 삭제됩니다.
 {% endhint %}
 
-## DR 구성
+## DR 구성 <a href="#dr-configuration" id="dr-configuration"></a>
 
 * **Enable DR**: DR 사용 여부를 선택합니다. Tibero LI에서만 직접 변경할 수 있고, OpenSQL은 Topology에 따라 자동 결정됩니다(HA → DR 사용, Single → DR 미사용). BYOL은 변경할 수 없습니다.
 * **Failover Automation Level**: DR 사용 시 장애 조치 자동화 레벨을 선택합니다. DR 미사용 시에는 표시되지 않습니다.
@@ -124,11 +124,11 @@ Replica Scale In/Out은 OpenSQL 엔진에서만 제공됩니다. Tibero는 엔�
 * Failover로 인해 Retired 상태의 인스턴스가 존재하는 경우, DR을 미사용으로 변경하면 해당 인스턴스가 자동으로 삭제됩니다. 해당 인스턴스를 통한 데이터 복구가 불가능해지므로 데이터 검토 및 백업을 완료한 후 진행하십시오.
 {% endhint %}
 
-## AZ 구성
+## AZ 구성 <a href="#az-configuration" id="az-configuration"></a>
 
 각 인스턴스의 가용 영역(AZ)을 확인하고 설정합니다. 신규로 추가된 인스턴스에 한하여 설정이 가능합니다.
 
-## 인스턴스 구성
+## 인스턴스 구성 <a href="#instance-configuration" id="instance-configuration"></a>
 
 인스턴스 유형을 변경하여 Scale Up/Down을 수행합니다. BYOL 라이선스는 인스턴스 유형을 변경할 수 없습니다.
 
@@ -142,7 +142,7 @@ Replica Scale In/Out은 OpenSQL 엔진에서만 제공됩니다. Tibero는 엔�
 볼륨 크기는 축소할 수 없습니다. 최대 확장 한도를 신중하게 설정하십시오.
 {% endhint %}
 
-## 구성 정보 확인
+## 구성 정보 확인 <a href="#review-configuration" id="review-configuration"></a>
 
 변경 전 구성(왼쪽)과 변경 후 구성(오른쪽)을 비교하여 확인합니다. 변경된 항목은 파란색으로 표시됩니다.
 

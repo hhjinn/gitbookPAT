@@ -6,15 +6,15 @@ OwlDB는 DR(또는 HA)로 구성된 Primary 데이터베이스의 상태를 지�
 이 문서에서 Tibero의 **Primary / Standby**는 OpenSQL의 **Leader / Replica**에 대응합니다. 공통으로 적용되는 항목은 `Primary/Leader`, `Standby/Replica`와 같이 함께 표기합니다.
 {% endhint %}
 
-## 장애 감지
+## 장애 감지 <a href="#failure-detection" id="failure-detection"></a>
 
 시스템은 1초마다 health check를 수행하며, Primary(Tibero) 또는 Leader(OpenSQL) DB가 `Unavailable` 상태로 30초 동안 지속되면 자동으로 장애 조치가 수행됩니다. Tibero TAC 구성에서는 모든 Primary 노드가 `Unavailable` 상태일 때 장애로 판정합니다.
 
-## 단계별 알림 정책
+## 단계별 알림 정책 <a href="#notification-policy-by-level" id="notification-policy-by-level"></a>
 
 <table data-full-width="true"><thead><tr><th>구분</th><th>Standby/Replica 승격</th><th>구성 정상화</th></tr></thead><tbody><tr><td>수행 시점</td><td>장애 감지 직후</td><td>Standby/Replica 승격 이후</td></tr><tr><td>알림</td><td>시작 / 요청 실패 / 완료 / 실패</td><td>완료 / 실패</td></tr><tr><td>전환 이력 관리</td><td>승격 성공 여부를 결과 컬럼에 표시<ul><li>성공 / 실패</li><li>Standby/Replica가 승격하여 새로운 Primary/Leader가 된 것을 기준으로 성공 여부를 정의</li></ul></td><td>원인/비고 컬럼에 표시<ul><li>전체 성공 시 빈칸</li><li><strong>승격 실패</strong>: Standby Promotion Failed</li><li><strong>승격 성공 후 구성 정상화 실패</strong>: Cluster Normalization Failed — Primary scale out failed 또는 New standby/replica creation failed</li></ul>(둘 다 실패하면 콤마로 표시)</td></tr></tbody></table>
 
-## 장애 조치 자동화 단계별 동작 요약
+## 장애 조치 자동화 단계별 동작 요약 <a href="#automation-level-summary" id="automation-level-summary"></a>
 
 <table data-full-width="true"><thead><tr><th>자동화 레벨</th><th>자동 Failover</th><th>자동 구성 정상화</th><th>비고</th></tr></thead><tbody><tr><td>0단계 (<strong>수동</strong>)</td><td>—</td><td>—</td><td>사용자가 <code>역할전환</code> 버튼으로 직접 승격 및 정상화 수행</td></tr><tr><td>1단계 (<strong>자동 장애 조치</strong>)</td><td>✓</td><td><ul><li>TAC Scale-Out으로 노드 수만 복구</li><li>신규 Standby·Replica 미생성 → DR 미복구(<code>Degraded</code>)</li></ul></td><td>Old Primary/Leader를 <code>retired</code> 처리</td></tr><tr><td>2단계 (<strong>자동 구성 복구</strong>)</td><td>✓</td><td><ul><li>TAC Scale-Out</li><li>신규 Standby·Replica 자동 생성 → 고가용성 구성 복구</li></ul></td><td>Old Primary/Leader <code>retired</code> 처리</td></tr><tr><td>3단계 (<strong>완전 자동화</strong>)</td><td>✓</td><td><ul><li>Old Primary·Leader 역동기화</li><li>신규 Standby·Replica 자동 생성</li></ul></td><td>없음</td></tr></tbody></table>
 
@@ -31,7 +31,7 @@ OwlDB는 DR(또는 HA)로 구성된 Primary 데이터베이스의 상태를 지�
 * 장애 조치 자동화 레벨이 **1단계**일 때 Standby가 1개만 있는 경우, 해당 Standby가 Primary로 승격되면서 장애 조치 이후 Standby가 없을 수 있습니다. 이 경우 고가용성 구성이 유지되지 않으므로 주의가 필요합니다. (Tibero 해당)
 {% endhint %}
 
-## 라이선스 유형별 자동화 제공 범위
+## 라이선스 유형별 자동화 제공 범위 <a href="#automation-scope-by-license" id="automation-scope-by-license"></a>
 
 Cloud 환경에서는 DB 엔진과 라이선스 유형(LI/BYOL)에 따라 제공되는 자동화 레벨이 다릅니다.
 
@@ -40,7 +40,7 @@ Cloud 환경에서는 DB 엔진과 라이선스 유형(LI/BYOL)에 따라 제공
 | Tibero  | 0 \~ 3단계 (전체 제공) | 0, 2, 3단계 (**1단계 미제공**) |
 | OpenSQL | 0, 3단계 (**1, 2단계 미제공**) | 0, 3단계 (**1, 2단계 미제공**) |
 
-## 자동화 단계별 상세 시나리오
+## 자동화 단계별 상세 시나리오 <a href="#automation-scenarios" id="automation-scenarios"></a>
 
 {% hint style="info" %}
 **참고**

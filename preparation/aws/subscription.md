@@ -2,14 +2,14 @@
 
 이 페이지에서는 OwlDB를 구독하기 전에 반드시 완료해야 하는 OS 이미지 구독과 SSH Key 생성 작업을 설명합니다.
 
-## 1. OS 이미지 구독
+## 1. OS 이미지 구독 <a href="#os-image-subscription" id="os-image-subscription"></a>
 
 OwlDB를 통해 데이터베이스를 구축하기 위해선 `Rocky Linux 9 (Official) - x86_64` AMI에 대한 사전 구독이 필요합니다. 구독 방법은 다음과 같습니다.
 
 1. [AWS 마켓플레이스](https://aws.amazon.com/marketplace)에서 [Rocky Linux 9 (Official) - x86_64](https://aws.amazon.com/marketplace/pp/prodview-ygp66mwgbl2ii)을 검색하고 선택합니다.
 2. **Continue to Subscribe**를 클릭하여 Subscription을 구독합니다.
 
-## 2. SSH Key 생성
+## 2. SSH Key 생성 <a href="#create-ssh-key" id="create-ssh-key"></a>
 
 OwlDB 구독 전, SSH Key pair 리소스를 반드시 생성해야 합니다. SSH Key pair는 OwlDB의 배포와 데이터베이스 프로비저닝 과정에 사용됩니다.
 
@@ -29,7 +29,7 @@ OwlDB 구독 전, SSH Key pair 리소스를 반드시 생성해야 합니다. SS
 
 ---
 
-# AWS 마켓플레이스에서 OwlDB 구독
+# AWS 마켓플레이스에서 OwlDB 구독 <a href="#subscribe-aws-marketplace" id="subscribe-aws-marketplace"></a>
 
 이 페이지에서는 AWS 마켓플레이스에서 OwlDB를 구독하고 배포 설정을 시작하는 방법을 설명합니다.
 
@@ -39,7 +39,7 @@ OwlDB 구독 전, SSH Key pair 리소스를 반드시 생성해야 합니다. SS
 
 ---
 
-# AWS CloudFormation을 통한 OwlDB 배포
+# AWS CloudFormation을 통한 OwlDB 배포 <a href="#deploy-cloudformation" id="deploy-cloudformation"></a>
 
 이 페이지에서는 AWS CloudFormation을 사용하여 OwlDB를 배포하는 과정을 단계별로 설명합니다.
 
@@ -58,7 +58,7 @@ OwlDB 구독 전, SSH Key pair 리소스를 반드시 생성해야 합니다. SS
 * Configuration 세부 항목을 확인합니다.
 * Choose Action에서 Launch CloudFormation을 선택하고, **Launch**를 클릭합니다.
 
-## 3. CloudFormation 스택 생성
+## 3. CloudFormation 스택 생성 <a href="#create-cloudformation-stack" id="create-cloudformation-stack"></a>
 
 CloudFormation 스택 생성은 아래 네 단계를 순서대로 모두 거쳐야 합니다.
 
@@ -128,15 +128,15 @@ Personal Information
 
 ---
 
-# OwlDB 접속 안내
+# OwlDB 접속 안내 <a href="#access-owldb" id="access-owldb"></a>
 
 이 페이지에서는 OwlDB 배포 완료 후 최초 접속 방법과 접속 URL을 확인하는 방법을 설명합니다.
 
-## 최초 접속
+## 최초 접속 <a href="#first-access" id="first-access"></a>
 
 마켓플레이스에서 OwlDB 배포가 완료되면, 스택 생성 시 입력한 이메일로 OwlDB 접속 주소와 계정 정보가 포함된 안내 메일이 발송됩니다. 해당 메일을 통해 OwlDB에 접속합니다. 메일이 수신되지 않을 경우, [aws_owldb_support@tibero.com](mailto:aws_owldb_support@tibero.com)으로 문의합니다.
 
-## URL 접속
+## URL 접속 <a href="#url-access" id="url-access"></a>
 
 {% hint style="info" %}
 **참고**

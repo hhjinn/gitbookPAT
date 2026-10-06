@@ -13,7 +13,7 @@ DB Service 중지는 최대 7일(168시간)까지 가능합니다. 7일 이내�
 
 ---
 
-# DB Service 삭제
+# DB Service 삭제 <a href="#delete-db-service" id="delete-db-service"></a>
 
 1. **작업** 버튼을 클릭합니다.
 2. **삭제** 버튼을 클릭합니다.
@@ -28,7 +28,7 @@ DB Service를 중지해도 프로비저닝된 스토리지에 대한 비용은 �
 
 ---
 
-# DB Service 삭제
+# DB Service 삭제 <a href="#delete-db-service-2" id="delete-db-service-2"></a>
 
 1. **작업** 버튼을 클릭합니다.
 2. **삭제** 버튼을 클릭합니다.
@@ -43,7 +43,7 @@ DB Service를 중지해도 프로비저닝된 스토리지에 대한 비용은 �
 
 ---
 
-# [역할 전환](#switchover) (Switchover)
+# [역할 전환](#switchover) (Switchover) <a href="#switchover" id="switchover"></a>
 
 DR 구성 시에만 활성화되는 기능입니다.
 
