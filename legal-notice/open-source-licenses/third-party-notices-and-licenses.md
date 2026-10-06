@@ -1,1707 +1,1705 @@
-# Third-Party Notices and Licenses
-
 This product includes the third-party software components listed below. Each component is licensed under the terms of the license indicated. Where a component is made available under more than one license, TmaxTibero has elected to use it under the license indicated below. The full text of each license is reproduced in the "License Texts" section.
 
-### Apache License 2.0
+## Apache License 2.0
 
 **1** **Group:** `com.fasterxml.jackson.core` **Name:** `jackson-annotations` **Version:** `2.17.3`
 
-> * **Project URL**: [https://github.com/FasterXML/jackson](https://github.com/FasterXML/jackson)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright 2007-, Tatu Saloranta (tatu.saloranta@iki.fi)
+> - **Project URL**: [https://github.com/FasterXML/jackson](https://github.com/FasterXML/jackson)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright 2007-, Tatu Saloranta (tatu.saloranta@iki.fi)
 
 **2** **Group:** `com.fasterxml.jackson.core` **Name:** `jackson-core` **Version:** `2.17.3`
 
-> * **Project URL**: [https://github.com/FasterXML/jackson-core](https://github.com/FasterXML/jackson-core)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright 2007-, Tatu Saloranta (tatu.saloranta@iki.fi)
+> - **Project URL**: [https://github.com/FasterXML/jackson-core](https://github.com/FasterXML/jackson-core)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright 2007-, Tatu Saloranta (tatu.saloranta@iki.fi)
 
 **3** **Group:** `com.fasterxml.jackson.core` **Name:** `jackson-databind` **Version:** `2.17.3`
 
-> * **Project URL**: [https://github.com/FasterXML/jackson](https://github.com/FasterXML/jackson)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright 2007-, Tatu Saloranta (tatu.saloranta@iki.fi)
+> - **Project URL**: [https://github.com/FasterXML/jackson](https://github.com/FasterXML/jackson)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright 2007-, Tatu Saloranta (tatu.saloranta@iki.fi)
 
 **4** **Group:** `com.fasterxml.jackson.dataformat` **Name:** `jackson-dataformat-toml` **Version:** `2.17.3`
 
-> * **Project URL**: [https://github.com/FasterXML/jackson-dataformats-text](https://github.com/FasterXML/jackson-dataformats-text)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright 2007-, Tatu Saloranta (tatu.saloranta@iki.fi)
+> - **Project URL**: [https://github.com/FasterXML/jackson-dataformats-text](https://github.com/FasterXML/jackson-dataformats-text)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright 2007-, Tatu Saloranta (tatu.saloranta@iki.fi)
 
 **5** **Group:** `com.fasterxml.jackson.dataformat` **Name:** `jackson-dataformat-yaml` **Version:** `2.17.3`
 
-> * **Project URL**: [https://github.com/FasterXML/jackson-dataformats-text](https://github.com/FasterXML/jackson-dataformats-text)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright 2007-, Tatu Saloranta (tatu.saloranta@iki.fi)
+> - **Project URL**: [https://github.com/FasterXML/jackson-dataformats-text](https://github.com/FasterXML/jackson-dataformats-text)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright 2007-, Tatu Saloranta (tatu.saloranta@iki.fi)
 
 **6** **Group:** `com.fasterxml.jackson.datatype` **Name:** `jackson-datatype-jdk8` **Version:** `2.17.3`
 
-> * **Project URL**: [https://github.com/FasterXML/jackson-modules-java8/jackson-datatype-jdk8](https://github.com/FasterXML/jackson-modules-java8/jackson-datatype-jdk8)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright 2007-, Tatu Saloranta (tatu.saloranta@iki.fi)
+> - **Project URL**: [https://github.com/FasterXML/jackson-modules-java8/jackson-datatype-jdk8](https://github.com/FasterXML/jackson-modules-java8/jackson-datatype-jdk8)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright 2007-, Tatu Saloranta (tatu.saloranta@iki.fi)
 
 **7** **Group:** `com.fasterxml.jackson.datatype` **Name:** `jackson-datatype-jsr310` **Version:** `2.17.3`
 
-> * **Project URL**: [https://github.com/FasterXML/jackson-modules-java8/jackson-datatype-jsr310](https://github.com/FasterXML/jackson-modules-java8/jackson-datatype-jsr310)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright 2007-, Tatu Saloranta (tatu.saloranta@iki.fi)
+> - **Project URL**: [https://github.com/FasterXML/jackson-modules-java8/jackson-datatype-jsr310](https://github.com/FasterXML/jackson-modules-java8/jackson-datatype-jsr310)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright 2007-, Tatu Saloranta (tatu.saloranta@iki.fi)
 
 **8** **Group:** `com.fasterxml.jackson.module` **Name:** `jackson-module-parameter-names` **Version:** `2.17.3`
 
-> * **Project URL**: [https://github.com/FasterXML/jackson-modules-java8/jackson-module-parameter-names](https://github.com/FasterXML/jackson-modules-java8/jackson-module-parameter-names)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright 2007-, Tatu Saloranta (tatu.saloranta@iki.fi)
+> - **Project URL**: [https://github.com/FasterXML/jackson-modules-java8/jackson-module-parameter-names](https://github.com/FasterXML/jackson-modules-java8/jackson-module-parameter-names)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright 2007-, Tatu Saloranta (tatu.saloranta@iki.fi)
 
 **9** **Group:** `com.fasterxml` **Name:** `classmate` **Version:** `1.7.0`
 
-> * **Project URL**: [https://github.com/FasterXML/java-classmate](https://github.com/FasterXML/java-classmate)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright 2007-, Tatu Saloranta (tatu.saloranta@iki.fi)
+> - **Project URL**: [https://github.com/FasterXML/java-classmate](https://github.com/FasterXML/java-classmate)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright 2007-, Tatu Saloranta (tatu.saloranta@iki.fi)
 
 **10** **Group:** `com.github.seancfoley` **Name:** `ipaddress` **Version:** `2.0.1`
 
-> * **Project URL**: [https://seancfoley.github.io/IPAddress/](https://seancfoley.github.io/IPAddress/)
-> * **License**: Apache License 2.0
-> * **Copyright holders**: Sean C Foley
+> - **Project URL**: [https://seancfoley.github.io/IPAddress/](https://seancfoley.github.io/IPAddress/)
+> - **License**: Apache License 2.0
+> - **Copyright holders**: Sean C Foley
 
 **11** **Group:** `com.github.stephenc.jcip` **Name:** `jcip-annotations` **Version:** `1.0-1`
 
-> * **Project URL**: [http://stephenc.github.com/jcip-annotations](http://stephenc.github.com/jcip-annotations)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright 2013 Stephen Connolly.
+> - **Project URL**: [http://stephenc.github.com/jcip-annotations](http://stephenc.github.com/jcip-annotations)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright 2013 Stephen Connolly.
 
 **12** **Group:** `com.google.code.findbugs` **Name:** `jsr305` **Version:** `3.0.2`
 
-> * **Project URL**: [http://findbugs.sourceforge.net/](http://findbugs.sourceforge.net/)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright (c) 2005 Brian Goetz
+> - **Project URL**: [http://findbugs.sourceforge.net/](http://findbugs.sourceforge.net/)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright (c) 2005 Brian Goetz
 
 **13** **Group:** `com.google.code.gson` **Name:** `gson` **Version:** `2.10.1`
 
-> * **Project URL**: [https://github.com/google/gson/gson](https://github.com/google/gson/gson)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright (C) 2008 Google Inc.
+> - **Project URL**: [https://github.com/google/gson/gson](https://github.com/google/gson/gson)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright (C) 2008 Google Inc.
 
 **14** **Group:** `com.google.errorprone` **Name:** `error_prone_annotations` **Version:** `2.11.0`
 
-> * **Project URL**: [https://errorprone.info](https://errorprone.info)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright 2015 The Error Prone Authors.
+> - **Project URL**: [https://errorprone.info](https://errorprone.info)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright 2015 The Error Prone Authors.
 
 **15** **Group:** `com.google.guava` **Name:** `failureaccess` **Version:** `1.0.1`
 
-> * **Project URL**: [https://github.com/google/guava/](https://github.com/google/guava/)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright (C) 2007 The Guava Authors
+> - **Project URL**: [https://github.com/google/guava/](https://github.com/google/guava/)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright (C) 2007 The Guava Authors
 
 **16** **Group:** `com.google.guava` **Name:** `guava` **Version:** `31.1-jre`
 
-> * **Project URL**: [https://github.com/google/guava/](https://github.com/google/guava/)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright (C) 2007 The Guava Authors
+> - **Project URL**: [https://github.com/google/guava/](https://github.com/google/guava/)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright (C) 2007 The Guava Authors
 
 **17** **Group:** `com.google.guava` **Name:** `listenablefuture` **Version:** `9999.0-empty-to-avoid-conflict-with-guava`
 
-> * **Project URL**: [https://github.com/google/guava](https://github.com/google/guava)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright (C) 2007 The Guava Authors
+> - **Project URL**: [https://github.com/google/guava](https://github.com/google/guava)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright (C) 2007 The Guava Authors
 
 **18** **Group:** `com.google.j2objc` **Name:** `j2objc-annotations` **Version:** `1.3`
 
-> * **Project URL**: [https://github.com/google/j2objc/](https://github.com/google/j2objc/)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright 2012 Google Inc. All Rights Reserved.
+> - **Project URL**: [https://github.com/google/j2objc/](https://github.com/google/j2objc/)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright 2012 Google Inc. All Rights Reserved.
 
 **19** **Group:** `com.mysema.commons` **Name:** `mysema-commons-lang` **Version:** `0.2.4`
 
-> * **Project URL**: [http://www.github.com/mysema](http://www.github.com/mysema)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright (c) 2010 Mysema Ltd.
+> - **Project URL**: [http://www.github.com/mysema](http://www.github.com/mysema)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright (c) 2010 Mysema Ltd.
 
 **20** **Group:** `com.nimbusds` **Name:** `content-type` **Version:** `2.3`
 
-> * **Project URL**: [https://connect2id.com](https://connect2id.com)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright 2020, Connect2id Ltd and contributors.
+> - **Project URL**: [https://connect2id.com](https://connect2id.com)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright 2020, Connect2id Ltd and contributors.
 
 **21** **Group:** `com.nimbusds` **Name:** `lang-tag` **Version:** `1.7`
 
-> * **Project URL**: [https://connect2id.com/](https://connect2id.com/)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright 2012-2016, Connect2id Ltd.
+> - **Project URL**: [https://connect2id.com/](https://connect2id.com/)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright 2012-2016, Connect2id Ltd.
 
 **22** **Group:** `com.nimbusds` **Name:** `nimbus-jose-jwt` **Version:** `10.0.1`
 
-> * **Project URL**: [https://connect2id.com](https://connect2id.com)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright 2012-2016, Connect2id Ltd and contributors.
+> - **Project URL**: [https://connect2id.com](https://connect2id.com)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright 2012-2016, Connect2id Ltd and contributors.
 
 **23** **Group:** `com.nimbusds` **Name:** `oauth2-oidc-sdk` **Version:** `11.23`
 
-> * **Project URL**: [https://bitbucket.org/connect2id/oauth-2.0-sdk-with-openid-connect-extensions](https://bitbucket.org/connect2id/oauth-2.0-sdk-with-openid-connect-extensions)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright 2012-2020, Connect2id Ltd and contributors.
+> - **Project URL**: [https://bitbucket.org/connect2id/oauth-2.0-sdk-with-openid-connect-extensions](https://bitbucket.org/connect2id/oauth-2.0-sdk-with-openid-connect-extensions)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright 2012-2020, Connect2id Ltd and contributors.
 
 **24** **Group:** `com.querydsl` **Name:** `querydsl-core` **Version:** `5.1.0`
 
-> * **Project URL**: <${project.homepage}>
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright 2015, The Querydsl Team (http://www.querydsl.com/team)
+> - **Project URL**: <${project.homepage}>
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright 2015, The Querydsl Team (http://www.querydsl.com/team)
 
 **25** **Group:** `com.querydsl` **Name:** `querydsl-jpa` **Version:** `5.1.0`
 
-> * **Project URL**: <${project.homepage}>
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright 2015, The Querydsl Team (http://www.querydsl.com/team)
+> - **Project URL**: <${project.homepage}>
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright 2015, The Querydsl Team (http://www.querydsl.com/team)
 
 **26** **Group:** `com.squareup.okhttp3` **Name:** `okhttp` **Version:** `4.12.0`
 
-> * **Project URL**: [https://square.github.io/okhttp/](https://square.github.io/okhttp/)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright (C) 2014 Square, Inc.
+> - **Project URL**: [https://square.github.io/okhttp/](https://square.github.io/okhttp/)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright (C) 2014 Square, Inc.
 
 **27** **Group:** `com.squareup.okio` **Name:** `okio-jvm` **Version:** `3.6.0`
 
-> * **Project URL**: [https://github.com/square/okio/](https://github.com/square/okio/)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright (C) 2019 Square, Inc.
+> - **Project URL**: [https://github.com/square/okio/](https://github.com/square/okio/)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright (C) 2019 Square, Inc.
 
 **28** **Group:** `com.squareup.okio` **Name:** `okio` **Version:** `3.6.0`
 
-> * **Project URL**: [https://github.com/square/okio/](https://github.com/square/okio/)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright (C) 2019 Square, Inc.
+> - **Project URL**: [https://github.com/square/okio/](https://github.com/square/okio/)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright (C) 2019 Square, Inc.
 
 **29** **Group:** `com.zaxxer` **Name:** `HikariCP` **Version:** `5.1.0`
 
-> * **Project URL**: [https://github.com/brettwooldridge](https://github.com/brettwooldridge)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright (C) 2013, 2014 Brett Wooldridge
+> - **Project URL**: [https://github.com/brettwooldridge](https://github.com/brettwooldridge)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright (C) 2013, 2014 Brett Wooldridge
 
 **30** **Group:** `commons-codec` **Name:** `commons-codec` **Version:** `1.16.1`
 
-> * **Project URL**: [https://commons.apache.org/proper/commons-codec/](https://commons.apache.org/proper/commons-codec/)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright 2002-2024 The Apache Software Foundation
+> - **Project URL**: [https://commons.apache.org/proper/commons-codec/](https://commons.apache.org/proper/commons-codec/)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright 2002-2024 The Apache Software Foundation
 
 **31** **Group:** `commons-logging` **Name:** `commons-logging` **Version:** `1.2`
 
-> * **Project URL**: [http://commons.apache.org/proper/commons-logging/](http://commons.apache.org/proper/commons-logging/)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright 2003-2014 The Apache Software Foundation
+> - **Project URL**: [http://commons.apache.org/proper/commons-logging/](http://commons.apache.org/proper/commons-logging/)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright 2003-2014 The Apache Software Foundation
 
 **32** **Group:** `io.jsonwebtoken` **Name:** `jjwt-api` **Version:** `0.12.6`
 
-> * **Project URL**: [https://github.com/jwtk/jjwt](https://github.com/jwtk/jjwt)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright (C) 2014 jsonwebtoken.io
+> - **Project URL**: [https://github.com/jwtk/jjwt](https://github.com/jwtk/jjwt)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright (C) 2014 jsonwebtoken.io
 
 **33** **Group:** `io.jsonwebtoken` **Name:** `jjwt-impl` **Version:** `0.12.6`
 
-> * **Project URL**: [https://github.com/jwtk/jjwt](https://github.com/jwtk/jjwt)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright (C) 2014 jsonwebtoken.io
+> - **Project URL**: [https://github.com/jwtk/jjwt](https://github.com/jwtk/jjwt)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright (C) 2014 jsonwebtoken.io
 
 **34** **Group:** `io.jsonwebtoken` **Name:** `jjwt-jackson` **Version:** `0.12.6`
 
-> * **Project URL**: [https://github.com/jwtk/jjwt](https://github.com/jwtk/jjwt)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright (C) 2014 jsonwebtoken.io
+> - **Project URL**: [https://github.com/jwtk/jjwt](https://github.com/jwtk/jjwt)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright (C) 2014 jsonwebtoken.io
 
 **35** **Group:** `io.micrometer` **Name:** `micrometer-commons` **Version:** `1.13.13`
 
-> * **Project URL**: [https://github.com/micrometer-metrics/micrometer](https://github.com/micrometer-metrics/micrometer)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright (c) 2017-Present VMware, Inc. All Rights Reserved.
+> - **Project URL**: [https://github.com/micrometer-metrics/micrometer](https://github.com/micrometer-metrics/micrometer)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright (c) 2017-Present VMware, Inc. All Rights Reserved.
 
 **36** **Group:** `io.micrometer` **Name:** `micrometer-core` **Version:** `1.13.13`
 
-> * **Project URL**: [https://github.com/micrometer-metrics/micrometer](https://github.com/micrometer-metrics/micrometer)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright (c) 2017-Present VMware, Inc. All Rights Reserved.
+> - **Project URL**: [https://github.com/micrometer-metrics/micrometer](https://github.com/micrometer-metrics/micrometer)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright (c) 2017-Present VMware, Inc. All Rights Reserved.
 
 **37** **Group:** `io.micrometer` **Name:** `micrometer-jakarta9` **Version:** `1.13.13`
 
-> * **Project URL**: [https://github.com/micrometer-metrics/micrometer](https://github.com/micrometer-metrics/micrometer)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright (c) 2017-Present VMware, Inc. All Rights Reserved.
+> - **Project URL**: [https://github.com/micrometer-metrics/micrometer](https://github.com/micrometer-metrics/micrometer)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright (c) 2017-Present VMware, Inc. All Rights Reserved.
 
 **38** **Group:** `io.micrometer` **Name:** `micrometer-observation` **Version:** `1.13.13`
 
-> * **Project URL**: [https://github.com/micrometer-metrics/micrometer](https://github.com/micrometer-metrics/micrometer)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright (c) 2017-Present VMware, Inc. All Rights Reserved.
+> - **Project URL**: [https://github.com/micrometer-metrics/micrometer](https://github.com/micrometer-metrics/micrometer)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright (c) 2017-Present VMware, Inc. All Rights Reserved.
 
 **39** **Group:** `io.netty` **Name:** `netty-buffer` **Version:** `4.1.119.Final`
 
-> * **Project URL**: [https://netty.io/](https://netty.io/)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright 2014 The Netty Project
+> - **Project URL**: [https://netty.io/](https://netty.io/)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright 2014 The Netty Project
 
 **40** **Group:** `io.netty` **Name:** `netty-codec-dns` **Version:** `4.1.119.Final`
 
-> * **Project URL**: [https://netty.io/](https://netty.io/)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright 2014 The Netty Project
+> - **Project URL**: [https://netty.io/](https://netty.io/)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright 2014 The Netty Project
 
 **41** **Group:** `io.netty` **Name:** `netty-codec-http2` **Version:** `4.1.119.Final`
 
-> * **Project URL**: [https://netty.io/](https://netty.io/)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright 2014 The Netty Project
+> - **Project URL**: [https://netty.io/](https://netty.io/)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright 2014 The Netty Project
 
 **42** **Group:** `io.netty` **Name:** `netty-codec-http` **Version:** `4.1.119.Final`
 
-> * **Project URL**: [https://netty.io/](https://netty.io/)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright 2014 The Netty Project
+> - **Project URL**: [https://netty.io/](https://netty.io/)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright 2014 The Netty Project
 
 **43** **Group:** `io.netty` **Name:** `netty-codec-socks` **Version:** `4.1.119.Final`
 
-> * **Project URL**: [https://netty.io/](https://netty.io/)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright 2014 The Netty Project
+> - **Project URL**: [https://netty.io/](https://netty.io/)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright 2014 The Netty Project
 
 **44** **Group:** `io.netty` **Name:** `netty-codec` **Version:** `4.1.119.Final`
 
-> * **Project URL**: [https://netty.io/](https://netty.io/)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright 2014 The Netty Project
+> - **Project URL**: [https://netty.io/](https://netty.io/)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright 2014 The Netty Project
 
 **45** **Group:** `io.netty` **Name:** `netty-common` **Version:** `4.1.119.Final`
 
-> * **Project URL**: [https://netty.io/](https://netty.io/)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright 2014 The Netty Project
+> - **Project URL**: [https://netty.io/](https://netty.io/)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright 2014 The Netty Project
 
 **46** **Group:** `io.netty` **Name:** `netty-handler-proxy` **Version:** `4.1.119.Final`
 
-> * **Project URL**: [https://netty.io/](https://netty.io/)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright 2014 The Netty Project
+> - **Project URL**: [https://netty.io/](https://netty.io/)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright 2014 The Netty Project
 
 **47** **Group:** `io.netty` **Name:** `netty-handler` **Version:** `4.1.119.Final`
 
-> * **Project URL**: [https://netty.io/](https://netty.io/)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright 2014 The Netty Project
+> - **Project URL**: [https://netty.io/](https://netty.io/)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright 2014 The Netty Project
 
 **48** **Group:** `io.netty` **Name:** `netty-resolver-dns-classes-macos` **Version:** `4.1.119.Final`
 
-> * **Project URL**: [https://netty.io/](https://netty.io/)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright 2014 The Netty Project
+> - **Project URL**: [https://netty.io/](https://netty.io/)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright 2014 The Netty Project
 
 **49** **Group:** `io.netty` **Name:** `netty-resolver-dns-native-macos` **Version:** `4.1.119.Final`
 
-> * **Project URL**: [https://netty.io/](https://netty.io/)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright 2014 The Netty Project
+> - **Project URL**: [https://netty.io/](https://netty.io/)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright 2014 The Netty Project
 
 **50** **Group:** `io.netty` **Name:** `netty-resolver-dns` **Version:** `4.1.119.Final`
 
-> * **Project URL**: [https://netty.io/](https://netty.io/)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright 2014 The Netty Project
+> - **Project URL**: [https://netty.io/](https://netty.io/)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright 2014 The Netty Project
 
 **51** **Group:** `io.netty` **Name:** `netty-resolver` **Version:** `4.1.119.Final`
 
-> * **Project URL**: [https://netty.io/](https://netty.io/)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright 2014 The Netty Project
+> - **Project URL**: [https://netty.io/](https://netty.io/)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright 2014 The Netty Project
 
 **52** **Group:** `io.netty` **Name:** `netty-tcnative-boringssl-static` **Version:** `2.0.70.Final`
 
-> * **Project URL**: [https://netty.io/](https://netty.io/)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright 2016 The Netty Project
+> - **Project URL**: [https://netty.io/](https://netty.io/)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright 2016 The Netty Project
 
 **53** **Group:** `io.netty` **Name:** `netty-tcnative-classes` **Version:** `2.0.70.Final`
 
-> * **Project URL**: [https://netty.io/](https://netty.io/)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright 2016 The Netty Project
+> - **Project URL**: [https://netty.io/](https://netty.io/)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright 2016 The Netty Project
 
 **54** **Group:** `io.netty` **Name:** `netty-transport-classes-epoll` **Version:** `4.1.119.Final`
 
-> * **Project URL**: [https://netty.io/](https://netty.io/)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright 2014 The Netty Project
+> - **Project URL**: [https://netty.io/](https://netty.io/)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright 2014 The Netty Project
 
 **55** **Group:** `io.netty` **Name:** `netty-transport-classes-kqueue` **Version:** `4.1.119.Final`
 
-> * **Project URL**: [https://netty.io/](https://netty.io/)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright 2014 The Netty Project
+> - **Project URL**: [https://netty.io/](https://netty.io/)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright 2014 The Netty Project
 
 **56** **Group:** `io.netty` **Name:** `netty-transport-native-epoll` **Version:** `4.1.119.Final`
 
-> * **Project URL**: [https://netty.io/](https://netty.io/)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright 2014 The Netty Project
+> - **Project URL**: [https://netty.io/](https://netty.io/)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright 2014 The Netty Project
 
 **57** **Group:** `io.netty` **Name:** `netty-transport-native-kqueue` **Version:** `4.1.119.Final`
 
-> * **Project URL**: [https://netty.io/](https://netty.io/)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright 2014 The Netty Project
+> - **Project URL**: [https://netty.io/](https://netty.io/)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright 2014 The Netty Project
 
 **58** **Group:** `io.netty` **Name:** `netty-transport-native-unix-common` **Version:** `4.1.119.Final`
 
-> * **Project URL**: [https://netty.io/](https://netty.io/)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright 2014 The Netty Project
+> - **Project URL**: [https://netty.io/](https://netty.io/)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright 2014 The Netty Project
 
 **59** **Group:** `io.netty` **Name:** `netty-transport` **Version:** `4.1.119.Final`
 
-> * **Project URL**: [https://netty.io/](https://netty.io/)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright 2014 The Netty Project
+> - **Project URL**: [https://netty.io/](https://netty.io/)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright 2014 The Netty Project
 
 **60** **Group:** `io.projectreactor.netty` **Name:** `reactor-netty-core` **Version:** `1.1.29`
 
-> * **Project URL**: [https://github.com/reactor/reactor-netty](https://github.com/reactor/reactor-netty)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright (c) 2011-2023 VMware, Inc. or its affiliates, All Rights Reserved.
+> - **Project URL**: [https://github.com/reactor/reactor-netty](https://github.com/reactor/reactor-netty)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright (c) 2011-2023 VMware, Inc. or its affiliates, All Rights Reserved.
 
 **61** **Group:** `io.projectreactor.netty` **Name:** `reactor-netty-http` **Version:** `1.1.29`
 
-> * **Project URL**: [https://github.com/reactor/reactor-netty](https://github.com/reactor/reactor-netty)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright (c) 2011-2023 VMware, Inc. or its affiliates, All Rights Reserved.
+> - **Project URL**: [https://github.com/reactor/reactor-netty](https://github.com/reactor/reactor-netty)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright (c) 2011-2023 VMware, Inc. or its affiliates, All Rights Reserved.
 
 **62** **Group:** `io.projectreactor` **Name:** `reactor-core` **Version:** `3.6.16`
 
-> * **Project URL**: [https://github.com/reactor/reactor-core](https://github.com/reactor/reactor-core)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright (c) 2016-2023 VMware Inc. or its affiliates, All Rights Reserved.
+> - **Project URL**: [https://github.com/reactor/reactor-core](https://github.com/reactor/reactor-core)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright (c) 2016-2023 VMware Inc. or its affiliates, All Rights Reserved.
 
 **63** **Group:** `io.smallrye` **Name:** `jandex` **Version:** `3.1.2`
 
-> * **Project URL**: [https://smallrye.io](https://smallrye.io)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright 2013 Red Hat, Inc., and individual contributors
+> - **Project URL**: [https://smallrye.io](https://smallrye.io)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright 2013 Red Hat, Inc., and individual contributors
 
 **64** **Group:** `io.swagger.core.v3` **Name:** `swagger-annotations-jakarta` **Version:** `2.2.21`
 
-> * **Project URL**: [https://github.com/swagger-api/swagger-core/modules/swagger-annotations](https://github.com/swagger-api/swagger-core/modules/swagger-annotations)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright (c) 2015. SmartBear Software Inc.
+> - **Project URL**: [https://github.com/swagger-api/swagger-core/modules/swagger-annotations](https://github.com/swagger-api/swagger-core/modules/swagger-annotations)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright (c) 2015. SmartBear Software Inc.
 
 **65** **Group:** `io.swagger.core.v3` **Name:** `swagger-core-jakarta` **Version:** `2.2.21`
 
-> * **Project URL**: [https://github.com/swagger-api/swagger-core/modules/swagger-core](https://github.com/swagger-api/swagger-core/modules/swagger-core)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright (c) 2015. SmartBear Software Inc.
+> - **Project URL**: [https://github.com/swagger-api/swagger-core/modules/swagger-core](https://github.com/swagger-api/swagger-core/modules/swagger-core)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright (c) 2015. SmartBear Software Inc.
 
 **66** **Group:** `io.swagger.core.v3` **Name:** `swagger-models-jakarta` **Version:** `2.2.21`
 
-> * **Project URL**: [https://github.com/swagger-api/swagger-core/modules/swagger-models](https://github.com/swagger-api/swagger-core/modules/swagger-models)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright (c) 2015. SmartBear Software Inc.
+> - **Project URL**: [https://github.com/swagger-api/swagger-core/modules/swagger-models](https://github.com/swagger-api/swagger-core/modules/swagger-models)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright (c) 2015. SmartBear Software Inc.
 
 **67** **Group:** `jakarta.inject` **Name:** `jakarta.inject-api` **Version:** `2.0.1`
 
-> * **Project URL**: [https://www.eclipse.org](https://www.eclipse.org)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright (C) 2009 The JSR-330 Expert Group
+> - **Project URL**: [https://www.eclipse.org](https://www.eclipse.org)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright (C) 2009 The JSR-330 Expert Group
 
 **68** **Group:** `jakarta.validation` **Name:** `jakarta.validation-api` **Version:** `3.0.2`
 
-> * **Project URL**: [https://www.eclipse.org](https://www.eclipse.org)
-> * **License**: Apache License 2.0
-> * **Copyright holders**: Eclipse Foundation; Emmanuel Bernard, Hardy Ferentschik, Gunnar Morling, Guillaume Smet
+> - **Project URL**: [https://www.eclipse.org](https://www.eclipse.org)
+> - **License**: Apache License 2.0
+> - **Copyright holders**: Eclipse Foundation; Emmanuel Bernard, Hardy Ferentschik, Gunnar Morling, Guillaume Smet
 
 **69** **Group:** `net.bytebuddy` **Name:** `byte-buddy` **Version:** `1.14.19`
 
-> * **Project URL**: [https://bytebuddy.net](https://bytebuddy.net)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright 2014 - Present Rafael Winterhalter
+> - **Project URL**: [https://bytebuddy.net](https://bytebuddy.net)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright 2014 - Present Rafael Winterhalter
 
 **70** **Group:** `net.java.dev.jna` **Name:** `jna-platform` **Version:** `5.13.0`
 
-> * **Project URL**: [https://github.com/java-native-access/jna](https://github.com/java-native-access/jna)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright (c) 2007-2013 Timothy Wall, All Rights Reserved
+> - **Project URL**: [https://github.com/java-native-access/jna](https://github.com/java-native-access/jna)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright (c) 2007-2013 Timothy Wall, All Rights Reserved
 
 **71** **Group:** `net.java.dev.jna` **Name:** `jna` **Version:** `5.13.0`
 
-> * **Project URL**: [https://github.com/java-native-access/jna](https://github.com/java-native-access/jna)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright (c) 2007-2013 Timothy Wall, All Rights Reserved
+> - **Project URL**: [https://github.com/java-native-access/jna](https://github.com/java-native-access/jna)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright (c) 2007-2013 Timothy Wall, All Rights Reserved
 
 **72** **Group:** `net.minidev` **Name:** `accessors-smart` **Version:** `2.5.2`
 
-> * **Project URL**: [https://urielch.github.io/](https://urielch.github.io/)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright 2011-2024 JSON-SMART authors
+> - **Project URL**: [https://urielch.github.io/](https://urielch.github.io/)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright 2011-2024 JSON-SMART authors
 
 **73** **Group:** `net.minidev` **Name:** `json-smart` **Version:** `2.5.2`
 
-> * **Project URL**: [https://urielch.github.io/](https://urielch.github.io/)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright 2011-2024 JSON-SMART authors
+> - **Project URL**: [https://urielch.github.io/](https://urielch.github.io/)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright 2011-2024 JSON-SMART authors
 
 **74** **Group:** `org.apache.commons` **Name:** `commons-lang3` **Version:** `3.14.0`
 
-> * **Project URL**: [https://commons.apache.org/proper/commons-lang/](https://commons.apache.org/proper/commons-lang/)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright 2001-2023 The Apache Software Foundation
+> - **Project URL**: [https://commons.apache.org/proper/commons-lang/](https://commons.apache.org/proper/commons-lang/)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright 2001-2023 The Apache Software Foundation
 
 **75** **Group:** `org.apache.httpcomponents` **Name:** `httpclient` **Version:** `4.5.13`
 
-> * **Project URL**: [http://hc.apache.org/httpcomponents-client](http://hc.apache.org/httpcomponents-client)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright 1999-2020 The Apache Software Foundation
+> - **Project URL**: [http://hc.apache.org/httpcomponents-client](http://hc.apache.org/httpcomponents-client)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright 1999-2020 The Apache Software Foundation
 
 **76** **Group:** `org.apache.httpcomponents` **Name:** `httpcore` **Version:** `4.4.16`
 
-> * **Project URL**: [http://hc.apache.org/httpcomponents-core-ga](http://hc.apache.org/httpcomponents-core-ga)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright 2005-2022 The Apache Software Foundation
+> - **Project URL**: [http://hc.apache.org/httpcomponents-core-ga](http://hc.apache.org/httpcomponents-core-ga)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright 2005-2022 The Apache Software Foundation
 
 **77** **Group:** `org.apache.logging.log4j` **Name:** `log4j-api` **Version:** `2.23.1`
 
-> * **Project URL**: [https://logging.apache.org/log4j/2.x/](https://logging.apache.org/log4j/2.x/)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright 1999-2024 The Apache Software Foundation
+> - **Project URL**: [https://logging.apache.org/log4j/2.x/](https://logging.apache.org/log4j/2.x/)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright 1999-2024 The Apache Software Foundation
 
 **78** **Group:** `org.apache.logging.log4j` **Name:** `log4j-to-slf4j` **Version:** `2.23.1`
 
-> * **Project URL**: [https://logging.apache.org/log4j/2.x/](https://logging.apache.org/log4j/2.x/)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright 1999-2024 The Apache Software Foundation
+> - **Project URL**: [https://logging.apache.org/log4j/2.x/](https://logging.apache.org/log4j/2.x/)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright 1999-2024 The Apache Software Foundation
 
 **79** **Group:** `org.apache.qpid` **Name:** `proton-j` **Version:** `0.34.1`
 
-> * **Project URL**: [https://www.apache.org/](https://www.apache.org/)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright 2023 The Apache Software Foundation
+> - **Project URL**: [https://www.apache.org/](https://www.apache.org/)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright 2023 The Apache Software Foundation
 
 **80** **Group:** `org.apache.tomcat.embed` **Name:** `tomcat-embed-core` **Version:** `10.1.40`
 
-> * **Project URL**: [https://tomcat.apache.org/](https://tomcat.apache.org/)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright 1999-2025 The Apache Software Foundation
+> - **Project URL**: [https://tomcat.apache.org/](https://tomcat.apache.org/)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright 1999-2025 The Apache Software Foundation
 
 **81** **Group:** `org.apache.tomcat.embed` **Name:** `tomcat-embed-el` **Version:** `10.1.40`
 
-> * **Project URL**: [https://tomcat.apache.org/](https://tomcat.apache.org/)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright 1999-2025 The Apache Software Foundation
+> - **Project URL**: [https://tomcat.apache.org/](https://tomcat.apache.org/)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright 1999-2025 The Apache Software Foundation
 
 **82** **Group:** `org.apache.tomcat.embed` **Name:** `tomcat-embed-websocket` **Version:** `10.1.40`
 
-> * **Project URL**: [https://tomcat.apache.org/](https://tomcat.apache.org/)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright 1999-2025 The Apache Software Foundation
+> - **Project URL**: [https://tomcat.apache.org/](https://tomcat.apache.org/)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright 1999-2025 The Apache Software Foundation
 
 **83** **Group:** `org.attoparser` **Name:** `attoparser` **Version:** `2.0.7.RELEASE`
 
-> * **Project URL**: [https://www.attoparser.org](https://www.attoparser.org)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright (c) 2012-2022, The ATTOPARSER team (https://www.attoparser.org)
+> - **Project URL**: [https://www.attoparser.org](https://www.attoparser.org)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright (c) 2012-2022, The ATTOPARSER team (https://www.attoparser.org)
 
 **84** **Group:** `org.flywaydb` **Name:** `flyway-core` **Version:** `10.10.0`
 
-> * **Project URL**: [https://flywaydb.org](https://flywaydb.org)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright (C) Red Gate Software Ltd 2010-2024
+> - **Project URL**: [https://flywaydb.org](https://flywaydb.org)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright (C) Red Gate Software Ltd 2010-2024
 
 **85** **Group:** `org.hibernate.validator` **Name:** `hibernate-validator` **Version:** `8.0.1.Final`
 
-> * **Project URL**: [http://hibernate.org/validator](http://hibernate.org/validator)
-> * **License**: Apache License 2.0
-> * **Copyright holders**: Emmanuel Bernard, Hardy Ferentschik, Gunnar Morling, Kevin Pollet, Davide D'Alto, Guillaume Smet, Marko Bekhta
+> - **Project URL**: [http://hibernate.org/validator](http://hibernate.org/validator)
+> - **License**: Apache License 2.0
+> - **Copyright holders**: Emmanuel Bernard, Hardy Ferentschik, Gunnar Morling, Kevin Pollet, Davide D'Alto, Guillaume Smet, Marko Bekhta
 
 **86** **Group:** `org.jboss.logging` **Name:** `jboss-logging` **Version:** `3.5.3.Final`
 
-> * **Project URL**: [http://www.jboss.org](http://www.jboss.org)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright 2023 Red Hat, Inc.
+> - **Project URL**: [http://www.jboss.org](http://www.jboss.org)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright 2023 Red Hat, Inc.
 
 **87** **Group:** `org.jetbrains.kotlin` **Name:** `kotlin-stdlib-common` **Version:** `1.9.25`
 
-> * **Project URL**: [https://kotlinlang.org/](https://kotlinlang.org/)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright 2010-2024 JetBrains s.r.o. and Kotlin Programming Language contributors.
+> - **Project URL**: [https://kotlinlang.org/](https://kotlinlang.org/)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright 2010-2024 JetBrains s.r.o. and Kotlin Programming Language contributors.
 
 **88** **Group:** `org.jetbrains.kotlin` **Name:** `kotlin-stdlib-jdk7` **Version:** `1.9.25`
 
-> * **Project URL**: [https://kotlinlang.org/](https://kotlinlang.org/)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright 2010-2024 JetBrains s.r.o. and Kotlin Programming Language contributors.
+> - **Project URL**: [https://kotlinlang.org/](https://kotlinlang.org/)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright 2010-2024 JetBrains s.r.o. and Kotlin Programming Language contributors.
 
 **89** **Group:** `org.jetbrains.kotlin` **Name:** `kotlin-stdlib-jdk8` **Version:** `1.9.25`
 
-> * **Project URL**: [https://kotlinlang.org/](https://kotlinlang.org/)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright 2010-2024 JetBrains s.r.o. and Kotlin Programming Language contributors.
+> - **Project URL**: [https://kotlinlang.org/](https://kotlinlang.org/)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright 2010-2024 JetBrains s.r.o. and Kotlin Programming Language contributors.
 
 **90** **Group:** `org.jetbrains.kotlin` **Name:** `kotlin-stdlib` **Version:** `1.9.25`
 
-> * **Project URL**: [https://kotlinlang.org/](https://kotlinlang.org/)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright 2010-2024 JetBrains s.r.o. and Kotlin Programming Language contributors.
+> - **Project URL**: [https://kotlinlang.org/](https://kotlinlang.org/)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright 2010-2024 JetBrains s.r.o. and Kotlin Programming Language contributors.
 
 **91** **Group:** `org.jetbrains` **Name:** `annotations` **Version:** `13.0`
 
-> * **Project URL**: [http://www.jetbrains.org](http://www.jetbrains.org)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright 2000-2012 JetBrains s.r.o.
+> - **Project URL**: [http://www.jetbrains.org](http://www.jetbrains.org)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright 2000-2012 JetBrains s.r.o.
 
 **92** **Group:** `org.springdoc` **Name:** `springdoc-openapi-starter-common` **Version:** `2.5.0`
 
-> * **Project URL**: [https://springdoc.org/](https://springdoc.org/)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright 2019-2023 the original author or authors.
+> - **Project URL**: [https://springdoc.org/](https://springdoc.org/)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright 2019-2023 the original author or authors.
 
 **93** **Group:** `org.springdoc` **Name:** `springdoc-openapi-starter-webmvc-api` **Version:** `2.5.0`
 
-> * **Project URL**: [https://springdoc.org/](https://springdoc.org/)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright 2019-2023 the original author or authors.
+> - **Project URL**: [https://springdoc.org/](https://springdoc.org/)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright 2019-2023 the original author or authors.
 
 **94** **Group:** `org.springdoc` **Name:** `springdoc-openapi-starter-webmvc-ui` **Version:** `2.5.0`
 
-> * **Project URL**: [https://springdoc.org/](https://springdoc.org/)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright 2019-2023 the original author or authors.
+> - **Project URL**: [https://springdoc.org/](https://springdoc.org/)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright 2019-2023 the original author or authors.
 
 **95** **Group:** `org.springframework.boot` **Name:** `spring-boot-actuator-autoconfigure` **Version:** `3.3.11`
 
-> * **Project URL**: [https://spring.io/projects/spring-boot](https://spring.io/projects/spring-boot)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright (c) 2012-2025 VMware, Inc.
+> - **Project URL**: [https://spring.io/projects/spring-boot](https://spring.io/projects/spring-boot)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright (c) 2012-2025 VMware, Inc.
 
 **96** **Group:** `org.springframework.boot` **Name:** `spring-boot-actuator` **Version:** `3.3.11`
 
-> * **Project URL**: [https://spring.io/projects/spring-boot](https://spring.io/projects/spring-boot)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright (c) 2012-2025 VMware, Inc.
+> - **Project URL**: [https://spring.io/projects/spring-boot](https://spring.io/projects/spring-boot)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright (c) 2012-2025 VMware, Inc.
 
 **97** **Group:** `org.springframework.boot` **Name:** `spring-boot-autoconfigure` **Version:** `3.3.11`
 
-> * **Project URL**: [https://spring.io/projects/spring-boot](https://spring.io/projects/spring-boot)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright (c) 2012-2025 VMware, Inc.
+> - **Project URL**: [https://spring.io/projects/spring-boot](https://spring.io/projects/spring-boot)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright (c) 2012-2025 VMware, Inc.
 
 **98** **Group:** `org.springframework.boot` **Name:** `spring-boot-starter-actuator` **Version:** `3.3.6`
 
-> * **Project URL**: [https://spring.io/projects/spring-boot](https://spring.io/projects/spring-boot)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright (c) 2012-2025 VMware, Inc.
+> - **Project URL**: [https://spring.io/projects/spring-boot](https://spring.io/projects/spring-boot)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright (c) 2012-2025 VMware, Inc.
 
 **99** **Group:** `org.springframework.boot` **Name:** `spring-boot-starter-aop` **Version:** `3.3.6`
 
-> * **Project URL**: [https://spring.io/projects/spring-boot](https://spring.io/projects/spring-boot)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright (c) 2012-2025 VMware, Inc.
+> - **Project URL**: [https://spring.io/projects/spring-boot](https://spring.io/projects/spring-boot)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright (c) 2012-2025 VMware, Inc.
 
 **100** **Group:** `org.springframework.boot` **Name:** `spring-boot-starter-data-jpa` **Version:** `3.3.11`
 
-> * **Project URL**: [https://spring.io/projects/spring-boot](https://spring.io/projects/spring-boot)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright (c) 2012-2025 VMware, Inc.
+> - **Project URL**: [https://spring.io/projects/spring-boot](https://spring.io/projects/spring-boot)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright (c) 2012-2025 VMware, Inc.
 
 **101** **Group:** `org.springframework.boot` **Name:** `spring-boot-starter-jdbc` **Version:** `3.3.11`
 
-> * **Project URL**: [https://spring.io/projects/spring-boot](https://spring.io/projects/spring-boot)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright (c) 2012-2025 VMware, Inc.
+> - **Project URL**: [https://spring.io/projects/spring-boot](https://spring.io/projects/spring-boot)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright (c) 2012-2025 VMware, Inc.
 
 **102** **Group:** `org.springframework.boot` **Name:** `spring-boot-starter-json` **Version:** `3.3.11`
 
-> * **Project URL**: [https://spring.io/projects/spring-boot](https://spring.io/projects/spring-boot)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright (c) 2012-2025 VMware, Inc.
+> - **Project URL**: [https://spring.io/projects/spring-boot](https://spring.io/projects/spring-boot)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright (c) 2012-2025 VMware, Inc.
 
 **103** **Group:** `org.springframework.boot` **Name:** `spring-boot-starter-logging` **Version:** `3.3.11`
 
-> * **Project URL**: [https://spring.io/projects/spring-boot](https://spring.io/projects/spring-boot)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright (c) 2012-2025 VMware, Inc.
+> - **Project URL**: [https://spring.io/projects/spring-boot](https://spring.io/projects/spring-boot)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright (c) 2012-2025 VMware, Inc.
 
 **104** **Group:** `org.springframework.boot` **Name:** `spring-boot-starter-mail` **Version:** `3.3.11`
 
-> * **Project URL**: [https://spring.io/projects/spring-boot](https://spring.io/projects/spring-boot)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright (c) 2012-2025 VMware, Inc.
+> - **Project URL**: [https://spring.io/projects/spring-boot](https://spring.io/projects/spring-boot)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright (c) 2012-2025 VMware, Inc.
 
 **105** **Group:** `org.springframework.boot` **Name:** `spring-boot-starter-reactor-netty` **Version:** `3.3.11`
 
-> * **Project URL**: [https://spring.io/projects/spring-boot](https://spring.io/projects/spring-boot)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright (c) 2012-2025 VMware, Inc.
+> - **Project URL**: [https://spring.io/projects/spring-boot](https://spring.io/projects/spring-boot)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright (c) 2012-2025 VMware, Inc.
 
 **106** **Group:** `org.springframework.boot` **Name:** `spring-boot-starter-security` **Version:** `3.3.6`
 
-> * **Project URL**: [https://spring.io/projects/spring-boot](https://spring.io/projects/spring-boot)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright (c) 2012-2025 VMware, Inc.
+> - **Project URL**: [https://spring.io/projects/spring-boot](https://spring.io/projects/spring-boot)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright (c) 2012-2025 VMware, Inc.
 
 **107** **Group:** `org.springframework.boot` **Name:** `spring-boot-starter-thymeleaf` **Version:** `3.3.11`
 
-> * **Project URL**: [https://spring.io/projects/spring-boot](https://spring.io/projects/spring-boot)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright (c) 2012-2025 VMware, Inc.
+> - **Project URL**: [https://spring.io/projects/spring-boot](https://spring.io/projects/spring-boot)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright (c) 2012-2025 VMware, Inc.
 
 **108** **Group:** `org.springframework.boot` **Name:** `spring-boot-starter-tomcat` **Version:** `3.3.11`
 
-> * **Project URL**: [https://spring.io/projects/spring-boot](https://spring.io/projects/spring-boot)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright (c) 2012-2025 VMware, Inc.
+> - **Project URL**: [https://spring.io/projects/spring-boot](https://spring.io/projects/spring-boot)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright (c) 2012-2025 VMware, Inc.
 
 **109** **Group:** `org.springframework.boot` **Name:** `spring-boot-starter-web` **Version:** `3.3.11`
 
-> * **Project URL**: [https://spring.io/projects/spring-boot](https://spring.io/projects/spring-boot)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright (c) 2012-2025 VMware, Inc.
+> - **Project URL**: [https://spring.io/projects/spring-boot](https://spring.io/projects/spring-boot)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright (c) 2012-2025 VMware, Inc.
 
 **110** **Group:** `org.springframework.boot` **Name:** `spring-boot-starter-webflux` **Version:** `3.3.11`
 
-> * **Project URL**: [https://spring.io/projects/spring-boot](https://spring.io/projects/spring-boot)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright (c) 2012-2025 VMware, Inc.
+> - **Project URL**: [https://spring.io/projects/spring-boot](https://spring.io/projects/spring-boot)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright (c) 2012-2025 VMware, Inc.
 
 **111** **Group:** `org.springframework.boot` **Name:** `spring-boot-starter-websocket` **Version:** `3.3.11`
 
-> * **Project URL**: [https://spring.io/projects/spring-boot](https://spring.io/projects/spring-boot)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright (c) 2012-2025 VMware, Inc.
+> - **Project URL**: [https://spring.io/projects/spring-boot](https://spring.io/projects/spring-boot)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright (c) 2012-2025 VMware, Inc.
 
 **112** **Group:** `org.springframework.boot` **Name:** `spring-boot-starter` **Version:** `3.3.11`
 
-> * **Project URL**: [https://spring.io/projects/spring-boot](https://spring.io/projects/spring-boot)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright (c) 2012-2025 VMware, Inc.
+> - **Project URL**: [https://spring.io/projects/spring-boot](https://spring.io/projects/spring-boot)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright (c) 2012-2025 VMware, Inc.
 
 **113** **Group:** `org.springframework.boot` **Name:** `spring-boot` **Version:** `3.3.11`
 
-> * **Project URL**: [https://spring.io/projects/spring-boot](https://spring.io/projects/spring-boot)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright (c) 2012-2025 VMware, Inc.
+> - **Project URL**: [https://spring.io/projects/spring-boot](https://spring.io/projects/spring-boot)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright (c) 2012-2025 VMware, Inc.
 
 **114** **Group:** `org.springframework.data` **Name:** `spring-data-commons` **Version:** `3.3.11`
 
-> * **Project URL**: [https://spring.io/projects/spring-data](https://spring.io/projects/spring-data)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright 2011-2025 the original author or authors.
+> - **Project URL**: [https://spring.io/projects/spring-data](https://spring.io/projects/spring-data)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright 2011-2025 the original author or authors.
 
 **115** **Group:** `org.springframework.data` **Name:** `spring-data-jpa` **Version:** `3.3.11`
 
-> * **Project URL**: [https://projects.spring.io/spring-data-jpa](https://projects.spring.io/spring-data-jpa)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright 2008-2025 the original author or authors.
+> - **Project URL**: [https://projects.spring.io/spring-data-jpa](https://projects.spring.io/spring-data-jpa)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright 2008-2025 the original author or authors.
 
 **116** **Group:** `org.springframework.retry` **Name:** `spring-retry` **Version:** `2.0.5`
 
-> * **Project URL**: [https://www.springsource.org](https://www.springsource.org)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright (c) 2006-2023 the original author or authors.
+> - **Project URL**: [https://www.springsource.org](https://www.springsource.org)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright (c) 2006-2023 the original author or authors.
 
 **117** **Group:** `org.springframework.security` **Name:** `spring-security-config` **Version:** `6.3.9`
 
-> * **Project URL**: [https://spring.io/projects/spring-security](https://spring.io/projects/spring-security)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright 2002-2022 the original author or authors.
+> - **Project URL**: [https://spring.io/projects/spring-security](https://spring.io/projects/spring-security)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright 2002-2022 the original author or authors.
 
 **118** **Group:** `org.springframework.security` **Name:** `spring-security-core` **Version:** `6.3.9`
 
-> * **Project URL**: [https://spring.io/projects/spring-security](https://spring.io/projects/spring-security)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright 2002-2022 the original author or authors.
+> - **Project URL**: [https://spring.io/projects/spring-security](https://spring.io/projects/spring-security)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright 2002-2022 the original author or authors.
 
 **119** **Group:** `org.springframework.security` **Name:** `spring-security-crypto` **Version:** `6.3.9`
 
-> * **Project URL**: [https://spring.io/projects/spring-security](https://spring.io/projects/spring-security)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright 2002-2022 the original author or authors.
+> - **Project URL**: [https://spring.io/projects/spring-security](https://spring.io/projects/spring-security)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright 2002-2022 the original author or authors.
 
 **120** **Group:** `org.springframework.security` **Name:** `spring-security-web` **Version:** `6.3.9`
 
-> * **Project URL**: [https://spring.io/projects/spring-security](https://spring.io/projects/spring-security)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright 2002-2022 the original author or authors.
+> - **Project URL**: [https://spring.io/projects/spring-security](https://spring.io/projects/spring-security)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright 2002-2022 the original author or authors.
 
 **121** **Group:** `org.springframework` **Name:** `spring-aop` **Version:** `6.1.19`
 
-> * **Project URL**: [https://github.com/spring-projects/spring-framework](https://github.com/spring-projects/spring-framework)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright (c) 2002-2025 Pivotal, Inc.
+> - **Project URL**: [https://github.com/spring-projects/spring-framework](https://github.com/spring-projects/spring-framework)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright (c) 2002-2025 Pivotal, Inc.
 
 **122** **Group:** `org.springframework` **Name:** `spring-aspects` **Version:** `6.1.19`
 
-> * **Project URL**: [https://github.com/spring-projects/spring-framework](https://github.com/spring-projects/spring-framework)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright (c) 2002-2025 Pivotal, Inc.
+> - **Project URL**: [https://github.com/spring-projects/spring-framework](https://github.com/spring-projects/spring-framework)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright (c) 2002-2025 Pivotal, Inc.
 
 **123** **Group:** `org.springframework` **Name:** `spring-beans` **Version:** `6.1.19`
 
-> * **Project URL**: [https://github.com/spring-projects/spring-framework](https://github.com/spring-projects/spring-framework)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright (c) 2002-2025 Pivotal, Inc.
+> - **Project URL**: [https://github.com/spring-projects/spring-framework](https://github.com/spring-projects/spring-framework)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright (c) 2002-2025 Pivotal, Inc.
 
 **124** **Group:** `org.springframework` **Name:** `spring-context-support` **Version:** `6.1.19`
 
-> * **Project URL**: [https://github.com/spring-projects/spring-framework](https://github.com/spring-projects/spring-framework)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright (c) 2002-2025 Pivotal, Inc.
+> - **Project URL**: [https://github.com/spring-projects/spring-framework](https://github.com/spring-projects/spring-framework)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright (c) 2002-2025 Pivotal, Inc.
 
 **125** **Group:** `org.springframework` **Name:** `spring-context` **Version:** `6.1.19`
 
-> * **Project URL**: [https://github.com/spring-projects/spring-framework](https://github.com/spring-projects/spring-framework)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright (c) 2002-2025 Pivotal, Inc.
+> - **Project URL**: [https://github.com/spring-projects/spring-framework](https://github.com/spring-projects/spring-framework)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright (c) 2002-2025 Pivotal, Inc.
 
 **126** **Group:** `org.springframework` **Name:** `spring-core` **Version:** `6.1.19`
 
-> * **Project URL**: [https://github.com/spring-projects/spring-framework](https://github.com/spring-projects/spring-framework)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright (c) 2002-2025 Pivotal, Inc.
+> - **Project URL**: [https://github.com/spring-projects/spring-framework](https://github.com/spring-projects/spring-framework)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright (c) 2002-2025 Pivotal, Inc.
 
 **127** **Group:** `org.springframework` **Name:** `spring-expression` **Version:** `6.1.19`
 
-> * **Project URL**: [https://github.com/spring-projects/spring-framework](https://github.com/spring-projects/spring-framework)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright (c) 2002-2025 Pivotal, Inc.
+> - **Project URL**: [https://github.com/spring-projects/spring-framework](https://github.com/spring-projects/spring-framework)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright (c) 2002-2025 Pivotal, Inc.
 
 **128** **Group:** `org.springframework` **Name:** `spring-jcl` **Version:** `6.1.19`
 
-> * **Project URL**: [https://github.com/spring-projects/spring-framework](https://github.com/spring-projects/spring-framework)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright (c) 2002-2025 Pivotal, Inc.
+> - **Project URL**: [https://github.com/spring-projects/spring-framework](https://github.com/spring-projects/spring-framework)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright (c) 2002-2025 Pivotal, Inc.
 
 **129** **Group:** `org.springframework` **Name:** `spring-jdbc` **Version:** `6.1.19`
 
-> * **Project URL**: [https://github.com/spring-projects/spring-framework](https://github.com/spring-projects/spring-framework)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright (c) 2002-2025 Pivotal, Inc.
+> - **Project URL**: [https://github.com/spring-projects/spring-framework](https://github.com/spring-projects/spring-framework)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright (c) 2002-2025 Pivotal, Inc.
 
 **130** **Group:** `org.springframework` **Name:** `spring-messaging` **Version:** `6.1.19`
 
-> * **Project URL**: [https://github.com/spring-projects/spring-framework](https://github.com/spring-projects/spring-framework)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright (c) 2002-2025 Pivotal, Inc.
+> - **Project URL**: [https://github.com/spring-projects/spring-framework](https://github.com/spring-projects/spring-framework)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright (c) 2002-2025 Pivotal, Inc.
 
 **131** **Group:** `org.springframework` **Name:** `spring-orm` **Version:** `6.1.19`
 
-> * **Project URL**: [https://github.com/spring-projects/spring-framework](https://github.com/spring-projects/spring-framework)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright (c) 2002-2025 Pivotal, Inc.
+> - **Project URL**: [https://github.com/spring-projects/spring-framework](https://github.com/spring-projects/spring-framework)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright (c) 2002-2025 Pivotal, Inc.
 
 **132** **Group:** `org.springframework` **Name:** `spring-tx` **Version:** `6.1.19`
 
-> * **Project URL**: [https://github.com/spring-projects/spring-framework](https://github.com/spring-projects/spring-framework)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright (c) 2002-2025 Pivotal, Inc.
+> - **Project URL**: [https://github.com/spring-projects/spring-framework](https://github.com/spring-projects/spring-framework)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright (c) 2002-2025 Pivotal, Inc.
 
 **133** **Group:** `org.springframework` **Name:** `spring-web` **Version:** `6.1.19`
 
-> * **Project URL**: [https://github.com/spring-projects/spring-framework](https://github.com/spring-projects/spring-framework)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright (c) 2002-2025 Pivotal, Inc.
+> - **Project URL**: [https://github.com/spring-projects/spring-framework](https://github.com/spring-projects/spring-framework)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright (c) 2002-2025 Pivotal, Inc.
 
 **134** **Group:** `org.springframework` **Name:** `spring-webflux` **Version:** `6.1.19`
 
-> * **Project URL**: [https://github.com/spring-projects/spring-framework](https://github.com/spring-projects/spring-framework)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright (c) 2002-2025 Pivotal, Inc.
+> - **Project URL**: [https://github.com/spring-projects/spring-framework](https://github.com/spring-projects/spring-framework)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright (c) 2002-2025 Pivotal, Inc.
 
 **135** **Group:** `org.springframework` **Name:** `spring-webmvc` **Version:** `6.1.19`
 
-> * **Project URL**: [https://github.com/spring-projects/spring-framework](https://github.com/spring-projects/spring-framework)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright (c) 2002-2025 Pivotal, Inc.
+> - **Project URL**: [https://github.com/spring-projects/spring-framework](https://github.com/spring-projects/spring-framework)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright (c) 2002-2025 Pivotal, Inc.
 
 **136** **Group:** `org.springframework` **Name:** `spring-websocket` **Version:** `6.1.19`
 
-> * **Project URL**: [https://github.com/spring-projects/spring-framework](https://github.com/spring-projects/spring-framework)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright (c) 2002-2025 Pivotal, Inc.
+> - **Project URL**: [https://github.com/spring-projects/spring-framework](https://github.com/spring-projects/spring-framework)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright (c) 2002-2025 Pivotal, Inc.
 
 **137** **Group:** `org.thymeleaf` **Name:** `thymeleaf-spring6` **Version:** `3.1.3.RELEASE`
 
-> * **Project URL**: [http://www.thymeleaf.org](http://www.thymeleaf.org)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright (c) 2011-2021, The THYMELEAF team (http://www.thymeleaf.org)
+> - **Project URL**: [http://www.thymeleaf.org](http://www.thymeleaf.org)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright (c) 2011-2021, The THYMELEAF team (http://www.thymeleaf.org)
 
 **138** **Group:** `org.thymeleaf` **Name:** `thymeleaf` **Version:** `3.1.3.RELEASE`
 
-> * **Project URL**: [http://www.thymeleaf.org](http://www.thymeleaf.org)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright (c) 2011-2021, The THYMELEAF team (http://www.thymeleaf.org)
+> - **Project URL**: [http://www.thymeleaf.org](http://www.thymeleaf.org)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright (c) 2011-2021, The THYMELEAF team (http://www.thymeleaf.org)
 
 **139** **Group:** `org.tomlj` **Name:** `tomlj` **Version:** `1.1.1`
 
-> * **Project URL**: [https://github.com/tomlj/tomlj](https://github.com/tomlj/tomlj)
-> * **License**: Apache License 2.0
-> * **Copyright holders**: Chris Leishman, Tobias Schmidt
+> - **Project URL**: [https://github.com/tomlj/tomlj](https://github.com/tomlj/tomlj)
+> - **License**: Apache License 2.0
+> - **Copyright holders**: Chris Leishman, Tobias Schmidt
 
 **140** **Group:** `org.unbescape` **Name:** `unbescape` **Version:** `1.1.6.RELEASE`
 
-> * **Project URL**: [http://www.unbescape.org](http://www.unbescape.org)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright (c) 2014-2017, The UNBESCAPE team (http://www.unbescape.org)
+> - **Project URL**: [http://www.unbescape.org](http://www.unbescape.org)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright (c) 2014-2017, The UNBESCAPE team (http://www.unbescape.org)
 
 **141** **Group:** `org.webjars` **Name:** `swagger-ui` **Version:** `5.13.0`
 
-> * **Project URL**: [http://webjars.org](http://webjars.org)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright 2020-2021 SmartBear Software Inc.
+> - **Project URL**: [http://webjars.org](http://webjars.org)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright 2020-2021 SmartBear Software Inc.
 
 **142** **Group:** `org.yaml` **Name:** `snakeyaml` **Version:** `2.2`
 
-> * **Project URL**: [https://bitbucket.org/snakeyaml/snakeyaml](https://bitbucket.org/snakeyaml/snakeyaml)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright (c) 2008, SnakeYAML
+> - **Project URL**: [https://bitbucket.org/snakeyaml/snakeyaml](https://bitbucket.org/snakeyaml/snakeyaml)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright (c) 2008, SnakeYAML
 
 **143** **Group:** `software.amazon.awssdk` **Name:** `acm` **Version:** `2.29.37`
 
-> * **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+> - **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
 **144** **Group:** `software.amazon.awssdk` **Name:** `annotations` **Version:** `2.29.37`
 
-> * **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+> - **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
 **145** **Group:** `software.amazon.awssdk` **Name:** `apache-client` **Version:** `2.29.37`
 
-> * **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+> - **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
 **146** **Group:** `software.amazon.awssdk` **Name:** `arns` **Version:** `2.29.37`
 
-> * **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+> - **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
 **147** **Group:** `software.amazon.awssdk` **Name:** `auth` **Version:** `2.29.37`
 
-> * **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+> - **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
 **148** **Group:** `software.amazon.awssdk` **Name:** `aws-core` **Version:** `2.29.37`
 
-> * **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+> - **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
 **149** **Group:** `software.amazon.awssdk` **Name:** `aws-json-protocol` **Version:** `2.29.37`
 
-> * **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+> - **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
 **150** **Group:** `software.amazon.awssdk` **Name:** `aws-query-protocol` **Version:** `2.29.37`
 
-> * **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+> - **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
 **151** **Group:** `software.amazon.awssdk` **Name:** `aws-xml-protocol` **Version:** `2.29.37`
 
-> * **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+> - **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
 **152** **Group:** `software.amazon.awssdk` **Name:** `checksums-spi` **Version:** `2.29.37`
 
-> * **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+> - **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
 **153** **Group:** `software.amazon.awssdk` **Name:** `checksums` **Version:** `2.29.37`
 
-> * **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+> - **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
 **154** **Group:** `software.amazon.awssdk` **Name:** `cloudformation` **Version:** `2.29.37`
 
-> * **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+> - **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
 **155** **Group:** `software.amazon.awssdk` **Name:** `crt-core` **Version:** `2.29.37`
 
-> * **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+> - **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
 **156** **Group:** `software.amazon.awssdk` **Name:** `ebs` **Version:** `2.29.37`
 
-> * **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+> - **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
 **157** **Group:** `software.amazon.awssdk` **Name:** `ec2` **Version:** `2.29.37`
 
-> * **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+> - **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
 **158** **Group:** `software.amazon.awssdk` **Name:** `elasticloadbalancingv2` **Version:** `2.29.37`
 
-> * **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+> - **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
 **159** **Group:** `software.amazon.awssdk` **Name:** `endpoints-spi` **Version:** `2.29.37`
 
-> * **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+> - **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
 **160** **Group:** `software.amazon.awssdk` **Name:** `http-auth-aws-eventstream` **Version:** `2.29.37`
 
-> * **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+> - **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
 **161** **Group:** `software.amazon.awssdk` **Name:** `http-auth-aws` **Version:** `2.29.37`
 
-> * **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+> - **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
 **162** **Group:** `software.amazon.awssdk` **Name:** `http-auth-spi` **Version:** `2.29.37`
 
-> * **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+> - **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
 **163** **Group:** `software.amazon.awssdk` **Name:** `http-auth` **Version:** `2.29.37`
 
-> * **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+> - **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
 **164** **Group:** `software.amazon.awssdk` **Name:** `http-client-spi` **Version:** `2.29.37`
 
-> * **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+> - **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
 **165** **Group:** `software.amazon.awssdk` **Name:** `iam` **Version:** `2.29.37`
 
-> * **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+> - **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
 **166** **Group:** `software.amazon.awssdk` **Name:** `identity-spi` **Version:** `2.29.37`
 
-> * **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+> - **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
 **167** **Group:** `software.amazon.awssdk` **Name:** `imds` **Version:** `2.29.37`
 
-> * **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+> - **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
 **168** **Group:** `software.amazon.awssdk` **Name:** `json-utils` **Version:** `2.29.37`
 
-> * **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+> - **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
 **169** **Group:** `software.amazon.awssdk` **Name:** `marketplacemetering` **Version:** `2.29.37`
 
-> * **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+> - **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
 **170** **Group:** `software.amazon.awssdk` **Name:** `metrics-spi` **Version:** `2.29.37`
 
-> * **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+> - **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
 **171** **Group:** `software.amazon.awssdk` **Name:** `netty-nio-client` **Version:** `2.29.37`
 
-> * **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+> - **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
 **172** **Group:** `software.amazon.awssdk` **Name:** `organizations` **Version:** `2.29.37`
 
-> * **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+> - **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
 **173** **Group:** `software.amazon.awssdk` **Name:** `profiles` **Version:** `2.29.37`
 
-> * **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+> - **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
 **174** **Group:** `software.amazon.awssdk` **Name:** `protocol-core` **Version:** `2.29.37`
 
-> * **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+> - **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
 **175** **Group:** `software.amazon.awssdk` **Name:** `regions` **Version:** `2.29.37`
 
-> * **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+> - **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
 **176** **Group:** `software.amazon.awssdk` **Name:** `resourcegroupstaggingapi` **Version:** `2.29.37`
 
-> * **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+> - **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
 **177** **Group:** `software.amazon.awssdk` **Name:** `retries-spi` **Version:** `2.29.37`
 
-> * **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+> - **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
 **178** **Group:** `software.amazon.awssdk` **Name:** `retries` **Version:** `2.29.37`
 
-> * **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+> - **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
 **179** **Group:** `software.amazon.awssdk` **Name:** `route53` **Version:** `2.29.37`
 
-> * **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+> - **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
 **180** **Group:** `software.amazon.awssdk` **Name:** `s3` **Version:** `2.29.37`
 
-> * **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+> - **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
 **181** **Group:** `software.amazon.awssdk` **Name:** `sdk-core` **Version:** `2.29.37`
 
-> * **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+> - **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
 **182** **Group:** `software.amazon.awssdk` **Name:** `sts` **Version:** `2.29.37`
 
-> * **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+> - **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
 **183** **Group:** `software.amazon.awssdk` **Name:** `third-party-jackson-core` **Version:** `2.29.37`
 
-> * **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+> - **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
 **184** **Group:** `software.amazon.awssdk` **Name:** `utils` **Version:** `2.29.37`
 
-> * **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+> - **Project URL**: [https://aws.amazon.com/sdkforjava](https://aws.amazon.com/sdkforjava)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
 **185** **Group:** `software.amazon.eventstream` **Name:** `eventstream` **Version:** `1.0.1`
 
-> * **Project URL**: [https://github.com/awslabs/aws-eventstream-java](https://github.com/awslabs/aws-eventstream-java)
-> * **License**: Apache License 2.0
-> * **Copyright**: Copyright 2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+> - **Project URL**: [https://github.com/awslabs/aws-eventstream-java](https://github.com/awslabs/aws-eventstream-java)
+> - **License**: Apache License 2.0
+> - **Copyright**: Copyright 2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
-### MIT License
+## MIT License <a href="#mit-license" id="mit-license"></a>
 
 **186** **Group:** `com.azure.resourcemanager` **Name:** `azure-resourcemanager-appplatform` **Version:** `2.50.0`
 
-> * **Project URL**: [https://github.com/Azure/azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java)
-> * **License**: MIT License
-> * **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
+> - **Project URL**: [https://github.com/Azure/azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java)
+> - **License**: MIT License
+> - **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
 
 **187** **Group:** `com.azure.resourcemanager` **Name:** `azure-resourcemanager-appservice` **Version:** `2.50.0`
 
-> * **Project URL**: [https://github.com/Azure/azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java)
-> * **License**: MIT License
-> * **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
+> - **Project URL**: [https://github.com/Azure/azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java)
+> - **License**: MIT License
+> - **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
 
 **188** **Group:** `com.azure.resourcemanager` **Name:** `azure-resourcemanager-authorization` **Version:** `2.51.0`
 
-> * **Project URL**: [https://github.com/Azure/azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java)
-> * **License**: MIT License
-> * **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
+> - **Project URL**: [https://github.com/Azure/azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java)
+> - **License**: MIT License
+> - **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
 
 **189** **Group:** `com.azure.resourcemanager` **Name:** `azure-resourcemanager-cdn` **Version:** `2.50.0`
 
-> * **Project URL**: [https://github.com/Azure/azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java)
-> * **License**: MIT License
-> * **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
+> - **Project URL**: [https://github.com/Azure/azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java)
+> - **License**: MIT License
+> - **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
 
 **190** **Group:** `com.azure.resourcemanager` **Name:** `azure-resourcemanager-compute` **Version:** `2.51.0`
 
-> * **Project URL**: [https://github.com/Azure/azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java)
-> * **License**: MIT License
-> * **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
+> - **Project URL**: [https://github.com/Azure/azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java)
+> - **License**: MIT License
+> - **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
 
 **191** **Group:** `com.azure.resourcemanager` **Name:** `azure-resourcemanager-containerinstance` **Version:** `2.50.0`
 
-> * **Project URL**: [https://github.com/Azure/azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java)
-> * **License**: MIT License
-> * **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
+> - **Project URL**: [https://github.com/Azure/azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java)
+> - **License**: MIT License
+> - **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
 
 **192** **Group:** `com.azure.resourcemanager` **Name:** `azure-resourcemanager-containerregistry` **Version:** `2.50.0`
 
-> * **Project URL**: [https://github.com/Azure/azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java)
-> * **License**: MIT License
-> * **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
+> - **Project URL**: [https://github.com/Azure/azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java)
+> - **License**: MIT License
+> - **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
 
 **193** **Group:** `com.azure.resourcemanager` **Name:** `azure-resourcemanager-containerservice` **Version:** `2.50.0`
 
-> * **Project URL**: [https://github.com/Azure/azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java)
-> * **License**: MIT License
-> * **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
+> - **Project URL**: [https://github.com/Azure/azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java)
+> - **License**: MIT License
+> - **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
 
 **194** **Group:** `com.azure.resourcemanager` **Name:** `azure-resourcemanager-cosmos` **Version:** `2.50.0`
 
-> * **Project URL**: [https://github.com/Azure/azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java)
-> * **License**: MIT License
-> * **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
+> - **Project URL**: [https://github.com/Azure/azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java)
+> - **License**: MIT License
+> - **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
 
 **195** **Group:** `com.azure.resourcemanager` **Name:** `azure-resourcemanager-dns` **Version:** `2.50.0`
 
-> * **Project URL**: [https://github.com/Azure/azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java)
-> * **License**: MIT License
-> * **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
+> - **Project URL**: [https://github.com/Azure/azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java)
+> - **License**: MIT License
+> - **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
 
 **196** **Group:** `com.azure.resourcemanager` **Name:** `azure-resourcemanager-eventhubs` **Version:** `2.50.0`
 
-> * **Project URL**: [https://github.com/Azure/azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java)
-> * **License**: MIT License
-> * **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
+> - **Project URL**: [https://github.com/Azure/azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java)
+> - **License**: MIT License
+> - **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
 
 **197** **Group:** `com.azure.resourcemanager` **Name:** `azure-resourcemanager-keyvault` **Version:** `2.50.0`
 
-> * **Project URL**: [https://github.com/Azure/azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java)
-> * **License**: MIT License
-> * **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
+> - **Project URL**: [https://github.com/Azure/azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java)
+> - **License**: MIT License
+> - **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
 
 **198** **Group:** `com.azure.resourcemanager` **Name:** `azure-resourcemanager-monitor` **Version:** `2.50.0`
 
-> * **Project URL**: [https://github.com/Azure/azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java)
-> * **License**: MIT License
-> * **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
+> - **Project URL**: [https://github.com/Azure/azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java)
+> - **License**: MIT License
+> - **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
 
 **199** **Group:** `com.azure.resourcemanager` **Name:** `azure-resourcemanager-msi` **Version:** `2.51.0`
 
-> * **Project URL**: [https://github.com/Azure/azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java)
-> * **License**: MIT License
-> * **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
+> - **Project URL**: [https://github.com/Azure/azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java)
+> - **License**: MIT License
+> - **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
 
 **200** **Group:** `com.azure.resourcemanager` **Name:** `azure-resourcemanager-network` **Version:** `2.50.0`
 
-> * **Project URL**: [https://github.com/Azure/azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java)
-> * **License**: MIT License
-> * **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
+> - **Project URL**: [https://github.com/Azure/azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java)
+> - **License**: MIT License
+> - **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
 
 **201** **Group:** `com.azure.resourcemanager` **Name:** `azure-resourcemanager-privatedns` **Version:** `2.50.0`
 
-> * **Project URL**: [https://github.com/Azure/azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java)
-> * **License**: MIT License
-> * **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
+> - **Project URL**: [https://github.com/Azure/azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java)
+> - **License**: MIT License
+> - **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
 
 **202** **Group:** `com.azure.resourcemanager` **Name:** `azure-resourcemanager-redis` **Version:** `2.50.0`
 
-> * **Project URL**: [https://github.com/Azure/azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java)
-> * **License**: MIT License
-> * **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
+> - **Project URL**: [https://github.com/Azure/azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java)
+> - **License**: MIT License
+> - **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
 
 **203** **Group:** `com.azure.resourcemanager` **Name:** `azure-resourcemanager-resources` **Version:** `2.50.0`
 
-> * **Project URL**: [https://github.com/Azure/azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java)
-> * **License**: MIT License
-> * **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
+> - **Project URL**: [https://github.com/Azure/azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java)
+> - **License**: MIT License
+> - **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
 
 **204** **Group:** `com.azure.resourcemanager` **Name:** `azure-resourcemanager-search` **Version:** `2.50.0`
 
-> * **Project URL**: [https://github.com/Azure/azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java)
-> * **License**: MIT License
-> * **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
+> - **Project URL**: [https://github.com/Azure/azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java)
+> - **License**: MIT License
+> - **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
 
 **205** **Group:** `com.azure.resourcemanager` **Name:** `azure-resourcemanager-servicebus` **Version:** `2.50.0`
 
-> * **Project URL**: [https://github.com/Azure/azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java)
-> * **License**: MIT License
-> * **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
+> - **Project URL**: [https://github.com/Azure/azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java)
+> - **License**: MIT License
+> - **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
 
 **206** **Group:** `com.azure.resourcemanager` **Name:** `azure-resourcemanager-sql` **Version:** `2.50.0`
 
-> * **Project URL**: [https://github.com/Azure/azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java)
-> * **License**: MIT License
-> * **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
+> - **Project URL**: [https://github.com/Azure/azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java)
+> - **License**: MIT License
+> - **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
 
 **207** **Group:** `com.azure.resourcemanager` **Name:** `azure-resourcemanager-storage` **Version:** `2.51.0`
 
-> * **Project URL**: [https://github.com/Azure/azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java)
-> * **License**: MIT License
-> * **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
+> - **Project URL**: [https://github.com/Azure/azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java)
+> - **License**: MIT License
+> - **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
 
 **208** **Group:** `com.azure.resourcemanager` **Name:** `azure-resourcemanager-trafficmanager` **Version:** `2.50.0`
 
-> * **Project URL**: [https://github.com/Azure/azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java)
-> * **License**: MIT License
-> * **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
+> - **Project URL**: [https://github.com/Azure/azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java)
+> - **License**: MIT License
+> - **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
 
 **209** **Group:** `com.azure.resourcemanager` **Name:** `azure-resourcemanager` **Version:** `2.50.0`
 
-> * **Project URL**: [https://github.com/Azure/azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java)
-> * **License**: MIT License
-> * **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
+> - **Project URL**: [https://github.com/Azure/azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java)
+> - **License**: MIT License
+> - **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
 
 **210** **Group:** `com.azure.spring` **Name:** `spring-cloud-azure-autoconfigure` **Version:** `5.22.0`
 
-> * **Project URL**: [https://microsoft.github.io/spring-cloud-azure](https://microsoft.github.io/spring-cloud-azure)
-> * **License**: MIT License
-> * **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
+> - **Project URL**: [https://microsoft.github.io/spring-cloud-azure](https://microsoft.github.io/spring-cloud-azure)
+> - **License**: MIT License
+> - **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
 
 **211** **Group:** `com.azure.spring` **Name:** `spring-cloud-azure-core` **Version:** `5.22.0`
 
-> * **Project URL**: [https://microsoft.github.io/spring-cloud-azure](https://microsoft.github.io/spring-cloud-azure)
-> * **License**: MIT License
-> * **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
+> - **Project URL**: [https://microsoft.github.io/spring-cloud-azure](https://microsoft.github.io/spring-cloud-azure)
+> - **License**: MIT License
+> - **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
 
 **212** **Group:** `com.azure.spring` **Name:** `spring-cloud-azure-service` **Version:** `5.22.0`
 
-> * **Project URL**: [https://microsoft.github.io/spring-cloud-azure](https://microsoft.github.io/spring-cloud-azure)
-> * **License**: MIT License
-> * **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
+> - **Project URL**: [https://microsoft.github.io/spring-cloud-azure](https://microsoft.github.io/spring-cloud-azure)
+> - **License**: MIT License
+> - **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
 
 **213** **Group:** `com.azure.spring` **Name:** `spring-cloud-azure-starter-storage-blob` **Version:** `5.22.0`
 
-> * **Project URL**: [https://microsoft.github.io/spring-cloud-azure](https://microsoft.github.io/spring-cloud-azure)
-> * **License**: MIT License
-> * **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
+> - **Project URL**: [https://microsoft.github.io/spring-cloud-azure](https://microsoft.github.io/spring-cloud-azure)
+> - **License**: MIT License
+> - **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
 
 **214** **Group:** `com.azure.spring` **Name:** `spring-cloud-azure-starter` **Version:** `5.22.0`
 
-> * **Project URL**: [https://microsoft.github.io/spring-cloud-azure](https://microsoft.github.io/spring-cloud-azure)
-> * **License**: MIT License
-> * **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
+> - **Project URL**: [https://microsoft.github.io/spring-cloud-azure](https://microsoft.github.io/spring-cloud-azure)
+> - **License**: MIT License
+> - **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
 
 **215** **Group:** `com.azure` **Name:** `azure-core-amqp` **Version:** `2.9.16`
 
-> * **Project URL**: [https://github.com/Azure/azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java)
-> * **License**: MIT License
-> * **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
+> - **Project URL**: [https://github.com/Azure/azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java)
+> - **License**: MIT License
+> - **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
 
 **216** **Group:** `com.azure` **Name:** `azure-core-http-netty` **Version:** `1.16.0`
 
-> * **Project URL**: [https://github.com/Azure/azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java)
-> * **License**: MIT License
-> * **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
+> - **Project URL**: [https://github.com/Azure/azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java)
+> - **License**: MIT License
+> - **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
 
 **217** **Group:** `com.azure` **Name:** `azure-core-management` **Version:** `1.17.0`
 
-> * **Project URL**: [https://github.com/Azure/azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java)
-> * **License**: MIT License
-> * **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
+> - **Project URL**: [https://github.com/Azure/azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java)
+> - **License**: MIT License
+> - **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
 
 **218** **Group:** `com.azure` **Name:** `azure-core` **Version:** `1.56.0`
 
-> * **Project URL**: [https://github.com/Azure/azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java)
-> * **License**: MIT License
-> * **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
+> - **Project URL**: [https://github.com/Azure/azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java)
+> - **License**: MIT License
+> - **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
 
 **219** **Group:** `com.azure` **Name:** `azure-identity` **Version:** `1.15.4`
 
-> * **Project URL**: [https://github.com/Azure/azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java)
-> * **License**: MIT License
-> * **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
+> - **Project URL**: [https://github.com/Azure/azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java)
+> - **License**: MIT License
+> - **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
 
 **220** **Group:** `com.azure` **Name:** `azure-json` **Version:** `1.5.0`
 
-> * **Project URL**: [https://github.com/Azure/azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java)
-> * **License**: MIT License
-> * **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
+> - **Project URL**: [https://github.com/Azure/azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java)
+> - **License**: MIT License
+> - **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
 
 **221** **Group:** `com.azure` **Name:** `azure-security-keyvault-certificates` **Version:** `4.6.6`
 
-> * **Project URL**: [https://github.com/Azure/azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java)
-> * **License**: MIT License
-> * **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
+> - **Project URL**: [https://github.com/Azure/azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java)
+> - **License**: MIT License
+> - **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
 
 **222** **Group:** `com.azure` **Name:** `azure-security-keyvault-keys` **Version:** `4.9.4`
 
-> * **Project URL**: [https://github.com/Azure/azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java)
-> * **License**: MIT License
-> * **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
+> - **Project URL**: [https://github.com/Azure/azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java)
+> - **License**: MIT License
+> - **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
 
 **223** **Group:** `com.azure` **Name:** `azure-security-keyvault-secrets` **Version:** `4.9.4`
 
-> * **Project URL**: [https://github.com/Azure/azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java)
-> * **License**: MIT License
-> * **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
+> - **Project URL**: [https://github.com/Azure/azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java)
+> - **License**: MIT License
+> - **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
 
 **224** **Group:** `com.azure` **Name:** `azure-storage-blob-batch` **Version:** `12.27.2`
 
-> * **Project URL**: [https://github.com/Azure/azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java)
-> * **License**: MIT License
-> * **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
+> - **Project URL**: [https://github.com/Azure/azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java)
+> - **License**: MIT License
+> - **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
 
 **225** **Group:** `com.azure` **Name:** `azure-storage-blob` **Version:** `12.31.2`
 
-> * **Project URL**: [https://github.com/Azure/azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java)
-> * **License**: MIT License
-> * **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
+> - **Project URL**: [https://github.com/Azure/azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java)
+> - **License**: MIT License
+> - **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
 
 **226** **Group:** `com.azure` **Name:** `azure-storage-common` **Version:** `12.30.2`
 
-> * **Project URL**: [https://github.com/Azure/azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java)
-> * **License**: MIT License
-> * **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
+> - **Project URL**: [https://github.com/Azure/azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java)
+> - **License**: MIT License
+> - **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
 
 **227** **Group:** `com.azure` **Name:** `azure-storage-file-share` **Version:** `12.26.0`
 
-> * **Project URL**: [https://github.com/Azure/azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java)
-> * **License**: MIT License
-> * **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
+> - **Project URL**: [https://github.com/Azure/azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java)
+> - **License**: MIT License
+> - **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
 
 **228** **Group:** `com.azure` **Name:** `azure-storage-internal-avro` **Version:** `12.16.2`
 
-> * **Project URL**: [https://github.com/Azure/azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java)
-> * **License**: MIT License
-> * **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
+> - **Project URL**: [https://github.com/Azure/azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java)
+> - **License**: MIT License
+> - **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
 
 **229** **Group:** `com.azure` **Name:** `azure-xml` **Version:** `1.2.0`
 
-> * **Project URL**: [https://github.com/Azure/azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java)
-> * **License**: MIT License
-> * **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
+> - **Project URL**: [https://github.com/Azure/azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java)
+> - **License**: MIT License
+> - **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
 
 **230** **Group:** `com.microsoft.azure` **Name:** `msal4j-persistence-extension` **Version:** `1.3.0`
 
-> * **Project URL**: [https://github.com/AzureAD/microsoft-authentication-library-for-java](https://github.com/AzureAD/microsoft-authentication-library-for-java)
-> * **License**: MIT License
-> * **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
+> - **Project URL**: [https://github.com/AzureAD/microsoft-authentication-library-for-java](https://github.com/AzureAD/microsoft-authentication-library-for-java)
+> - **License**: MIT License
+> - **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
 
 **231** **Group:** `com.microsoft.azure` **Name:** `msal4j` **Version:** `1.19.1`
 
-> * **Project URL**: [https://github.com/AzureAD/microsoft-authentication-library-for-java](https://github.com/AzureAD/microsoft-authentication-library-for-java)
-> * **License**: MIT License
-> * **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
+> - **Project URL**: [https://github.com/AzureAD/microsoft-authentication-library-for-java](https://github.com/AzureAD/microsoft-authentication-library-for-java)
+> - **License**: MIT License
+> - **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
 
 **232** **Group:** `com.microsoft.azure` **Name:** `qpid-proton-j-extensions` **Version:** `1.2.5`
 
-> * **Project URL**: [https://github.com/Azure/qpid-proton-j-extensions](https://github.com/Azure/qpid-proton-j-extensions)
-> * **License**: MIT License
-> * **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
+> - **Project URL**: [https://github.com/Azure/qpid-proton-j-extensions](https://github.com/Azure/qpid-proton-j-extensions)
+> - **License**: MIT License
+> - **Copyright**: Copyright (c) Microsoft Corporation. All rights reserved.
 
 **233** **Group:** `com.microsoft.graph` **Name:** `microsoft-graph-core` **Version:** `2.0.13`
 
-> * **Project URL**: [https://github.com/microsoftgraph/msgraph-sdk-java-core](https://github.com/microsoftgraph/msgraph-sdk-java-core)
-> * **License**: MIT License
-> * **Copyright**: Copyright (c) 2018 Microsoft Graph
+> - **Project URL**: [https://github.com/microsoftgraph/msgraph-sdk-java-core](https://github.com/microsoftgraph/msgraph-sdk-java-core)
+> - **License**: MIT License
+> - **Copyright**: Copyright (c) 2018 Microsoft Graph
 
 **234** **Group:** `com.microsoft.graph` **Name:** `microsoft-graph` **Version:** `5.34.0`
 
-> * **Project URL**: [https://github.com/microsoftgraph/msgraph-sdk-java](https://github.com/microsoftgraph/msgraph-sdk-java)
-> * **License**: MIT License
-> * **Copyright**: Copyright (c) 2018 Microsoft Graph
+> - **Project URL**: [https://github.com/microsoftgraph/msgraph-sdk-java](https://github.com/microsoftgraph/msgraph-sdk-java)
+> - **License**: MIT License
+> - **Copyright**: Copyright (c) 2018 Microsoft Graph
 
 **235** **Group:** `org.checkerframework` **Name:** `checker-qual` **Version:** `3.21.2`
 
-> * **Project URL**: [https://checkerframework.org](https://checkerframework.org)
-> * **License**: MIT License
-> * **Copyright**: Copyright 2004-present by the Checker Framework developers
+> - **Project URL**: [https://checkerframework.org](https://checkerframework.org)
+> - **License**: MIT License
+> - **Copyright**: Copyright 2004-present by the Checker Framework developers
 
 **236** **Group:** `org.duckdb` **Name:** `duckdb_jdbc` **Version:** `1.3.1.0`
 
-> * **Project URL**: [https://www.duckdb.org](https://www.duckdb.org)
-> * **License**: MIT License
-> * **Copyright**: Copyright 2018-2025 Stichting DuckDB Foundation
+> - **Project URL**: [https://www.duckdb.org](https://www.duckdb.org)
+> - **License**: MIT License
+> - **Copyright**: Copyright 2018-2025 Stichting DuckDB Foundation
 
 **237** **Group:** `org.projectlombok` **Name:** `lombok` **Version:** `1.18.38`
 
-> * **Project URL**: [https://projectlombok.org](https://projectlombok.org)
-> * **License**: MIT License
-> * **Copyright**: Copyright (C) 2009-2021 The Project Lombok Authors.
+> - **Project URL**: [https://projectlombok.org](https://projectlombok.org)
+> - **License**: MIT License
+> - **Copyright**: Copyright (C) 2009-2021 The Project Lombok Authors.
 
 **238** **Group:** `org.slf4j` **Name:** `jul-to-slf4j` **Version:** `2.0.17`
 
-> * **Project URL**: [http://www.slf4j.org](http://www.slf4j.org)
-> * **License**: MIT License
-> * **Copyright**: Copyright (c) 2004-2022 QOS.ch Sarl (Switzerland)
+> - **Project URL**: [http://www.slf4j.org](http://www.slf4j.org)
+> - **License**: MIT License
+> - **Copyright**: Copyright (c) 2004-2022 QOS.ch Sarl (Switzerland)
 
 **239** **Group:** `org.slf4j` **Name:** `slf4j-api` **Version:** `2.0.17`
 
-> * **Project URL**: [http://www.slf4j.org](http://www.slf4j.org)
-> * **License**: MIT License
-> * **Copyright**: Copyright (c) 2004-2022 QOS.ch Sarl (Switzerland)
+> - **Project URL**: [http://www.slf4j.org](http://www.slf4j.org)
+> - **License**: MIT License
+> - **Copyright**: Copyright (c) 2004-2022 QOS.ch Sarl (Switzerland)
 
-### BSD 3-Clause License
+## BSD 3-Clause License <a href="#bsd-3-clause-license" id="bsd-3-clause-license"></a>
 
 **240** **Group:** `org.abego.treelayout` **Name:** `org.abego.treelayout.core` **Version:** `1.0.3`
 
-> * **Project URL**: [http://abego-software.de](http://abego-software.de)
-> * **License**: BSD 3-Clause License
-> * **Copyright**: Copyright (c) 2011, abego Software GmbH, Germany (http://www.abego.org)
+> - **Project URL**: [http://abego-software.de](http://abego-software.de)
+> - **License**: BSD 3-Clause License
+> - **Copyright**: Copyright (c) 2011, abego Software GmbH, Germany (http://www.abego.org)
 
 **241** **Group:** `org.antlr` **Name:** `ST4` **Version:** `4.3.4`
 
-> * **Project URL**: [http://nexus.sonatype.org/oss-repository-hosting.html](http://nexus.sonatype.org/oss-repository-hosting.html)
-> * **License**: BSD 3-Clause License
-> * **Copyright**: Copyright (c) 2011-2022 Terence Parr
+> - **Project URL**: [http://nexus.sonatype.org/oss-repository-hosting.html](http://nexus.sonatype.org/oss-repository-hosting.html)
+> - **License**: BSD 3-Clause License
+> - **Copyright**: Copyright (c) 2011-2022 Terence Parr
 
 **242** **Group:** `org.antlr` **Name:** `antlr-runtime` **Version:** `3.5.3`
 
-> * **Project URL**: [http://www.antlr.org](http://www.antlr.org)
-> * **License**: BSD 3-Clause License
-> * **Copyright**: Copyright (c) 2005-2009 Terence Parr
+> - **Project URL**: [http://www.antlr.org](http://www.antlr.org)
+> - **License**: BSD 3-Clause License
+> - **Copyright**: Copyright (c) 2005-2009 Terence Parr
 
 **243** **Group:** `org.antlr` **Name:** `antlr4-runtime` **Version:** `4.13.1`
 
-> * **Project URL**: [https://www.antlr.org/](https://www.antlr.org/)
-> * **License**: BSD 3-Clause License
-> * **Copyright**: Copyright (c) 2012-2022 The ANTLR Project. All rights reserved.
+> - **Project URL**: [https://www.antlr.org/](https://www.antlr.org/)
+> - **License**: BSD 3-Clause License
+> - **Copyright**: Copyright (c) 2012-2022 The ANTLR Project. All rights reserved.
 
 **244** **Group:** `org.antlr` **Name:** `antlr4` **Version:** `4.13.1`
 
-> * **Project URL**: [http://www.antlr.org](http://www.antlr.org)
-> * **License**: BSD 3-Clause License
-> * **Copyright**: Copyright (c) 2012-2022 The ANTLR Project. All rights reserved.
+> - **Project URL**: [http://www.antlr.org](http://www.antlr.org)
+> - **License**: BSD 3-Clause License
+> - **Copyright**: Copyright (c) 2012-2022 The ANTLR Project. All rights reserved.
 
 **245** **Group:** `org.ow2.asm` **Name:** `asm` **Version:** `9.7.1`
 
-> * **Project URL**: [http://asm.ow2.org](http://asm.ow2.org)
-> * **License**: BSD 3-Clause License
-> * **Copyright**: Copyright (c) 2000-2011 INRIA, France Telecom
+> - **Project URL**: [http://asm.ow2.org](http://asm.ow2.org)
+> - **License**: BSD 3-Clause License
+> - **Copyright**: Copyright (c) 2000-2011 INRIA, France Telecom
 
-### BSD 2-Clause License
+## BSD 2-Clause License <a href="#bsd-2-clause-license" id="bsd-2-clause-license"></a>
 
 **246** **Group:** `org.hdrhistogram` **Name:** `HdrHistogram` **Version:** `2.2.2`
 
-> * **Project URL**: [http://hdrhistogram.github.io/HdrHistogram/](http://hdrhistogram.github.io/HdrHistogram/)
-> * **License**: BSD 2-Clause License
-> * **Copyright**: Copyright (c) 2012, 2013, 2014, 2015, 2016 Gil Tene
-> * **Copyright**: Copyright (c) 2014 Michael Barker
-> * **Copyright**: Copyright (c) 2014 Matt Warren
+> - **Project URL**: [http://hdrhistogram.github.io/HdrHistogram/](http://hdrhistogram.github.io/HdrHistogram/)
+> - **License**: BSD 2-Clause License
+> - **Copyright**: Copyright (c) 2012, 2013, 2014, 2015, 2016 Gil Tene
+> - **Copyright**: Copyright (c) 2014 Michael Barker
+> - **Copyright**: Copyright (c) 2014 Matt Warren
 
 **247** **Group:** `org.postgresql` **Name:** `postgresql` **Version:** `42.5.5`
 
-> * **Project URL**: [https://jdbc.postgresql.org/](https://jdbc.postgresql.org/)
-> * **License**: BSD 2-Clause License
-> * **Copyright**: Copyright (c) 1997, PostgreSQL Global Development Group
+> - **Project URL**: [https://jdbc.postgresql.org/](https://jdbc.postgresql.org/)
+> - **License**: BSD 2-Clause License
+> - **Copyright**: Copyright (c) 1997, PostgreSQL Global Development Group
 
-### Eclipse Distribution License 1.0
+## Eclipse Distribution License 1.0
 
 **248** **Group:** `com.sun.istack` **Name:** `istack-commons-runtime` **Version:** `4.1.2`
 
-> * **Project URL**: [https://www.eclipse.org](https://www.eclipse.org)
-> * **License**: Eclipse Distribution License 1.0
-> * **Copyright**: Copyright (c) 1997, 2022 Oracle and/or its affiliates. All rights reserved.
+> - **Project URL**: [https://www.eclipse.org](https://www.eclipse.org)
+> - **License**: Eclipse Distribution License 1.0
+> - **Copyright**: Copyright (c) 1997, 2022 Oracle and/or its affiliates. All rights reserved.
 
 **249** **Group:** `com.sun.xml.messaging.saaj` **Name:** `saaj-impl` **Version:** `1.5.1`
 
-> * **Project URL**: [http://www.oracle.com/](http://www.oracle.com/)
-> * **License**: Eclipse Distribution License 1.0
-> * **Copyright**: Copyright (c) 1997, 2018 Oracle and/or its affiliates. All rights reserved.
+> - **Project URL**: [http://www.oracle.com/](http://www.oracle.com/)
+> - **License**: Eclipse Distribution License 1.0
+> - **Copyright**: Copyright (c) 1997, 2018 Oracle and/or its affiliates. All rights reserved.
 
 **250** **Group:** `jakarta.activation` **Name:** `jakarta.activation-api` **Version:** `2.1.3`
 
-> * **Project URL**: [https://www.eclipse.org](https://www.eclipse.org)
-> * **License**: Eclipse Distribution License 1.0
-> * **Copyright**: Copyright (c) 1997, 2021 Oracle and/or its affiliates. All rights reserved.
+> - **Project URL**: [https://www.eclipse.org](https://www.eclipse.org)
+> - **License**: Eclipse Distribution License 1.0
+> - **Copyright**: Copyright (c) 1997, 2021 Oracle and/or its affiliates. All rights reserved.
 
 **251** **Group:** `jakarta.persistence` **Name:** `jakarta.persistence-api` **Version:** `3.1.0`
 
-> * **Project URL**: [https://www.eclipse.org](https://www.eclipse.org)
-> * **License**: Eclipse Distribution License 1.0
-> * **Copyright**: Copyright (c) 2008, 2020 Oracle and/or its affiliates. All rights reserved.
+> - **Project URL**: [https://www.eclipse.org](https://www.eclipse.org)
+> - **License**: Eclipse Distribution License 1.0
+> - **Copyright**: Copyright (c) 2008, 2020 Oracle and/or its affiliates. All rights reserved.
 
 **252** **Group:** `jakarta.xml.bind` **Name:** `jakarta.xml.bind-api` **Version:** `4.0.2`
 
-> * **Project URL**: [https://www.eclipse.org](https://www.eclipse.org)
-> * **License**: Eclipse Distribution License 1.0
-> * **Copyright**: Copyright (c) 2004, 2024 Oracle and/or its affiliates. All rights reserved.
+> - **Project URL**: [https://www.eclipse.org](https://www.eclipse.org)
+> - **License**: Eclipse Distribution License 1.0
+> - **Copyright**: Copyright (c) 2004, 2024 Oracle and/or its affiliates. All rights reserved.
 
 **253** **Group:** `jakarta.xml.soap` **Name:** `jakarta.xml.soap-api` **Version:** `3.0.2`
 
-> * **Project URL**: [https://www.eclipse.org](https://www.eclipse.org)
-> * **License**: Eclipse Distribution License 1.0
-> * **Copyright**: Copyright (c) 2004, 2024 Oracle and/or its affiliates. All rights reserved.
+> - **Project URL**: [https://www.eclipse.org](https://www.eclipse.org)
+> - **License**: Eclipse Distribution License 1.0
+> - **Copyright**: Copyright (c) 2004, 2024 Oracle and/or its affiliates. All rights reserved.
 
 **254** **Group:** `org.eclipse.angus` **Name:** `angus-activation` **Version:** `2.0.2`
 
-> * **Project URL**: [https://www.eclipse.org](https://www.eclipse.org)
-> * **License**: Eclipse Distribution License 1.0
-> * **Copyright**: Copyright (c) 1997, 2023 Oracle and/or its affiliates. All rights reserved.
+> - **Project URL**: [https://www.eclipse.org](https://www.eclipse.org)
+> - **License**: Eclipse Distribution License 1.0
+> - **Copyright**: Copyright (c) 1997, 2023 Oracle and/or its affiliates. All rights reserved.
 
 **255** **Group:** `org.eclipse.angus` **Name:** `jakarta.mail` **Version:** `2.0.3`
 
-> * **Project URL**: [https://www.eclipse.org](https://www.eclipse.org)
-> * **License**: Eclipse Distribution License 1.0
-> * **Copyright**: Copyright (c) 1997, 2023 Oracle and/or its affiliates. All rights reserved.
+> - **Project URL**: [https://www.eclipse.org](https://www.eclipse.org)
+> - **License**: Eclipse Distribution License 1.0
+> - **Copyright**: Copyright (c) 1997, 2023 Oracle and/or its affiliates. All rights reserved.
 
 **256** **Group:** `org.glassfish.jaxb` **Name:** `jaxb-core` **Version:** `4.0.5`
 
-> * **Project URL**: [https://www.eclipse.org](https://www.eclipse.org)
-> * **License**: Eclipse Distribution License 1.0
-> * **Copyright**: Copyright (c) 1997, 2021 Oracle and/or its affiliates. All rights reserved.
+> - **Project URL**: [https://www.eclipse.org](https://www.eclipse.org)
+> - **License**: Eclipse Distribution License 1.0
+> - **Copyright**: Copyright (c) 1997, 2021 Oracle and/or its affiliates. All rights reserved.
 
 **257** **Group:** `org.glassfish.jaxb` **Name:** `jaxb-runtime` **Version:** `4.0.5`
 
-> * **Project URL**: [https://www.eclipse.org](https://www.eclipse.org)
-> * **License**: Eclipse Distribution License 1.0
-> * **Copyright**: Copyright (c) 1997, 2021 Oracle and/or its affiliates. All rights reserved.
+> - **Project URL**: [https://www.eclipse.org](https://www.eclipse.org)
+> - **License**: Eclipse Distribution License 1.0
+> - **Copyright**: Copyright (c) 1997, 2021 Oracle and/or its affiliates. All rights reserved.
 
 **258** **Group:** `org.glassfish.jaxb` **Name:** `txw2` **Version:** `4.0.5`
 
-> * **Project URL**: [https://eclipse-ee4j.github.io/jaxb-ri/](https://eclipse-ee4j.github.io/jaxb-ri/)
-> * **License**: Eclipse Distribution License 1.0
-> * **Copyright**: Copyright (c) 1997, 2021 Oracle and/or its affiliates. All rights reserved.
+> - **Project URL**: [https://eclipse-ee4j.github.io/jaxb-ri/](https://eclipse-ee4j.github.io/jaxb-ri/)
+> - **License**: Eclipse Distribution License 1.0
+> - **Copyright**: Copyright (c) 1997, 2021 Oracle and/or its affiliates. All rights reserved.
 
 **259** **Group:** `org.jvnet.mimepull` **Name:** `mimepull` **Version:** `1.9.11`
 
-> * **Project URL**: [https://www.eclipse.org](https://www.eclipse.org)
-> * **License**: Eclipse Distribution License 1.0
-> * **Copyright**: Copyright (c) 1997, 2018 Oracle and/or its affiliates. All rights reserved.
+> - **Project URL**: [https://www.eclipse.org](https://www.eclipse.org)
+> - **License**: Eclipse Distribution License 1.0
+> - **Copyright**: Copyright (c) 1997, 2018 Oracle and/or its affiliates. All rights reserved.
 
 **260** **Group:** `org.jvnet.staxex` **Name:** `stax-ex` **Version:** `2.1.0`
 
-> * **Project URL**: [https://www.eclipse.org](https://www.eclipse.org)
-> * **License**: Eclipse Distribution License 1.0
-> * **Copyright**: Copyright (c) 1997, 2021 Oracle and/or its affiliates. All rights reserved.
+> - **Project URL**: [https://www.eclipse.org](https://www.eclipse.org)
+> - **License**: Eclipse Distribution License 1.0
+> - **Copyright**: Copyright (c) 1997, 2021 Oracle and/or its affiliates. All rights reserved.
 
-### MIT No Attribution
+## MIT No Attribution <a href="#mit-no-attribution" id="mit-no-attribution"></a>
 
 **261** **Group:** `org.reactivestreams` **Name:** `reactive-streams` **Version:** `1.0.4`
 
-> * **Project URL**: [http://reactive-streams.org](http://reactive-streams.org)
-> * **License**: MIT No Attribution
-> * **Copyright**: Copyright 2014 Reactive Streams
+> - **Project URL**: [http://reactive-streams.org](http://reactive-streams.org)
+> - **License**: MIT No Attribution
+> - **Copyright**: Copyright 2014 Reactive Streams
 
-### Creative Commons Zero v1.0 Universal
+## Creative Commons Zero v1.0 Universal
 
 **262** **Group:** `org.latencyutils` **Name:** `LatencyUtils` **Version:** `2.0.3`
 
-> * **Project URL**: [http://latencyutils.github.io/LatencyUtils/](http://latencyutils.github.io/LatencyUtils/)
-> * **License**: Creative Commons Zero v1.0 Universal
-> * **Copyright**: Copyright (c) 2012, 2013, 2014 Gil Tene
+> - **Project URL**: [http://latencyutils.github.io/LatencyUtils/](http://latencyutils.github.io/LatencyUtils/)
+> - **License**: Creative Commons Zero v1.0 Universal
+> - **Copyright**: Copyright (c) 2012, 2013, 2014 Gil Tene
 
-### Unicode/ICU License
+## Unicode/ICU License <a href="#unicode-icu-license" id="unicode-icu-license"></a>
 
 **263** **Group:** `com.ibm.icu` **Name:** `icu4j` **Version:** `72.1`
 
-> * **Project URL**: [https://icu.unicode.org/](https://icu.unicode.org/)
-> * **License**: Unicode/ICU License
-> * **Copyright**: Copyright © 1991-2022 Unicode, Inc. All rights reserved.
-> * **Copyright**: Copyright (c) 1995-2016 International Business Machines Corporation and others
+> - **Project URL**: [https://icu.unicode.org/](https://icu.unicode.org/)
+> - **License**: Unicode/ICU License
+> - **Copyright**: Copyright © 1991-2022 Unicode, Inc. All rights reserved.
+> - **Copyright**: Copyright (c) 1995-2016 International Business Machines Corporation and others
 
-### Mozilla Public License 2.0
+## Mozilla Public License 2.0
 
 **264** **Group:** `com.github.librepdf` **Name:** `openpdf` **Version:** `2.0.3`
 
-> * **Project URL**: [https://github.com/LibrePDF/OpenPDF](https://github.com/LibrePDF/OpenPDF)
-> * **License**: Mozilla Public License 2.0
-> * **Copyright**: Copyright 1999, 2000, 2001, 2002 Bruno Lowagie
-> * **Copyright**: Copyright 2001, 2002 Paulo Soares
+> - **Project URL**: [https://github.com/LibrePDF/OpenPDF](https://github.com/LibrePDF/OpenPDF)
+> - **License**: Mozilla Public License 2.0
+> - **Copyright**: Copyright 1999, 2000, 2001, 2002 Bruno Lowagie
+> - **Copyright**: Copyright 2001, 2002 Paulo Soares
 
 **265** **Group:** `com.h2database` **Name:** `h2` **Version:** `2.2.224`
 
-> * **Project URL**: [https://h2database.com](https://h2database.com)
-> * **License**: Mozilla Public License 2.0
-> * **Copyright**: Copyright 2004-2023 H2 Group.
+> - **Project URL**: [https://h2database.com](https://h2database.com)
+> - **License**: Mozilla Public License 2.0
+> - **Copyright**: Copyright 2004-2023 H2 Group.
 
-### Eclipse Public License 2.0
+## Eclipse Public License 2.0
 
 **266** **Group:** `jakarta.annotation` **Name:** `jakarta.annotation-api` **Version:** `2.1.1`
 
-> * **Project URL**: [https://www.eclipse.org](https://www.eclipse.org)
-> * **License**: Eclipse Public License 2.0
-> * **Copyright**: Copyright (c) 2005, 2020 Oracle and/or its affiliates. All rights reserved.
+> - **Project URL**: [https://www.eclipse.org](https://www.eclipse.org)
+> - **License**: Eclipse Public License 2.0
+> - **Copyright**: Copyright (c) 2005, 2020 Oracle and/or its affiliates. All rights reserved.
 
 **267** **Group:** `jakarta.transaction` **Name:** `jakarta.transaction-api` **Version:** `2.0.1`
 
-> * **Project URL**: [https://github.com/eclipse-ee4j](https://github.com/eclipse-ee4j)
-> * **License**: Eclipse Public License 2.0
-> * **Copyright**: Copyright (c) 1997, 2020 Oracle and/or its affiliates. All rights reserved.
+> - **Project URL**: [https://github.com/eclipse-ee4j](https://github.com/eclipse-ee4j)
+> - **License**: Eclipse Public License 2.0
+> - **Copyright**: Copyright (c) 1997, 2020 Oracle and/or its affiliates. All rights reserved.
 
 **268** **Group:** `org.aspectj` **Name:** `aspectjweaver` **Version:** `1.9.24`
 
-> * **Project URL**: [https://www.eclipse.org/aspectj/](https://www.eclipse.org/aspectj/)
-> * **License**: Eclipse Public License 2.0
-> * **Copyright**: Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
-> * **Copyright**: Copyright (c) 2005 Contributors.
+> - **Project URL**: [https://www.eclipse.org/aspectj/](https://www.eclipse.org/aspectj/)
+> - **License**: Eclipse Public License 2.0
+> - **Copyright**: Copyright (c) 2002 Palo Alto Research Center, Incorporated (PARC).
+> - **Copyright**: Copyright (c) 2005 Contributors.
 
-### Eclipse Public License 1.0
+## Eclipse Public License 1.0
 
 **269** **Group:** `ch.qos.logback` **Name:** `logback-classic` **Version:** `1.5.18`
 
-> * **Project URL**: [http://www.qos.ch](http://www.qos.ch)
-> * **License**: Eclipse Public License 1.0
-> * **Copyright**: Copyright (C) 1999-2024, QOS.ch. All rights reserved.
+> - **Project URL**: [http://www.qos.ch](http://www.qos.ch)
+> - **License**: Eclipse Public License 1.0
+> - **Copyright**: Copyright (C) 1999-2024, QOS.ch. All rights reserved.
 
 **270** **Group:** `ch.qos.logback` **Name:** `logback-core` **Version:** `1.5.18`
 
-> * **Project URL**: [http://www.qos.ch](http://www.qos.ch)
-> * **License**: Eclipse Public License 1.0
-> * **Copyright**: Copyright (C) 1999-2024, QOS.ch. All rights reserved.
+> - **Project URL**: [http://www.qos.ch](http://www.qos.ch)
+> - **License**: Eclipse Public License 1.0
+> - **Copyright**: Copyright (C) 1999-2024, QOS.ch. All rights reserved.
 
-### Common Development and Distribution License 1.1
+## Common Development and Distribution License 1.1
 
 **271** **Group:** `com.sun.xml.bind` **Name:** `jaxb-impl` **Version:** `2.3.1`
 
-> * **Project URL**: [http://www.oracle.com/](http://www.oracle.com/)
-> * **License**: Common Development and Distribution License 1.1
-> * **Copyright**: Copyright (c) 1997, 2021 Oracle and/or its affiliates. All rights reserved.
+> - **Project URL**: [http://www.oracle.com/](http://www.oracle.com/)
+> - **License**: Common Development and Distribution License 1.1
+> - **Copyright**: Copyright (c) 1997, 2021 Oracle and/or its affiliates. All rights reserved.
 
 **272** **Group:** `javax.activation` **Name:** `javax.activation-api` **Version:** `1.2.0`
 
-> * **Project URL**: [http://www.oracle.com](http://www.oracle.com)
-> * **License**: Common Development and Distribution License 1.1
-> * **Copyright**: Copyright (c) 1997-2017 Oracle and/or its affiliates. All rights reserved.
+> - **Project URL**: [http://www.oracle.com](http://www.oracle.com)
+> - **License**: Common Development and Distribution License 1.1
+> - **Copyright**: Copyright (c) 1997-2017 Oracle and/or its affiliates. All rights reserved.
 
 **273** **Group:** `javax.xml.bind` **Name:** `jaxb-api` **Version:** `2.3.1`
 
-> * **Project URL**: [http://www.oracle.com/](http://www.oracle.com/)
-> * **License**: Common Development and Distribution License 1.1
-> * **Copyright**: Copyright (c) 2003-2017 Oracle and/or its affiliates. All rights reserved.
+> - **Project URL**: [http://www.oracle.com/](http://www.oracle.com/)
+> - **License**: Common Development and Distribution License 1.1
+> - **Copyright**: Copyright (c) 2003-2017 Oracle and/or its affiliates. All rights reserved.
 
-### GNU Lesser General Public License v2.1 or later
+## GNU Lesser General Public License v2.1 or later
 
 **274** **Group:** `org.hibernate.common` **Name:** `hibernate-commons-annotations` **Version:** `6.0.6.Final`
 
-> * **Project URL**: [http://hibernate.org](http://hibernate.org)
-> * **License**: GNU Lesser General Public License v2.1 or later
-> * **Copyright holders**: The Hibernate Development Team (Hibernate.org)
+> - **Project URL**: [http://hibernate.org](http://hibernate.org)
+> - **License**: GNU Lesser General Public License v2.1 or later
+> - **Copyright holders**: The Hibernate Development Team (Hibernate.org)
 
 **275** **Group:** `org.hibernate.orm` **Name:** `hibernate-core` **Version:** `6.5.3.Final`
 
-> * **Project URL**: [https://www.hibernate.org/orm/6.5](https://www.hibernate.org/orm/6.5)
-> * **License**: GNU Lesser General Public License v2.1 or later
-> * **Copyright holders**: The Hibernate Development Team (Hibernate.org)
+> - **Project URL**: [https://www.hibernate.org/orm/6.5](https://www.hibernate.org/orm/6.5)
+> - **License**: GNU Lesser General Public License v2.1 or later
+> - **Copyright holders**: The Hibernate Development Team (Hibernate.org)
 
 **276** **Group:** `org.xhtmlrenderer` **Name:** `flying-saucer-core` **Version:** `9.12.0`
 
-> * **Project URL**: [http://code.google.com/p/flying-saucer/](http://code.google.com/p/flying-saucer/)
-> * **License**: GNU Lesser General Public License v2.1 or later
-> * **Copyright**: Copyright (C) 2015 Patrick Wright
-> * **Copyright**: Copyright (c) 2007 Wisconsin Court System
+> - **Project URL**: [http://code.google.com/p/flying-saucer/](http://code.google.com/p/flying-saucer/)
+> - **License**: GNU Lesser General Public License v2.1 or later
+> - **Copyright**: Copyright (C) 2015 Patrick Wright
+> - **Copyright**: Copyright (c) 2007 Wisconsin Court System
 
 **277** **Group:** `org.xhtmlrenderer` **Name:** `flying-saucer-pdf` **Version:** `9.12.0`
 
-> * **Project URL**: [http://code.google.com/p/flying-saucer/](http://code.google.com/p/flying-saucer/)
-> * **License**: GNU Lesser General Public License v2.1 or later
-> * **Copyright**: Copyright (C) 2015 Patrick Wright
-> * **Copyright**: Copyright (c) 2007 Wisconsin Court System
+> - **Project URL**: [http://code.google.com/p/flying-saucer/](http://code.google.com/p/flying-saucer/)
+> - **License**: GNU Lesser General Public License v2.1 or later
+> - **Copyright**: Copyright (C) 2015 Patrick Wright
+> - **Copyright**: Copyright (c) 2007 Wisconsin Court System
 
-***
+---
 
-### License Texts
+## License Texts <a href="#license-texts" id="license-texts"></a>
 
-#### Apache License 2.0
+### Apache License 2.0
 
 Apache License Version 2.0, January 2004 http://www.apache.org/licenses/
 
@@ -1729,9 +1727,9 @@ TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
 
 "Contributor" shall mean Licensor and any individual or Legal Entity on behalf of whom a Contribution has been received by Licensor and subsequently incorporated within the Work.
 
-2. Grant of Copyright License. Subject to the terms and conditions of this License, each Contributor hereby grants to You a perpetual, worldwide, non-exclusive, no-charge, royalty-free, irrevocable copyright license to reproduce, prepare Derivative Works of, publicly display, publicly perform, sublicense, and distribute the Work and such Derivative Works in Source or Object form.
-3. Grant of Patent License. Subject to the terms and conditions of this License, each Contributor hereby grants to You a perpetual, worldwide, non-exclusive, no-charge, royalty-free, irrevocable (except as stated in this section) patent license to make, have made, use, offer to sell, sell, import, and otherwise transfer the Work, where such license applies only to those patent claims licensable by such Contributor that are necessarily infringed by their Contribution(s) alone or by combination of their Contribution(s) with the Work to which such Contribution(s) was submitted. If You institute patent litigation against any entity (including a cross-claim or counterclaim in a lawsuit) alleging that the Work or a Contribution incorporated within the Work constitutes direct or contributory patent infringement, then any patent licenses granted to You under this License for that Work shall terminate as of the date such litigation is filed.
-4. Redistribution. You may reproduce and distribute copies of the Work or Derivative Works thereof in any medium, with or without modifications, and in Source or Object form, provided that You meet the following conditions:
+1. Grant of Copyright License. Subject to the terms and conditions of this License, each Contributor hereby grants to You a perpetual, worldwide, non-exclusive, no-charge, royalty-free, irrevocable copyright license to reproduce, prepare Derivative Works of, publicly display, publicly perform, sublicense, and distribute the Work and such Derivative Works in Source or Object form.
+2. Grant of Patent License. Subject to the terms and conditions of this License, each Contributor hereby grants to You a perpetual, worldwide, non-exclusive, no-charge, royalty-free, irrevocable (except as stated in this section) patent license to make, have made, use, offer to sell, sell, import, and otherwise transfer the Work, where such license applies only to those patent claims licensable by such Contributor that are necessarily infringed by their Contribution(s) alone or by combination of their Contribution(s) with the Work to which such Contribution(s) was submitted. If You institute patent litigation against any entity (including a cross-claim or counterclaim in a lawsuit) alleging that the Work or a Contribution incorporated within the Work constitutes direct or contributory patent infringement, then any patent licenses granted to You under this License for that Work shall terminate as of the date such litigation is filed.
+3. Redistribution. You may reproduce and distribute copies of the Work or Derivative Works thereof in any medium, with or without modifications, and in Source or Object form, provided that You meet the following conditions:
 
 (a) You must give any other recipients of the Work or Derivative Works a copy of this License; and
 
@@ -1743,19 +1741,19 @@ TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
 
 You may add Your own copyright statement to Your modifications and may provide additional or different license terms and conditions for use, reproduction, or distribution of Your modifications, or for any such Derivative Works as a whole, provided Your use, reproduction, and distribution of the Work otherwise complies with the conditions stated in this License.
 
-5. Submission of Contributions. Unless You explicitly state otherwise, any Contribution intentionally submitted for inclusion in the Work by You to the Licensor shall be under the terms and conditions of this License, without any additional terms or conditions. Notwithstanding the above, nothing herein shall supersede or modify the terms of any separate license agreement you may have executed with Licensor regarding such Contributions.
-6. Trademarks. This License does not grant permission to use the trade names, trademarks, service marks, or product names of the Licensor, except as required for reasonable and customary use in describing the origin of the Work and reproducing the content of the NOTICE file.
-7. Disclaimer of Warranty. Unless required by applicable law or agreed to in writing, Licensor provides the Work (and each Contributor provides its Contributions) on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied, including, without limitation, any warranties or conditions of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A PARTICULAR PURPOSE. You are solely responsible for determining the appropriateness of using or redistributing the Work and assume any risks associated with Your exercise of permissions under this License.
-8. Limitation of Liability. In no event and under no legal theory, whether in tort (including negligence), contract, or otherwise, unless required by applicable law (such as deliberate and grossly negligent acts) or agreed to in writing, shall any Contributor be liable to You for damages, including any direct, indirect, special, incidental, or consequential damages of any character arising as a result of this License or out of the use or inability to use the Work (including but not limited to damages for loss of goodwill, work stoppage, computer failure or malfunction, or any and all other commercial damages or losses), even if such Contributor has been advised of the possibility of such damages.
-9. Accepting Warranty or Additional Liability. While redistributing the Work or Derivative Works thereof, You may choose to offer, and charge a fee for, acceptance of support, warranty, indemnity, or other liability obligations and/or rights consistent with this License. However, in accepting such obligations, You may act only on Your own behalf and on Your sole responsibility, not on behalf of any other Contributor, and only if You agree to indemnify, defend, and hold each Contributor harmless for any liability incurred by, or claims asserted against, such Contributor by reason of your accepting any such warranty or additional liability.
+1. Submission of Contributions. Unless You explicitly state otherwise, any Contribution intentionally submitted for inclusion in the Work by You to the Licensor shall be under the terms and conditions of this License, without any additional terms or conditions. Notwithstanding the above, nothing herein shall supersede or modify the terms of any separate license agreement you may have executed with Licensor regarding such Contributions.
+2. Trademarks. This License does not grant permission to use the trade names, trademarks, service marks, or product names of the Licensor, except as required for reasonable and customary use in describing the origin of the Work and reproducing the content of the NOTICE file.
+3. Disclaimer of Warranty. Unless required by applicable law or agreed to in writing, Licensor provides the Work (and each Contributor provides its Contributions) on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied, including, without limitation, any warranties or conditions of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A PARTICULAR PURPOSE. You are solely responsible for determining the appropriateness of using or redistributing the Work and assume any risks associated with Your exercise of permissions under this License.
+4. Limitation of Liability. In no event and under no legal theory, whether in tort (including negligence), contract, or otherwise, unless required by applicable law (such as deliberate and grossly negligent acts) or agreed to in writing, shall any Contributor be liable to You for damages, including any direct, indirect, special, incidental, or consequential damages of any character arising as a result of this License or out of the use or inability to use the Work (including but not limited to damages for loss of goodwill, work stoppage, computer failure or malfunction, or any and all other commercial damages or losses), even if such Contributor has been advised of the possibility of such damages.
+5. Accepting Warranty or Additional Liability. While redistributing the Work or Derivative Works thereof, You may choose to offer, and charge a fee for, acceptance of support, warranty, indemnity, or other liability obligations and/or rights consistent with this License. However, in accepting such obligations, You may act only on Your own behalf and on Your sole responsibility, not on behalf of any other Contributor, and only if You agree to indemnify, defend, and hold each Contributor harmless for any liability incurred by, or claims asserted against, such Contributor by reason of your accepting any such warranty or additional liability.
 
 END OF TERMS AND CONDITIONS
 
 APPENDIX: How to apply the Apache License to your work.
 
-To apply the Apache License to your work, attach the following boilerplate notice, with the fields enclosed by brackets "\[]" replaced with your own identifying information. (Don't include the brackets!) The text should be enclosed in the appropriate comment syntax for the file format. We also recommend that a file or class name and description of purpose be included on the same "printed page" as the copyright notice for easier identification within third-party archives.
+To apply the Apache License to your work, attach the following boilerplate notice, with the fields enclosed by brackets "[]" replaced with your own identifying information. (Don't include the brackets!) The text should be enclosed in the appropriate comment syntax for the file format. We also recommend that a file or class name and description of purpose be included on the same "printed page" as the copyright notice for easier identification within third-party archives.
 
-Copyright \[yyyy] \[name of copyright owner]
+Copyright [yyyy] [name of copyright owner]
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
 
@@ -1763,7 +1761,7 @@ http://www.apache.org/licenses/LICENSE-2.0
 
 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
 
-#### MIT License
+### MIT License <a href="#mit-license-1" id="mit-license-1"></a>
 
 The copyright notice for each component licensed under this license is listed with that component above.
 
@@ -1775,7 +1773,7 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-#### BSD 3-Clause License
+### BSD 3-Clause License <a href="#bsd-3-clause-license-1" id="bsd-3-clause-license-1"></a>
 
 The copyright notice for each component licensed under this license is listed with that component above.
 
@@ -1787,7 +1785,7 @@ Redistribution and use in source and binary forms, with or without modification,
 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#### BSD 2-Clause License
+### BSD 2-Clause License <a href="#bsd-2-clause-license-1" id="bsd-2-clause-license-1"></a>
 
 The copyright notice for each component licensed under this license is listed with that component above.
 
@@ -1798,7 +1796,7 @@ Redistribution and use in source and binary forms, with or without modification,
 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#### Eclipse Distribution License 1.0
+### Eclipse Distribution License 1.0
 
 Eclipse Distribution License - v 1.0
 
@@ -1808,23 +1806,23 @@ All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
 
-* Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
-* Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
-* Neither the name of the Eclipse Foundation, Inc. nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+- Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+- Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+- Neither the name of the Eclipse Foundation, Inc. nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#### MIT No Attribution
+### MIT No Attribution <a href="#mit-no-attribution-1" id="mit-no-attribution-1"></a>
 
 MIT No Attribution
 
-Copyright \<YEAR> \<COPYRIGHT HOLDER>
+Copyright <YEAR> <COPYRIGHT HOLDER>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-#### Creative Commons Zero v1.0 Universal
+### Creative Commons Zero v1.0 Universal
 
 Creative Commons Legal Code
 
@@ -1844,13 +1842,13 @@ For these and/or other purposes and motivations, and without any expectation of 
 
 i. the right to reproduce, adapt, distribute, perform, display, communicate, and translate a Work; ii. moral rights retained by the original author(s) and/or performer(s); iii. publicity and privacy rights pertaining to a person's image or likeness depicted in a Work; iv. rights protecting against unfair competition in regards to a Work, subject to the limitations in paragraph 4(a), below; v. rights protecting the extraction, dissemination, use and reuse of data in a Work; vi. database rights (such as those arising under Directive 96/9/EC of the European Parliament and of the Council of 11 March 1996 on the legal protection of databases, and under any national implementation thereof, including any amended or successor version of such directive); and vii. other similar, equivalent or corresponding rights throughout the world based on applicable law or treaty, and any national implementations thereof.
 
-2. Waiver. To the greatest extent permitted by, but not in contravention of, applicable law, Affirmer hereby overtly, fully, permanently, irrevocably and unconditionally waives, abandons, and surrenders all of Affirmer's Copyright and Related Rights and associated claims and causes of action, whether now known or unknown (including existing as well as future claims and causes of action), in the Work (i) in all territories worldwide, (ii) for the maximum duration provided by applicable law or treaty (including future time extensions), (iii) in any current or future medium and for any number of copies, and (iv) for any purpose whatsoever, including without limitation commercial, advertising or promotional purposes (the "Waiver"). Affirmer makes the Waiver for the benefit of each member of the public at large and to the detriment of Affirmer's heirs and successors, fully intending that such Waiver shall not be subject to revocation, rescission, cancellation, termination, or any other legal or equitable action to disrupt the quiet enjoyment of the Work by the public as contemplated by Affirmer's express Statement of Purpose.
-3. Public License Fallback. Should any part of the Waiver for any reason be judged legally invalid or ineffective under applicable law, then the Waiver shall be preserved to the maximum extent permitted taking into account Affirmer's express Statement of Purpose. In addition, to the extent the Waiver is so judged Affirmer hereby grants to each affected person a royalty-free, non transferable, non sublicensable, non exclusive, irrevocable and unconditional license to exercise Affirmer's Copyright and Related Rights in the Work (i) in all territories worldwide, (ii) for the maximum duration provided by applicable law or treaty (including future time extensions), (iii) in any current or future medium and for any number of copies, and (iv) for any purpose whatsoever, including without limitation commercial, advertising or promotional purposes (the "License"). The License shall be deemed effective as of the date CC0 was applied by Affirmer to the Work. Should any part of the License for any reason be judged legally invalid or ineffective under applicable law, such partial invalidity or ineffectiveness shall not invalidate the remainder of the License, and in such case Affirmer hereby affirms that he or she will not (i) exercise any of his or her remaining Copyright and Related Rights in the Work or (ii) assert any associated claims and causes of action with respect to the Work, in either case contrary to Affirmer's express Statement of Purpose.
-4. Limitations and Disclaimers.
+1. Waiver. To the greatest extent permitted by, but not in contravention of, applicable law, Affirmer hereby overtly, fully, permanently, irrevocably and unconditionally waives, abandons, and surrenders all of Affirmer's Copyright and Related Rights and associated claims and causes of action, whether now known or unknown (including existing as well as future claims and causes of action), in the Work (i) in all territories worldwide, (ii) for the maximum duration provided by applicable law or treaty (including future time extensions), (iii) in any current or future medium and for any number of copies, and (iv) for any purpose whatsoever, including without limitation commercial, advertising or promotional purposes (the "Waiver"). Affirmer makes the Waiver for the benefit of each member of the public at large and to the detriment of Affirmer's heirs and successors, fully intending that such Waiver shall not be subject to revocation, rescission, cancellation, termination, or any other legal or equitable action to disrupt the quiet enjoyment of the Work by the public as contemplated by Affirmer's express Statement of Purpose.
+2. Public License Fallback. Should any part of the Waiver for any reason be judged legally invalid or ineffective under applicable law, then the Waiver shall be preserved to the maximum extent permitted taking into account Affirmer's express Statement of Purpose. In addition, to the extent the Waiver is so judged Affirmer hereby grants to each affected person a royalty-free, non transferable, non sublicensable, non exclusive, irrevocable and unconditional license to exercise Affirmer's Copyright and Related Rights in the Work (i) in all territories worldwide, (ii) for the maximum duration provided by applicable law or treaty (including future time extensions), (iii) in any current or future medium and for any number of copies, and (iv) for any purpose whatsoever, including without limitation commercial, advertising or promotional purposes (the "License"). The License shall be deemed effective as of the date CC0 was applied by Affirmer to the Work. Should any part of the License for any reason be judged legally invalid or ineffective under applicable law, such partial invalidity or ineffectiveness shall not invalidate the remainder of the License, and in such case Affirmer hereby affirms that he or she will not (i) exercise any of his or her remaining Copyright and Related Rights in the Work or (ii) assert any associated claims and causes of action with respect to the Work, in either case contrary to Affirmer's express Statement of Purpose.
+3. Limitations and Disclaimers.
 
 a. No trademark or patent rights held by Affirmer are waived, abandoned, surrendered, licensed or otherwise affected by this document. b. Affirmer offers the Work as-is and makes no representations or warranties of any kind concerning the Work, express, implied, statutory or otherwise, including without limitation warranties of title, merchantability, fitness for a particular purpose, non infringement, or the absence of latent or other defects, accuracy, or the present or absence of errors, whether or not discoverable, all to the greatest extent permissible under applicable law. c. Affirmer disclaims responsibility for clearing rights of other persons that may apply to the Work or any use thereof, including without limitation any person's Copyright and Related Rights in the Work. Further, Affirmer disclaims responsibility for obtaining any necessary consents, permissions or other rights required for any use of the Work. d. Affirmer understands and acknowledges that Creative Commons is not a party to this document and has no duty or obligation with respect to this CC0 or use of the Work.
 
-#### Unicode/ICU License
+### Unicode/ICU License <a href="#unicode-icu-license-1" id="unicode-icu-license-1"></a>
 
 UNICODE, INC. LICENSE AGREEMENT - DATA FILES AND SOFTWARE
 
@@ -2226,9 +2224,9 @@ Google double-conversion
 
 Copyright 2006-2011, the V8 project authors. All rights reserved. Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
 
-* Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
-* Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
-* Neither the name of Google Inc. nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+- Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+- Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+- Neither the name of Google Inc. nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
@@ -2276,7 +2274,7 @@ Copyright 1991 by the Massachusetts Institute of Technology
 
 Permission to use, copy, modify, distribute, and sell this software and its documentation for any purpose is hereby granted without fee, provided that the above copyright notice appear in all copies and that both that copyright notice and this permission notice appear in supporting documentation, and that the name of M.I.T. not be used in advertising or publicity pertaining to distribution of the software without specific, written prior permission. M.I.T. makes no representations about the suitability of this software for any purpose. It is provided "as is" without express or implied warranty.
 
-#### Mozilla Public License 2.0
+### Mozilla Public License 2.0
 
 **Mozilla Public License Version 2.0**
 
@@ -2480,7 +2478,7 @@ You may add additional accurate notices of copyright ownership.
 
 This Source Code Form is "Incompatible With Secondary Licenses", as defined by the Mozilla Public License, v. 2.0.
 
-#### Eclipse Public License 2.0
+### Eclipse Public License 2.0
 
 Eclipse Public License - v 2.0 THE ACCOMPANYING PROGRAM IS PROVIDED UNDER THE TERMS OF THIS ECLIPSE PUBLIC LICENSE (“AGREEMENT”). ANY USE, REPRODUCTION OR DISTRIBUTION OF THE PROGRAM CONSTITUTES RECIPIENT'S ACCEPTANCE OF THIS AGREEMENT.
 
@@ -2504,20 +2502,20 @@ a) in the case of the initial Contributor, the initial content Distributed under
 
 “Secondary License” means either the GNU General Public License, Version 2.0, or any later versions of that license, including any exceptions or additional permissions as identified by the initial Contributor.
 
-2. GRANT OF RIGHTS a) Subject to the terms of this Agreement, each Contributor hereby grants Recipient a non-exclusive, worldwide, royalty-free copyright license to reproduce, prepare Derivative Works of, publicly display, publicly perform, Distribute and sublicense the Contribution of such Contributor, if any, and such Derivative Works. b) Subject to the terms of this Agreement, each Contributor hereby grants Recipient a non-exclusive, worldwide, royalty-free patent license under Licensed Patents to make, use, sell, offer to sell, import and otherwise transfer the Contribution of such Contributor, if any, in Source Code or other form. This patent license shall apply to the combination of the Contribution and the Program if, at the time the Contribution is added by the Contributor, such addition of the Contribution causes such combination to be covered by the Licensed Patents. The patent license shall not apply to any other combinations which include the Contribution. No hardware per se is licensed hereunder. c) Recipient understands that although each Contributor grants the licenses to its Contributions set forth herein, no assurances are provided by any Contributor that the Program does not infringe the patent or other intellectual property rights of any other entity. Each Contributor disclaims any liability to Recipient for claims brought by any other entity based on infringement of intellectual property rights or otherwise. As a condition to exercising the rights and licenses granted hereunder, each Recipient hereby assumes sole responsibility to secure any other intellectual property rights needed, if any. For example, if a third party patent license is required to allow Recipient to Distribute the Program, it is Recipient's responsibility to acquire that license before distributing the Program. d) Each Contributor represents that to its knowledge it has sufficient copyright rights in its Contribution, if any, to grant the copyright license set forth in this Agreement. e) Notwithstanding the terms of any Secondary License, no Contributor makes additional grants to any Recipient (other than those set forth in this Agreement) as a result of such Recipient's receipt of the Program under the terms of a Secondary License (if permitted under the terms of Section 3).
-3. REQUIREMENTS 3.1 If a Contributor Distributes the Program in any form, then:
+1. GRANT OF RIGHTS a) Subject to the terms of this Agreement, each Contributor hereby grants Recipient a non-exclusive, worldwide, royalty-free copyright license to reproduce, prepare Derivative Works of, publicly display, publicly perform, Distribute and sublicense the Contribution of such Contributor, if any, and such Derivative Works. b) Subject to the terms of this Agreement, each Contributor hereby grants Recipient a non-exclusive, worldwide, royalty-free patent license under Licensed Patents to make, use, sell, offer to sell, import and otherwise transfer the Contribution of such Contributor, if any, in Source Code or other form. This patent license shall apply to the combination of the Contribution and the Program if, at the time the Contribution is added by the Contributor, such addition of the Contribution causes such combination to be covered by the Licensed Patents. The patent license shall not apply to any other combinations which include the Contribution. No hardware per se is licensed hereunder. c) Recipient understands that although each Contributor grants the licenses to its Contributions set forth herein, no assurances are provided by any Contributor that the Program does not infringe the patent or other intellectual property rights of any other entity. Each Contributor disclaims any liability to Recipient for claims brought by any other entity based on infringement of intellectual property rights or otherwise. As a condition to exercising the rights and licenses granted hereunder, each Recipient hereby assumes sole responsibility to secure any other intellectual property rights needed, if any. For example, if a third party patent license is required to allow Recipient to Distribute the Program, it is Recipient's responsibility to acquire that license before distributing the Program. d) Each Contributor represents that to its knowledge it has sufficient copyright rights in its Contribution, if any, to grant the copyright license set forth in this Agreement. e) Notwithstanding the terms of any Secondary License, no Contributor makes additional grants to any Recipient (other than those set forth in this Agreement) as a result of such Recipient's receipt of the Program under the terms of a Secondary License (if permitted under the terms of Section 3).
+2. REQUIREMENTS 3.1 If a Contributor Distributes the Program in any form, then:
 
 a) the Program must also be made available as Source Code, in accordance with section 3.2, and the Contributor must accompany the Program with a statement that the Source Code for the Program is available under this Agreement, and informs Recipients how to obtain it in a reasonable manner on or through a medium customarily used for software exchange; and b) the Contributor may Distribute the Program under a license different than this Agreement, provided that such license: i) effectively disclaims on behalf of all other Contributors all warranties and conditions, express and implied, including warranties or conditions of title and non-infringement, and implied warranties or conditions of merchantability and fitness for a particular purpose; ii) effectively excludes on behalf of all other Contributors all liability for damages, including direct, indirect, special, incidental and consequential damages, such as lost profits; iii) does not attempt to limit or alter the recipients' rights in the Source Code under section 3.2; and iv) requires any subsequent distribution of the Program by any party to be under a license that satisfies the requirements of this section 3. 3.2 When the Program is Distributed as Source Code:
 
 a) it must be made available under this Agreement, or if the Program (i) is combined with other material in a separate file or files made available under a Secondary License, and (ii) the initial Contributor attached to the Source Code the notice described in Exhibit A of this Agreement, then the Program may be made available under the terms of such Secondary Licenses, and b) a copy of this Agreement must be included with each copy of the Program. 3.3 Contributors may not remove or alter any copyright, patent, trademark, attribution notices, disclaimers of warranty, or limitations of liability (‘notices’) contained within the Program from any copy of the Program which they Distribute, provided that Contributors may add their own appropriate notices.
 
-4. COMMERCIAL DISTRIBUTION Commercial distributors of software may accept certain responsibilities with respect to end users, business partners and the like. While this license is intended to facilitate the commercial use of the Program, the Contributor who includes the Program in a commercial product offering should do so in a manner which does not create potential liability for other Contributors. Therefore, if a Contributor includes the Program in a commercial product offering, such Contributor (“Commercial Contributor”) hereby agrees to defend and indemnify every other Contributor (“Indemnified Contributor”) against any losses, damages and costs (collectively “Losses”) arising from claims, lawsuits and other legal actions brought by a third party against the Indemnified Contributor to the extent caused by the acts or omissions of such Commercial Contributor in connection with its distribution of the Program in a commercial product offering. The obligations in this section do not apply to any claims or Losses relating to any actual or alleged intellectual property infringement. In order to qualify, an Indemnified Contributor must: a) promptly notify the Commercial Contributor in writing of such claim, and b) allow the Commercial Contributor to control, and cooperate with the Commercial Contributor in, the defense and any related settlement negotiations. The Indemnified Contributor may participate in any such claim at its own expense.
+1. COMMERCIAL DISTRIBUTION Commercial distributors of software may accept certain responsibilities with respect to end users, business partners and the like. While this license is intended to facilitate the commercial use of the Program, the Contributor who includes the Program in a commercial product offering should do so in a manner which does not create potential liability for other Contributors. Therefore, if a Contributor includes the Program in a commercial product offering, such Contributor (“Commercial Contributor”) hereby agrees to defend and indemnify every other Contributor (“Indemnified Contributor”) against any losses, damages and costs (collectively “Losses”) arising from claims, lawsuits and other legal actions brought by a third party against the Indemnified Contributor to the extent caused by the acts or omissions of such Commercial Contributor in connection with its distribution of the Program in a commercial product offering. The obligations in this section do not apply to any claims or Losses relating to any actual or alleged intellectual property infringement. In order to qualify, an Indemnified Contributor must: a) promptly notify the Commercial Contributor in writing of such claim, and b) allow the Commercial Contributor to control, and cooperate with the Commercial Contributor in, the defense and any related settlement negotiations. The Indemnified Contributor may participate in any such claim at its own expense.
 
 For example, a Contributor might include the Program in a commercial product offering, Product X. That Contributor is then a Commercial Contributor. If that Commercial Contributor then makes performance claims, or offers warranties related to Product X, those performance claims and warranties are such Commercial Contributor's responsibility alone. Under this section, the Commercial Contributor would have to defend claims against the other Contributors related to those performance claims and warranties, and if a court requires any other Contributor to pay any damages as a result, the Commercial Contributor must pay those damages.
 
-5. NO WARRANTY EXCEPT AS EXPRESSLY SET FORTH IN THIS AGREEMENT, AND TO THE EXTENT PERMITTED BY APPLICABLE LAW, THE PROGRAM IS PROVIDED ON AN “AS IS” BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, EITHER EXPRESS OR IMPLIED INCLUDING, WITHOUT LIMITATION, ANY WARRANTIES OR CONDITIONS OF TITLE, NON-INFRINGEMENT, MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE. Each Recipient is solely responsible for determining the appropriateness of using and distributing the Program and assumes all risks associated with its exercise of rights under this Agreement, including but not limited to the risks and costs of program errors, compliance with applicable laws, damage to or loss of data, programs or equipment, and unavailability or interruption of operations.
-6. DISCLAIMER OF LIABILITY EXCEPT AS EXPRESSLY SET FORTH IN THIS AGREEMENT, AND TO THE EXTENT PERMITTED BY APPLICABLE LAW, NEITHER RECIPIENT NOR ANY CONTRIBUTORS SHALL HAVE ANY LIABILITY FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING WITHOUT LIMITATION LOST PROFITS), HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OR DISTRIBUTION OF THE PROGRAM OR THE EXERCISE OF ANY RIGHTS GRANTED HEREUNDER, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
-7. GENERAL If any provision of this Agreement is invalid or unenforceable under applicable law, it shall not affect the validity or enforceability of the remainder of the terms of this Agreement, and without further action by the parties hereto, such provision shall be reformed to the minimum extent necessary to make such provision valid and enforceable.
+1. NO WARRANTY EXCEPT AS EXPRESSLY SET FORTH IN THIS AGREEMENT, AND TO THE EXTENT PERMITTED BY APPLICABLE LAW, THE PROGRAM IS PROVIDED ON AN “AS IS” BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, EITHER EXPRESS OR IMPLIED INCLUDING, WITHOUT LIMITATION, ANY WARRANTIES OR CONDITIONS OF TITLE, NON-INFRINGEMENT, MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE. Each Recipient is solely responsible for determining the appropriateness of using and distributing the Program and assumes all risks associated with its exercise of rights under this Agreement, including but not limited to the risks and costs of program errors, compliance with applicable laws, damage to or loss of data, programs or equipment, and unavailability or interruption of operations.
+2. DISCLAIMER OF LIABILITY EXCEPT AS EXPRESSLY SET FORTH IN THIS AGREEMENT, AND TO THE EXTENT PERMITTED BY APPLICABLE LAW, NEITHER RECIPIENT NOR ANY CONTRIBUTORS SHALL HAVE ANY LIABILITY FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING WITHOUT LIMITATION LOST PROFITS), HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OR DISTRIBUTION OF THE PROGRAM OR THE EXERCISE OF ANY RIGHTS GRANTED HEREUNDER, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+3. GENERAL If any provision of this Agreement is invalid or unenforceable under applicable law, it shall not affect the validity or enforceability of the remainder of the terms of this Agreement, and without further action by the parties hereto, such provision shall be reformed to the minimum extent necessary to make such provision valid and enforceable.
 
 If Recipient institutes patent litigation against any entity (including a cross-claim or counterclaim in a lawsuit) alleging that the Program itself (excluding combinations of the Program with other software or hardware) infringes such Recipient's patent(s), then such Recipient's rights granted under Section 2(b) shall terminate as of the date such litigation is filed.
 
@@ -2535,7 +2533,7 @@ If it is not possible or desirable to put the notice in a particular file, then 
 
 You may add additional accurate notices of copyright ownership.
 
-#### Eclipse Public License 1.0
+### Eclipse Public License 1.0
 
 Eclipse Public License - v 1.0
 
@@ -2553,7 +2551,7 @@ where such changes and/or additions to the Program originate from and are distri
 
 "Recipient" means anyone who receives the Program under this Agreement, including all Contributors.
 
-2. GRANT OF RIGHTS
+1. GRANT OF RIGHTS
 
 a) Subject to the terms of this Agreement, each Contributor hereby grants Recipient a non-exclusive, worldwide, royalty-free copyright license to reproduce, prepare derivative works of, publicly display, publicly perform, distribute and sublicense the Contribution of such Contributor, if any, and such derivative works, in source code and object code form.
 
@@ -2563,7 +2561,7 @@ c) Recipient understands that although each Contributor grants the licenses to i
 
 d) Each Contributor represents that to its knowledge it has sufficient copyright rights in its Contribution, if any, to grant the copyright license set forth in this Agreement.
 
-3. REQUIREMENTS A Contributor may choose to distribute the Program in object code form under its own license agreement, provided that:
+1. REQUIREMENTS A Contributor may choose to distribute the Program in object code form under its own license agreement, provided that:
 
 a) it complies with the terms and conditions of this Agreement; and
 
@@ -2577,13 +2575,13 @@ b) a copy of this Agreement must be included with each copy of the Program. Cont
 
 Each Contributor must identify itself as the originator of its Contribution, if any, in a manner that reasonably allows subsequent Recipients to identify the originator of the Contribution.
 
-4. COMMERCIAL DISTRIBUTION Commercial distributors of software may accept certain responsibilities with respect to end users, business partners and the like. While this license is intended to facilitate the commercial use of the Program, the Contributor who includes the Program in a commercial product offering should do so in a manner which does not create potential liability for other Contributors. Therefore, if a Contributor includes the Program in a commercial product offering, such Contributor ("Commercial Contributor") hereby agrees to defend and indemnify every other Contributor ("Indemnified Contributor") against any losses, damages and costs (collectively "Losses") arising from claims, lawsuits and other legal actions brought by a third party against the Indemnified Contributor to the extent caused by the acts or omissions of such Commercial Contributor in connection with its distribution of the Program in a commercial product offering. The obligations in this section do not apply to any claims or Losses relating to any actual or alleged intellectual property infringement. In order to qualify, an Indemnified Contributor must: a) promptly notify the Commercial Contributor in writing of such claim, and b) allow the Commercial Contributor to control, and cooperate with the Commercial Contributor in, the defense and any related settlement negotiations. The Indemnified Contributor may participate in any such claim at its own expense.
+1. COMMERCIAL DISTRIBUTION Commercial distributors of software may accept certain responsibilities with respect to end users, business partners and the like. While this license is intended to facilitate the commercial use of the Program, the Contributor who includes the Program in a commercial product offering should do so in a manner which does not create potential liability for other Contributors. Therefore, if a Contributor includes the Program in a commercial product offering, such Contributor ("Commercial Contributor") hereby agrees to defend and indemnify every other Contributor ("Indemnified Contributor") against any losses, damages and costs (collectively "Losses") arising from claims, lawsuits and other legal actions brought by a third party against the Indemnified Contributor to the extent caused by the acts or omissions of such Commercial Contributor in connection with its distribution of the Program in a commercial product offering. The obligations in this section do not apply to any claims or Losses relating to any actual or alleged intellectual property infringement. In order to qualify, an Indemnified Contributor must: a) promptly notify the Commercial Contributor in writing of such claim, and b) allow the Commercial Contributor to control, and cooperate with the Commercial Contributor in, the defense and any related settlement negotiations. The Indemnified Contributor may participate in any such claim at its own expense.
 
 For example, a Contributor might include the Program in a commercial product offering, Product X. That Contributor is then a Commercial Contributor. If that Commercial Contributor then makes performance claims, or offers warranties related to Product X, those performance claims and warranties are such Commercial Contributor's responsibility alone. Under this section, the Commercial Contributor would have to defend claims against the other Contributors related to those performance claims and warranties, and if a court requires any other Contributor to pay any damages as a result, the Commercial Contributor must pay those damages.
 
-5. NO WARRANTY EXCEPT AS EXPRESSLY SET FORTH IN THIS AGREEMENT, THE PROGRAM IS PROVIDED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, EITHER EXPRESS OR IMPLIED INCLUDING, WITHOUT LIMITATION, ANY WARRANTIES OR CONDITIONS OF TITLE, NON-INFRINGEMENT, MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE. Each Recipient is solely responsible for determining the appropriateness of using and distributing the Program and assumes all risks associated with its exercise of rights under this Agreement , including but not limited to the risks and costs of program errors, compliance with applicable laws, damage to or loss of data, programs or equipment, and unavailability or interruption of operations.
-6. DISCLAIMER OF LIABILITY EXCEPT AS EXPRESSLY SET FORTH IN THIS AGREEMENT, NEITHER RECIPIENT NOR ANY CONTRIBUTORS SHALL HAVE ANY LIABILITY FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING WITHOUT LIMITATION LOST PROFITS), HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OR DISTRIBUTION OF THE PROGRAM OR THE EXERCISE OF ANY RIGHTS GRANTED HEREUNDER, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
-7. GENERAL
+1. NO WARRANTY EXCEPT AS EXPRESSLY SET FORTH IN THIS AGREEMENT, THE PROGRAM IS PROVIDED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, EITHER EXPRESS OR IMPLIED INCLUDING, WITHOUT LIMITATION, ANY WARRANTIES OR CONDITIONS OF TITLE, NON-INFRINGEMENT, MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE. Each Recipient is solely responsible for determining the appropriateness of using and distributing the Program and assumes all risks associated with its exercise of rights under this Agreement , including but not limited to the risks and costs of program errors, compliance with applicable laws, damage to or loss of data, programs or equipment, and unavailability or interruption of operations.
+2. DISCLAIMER OF LIABILITY EXCEPT AS EXPRESSLY SET FORTH IN THIS AGREEMENT, NEITHER RECIPIENT NOR ANY CONTRIBUTORS SHALL HAVE ANY LIABILITY FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING WITHOUT LIMITATION LOST PROFITS), HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OR DISTRIBUTION OF THE PROGRAM OR THE EXERCISE OF ANY RIGHTS GRANTED HEREUNDER, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+3. GENERAL
 
 If any provision of this Agreement is invalid or unenforceable under applicable law, it shall not affect the validity or enforceability of the remainder of the terms of this Agreement, and without further action by the parties hereto, such provision shall be reformed to the minimum extent necessary to make such provision valid and enforceable.
 
@@ -2595,7 +2593,7 @@ Everyone is permitted to copy and distribute copies of this Agreement, but in or
 
 This Agreement is governed by the laws of the State of New York and the intellectual property laws of the United States of America. No party to this Agreement will bring a legal action under this Agreement more than one year after the cause of action arose. Each party waives its rights to a jury trial in any resulting litigation.
 
-#### Common Development and Distribution License 1.1
+### Common Development and Distribution License 1.1
 
 COMMON DEVELOPMENT AND DISTRIBUTION LICENSE (CDDL) Version 1.1
 
@@ -2633,7 +2631,7 @@ C. Any new file that is contributed or otherwise made available under the terms 
 
 1.13. “You” (or “Your”) means an individual or a legal entity exercising rights under, and complying with all of the terms of, this License. For legal entities, “You” includes any entity which controls, is controlled by, or is under common control with You. For purposes of this definition, “control” means (a) the power, direct or indirect, to cause the direction or management of such entity, whether by contract or otherwise, or (b) ownership of more than fifty percent (50%) of the outstanding shares or beneficial ownership of such entity.
 
-2. License Grants.
+1. License Grants.
 
 2.1. The Initial Developer Grant. Conditioned upon Your compliance with Section 3.1 below and subject to third party intellectual property claims, the Initial Developer hereby grants You a world-wide, royalty-free, non-exclusive license:
 
@@ -2655,7 +2653,7 @@ C. Any new file that is contributed or otherwise made available under the terms 
 
 (d) Notwithstanding Section 2.2(b) above, no patent license is granted: (1) for any code that Contributor has deleted from the Contributor Version; (2) for infringements caused by: (i) third party modifications of Contributor Version, or (ii) the combination of Modifications made by that Contributor with other software (except as part of the Contributor Version) or other devices; or (3) under Patent Claims infringed by Covered Software in the absence of Modifications made by that Contributor.
 
-3. Distribution Obligations.
+1. Distribution Obligations.
 
 3.1. Availability of Source Code. Any Covered Software that You distribute or otherwise make available in Executable form must also be made available in Source Code form and that Source Code form must be distributed only under the terms of this License. You must include a copy of this License with every copy of the Source Code form of the Covered Software You distribute or otherwise make available. You must inform recipients of any such Covered Software in Executable form as to how they can obtain such Covered Software in Source Code form in a reasonable manner on or through a medium customarily used for software exchange.
 
@@ -2669,7 +2667,7 @@ C. Any new file that is contributed or otherwise made available under the terms 
 
 3.6. Larger Works. You may create a Larger Work by combining Covered Software with other code not governed by the terms of this License and distribute the Larger Work as a single product. In such a case, You must make sure the requirements of this License are fulfilled for the Covered Software.
 
-4. Versions of the License.
+1. Versions of the License.
 
 4.1. New Versions. Oracle is the initial license steward and may publish revised and/or new versions of this License from time to time. Each version will be given a distinguishing version number. Except as provided in Section 4.3, no one other than the license steward has the right to modify this License.
 
@@ -2677,8 +2675,8 @@ C. Any new file that is contributed or otherwise made available under the terms 
 
 4.3. Modified Versions. When You are an Initial Developer and You want to create a new license for Your Original Software, You may create and use a modified version of this License if You: (a) rename the license and remove any references to the name of the license steward (except to note that the license differs from this License); and (b) otherwise make it clear that the license contains terms which differ from this License.
 
-5. DISCLAIMER OF WARRANTY. COVERED SOFTWARE IS PROVIDED UNDER THIS LICENSE ON AN “AS IS” BASIS, WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, WITHOUT LIMITATION, WARRANTIES THAT THE COVERED SOFTWARE IS FREE OF DEFECTS, MERCHANTABLE, FIT FOR A PARTICULAR PURPOSE OR NON-INFRINGING. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE COVERED SOFTWARE IS WITH YOU. SHOULD ANY COVERED SOFTWARE PROVE DEFECTIVE IN ANY RESPECT, YOU (NOT THE INITIAL DEVELOPER OR ANY OTHER CONTRIBUTOR) ASSUME THE COST OF ANY NECESSARY SERVICING, REPAIR OR CORRECTION. THIS DISCLAIMER OF WARRANTY CONSTITUTES AN ESSENTIAL PART OF THIS LICENSE. NO USE OF ANY COVERED SOFTWARE IS AUTHORIZED HEREUNDER EXCEPT UNDER THIS DISCLAIMER.
-6. TERMINATION.
+1. DISCLAIMER OF WARRANTY. COVERED SOFTWARE IS PROVIDED UNDER THIS LICENSE ON AN “AS IS” BASIS, WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, WITHOUT LIMITATION, WARRANTIES THAT THE COVERED SOFTWARE IS FREE OF DEFECTS, MERCHANTABLE, FIT FOR A PARTICULAR PURPOSE OR NON-INFRINGING. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE COVERED SOFTWARE IS WITH YOU. SHOULD ANY COVERED SOFTWARE PROVE DEFECTIVE IN ANY RESPECT, YOU (NOT THE INITIAL DEVELOPER OR ANY OTHER CONTRIBUTOR) ASSUME THE COST OF ANY NECESSARY SERVICING, REPAIR OR CORRECTION. THIS DISCLAIMER OF WARRANTY CONSTITUTES AN ESSENTIAL PART OF THIS LICENSE. NO USE OF ANY COVERED SOFTWARE IS AUTHORIZED HEREUNDER EXCEPT UNDER THIS DISCLAIMER.
+2. TERMINATION.
 
 6.1. This License and the rights granted hereunder will terminate automatically if You fail to comply with terms herein and fail to cure such breach within 30 days of becoming aware of the breach. Provisions which, by their nature, must remain in effect beyond the termination of this License shall survive.
 
@@ -2688,25 +2686,25 @@ C. Any new file that is contributed or otherwise made available under the terms 
 
 6.4. In the event of termination under Sections 6.1 or 6.2 above, all end user licenses that have been validly granted by You or any distributor hereunder prior to termination (excluding licenses granted to You by any distributor) shall survive termination.
 
-7. LIMITATION OF LIABILITY.
+1. LIMITATION OF LIABILITY.
 
 UNDER NO CIRCUMSTANCES AND UNDER NO LEGAL THEORY, WHETHER TORT (INCLUDING NEGLIGENCE), CONTRACT, OR OTHERWISE, SHALL YOU, THE INITIAL DEVELOPER, ANY OTHER CONTRIBUTOR, OR ANY DISTRIBUTOR OF COVERED SOFTWARE, OR ANY SUPPLIER OF ANY OF SUCH PARTIES, BE LIABLE TO ANY PERSON FOR ANY INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES OF ANY CHARACTER INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF GOODWILL, WORK STOPPAGE, COMPUTER FAILURE OR MALFUNCTION, OR ANY AND ALL OTHER COMMERCIAL DAMAGES OR LOSSES, EVEN IF SUCH PARTY SHALL HAVE BEEN INFORMED OF THE POSSIBILITY OF SUCH DAMAGES. THIS LIMITATION OF LIABILITY SHALL NOT APPLY TO LIABILITY FOR DEATH OR PERSONAL INJURY RESULTING FROM SUCH PARTY'S NEGLIGENCE TO THE EXTENT APPLICABLE LAW PROHIBITS SUCH LIMITATION. SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OR LIMITATION OF INCIDENTAL OR CONSEQUENTIAL DAMAGES, SO THIS EXCLUSION AND LIMITATION MAY NOT APPLY TO YOU.
 
-8. U.S. GOVERNMENT END USERS.
+1. U.S. GOVERNMENT END USERS.
 
 The Covered Software is a “commercial item,” as that term is defined in 48 C.F.R. 2.101 (Oct. 1995), consisting of “commercial computer software” (as that term is defined at 48 C.F.R. § 252.227-7014(a)(1)) and “commercial computer software documentation” as such terms are used in 48 C.F.R. 12.212 (Sept. 1995). Consistent with 48 C.F.R. 12.212 and 48 C.F.R. 227.7202-1 through 227.7202-4 (June 1995), all U.S. Government End Users acquire Covered Software with only those rights set forth herein. This U.S. Government Rights clause is in lieu of, and supersedes, any other FAR, DFAR, or other clause or provision that addresses Government rights in computer software under this License.
 
-9. MISCELLANEOUS.
+1. MISCELLANEOUS.
 
 This License represents the complete agreement concerning subject matter hereof. If any provision of this License is held to be unenforceable, such provision shall be reformed only to the extent necessary to make it enforceable. This License shall be governed by the law of the jurisdiction specified in a notice contained within the Original Software (except to the extent applicable law, if any, provides otherwise), excluding such jurisdiction's conflict-of-law provisions. Any litigation relating to this License shall be subject to the jurisdiction of the courts located in the jurisdiction and venue specified in a notice contained within the Original Software, with the losing party responsible for costs, including, without limitation, court costs and reasonable attorneys' fees and expenses. The application of the United Nations Convention on Contracts for the International Sale of Goods is expressly excluded. Any law or regulation which provides that the language of a contract shall be construed against the drafter shall not apply to this License. You agree that You alone are responsible for compliance with the United States export administration regulations (and the export control laws and regulation of any other countries) when You use, distribute or otherwise make available any Covered Software.
 
-10. RESPONSIBILITY FOR CLAIMS.
+1. RESPONSIBILITY FOR CLAIMS.
 
 As between Initial Developer and the Contributors, each party is responsible for claims and damages arising, directly or indirectly, out of its utilization of rights under this License and You agree to work with Initial Developer and Contributors to distribute such responsibility on an equitable basis. Nothing herein is intended or shall be deemed to constitute any admission of liability.
 
 NOTICE PURSUANT TO SECTION 9 OF THE COMMON DEVELOPMENT AND DISTRIBUTION LICENSE (CDDL) The code released under the CDDL shall be governed by the laws of the State of California (excluding conflict-of-law provisions). Any litigation relating to this License shall be subject to the jurisdiction of the Federal Courts of the Northern District of California and the state courts of the State of California, with venue lying in Santa Clara County, California.
 
-#### GNU Lesser General Public License v2.1 or later
+### GNU Lesser General Public License v2.1 or later
 
 GNU LESSER GENERAL PUBLIC LICENSE
 
@@ -2716,7 +2714,7 @@ Copyright (C) 1991, 1999 Free Software Foundation, Inc. 51 Franklin Street, Fift
 
 Everyone is permitted to copy and distribute verbatim copies of this license document, but changing it is not allowed.
 
-\[This is the first released version of the Lesser GPL. It also counts as the successor of the GNU Library Public License, version 2, hence the version number 2.1.]
+[This is the first released version of the Lesser GPL. It also counts as the successor of the GNU Library Public License, version 2, hence the version number 2.1.]
 
 Preamble
 
@@ -2766,7 +2764,7 @@ Activities other than copying, distribution and modification are not covered by 
 
 You may charge a fee for the physical act of transferring a copy, and you may at your option offer warranty protection in exchange for a fee.
 
-2. You may modify your copy or copies of the Library or any portion of it, thus forming a work based on the Library, and copy and distribute such modifications or work under the terms of Section 1 above, provided that you also meet all of these conditions:
+1. You may modify your copy or copies of the Library or any portion of it, thus forming a work based on the Library, and copy and distribute such modifications or work under the terms of Section 1 above, provided that you also meet all of these conditions:
 
 a) The modified work must itself be a software library.
 
@@ -2784,17 +2782,17 @@ Thus, it is not the intent of this section to claim rights or contest your right
 
 In addition, mere aggregation of another work not based on the Library with the Library (or with a work based on the Library) on a volume of a storage or distribution medium does not bring the other work under the scope of this License.
 
-3. You may opt to apply the terms of the ordinary GNU General Public License instead of this License to a given copy of the Library. To do this, you must alter all the notices that refer to this License, so that they refer to the ordinary GNU General Public License, version 2, instead of to this License. (If a newer version than version 2 of the ordinary GNU General Public License has appeared, then you can specify that version instead if you wish.) Do not make any other change in these notices.
+1. You may opt to apply the terms of the ordinary GNU General Public License instead of this License to a given copy of the Library. To do this, you must alter all the notices that refer to this License, so that they refer to the ordinary GNU General Public License, version 2, instead of to this License. (If a newer version than version 2 of the ordinary GNU General Public License has appeared, then you can specify that version instead if you wish.) Do not make any other change in these notices.
 
 Once this change is made in a given copy, it is irreversible for that copy, so the ordinary GNU General Public License applies to all subsequent copies and derivative works made from that copy.
 
 This option is useful when you wish to copy part of the code of the Library into a program that is not a library.
 
-4. You may copy and distribute the Library (or a portion or derivative of it, under Section 2) in object code or executable form under the terms of Sections 1 and 2 above provided that you accompany it with the complete corresponding machine-readable source code, which must be distributed under the terms of Sections 1 and 2 above on a medium customarily used for software interchange.
+1. You may copy and distribute the Library (or a portion or derivative of it, under Section 2) in object code or executable form under the terms of Sections 1 and 2 above provided that you accompany it with the complete corresponding machine-readable source code, which must be distributed under the terms of Sections 1 and 2 above on a medium customarily used for software interchange.
 
 If distribution of object code is made by offering access to copy from a designated place, then offering equivalent access to copy the source code from the same place satisfies the requirement to distribute the source code, even though third parties are not compelled to copy the source along with the object code.
 
-5. A program that contains no derivative of any portion of the Library, but is designed to work with the Library by being compiled or linked with it, is called a "work that uses the Library". Such a work, in isolation, is not a derivative work of the Library, and therefore falls outside the scope of this License.
+1. A program that contains no derivative of any portion of the Library, but is designed to work with the Library by being compiled or linked with it, is called a "work that uses the Library". Such a work, in isolation, is not a derivative work of the Library, and therefore falls outside the scope of this License.
 
 However, linking a "work that uses the Library" with the Library creates an executable that is a derivative of the Library (because it contains portions of the Library), rather than a "work that uses the library". The executable is therefore covered by this License. Section 6 states terms for distribution of such executables.
 
@@ -2804,7 +2802,7 @@ If such an object file uses only numerical parameters, data structure layouts an
 
 Otherwise, if the work is a derivative of the Library, you may distribute the object code for the work under the terms of Section 6. Any executables containing that work also fall under Section 6, whether or not they are linked directly with the Library itself.
 
-6. As an exception to the Sections above, you may also combine or link a "work that uses the Library" with the Library to produce a work containing portions of the Library, and distribute that work under terms of your choice, provided that the terms permit modification of the work for the customer's own use and reverse engineering for debugging such modifications.
+1. As an exception to the Sections above, you may also combine or link a "work that uses the Library" with the Library to produce a work containing portions of the Library, and distribute that work under terms of your choice, provided that the terms permit modification of the work for the customer's own use and reverse engineering for debugging such modifications.
 
 You must give prominent notice with each copy of the work that the Library is used in it and that the Library and its use are covered by this License. You must supply a copy of this License. If the work during execution displays copyright notices, you must include the copyright notice for the Library among them, as well as a reference directing the user to the copy of this License. Also, you must do one of these things:
 
@@ -2822,16 +2820,16 @@ For an executable, the required form of the "work that uses the Library" must in
 
 It may happen that this requirement contradicts the license restrictions of other proprietary libraries that do not normally accompany the operating system. Such a contradiction means you cannot use both them and the Library together in an executable that you distribute.
 
-7. You may place library facilities that are a work based on the Library side-by-side in a single library together with other library facilities not covered by this License, and distribute such a combined library, provided that the separate distribution of the work based on the Library and of the other library facilities is otherwise permitted, and provided that you do these two things:
+1. You may place library facilities that are a work based on the Library side-by-side in a single library together with other library facilities not covered by this License, and distribute such a combined library, provided that the separate distribution of the work based on the Library and of the other library facilities is otherwise permitted, and provided that you do these two things:
 
 a) Accompany the combined library with a copy of the same work based on the Library, uncombined with any other library facilities. This must be distributed under the terms of the Sections above.
 
 b) Give prominent notice with the combined library of the fact that part of it is a work based on the Library, and explaining where to find the accompanying uncombined form of the same work.
 
-8. You may not copy, modify, sublicense, link with, or distribute the Library except as expressly provided under this License. Any attempt otherwise to copy, modify, sublicense, link with, or distribute the Library is void, and will automatically terminate your rights under this License. However, parties who have received copies, or rights, from you under this License will not have their licenses terminated so long as such parties remain in full compliance.
-9. You are not required to accept this License, since you have not signed it. However, nothing else grants you permission to modify or distribute the Library or its derivative works. These actions are prohibited by law if you do not accept this License. Therefore, by modifying or distributing the Library (or any work based on the Library), you indicate your acceptance of this License to do so, and all its terms and conditions for copying, distributing or modifying the Library or works based on it.
-10. Each time you redistribute the Library (or any work based on the Library), the recipient automatically receives a license from the original licensor to copy, distribute, link with or modify the Library subject to these terms and conditions. You may not impose any further restrictions on the recipients' exercise of the rights granted herein. You are not responsible for enforcing compliance by third parties with this License.
-11. If, as a consequence of a court judgment or allegation of patent infringement or for any other reason (not limited to patent issues), conditions are imposed on you (whether by court order, agreement or otherwise) that contradict the conditions of this License, they do not excuse you from the conditions of this License. If you cannot distribute so as to satisfy simultaneously your obligations under this License and any other pertinent obligations, then as a consequence you may not distribute the Library at all. For example, if a patent license would not permit royalty-free redistribution of the Library by all those who receive copies directly or indirectly through you, then the only way you could satisfy both it and this License would be to refrain entirely from distribution of the Library.
+1. You may not copy, modify, sublicense, link with, or distribute the Library except as expressly provided under this License. Any attempt otherwise to copy, modify, sublicense, link with, or distribute the Library is void, and will automatically terminate your rights under this License. However, parties who have received copies, or rights, from you under this License will not have their licenses terminated so long as such parties remain in full compliance.
+2. You are not required to accept this License, since you have not signed it. However, nothing else grants you permission to modify or distribute the Library or its derivative works. These actions are prohibited by law if you do not accept this License. Therefore, by modifying or distributing the Library (or any work based on the Library), you indicate your acceptance of this License to do so, and all its terms and conditions for copying, distributing or modifying the Library or works based on it.
+3. Each time you redistribute the Library (or any work based on the Library), the recipient automatically receives a license from the original licensor to copy, distribute, link with or modify the Library subject to these terms and conditions. You may not impose any further restrictions on the recipients' exercise of the rights granted herein. You are not responsible for enforcing compliance by third parties with this License.
+4. If, as a consequence of a court judgment or allegation of patent infringement or for any other reason (not limited to patent issues), conditions are imposed on you (whether by court order, agreement or otherwise) that contradict the conditions of this License, they do not excuse you from the conditions of this License. If you cannot distribute so as to satisfy simultaneously your obligations under this License and any other pertinent obligations, then as a consequence you may not distribute the Library at all. For example, if a patent license would not permit royalty-free redistribution of the Library by all those who receive copies directly or indirectly through you, then the only way you could satisfy both it and this License would be to refrain entirely from distribution of the Library.
 
 If any portion of this section is held invalid or unenforceable under any particular circumstance, the balance of the section is intended to apply, and the section as a whole is intended to apply in other circumstances.
 
@@ -2839,17 +2837,17 @@ It is not the purpose of this section to induce you to infringe any patents or o
 
 This section is intended to make thoroughly clear what is believed to be a consequence of the rest of this License.
 
-12. If the distribution and/or use of the Library is restricted in certain countries either by patents or by copyrighted interfaces, the original copyright holder who places the Library under this License may add an explicit geographical distribution limitation excluding those countries, so that distribution is permitted only in or among countries not thus excluded. In such case, this License incorporates the limitation as if written in the body of this License.
-13. The Free Software Foundation may publish revised and/or new versions of the Lesser General Public License from time to time. Such new versions will be similar in spirit to the present version, but may differ in detail to address new problems or concerns.
+1. If the distribution and/or use of the Library is restricted in certain countries either by patents or by copyrighted interfaces, the original copyright holder who places the Library under this License may add an explicit geographical distribution limitation excluding those countries, so that distribution is permitted only in or among countries not thus excluded. In such case, this License incorporates the limitation as if written in the body of this License.
+2. The Free Software Foundation may publish revised and/or new versions of the Lesser General Public License from time to time. Such new versions will be similar in spirit to the present version, but may differ in detail to address new problems or concerns.
 
 Each version is given a distinguishing version number. If the Library specifies a version number of this License which applies to it and "any later version", you have the option of following the terms and conditions either of that version or of any later version published by the Free Software Foundation. If the Library does not specify a license version number, you may choose any version ever published by the Free Software Foundation.
 
-14. If you wish to incorporate parts of the Library into other free programs whose distribution conditions are incompatible with these, write to the author to ask for permission. For software which is copyrighted by the Free Software Foundation, write to the Free Software Foundation; we sometimes make exceptions for this. Our decision will be guided by the two goals of preserving the free status of all derivatives of our free software and of promoting the sharing and reuse of software generally.
+1. If you wish to incorporate parts of the Library into other free programs whose distribution conditions are incompatible with these, write to the author to ask for permission. For software which is copyrighted by the Free Software Foundation, write to the Free Software Foundation; we sometimes make exceptions for this. Our decision will be guided by the two goals of preserving the free status of all derivatives of our free software and of promoting the sharing and reuse of software generally.
 
 NO WARRANTY
 
-15. BECAUSE THE LIBRARY IS LICENSED FREE OF CHARGE, THERE IS NO WARRANTY FOR THE LIBRARY, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE LIBRARY "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE LIBRARY IS WITH YOU. SHOULD THE LIBRARY PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.
-16. IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING WILL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MAY MODIFY AND/OR REDISTRIBUTE THE LIBRARY AS PERMITTED ABOVE, BE LIABLE TO YOU FOR DAMAGES, INCLUDING ANY GENERAL, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF THE USE OR INABILITY TO USE THE LIBRARY (INCLUDING BUT NOT LIMITED TO LOSS OF DATA OR DATA BEING RENDERED INACCURATE OR LOSSES SUSTAINED BY YOU OR THIRD PARTIES OR A FAILURE OF THE LIBRARY TO OPERATE WITH ANY OTHER SOFTWARE), EVEN IF SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+1. BECAUSE THE LIBRARY IS LICENSED FREE OF CHARGE, THERE IS NO WARRANTY FOR THE LIBRARY, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE LIBRARY "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE LIBRARY IS WITH YOU. SHOULD THE LIBRARY PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.
+2. IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING WILL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MAY MODIFY AND/OR REDISTRIBUTE THE LIBRARY AS PERMITTED ABOVE, BE LIABLE TO YOU FOR DAMAGES, INCLUDING ANY GENERAL, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF THE USE OR INABILITY TO USE THE LIBRARY (INCLUDING BUT NOT LIMITED TO LOSS OF DATA OR DATA BEING RENDERED INACCURATE OR LOSSES SUSTAINED BY YOU OR THIRD PARTIES OR A FAILURE OF THE LIBRARY TO OPERATE WITH ANY OTHER SOFTWARE), EVEN IF SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
 
 END OF TERMS AND CONDITIONS
 
@@ -2869,6 +2867,6 @@ You should have received a copy of the GNU Lesser General Public License along w
 
 You should also get your employer (if you work as a programmer) or your school, if any, to sign a "copyright disclaimer" for the library, if necessary. Here is a sample; alter the names:
 
-Yoyodyne, Inc., hereby disclaims all copyright interest in the library \`Frob' (a library for tweaking knobs) written by James Random Hacker.
+Yoyodyne, Inc., hereby disclaims all copyright interest in the library `Frob' (a library for tweaking knobs) written by James Random Hacker.
 
 signature of Ty Coon, 1 April 1990 Ty Coon, President of Vice That's all there is to it!

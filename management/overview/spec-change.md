@@ -1,8 +1,8 @@
-Changes the configuration of an operational Cloud DB service, such as the instance type, DR configuration, and storage.
+Changes the configuration of an operating Cloud DB service, such as instance type, DR configuration, and storage.
 
-Spec changes start from Management > Overview and proceed through five steps: Engine Options → DR Configuration → AZ Configuration → Instance Configuration → Review Configuration Details. In each step, you review the current settings and modify the necessary items, and in the final step, you compare the configuration and estimated cost before and after the change and request that it be applied. Depending on the changes, a restart of the DB service may be required.
+Spec changes start from Management > Overview and proceed in five steps: Engine Options → DR Configuration → AZ Configuration → Instance Configuration → Configuration Information Review. In each step, you check the current settings and modify the necessary items, and in the final step, you compare the configuration and estimated cost before and after the change and request to apply it. Depending on the changes, a DB service restart may be required.
 
-The range of items that can be changed varies depending on the DB engine and license type (LI/BYOL). The LI license allows you to change most items, including the instance type, DR configuration, availability zone, and storage settings, while the BYOL license limits the scope of changes to storage items such as volume size, IOPS, and MBps.
+The scope of changeable items varies depending on the DB engine and license type (LI/BYOL). With an LI license, most items can be changed, including instance type, DR configuration, availability zone, and storage settings, whereas with a BYOL license, the scope of changes is limited to storage items such as volume size, IOPS, and MBps.
 
 {% hint style="info" %}
 **Note**
@@ -10,27 +10,27 @@ The range of items that can be changed varies depending on the DB engine and lic
 In the Azure environment, only the BYOL license model is currently supported.
 {% endhint %}
 
-1. **Management > Overview**Navigate to.
-2. **Change Spec**Click.
-3. **Engine Options**, **DR Configuration**, **AZ Configuration**, **Instance Configuration** Navigate to each tab.
-4. Set the items to be changed.
-5. **Review Configuration Details** Navigate to the tab.
-6. Review the configuration and estimated cost before and after the change.
-7. **Complete**Click.
+1. **Management > Overview**Navigate to
+2. **Spec Change**Click.
+3. **Engine options**, **DR configuration**, **AZ Configuration**, **Instance Configuration** Navigate to each tab.
+4. Set the items to change.
+5. **Review Configuration Information** Move to the tab.
+6. Review the configuration before and after the change and the estimated cost.
+7. **Done**Click it.
 8. Review the details in the confirmation modal.
 9. **Confirm**Click.
 
 {% hint style="info" %}
 **Note**
 
-- Tabs for steps 1 through 4 can be freely navigated in any order.
-- **Review Configuration Details** The tab can only be entered when there are no validation errors across all of the step 1 through 4 tabs.
-- On the right side of the screen, **Configuration Details** In the floating box, you can review a summary of the content entered in each tab, and error items are displayed in red text.
+- The Step 1–4 tabs can be freely navigated in any order.
+- **Review Configuration Information** This tab can only be entered when there are no validation errors across all Step 1–4 tabs.
+- On the right side of the screen, **Configuration Information** In the floating box, you can review a summary of the content entered in each tab, and error items are displayed in red text.
 {% endhint %}
 
-## Changeable Items
+## Changeable Items <a href="#changeable-items" id="changeable-items"></a>
 
-The items that can be changed vary depending on the engine type and license option.
+The items that can be changed differ depending on the engine type and license option.
 
 | Item | Tibero LI | Tibero BYOL | OpenSQL LI | OpenSQL BYOL |
 | --- | --- | --- | --- | --- |
@@ -44,52 +44,52 @@ The items that can be changed vary depending on the engine type and license opti
 | Volume Size | ✓ | ✓ | ✓ | ✓ |
 | Volume IOPS / MBps | ✓ | ✓ | ✓ | ✓ |
 
-- ¹ In OpenSQL LI, switching between Single ↔ HA is possible
+- ¹ Can be changed between Single ↔ HA in OpenSQL LI
 - ² OpenSQL is determined automatically based on Topology (HA → DR enabled, Single → DR disabled)
-- ³ Can be changed when initially configuring DR usage
-- ⁴ Can be changed during initial HA configuration
+- ³ Can be changed when initially configured with DR enabled
+- ⁴ Can be changed when initially configured with HA
 
 {% hint style="info" %}
 **Note**
 
 - Volume Size can only be changed to a value larger than the current setting.
-- When SE (Standard Edition) is selected, the instance type is limited to a maximum of 8 vCPU.
-- OpenSQL is not supported in the AWS environment.
+- When SE (Standard Edition) is selected, the instance type is limited to a maximum of 8vCPU.
+- OpenSQL is not supported in AWS environments.
 {% endhint %}
 
-## Engine Options
+## Engine options <a href="#engine-options" id="engine-options"></a>
 
 DB Service Name, DB Engine Type, License Option, and Node Count display the current settings and cannot be changed.
 
 The changeable items are as follows.
 
-- **Edition**: Select between Standard Edition (SE) and Enterprise Edition (EE). SE supports up to 8 vCPU, while EE has no vCPU limit. In TAC or HA Topology, EE is applied automatically, and it can only be changed with an LI license.
-- **Topology**: Switching between Single ↔ HA is only possible in OpenSQL LI.
+- **Edition**: Select between Standard Edition (SE) and Enterprise Edition (EE). SE can use up to 8vCPU, while EE has no vCPU limit. In TAC or HA Topology, EE is applied automatically, and it can only be changed with the LI license.
+- **Topology**: Can only be changed between Single ↔ HA in OpenSQL LI.
 
-### TAC Scale In/Out
+### TAC Scale In/Out <a href="#tac-scale-in-out" id="tac-scale-in-out"></a>
 
-In the Tibero TAC configuration of the LI license model, you can adjust the number of nodes by directly adding or deleting TAC nodes in the instance Scale In/Out table. The minimum is 2 and the maximum is 4.
+For the Tibero TAC configuration of the LI license model, you can adjust the node count by directly adding or deleting TAC nodes in the instance Scale In/Out table. The minimum is 2 and the maximum is 4.
 
 {% hint style="info" %}
 **Note**
 
-TAC node Scale In/Out is provided only by the Tibero engine. OpenSQL adjusts nodes through Replica Scale In/Out in the DR configuration stage.
+TAC node Scale In/Out is provided only in the Tibero engine. OpenSQL adjusts nodes through Replica Scale In/Out in the DR configuration step.
 {% endhint %}
 
 {% hint style="warning" %}
 **Caution**
 
-If you delete (Scale In) an operating TAC instance, all data recorded on that instance will be deleted.
+If you delete (Scale In) a TAC instance that is in operation, all data recorded on that instance is deleted.
 {% endhint %}
 
-## DR Configuration
+## DR configuration <a href="#dr-configuration" id="dr-configuration"></a>
 
-- **Enable DR**: Select whether to use DR. It can be changed directly only in Tibero LI, while OpenSQL is determined automatically based on Topology (HA → DR enabled, Single → DR disabled). BYOL cannot be changed.
+- **Enable DR**: Select whether to use DR. It can only be changed directly in Tibero LI, and OpenSQL is determined automatically based on Topology (HA → DR enabled, Single → DR disabled). BYOL cannot be changed.
 - **Failover Automation Level**: Select the failover automation level when DR is used. It is not displayed when DR is not used.
 
-### Failover Automation Level Options
+### Failover Automation Level Options <a href="#failover-automation-level" id="failover-automation-level"></a>
 
-<table data-full-width="true"><thead><tr><th>Level</th><th>Name</th><th>Description</th></tr></thead><tbody><tr><td>Level 0</td><td>Manual</td><td>When a failure occurs, the user directly promotes the Standby/Replica to Primary/Leader</td></tr><tr><td>Level 1</td><td>Auto Failover</td><td><ul><li>The system switches over automatically</li><li>Recovery and resource optimization are performed manually</li></ul></td></tr><tr><td>Level 2</td><td>Auto Rebuild</td><td><ul><li>After failover, a new Standby/Replica is automatically created to maintain the configuration</li><li>Data recovery is performed manually</li></ul></td></tr><tr><td>Level 3</td><td>Full Automation</td><td>The entire process from failover to recovery and cleanup of unused resources is handled automatically</td></tr></tbody></table>
+<table><thead><tr><th>Level</th><th>Name</th><th>Description</th></tr></thead><tbody><tr><td>Level 0</td><td>Manual</td><td>When a failure occurs, the user manually promotes the Standby/Replica to Primary/Leader</td></tr><tr><td>Level 1</td><td>Auto Failover</td><td><ul><li>The system switches over automatically</li><li>Recovery and resource optimization are performed manually</li></ul></td></tr><tr><td>Level 2</td><td>Auto Rebuild</td><td><ul><li>After failover, a new Standby/Replica is automatically created to maintain the configuration</li><li>Data recovery is performed manually</li></ul></td></tr><tr><td>Level 3</td><td>Full Automation</td><td>The entire process from failover to recovery and cleanup of unused resources is handled automatically</td></tr></tbody></table>
 
 {% hint style="warning" %}
 **Caution**
@@ -100,60 +100,60 @@ Level 3 (Full Automation) prioritizes recovery speed, so some recent data may be
 {% hint style="info" %}
 **Note**
 
-The selectable levels vary depending on the license type.
+The selectable levels differ depending on the license type.
 
-- **Tibero LI**: All levels 0–3 are selectable
-- **Tibero BYOL**: Levels 0, 2, and 3 are selectable
-- **OpenSQL**: Levels 0 and 3 are selectable
+- **Tibero LI**: All of Levels 0–3 can be selected
+- **Tibero BYOL**: Levels 0, 2, and 3 can be selected
+- **OpenSQL**: Levels 0 and 3 can be selected
 {% endhint %}
 
-### OpenSQL HA Scale In/Out
+### OpenSQL HA Scale In/Out <a href="#opensql-ha-scale-in-out" id="opensql-ha-scale-in-out"></a>
 
-For OpenSQL in the LI license model, you adjust the configuration by adding or deleting Replica nodes in the Replica Scale In/Out table. Only Replica Node #2 and above can be deleted.
+For OpenSQL of the LI license model, you adjust the configuration by adding or deleting Replica nodes in the Replica Scale In/Out table. Only Replica Node #2 and above can be deleted.
 
 {% hint style="info" %}
 **Note**
 
-Replica Scale In/Out is provided only by the OpenSQL engine. Tibero adjusts nodes through TAC Scale In/Out in the engine options stage.
+Replica Scale In/Out is provided only in the OpenSQL engine. Tibero adjusts nodes through TAC Scale In/Out in the engine option step.
 {% endhint %}
 
 {% hint style="warning" %}
 **Caution**
 
-- If you complete the spec change after changing DR to disabled, all data on the existing Standby/Replica instances will be deleted.
-- If an instance in the Retired state exists due to a Failover, changing DR to disabled will automatically delete that instance. Since data recovery through that instance becomes impossible, proceed only after completing data review and backup.
+- If you complete the spec change after changing DR to disabled, all data on the existing Standby/Replica instances is deleted.
+- If there is an instance in Retired status due to Failover, changing DR to disabled automatically deletes that instance. Since data recovery through that instance will become impossible, proceed only after completing data review and backup.
 {% endhint %}
 
-## AZ Configuration
+## AZ Configuration <a href="#az-configuration" id="az-configuration"></a>
 
-Check and set the Availability Zone (AZ) of each instance. Configuration is possible only for newly added instances.
+Check and set the availability zone (AZ) of each instance. Settings can only be configured for newly added instances.
 
-## Instance Configuration
+## Instance Configuration <a href="#instance-configuration" id="instance-configuration"></a>
 
-Perform Scale Up/Down by changing the instance type. With a BYOL license, the instance type cannot be changed.
+Perform Scale Up/Down by changing the instance type. The BYOL license cannot change the instance type.
 
 The storage-related settings are as follows.
 
-<table data-full-width="true"><thead><tr><th>Item</th><th>Description</th></tr></thead><tbody><tr><td>Volume Size</td><td>Can only be changed to a value larger than the current setting</td></tr><tr><td>Volume IOPS / MBps</td><td>Can be set within the allowed range depending on the volume type in the Azure environment</td></tr><tr><td>Auto Scale</td><td>When enabled, the volume is automatically expanded when Data Volume usage reaches 90%</td></tr><tr><td>Maximum Expansion Limit</td><td><ul><li>Enter the maximum expandable size when Auto Scale is used</li><li>Must enter at least 110% of the current Data Volume Size</li></ul></td></tr></tbody></table>
+<table><thead><tr><th>Item</th><th>Description</th></tr></thead><tbody><tr><td>Volume Size</td><td>Can only be changed to a value larger than the current setting</td></tr><tr><td>Volume IOPS / MBps</td><td>Can be set within the allowed range depending on the volume type in Azure environments</td></tr><tr><td>Auto Scale</td><td>When enabled, the volume is automatically expanded when Data Volume usage reaches 90%</td></tr><tr><td>Maximum Expansion Limit</td><td><ul><li>Enter the maximum expandable size when Auto Scale is used</li><li>Must enter at least 110% of the current Data Volume Size</li></ul></td></tr></tbody></table>
 
 {% hint style="warning" %}
 **Caution**
 
-Volume size cannot be reduced. Set the maximum expansion limit carefully.
+The volume size cannot be reduced. Set the maximum expansion limit carefully.
 {% endhint %}
 
-## Verify configuration information
+## Review Configuration Information <a href="#review-configuration" id="review-configuration"></a>
 
-Compare and verify the configuration before the change (left) and after the change (right). Changed items are displayed in blue.
+Compare and review the configuration before the change (left) and after the change (right). Changed items are displayed in blue.
 
-The estimated cost is displayed as hourly and monthly costs. The values are calculated based on the Seoul region, and actual costs may vary depending on the region and actual usage.
+The estimated cost is displayed as hourly and monthly costs. The values are calculated based on the Seoul region, and the actual cost may vary depending on the region and actual usage.
 
-After verifying the content **Complete**When you click, the processing method varies depending on the type of change.
+After reviewing the details, **Done**clicking it, the processing method differs depending on the change type.
 
-<table data-full-width="true"><thead><tr><th>Condition</th><th>Behavior</th></tr></thead><tbody><tr><td>Includes instance Scale Up/Down</td><td><ul><li>Displays a modal notifying that a restart is required</li><li>Service may be temporarily interrupted during the restart process</li></ul></td></tr><tr><td>Includes only TAC Scale In/Out or storage expansion</td><td>Applied immediately without a restart</td></tr><tr><td>Changing the DR configuration while a Retired instance exists</td><td>Displays a modal notifying of the Retired instance to be deleted</td></tr></tbody></table>
+<table><thead><tr><th>Condition</th><th>Action</th></tr></thead><tbody><tr><td>Includes instance Scale Up/Down</td><td><ul><li>A modal is displayed notifying that a restart is required</li><li>Service may be temporarily interrupted during the restart process</li></ul></td></tr><tr><td>Includes only TAC Scale In/Out or storage expansion</td><td>Applied immediately without a restart</td></tr><tr><td>Changing the DR configuration while a Retired instance exists</td><td>A modal is displayed notifying of the Retired instance to be deleted</td></tr></tbody></table>
 
 {% hint style="info" %}
 **Note**
 
-When instance Scale Up/Down and storage expansion are requested together, they are processed in the order of storage expansion → instance Scale Up/Down.
+If you request instance Scale Up/Down and storage expansion together, they are processed in the order of storage expansion → instance Scale Up/Down.
 {% endhint %}

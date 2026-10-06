@@ -1,21 +1,21 @@
-**Management > Overview** or **Dashboard**After selecting a DB Service from **Actions** click the button to perform the functions below.
+**Management > Overview** or **Dashboard**After selecting the DB Service in **Operations** You can perform the following functions by clicking the button.
 
-# Stopping and Starting a DB Service
+# Stopping and starting the DB Service <a href="#stop-start-db-service" id="stop-start-db-service"></a>
 
 {% hint style="info" %}
 **Note**
 
-A DB Service can be stopped for up to 7 days (168 hours). If you do not start it manually within 7 days, it will start automatically at the next top of the hour after 168 hours have elapsed.
+The DB Service can be stopped for up to 7 days (168 hours). If you do not start it manually within 7 days, it will automatically start at the next top of the hour after 168 hours have elapsed.
 {% endhint %}
 
-1. **Actions** Click the button.
+1. **Operations** Click the button.
 2. **Stop** or **Start** Click the button.
 
 ---
 
-# Deleting a DB Service
+# Deleting the DB Service <a href="#delete-db-service" id="delete-db-service"></a>
 
-1. **Actions** Click the button.
+1. **Operations** Click the button.
 2. **Delete** Click the button.
 3. Enter the DB Service Name in the input field.
 4. **Confirm** Click the button.
@@ -23,14 +23,14 @@ A DB Service can be stopped for up to 7 days (168 hours). If you do not start it
 {% hint style="warning" %}
 **Caution**
 
-Even if you stop a DB Service, charges for the provisioned storage still apply. Charges for backup storage, including manual snapshots and automatic backups within the specified retention period, also apply.
+Even if you stop the DB Service, charges for the provisioned storage still apply. Charges for backup storage also apply, including manual snapshots and automatic backups within the specified retention period.
 {% endhint %}
 
 ---
 
-# Deleting a DB Service
+# Deleting the DB Service <a href="#delete-db-service-2" id="delete-db-service-2"></a>
 
-1. **Actions** Click the button.
+1. **Operations** Click the button.
 2. **Delete** Click the button.
 3. Enter the DB Service Name in the input field.
 4. **Confirm** Click the button.
@@ -43,12 +43,12 @@ A deleted DB Service cannot be recovered, and all data is permanently deleted.
 
 ---
 
-# [Switchover](#switchover) (Switchover)
+# [Role switchover](#switchover) (Switchover) <a href="#switchover" id="switchover"></a>
 
-This function is enabled only when DR is configured.
+This is a function that is enabled only when DR is configured.
 
-1. **Actions** Click the button.
-2. **Switchover** Click the button.
+1. **Operations** Click the button.
+2. **Role switchover** Click the button.
 3. Enter the password.
 4. **Confirm** Click the button.
 5. Select the Standby database that will become the new Primary.
@@ -58,5 +58,5 @@ This function is enabled only when DR is configured.
 {% hint style="info" %}
 **Note**
 
-The dropdown list displays only Standby databases whose status is `Available`Only Standby databases are displayed.
+The dropdown list displays only Standby databases whose status is `Available`.
 {% endhint %}

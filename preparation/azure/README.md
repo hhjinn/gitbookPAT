@@ -1,19 +1,19 @@
-Provides information for using OwlDB on the Azure Marketplace.
+Check the information for using OwlDB on Azure Marketplace.
 
-## Cloud environment and server specifications <a href="#server-specs" id="server-specs"></a>
+## Cloud Environment and Server Specifications <a href="#server-specs" id="server-specs"></a>
 
 | Item | Details |
 | --- | --- |
-| Compute specifications | 2 vCPU, Memory 8 GiB |
-| Operating system | Rocky 9.3 |
-| Storage engine | Azure Premium SSD LRS |
-| Supported languages | Korean, English |
-| Recommended browser | Google Chrome |
-| Optimal resolution | Full HD (1920*1080) |
+| Compute Specifications | 2 vCPU, Memory 8 GiB |
+| Operating System | Rocky 9.3 |
+| Storage Engine | Azure Premium SSD LRS |
+| Supported Languages | Korean, English |
+| Recommended Browsers | Google Chrome |
+| Optimal Resolution | Full HD (1920*1080) |
 
-## Region availability <a href="#region-availability" id="region-availability"></a>
+## Region Availability <a href="#region-availability" id="region-availability"></a>
 
-| Region name | Region |
+| Region Name | Region |
 | --- | --- |
 | Brazil South | brazilsouth |
 | Central India | centralindia |
@@ -44,11 +44,11 @@ Provides information for using OwlDB on the Azure Marketplace.
 | West US 2 | westus2 |
 | West US 3 | westus3 |
 
-## Instance type <a href="#instance-types" id="instance-types"></a>
+## Instance Type <a href="#instance-types" id="instance-types"></a>
 
-OwlDB supports multiple instance types to match workload requirements. Refer to the table below to check the vCPU and memory configurations before making a selection.
+OwlDB supports multiple instance types to match workload requirements. Review the vCPU and memory configurations in the table below to make your selection.
 
-| Instance type | vCPU (CNT) | Memory (GiB) |
+| Instance Type | vCPU (CNT) | Memory (GiB) |
 | --- | --- | --- |
 | Standard_B2ls_v2 | 2 | 4 |
 | Standard_B2s_v2 | 2 | 8 |
@@ -82,18 +82,18 @@ OwlDB supports multiple instance types to match workload requirements. Refer to 
 {% hint style="info" %}
 **Note**
 
-- Tibero Single: 2vCPU, Memory 8GiB or higher is recommended.
-- Tibero TAC: Only 4vCPU or higher can be used, and 8vCPU or higher is recommended.
+- Tibero Single: 2vCPU, Memory 8GiB or more recommended.
+- Tibero TAC: Only 4vCPU or more can be used; 8vCPU or more recommended.
 {% endhint %}
 
-## Storage/disk type <a href="#storage-types" id="storage-types"></a>
+## Storage/Disk Type <a href="#storage-types" id="storage-types"></a>
 
-Check the storage/disk types and size/IOPS ranges available for selection according to the workload.
+Review the selectable storage/disk types along with their size and IOPS ranges to match your workload.
 
-<table data-full-width="true"><thead><tr><th>Type</th><th>Suitable workload</th><th>Disk Size (GiB)</th><th>Disk IOPS (IOPS)</th></tr></thead><tbody><tr><td>Ultra Disk</td><td>Storage option for Azure Virtual Machines (VM)<ul><li>Data-intensive workloads such as SAP HANA</li><li>High-transaction workloads</li></ul></td><td>100 ~ 65,536</td><td>3,000 ~ 400,000</td></tr><tr><td>Premium SSD v2</td><td>High-performance storage option for virtual machines and containers<ul><li>Big data analytics</li><li>Game execution</li></ul></td><td>100 ~ 65,536</td><td>3,000 ~ 80,000</td></tr></tbody></table>
+<table><thead><tr><th>Type</th><th>Suitable workloads</th><th>Disk Size (GiB)</th><th>Disk IOPS (IOPS)</th></tr></thead><tbody><tr><td>Ultra Disk</td><td>Storage options for Azure Virtual Machines (VM)<ul><li>Data-intensive workloads such as SAP HANA</li><li>High-transaction-volume workloads</li></ul></td><td>100 ~ 65,536</td><td>3,000 ~ 400,000</td></tr><tr><td>Premium SSD v2</td><td>High-performance storage options for virtual machines and containers<ul><li>Big data analytics</li><li>Game execution</li></ul></td><td>100 ~ 65,536</td><td>3,000 ~ 80,000</td></tr></tbody></table>
 
 {% hint style="info" %}
 **Note**
 
-The volume size for the Tibero TAC topology must be at least 200GiB or higher.
+The volume size for the Tibero TAC topology must be at least 200GiB or more.
 {% endhint %}

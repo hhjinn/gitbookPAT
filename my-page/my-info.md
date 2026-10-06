@@ -1,35 +1,35 @@
-**My Page > My Account Management**View and manage the basic profile and permission status of the currently logged-in account.
+**My Page > Manage My Information**Here, you can view and manage the basic profile and permission status of the currently logged-in account.
 
-- **Root Account-Specific Information:** `Root` For this account only, linked to the Azure console, **Subscription ID** and **Resource Groups** items are additionally displayed on the screen. (Excluding general Member accounts)
+- **Root account-specific information:** `Root` For the account only, linked with the Azure console, **Subscription ID** and **Resource Groups** items are additionally shown on the screen. (Excluding general Member accounts)
 
-## View My Account Information
+## View my account information <a href="#view-my-account" id="view-my-account"></a>
 
-View the detailed information of your account.
+View the detailed information of your own account.
 
-<table data-full-width="true"><thead><tr><th>Item</th><th>Description</th></tr></thead><tbody><tr><td>ID</td><td>ID used when logging in</td></tr><tr><td>Name</td><td>User display name</td></tr><tr><td>Role</td><td><code>Root</code> or <code>Member</code></td></tr><tr><td>Permission</td><td>Permissions held by the account (DB Service list)</td></tr><tr><td>Email</td><td><ul><li>Email information display</li><li>Used when finding ID and resetting password</li><li>Root : CSP account information</li></ul></td></tr><tr><td>Status</td><td>Account status</td></tr><tr><td>Created Date</td><td>Account creation time</td></tr><tr><td>Last Access Date</td><td>Last login time</td></tr><tr><td>Modified Date</td><td>Last modification time</td></tr><tr><td>Subscription Information</td><td>Within the Azure Resource ID item, <code>Subscription</code> information lookup (Root account only)</td></tr><tr><td>Resource Groups</td><td>Within the Azure Resource ID item, <code>resourceGroups</code> information (Root account only)</td></tr></tbody></table>
+<table><thead><tr><th>Item</th><th>Description</th></tr></thead><tbody><tr><td>ID</td><td>ID used when logging in</td></tr><tr><td>Name</td><td>User display name</td></tr><tr><td>Role</td><td><code>Root</code> or <code>Member</code></td></tr><tr><td>Permissions</td><td>Permissions held by the account (DB Service list)</td></tr><tr><td>Email</td><td><ul><li>Email information display</li><li>Used when finding ID and resetting password</li><li>Root: CSP account information</li></ul></td></tr><tr><td>Status</td><td>Account status</td></tr><tr><td>Creation date</td><td>Account creation time</td></tr><tr><td>Last access date</td><td>Last login time</td></tr><tr><td>Modified date</td><td>Last modified time</td></tr><tr><td>Subscription information</td><td>Within the Azure resource ID item <code>Subscription</code> Information lookup (Root account only)</td></tr><tr><td>Resource group</td><td>Within the Azure resource ID item <code>resourceGroups</code> Information (Root account only)</td></tr></tbody></table>
 
-## Edit My Account Information
+## Edit my account information <a href="#edit-my-account" id="edit-my-account"></a>
 
-Edit the detailed information of your account. ID, Role, and Permission are displayed for information confirmation only and cannot be edited.
+Edit the detailed information of your own account. The ID, role, and permissions are displayed for informational purposes only and cannot be modified.
 
-| Item | Description | Input Rules |
+| Item | Description | Input rules |
 | --- | --- | --- |
-| ID | ID used when logging in | Cannot be edited |
-| Role | `Root` or `Member` | Cannot be edited |
-| Permission | Permissions held by the account (DB Service list) | Cannot be edited |
+| ID | ID used when logging in | Not editable |
+| Role | `Root` or `Member` | Not editable |
+| Permissions | Permissions held by the account (DB Service list) | Not editable |
 | Name | User display name | Editable |
-| Current Password* | Previously set password | Input for identity verification |
-| New Password* | Password to change | 8-20 characters, combination of letters, numbers, and special characters |
-| Confirm Password* | Confirm the password to change | Enter the same as the new password |
+| Current password* | Previously set password | Input for identity verification |
+| New password* | Password to change | 8–20 characters, combination of letters, numbers, and special characters |
+| Confirm password* | Confirm the password to change | Enter the same value as the new password |
 | Email | Email information | Editable |
 
 *표기는 필수 입력 항목을 의미합니다.
 
-The * mark indicates required input items.
+The * mark indicates a required input field.
 
 {% hint style="info" %}
 **Note**
 
-- Periodic password changes are recommended to maintain account security.
-- The new password cannot be set to be the same as a previously used password.
+- To maintain account security, we recommend changing your password periodically.
+- The new password cannot be set to a value that duplicates a previously used password.
 {% endhint %}

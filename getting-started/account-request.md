@@ -1,14 +1,14 @@
-Users without an OwlDB account can **Login** can directly request account creation from the page.
+Users without an OwlDB account can **Login** Request account creation directly on the page.
 
-1. **Login** On the **Request Account Creation** click the button.
-2. Enter the following information. ID Name Password Confirm Password Email
-3. **Request** click the button.
-4. In the account creation request modal, **Confirm** click the button.
-5. **Confirm** When you click the button, **Login** you are taken to the page.
+1. **Login** On the page, **Request Account Creation** Click the button.
+2. Enter the information below. ID Name Password Confirm Password Email
+3. **Request** Click the button.
+4. In the account creation request modal, **Confirm** Click the button.
+5. **Confirm** When you click the button, **Login** You are redirected to the page.
 
-## Account Approval
+## Account Approval <a href="#account-approval" id="account-approval"></a>
 
-When the administrator approves the account creation, an account approval completion email is sent to the registered email address.
+Once the administrator approves the account creation, an account approval completion email is sent to the registered email address.
 
 The notification email includes the following information.
 
