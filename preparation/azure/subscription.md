@@ -76,7 +76,7 @@ This page describes how to connect to the deployed OwlDB.
 
 ### Initial Connection
 
-Once the OwlDB deployment from the marketplace is complete, the [email account entered during OwlDB deployment](undefined.md#id-2.-instance-details) receives a guide email containing the OwlDB connection address and account information. You can connect to OwlDB through this email. If you do not receive the email, contact [the OwlDB support team](mailto:azure_owldb_support@tibero.com).
+Once the OwlDB deployment from the marketplace is complete, the [email account entered during OwlDB deployment](subscription.md#id-2.-instance-details) receives a guide email containing the OwlDB connection address and account information. You can connect to OwlDB through this email. If you do not receive the email, contact [the OwlDB support team](mailto:azure_owldb_support@tibero.com).
 
 ### URL Connection
 

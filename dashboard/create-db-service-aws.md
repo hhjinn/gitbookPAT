@@ -13,7 +13,7 @@ This guide explains how to create a database (hereafter referred to as provision
 * The OpenSQL engine is not supported in the AWS environment.
 * **OwlDB Console Screen > Dashboard > Card View > + icon** or **GNB > DB Alias dropdown > Create DB Service button**by clicking, you can navigate to the database creation page.
 * You can check the provisioning progress status by clicking the notification (bell) icon at the top right of the console screen or from the dashboard.
-* For information on the database engines and instance types supported by OwlDB, please refer to the '[AWS](db-aws.md#XDj4D6jZeLIG3hl9e9W4)', '[Azure](db-aws.md#azure)' pages.
+* For information on the database engines and instance types supported by OwlDB, please refer to the '[AWS](create-db-service-aws.md#XDj4D6jZeLIG3hl9e9W4)', '[Azure](create-db-service-aws.md#azure)' pages.
 {% endhint %}
 
 {% hint style="warning" %}
@@ -37,7 +37,7 @@ In the AWS environment, when you enter the database creation page, the user's **
 {% hint style="info" %}
 **Note**
 
-If you select BYOL as the License Option, license file registration is required. For details, refer to [BYOL License Registration](db-aws.md#byol-라이선스-등록).
+If you select BYOL as the License Option, license file registration is required. For details, refer to [BYOL License Registration](create-db-service-aws.md#byol-라이선스-등록).
 {% endhint %}
 
 ***
