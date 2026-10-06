@@ -48,7 +48,7 @@ Endpoint 탭은 **Service Endpoint**와 **Endpoint Details** 두 영역으로 �
 스펙 변경 작업이 진행 중인 경우 화면 상단에 진행 중 배너가 표시되며, 이 상태에서 상단 공통 영역의 **Topology** 항목은 변경 적용 이전의 토폴로지를 표시합니다.
 {% endhint %}
 
-## Endpoint 조회 방법 <a href="#how-to-view-the-endpoint" id="how-to-view-the-endpoint"></a>
+## Endpoint 조회 방법 <a href="#view-endpoint" id="view-endpoint"></a>
 
 1. 상단 메뉴에서 **관리 > 연결 정보 관리**를 클릭합니다.
 2. **Endpoint** 탭을 클릭합니다.
@@ -95,7 +95,7 @@ Access Control 탭은 **OpenSQL** 환경에서만 제공됩니다.
 1. **관리 > 연결 정보 관리**에서 **Access Control** 탭을 클릭합니다.
 2. 현재 적용된 pg_hba 규칙 목록을 Priority 오름차순으로 확인합니다. 목록 상단에 고정된 시스템 규칙은 수정 및 삭제할 수 없습니다.
 
-## 규칙 생성 <a href="#create-a-rule" id="create-a-rule"></a>
+## 규칙 생성 <a href="#create-rule" id="create-rule"></a>
 
 1. **생성** 버튼을 클릭합니다.
 2. 오른쪽 드로어에서 아래 항목을 입력합니다.
@@ -174,7 +174,7 @@ Pool, User, Shard는 아코디언 구조로 표시됩니다.
 3. **Select Scope**에서 원하는 조회 범위를 선택합니다.
 4. 이름, 기본값, 현재값으로 파라미터를 검색하거나, **동적 파라미터** 여부로 필터링합니다.
 
-## 파라미터 수정 <a href="#modify-parameters" id="modify-parameters"></a>
+## 파라미터 수정 <a href="#edit-parameters" id="edit-parameters"></a>
 
 1. **수정** 버튼을 클릭합니다.
 
@@ -198,7 +198,7 @@ DB Service 상태가 `Running` 상태일 때만 **수정** 버튼이 활성화�
 **적용** 버튼을 클릭하기 전까지 변경 사항은 서버에 반영되지 않습니다. **취소** 버튼을 클릭하면 모든 변경 사항이 초기화됩니다.
 {% endhint %}
 
-## Pool / User / Shard 생성 <a href="#creating-a-pool-user-shard" id="creating-a-pool-user-shard"></a>
+## Pool / User / Shard 생성 <a href="#create-pool-user-shard" id="create-pool-user-shard"></a>
 
 1. **수정** 버튼을 클릭하여 수정 모드로 전환합니다.
 2. **Select Scope** 영역에서 생성할 유형(Pool, User, Shard)의 ➕ 아이콘을 클릭합니다.
@@ -237,7 +237,7 @@ DB Service 상태가 `Running` 상태일 때만 **수정** 버튼이 활성화�
 **저장** 버튼을 클릭하기 전까지 생성한 항목은 서버에 반영되지 않습니다. 저장 전 페이지를 이탈하면 변경 사항이 초기화됩니다.
 {% endhint %}
 
-## Pool / User / Shard 삭제 <a href="#deleting-a-pool-user-shard" id="deleting-a-pool-user-shard"></a>
+## Pool / User / Shard 삭제 <a href="#delete-pool-user-shard" id="delete-pool-user-shard"></a>
 
 1. **수정** 버튼을 클릭하여 수정 모드로 전환합니다.
 2. **Select Scope** 영역에서 삭제할 Pool, User 또는 Shard 항목의 🗑️ 아이콘을 클릭합니다. 해당 항목이 비활성화되고 아이콘이 🔃로 변경됩니다. Pool을 삭제하면 해당 Pool 하위의 User와 Shard도 함께 비활성화됩니다.
@@ -278,7 +278,7 @@ OpenSQL Primary 인스턴스에 생성된 Replication Slot 목록을 테이블 �
 OwlDB 관리 범위를 벗어나 PostgreSQL에 직접 생성하거나 삭제한 Replication Slot은 OwlDB 콘솔에 반영되지 않습니다. 이 경우 Slot 상태 조회, 삭제, 장애 대응 등 관련 관리 기능이 정상적으로 동작하지 않을 수 있습니다. Replication Slot 생성 및 삭제는 반드시 OwlDB 콘솔에서 수행합니다.
 {% endhint %}
 
-## Replication Slot 조회 <a href="#query-replication-slot" id="query-replication-slot"></a>
+## Replication Slot 조회 <a href="#view-replication-slots" id="view-replication-slots"></a>
 
 1. **관리 > 연결 정보 관리**에서 **Replication Slot** 탭을 클릭합니다.
 2. 현재 Primary 인스턴스에 생성된 Replication Slot 목록을 확인합니다.
