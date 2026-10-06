@@ -54,7 +54,7 @@ When some instances are selected
 - **일부 인스턴스 선택 시**: Status changes to `Degraded - In Progress`[T_57]
 How to use
 
-## 사용 방법
+## How to Use
 
 The steps to restart a database are as follows.
 
