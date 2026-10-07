@@ -64,7 +64,7 @@
   * [Disaster Recovery (DR)](references/dr.md)
   * [Abnormal Node Handling Guide](references/abnormal-node-guide.md)
   * [Precautions When Restarting Agent](references/agent-restart-precautions.md)
-  * [OpenBackup Handling Guide](references/openbackup-troubleshooting.md)
+  * [OpenBackup Remediation Guide](references/openbackup-troubleshooting.md)
 * [Legal Notice](legal-notice/README.md)
   * [Copyright](legal-notice/copyright.md)
   * [Open Source License](legal-notice/open-source-licenses/README.md)
