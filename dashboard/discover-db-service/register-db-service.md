@@ -45,8 +45,6 @@ This is the step for configuring the database name, engine, and topology informa
 
 <table><thead><tr><th>Item</th><th>Description</th></tr></thead><tbody><tr><td>Service Name*</td><td>Name for identifying the database service<ul><li>Only 6-30 characters of uppercase and lowercase English letters (a-z, A-Z), numbers (0-9), and hyphens (-) can be used</li><li>If not entered<code>owldb-001</code>Automatically generated in a form such as</li></ul></td></tr><tr><td>Database Engine Type</td><td>Database engine to use<ul><li><strong>Tibero</strong>: An RDBMS that enables stable service operation and DB expansion through a multiplexed configuration</li><li><strong>OpenSQL</strong> : An Open Source-based, customer-customized DBMS technology platform</li></ul></td></tr><tr><td>Topology</td><td>Topology type that will determine the database structure<ul><li><strong>Tibero</strong>: Single, TAC</li><li><strong>OpenSQL</strong> : Single, HA</li></ul></td></tr><tr><td>Node Count</td><td>Number of cluster configuration nodes<ul><li><strong>Tibero</strong>Single : 1</li><li>TAC : 2~8<strong>OpenSQL</strong></li><li>Single : 1</li><li>HA : 2~3</li></ul></td></tr><tr><td>PostgreSQL Version</td><td>PostgreSQL version exposed when OpenSQL is selected</td></tr></tbody></table>
 
-*표기는 필수 입력 항목을 의미합니다.
-
 The * notation indicates a required input item.
 
 {% hint style="info" %}
@@ -63,8 +61,6 @@ The HA of OpenSQL can be discovered as 2node or 3node.
 This is the step for setting whether to use DR and the failover automation level.
 
 <table><thead><tr><th>Item</th><th>Description</th><th>Remarks</th></tr></thead><tbody><tr><td>Enable DR</td><td>Whether to use the DR configuration</td><td>-</td></tr><tr><td>Failover Automation Level*</td><td>Automatic failover level<ul><li><strong>Level 0: Manual</strong></li><li><strong>Level 1: Automatic failover</strong></li><li><strong>Level 2: Automatic configuration recovery (not supported On-Premise)</strong></li><li><strong>Level 3: Full automation</strong></li></ul></td><td><ul><li>Tibero Single: Supports levels 0, 1, 3</li><li>Tibero TAC: Supports levels 0, 1</li><li>OpenSQL: Supports levels 0, 3</li></ul></td></tr><tr><td>{Standby/Replica} Count</td><td>Number of Standby/Replica DBs</td><td>-</td></tr><tr><td>Standby Mode</td><td>Standby Mode option<ul><li><strong>Recovery</strong></li><li><strong>Read Only</strong></li></ul></td><td>Entered only in Tibero</td></tr><tr><td>Log Replication Type</td><td>Log transmission method from Primary (Leader) to Standby (Replica)<ul><li><strong>LGWR ASYNC</strong>(Tibero): A replication mode that transmits the Redo log generated in real time when a transaction occurs</li><li><strong>ARCH ASYNC</strong>(Tibero): A replication mode that, after a log switch, collects and transmits archive log files once they are generated</li><li><strong>ASYNC</strong>(OpenSQL): A replication mode that transmits data asynchronously through a replication connection</li></ul></td><td>-</td></tr></tbody></table>
-
-*표기는 필수 입력 항목을 의미합니다.
 
 The * notation indicates a required input item.
 
@@ -90,8 +86,6 @@ Input items for each node are automatically configured according to the topology
 | Service Port* | Directly enter the Port to be used for communication between OwlDB and the database server | If using port forwarding,<br>enter the external Port |
 | Backup Path* | Enter Backup Path | Only a file system path can be entered |
 
-*표기는 필수 입력 항목을 의미합니다.
-
 The * notation indicates a required input item.
 
 **Path**Only a file system path can be entered for.
@@ -116,8 +110,6 @@ However, the following conditions must be met.
 | StandBy Destination Port*<br>(enter for StandBy instance only) | Directly enter the StandBy Destination Port to be used for communication from the Primary DB to the StandBy DB | If using port forwarding, enter the external Port |
 | Backup Path* | Enter Backup Path | Only a file system path can be entered |
 
-*표기는 필수 입력 항목을 의미합니다.
-
 The * notation indicates a required input item.
 
 **Path**Only a file system path can be entered for.
@@ -137,8 +129,6 @@ However, the following conditions must be met.
 | Service IP* | Directly enter or select the IP to be used for communication between OwlDB and the node | If using NAT, enter the NAT IP |
 | Service Port* | Directly enter the Port to be used for communication between OwlDB and the database server | If using port forwarding, enter the external Port |
 | Backup Path* | Enter Backup Path | Only a file system path can be entered,<br>using a shared volume |
-
-*표기는 필수 입력 항목을 의미합니다.
 
 The * notation indicates a required input item.
 
@@ -165,8 +155,6 @@ However, the following conditions must be met.
 | StandBy Destination Port*<br>(enter for StandBy instance only) | Directly enter the StandBy Destination Port to be used for communication from the Primary DB to the StandBy DB | If using port forwarding, enter the external Port |
 | Backup Path* | Enter Backup Path | Only a file system path can be entered,<br>using a shared volume |
 
-*표기는 필수 입력 항목을 의미합니다.
-
 The * notation indicates a required input item.
 
 **Backup Path**In the case of, only a file system path can be entered.
@@ -186,8 +174,6 @@ The node section name is displayed as **Leader Node**, **Replica Node #{n}**, an
 | Service IP* | Directly enter or select the IP to be used for communication between OwlDB and the node | If using NAT, enter the NAT IP |
 | Service Port* | Directly enter the Port to be used for communication between OwlDB and the database server<br>Default:`5432` | If using port forwarding, enter the external Port |
 | Replication Connection IP* | In an HA configuration, directly enter or select the IP to be used for the replication connection | Exposed only in an HA configuration |
-
-*표기는 필수 입력 항목을 의미합니다.
 
 The * notation indicates a required input item.
 {% endtab %}
@@ -217,8 +203,6 @@ This is the step to check the database configuration information and directly en
 | Temporary Tablespace Data File Size (MB) | Size of the temporary tablespace data file used for large-scale operations<br>The value could not be confirmed during the detection process, so it is displayed as an empty value and cannot be modified |
 | Undo Tablespace Data File Size (MB) | Undo tablespace size<br>The value could not be confirmed during the detection process, so it is displayed as an empty value and cannot be modified |
 
-*표기는 필수 입력 항목을 의미합니다.
-
 The * notation indicates a required input item.
 {% endtab %}
 {% tab title="OpenSQL" %}
@@ -236,8 +220,6 @@ The * notation indicates a required input item.
 | Shared Buffers | Shared memory size (not modifiable) |
 | WAL File Size (MB) | WAL file size<br>The value could not be confirmed during the detection process, so it is displayed as an empty value and cannot be modified |
 | Connection Pooler Port* | The port on which the connection pool receives client connections<br>Range: 1024~65535 |
-
-*표기는 필수 입력 항목을 의미합니다.
 
 The * notation indicates a required input item.
 {% endtab %}

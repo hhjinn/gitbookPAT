@@ -133,8 +133,6 @@ At the top of the table, **Elapsed Time alert settings (⚙️)** clicking the i
 | Warning* | Warning-level threshold (seconds) | `0.1` ~ `1000.0`, allowed up to one decimal place |
 | Caution* | Caution-level threshold (seconds) | `0.1` ~ `999.9`, allowed up to one decimal place, must be smaller than the warning level |
 
-*표기는 필수 입력 항목을 의미합니다.
-
 The * notation indicates a required input item.
 
 {% hint style="info" %}

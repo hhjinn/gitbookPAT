@@ -47,8 +47,6 @@ owlagent_dist_latest.tar.gz
 
 <table><thead><tr><th>Item</th><th>Description</th><th>Input Rules</th></tr></thead><tbody><tr><td>AGENT_TYPE*</td><td></td><td><code>pg</code> Input</td></tr><tr><td>IP*</td><td>IP of OwlDB CP</td><td></td></tr><tr><td>PORT*</td><td>port of OwlDB CP</td><td></td></tr><tr><td>USERNAME*</td><td>opensql execution user name</td><td></td></tr><tr><td>OPENSQL_HOME</td><td></td><td><ul><li>No input required if already configured</li><li>If not configured, enter the OPENSQL_HOME used above</li></ul></td></tr><tr><td>DB_LOG_DIR</td><td>PG log path</td><td>No input required if logs are not collected</td></tr><tr><td>DB_LOG_FILE_GLOB</td><td>PG log file format</td><td>e.g.: <code>postgresql*.log</code></td></tr><tr><td>PATRONI_CONFIG</td><td>patroni.yml path</td><td></td></tr><tr><td>PATRONI_MEMBER</td><td>patroni member name</td><td></td></tr></tbody></table>
 
-*표기는 필수 입력 항목을 의미합니다.
-
 The * notation indicates a required input item.
 
 {% hint style="info" %}

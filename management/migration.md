@@ -76,8 +76,6 @@ Provides guidance on the data types that are converted when migrating from Oracl
 | Port* | The port number of the source database |
 | SID* | The SID of the source database |
 
-*표기는 필수 입력 항목을 의미합니다.
-
 The * notation indicates a required input item.
 
 1. **Analyze** Click the button.
@@ -110,8 +108,6 @@ Connect to the source database that is the target of the migration.
 | Port* | The port number of the source database |
 | SID* | The SID of the source database |
 | Target Database* | The alias of the target database |
-
-*표기는 필수 입력 항목을 의미합니다.
 
 The * notation indicates a required input item.
 {% endtab %}
