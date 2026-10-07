@@ -1,8 +1,8 @@
-Check the information for using OwlDB on the AWS Marketplace.
+Review the information for using OwlDB on AWS Marketplace.
 
 ## Cloud Environment and Server Specifications <a href="#server-specs" id="server-specs"></a>
 
-Check the cloud environment and server specifications in which OwlDB is provided.
+Review the cloud environment and server specifications in which OwlDB is provided.
 
 | Item | Details |
 | --- | --- |
@@ -10,19 +10,19 @@ Check the cloud environment and server specifications in which OwlDB is provided
 | Operating System | Rocky 9.5 |
 | Storage Engine | Amazon gp3 |
 | Supported Languages | Korean, English |
-| Recommended Browsers | Google Chrome |
+| Recommended Browser | Google Chrome |
 | Optimal Resolution | Full HD (1920*1080) |
 
 ## Region Availability <a href="#region-availability" id="region-availability"></a>
 
-Check the supported regions and region codes.
+Review the supported Regions and region codes.
 
 | Region Name | Region |
 | --- | --- |
 | US West (Oregon) | us-west-2 |
-| US West (N. California) | us-west-1 |
+| US West (Northern California) | us-west-1 |
 | US East (Ohio) | us-east-2 |
-| US East (N. Virginia) | us-east-1 |
+| US East (Northern Virginia) | us-east-1 |
 | South America (São Paulo) | sa-east-1 |
 | Europe (Paris) | eu-west-3 |
 | Europe (London) | eu-west-2 |
@@ -39,7 +39,7 @@ Check the supported regions and region codes.
 
 ## Instance Type <a href="#instance-types" id="instance-types"></a>
 
-Check the vCPU and memory specifications for each selectable instance type.
+Review the vCPU and memory specifications for each selectable instance type.
 
 | Instance Type | vCPU | Memory (GiB) |
 | --- | --- | --- |
@@ -75,15 +75,15 @@ Check the vCPU and memory specifications for each selectable instance type.
 {% hint style="info" %}
 **Note**
 
-- **Tibero Single**: An instance type of large or higher is recommended.
+- **Tibero Single**: A large or higher instance type is recommended.
 - **Tibero TAC**: Only large or higher can be used, and xlarge or higher is recommended.
 {% endhint %}
 
 ## Storage/Disk Type <a href="#storage-types" id="storage-types"></a>
 
-Check the storage types available in OwlDB and the capacity and IOPS range for each type.
+Review the storage types available in OwlDB and the capacity and IOPS range of each type.
 
-<table><thead><tr><th>Type</th><th>Characteristics</th><th>Volume Size (GiB)</th><th>Volume IOPS (count)</th></tr></thead><tbody><tr><td>gp3</td><td><ul><li>SSD-based volume</li><li>High IOPS, low latency</li><li>Low cost per capacity</li></ul></td><td>100 ~ 65,536</td><td>3,000 ~ 80,000</td></tr><tr><td>gp2</td><td><ul><li>SSD-based volume</li><li>Suitable for storing and processing large volumes of data</li><li>Low cost per capacity</li><li>Has consistency variance</li><li>IOPS changes according to the allocated storage size and cannot be configured by the user.</li></ul></td><td>100 ~ 16,384</td><td>450 ~ 16,000</td></tr><tr><td>io2</td><td><ul><li>SSD-based volume</li><li>Very high IOPS, consistent performance</li><li>High cost per capacity</li><li>Relatively long latency</li></ul></td><td>100 ~ 65,536</td><td>3,000 ~ 256,000</td></tr></tbody></table>
+<table><thead><tr><th>Type</th><th>Characteristics</th><th>Volume Size (GiB)</th><th>Volume IOPS (count)</th></tr></thead><tbody><tr><td>gp3</td><td><ul><li>SSD-based volume</li><li>High IOPS, low latency</li><li>Low cost per capacity</li></ul></td><td>100 ~ 65,536</td><td>3,000 ~ 80,000</td></tr><tr><td>gp2</td><td><ul><li>SSD-based volume</li><li>Suitable for storing and processing large volumes of data</li><li>Low cost per capacity</li><li>Has consistency deviations</li><li>IOPS changes according to the allocated storage size and cannot be set by the user</li></ul></td><td>100 ~ 16,384</td><td>450 ~ 16,000</td></tr><tr><td>io2</td><td><ul><li>SSD-based volume</li><li>Very high IOPS, consistent performance</li><li>High cost per capacity</li><li>Relatively long latency</li></ul></td><td>100 ~ 65,536</td><td>3,000 ~ 256,000</td></tr></tbody></table>
 
 {% hint style="info" %}
 **Note**

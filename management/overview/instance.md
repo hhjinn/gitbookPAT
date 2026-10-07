@@ -1,165 +1,165 @@
-**OwlDB**You can monitor the status and resource usage of running instances and modify or restart instances as needed. When the instance status is `Available`not, some information may be missing.
+Monitor the status and resource usage of instances running in **OwlDB**, and modify or restart instances as needed. If the instance status is not `Available`, some information may be missing.
 
 {% hint style="info" %}
 **Note**
 
-- From the dashboard, you can navigate to the instance management page through the following path. **[List View]** Click the arrow icon next to the database alias > click the instance alias **[Card View]** Click the instance alias on the database card
+- From the dashboard, you can navigate to the instance management page via the following paths. **[List View]** Arrow icon next to the database alias > Click the instance alias **[Card View]** Click the instance alias on the database card
 - In the AWS environment, only the Tibero engine is supported.
 {% endhint %}
 
 ## Viewing the instance list <a href="#instance-list" id="instance-list"></a>
 
-1. **Management > Overview**Navigate to
-2. **Instance** Click the tab.
-3. Check the status and resource usage of the instance to review from the list.
+1. Go to **Management > Overview**.
+2. Click the **Instances** tab.
+3. Check the status and resource usage of the instance you want to review in the list.
 
-### Primary(Leader) DB display items <a href="#primary-leader-db" id="primary-leader-db"></a>
+### Primary (Leader) DB display items <a href="#primary-leader-db" id="primary-leader-db"></a>
 
 {% tabs %}
 {% tab title="Tibero" %}
 | Item | Description |
 | --- | --- |
-| Alias | Displays the instance alias (clicking navigates to the detailed information page) |
-| Creation date | Instance creation date and time (`yyyy-mm-dd HH:mm:ss`) |
+| Alias | Displays the instance alias (clicking navigates to the detail page) |
+| Creation Date | Instance creation date and time (`yyyy-mm-dd HH:mm:ss`) |
 | AZ | The availability zone where the instance is placed |
 | Health | The current status of the instance (Available / In progress / Limited / Unavailable) |
-| Open Mode | The operation mode of the DB (READ WRITE) |
-| Replication Mode | The operating mode of the Primary DB (PERFORMANCE) |
-| CPU | Usage bar chart relative to the provisioned vCPU |
-| Memory | Usage bar chart relative to the provisioned memory |
-| Active sessions | Bar chart of the number of active sessions |
-| Data Volume | data volume usage (including 90% threshold display) |
+| Open Mode | The DB's operation mode (READ WRITE) |
+| Replication Mode | The Primary DB's operating mode (PERFORMANCE) |
+| CPU | Usage bar chart relative to provisioned vCPU |
+| Memory | Usage bar chart relative to provisioned memory |
+| Active Sessions | Active session count bar chart |
+| Data Volume | data volume usage (including 90% threshold indicator) |
 | Redo log Volume | redo log volume usage |
 | Archive log Volume | archive log volume usage |
 | Root Volume | root volume usage |
-| Current Log | The most recent Redo log identifier value (displayed only when Standby is configured) |
+| Current Log | Most recent Redo log identifier (displayed only in Standby configuration) |
 {% endtab %}
 {% tab title="OpenSQL" %}
 | Item | Description |
 | --- | --- |
-| Alias | Displays the instance alias (clicking navigates to the detailed information page) |
-| Creation date | Instance creation date and time (`yyyy-mm-dd HH:mm:ss`) |
+| Alias | Displays the instance alias (clicking navigates to the detail page) |
+| Creation Date | Instance creation date and time (`yyyy-mm-dd HH:mm:ss`) |
 | AZ | The availability zone where the instance is placed |
 | Health | The current status of the instance (Available / In progress / Limited / Unavailable) |
-| Open Mode | The operation mode of the DB (READ WRITE) |
-| CPU | Usage bar chart relative to the provisioned vCPU |
-| Memory | Usage bar chart relative to the provisioned memory |
-| Active sessions | Bar chart of the number of active sessions |
-| Volume | The total and usage of the OpenSQL volume |
+| Open Mode | The DB's operation mode (READ WRITE) |
+| CPU | Usage bar chart relative to provisioned vCPU |
+| Memory | Usage bar chart relative to provisioned memory |
+| Active Sessions | Active session count bar chart |
+| Volume | Total and usage of the OpenSQL volume |
 | Root Volume | root volume usage |
-| Current Log | The most recent WAL log identifier value (LSN, displayed only when HA is configured) |
+| Current Log | Most recent WAL log identifier (LSN, displayed only in HA configuration) |
 {% endtab %}
 {% endtabs %}
 
-### Standby(Replica) DB display items <a href="#standby-replica-db" id="standby-replica-db"></a>
+### Standby (Replica) DB display items <a href="#standby-replica-db" id="standby-replica-db"></a>
 
 {% tabs %}
 {% tab title="Tibero" %}
 | Item | Description |
 | --- | --- |
-| Alias | Displays the instance alias (clicking navigates to the detailed information page) |
-| Creation date | Instance creation date and time (`yyyy-mm-dd HH:mm:ss`) |
+| Alias | Displays the instance alias (clicking navigates to the detail page) |
+| Creation Date | Instance creation date and time (`yyyy-mm-dd HH:mm:ss`) |
 | AZ | The availability zone where the instance is placed |
 | Health | The current status of the instance (Available / In progress / Limited / Unavailable / Retired) |
-| Standby Status | `v$standby` Displayed when queried `status` Value display |
-| Open Mode | The operation mode of the DB (MOUNTED / RECOVERY / READ WRITE / READ ONLY / READ ONLY WITH APPLY) |
-| Log Replication Type | The replication method of the Standby (LGWR ASYNC / ARCH ASYNC) |
-| CPU | Usage bar chart relative to the provisioned vCPU |
-| Memory | Usage bar chart relative to the provisioned memory |
-| Active sessions | Bar chart of the number of active sessions (displayed only in Read Only status) |
-| log last received | The most recently received Redo log identifier value from the Primary (TSN value) |
-| log last applied | The most recently applied Redo log identifier value on the Standby (TSN value) |
-| Replication Lag (seconds) | The replication delay time with the Primary DB |
+| Standby Status | Displays the `status` value shown when querying `v$standby` |
+| Open Mode | The DB's operation mode (MOUNTED / RECOVERY / READ WRITE / READ ONLY / READ ONLY WITH APPLY) |
+| Log Replication Type | The Standby's replication method (LGWR ASYNC / ARCH ASYNC) |
+| CPU | Usage bar chart relative to provisioned vCPU |
+| Memory | Usage bar chart relative to provisioned memory |
+| Active Sessions | Active session count bar chart (displayed only in Read Only status) |
+| log last received | Identifier of the Redo log most recently received from the Primary (TSN value) |
+| log last applied | Identifier of the Redo log most recently applied to the Standby (TSN value) |
+| Replication Lag (seconds) | Replication lag time with the Primary DB |
 {% endtab %}
 {% tab title="OpenSQL" %}
 | Item | Description |
 | --- | --- |
-| Alias | Displays the instance alias (clicking navigates to the detailed information page) |
-| Creation date | Instance creation date and time (`yyyy-mm-dd HH:mm:ss`) |
+| Alias | Displays the instance alias (clicking navigates to the detail page) |
+| Creation Date | Instance creation date and time (`yyyy-mm-dd HH:mm:ss`) |
 | AZ | The availability zone where the instance is placed |
 | Health | The current status of the instance (Available / In progress / Limited / Unavailable) |
-| Open Mode | The operation mode of the DB (READ ONLY) |
-| Log Replication Type | The replication method of the Replica (ASYNC / SYNC) |
-| CPU | Usage bar chart relative to the provisioned vCPU |
-| Memory | Usage bar chart relative to the provisioned memory |
-| Active sessions | Bar chart of the number of active sessions (always displayed) |
-| log last received | The most recently received WAL log identifier value from the Leader (LSN value) |
-| log last applied | The most recently applied WAL log identifier value on the Replica (LSN value) |
-| Replication Lag (seconds) | The replication delay time with the Leader DB |
+| Open Mode | The DB's operation mode (READ ONLY) |
+| Log Replication Type | The Replica's replication method (ASYNC / SYNC) |
+| CPU | Usage bar chart relative to provisioned vCPU |
+| Memory | Usage bar chart relative to provisioned memory |
+| Active Sessions | Active session count bar chart (always displayed) |
+| log last received | Identifier of the WAL log most recently received from the Leader (LSN value) |
+| log last applied | Identifier of the WAL log most recently applied to the Replica (LSN value) |
+| Replication Lag (seconds) | Replication lag time with the Leader DB |
 {% endtab %}
 {% endtabs %}
 
 {% hint style="warning" %}
 **Caution**
 
-If the instance status is `Available`If it is not, a banner appears at the top of the screen to provide guidance on the current status.
+When the instance status is not `Available`, a banner appears at the top of the screen providing guidance on the current status.
 {% endhint %}
 
-## Viewing instance detailed information <a href="#instance-details" id="instance-details"></a>
+## Viewing instance detail information <a href="#instance-details" id="instance-details"></a>
 
 <figure>
 <img src="../../.gitbook/assets/image-dd2ff447.png" alt="">
-<figcaption>Figure 1. Instance detailed information</figcaption>
+<figcaption>Figure 1. Instance detail information</figcaption>
 </figure>
 
-Clicking an alias in the instance list navigates to the detailed information page for that instance. The detail page is organized in the following order: top summary information, availability and replication information, resource usage status, network information, and database information.
+Clicking an alias in the instance list navigates to the detail page for that instance. The detail page is organized in the following order: top summary information, availability and replication information, resource usage status, network information, and database information.
 
-1. On the Overview page **Instance** Click the tab.
-2. Click the alias of the instance whose detailed information you want to review in the instance list.
-3. On the detailed information page, check the top information, availability and replication information, resource usage information, network information, and database information.
+1. On the Overview page, click the **Instances** tab.
+2. In the instance list, click the alias of the instance whose detail information you want to review.
+3. On the detail page, check the top information, availability and replication information, resource usage information, network information, and database information.
 
 ### Top information <a href="#undefined-2" id="undefined-2"></a>
 
 | Item | Description | Primary/Leader | Standby/Replica |
 | --- | --- | --- | --- |
 | Health | Instance status | Available / In progress / Limited / Unavailable | Common (Tibero includes Retired) |
-| Role | Instance Role | Tibero: Primary / OpenSQL: Leader | Tibero: Standby(Recovery/Read Only) / OpenSQL: Replica |
-| Instance Creation Date | Creation Date/Time (`yyyy-mm-dd HH:mm:ss`) | Common | Common |
-| Open Mode | DB Operation Mode | READ WRITE | Tibero: MOUNTED/RECOVERY/READ WRITE/READ ONLY/READ ONLY WITH APPLY, OpenSQL: READ ONLY |
-| Last Update Date | Configuration Change Date/Time (`yyyy-mm-dd HH:mm:ss`) | Common | Common |
+| Role | Instance role | Tibero: Primary / OpenSQL: Leader | Tibero: Standby(Recovery/Read Only) / OpenSQL: Replica |
+| Instance creation date | Creation date and time (`yyyy-mm-dd HH:mm:ss`) | Common | Common |
+| Open Mode | DB operation mode | READ WRITE | Tibero: MOUNTED/RECOVERY/READ WRITE/READ ONLY/READ ONLY WITH APPLY, OpenSQL: READ ONLY |
+| Last update date | Configuration change date and time (`yyyy-mm-dd HH:mm:ss`) | Common | Common |
 
-### Availability and Replication Information <a href="#undefined-3" id="undefined-3"></a>
+### Availability and replication information <a href="#undefined-3" id="undefined-3"></a>
 
-Primary/Leader displays the items below, while Standby/Replica displays additional replication-related items alongside the same items.
+Primary/Leader displays the items below, and Standby/Replica displays the same items with additional replication-related items.
 
 {% tabs %}
 {% tab title="Tibero" %}
-| Item | Description | Display Target |
+| Item | Description | Display target |
 | --- | --- | --- |
-| AZ | Deployed Availability Zone | Common |
-| Replication Mode | The operating mode of the Primary DB (PERFORMANCE) | Primary |
-| Current Log | Most Recent Redo log Identifier (TSN) | Common |
-| Standby Status | Standby Replication Status (may differ per node) | Standby |
-| Log Replication Type | Replication Method (LGWR ASYNC / ARCH ASYNC) | Standby |
-| log last received | Most Recent Redo log Received from Primary (TSN) | Standby |
-| log last applied | Most Recent Redo log Applied to Standby (TSN) | Standby |
-| Replication Lag (seconds) | Replication Lag Time with Primary | Standby |
+| AZ | The availability zone where it is placed | Common |
+| Replication Mode | The Primary DB's operating mode (PERFORMANCE) | Primary |
+| Current Log | Most recent Redo log identifier (TSN) | Common |
+| Standby Status | Standby replication status (may differ per node) | Standby |
+| Log Replication Type | Replication method (LGWR ASYNC / ARCH ASYNC) | Standby |
+| log last received | Most recent Redo log received from the Primary (TSN) | Standby |
+| log last applied | Most recent Redo log applied to the Standby (TSN) | Standby |
+| Replication Lag (seconds) | Replication lag time with the Primary | Standby |
 {% endtab %}
 {% tab title="OpenSQL" %}
-| Item | Description | Display Target |
+| Item | Description | Display target |
 | --- | --- | --- |
-| AZ | Deployed Availability Zone | Common |
-| Current Log | Most Recent WAL log Identifier (LSN) | Common |
-| Log Replication Type | Replication Method (ASYNC / SYNC) | Standby |
-| log last received | Most Recent WAL log Received from Leader (LSN) | Replica |
-| log last applied | Most Recent WAL log Applied to Replica (LSN) | Replica |
-| Replication Lag (seconds) | Replication Lag Time with Primary | Standby |
+| AZ | The availability zone where it is placed | Common |
+| Current Log | Most recent WAL log identifier (LSN) | Common |
+| Log Replication Type | Replication method (ASYNC / SYNC) | Standby |
+| log last received | Most recent WAL log received from the Leader (LSN) | Replica |
+| log last applied | Most recent WAL log applied to the Replica (LSN) | Replica |
+| Replication Lag (seconds) | Replication lag time with the Primary | Standby |
 {% endtab %}
 {% endtabs %}
 
-### Resource Usage Information <a href="#undefined-5" id="undefined-5"></a>
+### Resource usage information <a href="#undefined-5" id="undefined-5"></a>
 
-<table><thead><tr><th>Item</th><th>Description</th><th>Remarks</th></tr></thead><tbody><tr><td>CPU</td><td>Usage Relative to Provisioned vCPU (Pie Chart)</td><td>Updated Every 5 Seconds</td></tr><tr><td>Memory</td><td>Usage Relative to Provisioned Memory (Pie Chart)</td><td>Updated Every 5 Seconds</td></tr><tr><td>Maximum Number of Connected Sessions</td><td>Number of Active Sessions (Line Chart, Updated Every 5 Seconds)</td><td><ul><li>Tibero Standby: Displayed Only in Read Only State</li><li>OpenSQL Replica: Always Displayed</li></ul></td></tr></tbody></table>
+<table><thead><tr><th>Item</th><th>Description</th><th>Remarks</th></tr></thead><tbody><tr><td>CPU</td><td>Usage relative to provisioned vCPU (pie chart)</td><td>Refreshed every 5 seconds</td></tr><tr><td>Memory</td><td>Usage relative to provisioned memory (pie chart)</td><td>Refreshed every 5 seconds</td></tr><tr><td>Maximum number of connected sessions</td><td>Active session count (line chart, refreshed every 5 seconds)</td><td><ul><li>Tibero Standby: displayed only in Read Only status</li><li>OpenSQL Replica: always displayed</li></ul></td></tr></tbody></table>
 
-### Network Information <a href="#undefined-6" id="undefined-6"></a>
+### Network information <a href="#undefined-6" id="undefined-6"></a>
 
 | Item | Description |
 | --- | --- |
-| Host Name | Host Name on Which the Database Server Is Running |
-| End Point | Client Connection Address (Private IP) |
-| Port | Database Communication Port Number |
+| Host Name | Host name where the database server is running |
+| End Point | Client connection address (Private IP) |
+| Port | Database communication port number |
 
-### Database Information <a href="#undefined-7" id="undefined-7"></a>
+### Database information <a href="#undefined-7" id="undefined-7"></a>
 
 {% hint style="info" %}
 **Note**
@@ -169,16 +169,14 @@ Database information is provided only by the OpenSQL engine.
 
 | Item | Description |
 | --- | --- |
-| Auto Vacuum | Whether Auto Vacuum Is Enabled (On / Off) |
-| Database List | Displays the sub-databases by name, Data Size (GB), active sessions, Bloat Ratio (%), and creation date; clicking the name navigates to the detailed information. |
+| Auto Vacuum | Whether Auto Vacuum is used (On / Off) |
+| Database list | Displays child databases by name, Data Size (GB), active sessions, Bloat Ratio (%), and creation date; clicking a name navigates to its detailed information. |
 
 The active session value is displayed based on the Primary node if the instance being queried is Primary/Leader, and based on the Standby node if it is Standby/Replica.
 
 {% hint style="warning" %}
 **Caution**
 
-- If Health is `Available`Other than this, some information may be displayed as missing.
-- If Health is `Retired`In this case (occurs only on Tibero's Standby instance), all information except Health is displayed as `-`, and **Restart** instead of the **Delete** button, the
-
-button appears.
+- If Health is not `Available`, some information may be displayed as missing.
+- If Health is `Retired` (which occurs only on a Tibero Standby instance), all information except Health is displayed as `-`, and a **Delete** button appears instead of the **Restart** button.
 {% endhint %}

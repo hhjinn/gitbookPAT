@@ -1,4 +1,4 @@
-Check the information for using OwlDB on Azure Marketplace.
+Check the information for using OwlDB on the Azure Marketplace.
 
 ## Cloud Environment and Server Specifications <a href="#server-specs" id="server-specs"></a>
 
@@ -8,7 +8,7 @@ Check the information for using OwlDB on Azure Marketplace.
 | Operating System | Rocky 9.3 |
 | Storage Engine | Azure Premium SSD LRS |
 | Supported Languages | Korean, English |
-| Recommended Browsers | Google Chrome |
+| Recommended Browser | Google Chrome |
 | Optimal Resolution | Full HD (1920*1080) |
 
 ## Region Availability <a href="#region-availability" id="region-availability"></a>
@@ -46,7 +46,7 @@ Check the information for using OwlDB on Azure Marketplace.
 
 ## Instance Type <a href="#instance-types" id="instance-types"></a>
 
-OwlDB supports multiple instance types to match workload requirements. Review the vCPU and memory configurations in the table below to make your selection.
+OwlDB supports multiple instance types to match workload requirements. Check the vCPU and memory configurations in the table below to make a selection.
 
 | Instance Type | vCPU (CNT) | Memory (GiB) |
 | --- | --- | --- |
@@ -83,17 +83,17 @@ OwlDB supports multiple instance types to match workload requirements. Review th
 **Note**
 
 - Tibero Single: 2vCPU, Memory 8GiB or more recommended.
-- Tibero TAC: Only 4vCPU or more can be used; 8vCPU or more recommended.
+- Tibero TAC: Only 4vCPU or more can be used, and 8vCPU or more is recommended.
 {% endhint %}
 
 ## Storage/Disk Type <a href="#storage-types" id="storage-types"></a>
 
-Review the selectable storage/disk types along with their size and IOPS ranges to match your workload.
+Check the storage/disk types, sizes, and IOPS ranges that can be selected according to the workload.
 
-<table><thead><tr><th>Type</th><th>Suitable workloads</th><th>Disk Size (GiB)</th><th>Disk IOPS (IOPS)</th></tr></thead><tbody><tr><td>Ultra Disk</td><td>Storage options for Azure Virtual Machines (VM)<ul><li>Data-intensive workloads such as SAP HANA</li><li>High-transaction-volume workloads</li></ul></td><td>100 ~ 65,536</td><td>3,000 ~ 400,000</td></tr><tr><td>Premium SSD v2</td><td>High-performance storage options for virtual machines and containers<ul><li>Big data analytics</li><li>Game execution</li></ul></td><td>100 ~ 65,536</td><td>3,000 ~ 80,000</td></tr></tbody></table>
+<table><thead><tr><th>Type</th><th>Suitable workloads</th><th>Disk Size (GiB)</th><th>Disk IOPS (IOPS)</th></tr></thead><tbody><tr><td>Ultra Disk</td><td>Storage options for Azure virtual machines (VMs)<ul><li>Data-intensive workloads such as SAP HANA</li><li>High-transaction workloads</li></ul></td><td>100 ~ 65,536</td><td>3,000 ~ 400,000</td></tr><tr><td>Premium SSD v2</td><td>High-performance storage options for virtual machines and containers<ul><li>Big data analytics</li><li>Game execution</li></ul></td><td>100 ~ 65,536</td><td>3,000 ~ 80,000</td></tr></tbody></table>
 
 {% hint style="info" %}
 **Note**
 
-The volume size for the Tibero TAC topology must be at least 200GiB or more.
+The volume size for the Tibero TAC topology must be at least 200GiB.
 {% endhint %}

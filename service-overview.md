@@ -1,4 +1,4 @@
-OwlDB is a managed database service that installs databases in cloud and on-premises environments and registers, integrates, and manages them as a DB Service. On this page, you can check OwlDB's operating environments, key features, and supported engines and topologies.
+OwlDB is a managed database service that installs databases in cloud and on-premises environments and registers, integrates, and manages them as DB Services. This page covers OwlDB's operating environments, key features, and supported engines and topologies.
 
 # Operating Environment <a href="#operating-environment" id="operating-environment"></a>
 
@@ -6,20 +6,20 @@ OwlDB is a managed database service that installs databases in cloud and on-prem
 
 This is a method of dynamically creating and operating databases by utilizing cloud infrastructure resources. Based on IaC (Infrastructure as Code), it automates infrastructure provisioning and database configuration, allowing users to build and scale database environments with the desired specifications from the console.
 
-## On-premises Environment Support <a href="#on-premise-support" id="on-premise-support"></a>
+## On-Premises Environment Support <a href="#on-premise-support" id="on-premise-support"></a>
 
-This is a method of operating databases based on physical infrastructure resources such as servers, networks, and storage that the customer owns. It is designed to efficiently utilize fixed infrastructure resources and supports closed network environments isolated from external networks. Through OwlDB, you can install a new database on a host, or integrate an existing database already in operation as an OwlDB management target for unified control.
+This is a method of operating databases based on physical infrastructure resources such as servers, networks, and storage that the customer owns. It is designed to efficiently utilize fixed infrastructure resources and supports closed network environments that are isolated from external networks. Through OwlDB, you can install new databases on hosts, or integrate and centrally control existing databases already in operation as OwlDB management targets.
 
 ## Scope of Provision by License <a href="#scope-by-license" id="scope-by-license"></a>
 
-OwlDB differs in its provided environments and features depending on the license.
+OwlDB differs in the environments and features provided depending on the license.
 
 <table><thead><tr><th>Category</th><th>OwlDB Operation</th><th>OwlDB Automation</th><th>OwlDB DBaaS</th></tr></thead><tbody><tr><td><strong>Provided Environment</strong></td><td><ul><li>On-Premise</li><li>Private Cloud</li><li>Public Cloud (Build-type)</li></ul></td><td></td><td>AWS, Azure<br>(Marketplace Subscription)</td></tr><tr><td><strong>Registered DB Operation Management</strong></td><td>○</td><td>○</td><td>X (*BYOL New Build**)</td></tr><tr><td><strong>Installation Automation</strong></td><td>X</td><td>○</td><td>○</td></tr></tbody></table>
 
 {% hint style="info" %}
 **Note**
 
-OwlDB DBaaS can only manage DBs newly built through OwlDB, and does not support the method of registering existing DBs already in operation. **DB licenses you already own can be transferred via the BYOL (Bring Your Own License) method**and applied to DBs newly built in OwlDB DBaaS.
+OwlDB DBaaS can only manage DBs newly built through OwlDB, and does not support registering DBs that are already in operation. **DB licenses you already own can be transferred using the BYOL (Bring Your Own License) method** and applied to DBs newly built in OwlDB DBaaS.
 {% endhint %}
 
 # Key Features <a href="#key-features" id="key-features"></a>
@@ -28,19 +28,19 @@ Based on common management features universally used in both environments, OwlDB
 
 ## **Common Features** <a href="#common-features" id="common-features"></a>
 
-<table><thead><tr><th>j69iSzhgoLxy</th><th>FiiQPQwAxn1e</th></tr></thead><tbody><tr><td><strong>Feature</strong></td><td><strong>Description</strong></td></tr><tr><td><strong>Database Status Inquiry</strong></td><td>Real-time check of database and instance operating status</td></tr><tr><td><strong>Monitoring & Alerts</strong></td><td><ul><li>Monitoring of key performance indicators and operational status</li><li>Immediate alert dispatch when anomalies or events occur</li></ul></td></tr><tr><td><strong>Migration</strong></td><td>Pre-compatibility verification and guide-based migration support when converting between heterogeneous databases</td></tr><tr><td><strong>Account Management (RBAC)</strong></td><td>Per-user permission separation and security management through role-based access control</td></tr></tbody></table>
+<table><thead><tr><th>j69iSzhgoLxy</th><th>FiiQPQwAxn1e</th></tr></thead><tbody><tr><td><strong>Feature</strong></td><td><strong>Description</strong></td></tr><tr><td><strong>Database Status Inquiry</strong></td><td>Real-time check of database and instance operating status</td></tr><tr><td><strong>Monitoring & Alerts</strong></td><td><ul><li>Monitoring of key performance indicators and operational status</li><li>Immediate alert dispatch when anomalies or events occur</li></ul></td></tr><tr><td><strong>Migration</strong></td><td>Pre-compatibility verification and guide-based migration support when switching between heterogeneous databases</td></tr><tr><td><strong>Account Management (RBAC)</strong></td><td>Separation of user-specific permissions and security management through role-based access control</td></tr></tbody></table>
 
 {% tabs %}
-{% tab title="Cloud-specialized" %}
+{% tab title="Cloud-Specialized" %}
 | 0OEBZJuqlpUR | oCch6FMIgDv9 |
 | --- | --- |
 | **Feature** | **Description** |
-| **Automated Provisioning** | Full automation from cloud resource creation to database architecture configuration |
-| **Resource Scaling/Change** | Scaling and changing instance specifications and storage in line with workload increases and decreases |
+| **Automated Provisioning** | Full-process automation from cloud resource creation to database architecture configuration |
+| **Resource Scaling/Modification** | Expansion and modification of instance specifications and storage to match workload increases and decreases |
 | **Cloud Snapshot Backup** | Backup and recovery based on CSP snapshot feature integration |
 {% endtab %}
-{% tab title="On-premises-specialized" %}
-<table><thead><tr><th>bEERkyHFGU8Q</th><th>Ds9oZhkQb9hU</th></tr></thead><tbody><tr><td><strong>Feature</strong></td><td><strong>Description</strong></td></tr><tr><td><strong>Database Installation/Registration</strong></td><td><ul><li>Remote deployment of a new DB to the customer host</li><li>Registration of an existing external DB in operation as a management target</li></ul></td></tr><tr><td><strong>Infrastructure Resource Discovery</strong></td><td>Automatic collection of hardware specifications and configuration information via Agent, and status identification</td></tr><tr><td><strong>Physical Backup/Recovery</strong></td><td>Backup and recovery based on the database's own utilities (Tibero RMGR, etc.)</td></tr></tbody></table>
+{% tab title="On-Premises-Specialized" %}
+<table><thead><tr><th>bEERkyHFGU8Q</th><th>Ds9oZhkQb9hU</th></tr></thead><tbody><tr><td><strong>Feature</strong></td><td><strong>Description</strong></td></tr><tr><td><strong>Database Installation/Registration</strong></td><td><ul><li>Remote deployment of new DBs to customer hosts</li><li>Registration of existing external DBs in operation as management targets</li></ul></td></tr><tr><td><strong>Infrastructure Resource Discovery</strong></td><td>Automatic collection of hardware specifications and configuration information through the Agent, and status assessment</td></tr><tr><td><strong>Physical Backup/Recovery</strong></td><td>Backup and recovery based on the database's own utilities (Tibero RMGR, etc.)</td></tr></tbody></table>
 {% endtab %}
 {% endtabs %}
 

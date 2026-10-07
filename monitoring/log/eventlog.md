@@ -1,20 +1,20 @@
-On the Eventlog page, you can view event logs that occurred according to rules defined by OwlDB.
+On the Eventlog page, you can view event logs that occurred according to the rules defined by OwlDB.
 
-**Monitoring > Log Monitoring > Eventlog** In this menu, you can check logs that occurred in the DB Service, and combine the search period and filters to extract only the events you want. Results are displayed in order of most recent reception date.
+In the **Monitoring > Log Monitoring > Eventlog** menu, you can check logs that occurred in the DB Service, and filter out only the events you want by combining the query period and filters. Results are displayed in order of most recent received date.
 
 {% hint style="info" %}
 **Note**
 
-If the DB Service is in `Terminating` In this state, the Eventlog cannot be viewed. A notice banner is displayed at the top of the screen.
+If the DB Service is in the `Terminating` state, the Eventlog cannot be viewed. An informational banner is displayed at the top of the screen.
 {% endhint %}
 
-1. **Monitoring > Log Monitoring > Eventlog** Click the menu.
-2. Select the search period. To specify a particular range, select **Direct input**and then set the start date and end date.
-3. Select the status or message filter to narrow the event types to view.
+1. Click the **Monitoring > Log Monitoring > Eventlog** menu.
+2. Select the query period. To specify a particular range, select **Direct Input** and then set the start date and end date.
+3. Select a status or message filter to narrow the type of events to view.
 4. To find a specific message, enter a keyword in the search box.
-5. In the search results, **DB Service** or **Instance** click the name to navigate to the corresponding detail page.
+5. In the query results, click the **DB Service** or **instance** name to go to its detail page.
 
-The event log types displayed in the message column are as follows.
+The types of event logs displayed in the message column are as follows.
 
 | Status | Trigger condition | Message |
 | --- | --- | --- |

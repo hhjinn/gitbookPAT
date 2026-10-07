@@ -1,6 +1,6 @@
 ---
 description: >-
-  This section introduces OwlDB and guides you through how to use each feature.
+  Introduces OwlDB and provides guidance on how to use each feature.
 ---
 
 > **Guide Information**
@@ -15,34 +15,34 @@ description: >-
 
 ## **Overview** <a href="#overview" id="overview"></a>
 
-This guide is written for all users who wish to conveniently operate and manage their databases using the features provided by OwlDB.
+This guide is written for all users who wish to conveniently operate and manage databases using the features provided by OwlDB.
 
 ### **Prerequisite Knowledge** <a href="#undefined-1" id="undefined-1"></a>
 
-- Understanding of databases
+- Understanding of Databases
 - Understanding of RDBMS
 
 ​
 
 ---
 
-## **Guide Composition** <a href="#guide-structure" id="guide-structure"></a>
+## **Guide Structure** <a href="#guide-structure" id="guide-structure"></a>
 
 This document consists of a total of 5 chapters.
 
 {% tabs %}
 {% tab title="Service Overview" %}
-This section introduces the prerequisite knowledge helpful for using OwlDB.
+Provides guidance on prerequisite knowledge helpful for using OwlDB.
 
 🔎 [Go to Service Overview](#undefined-4)
 {% endtab %}
 {% tab title="Environment Preparation" %}
-This section guides you through the preparation requirements for each environment to use OwlDB.
+Provides guidance on preparation requirements for each environment to use OwlDB.
 
 🔎 [Go to Environment Preparation](preparation/README.md)
 {% endtab %}
-{% tab title="Feature-specific Usage Guide" %}
-This section guides you through how to use OwlDB by feature, from getting started to database creation, management, and monitoring.
+{% tab title="Feature-by-Feature Usage Guide" %}
+Provides feature-by-feature guidance on how to use OwlDB, from getting started to database creation, management, and monitoring.
 
 🔎 [Go to Getting Started](getting-started/README.md)
 
@@ -55,12 +55,12 @@ This section guides you through how to use OwlDB by feature, from getting starte
 🔎 [Go to My Page](my-page/README.md)
 {% endtab %}
 {% tab title="Reference Materials" %}
-You can check the reference materials that may be helpful when using OwlDB.
+You can check reference materials that may be helpful when using OwlDB.
 
 🔎 [Go to Reference Materials](references/README.md)
 {% endtab %}
 {% tab title="Legal Notice" %}
-This section guides you through the licenses and legal notices related to the use of OwlDB.
+Provides guidance on licenses and legal notices related to the use of OwlDB.
 
 🔎 [Go to Legal Notice](legal-notice/README.md)
 {% endtab %}
