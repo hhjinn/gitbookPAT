@@ -1,4 +1,4 @@
-A migration feature is provided to use an existing database in OwlDB. Before proceeding with migration, there is an Analyzer for compatibility assessment and a Migrator feature for performing the migration. The Analyzer and Migrator can only be executed when the database operation status is `Running`. However, databases configured with Disaster Recovery (DR) do not support the migration feature. To proceed with migration, please disable the DR configuration or select a different database.
+A migration feature is provided to use an existing database in OwlDB. There is an Analyzer feature for compatibility assessment before migration proceeds, and a Migrator feature that performs the migration. The Analyzer and Migrator can be run only when the database operation status is `Running`. However, databases with a Disaster Recovery (DR) configuration do not support the migration feature. To proceed with migration, please disable the DR configuration or select another database.
 
 {% hint style="info" %}
 **Note**
@@ -12,23 +12,23 @@ Check the support scope and detailed information of the migration feature provid
 
 ## **Supported Databases** <a href="#supported-databases" id="supported-databases"></a>
 
-| Source Database | Target Database |
+| Source database | Target database |
 | --- | --- |
 | Oracle 11g, 12c, 18c, 19c | Tibero 7 |
 
 {% hint style="info" %}
 **Note**
 
-Currently, only CDB migration is supported, and PDB migration support is planned for the future.
+Currently only CDB migration is supported, and PDB migration support is planned in the future.
 {% endhint %}
 
 ### **Supported Objects** <a href="#undefined" id="undefined"></a>
 
-OwlDB migration transfers all Independent Objects and Dependent Objects at once. Selectively transferring or excluding only individual Objects is not supported.
+OwlDB migration transfers all Independent Objects and Dependent Objects at once. Selectively migrating or excluding only individual Objects is not supported.
 
-<table><thead><tr><th>Oracle</th><th>Tibero</th><th>Remarks</th></tr></thead><tbody><tr><td>Constraint</td><td>Constraint</td><td>Supports migration of Primary Key, Foreign Key, Check, and Ref Constraints<ul><li>Primary Key index/constraint are all handled as constraints</li><li>The Check constraint expression generates DDL using the statements stored in Oracle's DD</li></ul></td></tr><tr><td>Index</td><td>Index</td><td><ul><li>R-TREE not supported</li><li>Domain Index not supported</li></ul></td></tr><tr><td>Materialized</td><td>Materialized</td><td>-</td></tr><tr><td>Materialized View Log</td><td>Materialized View Log</td><td>-</td></tr><tr><td>Privilege</td><td>Privilege</td><td>-</td></tr><tr><td>PSM</td><td>PSM</td><td>-</td></tr><tr><td>Role</td><td>Role</td><td>-</td></tr><tr><td>Schema</td><td>Schema</td><td>-</td></tr><tr><td>Sequence</td><td>Sequence</td><td>-</td></tr><tr><td>Synonym</td><td>Synonym</td><td>-</td></tr><tr><td>Table</td><td>Table</td><td><ul><li>Nested Table not supported</li><li>XML Table not supported</li></ul></td></tr><tr><td>Tablespace</td><td>Tablespace</td><td>The tablespace size is increased by 20% during migration -> because the capacity may become larger than in the TO-BE during data migration</td></tr><tr><td>View</td><td>View</td><td>-</td></tr></tbody></table>
+<table><thead><tr><th>Oracle</th><th>Tibero</th><th>Remarks</th></tr></thead><tbody><tr><td>Constraint</td><td>Constraint</td><td>Supports migration for Primary Key, Foreign Key, Check, and Ref Constraint<ul><li>Primary Key index/constraint are all handled as constraint</li><li>For Check constraint expressions, the DDL is generated using the statements stored in Oracle's DD</li></ul></td></tr><tr><td>Index</td><td>Index</td><td><ul><li>R-TREE not supported</li><li>Domain Index not supported</li></ul></td></tr><tr><td>Materialized</td><td>Materialized</td><td>-</td></tr><tr><td>Materialized View Log</td><td>Materialized View Log</td><td>-</td></tr><tr><td>Privilege</td><td>Privilege</td><td>-</td></tr><tr><td>PSM</td><td>PSM</td><td>-</td></tr><tr><td>Role</td><td>Role</td><td>-</td></tr><tr><td>Schema</td><td>Schema</td><td>-</td></tr><tr><td>Sequence</td><td>Sequence</td><td>-</td></tr><tr><td>Synonym</td><td>Synonym</td><td>-</td></tr><tr><td>Table</td><td>Table</td><td><ul><li>Nested Table not supported</li><li>XML Table not supported</li></ul></td></tr><tr><td>Tablespace</td><td>Tablespace</td><td>Tablespace size is increased by 20% during migration -> because the capacity during data migration may become larger than in the TO-BE</td></tr><tr><td>View</td><td>View</td><td>-</td></tr></tbody></table>
 
-### **Data Conversion Type** <a href="#undefined-1" id="undefined-1"></a>
+### **Data Conversion Types** <a href="#undefined-1" id="undefined-1"></a>
 
 Provides guidance on the data types that are converted when migrating from Oracle to Tibero.
 
@@ -61,58 +61,58 @@ Provides guidance on the data types that are converted when migrating from Oracl
 
 # Analyzer <a href="#analyzer" id="analyzer"></a>
 
-1. **OwlDB Console Screen > Management > Migration > Analyzer** Go to the menu.
-2. **DB Alias** Click the dropdown button to select the database whose compatibility will be assessed.
-3. **Analyze** Click the button.
-4. Enter the information of the source database whose compatibility will be assessed (hereinafter referred to as the source database).
+1. Go to the **OwlDB console screen > Management > Migration > Analyzer** menu.
+2. Click the **DB Alias** dropdown button to select the database for which compatibility will be assessed.
+3. Click the **Analyze** button.
+4. Enter the information of the source database (hereinafter source database) for which compatibility will be assessed.
 
 | Item | Description |
 | --- | --- |
-| Title* | Database Compatibility Assessment Title |
-| Type* | The engine type of the source database |
-| ID* | The user ID of the source database |
-| Password* | The user PW of the source database |
-| Address* | The IP address name of the source database |
-| Port* | The port number of the source database |
-| SID* | The SID of the source database |
+| Title* | Database compatibility assessment title |
+| Type* | Engine type of the source database |
+| ID* | User ID of the source database |
+| Password* | User PW of the source database |
+| Address* | IP address name of the source database |
+| Port* | Port number of the source database |
+| SID* | SID of the source database |
 
 The * notation indicates a required input item.
 
-1. **Analyze** Click the button.
-2. **OwlDB Console Screen > Management > Migration > Analyzer > Status** When clicked, you can check the progress information.
+1. Click the **Analyze** button.
+2. When you click **OwlDB console screen > Management > Migration > Analyzer > Status**, you can check the progress information.
 
-## **Analyzer Result** <a href="#analyzer-results" id="analyzer-results"></a>
+## **Analyzer Results** <a href="#analyzer-results" id="analyzer-results"></a>
 
-**OwlDB Console Screen > Management > Migration > Analyzer > Analyzer Title** When clicked, you can check the Analyzer result.
+When you click **OwlDB console screen > Management > Migration > Analyzer > Analyzer Title**, you can check the Analyzer results.
 
 ---
 
 # Migrator <a href="#migrator" id="migrator"></a>
 
-1. **OwlDB Console Screen > Management > Migration > Migrator** Go to the menu.
-2. **DB Alias** Click the dropdown button to select the database on which to perform the migration.
-3. **Migrate** Click the button.
-4. Enter the information of the source database on which the migration will be performed.
+1. Go to the **OwlDB console screen > Management > Migration > Migrator** menu.
+2. Click the **DB Alias** dropdown button to select the database on which migration will be performed.
+3. Click the **Migrate** button.
+4. Enter the information of the source database on which migration will proceed.
 
 {% tabs %}
 {% tab title="Data Connection" %}
-Connect to the source database that is the target of the migration.
+Connects to the source database that is the migration target.
 
 | Item | Description |
 | --- | --- |
-| Title* | Database Migration Title |
-| Type* | The engine type of the source database |
-| ID* | The user ID of the source database |
-| Password* | The user PW of the source database |
-| Host* | The IP address name of the source database |
-| Port* | The port number of the source database |
-| SID* | The SID of the source database |
-| Target Database* | The alias of the target database |
+| Title* | Database migration title |
+| Type* | Engine type of the source database |
+| ID* | User ID of the source database |
+| Password* | User PW of the source database |
+| Host* | IP address name of the source database |
+| Port* | Port number of the source database |
+| SID* | SID of the source database |
+| Target Database* | Alias of the target database |
 
 The * notation indicates a required input item.
 {% endtab %}
 {% tab title="Type Conversion" %}
-Look up information regarding the data type conversion of the source database.
+Queries information about the data type conversion of the source database.
 
 {% hint style="info" %}
 **Note**
@@ -121,13 +121,13 @@ Data types whose type has been converted are emphasized with orange highlighting
 {% endhint %}
 {% endtab %}
 {% tab title="Summary" %}
-Provides a summary of the information entered in the previous steps.
+Provides a summary of the information entered in the previous step.
 {% endtab %}
 {% endtabs %}
 
-5. **Migrate** Click the button.
-6. **OwlDB Console Screen > Management > Migration > Migrator > Status** When clicked, you can check the progress information.
+5. Click the **Migrate** button.
+6. When you click **OwlDB Console Screen > Management > Migration > Migrator > Status**, you can check the progress information.
 
-## **Migrator Result** <a href="#migrator-results" id="migrator-results"></a>
+## **Migrator Results** <a href="#migrator-results" id="migrator-results"></a>
 
-**OwlDB Console Screen > Management > Migration > Migrator > Migrator Title** When clicked, **Migrator Result**can be checked.
+When you click **OwlDB Console Screen > Management > Migration > Migrator > Migrator Title**, you can check the **Migrator Results**.

@@ -1,4 +1,4 @@
-Provides notifications for various events that occur while using OwlDB. Notifications can be checked by clicking the 🔔 icon in the upper right of the console screen.
+Notifications are provided for various events that occur while using OwlDB. You can check notifications by clicking the 🔔 icon in the top-right corner of the console screen.
 
 <figure>
 <img src=".gitbook/assets/image-1f51a1bc.png" alt="">
@@ -7,4 +7,4 @@ Provides notifications for various events that occur while using OwlDB. Notifica
 
 - Click the ✔ icon to the right of a message to change its read status.
 - Messages marked as read are automatically deleted after 30 days.
-- Upper right **meatball menu** icon > **Mark All as Read**Clicking this marks all messages as read.
+- Clicking the **meatball menu** icon in the top-right corner > **Mark all as read** marks all messages as read.

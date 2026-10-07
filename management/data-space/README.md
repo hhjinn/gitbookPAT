@@ -1,4 +1,4 @@
-On the Data Space page, you can view and manage the data storage units of the DB service.
+On the Data Space page, you can view and manage the data storage units of a DB service.
 
 The screen layout and available features vary depending on the engine type of the connected DB service.
 

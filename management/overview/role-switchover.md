@@ -1,41 +1,41 @@
-Role switching is a function that manually swaps the roles of the Primary DB and Standby DB in an environment using a DR (Disaster Recovery) configuration. The administrator can perform role switching directly in various situations such as failure response or regular maintenance, and **Management > Overview** work is done on the page.
+Role switching is a feature that manually swaps the roles of the Primary DB and Standby DB in environments using a DR (Disaster Recovery) configuration. Administrators can perform role switching directly in various situations, such as failure response or regular maintenance, and the operation is performed on the **Management > Overview** page.
 
-Role switching proceeds in two ways depending on the current status of the Primary DB. If the Primary DB is in a normal status, the role is swapped safely without data loss using the Switchover method. If the Primary DB is in an abnormal status, the selected Standby DB is immediately promoted to the new Primary using the Failover method. The system automatically determines which method to proceed with after checking the status of the Primary DB.
+Role switching proceeds in one of two ways depending on the current status of the Primary DB. If the Primary DB is in a normal state, the role is switched safely without data loss using the Switchover method. If the Primary DB is in an abnormal state, the selected Standby DB is immediately promoted to the new Primary using the Failover method. The system automatically decides which method to use after checking the status of the Primary DB.
 
 {% hint style="info" %}
 **Note**
 
-In the AWS environment, role switching is supported only by the Tibero engine. In the Azure environment, both Tibero and OpenSQL are supported.
+In AWS environments, role switching is supported only by the Tibero engine. In Azure environments, both Tibero and OpenSQL are supported.
 {% endhint %}
 
-## Role switchover <a href="#role-switchover" id="role-switchover"></a>
+## Role Switch <a href="#role-switchover" id="role-switchover"></a>
 
-The role switching modal is **Security Authentication**and **Switch Settings**consists of two steps. In the first step, you enter the password of the currently logged-in account to verify administrator privileges, and in the second step, you select the new Primary DB.
+The role switching modal consists of two steps: **Security Authentication** and **Switch Settings**. In the first step, you verify administrator privileges by entering the password of the currently logged-in account, and in the second step, you select the new Primary DB.
 
-1. **Management > Overview** Navigate to the page.
-2. **Operation** Click the button, and from the dropdown list **Role Switching**Click.
-3. **Security Authentication Before Role Switching** In the step, enter the password of the currently logged-in account and **Confirm**Click.
+1. Go to the **Management > Overview** page.
+2. Click the **Actions** button, and then click **Role Switching** from the dropdown list.
+3. In the **Security Authentication Before Role Switching** step, enter the password of the currently logged-in account and click **Confirm**.
 
-- If the passwords do not match, the "The passwords do not match." error message appears.
+- If the password does not match, the error message "Passwords do not match." appears.
 
-1. **Select New Primary DB** Select the Standby DB to promote from the dropdown.
-2. If necessary **Remarks**enter the.
-3. **Confirm**Click.
+1. Select the Standby DB to promote from the **Select New Primary DB** dropdown.
+2. Enter **Remarks** if necessary.
+3. Click **Confirm**.
 
-After the switch request, the system automatically diagnoses the current status of the Primary DB and determines the switch method.
+After the switch request, the system automatically diagnoses the current status of the Primary DB to determine the switching method.
 
-- **Switchover**: Performed when the Primary DB is in a normal status. It safely shuts down the current Primary, completes data synchronization, and then promotes the selected Standby DB to the new Primary.
-- **Failover**: Performed when the Primary DB is in an abnormal status. It immediately promotes the selected Standby DB to the new Primary to restore the service.
+- **Switchover**: Performed when the Primary DB is in a normal state. It safely shuts down the current Primary and completes data synchronization, then promotes the selected Standby DB to the new Primary.
+- **Failover**: Performed when the Primary DB is in an abnormal state. It immediately promotes the selected Standby DB to the new Primary to restore service.
 
 {% hint style="warning" %}
 **Caution**
 
-- The Health of the current Primary DB is `In Progress` status, or all Standby DBs are in `Unavailable` or `In Progress` status, role switching cannot be performed.
-- `Available` A Standby DB that is not in the status cannot be selected in the new Primary DB selection list.
+- Role switching cannot be performed if the Health of the current Primary DB is in the `In Progress` state, or if all Standby DBs are in the `Unavailable` or `In Progress` state.
+- A Standby DB that is not in the `Available` state cannot be selected from the new Primary DB selection list.
 {% endhint %}
 
 {% hint style="info" %}
 **Note**
 
-If you receive a "Configuration normalization failed" notification after role switching is complete, manual action is required to maintain high availability and DR.
+If you receive a "Configuration Normalization Failed" notification after role switching is complete, manual action is required to maintain high availability and DR.
 {% endhint %}
