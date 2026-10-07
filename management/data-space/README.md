@@ -7,6 +7,6 @@ The screen layout and available features vary depending on the engine type of th
 You can view, create, modify, and delete tablespaces, which are the logical units of data storage, and data files, which record the actual data.
 {% endtab %}
 {% tab title="OpenSQL" %}
-It supports viewing, creating, and deleting the database list, and selecting an individual database lets you view detailed information including status metrics such as Tuple Health and the number of active sessions.
+It supports viewing, creating, and deleting the database list, and when you select an individual database, you can view detailed information including status indicators such as Tuple Health and the number of active sessions.
 {% endtab %}
 {% endtabs %}

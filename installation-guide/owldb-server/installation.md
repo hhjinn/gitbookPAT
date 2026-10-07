@@ -7,7 +7,7 @@ On this page, you place the deployment files, configure owldb.env, and then run 
 
 ### 1-1. Extracting the Deployment Files <a href="#id-1-1" id="id-1-1"></a>
 
-Extract the CP deployment files to the desired path on the OwlDB server.
+Extract the CP deployment file to the desired path on the OwlDB server.
 
 ```bash
 tar -zxvf owldb-cp-installer-%Y%m%d-%H.tar.gz
@@ -15,9 +15,9 @@ tar -zxvf owldb-cp-installer-%Y%m%d-%H.tar.gz
 
 ### 1-2. Placing the OwlDB License
 
-OwlDB validates the OwlDB license at startup. If there is no valid license, the Backend container will not start normally and will fail at the Health Check stage of the installation script, so you must place the issued license file before running the installation script.
+OwlDB verifies the OwlDB license at startup time. If there is no valid license, the Backend container will not start normally and will fail at the Health Check stage of the installation script, so you must place the issued license file before running the installation script.
 
-Place the issued license file in the extracted deployment files under the `/license/license.xml` path.
+Within the extracted deployment file, place the issued license file in the `/license/license.xml` path.
 
 After preparation is complete, the directory structure is as follows.
 
@@ -40,8 +40,8 @@ After preparation is complete, the directory structure is as follows.
 {% hint style="warning" %}
 **Caution**
 
-- For on-premise environments, ops, fleet `edition` Only licenses are allowed.
-- The installation date is `start_date` before / `end_date`+`grace_period` A license after this will fail to start. (`grace_period` During this period, it starts up with a warning log.)
+- For on-premise environments, only ops and fleet `edition` licenses are allowed.
+- The installation date `start_date` before / `end_date`+`grace_period` A license after this will fail to start. (`grace_period` During this period, it will start with a warning log.)
 {% endhint %}
 
 ## 2. owldb.env Configuration <a href="#configure-owldb-env" id="configure-owldb-env"></a>
@@ -93,7 +93,7 @@ DB_USERNAME / DB_PASSWORD cannot be changed after the initial configuration.
 
 ## 3. Running the Installation Script <a href="#run-install-script" id="run-install-script"></a>
 
-`owldb.env` After completing the file configuration, run the following command.
+`owldb.env` After completing the file configuration, run the command below.
 
 ```bash
 sudo bash ./owldb_install.sh
@@ -102,17 +102,17 @@ sudo bash ./owldb_install.sh
 {% hint style="info" %}
 **Note**
 
-Before running the script [Environment preparation items](#XOyYOS20WfPqABW42fpm)Please confirm that you have completed them.
+Before running the script [Environment preparation items](#XOyYOS20WfPqABW42fpm)please confirm that you have completed them.
 {% endhint %}
 
 The script operates in the following order.
 
-1. Hardware and package pre-validation
+1. Hardware and package pre-verification
 2. Loading Docker images
 3. `docker-compose.yml` Creation and container startup
-4. Performing a Health Check
+4. Health Check Execution
 
-**Example execution results**
+**Example Execution Result**
 
 ```bash
 $ sudo bash owldb_install.sh 
@@ -160,7 +160,7 @@ Response:
 [INFO] OwlDB installation complete. UI access: http://[OwlDB host IP]:80/owldb/#/auth/login
 ```
 
-## 4. Verifying the installation results <a href="#check-installation-result" id="check-installation-result"></a>
+## 4. Verifying Installation Results <a href="#check-installation-result" id="check-installation-result"></a>
 
 Access the URL below in a browser and verify that the login screen is displayed.
 
@@ -176,9 +176,9 @@ Initial root account information: ID `admin` / Password `admin` .
 
 ---
 
-### If a port change is required <a href="#undefined" id="undefined"></a>
+### If a Port Change Is Needed <a href="#undefined" id="undefined"></a>
 
-`owldb.env` Modify the port value in, then re-run the script. When the following prompt is displayed, **1**Select.
+`owldb.env` Modify the port value in and re-run the script. When the prompt below is displayed, **option 1**is selected.
 
 - UI_PORT
 - SERVER_PORT
@@ -189,7 +189,7 @@ $sudo bash owldb_install.sh
 ⚠️  Warning: The docker-compose.yaml file already exists.
 
   1) Overwrite the existing docker-compose.yaml and continue
-  2) Use the existing docker-compose.yaml as-is and continue
+  2) Use the existing docker-compose.yaml as is and continue
   3) Cancel
 
 Select [1-3]: 

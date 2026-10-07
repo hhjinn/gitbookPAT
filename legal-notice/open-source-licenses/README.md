@@ -2,7 +2,7 @@ The following sets forth attribution notices for third party software that may b
 
 # Font Copyrights <a href="#font-copyrights" id="font-copyrights"></a>
 
-Noto is a trademark of Google Inc. Noto fonts are open source. All Noto fonts are published under the SIL Open Font License, Version 1.1.
+Noto is a trademark of Google Inc. Noto fonts are open source. All Noto fonts are published under the SIL Open Font License, version 1.1.
 
 ---
 

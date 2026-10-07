@@ -1,4 +1,4 @@
-This page gathers reference materials and troubleshooting guides that are helpful in addition to the user guide. If a problem occurs during use, please first check the related items below.
+This page gathers helpful reference materials and troubleshooting guides in addition to the user guide. If you encounter a problem during use, please check the relevant items below first.
 
-- [Tibero Database Usage Guide](https://docs.tibero.com/tibero-manuals/topics/administration/tibero-administrator-guide)
-- [OpenSQL Database Usage Guide](https://docs.tibero.com/tmaxopensql)
+- [Guide to using the Tibero database](https://docs.tibero.com/tibero-manuals/topics/administration/tibero-administrator-guide)
+- [Guide to using the OpenSQL database](https://docs.tibero.com/tmaxopensql)

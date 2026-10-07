@@ -3,10 +3,10 @@ This page explains how to install and start the Agent on the database server.
 {% hint style="info" %}
 **Note**
 
-This guide [Installation DB Environment Preparation Guide](install-db-prerequisites.md) or [Registration DB Environment Preparation Guide](register-db-prerequisites.md)proceeds after completing.
+This guide [Installed DB Environment Preparation Guide](install-db-prerequisites.md) or [Registered DB Environment Preparation Guide](register-db-prerequisites.md)proceed after completing.
 {% endhint %}
 
-# Agent Installation and Startup <a href="#install-and-start-agent" id="install-and-start-agent"></a>
+# Agent installation and startup <a href="#install-and-start-agent" id="install-and-start-agent"></a>
 
 **1. Decompress the Agent binary**
 
@@ -16,7 +16,7 @@ tar -zxvf $TB_HOME/tbagent_dist_latest.tar.gz -C $TB_HOME
 
 **2. Create the agent.env file**
 
-Enter the information required to start the agent in the env file.
+Enter the information required for agent startup into the env file.
 
 ```bash
 ############################################################
@@ -56,11 +56,11 @@ CM_HOME=
 ############################################################
 ```
 
-Whether a parameter is entered differs depending on the configuration method.
+Whether a parameter needs to be entered differs depending on the configuration method.
 
 {% tabs %}
-{% tab title="Installation DB" %}
-| option | Description | Required |
+{% tab title="Installed DB" %}
+| Option | Description | Required |
 | --- | --- | --- |
 | `IP` | OwlDB server IP address | Required |
 | `PORT` | OwlDB server port (SERVER_PORT) | Required |
@@ -74,16 +74,16 @@ Whether a parameter is entered differs depending on the configuration method.
 {% hint style="info" %}
 **Note**
 
-`TB_SID` DB identification values such as these are set automatically by OwlDB during the installation process. They do not need to be entered in the pre-installation stage.
+`TB_SID` DB identification values such as these are automatically set by OwlDB during the installation process. You do not need to enter them in the pre-installation stage.
 {% endhint %}
 {% endtab %}
-{% tab title="Registration DB" %}
-<table><thead><tr><th>option</th><th>Description</th><th>Required</th></tr></thead><tbody><tr><td><code>IP</code></td><td>OwlDB server IP address</td><td>Required</td></tr><tr><td><code>PORT</code></td><td>OwlDB server port (SERVER_PORT)</td><td>Required</td></tr><tr><td><code>USERNAME</code></td><td>OS username that installed Tibero</td><td>Required</td></tr><tr><td><code>TB_HOME</code></td><td>Tibero home directory path</td><td>Required</td></tr><tr><td><code>TB_SID</code></td><td>TB_SID value</td><td><strong>Required</strong></td></tr><tr><td><code>TAS_SID</code></td><td>TAS_SID value</td><td><ul><li>Required when configuring TAC</li><li>Not needed when not in use</li></ul></td></tr><tr><td><code>CM_SID</code></td><td>CM_SID value</td><td><ul><li>Required when configuring CM</li><li>Not needed when not in use</li></ul></td></tr><tr><td><code>CM_HOME</code></td><td>CM_HOME value</td><td><ul><li>Required when configuring CM</li><li>Not needed when not in use</li></ul></td></tr></tbody></table>
+{% tab title="Registered DB" %}
+<table><thead><tr><th>Option</th><th>Description</th><th>Required</th></tr></thead><tbody><tr><td><code>IP</code></td><td>OwlDB server IP address</td><td>Required</td></tr><tr><td><code>PORT</code></td><td>OwlDB server port (SERVER_PORT)</td><td>Required</td></tr><tr><td><code>USERNAME</code></td><td>OS user name that installed Tibero</td><td>Required</td></tr><tr><td><code>TB_HOME</code></td><td>Tibero home directory path</td><td>Required</td></tr><tr><td><code>TB_SID</code></td><td>TB_SID value</td><td><strong>Required</strong></td></tr><tr><td><code>TAS_SID</code></td><td>TAS_SID value</td><td><ul><li>Required when configuring TAC</li><li>Not needed when not in use</li></ul></td></tr><tr><td><code>CM_SID</code></td><td>CM_SID value</td><td><ul><li>Required when configuring CM</li><li>Not needed when not in use</li></ul></td></tr><tr><td><code>CM_HOME</code></td><td>CM_HOME value</td><td><ul><li>Required when configuring CM</li><li>Not needed when not in use</li></ul></td></tr></tbody></table>
 
 {% hint style="warning" %}
 **Caution**
 
-Since a registered DB targets a database that is already in operation, `TB_SID`must be entered with the SID value of the existing Tibero instance.
+Since the registration DB targets an already operating database, `TB_SID`must be entered with the SID value of the existing Tibero instance.
 {% endhint %}
 {% endtab %}
 {% endtabs %}
@@ -100,15 +100,15 @@ sh tbagent_start.sh
 
 `tbagent_start.sh` The script registers the Agent as a systemd service and timer, and sudo privileges are used during this process.
 
-When restarting the Agent [Reference materials > Precautions when restarting the Agent](#nql9NMu6dh160KsnoVKa)must be reviewed.
+When restarting the Agent [Reference Material > Precautions when restarting the Agent](#nql9NMu6dh160KsnoVKa)be sure to check.
 {% endhint %}
 
-**4. Configure OS user sudoers**
+**4. OS user sudoers configuration**
 
-Some commands are run with sudo during the database installation and operation process. Since a password prompt during script execution may interrupt the operation, set NOPASSWD for the OS user used for installation.
+During database installation and operation, some commands are run with sudo. Since the task may be interrupted if a password is requested during script execution, set NOPASSWD for the OS user used for installation.
 
 ```bash
-# 1. Create the sudoers configuration file
+# 1. Create sudoers configuration file
 sudo tee /etc/sudoers.d/{username} << 'EOF'
 {username} ALL=(ALL) NOPASSWD: \
         /usr/bin/systemctl \

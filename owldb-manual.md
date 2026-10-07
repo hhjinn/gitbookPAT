@@ -1,6 +1,6 @@
 ---
 description: >-
-  This section introduces OwlDB and guides you through how to use each feature.
+  This section introduces OwlDB and provides guidance on how to use each feature.
 ---
 
 > **Guide Information**
@@ -15,11 +15,11 @@ description: >-
 
 ## **Overview** <a href="#overview" id="overview"></a>
 
-This guide is written for all users who want to conveniently operate and manage databases using the features provided by OwlDB.
+This guide is written for all users who wish to conveniently operate and manage databases using the features provided by OwlDB.
 
 ### **Prerequisite Knowledge** <a href="#undefined-1" id="undefined-1"></a>
 
-- Understanding of databases
+- Understanding of Databases
 - Understanding of RDBMS
 
 ​
@@ -32,7 +32,7 @@ This document consists of a total of 5 chapters.
 
 {% tabs %}
 {% tab title="Service Overview" %}
-This section provides prerequisite knowledge helpful for using OwlDB.
+This section provides background knowledge helpful for using OwlDB.
 
 🔎 [Go to Service Overview](#undefined-4)
 {% endtab %}
@@ -41,8 +41,8 @@ This section provides the installation guide for using OwlDB.
 
 🔎 [Go to Installation Guide](installation-guide/README.md)
 {% endtab %}
-{% tab title="Feature-specific Usage Guide" %}
-This section guides you through how to use OwlDB by feature, from getting started to creating, managing, and monitoring databases.
+{% tab title="Feature-by-Feature Usage Guide" %}
+This section provides feature-by-feature guidance on how to use OwlDB, from getting started to database creation, management, and monitoring.
 
 🔎 [Go to Getting Started](getting-started/README.md)
 

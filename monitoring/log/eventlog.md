@@ -1,20 +1,20 @@
 The Eventlog page displays event logs generated according to rules defined by OwlDB.
 
-**Monitoring > Log Monitoring > Eventlog** In this menu, you can check logs generated for the DB Service and filter out only the desired events by combining the query period and filters. Results are displayed in order of most recent received date.
+**Monitoring > Log Monitoring > Eventlog** In this menu, you can check logs that occurred in the DB Service, and filter out only the events you want by combining the query period and filters. Results are displayed in order of most recent received date.
 
 {% hint style="info" %}
 **Note**
 
-If the DB Service is in the `Terminating` In this state, Eventlog cannot be queried. An information banner is displayed at the top of the screen.
+If the DB Service is in the `Terminating` If in this state, the Eventlog cannot be queried. A notice banner is displayed at the top of the screen.
 {% endhint %}
 
 1. **Monitoring > Log Monitoring > Eventlog** Click the menu.
-2. Select the query period. To specify a particular range, **Direct input**after selecting it, set the start date and end date.
-3. Select a status or message filter to narrow down the event types to query.
+2. Select the query period. To specify a particular range, **Manual Input**select this, then set the start date and end date.
+3. Select a status or message filter to narrow down the type of events to query.
 4. To find a specific message, enter a keyword in the search box.
-5. In the query results, **DB Service** or **Instance** click the name to navigate to the corresponding detail page.
+5. In the query results, **DB Service** or **Instance** click the name to move to its detail page.
 
-The event log types displayed in the message column are as follows.
+The event log types displayed in the Message column are as follows.
 
 | Status | Trigger condition | Message |
 | --- | --- | --- |

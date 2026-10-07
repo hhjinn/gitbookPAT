@@ -7,4 +7,4 @@ Provides notifications for various events that occur while using OwlDB. Notifica
 
 - Click the ✔ icon to the right of a message to change its read status.
 - Messages marked as read are automatically deleted after 30 days.
-- Upper right **Meatball menu** icon > **Mark all as read**Clicking this marks all messages as read.
+- Upper right **meatball menu** icon > **Mark All as Read**Clicking this marks all messages as read.
