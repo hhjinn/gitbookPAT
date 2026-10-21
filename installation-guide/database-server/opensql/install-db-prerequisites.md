@@ -1,12 +1,14 @@
+# Installation DB Environment Preparation Guide
+
 This page prepares the server environment for OpenSQL-based database installation. It downloads the distribution files and places them in the installation directory, installs the required packages and owlagent, and then performs environment validation.
 
-# **1. List of required files** <a href="#required-files" id="required-files"></a>
+## **1. List of required files** <a href="#required-files" id="required-files"></a>
 
-- owldb dp binary (`owldb_dp_installer_owl_x.x.x.tar.gz`)
-- OpenSQL binary (`Tmax_OpenSQL_*.tar.gz`)
-- license file (`license.xml`)
+* owldb dp binary (`owldb_dp_installer_owl_x.x.x.tar.gz`)
+* OpenSQL binary (`Tmax_OpenSQL_*.tar.gz`)
+* license file (`license.xml`)
 
-# **2. Create the installation directory** <a href="#create-install-directory" id="create-install-directory"></a>
+## **2. Create the installation directory** <a href="#create-install-directory" id="create-install-directory"></a>
 
 Create the path where the database will be installed (hereafter the `installation directory`). (Example: `/home/rocky/owldb`)
 
@@ -17,7 +19,7 @@ chmod 755 {installation directory}/opensql
 
 The `{installation directory}/opensql` path is used as `$OPENSQL_HOME` in subsequent procedures.
 
-# **3. Place the files** <a href="#place-files" id="place-files"></a>
+## **3. Place the files** <a href="#place-files" id="place-files"></a>
 
 Extract the DP binary into `$OPENSQL_HOME`, and place the OpenSQL binary and license file.
 
@@ -43,7 +45,7 @@ $OPENSQL_HOME/
      └── validate_infra.sh
 ```
 
-# **4. Install Required Packages** <a href="#install-required-packages" id="install-required-packages"></a>
+## **4. Install Required Packages** <a href="#install-required-packages" id="install-required-packages"></a>
 
 Move to the `owldb_dp_installer` directory and run the script. The subsequent procedures 5 and 6 are also carried out in the same directory.
 
@@ -65,22 +67,26 @@ BASE_DIR="$(cd "$(dirname "$0")" && pwd)"
 
 set -x
 
-# PostgreSQL official (pgdg) repository
+# PostgreSQL 공식(pgdg) 저장소
 dnf install -y https://download.postgresql.org/pub/repos/yum/reporpms/EL-9-x86_64/pgdg-redhat-repo-latest.noarch.rpm
 
 # EPEL
 dnf install -y epel-release
 
-# Enable CodeReady Builder (CRB)
+# CodeReady Builder(CRB) 활성화
 dnf config-manager --set-enabled crb
 
 dnf install -y \
     bison \
     clang-devel \
     flex \
+    gcc \
+    make \
+    pkgconf-pkg-config \
     gdal \
     gettext \
     jq \
+    json-c \
     krb5-devel \
     lz4-devel \
     openssl-devel \
@@ -107,9 +113,13 @@ dnf install -y \
     which \
     tar \
     gzip \
+    glibc \
     glibc-langpack-en \
     libicu \
+    libxml2 \
     ncurses-libs \
+    openssl-libs \
+    python3-libs \
     lz4-libs \
     readline \
     zlib \
@@ -122,9 +132,6 @@ dnf install -y \
 
 dnf --enablerepo=pgdg-common install -y SFCGAL
 
-# geos-devel: AppStream only has the geos runtime and no devel subpackage. pgdg-common uses a version
-# distributed under a name with a suffix (geos313-devel), and opensql-installer uses the geos*-devel pattern to
-# Since it is checked, this name also satisfies the required package requirements. Match 3.13.1, the same as AppStream geos.
 dnf --enablerepo=pgdg-common install -y geos313-devel
 
 pip3 install pyyaml etcd3 requests psycopg2-binary 'protobuf<4.0.0' tabulate
@@ -133,21 +140,20 @@ pip3 install pyyaml etcd3 requests psycopg2-binary 'protobuf<4.0.0' tabulate
 set +x
 ```
 
-# **5. Install owlagent** <a href="#install-owlagent" id="install-owlagent"></a>
+## **5. Install owlagent** <a href="#install-owlagent" id="install-owlagent"></a>
 
-1. Decompress the owlagent binary.
- tar -zxvf owlagent_dist_latest.tar.gz -C $OPENSQL_HOME owlagent_dist_latest.tar.gz └── owlagent_dist/ ├── config.json.description ├── manifest ├── owlagent ├── owlagent.env ├── owlagent_start.sh └── owlagent_stop.sh
+1. Decompress the owlagent binary. tar -zxvf owlagent\_dist\_latest.tar.gz -C $OPENSQL\_HOME owlagent\_dist\_latest.tar.gz └── owlagent\_dist/ ├── config.json.description ├── manifest ├── owlagent ├── owlagent.env ├── owlagent\_start.sh └── owlagent\_stop.sh
 2. Enter the configuration values in owlagent.env.
 
-| KEY | VALUE |
-| --- | --- |
-| AGENT_TYPE | pg |
-| IP | IP of the OwlDB CP |
-| PORT | Port of the OwlDB CP |
-| USERNAME | Name of the user that will run opensql |
-| OPENSQL_HOME | Use the $OPENSQL_HOME entered in the [2. Create the installation directory](#create-install-directory) step |
+| KEY           | VALUE                                                                                                                                   |
+| ------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| AGENT\_TYPE   | pg                                                                                                                                      |
+| IP            | IP of the OwlDB CP                                                                                                                      |
+| PORT          | Port of the OwlDB CP                                                                                                                    |
+| USERNAME      | Name of the user that will run opensql                                                                                                  |
+| OPENSQL\_HOME | Use the $OPENSQL\_HOME entered in the [2. Create the installation directory](install-db-prerequisites.md#create-install-directory) step |
 
-3. Run owlagent. sh owlagent_start.sh
+3. Run owlagent. sh owlagent\_start.sh
 
 {% hint style="warning" %}
 **Caution**
@@ -155,7 +161,7 @@ set +x
 The `owlagent_start.sh` script registers owlagent as a systemd service and timer, and sudo privileges are used during this process.
 {% endhint %}
 
-# **6. Perform environment verification** <a href="#verify-environment" id="verify-environment"></a>
+## **6. Perform environment verification** <a href="#verify-environment" id="verify-environment"></a>
 
 Run the script that verifies whether the current server is ready for database installation.
 

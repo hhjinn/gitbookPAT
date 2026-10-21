@@ -1,6 +1,6 @@
 # Table of contents
 
-* [OwlDB Manual](owldb-manual.md)
+* [OwlDB Manual](README.md)
 * [Service Overview](service-overview.md)
 * [Copy of Service Overview](readme-1.md)
 * [Installation Guide](installation-guide/README.md)
