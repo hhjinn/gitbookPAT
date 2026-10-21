@@ -132,6 +132,9 @@ dnf install -y \
 
 dnf --enablerepo=pgdg-common install -y SFCGAL
 
+#geos-devel: AppStream 에는 geos 런타임만 있고 devel 서브패키지가 없다. pgdg-common 은 버전
+#접미사가 붙은 이름(geos313-devel)으로 배포하고, opensql-installer 는 geos*-devel 패턴으로
+#검사하므로 이 이름으로도 필수 패키지 요건을 충족한다. AppStream geos 와 같은 3.13.1 을 맞춘다.
 dnf --enablerepo=pgdg-common install -y geos313-devel
 
 pip3 install pyyaml etcd3 requests psycopg2-binary 'protobuf<4.0.0' tabulate
@@ -142,7 +145,18 @@ set +x
 
 ## **5. Install owlagent** <a href="#install-owlagent" id="install-owlagent"></a>
 
-1. Decompress the owlagent binary. tar -zxvf owlagent\_dist\_latest.tar.gz -C $OPENSQL\_HOME owlagent\_dist\_latest.tar.gz └── owlagent\_dist/ ├── config.json.description ├── manifest ├── owlagent ├── owlagent.env ├── owlagent\_start.sh └── owlagent\_stop.sh
+1.  Decompress the owlagent binary. <br>
+
+    ```bash
+    tar -zxvf owlagent_dist_latest.tar.gz -C $OPENSQL_HOME owlagent_dist_latest.tar.gz 
+    └── owlagent_dist/ 
+    ├── config.json.description 
+    ├── manifest 
+    ├── owlagent 
+    ├── owlagent.env 
+    ├── owlagent_start.sh 
+    └── owlagent_stop.sh
+    ```
 2. Enter the configuration values in owlagent.env.
 
 | KEY           | VALUE                                                                                                                                   |
