@@ -103,9 +103,13 @@ dnf install -y \
     bison \
     clang-devel \
     flex \
+    gcc \
+    make \
+    pkgconf-pkg-config \
     gdal \
     gettext \
     jq \
+    json-c \
     krb5-devel \
     lz4-devel \
     openssl-devel \
@@ -132,9 +136,13 @@ dnf install -y \
     which \
     tar \
     gzip \
+    glibc \
     glibc-langpack-en \
     libicu \
+    libxml2 \
     ncurses-libs \
+    openssl-libs \
+    python3-libs \
     lz4-libs \
     readline \
     zlib \
@@ -147,20 +155,18 @@ dnf install -y \
 
 dnf --enablerepo=pgdg-common install -y SFCGAL
 
-# geos-devel: AppStream 에는 geos 런타임만 있고 devel 서브패키지가 없다. pgdg-common 은 버전
-# 접미사가 붙은 이름(geos313-devel)으로 배포하고, opensql-installer 는 geos*-devel 패턴으로
-# 검사하므로 이 이름으로도 필수 패키지 요건을 충족한다. AppStream geos 와 같은 3.13.1 을 맞춘다.
 dnf --enablerepo=pgdg-common install -y geos313-devel
 
 pip3 install pyyaml etcd3 requests psycopg2-binary 'protobuf<4.0.0' tabulate
 
 #BINARY
 set +x
+
 ```
 
 ## **5. owlagent 설치** <a href="#install-owlagent" id="install-owlagent"></a>
 
-1.  owlagent 바이너리를 압축 해제 합니다. <br>
+1.  owlagent 바이너리를 압축 해제 합니다.<br>
 
     ```bash
     tar -zxvf owlagent_dist_latest.tar.gz -C $OPENSQL_HOME owlagent_dist_latest.tar.gz 
@@ -172,16 +178,14 @@ set +x
     ├── owlagent_start.sh 
     └── owlagent_stop.sh
     ```
-
-
 2. owlagent.env에 설정 값을 입력 합니다.
 
-| KEY           | VALUE                                                           |
-| ------------- | --------------------------------------------------------------- |
-| AGENT\_TYPE   | pg                                                              |
-| IP            | OwlDB CP의 IP                                                    |
-| PORT          | OwlDB CP의 port                                                  |
-| USERNAME      | opensql을 실행할 user의 이름                                           |
+| KEY           | VALUE                                                                                           |
+| ------------- | ----------------------------------------------------------------------------------------------- |
+| AGENT\_TYPE   | pg                                                                                              |
+| IP            | OwlDB CP의 IP                                                                                    |
+| PORT          | OwlDB CP의 port                                                                                  |
+| USERNAME      | opensql을 실행할 user의 이름                                                                           |
 | OPENSQL\_HOME | [2.설치 디렉터리 생성](install-db-prerequisites.md#create-install-directory) 단계에서 입력한 $OPENSQL\_HOME 사용 |
 
 3. owlagent를 실행합니다. sh owlagent\_start.sh
