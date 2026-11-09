@@ -8,17 +8,17 @@
 **참고**
 
 * `Degraded` 상태에서 진행 중이거나 사용 불가능한 노드가 하나라도 있는 경우 스펙 변경 버튼을 사용할 수 없습니다.
-* `Degraded` 상태이면서 Failover된 Primary로 인한 이슈만 존재하는 경우에는 스펙 변경 버튼을 사용할 수 있습니다.
+* `Degraded` 상태이면서 장애 조치된 Primary로 인한 이슈만 존재하는 경우에는 스펙 변경 버튼을 사용할 수 있습니다.
 {% endhint %}
 
-## 스펙 변경 진입 방법 <a href="#spec-change-entry" id="spec-change-entry"></a>
+# 스펙 변경 진입 방법 <a href="#spec-change-entry" id="spec-change-entry"></a>
 
 스펙 변경 페이지는 다음 두 가지 방법으로 진입할 수 있습니다.
 
 * **Overview에서 진입** : Overview 페이지 > 작업 > **스펙 변경** 클릭
 * **변경 감지 DB에서 진입** : 대시보드 > 탐색 > 변경 감지 DB > **스펙 변경** 클릭
 
-## 스펙 변경 <a href="#spec-change" id="spec-change"></a>
+# 스펙 변경 <a href="#spec-change" id="spec-change"></a>
 
 Overview에서 진입한 경우 다음 순서로 진행합니다.
 
@@ -29,11 +29,11 @@ Overview에서 진입한 경우 다음 순서로 진행합니다.
 5. **데이터베이스 구성** 단계에서 추가된 노드의 VIP 등 구성 정보를 입력합니다.
 6. **구성 정보 확인** 단계에서 변경 내용을 검토한 후 **완료**를 클릭합니다.
 
-## Overview에서 스펙 변경 진입 <a href="#spec-change-from-overview" id="spec-change-from-overview"></a>
+# Overview에서 스펙 변경 진입 <a href="#spec-change-from-overview" id="spec-change-from-overview"></a>
 
 Overview 페이지의 작업 메뉴를 통해 진입한 경우, DB 노드 구성 변경과 DR 수정 두 가지 작업을 수행할 수 있습니다.
 
-### DB 노드 구성 변경
+## DB 노드 구성 변경
 
 {% tabs %}
 {% tab title="Tibero" %}
@@ -56,7 +56,7 @@ Overview 페이지의 작업 메뉴를 통해 진입한 경우, DB 노드 구성
 {% endtab %}
 {% endtabs %}
 
-### DR 수정
+## DR 수정
 
 {% tabs %}
 {% tab title="Tibero" %}
@@ -77,7 +77,7 @@ Overview 페이지의 작업 메뉴를 통해 진입한 경우, DB 노드 구성
 지원하는 장애 조치 자동화 레벨은 [**장애 조치 자동화 문서**](#GDPaQdLZBmgq4vRqB2Sz)를 참고하십시오.
 {% endhint %}
 
-## 스펙 변경 단계 <a href="#spec-change-steps" id="spec-change-steps"></a>
+# 스펙 변경 단계 <a href="#spec-change-steps" id="spec-change-steps"></a>
 
 각 단계에서 설정할 수 있는 항목은 엔진에 따라 다릅니다.
 
@@ -121,7 +121,7 @@ DR 사용 여부와 장애 조치 자동화 레벨, Standby 노드 설정을 변
 |-----|-----|
 | Enable DR | DR 구성 사용 여부. 설치 DB에 한해 직접 변경할 수 있습니다. |
 | Failover Automation Level | 0단계(수동), 1단계(자동 장애 조치), 3단계(완전 자동화) 지원.<br>2단계(자동 구성 복구)는 OwlDB v1.3에서 미지원 |
-| Standby Count | 설치 : 1개 고정 / 등록 : 1\~9개 |
+| Standby Count | 설치: 1개 고정 / 등록 : 1\~9개 |
 | Standby Mode | Standby 노드의 Open Mode 선택 (Recovery / Read Only) |
 | Log Replication Type | Standby 노드의 로그 전송 방식 선택 (LGWR ASYNC / ARCH ASYNC) |
 
@@ -146,7 +146,7 @@ DR 사용 여부는 설치 DB에서만 직접 변경할 수 있으며, 변경 �
 
 현재 구성된 Standby 노드 목록이 표시되며, 다음 항목을 변경할 수 있습니다. Log Replication Type의 세부 옵션은 다음과 같습니다.
 
-<table data-full-width="true"><thead><tr><th>항목</th><th>설명</th></tr></thead><tbody><tr><td>Open Mode</td><td>Standby 노드의 Open Mode를 <code>Recovery</code> 또는 <code>Read Only</code> 중에서 선택합니다. (Tibero 해당)</td></tr><tr><td>Log Replication Type</td><td>Standby 노드의 로그 복제 방식을 선택합니다. (Tibero 해당)<ul><li><strong>LGWR ASYNC</strong>: 트랜잭션 발생 시 실시간으로 생성되는 Redo log를 전송하는 복제 모드</li><li><strong>ARCH ASYNC</strong> : 로그 스위치 이후 생성된 아카이브 로그 파일을 모아서 전송하는 복제 모드</li></ul></td></tr></tbody></table>
+<table><thead><tr><th>항목</th><th>설명</th></tr></thead><tbody><tr><td>Open Mode</td><td>Standby 노드의 Open Mode를 <code>Recovery</code> 또는 <code>Read Only</code> 중에서 선택합니다. (Tibero 해당)</td></tr><tr><td>Log Replication Type</td><td>Standby 노드의 로그 복제 방식을 선택합니다. (Tibero 해당)<ul><li><strong>LGWR ASYNC</strong>: 트랜잭션 발생 시 실시간으로 생성되는 Redo log를 전송하는 복제 모드</li><li><strong>ARCH ASYNC</strong>: 로그 스위치 이후 생성된 아카이브 로그 파일을 모아서 전송하는 복제 모드</li></ul></td></tr></tbody></table>
 
 {% hint style="info" %}
 **참고**
@@ -259,7 +259,7 @@ VIP를 사용 중인 DB에서 Scale Out이 발생한 경우, 추가된 노드에
 {% endtab %}
 {% endtabs %}
 
-## 변경 감지 DB에서 스펙 변경 진입 <a href="#spec-change-from-detected-db" id="spec-change-from-detected-db"></a>
+# 변경 감지 DB에서 스펙 변경 진입 <a href="#spec-change-from-detected-db" id="spec-change-from-detected-db"></a>
 
 등록 DB에 한하여, OwlDB 외부에서 DB 구성이 변경된 경우 OwlDB가 이를 자동으로 감지합니다. 대시보드 탐색에서 변경이 감지된 DB를 확인하고 **스펙 변경**을 클릭하여 진입할 수 있습니다.
 
@@ -273,7 +273,7 @@ VIP를 사용 중인 DB에서 Scale Out이 발생한 경우, 추가된 노드에
 
 각 단계에서 내용을 확인하고 입력을 완료한 후 **완료**를 클릭하면 변경 사항이 OwlDB에 반영됩니다.
 
-## 스펙 변경 최대 처리 시간 <a href="#spec-change-max-duration" id="spec-change-max-duration"></a>
+# 스펙 변경 최대 처리 시간 <a href="#spec-change-max-duration" id="spec-change-max-duration"></a>
 
 스펙 변경 처리 시간은 데이터베이스의 용량, 부하 상태 및 구성 환경에 따라 달라질 수 있습니다. 일반적인 환경에서는 수 분 내 처리되며, 조건에 따라 다음과 같이 최대 처리 시간이 상이할 수 있습니다.
 

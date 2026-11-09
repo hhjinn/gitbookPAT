@@ -1,6 +1,6 @@
 OwlDB에서 관제하는 데이터베이스 서버에 해당하는 공통 준비 절차입니다. 디스크 요구사항, 네트워크 설정, 배포 파일 구성 등 구성 방식에 따른 다른 절차는 각각 [설치 DB 환경 준비 가이드](#W2TxdEHwoC3mStsQfJdo)와 [등록 DB 환경 준비 가이드](#pvI81bWJlNtie4nv4stI)를 참고합니다.
 
-## Timezone 설정 <a href="#timezone-settings" id="timezone-settings"></a>
+# Timezone 설정 <a href="#timezone-settings" id="timezone-settings"></a>
 
 데이터베이스 서버의 Timezone을 올바르게 설정합니다. TAC, DR 등 다중 노드 구성의 경우 **모든 노드의 Timezone이 반드시 동일**해야 합니다. Timezone이 다를 경우 데이터 정합성 문제 및 로그 시간 불일치가 발생할 수 있습니다.
 
@@ -15,7 +15,7 @@ sudo timedatectl set-timezone Asia/Seoul
 timedatectl
 ```
 
-## OS 사용자 / SSH 키 설정 <a href="#os-user-ssh-key" id="os-user-ssh-key"></a>
+# OS 사용자 / SSH 키 설정 <a href="#os-user-ssh-key" id="os-user-ssh-key"></a>
 
 {% hint style="info" %}
 **참고**
@@ -23,7 +23,7 @@ timedatectl
 해당 내용은 **DR 구성을 사용하는 경우**에만 필요합니다.
 {% endhint %}
 
-DR 구성에서는 OwlDB가 노드 간 SCP를 통해 데이터 파일을 전송합니다. 이를 위해 각 노드에 전용 OS 사용자를 생성하고, 패스워드 없이 SSH 접속이 가능하도록 공용 키페어를 배포합니다.
+DR 구성에서는 OwlDB가 노드 간 SCP를 통해 데이터 파일을 전송합니다. 이를 위해 각 노드에 전용 OS 사용자를 생성하고, 비밀번호 없이 SSH 접속이 가능하도록 공용 키페어를 배포합니다.
 
 이하 절차에서 사용하는 예시 값은 다음과 같습니다. 실제 환경에 맞게 치환하여 사용하시기 바랍니다.
 
@@ -32,7 +32,7 @@ DR 구성에서는 OwlDB가 노드 간 SCP를 통해 데이터 파일을 전송�
 * 데이터베이스 노드 Node1 (Primary): `10.10.0.11` Node2 (Standby): `10.10.0.12` Node3 (Standby): `10.10.0.13`
 * 클러스터 내부 네트워크 CIDR: `10.10.0.0/16`
 
-### 1. DB 전용 OS 사용자 생성
+## 1. DB 전용 OS 사용자 생성
 
 모든 노드에서 **동일한 UID/GID**로 사용자를 생성합니다.
 
@@ -48,7 +48,7 @@ useradd  -u 1100 -g dba -m -s /bin/bash tibero
 UID/GID가 노드 간에 다르면 SCP로 전송된 파일의 소유권이 어긋나 DB 프로세스가 파일을 읽을 수 없습니다. 명시적으로 동일한 숫자를 지정하여 생성합니다.
 {% endhint %}
 
-### 2. SSH 키페어 생성 (Node 1에서만 1회 수행)
+## 2. SSH 키페어 생성 (Node 1에서만 1회 수행)
 
 Node1(`10.10.0.11`)에서 단 1회 키페어를 생성합니다. **이 키페어가 전체 노드의 공용 키가 됩니다.**
 
@@ -71,7 +71,7 @@ ssh-keygen -t ed25519 -N "" -f ~/.ssh/id_ed25519 -C "owldb-shared-key"
 개인키도 모든 노드에 배포되어야 합니다. 모든 노드가 서로에게 SCP를 수행해야 하므로(node1 → {node2, node3}, node2 → {node1, node3}, …), **모든 노드가 SSH 클라이언트 역할을 겸합니다.** SSH 클라이언트 측에서 챌린지에 서명하려면 개인키가 반드시 로컬에 존재해야 합니다.
 {% endhint %}
 
-### 3. authorized_keys 구성
+## 3. authorized_keys 구성
 
 생성된 공개키를 `authorized_keys`에 등록합니다.
 
@@ -81,7 +81,7 @@ cat ~/.ssh/id_ed25519.pub >> ~/.ssh/authorized_keys
 chmod 600 ~/.ssh/authorized_keys
 ```
 
-### 4. 키 셋 배포
+## 4. 키 셋 배포
 
 각 Standby 노드에서 node1의 키 파일을 SCP로 가져옵니다.
 
@@ -105,7 +105,7 @@ drwx------   tibero:dba  ~/.ssh
 -rw-------   tibero:dba  ~/.ssh/authorized_keys
 ```
 
-### 5. known_hosts 사전 등록
+## 5. known_hosts 사전 등록
 
 자동화 스크립트 실행 시 host key prompt가 발생하는 것을 방지하기 위해, 각 노드에서 클러스터 전 노드의 호스트 공개키를 미리 수집합니다.
 
@@ -115,7 +115,7 @@ ssh-keyscan -p 22 -t ed25519 10.10.0.11 10.10.0.12 10.10.0.13 > ~/.ssh/known_hos
 chmod 644 ~/.ssh/known_hosts
 ```
 
-### 6. sshd 설정 강화
+## 6. sshd 설정 강화
 
 보안 강화를 위해 아래 sshd 설정을 적용합니다.
 
@@ -164,7 +164,7 @@ systemctl status sshd
 변경 적용 직후 반드시 `systemctl status` 명령으로 sshd가 정상 동작 중인지 확인하시기를 권장합니다. (`Active: failed` 또는 에러 메시지 출력 시 즉시 설정을 되돌려야 합니다)
 {% endhint %}
 
-### 7. Source IP 제한
+## 7. Source IP 제한
 
 `authorized_keys` 항목 앞에 `from=` 옵션을 부여하여, 클러스터 내부 네트워크에서만 키가 유효하도록 제한합니다.
 

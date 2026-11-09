@@ -16,7 +16,7 @@ hidden: true
 
 OwlDB에서 제공하는 마이그레이션 기능의 지원 범위와 상세 정보를 확인합니다.
 
-### **지원 데이터베이스** <a href="#supported-databases" id="supported-databases"></a>
+### 지원 데이터베이스 <a href="#supported-databases" id="supported-databases"></a>
 
 | 소스 데이터베이스                 | 타겟 데이터베이스 |
 | ------------------------- | --------- |
@@ -28,13 +28,13 @@ OwlDB에서 제공하는 마이그레이션 기능의 지원 범위와 상세 �
 현재 CDB 이관만 지원하며, 추후 PDB 이관 지원 예정입니다.
 {% endhint %}
 
-#### **지원 오브젝트**
+#### 지원 오브젝트
 
 OwlDB 마이그레이션은 모든 Independent Object와 Dependent Object를 한번에 이관합니다. 개별 Object만 선택적으로 이관하거나 제외하는 기능은 지원하지 않습니다.
 
-<table data-full-width="true"><thead><tr><th>Oracle</th><th>Tibero</th><th>비고</th></tr></thead><tbody><tr><td>Constraint</td><td>Constraint</td><td><p>Primary Key, Foreign Key, Check, Ref Constraint에 대해 이관을 지원함</p><ul><li>Primary Key index/constraint는 모두 constraint로 처리함</li><li>Check constraint의 표현식은 Oracle의 DD에 저장된 문장을 이용해 DDL을 생성함</li></ul></td></tr><tr><td>Index</td><td>Index</td><td><ul><li>R-TREE 미지원</li><li>Domain Index 미지원</li></ul></td></tr><tr><td>Materialized</td><td>Materialized</td><td>-</td></tr><tr><td>Materialized View Log</td><td>Materialized View Log</td><td>-</td></tr><tr><td>Privilege</td><td>Privilege</td><td>-</td></tr><tr><td>PSM</td><td>PSM</td><td>-</td></tr><tr><td>Role</td><td>Role</td><td>-</td></tr><tr><td>Schema</td><td>Schema</td><td>-</td></tr><tr><td>Sequence</td><td>Sequence</td><td>-</td></tr><tr><td>Synonym</td><td>Synonym</td><td>-</td></tr><tr><td>Table</td><td>Table</td><td><ul><li>Nested Table 미지원</li><li>XML Table 미지원</li></ul></td></tr><tr><td>Tablespace</td><td>Tablespace</td><td>테이블 스페이스의 크기는 20% 증대하여 이관함 -> 데이터 이관 시 용량이 TO-BE에서보다 커질 수 있기 때문</td></tr><tr><td>View</td><td>View</td><td>-</td></tr></tbody></table>
+<table><thead><tr><th>Oracle</th><th>Tibero</th><th>비고</th></tr></thead><tbody><tr><td>Constraint</td><td>Constraint</td><td><p>Primary Key, Foreign Key, Check, Ref Constraint에 대해 이관을 지원함</p><ul><li>Primary Key index/constraint는 모두 constraint로 처리함</li><li>Check constraint의 표현식은 Oracle의 DD에 저장된 문장을 이용해 DDL을 생성함</li></ul></td></tr><tr><td>Index</td><td>Index</td><td><ul><li>R-TREE 미지원</li><li>Domain Index 미지원</li></ul></td></tr><tr><td>Materialized</td><td>Materialized</td><td>-</td></tr><tr><td>Materialized View Log</td><td>Materialized View Log</td><td>-</td></tr><tr><td>Privilege</td><td>Privilege</td><td>-</td></tr><tr><td>PSM</td><td>PSM</td><td>-</td></tr><tr><td>Role</td><td>Role</td><td>-</td></tr><tr><td>Schema</td><td>Schema</td><td>-</td></tr><tr><td>Sequence</td><td>Sequence</td><td>-</td></tr><tr><td>Synonym</td><td>Synonym</td><td>-</td></tr><tr><td>Table</td><td>Table</td><td><ul><li>Nested Table 미지원</li><li>XML Table 미지원</li></ul></td></tr><tr><td>Tablespace</td><td>Tablespace</td><td>테이블 스페이스의 크기는 20% 증대하여 이관함 -> 데이터 이관 시 용량이 TO-BE에서보다 커질 수 있기 때문</td></tr><tr><td>View</td><td>View</td><td>-</td></tr></tbody></table>
 
-#### **데이터 변환 타입**
+#### 데이터 변환 타입
 
 Oracle에서 Tibero로 이관할 때 변환되는 데이터 타입에 대해 안내합니다.
 
@@ -87,7 +87,7 @@ Oracle에서 Tibero로 이관할 때 변환되는 데이터 타입에 대해 안
 5. **분석** 버튼을 클릭합니다.
 6. **OwlDB 콘솔 화면 > 관리 > 마이그레이션 > Analyzer > 상태** 클릭 시, 진행 정보를 확인할 수 있습니다.
 
-### **Analyzer 결과** <a href="#analyzer-results" id="analyzer-results"></a>
+### Analyzer 결과 <a href="#analyzer-results" id="analyzer-results"></a>
 
 **OwlDB 콘솔 화면 > 관리 > 마이그레이션 > Analyzer > Analyzer Title** 클릭 시, Analyzer 결과를 확인할 수 있습니다.
 
@@ -136,6 +136,6 @@ Oracle에서 Tibero로 이관할 때 변환되는 데이터 타입에 대해 안
 5. **이관** 버튼을 클릭합니다.
 6. **OwlDB 콘솔 화면 > 관리 > 마이그레이션 > Migrator > 상태** 클릭 시, 진행 정보를 확인할 수 있습니다.
 
-### **Migrator 결과** <a href="#migrator-results" id="migrator-results"></a>
+### Migrator 결과 <a href="#migrator-results" id="migrator-results"></a>
 
 **OwlDB 콘솔 화면 > 관리 > 마이그레이션 > Migrator > Migrator Title** 클릭 시, **Migrator 결과**를 확인할 수 있습니다.

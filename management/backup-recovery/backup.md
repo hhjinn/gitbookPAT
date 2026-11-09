@@ -8,17 +8,17 @@
 On-Premise 환경에서는 Full/Incremental Backup을 지원하며, 보관(Archive) 기능은 제공하지 않습니다.
 {% endhint %}
 
-### 백업 목록 조회 <a href="#backup-list" id="backup-list"></a>
+## 백업 목록 조회 <a href="#backup-list" id="backup-list"></a>
 
 **관리 > 백업/복구 > 백업** 메뉴에 진입하면 현재 데이터베이스의 백업 목록이 나타납니다. Full Backup을 루트로 하여 Incremental Backup이 트리 구조로 중첩되어 표시됩니다.
 
 목록에 표시되는 컬럼은 다음과 같습니다.
 
-<table data-full-width="true"><thead><tr><th width="151">항목</th><th>설명</th></tr></thead><tbody><tr><td>이름</td><td>백업 이미지 이름</td></tr><tr><td>백업 경로</td><td>백업 경로 이름</td></tr><tr><td>백업 방식</td><td>Full Backup 또는 Incremental Backup</td></tr><tr><td>생성일</td><td>백업 이미지 생성된 일시 (yyyy.mm.dd HH:mm:ss)</td></tr><tr><td>만료일</td><td><ul><li><p>보존 기간으로 계산된 만료 일시(yyyy.mm.dd HH:mm:ss)</p><ul><li>자동 백업 : 백업 실행 시각 + 보존 기간</li><li>수동 백업 : 선택한 종료일의 다음날 00:00:00</li><li>영구 보관 : <code>-</code> 으로 표시</li></ul></li><li>Incremental Backup : 연관된 Full Backup의 만료일 표시</li></ul></td></tr><tr><td>Size(MB)</td><td><ul><li>백업 이미지의 총 용량 표시</li><li>Full Backup은 이후 생성된 Incremental Backup 용량을 합산하여 표시</li><li>Incremental Backup은 해당 백업의 용량만 표시</li></ul></td></tr><tr><td>생성 방식</td><td>자동/수동</td></tr><tr><td>상태</td><td>현재 백업 상태</td></tr></tbody></table>
+<table><thead><tr><th width="151">항목</th><th>설명</th></tr></thead><tbody><tr><td>이름</td><td>백업 이미지 이름</td></tr><tr><td>백업 경로</td><td>백업 경로 이름</td></tr><tr><td>백업 방식</td><td>Full Backup 또는 Incremental Backup</td></tr><tr><td>생성일</td><td>백업 이미지 생성된 일시 (yyyy.mm.dd HH:mm:ss)</td></tr><tr><td>만료일</td><td><ul><li><p>보존 기간으로 계산된 만료 일시(yyyy.mm.dd HH:mm:ss)</p><ul><li>자동 백업: 백업 실행 시각 + 보존 기간</li><li>수동 백업: 선택한 종료일의 다음날 00:00:00</li><li>영구 보관: <code>-</code> 으로 표시</li></ul></li><li>Incremental Backup: 연관된 Full Backup의 만료일 표시</li></ul></td></tr><tr><td>Size(MB)</td><td><ul><li>백업 이미지의 총 용량 표시</li><li>Full Backup은 이후 생성된 Incremental Backup 용량을 합산하여 표시</li><li>Incremental Backup은 해당 백업의 용량만 표시</li></ul></td></tr><tr><td>생성 방식</td><td>자동/수동</td></tr><tr><td>상태</td><td>현재 백업 상태</td></tr></tbody></table>
 
-#### 백업 상태 이력
+### 백업 상태 이력
 
-<table data-full-width="true"><thead><tr><th width="196">항목</th><th>설명</th></tr></thead><tbody><tr><td>상태</td><td><ul><li>생성 시작</li><li>복구 가능</li><li>생성 실패</li><li>복구 시작</li><li>복구 실패</li><li>삭제 시작</li><li>삭제됨</li><li>사용 불가</li></ul></td></tr><tr><td>발생일</td><td>상태가 변경된 일시 표시 (yyyy.mm.dd HH:mm:ss)</td></tr></tbody></table>
+<table><thead><tr><th width="196">항목</th><th>설명</th></tr></thead><tbody><tr><td>상태</td><td><ul><li>생성 시작</li><li>복구 가능</li><li>생성 실패</li><li>복구 시작</li><li>복구 실패</li><li>삭제 시작</li><li>삭제됨</li><li>사용 불가</li></ul></td></tr><tr><td>발생일</td><td>상태가 변경된 일시 표시 (yyyy.mm.dd HH:mm:ss)</td></tr></tbody></table>
 
 {% hint style="info" %}
 **참고**
@@ -26,7 +26,7 @@ On-Premise 환경에서는 Full/Incremental Backup을 지원하며, 보관(Archi
 OpenSQL에서 OpenBackup 사용을 **미사용**으로 전환하면 상태는 삭제됨으로 표시됩니다.
 {% endhint %}
 
-### 백업 생성 <a href="#create-backup" id="create-backup"></a>
+## 백업 생성 <a href="#create-backup" id="create-backup"></a>
 
 이름과 보존 기간을 입력하면 원하는 시점의 단일 백업 이미지가 생성됩니다. Tibero는 RMGR 기반으로 Full Backup 단위를 관리하며, OpenSQL은 rsync 또는 postgres 방식 중 선택한 방식에 따라 백업 단위가 달라집니다.
 
@@ -43,7 +43,7 @@ OpenSQL에서 OpenBackup 사용을 **미사용**으로 전환하면 상태는 �
 * Incremental Backup은 사용 가능한 Full Backup이 있어야 생성할 수 있습니다.
 {% endhint %}
 
-### 복구 <a href="#restore" id="restore"></a>
+## 복구 <a href="#restore" id="restore"></a>
 
 백업 목록에서 백업을 하나 선택하고 **복구** 버튼을 클릭하면 복구 모달이 나타납니다. 복구 유형을 선택하여 데이터베이스를 특정 시점으로 복구합니다.
 
@@ -60,7 +60,7 @@ OpenSQL에서 OpenBackup 사용을 **미사용**으로 전환하면 상태는 �
 
 **복구 유형별 백업·DR 영향**
 
-<table data-full-width="true"><thead><tr><th>복구 유형</th><th>기존 백업</th><th>DR 구성 Standby 처리</th></tr></thead><tbody><tr><td>Full Restore (Tibero)</td><td><ul><li>기존 백업 유지</li><li>Incremental Backup 선택 복구 시 백업 체인 변경으로 해당 백업 이후 생성 백업 사용 불가</li></ul></td><td>Standby 정상 재기동 시 자동 재동기화 (등록 DB·설치 DB 동일)</td></tr><tr><td>Full Restore (OpenSQL)</td><td>선택한 백업 이후 생성된 백업 삭제</td><td>Standby 정상 재기동 시 자동 재동기화</td></tr><tr><td>PITR (Tibero)</td><td>현재 저장된 모든 백업 삭제</td><td><ul><li>설치 DB : Standby 자동 재구축</li><li>등록 DB : Standby Down 유지, 복구 후 관리자 직접 재구축</li></ul></td></tr><tr><td>PITR (OpenSQL)</td><td>복구 시점 이후 생성된 백업·WAL 삭제, 지정 시각 이전 백업 유지</td><td><ul><li>설치 DB : Standby 자동 재구축</li><li>등록 DB : Standby Down 유지, 복구 후 관리자 직접 재구축</li></ul></td></tr></tbody></table>
+<table><thead><tr><th>복구 유형</th><th>기존 백업</th><th>DR 구성 Standby 처리</th></tr></thead><tbody><tr><td>Full Restore (Tibero)</td><td><ul><li>기존 백업 유지</li><li>Incremental Backup 선택 복구 시 백업 체인 변경으로 해당 백업 이후 생성 백업 사용 불가</li></ul></td><td>Standby 정상 재기동 시 자동 재동기화 (등록 DB·설치 DB 동일)</td></tr><tr><td>Full Restore (OpenSQL)</td><td>선택한 백업 이후 생성된 백업 삭제</td><td>Standby 정상 재기동 시 자동 재동기화</td></tr><tr><td>PITR (Tibero)</td><td>현재 저장된 모든 백업 삭제</td><td><ul><li>설치 DB: Standby 자동 재구축</li><li>등록 DB: Standby Down 유지, 복구 후 관리자 직접 재구축</li></ul></td></tr><tr><td>PITR (OpenSQL)</td><td>복구 시점 이후 생성된 백업·WAL 삭제, 지정 시각 이전 백업 유지</td><td><ul><li>설치 DB: Standby 자동 재구축</li><li>등록 DB: Standby Down 유지, 복구 후 관리자 직접 재구축</li></ul></td></tr></tbody></table>
 
 복구에는 최대 몇 시간이 소요될 수 있으며, 진행 상황은 복구 내역에서 확인합니다.
 
@@ -78,7 +78,7 @@ OpenSQL에서 OpenBackup 사용을 **미사용**으로 전환하면 상태는 �
 * 복구가 실패하는 경우 이전에 선택한 시점보다 더 이전 시점을 선택해 다시 시도해 주세요. 여러 차례 시도해도 복구되지 않으면 기술지원을 요청해 주세요.
 {% endhint %}
 
-### 백업 수정 <a href="#modify-backup" id="modify-backup"></a>
+## 백업 수정 <a href="#modify-backup" id="modify-backup"></a>
 
 백업의 이름과 보존 기간을 수정합니다.
 
@@ -87,7 +87,7 @@ OpenSQL에서 OpenBackup 사용을 **미사용**으로 전환하면 상태는 �
 3. **이름** 또는 **보존 기간**을 변경합니다.
 4. **저장** 버튼을 클릭합니다.
 
-### 백업 삭제 <a href="#delete-backup" id="delete-backup"></a>
+## 백업 삭제 <a href="#delete-backup" id="delete-backup"></a>
 
 선택한 백업 이미지를 영구적으로 삭제합니다.
 

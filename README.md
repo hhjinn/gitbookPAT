@@ -34,11 +34,11 @@ layout:
 >
 > 안내서 버전 : v.2.0.0
 
-### **개요** <a href="#overview" id="overview"></a>
+## 개요 <a href="#overview" id="overview"></a>
 
 본 안내서는 OwlDB에서 제공하는 기능을 이용하여 데이터베이스를 편리하게 운영하고 관리하려는 모든 이용자를 대상으로 기술합니다.​
 
-#### **사전 필요 지식** <a href="#undefined-1" id="undefined-1"></a>
+### 사전 필요 지식 <a href="#undefined-1" id="undefined-1"></a>
 
 * 데이터베이스의 이해
 * RDBMS의 이해
@@ -47,7 +47,7 @@ layout:
 
 ***
 
-### **안내서 구성** <a href="#guide-structure" id="guide-structure"></a>
+## 안내서 구성 <a href="#guide-structure" id="guide-structure"></a>
 
 본 문서는 총 5개의 장으로 구성됩니다.
 
@@ -91,4 +91,4 @@ OwlDB 이용과 관련된 라이선스 및 법적 고지 사항에 대해 안내
 {% endtab %}
 {% endtabs %}
 
-#### ​ <a href="#undefined-8" id="undefined-8"></a>
+### ​ <a href="#undefined-8" id="undefined-8"></a>

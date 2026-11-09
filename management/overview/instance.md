@@ -9,13 +9,13 @@
 * AWS 환경에서는 Tibero 엔진만 지원합니다.
 {% endhint %}
 
-### 인스턴스 목록 조회 <a href="#instance-list" id="instance-list"></a>
+## 인스턴스 목록 조회 <a href="#instance-list" id="instance-list"></a>
 
 1. **관리 > Overview**로 이동합니다.
 2. **인스턴스** 탭을 클릭합니다.
 3. 목록에서 확인할 인스턴스의 상태와 자원 사용량을 확인합니다.
 
-#### Primary(Leader) DB 표시 항목
+### Primary(Leader) DB 표시 항목
 
 {% tabs %}
 {% tab title="Tibero" %}
@@ -52,7 +52,7 @@
 {% endtab %}
 {% endtabs %}
 
-#### Standby(Replica) DB 표시 항목
+### Standby(Replica) DB 표시 항목
 
 {% tabs %}
 {% tab title="Tibero" %}
@@ -95,7 +95,7 @@
 인스턴스 상태가 `Available`이 아닌 경우, 화면 상단에 배너가 나타나 현재 상태에 대한 안내를 제공합니다.
 {% endhint %}
 
-### 인스턴스 상세 정보 조회 <a href="#instance-details" id="instance-details"></a>
+## 인스턴스 상세 정보 조회 <a href="#instance-details" id="instance-details"></a>
 
 <figure><img src="../../.gitbook/assets/image (7).png" alt=""><figcaption><p>그림 1. 인스턴스 상세 정보</p></figcaption></figure>
 
@@ -105,7 +105,7 @@
 2. 인스턴스 목록에서 상세 정보를 확인할 인스턴스의 별칭을 클릭합니다.
 3. 상세 정보 페이지에서 상단 정보, 가용성 및 복제 정보, 자원 사용 정보, 네트워크 정보, 데이터베이스 정보를 확인합니다.
 
-#### 상단 정보
+### 상단 정보
 
 | 항목          | 설명                              | Primary/Leader                                  | Standby/Replica                                                                        |
 | ----------- | ------------------------------- | ----------------------------------------------- | -------------------------------------------------------------------------------------- |
@@ -115,7 +115,7 @@
 | Open Mode   | DB 운영 모드                        | READ WRITE                                      | Tibero: MOUNTED/RECOVERY/READ WRITE/READ ONLY/READ ONLY WITH APPLY, OpenSQL: READ ONLY |
 | 마지막 업데이트 일자 | 설정 변경 일시(`yyyy-mm-dd HH:mm:ss`) | 공통                                              | 공통                                                                                     |
 
-#### 가용성 및 복제 정보
+### 가용성 및 복제 정보
 
 Primary/Leader는 아래 항목을 표시하며, Standby/Replica는 동일 항목에 복제 관련 항목을 추가로 표시합니다.
 
@@ -143,11 +143,11 @@ Primary/Leader는 아래 항목을 표시하며, Standby/Replica는 동일 항�
 {% endtab %}
 {% endtabs %}
 
-#### 자원 사용 정보
+### 자원 사용 정보
 
-<table data-full-width="true"><thead><tr><th>항목</th><th>설명</th><th>비고</th></tr></thead><tbody><tr><td>CPU</td><td>프로비저닝된 vCPU 대비 사용량(파이 차트)</td><td>5초 주기 갱신</td></tr><tr><td>Memory</td><td>프로비저닝된 메모리 대비 사용량(파이 차트)</td><td>5초 주기 갱신</td></tr><tr><td>최대 접속 세션수</td><td>활성 세션 수(라인 차트, 5초 주기 갱신)</td><td><ul><li>Tibero Standby: Read Only 상태일 때만 표시</li><li>OpenSQL Replica: 항상 표시</li></ul></td></tr></tbody></table>
+<table><thead><tr><th>항목</th><th>설명</th><th>비고</th></tr></thead><tbody><tr><td>CPU</td><td>프로비저닝된 vCPU 대비 사용량(파이 차트)</td><td>5초 주기 갱신</td></tr><tr><td>Memory</td><td>프로비저닝된 메모리 대비 사용량(파이 차트)</td><td>5초 주기 갱신</td></tr><tr><td>최대 접속 세션수</td><td>활성 세션 수(라인 차트, 5초 주기 갱신)</td><td><ul><li>Tibero Standby: Read Only 상태일 때만 표시</li><li>OpenSQL Replica: 항상 표시</li></ul></td></tr></tbody></table>
 
-#### 네트워크 정보
+### 네트워크 정보
 
 | 항목        | 설명                      |
 | --------- | ----------------------- |
@@ -155,7 +155,7 @@ Primary/Leader는 아래 항목을 표시하며, Standby/Replica는 동일 항�
 | End Point | 클라이언트 접속 주소(Private IP) |
 | Port      | 데이터베이스 통신 포트 번호         |
 
-#### 데이터베이스 정보
+### 데이터베이스 정보
 
 {% hint style="info" %}
 **참고**

@@ -8,7 +8,7 @@ OwlDB에서 데이터베이스를 운영하기 위해 데이터베이스를 설�
 
 ## 표준 아키텍처 <a href="#standard-architecture" id="standard-architecture"></a>
 
-OwlDB는 표준 아키텍처를 기반으로 데이터베이스 신규 설치 기능을 제공합니다. OwlDB On-premise에서 제공하는 표준 아키텍처는 아래와 같습니다.
+OwlDB는 표준 아키텍처를 기반으로 데이터베이스 신규 설치 기능을 제공합니다. OwlDB On-Premise에서 제공하는 표준 아키텍처는 아래와 같습니다.
 
 | 구성                   | 설명                        |
 | -------------------- | ------------------------- |
@@ -38,7 +38,7 @@ OwlDB를 통하지 않고 외부에서 직접 데이터베이스 구성을 변�
 
 ***
 
-## **설치 프로세스** <a href="#installation-process" id="installation-process"></a>
+## 설치 프로세스 <a href="#installation-process" id="installation-process"></a>
 
 1. **OwlDB 콘솔 화면** > **대시보드**로 이동합니다.
 2. 대시보드 상단의 **설치** 버튼을 눌러 설치 페이지로 이동합니다.
@@ -73,13 +73,13 @@ OwlDB를 통하지 않고 외부에서 직접 데이터베이스 구성을 변�
 
 ***
 
-## **설치 옵션 단계** <a href="#installation-option-steps" id="installation-option-steps"></a>
+## 설치 옵션 단계 <a href="#installation-option-steps" id="installation-option-steps"></a>
 
 **엔진 옵션**
 
 데이터베이스 이름과 엔진, 토폴로지 정보를 설정하는 단계입니다.
 
-<table data-full-width="true"><thead><tr><th>항목</th><th>설명</th></tr></thead><tbody><tr><td>Service Name*</td><td><p>DB Service를 식별하기 위한 이름</p><ul><li>6~30자의 영어 대소문자, 숫자, 하이픈(-)만 입력 가능</li><li>OwlDB 계정 내에서 중복 생성 불가</li><li>기본값 :<code>owldb-001</code>부터 순차 부여</li></ul></td></tr><tr><td>DB Engine Type*</td><td><p>사용할 데이터베이스 엔진</p><ul><li><strong>Tibero</strong>: 다중화 구성으로 안정적인 서비스 운영 및 DB 확장이 가능한 RDBMS</li><li><strong>OpenSQL</strong> : Open Source 기반 DBMS</li></ul></td></tr><tr><td>Topology*</td><td><ul><li><strong>Tibero</strong>: Single, TAC</li><li><strong>OpenSQL</strong> : Single, HA</li></ul></td></tr><tr><td>Node Count*</td><td><ul><li><strong>Tibero</strong>: Single(1, 고정), TAC(2~4 중 선택)</li><li><strong>OpenSQL</strong> : Single, HA(1, 고정)</li></ul></td></tr><tr><td>PostgreSQL Version</td><td><p>OpenSQL에서 사용할 PostgreSQL 버전(Tibero는 해당 없음)</p><ul><li>기본값 :<strong>17.9</strong></li></ul></td></tr></tbody></table>
+<table><thead><tr><th>항목</th><th>설명</th></tr></thead><tbody><tr><td>Service Name*</td><td><p>DB Service를 식별하기 위한 이름</p><ul><li>6~30자의 영어 대소문자, 숫자, 하이픈(-)만 입력 가능</li><li>OwlDB 계정 내에서 중복 생성 불가</li><li>기본값 :<code>owldb-001</code>부터 순차 부여</li></ul></td></tr><tr><td>DB Engine Type*</td><td><p>사용할 데이터베이스 엔진</p><ul><li><strong>Tibero</strong>: 다중화 구성으로 안정적인 서비스 운영 및 DB 확장이 가능한 RDBMS</li><li><strong>OpenSQL</strong>: Open Source 기반 DBMS</li></ul></td></tr><tr><td>Topology*</td><td><ul><li><strong>Tibero</strong>: Single, TAC</li><li><strong>OpenSQL</strong>: Single, HA</li></ul></td></tr><tr><td>Node Count*</td><td><ul><li><strong>Tibero</strong>: Single(1, 고정), TAC(2~4 중 선택)</li><li><strong>OpenSQL</strong>: Single, HA(1, 고정)</li></ul></td></tr><tr><td>PostgreSQL Version</td><td><p>OpenSQL에서 사용할 PostgreSQL 버전(Tibero는 해당 없음)</p><p>기본값 :<strong>17.9</strong></p></td></tr></tbody></table>
 
 \*표기는 필수 입력 항목을 의미합니다.
 
@@ -91,13 +91,13 @@ DR 사용 여부와 장애 조치 자동화 레벨을 설정하는 단계입니�
 
 {% tabs %}
 {% tab title="Tibero" %}
-<table data-full-width="true"><thead><tr><th>항목</th><th>설명</th></tr></thead><tbody><tr><td>Enable DR*</td><td>DR 구성 사용 여부(직접 선택 가능)</td></tr><tr><td>Failover Automation Level*</td><td><p><a href="db-1.md#undefined">자동 장애 조치 단계</a></p><ul><li>0단계 : 수동</li><li>1단계 : 자동 장애 조치</li><li>2단계 : 자동 구성 복구 (OwlDB v1.3 미지원)</li><li>3단계 : 완전 자동화</li><li>Single : 0, 1, 3단계 지원</li><li>TAC : 0, 1단계 지원</li></ul></td></tr><tr><td>Standby Count*</td><td>Standby DB 개수(표준 아키텍처 기준 최대 1개로 고정)</td></tr><tr><td>Standby Mode*</td><td><p>Standby Mode 옵션</p><ul><li><strong>Recovery</strong></li><li><strong>Read Only</strong></li></ul></td></tr><tr><td>Log Replication Type</td><td><p>Primary에서 Standby로의 로그 전송 방식</p><ul><li><strong>LGWR ASYNC</strong>: 트랜잭션이 발생하면 실시간으로 생성되는 Redo log를 전송하는 복제 모드</li><li><strong>ARCH ASYNC</strong> : 로그 스위치 이후, 아카이브 로그 파일이 생성되면 해당 파일을 모아서 전송하는 복제 모드</li></ul></td></tr></tbody></table>
+<table><thead><tr><th>항목</th><th>설명</th></tr></thead><tbody><tr><td>Enable DR*</td><td>DR 구성 사용 여부(직접 선택 가능)</td></tr><tr><td>Failover Automation Level*</td><td><p><a href="db-1.md#undefined">자동 장애 조치 단계</a></p><ul><li>0단계: 수동</li><li>1단계: 자동 장애 조치</li><li>2단계: 자동 구성 복구 (OwlDB v1.3 미지원)</li><li>3단계: 완전 자동화</li><li>Single: 0, 1, 3단계 지원</li><li>TAC: 0, 1단계 지원</li></ul></td></tr><tr><td>Standby Count*</td><td>Standby DB 개수(표준 아키텍처 기준 최대 1개로 고정)</td></tr><tr><td>Standby Mode*</td><td><p>Standby Mode 옵션</p><ul><li><strong>Recovery</strong></li><li><strong>Read Only</strong></li></ul></td></tr><tr><td>Log Replication Type</td><td><p>Primary에서 Standby로의 로그 전송 방식</p><ul><li><strong>LGWR ASYNC</strong>: 트랜잭션이 발생하면 실시간으로 생성되는 Redo log를 전송하는 복제 모드</li><li><strong>ARCH ASYNC</strong>: 로그 스위치 이후, 아카이브 로그 파일이 생성되면 해당 파일을 모아서 전송하는 복제 모드</li></ul></td></tr></tbody></table>
 
 \*표기는 필수 입력 항목을 의미합니다.
 {% endtab %}
 
 {% tab title="OpenSQL" %}
-<table data-full-width="true"><thead><tr><th>항목</th><th>설명</th></tr></thead><tbody><tr><td>Enable DR*</td><td>Single은 DR 미사용, HA는 DR 사용으로 자동 결정되며 수정 불가</td></tr><tr><td>Failover Automation Level*</td><td><p><a href="db-1.md#undefined">자동 장애 조치 단계</a></p><ul><li>0단계 : 수동</li><li>2단계 : 자동 구성 복구 (OwlDB v1.3 미지원)</li><li>3단계 : 완전 자동화</li><li>0, 3단계 지원(기본값 3단계)</li></ul></td></tr><tr><td>Standby Count*</td><td>Replica DB 개수(표준 아키텍처 기준 최대 1개로 고정)</td></tr><tr><td>Log Replication Type</td><td>ASYNC 방식으로 고정되어 수정 불가</td></tr></tbody></table>
+<table><thead><tr><th>항목</th><th>설명</th></tr></thead><tbody><tr><td>Enable DR*</td><td>Single은 DR 미사용, HA는 DR 사용으로 자동 결정되며 수정 불가</td></tr><tr><td>Failover Automation Level*</td><td><p><a href="db-1.md#undefined">자동 장애 조치 단계</a></p><ul><li>0단계: 수동</li><li>2단계: 자동 구성 복구 (OwlDB v1.3 미지원)</li><li>3단계: 완전 자동화</li><li>0, 3단계 지원(기본값 3단계)</li></ul></td></tr><tr><td>Standby Count*</td><td>Replica DB 개수(표준 아키텍처 기준 최대 1개로 고정)</td></tr><tr><td>Log Replication Type</td><td>ASYNC 방식으로 고정되어 수정 불가</td></tr></tbody></table>
 
 \*표기는 필수 입력 항목을 의미합니다.
 {% endtab %}
@@ -342,7 +342,7 @@ DR 구성을 사용하는 경우에는 SSH Key File을 지정된 경로에 미�
 {% endtab %}
 
 {% tab title="OpenSQL" %}
-<table data-full-width="true"><thead><tr><th>항목</th><th>설명</th></tr></thead><tbody><tr><td>Database Name*</td><td>사용할 데이터베이스의 이름</td></tr><tr><td>User Id*</td><td>데이터베이스 최고 권한 관리자 계정 ID</td></tr><tr><td>User Password*</td><td>데이터베이스 최고 권한 관리자 계정의 비밀번호</td></tr><tr><td>Character Set*</td><td>데이터베이스에 사용할 문자 인코딩</td></tr><tr><td>Timezone*</td><td>데이터베이스가 설치될 OS 시간대</td></tr><tr><td>VIP*</td><td>데이터베이스 가상 IP</td></tr><tr><td>Database Listener Port</td><td>네트워크 통신을 위한 데이터베이스 리스너 포트</td></tr><tr><td>Max Session Count</td><td>동시 허용 최대 세션 수</td></tr><tr><td>Shared Buffers</td><td>공유 메모리 크기 (수정 불가)</td></tr><tr><td>WAL File Size (MB)</td><td>WAL 파일 크기<br>탐색 과정에서 값을 확인할 수 없어 빈 값으로 표시되며 수정할 수 없음</td></tr><tr><td>Connection Pooler Port</td><td><p>OpenSQL에서 커넥션 풀이 클라이언트 연결을 수신하는 포트</p><ul><li>기본값 : 6432</li><li>입력 범위 : 1024~65535</li></ul></td></tr><tr><td>Extension</td><td>OpenSQL 데이터베이스 생성 시 함께 설치할 Extension 선택(다중 선택 가능)</td></tr></tbody></table>
+<table><thead><tr><th>항목</th><th>설명</th></tr></thead><tbody><tr><td>Database Name*</td><td>사용할 데이터베이스의 이름</td></tr><tr><td>User Id*</td><td>데이터베이스 최고 권한 관리자 계정 ID</td></tr><tr><td>User Password*</td><td>데이터베이스 최고 권한 관리자 계정의 비밀번호</td></tr><tr><td>Character Set*</td><td>데이터베이스에 사용할 문자 인코딩</td></tr><tr><td>Timezone*</td><td>데이터베이스가 설치될 OS 시간대</td></tr><tr><td>VIP*</td><td>데이터베이스 가상 IP</td></tr><tr><td>Database Listener Port</td><td>네트워크 통신을 위한 데이터베이스 리스너 포트</td></tr><tr><td>Max Session Count</td><td>동시 허용 최대 세션 수</td></tr><tr><td>Shared Buffers</td><td>공유 메모리 크기 (수정 불가)</td></tr><tr><td>WAL File Size (MB)</td><td>WAL 파일 크기<br>탐색 과정에서 값을 확인할 수 없어 빈 값으로 표시되며 수정할 수 없음</td></tr><tr><td>Connection Pooler Port</td><td><p>OpenSQL에서 커넥션 풀이 클라이언트 연결을 수신하는 포트</p><ul><li>기본값: 6432</li><li>입력 범위: 1024~65535</li></ul></td></tr><tr><td>Extension</td><td>OpenSQL 데이터베이스 생성 시 함께 설치할 Extension 선택(다중 선택 가능)</td></tr></tbody></table>
 
 \*표기는 필수 입력 항목을 의미합니다.
 

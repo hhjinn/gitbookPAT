@@ -1,6 +1,6 @@
 역할 전환은 DR(재해 복구) 구성을 사용하는 환경에서 Primary DB와 Standby DB의 역할을 수동으로 교체하는 기능입니다. 장애 대응이나 정기 점검 등 다양한 상황에서 관리자가 직접 역할 전환을 수행할 수 있으며, **관리 > Overview** 페이지에서 작업합니다.
 
-역할 전환은 현재 Primary DB의 상태에 따라 두 가지 방식으로 진행됩니다. Primary DB가 정상 상태이면 Switchover 방식으로 데이터 손실 없이 안전하게 역할이 교체됩니다. Primary DB가 비정상 상태이면 Failover 방식으로 선택한 Standby DB를 즉시 새로운 Primary로 승격시킵니다. 어떤 방식으로 진행할지는 시스템이 Primary DB의 상태를 확인한 후 자동으로 결정합니다.
+역할 전환은 현재 Primary DB의 상태에 따라 두 가지 방식으로 진행됩니다. Primary DB가 정상 상태이면 Switchover 방식으로 데이터 손실 없이 안전하게 역할이 교체됩니다. Primary DB가 비정상 상태이면 장애 조치 방식으로 선택한 Standby DB를 즉시 새로운 Primary로 승격시킵니다. 어떤 방식으로 진행할지는 시스템이 Primary DB의 상태를 확인한 후 자동으로 결정합니다.
 
 {% hint style="info" %}
 **참고**
@@ -8,7 +8,7 @@
 AWS 환경에서는 Tibero 엔진에서만 역할 전환을 지원합니다. Azure 환경에서는 Tibero와 OpenSQL 모두 지원합니다.
 {% endhint %}
 
-## 역할 전환 <a href="#role-switchover" id="role-switchover"></a>
+# 역할 전환 <a href="#role-switchover" id="role-switchover"></a>
 
 역할 전환 모달은 **보안 인증**과 **전환 설정**의 두 단계로 구성됩니다. 첫 번째 단계에서 현재 로그인 계정의 비밀번호를 입력해 관리자 권한을 확인하고, 두 번째 단계에서 새로운 Primary DB를 선택합니다.
 

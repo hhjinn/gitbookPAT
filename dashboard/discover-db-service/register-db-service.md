@@ -8,7 +8,7 @@
 * 등록할 DB 노드의 부트모드는 `Normal`, `Recovery`, `Readonly` 여야 합니다. 이외의 부트모드로 기동된 노드는 비정상 노드로 처리됩니다.
 * Standby 멀티 노드 구성은 등록을 지원하지 않습니다.
 
-## 등록 절차 <a href="#registration-procedure" id="registration-procedure"></a>
+# 등록 절차 <a href="#registration-procedure" id="registration-procedure"></a>
 
 1. OwlDB 콘솔 화면 > 대시보드 > **탐색** 버튼을 클릭합니다.
 2. 탐색 결과에서 **등록 가능한 DB** 목록을 확인하고, 해당 데이터베이스의 **등록** 버튼을 클릭하여 등록 페이지로 이동합니다.
@@ -17,8 +17,6 @@
 5. 대시보드 목록에서 해당 데이터베이스의 상태가 **Running**으로 표시되면 등록이 정상적으로 완료된 것입니다.
 
 **등록** 버튼을 클릭하면 라이선스 조건을 검증한 후 등록 요청이 시작되며, 대시보드로 이동합니다. 등록 시작, 완료, 실패 여부는 시스템 알림으로 확인할 수 있습니다.
-
-!\[탐색 결과 화면에서 등록 가능한 데이터베이스 목록과 등록 버튼\](탐색 결과 목록 및 등록 버튼 화면)
 
 {% hint style="warning" %}
 **주의**
@@ -35,7 +33,7 @@
 
 ---
 
-## 등록 옵션 <a href="#registration-options" id="registration-options"></a>
+# 등록 옵션 <a href="#registration-options" id="registration-options"></a>
 
 등록 페이지로 이동하면 탐색을 통해 수집된 데이터베이스 정보가 자동으로 입력되어 있습니다. 자동으로 입력된 항목은 변경할 수 없으며, 수집할 수 없는 일부 항목만 입력이 필요합니다.
 
@@ -43,7 +41,7 @@
 
 데이터베이스 이름과 엔진, 토폴로지 정보를 설정하는 단계입니다.
 
-<table data-full-width="true"><thead><tr><th>항목</th><th>설명</th></tr></thead><tbody><tr><td>Service Name*</td><td>데이터베이스 서비스를 식별하기 위한 이름<ul><li>6~30자의 영문 대소문자(a-z, A-Z), 숫자(0-9), 하이픈(-)만 사용 가능</li><li>미입력 시<code>owldb-001</code>과 같은 형태로 자동 생성</li></ul></td></tr><tr><td>Database Engine Type</td><td>사용할 데이터베이스 엔진<ul><li><strong>Tibero</strong>: 다중화 구성으로 안정적인 서비스 운영 및 DB 확장이 가능한 RDBMS</li><li><strong>OpenSQL</strong> : Open Source 기반 고객 맞춤형 DBMS 기술 플랫폼</li></ul></td></tr><tr><td>Topology</td><td>데이터베이스 구조를 결정할 토폴로지 유형<ul><li><strong>Tibero</strong>: Single, TAC</li><li><strong>OpenSQL</strong> : Single, HA</li></ul></td></tr><tr><td>Node Count</td><td>클러스터 구성 노드 수<ul><li><strong>Tibero</strong>Single : 1</li><li>TAC : 2~8<strong>OpenSQL</strong></li><li>Single : 1</li><li>HA : 2~3</li></ul></td></tr><tr><td>PostgreSQL Version</td><td>OpenSQL 선택 시 노출되는 PostgreSQL 버전</td></tr></tbody></table>
+<table><thead><tr><th>항목</th><th>설명</th></tr></thead><tbody><tr><td>Service Name*</td><td>데이터베이스 서비스를 식별하기 위한 이름<ul><li>6~30자의 영문 대소문자(a-z, A-Z), 숫자(0-9), 하이픈(-)만 사용 가능</li><li>미입력 시<code>owldb-001</code>과 같은 형태로 자동 생성</li></ul></td></tr><tr><td>Database Engine Type</td><td>사용할 데이터베이스 엔진<ul><li><strong>Tibero</strong>: 다중화 구성으로 안정적인 서비스 운영 및 DB 확장이 가능한 RDBMS</li><li><strong>OpenSQL</strong>: Open Source 기반 고객 맞춤형 DBMS 기술 플랫폼</li></ul></td></tr><tr><td>Topology</td><td>데이터베이스 구조를 결정할 토폴로지 유형<ul><li><strong>Tibero</strong>: Single, TAC</li><li><strong>OpenSQL</strong>: Single, HA</li></ul></td></tr><tr><td>Node Count</td><td>클러스터 구성 노드 수<ul><li><strong>Tibero</strong>Single : 1</li><li>TAC: 2~8<strong>OpenSQL</strong></li><li>Single: 1</li><li>HA: 2~3</li></ul></td></tr><tr><td>PostgreSQL Version</td><td>OpenSQL 선택 시 노출되는 PostgreSQL 버전</td></tr></tbody></table>
 
 \*표기는 필수 입력 항목을 의미합니다.
 
@@ -60,7 +58,7 @@ OpenSQL의 HA는 2node 또는 3node로 탐색될 수 있습니다.
 
 DR 사용 여부와 장애 조치 자동화 레벨을 설정하는 단계입니다.
 
-<table data-full-width="true"><thead><tr><th>항목</th><th>설명</th><th>비고</th></tr></thead><tbody><tr><td>Enable DR</td><td>DR 구성 사용 여부</td><td>-</td></tr><tr><td>Failover Automation Level*</td><td>자동 장애 조치 단계<ul><li><strong>0단계 : 수동</strong></li><li><strong>1단계 : 자동 장애 조치</strong></li><li><strong>2단계 : 자동 구성 복구 (On-Premise 미지원)</strong></li><li><strong>3단계 : 완전 자동화</strong></li></ul></td><td><ul><li>Tibero Single : 0, 1, 3단계 지원</li><li>Tibero TAC : 0, 1단계 지원</li><li>OpenSQL : 0, 3단계 지원</li></ul></td></tr><tr><td>{Standby/Replica} Count</td><td>Standby/Replica DB 개수</td><td>-</td></tr><tr><td>Standby Mode</td><td>Standby Mode 옵션<ul><li><strong>Recovery</strong></li><li><strong>Read Only</strong></li></ul></td><td>Tibero에서만 입력</td></tr><tr><td>Log Replication Type</td><td>Primary(Leader)에서 Standby(Replica)로의 로그 전송 방식<ul><li><strong>LGWR ASYNC</strong>(Tibero) : 트랜잭션이 발생하면 실시간으로 생성되는 Redo log를 전송하는 복제 모드</li><li><strong>ARCH ASYNC</strong>(Tibero) : 로그 스위치 이후, 아카이브 로그 파일이 생성되면 해당 파일을 모아서 전송하는 복제 모드</li><li><strong>ASYNC</strong>(OpenSQL) : 복제 연결을 통해 데이터를 비동기로 전송하는 복제 모드</li></ul></td><td>-</td></tr></tbody></table>
+<table><thead><tr><th>항목</th><th>설명</th><th>비고</th></tr></thead><tbody><tr><td>Enable DR</td><td>DR 구성 사용 여부</td><td>-</td></tr><tr><td>Failover Automation Level*</td><td>자동 장애 조치 단계<ul><li><strong>0단계: 수동</strong></li><li><strong>1단계: 자동 장애 조치</strong></li><li><strong>2단계: 자동 구성 복구 (On-Premise 미지원)</strong></li><li><strong>3단계: 완전 자동화</strong></li></ul></td><td><ul><li>Tibero Single: 0, 1, 3단계 지원</li><li>Tibero TAC: 0, 1단계 지원</li><li>OpenSQL: 0, 3단계 지원</li></ul></td></tr><tr><td>{Standby/Replica} Count</td><td>Standby/Replica DB 개수</td><td>-</td></tr><tr><td>Standby Mode</td><td>Standby Mode 옵션<ul><li><strong>Recovery</strong></li><li><strong>Read Only</strong></li></ul></td><td>Tibero에서만 입력</td></tr><tr><td>Log Replication Type</td><td>Primary(Leader)에서 Standby(Replica)로의 로그 전송 방식<ul><li><strong>LGWR ASYNC</strong>(Tibero) : 트랜잭션이 발생하면 실시간으로 생성되는 Redo log를 전송하는 복제 모드</li><li><strong>ARCH ASYNC</strong>(Tibero) : 로그 스위치 이후, 아카이브 로그 파일이 생성되면 해당 파일을 모아서 전송하는 복제 모드</li><li><strong>ASYNC</strong>(OpenSQL) : 복제 연결을 통해 데이터를 비동기로 전송하는 복제 모드</li></ul></td><td>-</td></tr></tbody></table>
 
 \*표기는 필수 입력 항목을 의미합니다.
 
@@ -221,7 +219,7 @@ DR 사용 여부와 장애 조치 자동화 레벨을 설정하는 단계입니�
 | Target Memory Size | 대상 메모리 크기 (수정 불가) |
 | Shared Buffers | 공유 메모리 크기 (수정 불가) |
 | WAL File Size (MB) | WAL 파일 크기<br>탐색 과정에서 값을 확인할 수 없어 빈 값으로 표시되며 수정할 수 없음 |
-| Connection Pooler Port\* | 커넥션 풀이 클라이언트 연결을 수신하는 포트<br>범위 : 1024\~65535 |
+| Connection Pooler Port\* | 커넥션 풀이 클라이언트 연결을 수신하는 포트<br>범위: 1024\~65535 |
 
 \*표기는 필수 입력 항목을 의미합니다.
 {% endtab %}
@@ -249,7 +247,7 @@ DR 사용 여부와 장애 조치 자동화 레벨을 설정하는 단계입니�
 
 ---
 
-## 등록 해제 <a href="#unregister" id="unregister"></a>
+# 등록 해제 <a href="#unregister" id="unregister"></a>
 
 등록된 데이터베이스는 삭제가 아닌 등록 해제 방식으로 OwlDB 관리 대상에서 제외할 수 있습니다. 등록 해제 후에도 실제 데이터베이스는 운영 환경에 그대로 유지되며, 필요 시 재등록이 가능합니다.
 

@@ -53,7 +53,7 @@ Tibero 데이터베이스 구동을 위해 아래 커널 파라미터를 설정�
 
 신규 데이터베이스 설치를 위해 다음 포트들이 필요합니다.
 
-<table data-full-width="true"><thead><tr><th>포트 유형</th><th>포트 번호</th><th>용도</th><th>비고</th></tr></thead><tbody><tr><td><strong>DB Listener 포트</strong></td><td>예시) 8629/tcp</td><td>데이터베이스 접속 포트</td><td>OwlDB 서버로부터의 8629 인바운드 허용</td></tr><tr><td><strong>노드 간 내부 연결 포트</strong></td><td>예시) 8630~8679/tcp</td><td><ul><li>TAC 구성 시 노드 간 내부 통신 포트</li><li>DB Listener 포트 기준 +50 범위</li></ul></td><td>노드 간 인바운드/아웃바운드 모두 허용 (TAC, DR 구성 시에만 필요)</td></tr></tbody></table>
+<table><thead><tr><th>포트 유형</th><th>포트 번호</th><th>용도</th><th>비고</th></tr></thead><tbody><tr><td><strong>DB Listener 포트</strong></td><td>예시) 8629/tcp</td><td>데이터베이스 접속 포트</td><td>OwlDB 서버로부터의 8629 인바운드 허용</td></tr><tr><td><strong>노드 간 내부 연결 포트</strong></td><td>예시) 8630~8679/tcp</td><td><ul><li>TAC 구성 시 노드 간 내부 통신 포트</li><li>DB Listener 포트 기준 +50 범위</li></ul></td><td>노드 간 인바운드/아웃바운드 모두 허용 (TAC, DR 구성 시에만 필요)</td></tr></tbody></table>
 
 {% hint style="warning" %}
 **주의**

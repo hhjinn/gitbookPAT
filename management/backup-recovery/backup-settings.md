@@ -6,7 +6,7 @@
 OpenSQL은 백업/복구 기능을 사용하기 위해 OpenBackup을 사용해야 합니다.
 {% endhint %}
 
-## 백업 설정 <a href="#backup-settings" id="backup-settings"></a>
+# 백업 설정 <a href="#backup-settings" id="backup-settings"></a>
 
 **관리 > 백업 설정**을 클릭하면 현재 자동 백업 구성 정보를 확인합니다. On-Premise 환경에서는 Full Backup과 Incremental Backup이 구분되어 표시됩니다.
 
@@ -15,7 +15,7 @@ OpenSQL은 백업/복구 기능을 사용하기 위해 OpenBackup을 사용해�
 3. 설정 항목을 입력합니다. OpenSQL의 경우, OpenBackup 설정 정보를 추가로 입력합니다.
 4. **저장**을 클릭합니다.
 
-### OpenBackup 설정 (OpenSQL 전용)
+## OpenBackup 설정 (OpenSQL 전용)
 
 OpenSQL On-Premise 환경에서는 자동 백업 항목 위에 OpenBackup 설정 정보가 추가로 표시됩니다. OpenBackup이 미사용 상태이면 페이지 상단에 안내 배너가 나타나고 자동 백업 항목은 표시되지 않습니다.
 
@@ -29,9 +29,9 @@ OpenSQL On-Premise 환경에서는 자동 백업 항목 위에 OpenBackup 설정
 | 백업 방식 | `rsync` / `postgres` |
 | 백업 재사용 방식 | 백업 방식이 `rsync`인 경우에만 표시 (`link` / `copy`) |
 
-### 수정 모드 입력 항목
+## 수정 모드 입력 항목
 
-<table data-full-width="true"><thead><tr><th>항목</th><th>설명</th><th>입력 규칙</th></tr></thead><tbody><tr><td>Full Backup</td><td>Full Backup 사용 여부</td><td>기본값: 꺼짐</td></tr><tr><td>Full Backup 주기</td><td>Full Backup 실행 주기</td><td><ul><li>시간마다: 1~23</li><li>일마다: 1~7</li></ul></td></tr><tr><td>보존 기간</td><td>Full Backup 이미지 보존 기간</td><td><ul><li>시간마다: 1~23</li><li>일마다: 1~35</li><li>영구보관</li></ul></td></tr><tr><td>시작 시간</td><td>Full Backup 시작 일시</td><td>현재보다 과거 일시 선택 불가</td></tr><tr><td>Incremental Backup</td><td>Incremental Backup 사용 여부</td><td>기본값: 꺼짐</td></tr><tr><td>Incremental Backup 주기</td><td>Incremental Backup 실행 주기</td><td><ul><li>시간마다: 1~23</li><li>일마다: 1~6</li></ul></td></tr></tbody></table>
+<table><thead><tr><th>항목</th><th>설명</th><th>입력 규칙</th></tr></thead><tbody><tr><td>Full Backup</td><td>Full Backup 사용 여부</td><td>기본값: 꺼짐</td></tr><tr><td>Full Backup 주기</td><td>Full Backup 실행 주기</td><td><ul><li>시간마다: 1~23</li><li>일마다: 1~7</li></ul></td></tr><tr><td>보존 기간</td><td>Full Backup 이미지 보존 기간</td><td><ul><li>시간마다: 1~23</li><li>일마다: 1~35</li><li>영구보관</li></ul></td></tr><tr><td>시작 시간</td><td>Full Backup 시작 일시</td><td>현재보다 과거 일시 선택 불가</td></tr><tr><td>Incremental Backup</td><td>Incremental Backup 사용 여부</td><td>기본값: 꺼짐</td></tr><tr><td>Incremental Backup 주기</td><td>Incremental Backup 실행 주기</td><td><ul><li>시간마다: 1~23</li><li>일마다: 1~6</li></ul></td></tr></tbody></table>
 
 {% hint style="warning" %}
 **주의**
@@ -48,7 +48,7 @@ Incremental Backup 설정 시 다음 사항에 유의합니다.
 OpenSQL On-Premise에서 PostgreSQL 16 이하 버전이고 WAL 보관 방식이 `streaming`인 경우 Incremental Backup을 사용할 수 없습니다.
 {% endhint %}
 
-## 백업 스케줄러 운영 상태 <a href="#backup-scheduler-status" id="backup-scheduler-status"></a>
+# 백업 스케줄러 운영 상태 <a href="#backup-scheduler-status" id="backup-scheduler-status"></a>
 
 백업 설정 페이지 하단의 **백업 스케줄러 운영 상태** 섹션에서 자동 백업의 최근 실행 이력과 안정성 지표를 확인합니다. 자동 백업이 꺼진 상태에서도 마지막 실행 정보가 표시될 수 있습니다.
 
@@ -71,7 +71,7 @@ OpenSQL On-Premise에서 PostgreSQL 16 이하 버전이고 WAL 보관 방식이 
 2. 페이지 하단 **백업 스케줄러 운영 상태** 섹션에서 최근 실행 결과, 최근 7일 성공률, 연속 실패 횟수를 확인합니다.
 3. 차트에서 막대 위에 마우스를 올려 일자별 상세 실행 결과를 확인합니다.
 
-## 백업 스토리지 사용량 <a href="#backup-storage-usage" id="backup-storage-usage"></a>
+# 백업 스토리지 사용량 <a href="#backup-storage-usage" id="backup-storage-usage"></a>
 
 백업 스토리지 사용량 섹션에서 현재 백업에 사용 중인 디스크 스토리지 현황을 가로 막대 차트로 확인합니다. 차트 중앙에 전체 스토리지 대비 사용량 비율이 표시되며, 각 항목은 색상과 범례로 구분됩니다.
 
@@ -82,23 +82,23 @@ OpenSQL On-Premise에서 PostgreSQL 16 이하 버전이고 WAL 보관 방식이 
 | 전체 스토리지 | 백업 스토리지 총 용량 |
 | Backup | Full/Incremental Backup 스토리지 사용량 |
 | Archive Log | 복구 시점 보장을 위해 보관되는 Archive Log 사용량 |
-| Others | 현재 DB 서비스의 Backup/Archive Log 외에 동일 경로에서 사용 중인 용량 |
+| Others | 현재 DB Service의 Backup/Archive Log 외에 동일 경로에서 사용 중인 용량 |
 | Free | 사용되지 않은 여유 용량 |
 {% endtab %}
 
 {% tab title="OpenSQL" %}
 | 항목  | 설명  |
 |-----|-----|
-| 전체 백업 스토리지 | 현재 DB 서비스가 사용할 수 있는 백업 스토리지 총 용량 |
+| 전체 백업 스토리지 | 현재 DB Service가 사용할 수 있는 백업 스토리지 총 용량 |
 | Backup | Full/Incremental Backup 스토리지 사용량 |
 | WAL | 복구 시점 보장을 위해 보관되는 WAL 사용량 |
-| Others | 현재 DB 서비스의 Backup/WAL 외에 동일 경로에서 사용 중인 용량 |
+| Others | 현재 DB Service의 Backup/WAL 외에 동일 경로에서 사용 중인 용량 |
 | Free | 사용되지 않은 여유 용량 |
 
 {% hint style="info" %}
 **참고**
 
-Others 항목에는 동일 Barman 서버를 사용하는 다른 DB 서비스의 사용량이나 임의 파일 등이 포함될 수 있습니다.
+Others 항목에는 동일 Barman 서버를 사용하는 다른 DB Service의 사용량이나 임의 파일 등이 포함될 수 있습니다.
 {% endhint %}
 {% endtab %}
 {% endtabs %}

@@ -1,10 +1,10 @@
 등록할 DB Service의 배포 파일을 배치하고 owlagent를 설치·기동하기까지의 환경 준비 절차를 설명합니다.
 
-# **1. 필요 파일 목록** <a href="#required-files" id="required-files"></a>
+# 1. 필요 파일 목록 <a href="#required-files" id="required-files"></a>
 
 * owldb dp 바이너리 (`owldb_dp_installer_owl_x.x.x.tar.gz`)
 
-# **2. 파일 배치** <a href="#place-files" id="place-files"></a>
+# 2. 파일 배치 <a href="#place-files" id="place-files"></a>
 
 DP 바이너리를 `$OPENSQL_HOME`에 압축 해제합니다.
 
@@ -45,7 +45,7 @@ owlagent_dist_latest.tar.gz
 
 2. owlagent.env에 설정 값을 입력 합니다.
 
-<table data-full-width="true"><thead><tr><th>항목</th><th>설명</th><th>입력 규칙</th></tr></thead><tbody><tr><td>AGENT_TYPE*</td><td></td><td><code>pg</code> 입력</td></tr><tr><td>IP*</td><td>OwlDB CP의 IP</td><td></td></tr><tr><td>PORT*</td><td>OwlDB CP의 port</td><td></td></tr><tr><td>USERNAME*</td><td>opensql 실행 user 이름</td><td></td></tr><tr><td>OPENSQL_HOME</td><td></td><td><ul><li>이미 설정 시 입력 불필요</li><li>미설정 시 위에서 사용한 OPENSQL_HOME 입력</li></ul></td></tr><tr><td>DB_LOG_DIR</td><td>PG 로그 경로</td><td>로그 미수집 시 입력 불필요</td></tr><tr><td>DB_LOG_FILE_GLOB</td><td>PG 로그 파일 형식</td><td>예: <code>postgresql*.log</code></td></tr><tr><td>PATRONI_CONFIG</td><td>patroni.yml 경로</td><td></td></tr><tr><td>PATRONI_MEMBER</td><td>patroni 멤버 이름</td><td></td></tr></tbody></table>
+<table><thead><tr><th>항목</th><th>설명</th><th>입력 규칙</th></tr></thead><tbody><tr><td>AGENT_TYPE*</td><td></td><td><code>pg</code> 입력</td></tr><tr><td>IP*</td><td>OwlDB CP의 IP</td><td></td></tr><tr><td>PORT*</td><td>OwlDB CP의 port</td><td></td></tr><tr><td>USERNAME*</td><td>opensql 실행 user 이름</td><td></td></tr><tr><td>OPENSQL_HOME</td><td></td><td><ul><li>이미 설정 시 입력 불필요</li><li>미설정 시 위에서 사용한 OPENSQL_HOME 입력</li></ul></td></tr><tr><td>DB_LOG_DIR</td><td>PG 로그 경로</td><td>로그 미수집 시 입력 불필요</td></tr><tr><td>DB_LOG_FILE_GLOB</td><td>PG 로그 파일 형식</td><td>예: <code>postgresql*.log</code></td></tr><tr><td>PATRONI_CONFIG</td><td>patroni.yml 경로</td><td></td></tr><tr><td>PATRONI_MEMBER</td><td>patroni 멤버 이름</td><td></td></tr></tbody></table>
 
 \*표기는 필수 입력 항목을 의미합니다.
 
@@ -73,7 +73,7 @@ a. systemd 기동 여부 확인
 systemctl is-active --quiet patroni; echo $?
 ```
 
-<table data-full-width="true"><thead><tr><th>결과</th><th>판정</th></tr></thead><tbody><tr><td>0</td><td><code>patroni.service</code>로 등록·기동됨 → 점검 완료</td></tr><tr><td>0 이외</td><td>아래 두 경우가 구분되지 않아 b 추가 수행 필요<ul><li>다른 유닛명으로 기동된 경우</li><li>systemd 미등록인 경우</li></ul></td></tr></tbody></table>
+<table><thead><tr><th>결과</th><th>판정</th></tr></thead><tbody><tr><td>0</td><td><code>patroni.service</code>로 등록·기동됨 → 점검 완료</td></tr><tr><td>0 이외</td><td>아래 두 경우가 구분되지 않아 b 추가 수행 필요<ul><li>다른 유닛명으로 기동된 경우</li><li>systemd 미등록인 경우</li></ul></td></tr></tbody></table>
 
 b. 유닛명 확인
 
