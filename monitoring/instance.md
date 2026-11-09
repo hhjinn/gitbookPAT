@@ -8,7 +8,7 @@ CPU 사용률, 메모리 사용률, 활성 세션 수 등 핵심 지표는 화�
 DB Type에 따라 모니터링 대상 리소스 계층이 다릅니다. Tibero는 Service → Instance 단위로 지표를 표시하며, OpenSQL은 Service → Instance → Database 단위까지 선택합니다.
 {% endhint %}
 
-## 인스턴스 모니터링 조회 <a href="#view-instance-monitoring" id="view-instance-monitoring"></a>
+# 인스턴스 모니터링 조회 <a href="#view-instance-monitoring" id="view-instance-monitoring"></a>
 
 인스턴스 모니터링 페이지는 GNB 상단에서 DB Type과 조회 대상 리소스를 선택하는 것으로 시작합니다. DB Type에 따라 선택 가능한 리소스 계층과 표시되는 지표가 달라집니다.
 
@@ -20,7 +20,7 @@ DB Type에 따라 모니터링 대상 리소스 계층이 다릅니다. Tibero�
 6. ⚙️ 아이콘을 클릭하여 자동 새로고침을 설정합니다.
 7. 🔃 아이콘을 클릭하여 데이터를 수동으로 갱신합니다.
 
-### DB Type 및 리소스 선택
+## DB Type 및 리소스 선택
 
 GNB의 DB Type 토글에서 **Tibero** 또는 **OpenSQL**을 선택하면, 해당 DB Type에 맞는 DB Select 트리와 지표가 표시됩니다. DB Type을 전환하면 DB Select는 전체 선택으로 초기화됩니다.
 
@@ -46,7 +46,7 @@ DB Select 트리는 **Service → Instance → Database** 3단계 구조입니�
 선택한 DB Type에 리소스가 없거나 수집된 데이터가 없으면 No Data 화면이 표시됩니다. 인스턴스 Health가 비정상인 경우 DB Select 트리에 ⚠️ 아이콘이 표시되며, 해당 리소스만 선택하면 No Data 화면으로 전환됩니다.
 {% endhint %}
 
-### 상단 고정 지표
+## 상단 고정 지표
 
 DB Type에 관계없이 페이지 상단에 항상 표시되는 핵심 지표입니다. 전체 인스턴스 Health 상태가 `Available(n)`, `Limited(n)`, `Unavailable(n)`, `In Progress(n)`으로 함께 표시됩니다.
 
@@ -57,7 +57,7 @@ DB Type에 관계없이 페이지 상단에 항상 표시되는 핵심 지표입
 | Active Session Count (CNT) | 현재 활성 중인 세션 수 |
 | Replication Lag (sec) | Primary-Standby 간 복제 지연 시간 (Standby가 있는 경우에만 표시) |
 
-### 탭별 지표 조회
+## 탭별 지표 조회
 
 페이지 진입 시 기본 탭은 **Quick Insight**입니다. 탭을 전환하면 해당 상황에 맞는 지표만 조회합니다.
 
@@ -161,11 +161,11 @@ DB Type에 관계없이 페이지 상단에 항상 표시되는 핵심 지표입
 {% endtab %}
 {% endtabs %}
 
-### OpenSQL View 전환
+## OpenSQL View 전환
 
 OpenSQL을 선택한 경우, 화면에 **Instance View**와 **Database View** 전환 버튼이 추가로 표시됩니다.
 
-<table data-full-width="true"><thead><tr><th>View</th><th>설명</th></tr></thead><tbody><tr><td>Instance View (기본값)</td><td><ul><li>선택한 Database의 지표를 합산 또는 평균하여 Instance 단위로 표시</li><li>DB Select 트리는 2단계로 표시</li></ul></td></tr><tr><td>Database View</td><td><ul><li>선택한 Database별로 지표를 분리하여 표시</li><li>DB Select 트리는 3단계로 전환</li></ul></td></tr></tbody></table>
+<table><thead><tr><th>View</th><th>설명</th></tr></thead><tbody><tr><td>Instance View (기본값)</td><td><ul><li>선택한 Database의 지표를 합산 또는 평균하여 Instance 단위로 표시</li><li>DB Select 트리는 2단계로 표시</li></ul></td></tr><tr><td>Database View</td><td><ul><li>선택한 Database별로 지표를 분리하여 표시</li><li>DB Select 트리는 3단계로 전환</li></ul></td></tr></tbody></table>
 
 {% hint style="info" %}
 **참고**

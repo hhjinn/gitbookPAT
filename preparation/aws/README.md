@@ -6,7 +6,7 @@ hidden: true
 
 AWS 마켓플레이스에서 OwlDB를 이용하기 위한 정보를 확인합니다.
 
-### 클라우드 환경 및 서버 사양 <a href="#server-specs" id="server-specs"></a>
+## 클라우드 환경 및 서버 사양 <a href="#server-specs" id="server-specs"></a>
 
 OwlDB가 제공되는 클라우드 환경과 서버 사양을 확인합니다.
 
@@ -19,7 +19,7 @@ OwlDB가 제공되는 클라우드 환경과 서버 사양을 확인합니다.
 | 권장 브라우저 | Google Chrome        |
 | 최적 해상도  | Full HD (1920\*1080) |
 
-### 리전 가용성 <a href="#region-availability" id="region-availability"></a>
+## 리전 가용성 <a href="#region-availability" id="region-availability"></a>
 
 지원 리전과 지역 코드를 확인합니다.
 
@@ -43,7 +43,7 @@ OwlDB가 제공되는 클라우드 환경과 서버 사양을 확인합니다.
 | 아시아 태평양(서울)     | ap-northeast-2 |
 | 아시아 태평양(도쿄)     | ap-northeast-1 |
 
-### 인스턴스 유형 <a href="#instance-types" id="instance-types"></a>
+## 인스턴스 유형 <a href="#instance-types" id="instance-types"></a>
 
 선택 가능한 인스턴스 유형별 vCPU와 메모리 사양을 확인합니다.
 
@@ -85,11 +85,11 @@ OwlDB가 제공되는 클라우드 환경과 서버 사양을 확인합니다.
 * **Tibero TAC**: large 이상만 사용 가능하며, xlarge 이상을 권장합니다.
 {% endhint %}
 
-### 스토리지/디스크 유형 <a href="#storage-types" id="storage-types"></a>
+## 스토리지/디스크 유형 <a href="#storage-types" id="storage-types"></a>
 
 OwlDB에서 사용 가능한 스토리지 유형과 각 유형의 용량·IOPS 범위를 확인합니다.
 
-<table data-full-width="true"><thead><tr><th>유형</th><th>특성</th><th>볼륨 크기(GiB)</th><th>볼륨 IOPS(개)</th></tr></thead><tbody><tr><td>gp3</td><td><ul><li>SSD 기반 볼륨</li><li>높은 IOPS, 낮은 대기시간</li><li>용량당 비용 저렴</li></ul></td><td>100 ~ 65,536</td><td>3,000 ~ 80,000</td></tr><tr><td>gp2</td><td><ul><li>SSD 기반 볼륨</li><li>대량 데이터 저장·처리에 적합</li><li>용량당 비용 저렴</li><li>일관성 편차 있음</li><li>IOPS는 할당된 스토리지 크기에 따라 변경, 사용자 설정 불가</li></ul></td><td>100 ~ 16,384</td><td>450 ~ 16,000</td></tr><tr><td>io2</td><td><ul><li>SSD 기반 볼륨</li><li>매우 높은 IOPS, 일관된 성능</li><li>용량당 비용 높음</li><li>대기시간 상대적으로 김</li></ul></td><td>100 ~ 65,536</td><td>3,000 ~ 256,000</td></tr></tbody></table>
+<table><thead><tr><th>유형</th><th>특성</th><th>볼륨 크기(GiB)</th><th>볼륨 IOPS(개)</th></tr></thead><tbody><tr><td>gp3</td><td><ul><li>SSD 기반 볼륨</li><li>높은 IOPS, 낮은 대기시간</li><li>용량당 비용 저렴</li></ul></td><td>100 ~ 65,536</td><td>3,000 ~ 80,000</td></tr><tr><td>gp2</td><td><ul><li>SSD 기반 볼륨</li><li>대량 데이터 저장·처리에 적합</li><li>용량당 비용 저렴</li><li>일관성 편차 있음</li><li>IOPS는 할당된 스토리지 크기에 따라 변경, 사용자 설정 불가</li></ul></td><td>100 ~ 16,384</td><td>450 ~ 16,000</td></tr><tr><td>io2</td><td><ul><li>SSD 기반 볼륨</li><li>매우 높은 IOPS, 일관된 성능</li><li>용량당 비용 높음</li><li>대기시간 상대적으로 김</li></ul></td><td>100 ~ 65,536</td><td>3,000 ~ 256,000</td></tr></tbody></table>
 
 {% hint style="info" %}
 **참고**

@@ -33,13 +33,13 @@ OwlDB에서 데이터베이스를 생성(이하 프로비저닝)하는 방법을
 
 ---
 
-# **생성 옵션** <a href="#creation-options" id="creation-options"></a>
+# 생성 옵션 <a href="#creation-options" id="creation-options"></a>
 
 데이터베이스 생성 시 선택한 옵션에 따른 예상 금액을 확인할 수 있습니다. 해당 금액은 서울 리전을 기준으로 산정된 값이며, 실제 금액은 리전이나 실사용량 등 여러 요소에 따라 달라질 수 있습니다.
 
 ### 1단계: 엔진 옵션 <a href="#step-1-engine" id="step-1-engine"></a>
 
-<table data-full-width="true"><thead><tr><th>항목</th><th>설명</th></tr></thead><tbody><tr><td>DB Service Name*</td><td>DB Service를 식별하기 위한 이름<ul><li>OwlDB 계정 내 중복 사용 불가</li><li>6~30자 이내, 영어 대소문자(a-z, A-Z), 숫자(0-9), 하이픈(-)만 사용 가능, 공백 사용 불가</li></ul></td></tr><tr><td>Database Engine Type*</td><td>사용할 데이터베이스 엔진<ul><li><strong>Tibero</strong></li><li><strong>OpenSQL</strong></li></ul></td></tr><tr><td>License Option*</td><td>사용할 라이선스 옵션<ul><li><strong>LI</strong>(License Included)</li><li><strong>BYOL</strong> (Bring Your Own License)</li></ul></td></tr><tr><td>Topology*</td><td>데이터베이스 구조를 결정할 토폴로지 유형<ul><li><strong>Tibero</strong>: Single, TAC</li><li><strong>OpenSQL</strong>: Single, HA</li></ul></td></tr><tr><td>Edition*</td><td>라이선스의 에디션<ul><li><strong>Standard Edition (SE)</strong>: 단일 서버 구성 전용, 최대 8vCPU까지 사용 가능</li><li><strong>Enterprise Edition (EE)</strong>: 고가용성 및 대규모 구성 지원, vCPU 제한 없음</li><li>Topology를 TAC 또는 HA로 선택하면 Enterprise Edition으로 자동 적용되며 변경할 수 없음</li></ul></td></tr><tr><td>Node Count*</td><td>클러스터 구성 노드 수<ul><li><strong>Tibero</strong>: Single 1개 (고정), TAC 2~4개 중 선택</li><li><strong>OpenSQL</strong>: Single, HA 모두 1개로 고정</li></ul></td></tr><tr><td>PostgreSQL Version</td><td>OpenSQL 선택 시 사용할 PostgreSQL 버전<ul><li>3.16.12.5 (기본값)</li><li>3.17.8.5</li></ul></td></tr></tbody></table>
+<table><thead><tr><th>항목</th><th>설명</th></tr></thead><tbody><tr><td>DB Service Name*</td><td>DB Service를 식별하기 위한 이름<ul><li>OwlDB 계정 내 중복 사용 불가</li><li>6~30자 이내, 영어 대소문자(a-z, A-Z), 숫자(0-9), 하이픈(-)만 사용 가능, 공백 사용 불가</li></ul></td></tr><tr><td>Database Engine Type*</td><td>사용할 데이터베이스 엔진<ul><li><strong>Tibero</strong></li><li><strong>OpenSQL</strong></li></ul></td></tr><tr><td>License Option*</td><td>사용할 라이선스 옵션<ul><li><strong>LI</strong>(License Included)</li><li><strong>BYOL</strong> (Bring Your Own License)</li></ul></td></tr><tr><td>Topology*</td><td>데이터베이스 구조를 결정할 토폴로지 유형<ul><li><strong>Tibero</strong>: Single, TAC</li><li><strong>OpenSQL</strong>: Single, HA</li></ul></td></tr><tr><td>Edition*</td><td>라이선스의 에디션<ul><li><strong>Standard Edition (SE)</strong>: 단일 서버 구성 전용, 최대 8vCPU까지 사용 가능</li><li><strong>Enterprise Edition (EE)</strong>: 고가용성 및 대규모 구성 지원, vCPU 제한 없음</li><li>Topology를 TAC 또는 HA로 선택하면 Enterprise Edition으로 자동 적용되며 변경할 수 없음</li></ul></td></tr><tr><td>Node Count*</td><td>클러스터 구성 노드 수<ul><li><strong>Tibero</strong>: Single 1개 (고정), TAC 2~4개 중 선택</li><li><strong>OpenSQL</strong>: Single, HA 모두 1개로 고정</li></ul></td></tr><tr><td>PostgreSQL Version</td><td>OpenSQL 선택 시 사용할 PostgreSQL 버전<ul><li>3.16.12.5 (기본값)</li><li>3.17.8.5</li></ul></td></tr></tbody></table>
 
 \*표기는 필수 입력 항목을 의미합니다.
 
@@ -52,7 +52,7 @@ OwlDB에서 데이터베이스를 생성(이하 프로비저닝)하는 방법을
 
 ### 2단계: DR 구성 <a href="#step-2-dr" id="step-2-dr"></a>
 
-<table data-full-width="true"><thead><tr><th>항목</th><th>설명</th></tr></thead><tbody><tr><td>Enable DR*</td><td>DR 구성 사용 여부<ul><li><strong>Tibero</strong>: 사용자가 직접 선택</li><li><strong>OpenSQL</strong>: Topology에 따라 자동으로 결정되며 수정할 수 없음 (Single: DR 미사용 / HA: DR 사용)</li></ul></td></tr><tr><td>Failover Automation Level*</td><td>장애 조치 자동화 레벨<ul><li><strong>0단계 : 수동</strong></li><li><strong>1단계 : 자동 장애 조치</strong></li><li><strong>2단계 : 자동 구성 복구</strong></li><li><strong>3단계 : 완전 자동화</strong></li></ul></td></tr><tr><td>Standby/Replica Count*</td><td>Standby(또는 Replica) DB 개수<ul><li><strong>Tibero</strong>: 최대 2개까지 선택 가능</li><li><strong>OpenSQL</strong>: 1개로 고정</li></ul></td></tr><tr><td>Standby Mode*</td><td>Standby Mode 옵션 (Tibero 엔진에서만 노출되며, Standby 노드별로 개별 설정 가능)<ul><li><strong>Recovery</strong></li><li><strong>Read Only</strong></li></ul></td></tr><tr><td>Log Replication Type</td><td>Primary(Leader)의 로그를 Standby(Replica)에 전송하는 방식<ul><li><strong>LGWR ASYNC</strong>: 트랜잭션이 발생하면 실시간으로 생성되는 Redo log를 곧바로 전송하는 복제 모드</li><li><strong>ARCH ASYNC</strong>: 로그 스위치가 일어난 뒤, 아카이브 로그 파일이 생성되면 그 파일을 모아서 전송하는 복제 모드</li><li>OpenSQL 엔진은<strong>ASYNC 방식</strong>으로 고정되며 수정할 수 없음.</li></ul></td></tr></tbody></table>
+<table><thead><tr><th>항목</th><th>설명</th></tr></thead><tbody><tr><td>Enable DR*</td><td>DR 구성 사용 여부<ul><li><strong>Tibero</strong>: 사용자가 직접 선택</li><li><strong>OpenSQL</strong>: Topology에 따라 자동으로 결정되며 수정할 수 없음 (Single: DR 미사용 / HA: DR 사용)</li></ul></td></tr><tr><td>Failover Automation Level*</td><td>장애 조치 자동화 레벨<ul><li><strong>0단계: 수동</strong></li><li><strong>1단계: 자동 장애 조치</strong></li><li><strong>2단계: 자동 구성 복구</strong></li><li><strong>3단계: 완전 자동화</strong></li></ul></td></tr><tr><td>Standby/Replica Count*</td><td>Standby(또는 Replica) DB 개수<ul><li><strong>Tibero</strong>: 최대 2개까지 선택 가능</li><li><strong>OpenSQL</strong>: 1개로 고정</li></ul></td></tr><tr><td>Standby Mode*</td><td>Standby Mode 옵션 (Tibero 엔진에서만 노출되며, Standby 노드별로 개별 설정 가능)<ul><li><strong>Recovery</strong></li><li><strong>Read Only</strong></li></ul></td></tr><tr><td>Log Replication Type</td><td>Primary(Leader)의 로그를 Standby(Replica)에 전송하는 방식<ul><li><strong>LGWR ASYNC</strong>: 트랜잭션이 발생하면 실시간으로 생성되는 Redo log를 곧바로 전송하는 복제 모드</li><li><strong>ARCH ASYNC</strong>: 로그 스위치가 일어난 뒤, 아카이브 로그 파일이 생성되면 그 파일을 모아서 전송하는 복제 모드</li><li>OpenSQL 엔진은<strong>ASYNC 방식</strong>으로 고정되며 수정할 수 없음.</li></ul></td></tr></tbody></table>
 
 \*표기는 필수 입력 항목을 의미합니다.
 
@@ -67,7 +67,7 @@ OwlDB에서 데이터베이스를 생성(이하 프로비저닝)하는 방법을
 
 ### 3단계: AZ 구성 <a href="#step-3-az" id="step-3-az"></a>
 
-<table data-full-width="true"><thead><tr><th>항목</th><th>설명</th></tr></thead><tbody><tr><td>OwlDB Availability Zone(AZ)* (disabled)</td><td>OwlDB의 가용 영역</td></tr><tr><td>Primary(Leader) DB Availability Zone(AZ)*</td><td>Primary(Leader) DB의 가용 영역<br><strong>기본값</strong><ul><li>DR 사용 안함 : OwlDB와 같은 영역</li><li>DR 사용 : OwlDB와 다른 영역</li></ul></td></tr><tr><td>Standby(Replica) DB Availability Zone(AZ)*</td><td>Standby(Replica) DB의 가용 영역<ul><li>기본값 : OwlDB와 같은 가용 영역에 배치, 이후 다른 영역에 자동 배치</li></ul></td></tr></tbody></table>
+<table><thead><tr><th>항목</th><th>설명</th></tr></thead><tbody><tr><td>OwlDB Availability Zone(AZ)* (disabled)</td><td>OwlDB의 가용 영역</td></tr><tr><td>Primary(Leader) DB Availability Zone(AZ)*</td><td>Primary(Leader) DB의 가용 영역<br><strong>기본값</strong><ul><li>DR 사용 안함: OwlDB와 같은 영역</li><li>DR 사용: OwlDB와 다른 영역</li></ul></td></tr><tr><td>Standby(Replica) DB Availability Zone(AZ)*</td><td>Standby(Replica) DB의 가용 영역<br>기본값: OwlDB와 같은 가용 영역에 배치, 이후 다른 영역에 자동 배치</td></tr></tbody></table>
 
 \*표기는 필수 입력 항목을 의미합니다.
 
@@ -75,14 +75,14 @@ OwlDB에서 데이터베이스를 생성(이하 프로비저닝)하는 방법을
 **참고**
 
 * Standby(Replica) DB Availability Zone은 Enable DR에서 사용을 선택한 경우에만 노출됩니다.
-* Primary(Leader) DB의 가용 영역은 사용자가 선택할 수 있으나, 안정적인 장애 대응 및 Failover를 위해 Primary(Leader) DB는 OwlDB와 다른 가용 영역에 배치하는 것을 권장합니다.
+* Primary(Leader) DB의 가용 영역은 사용자가 선택할 수 있으나, 안정적인 장애 대응 및 장애 조치를 위해 Primary(Leader) DB는 OwlDB와 다른 가용 영역에 배치하는 것을 권장합니다.
 {% endhint %}
 
 ### 4단계: 인스턴스 구성 <a href="#step-4-instance" id="step-4-instance"></a>
 
 {% tabs %}
 {% tab title="Tibero" %}
-<table data-full-width="true"><thead><tr><th>구분</th><th>항목</th><th>설명</th></tr></thead><tbody><tr><td>Instance Setting</td><td>DB Virtual Machine Size*</td><td>성능과 사양을 결정할 인스턴스 유형</td></tr><tr><td>Instance Access Setting</td><td>DB Instance SSH Key Name*</td><td>DB 인스턴스에 접근하기 위한 설정</td></tr><tr><td>Data Disk</td><td>Data Disk Type*</td><td>주요 데이터를 저장할 디스크의 유형</td></tr><tr><td></td><td>Data Disk Size*</td><td>주요 데이터를 저장할 디스크의 크기</td></tr><tr><td></td><td>Data Disk IOPS*</td><td>주요 데이터를 저장할 디스크의 입출력 처리량</td></tr><tr><td></td><td>Data Disk MBps</td><td>주요 데이터를 저장할 디스크의 최대 처리 속도</td></tr><tr><td>Redo Log Disk</td><td>Redo Log Disk Type</td><td>Redo log를 저장할 디스크의 유형</td></tr><tr><td></td><td>Redo Log Disk Size (disabled)</td><td>Redo log를 저장할 디스크의 크기<ul><li>입력한 Redo Log File Size(GB)에 따라 자동 계산</li></ul></td></tr><tr><td></td><td>Redo Log Disk IOPS</td><td>Redo log를 저장할 디스크의 입출력 처리량</td></tr><tr><td></td><td>Redo Log Disk MBps</td><td>Redo log를 저장할 디스크의 최대 처리 속도</td></tr><tr><td>Archive Log Volume</td><td>Archive Log Disk Type</td><td>Archive log를 저장할 디스크의 유형</td></tr><tr><td></td><td>Archive Log Disk Size</td><td>Archive log를 저장할 디스크의 크기</td></tr><tr><td></td><td>Archive Log Disk IOPS</td><td>Archive log를 저장할 디스크의 입출력 처리량</td></tr><tr><td></td><td>Archive Log Disk MBps</td><td>Archive log를 저장할 디스크의 최대 처리 속도</td></tr><tr><td>Auto Scale</td><td>사용 여부*</td><td>데이터 볼륨 사용량에 따라 데이터 디스크 크기를 자동으로 확장할지 여부</td></tr><tr><td></td><td>최대 확장 한도*</td><td>Auto Scale 사용 시 증가할 수 있는 데이터 디스크의 최대 크기</td></tr></tbody></table>
+<table><thead><tr><th>구분</th><th>항목</th><th>설명</th></tr></thead><tbody><tr><td>Instance Setting</td><td>DB Virtual Machine Size*</td><td>성능과 사양을 결정할 인스턴스 유형</td></tr><tr><td>Instance Access Setting</td><td>DB Instance SSH Key Name*</td><td>DB 인스턴스에 접근하기 위한 설정</td></tr><tr><td>Data Disk</td><td>Data Disk Type*</td><td>주요 데이터를 저장할 디스크의 유형</td></tr><tr><td></td><td>Data Disk Size*</td><td>주요 데이터를 저장할 디스크의 크기</td></tr><tr><td></td><td>Data Disk IOPS*</td><td>주요 데이터를 저장할 디스크의 입출력 처리량</td></tr><tr><td></td><td>Data Disk MBps</td><td>주요 데이터를 저장할 디스크의 최대 처리 속도</td></tr><tr><td>Redo Log Disk</td><td>Redo Log Disk Type</td><td>Redo log를 저장할 디스크의 유형</td></tr><tr><td></td><td>Redo Log Disk Size (disabled)</td><td>Redo log를 저장할 디스크의 크기<br>입력한 Redo Log File Size(GB)에 따라 자동 계산</td></tr><tr><td></td><td>Redo Log Disk IOPS</td><td>Redo log를 저장할 디스크의 입출력 처리량</td></tr><tr><td></td><td>Redo Log Disk MBps</td><td>Redo log를 저장할 디스크의 최대 처리 속도</td></tr><tr><td>Archive Log Volume</td><td>Archive Log Disk Type</td><td>Archive log를 저장할 디스크의 유형</td></tr><tr><td></td><td>Archive Log Disk Size</td><td>Archive log를 저장할 디스크의 크기</td></tr><tr><td></td><td>Archive Log Disk IOPS</td><td>Archive log를 저장할 디스크의 입출력 처리량</td></tr><tr><td></td><td>Archive Log Disk MBps</td><td>Archive log를 저장할 디스크의 최대 처리 속도</td></tr><tr><td>Auto Scale</td><td>사용 여부*</td><td>데이터 볼륨 사용량에 따라 데이터 디스크 크기를 자동으로 확장할지 여부</td></tr><tr><td></td><td>최대 확장 한도*</td><td>Auto Scale 사용 시 증가할 수 있는 데이터 디스크의 최대 크기</td></tr></tbody></table>
 
 \*표기는 필수 입력 항목을 의미합니다.
 {% endtab %}
@@ -107,7 +107,7 @@ OwlDB에서 데이터베이스를 생성(이하 프로비저닝)하는 방법을
 **참고**
 
 * 안정적인 운영 환경을 위해, 클러스터 내 모든 인스턴스는 동일한 스펙으로 자동 구성됩니다.
-* Edition을 **Standard Edition(SE)**으로 선택한 경우, DB Instance Type 목록에는 최대 8vCPU 사양까지만 표시됩니다.
+* Edition을 **Standard Edition**(SE)으로 선택한 경우, DB Instance Type 목록에는 최대 8vCPU 사양까지만 표시됩니다.
 * 일부 가용 영역에서는 지원하지 않는 DB Instance Type이 있을 수 있으며, 이 경우 목록에는 표시되나 선택할 수 없습니다.
 * 각 디스크의 IOPS는 선택한 디스크 유형에서 허용하는 범위 내에서만 입력할 수 있습니다.
 * Redo Log Disk, Archive Log Volume은 Tibero 엔진에서만 노출됩니다.

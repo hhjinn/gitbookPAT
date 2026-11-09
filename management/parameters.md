@@ -79,7 +79,7 @@ Tibero 다중 노드 구성에서 글로벌 파라미터는 수정할 수 없습
 
 ## 수정한 파라미터 유형별 저장 방식 <a href="#save-method-by-parameter-type" id="save-method-by-parameter-type"></a>
 
-<table><thead><tr><th>수정한 파라미터 유형</th><th>저장 방식</th></tr></thead><tbody><tr><td>동적 + 정적 파라미터 혼합</td><td><ul><li><strong>적용</strong>: DB 재시작 후 변경 사항 반영 (연결 세션 종료, 수 분 소요)</li></ul></td></tr><tr><td>동적 파라미터만</td><td><ul><li><strong>적용</strong>: 재시작 없이 현재값에 즉시 반영</li><li><strong>임시 적용</strong>: 재시작 없이 현재값에 반영, DB 재시작 시 기존 Config 값으로 복원</li></ul></td></tr></tbody></table>
+<table><thead><tr><th>수정한 파라미터 유형</th><th>저장 방식</th></tr></thead><tbody><tr><td>동적 + 정적 파라미터 혼합</td><td><strong>적용</strong>: DB 재시작 후 변경 사항 반영 (연결 세션 종료, 수 분 소요)</td></tr><tr><td>동적 파라미터만</td><td><ul><li><strong>적용</strong>: 재시작 없이 현재값에 즉시 반영</li><li><strong>임시 적용</strong>: 재시작 없이 현재값에 반영, DB 재시작 시 기존 Config 값으로 복원</li></ul></td></tr></tbody></table>
 
 {% hint style="info" %}
 **참고**

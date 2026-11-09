@@ -8,7 +8,7 @@ AWS 환경에서는 Tibero 엔진에만 지원되며, Azure 환경에서는 Tibe
 
 Tibero와 OpenSQL 두 엔진을 모두 지원하며, GNB의 **DB Type** 토글로 전환하면 해당 엔진에 맞는 지표 목록이 표시됩니다. Elapsed Time 알림 기능을 활성화하면 설정한 임계값을 초과한 세션 행을 색상으로 강조하여 장시간 실행 세션을 시각적으로 식별합니다. 테이블에서 특정 세션 행을 클릭하면 상세 정보와 SQL 전문을 드로어에서 확인합니다.
 
-## 세션 모니터링 <a href="#session-monitoring" id="session-monitoring"></a>
+# 세션 모니터링 <a href="#session-monitoring" id="session-monitoring"></a>
 
 **모니터링 > 세션 모니터링** 메뉴에서 현재 DB 인스턴스에 연결된 세션 목록을 실시간 테이블로 조회합니다. GNB의 **DB Type** 토글로 Tibero 또는 OpenSQL을 전환하면 해당 엔진의 세션 지표가 표시됩니다.
 
@@ -41,7 +41,7 @@ Tibero와 OpenSQL 두 엔진을 모두 지원하며, GNB의 **DB Type** 토글�
 {% endtab %}
 {% endtabs %}
 
-### 세션 컬럼 구성
+## 세션 컬럼 구성
 
 테이블 컬럼은 표시 정책에 따라 세 가지로 구분됩니다.
 
@@ -119,7 +119,7 @@ SQL ID 및 Prev SQL ID는 음수 값도 정상 범위에 포함됩니다.
 {% endtab %}
 {% endtabs %}
 
-### Elapsed Time 알림 설정
+## Elapsed Time 알림 설정
 
 Elapsed Time 임계값을 설정하면 경과 시간이 기준을 초과한 세션 행이 색상으로 강조됩니다.
 
@@ -145,7 +145,7 @@ Elapsed Time 임계값을 설정하면 경과 시간이 기준을 초과한 세�
 알림 활성화 토글을 켜지 않은 상태로 패널을 닫으면 입력한 임계값은 유지됩니다. 단, 페이지를 이동하면 초기값으로 돌아갑니다.
 {% endhint %}
 
-### 세션 상세 정보 조회
+## 세션 상세 정보 조회
 
 세션 테이블에서 특정 행을 클릭하면 오른쪽에 상세 정보 드로어가 열립니다. 드로어 제목은 **Session Detail ({SID 또는 PID})** 형식으로 표시됩니다.
 

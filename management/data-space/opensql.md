@@ -11,13 +11,11 @@
 
 <figure><img src="../../.gitbook/assets/image (8).png" alt=""><figcaption><p>그림 1. 데이터 스페이스 - OpenSQL</p></figcaption></figure>
 
-### 데이터베이스 목록 조회 <a href="#database-list" id="database-list"></a>
+## 데이터베이스 목록 조회 <a href="#database-list" id="database-list"></a>
 
 **관리 > 데이터 공간 관리** 메뉴에 진입하면 현재 인스턴스에 속한 데이터베이스 목록을 조회합니다. 페이지 상단에는 인스턴스 전체의 상태 요약이 표시되고, 중앙 테이블에서 데이터베이스별 상세 현황을 확인합니다.
 
-!\[데이터 공간 관리 목록 페이지]\(상단 요약 정보와 데이터베이스 테이블이 함께 표시된 데이터 공간 관리 화면)
-
-#### 상단 요약 정보
+### 상단 요약 정보
 
 | 항목                   | 설명                           |
 | -------------------- | ---------------------------- |
@@ -27,7 +25,7 @@
 | Total DB Size        | 전체 데이터베이스 크기 합계              |
 | WAL Size             | Write-Ahead Log 크기           |
 
-#### 테이블 항목
+### 테이블 항목
 
 | 컬럼                   | 설명                                                     |
 | -------------------- | ------------------------------------------------------ |
@@ -69,7 +67,7 @@ Tuple Health는 추정 통계 기반 가이드로, 트래픽 패턴에 따라 �
 2. 상단 요약 정보와 데이터베이스 테이블에서 현황을 확인합니다.
 3. 특정 데이터베이스를 찾으려면 검색창에 별칭을 입력합니다.
 
-### 데이터베이스 생성 <a href="#create-database" id="create-database"></a>
+## 데이터베이스 생성 <a href="#create-database" id="create-database"></a>
 
 \[생성] 버튼을 클릭하면 화면 오른쪽에 데이터베이스 생성 드로어가 열립니다. 필수 항목을 입력한 뒤 \[생성] 버튼을 클릭하면 생성 요청이 전송되고 드로어가 닫힙니다. 생성 요청 결과와 완료 여부는 화면 상단에 표시되는 토스트 메시지로 확인합니다.
 
@@ -79,9 +77,9 @@ Tuple Health는 추정 통계 기반 가이드로, 트래픽 패턴에 따라 �
 \[취소]를 클릭하거나 드로어를 닫으면 입력한 내용이 모두 초기화됩니다. \[생성] 버튼을 클릭하기 전까지 변경사항이 저장되지 않습니다.
 {% endhint %}
 
-#### 입력 항목
+### 입력 항목
 
-<table data-full-width="true"><thead><tr><th>항목</th><th>설명</th><th>입력 규칙</th></tr></thead><tbody><tr><td>Database Name *</td><td>생성할 데이터베이스 이름</td><td><ul><li>30자 이내 영어 소문자(a-z)·숫자(0-9)·언더바(<code>_</code>)만 사용 가능</li><li>동일 인스턴스 내 중복 불가</li></ul></td></tr><tr><td>Owner *</td><td>데이터베이스 소유 사용자</td><td><code>postgres</code> (고정값)</td></tr><tr><td>Encoding</td><td>데이터베이스 Character Set</td><td>기본값: <code>UTF8</code></td></tr><tr><td>Connection Limit</td><td>동시 접속 가능한 최대 연결 수</td><td><ul><li>기본값: Unlimited</li><li>Unlimited 체크 해제 시 직접 입력 가능 (0 이상의 정수)</li></ul></td></tr></tbody></table>
+<table><thead><tr><th>항목</th><th>설명</th><th>입력 규칙</th></tr></thead><tbody><tr><td>Database Name *</td><td>생성할 데이터베이스 이름</td><td><ul><li>30자 이내 영어 소문자(a-z)·숫자(0-9)·언더바(<code>_</code>)만 사용 가능</li><li>동일 인스턴스 내 중복 불가</li></ul></td></tr><tr><td>Owner *</td><td>데이터베이스 소유 사용자</td><td><code>postgres</code> (고정값)</td></tr><tr><td>Encoding</td><td>데이터베이스 Character Set</td><td>기본값: <code>UTF8</code></td></tr><tr><td>Connection Limit</td><td>동시 접속 가능한 최대 연결 수</td><td><ul><li>기본값: Unlimited</li><li>Unlimited 체크 해제 시 직접 입력 가능 (0 이상의 정수)</li></ul></td></tr></tbody></table>
 
 \*표기는 필수 입력 항목을 의미합니다.
 
@@ -92,7 +90,7 @@ Tuple Health는 추정 통계 기반 가이드로, 트래픽 패턴에 따라 �
 3. \[생성] 버튼을 클릭합니다.
 4. 드로어가 닫히면 토스트 메시지로 생성 요청 결과와 완료 여부를 확인합니다.
 
-### 데이터베이스 상세 정보 조회 <a href="#database-details" id="database-details"></a>
+## 데이터베이스 상세 정보 조회 <a href="#database-details" id="database-details"></a>
 
 목록에서 데이터베이스 별칭을 클릭하면 해당 데이터베이스의 상세 정보 페이지로 이동합니다. 페이지는 기본 정보(Info), Database Activity, Trend Metrics 세 영역으로 구성됩니다.
 
@@ -101,7 +99,7 @@ Tuple Health는 추정 통계 기반 가이드로, 트래픽 패턴에 따라 �
 1. **관리 > 데이터 공간 관리** 페이지의 데이터베이스 목록에서 조회할 데이터베이스의 **별칭**을 클릭합니다.
 2. 기본 정보, Database Activity, Trend Metrics 영역에서 상태와 현황을 확인합니다.
 
-#### 표시 항목
+### 표시 항목
 
 **기본 정보 (Info)**
 
@@ -130,7 +128,7 @@ Tuple Health는 추정 통계 기반 가이드로, 트래픽 패턴에 따라 �
 | Dead Tuple Count (CNT)   | 데이터베이스의 Dead Tuple 수         |
 | Live/Dead Tuple Rate (%) | Live Tuple 대비 Dead Tuple 비율  |
 
-### 데이터베이스 삭제 <a href="#delete-database" id="delete-database"></a>
+## 데이터베이스 삭제 <a href="#delete-database" id="delete-database"></a>
 
 데이터베이스는 목록 페이지와 상세 정보 페이지 두 곳에서 삭제할 수 있습니다. 삭제 버튼을 클릭하면 확인 모달이 나타나며, 모달에서 최종 확인 후 삭제가 진행됩니다.
 

@@ -1,4 +1,4 @@
-**마이페이지 > 이용 관리**에서는 인프라 리소스를 제외한 데이터베이스(DB 서비스 라이선스)의 당월 이용 현황과 지난 월별 이용 내역을 확인하고 관리합니다.
+**마이페이지 > 이용 관리**에서는 인프라 리소스를 제외한 데이터베이스(DB Service 라이선스)의 당월 이용 현황과 지난 월별 이용 내역을 확인하고 관리합니다.
 
 {% hint style="warning" %}
 **주의**
@@ -8,19 +8,19 @@
 
 # 이용 현황 <a href="#usage-status" id="usage-status"></a>
 
-이번 달 데이터베이스 이용 현황을 DB 서비스 라이선스 기준으로 조회할 수 있습니다. 데이터는 UTC 기준 매일 00시에 자동 업데이트됩니다.
+이번 달 데이터베이스 이용 현황을 DB Service 라이선스 기준으로 조회할 수 있습니다. 데이터는 UTC 기준 매일 00시에 자동 업데이트됩니다.
 
 1. **OwlDB 콘솔 화면 > 마이페이지 > 이용 관리 > 이용 현황** 메뉴로 이동합니다.
-2. 상단의 요약 정보(이용 기간, DB 서비스 개수, 총 이용 요금)를 확인합니다.
+2. 상단의 요약 정보(이용 기간, DB Service 개수, 총 이용 요금)를 확인합니다.
 3. 하단의 테이블에서 세부 이용 목록을 확인합니다. DB 유형 필터(Tibero / OpenSQL)와 이름 검색을 지원합니다.
 
 ## 요약 정보 항목 <a href="#summary-items" id="summary-items"></a>
 
-<table data-full-width="true"><thead><tr><th><strong>항목</strong></th><th><strong>설명</strong></th></tr></thead><tbody><tr><td>이용 기간</td><td><ul><li>당월 1일부터 UTC 기준 조회 전일까지 기간 표시</li><li>표기:<code>YYYY.MM.DD \~ YYYY.MM.DD</code></li></ul></td></tr><tr><td>DB 서비스 개수</td><td><ul><li>조회 기간 내 이용한 DB 서비스 총개수</li><li>DB 유형별(Tibero / OpenSQL) 개수 함께 표시</li></ul></td></tr><tr><td>총 이용 요금</td><td><ul><li>조회 기간 내 이용한 DB 서비스 라이선스 요금 합계</li><li>달러($) 기준, 소수점 둘째 자리 반올림</li></ul></td></tr></tbody></table>
+<table><thead><tr><th><strong>항목</strong></th><th><strong>설명</strong></th></tr></thead><tbody><tr><td>이용 기간</td><td><ul><li>당월 1일부터 UTC 기준 조회 전일까지 기간 표시</li><li>표기:<code>YYYY.MM.DD \~ YYYY.MM.DD</code></li></ul></td></tr><tr><td>DB Service 개수</td><td><ul><li>조회 기간 내 이용한 DB Service 총개수</li><li>DB 유형별(Tibero / OpenSQL) 개수 함께 표시</li></ul></td></tr><tr><td>총 이용 요금</td><td><ul><li>조회 기간 내 이용한 DB Service 라이선스 요금 합계</li><li>달러($) 기준, 소수점 둘째 자리 반올림</li></ul></td></tr></tbody></table>
 
 ## 이용 현황 목록 <a href="#usage-status-list" id="usage-status-list"></a>
 
-<table data-full-width="true"><thead><tr><th><strong>항목</strong></th><th><strong>설명</strong></th></tr></thead><tbody><tr><td>DB 유형</td><td>DB 서비스 유형 (<code>Tibero</code> / <code>OpenSQL</code>)</td></tr><tr><td>이름</td><td>조회 기간 내 이용한 DB 서비스 이름<ul><li>삭제된 서비스는 이름 앞<code>(Terminated)</code>표기</li><li>행 전체 빨간색 표시</li></ul></td></tr><tr><td>인스턴스 별칭</td><td>해당 DB 서비스에 속한 인스턴스 별칭</td></tr><tr><td>라이선스 옵션</td><td>라이선스 적용 유형 (<code>LI</code> / <code>BYOL</code>)</td></tr><tr><td>이용 시간</td><td>조회 기간 내 누적 이용 시간 (<code>nh nm</code>형태)<ul><li>초 단위는 분으로 올림 후 시/분 변환 (예: 45초 →<code>1m</code>, 1시간 24분 1초 → <code>1h 25m</code>)</li></ul></td></tr><tr><td>이용 요금</td><td>조회 기간 내 발생한 라이선스 이용 요금 ($ 단위)<ul><li>BYOL 데이터베이스도 BYOL 빌링 정책에 따라 지정된 라이선스 비용으로 계산</li></ul></td></tr></tbody></table>
+<table><thead><tr><th><strong>항목</strong></th><th><strong>설명</strong></th></tr></thead><tbody><tr><td>DB 유형</td><td>DB Service 유형 (<code>Tibero</code> / <code>OpenSQL</code>)</td></tr><tr><td>이름</td><td>조회 기간 내 이용한 DB Service 이름<ul><li>삭제된 서비스는 이름 앞<code>(Terminated)</code>표기</li><li>행 전체 빨간색 표시</li></ul></td></tr><tr><td>인스턴스 별칭</td><td>해당 DB Service에 속한 인스턴스 별칭</td></tr><tr><td>라이선스 옵션</td><td>라이선스 적용 유형 (<code>LI</code> / <code>BYOL</code>)</td></tr><tr><td>이용 시간</td><td>조회 기간 내 누적 이용 시간 (<code>nh nm</code>형태)<br>초 단위는 분으로 올림 후 시/분 변환 (예: 45초 →<code>1m</code>, 1시간 24분 1초 → <code>1h 25m</code>)</td></tr><tr><td>이용 요금</td><td>조회 기간 내 발생한 라이선스 이용 요금 ($ 단위)<br>BYOL 데이터베이스도 BYOL 빌링 정책에 따라 지정된 라이선스 비용으로 계산</td></tr></tbody></table>
 
 {% hint style="info" %}
 **참고**
@@ -48,12 +48,12 @@
 
 ## 이용 내역 목록 <a href="#usage-history-list" id="usage-history-list"></a>
 
-<table data-full-width="true"><thead><tr><th><strong>항목</strong></th><th><strong>설명</strong></th></tr></thead><tbody><tr><td><strong>이름</strong></td><td>월별 이용 리포트 이름 (형식: <code>OwlDB Monthly Report YYYYMM</code>)</td></tr><tr><td><strong>이용 월</strong></td><td>리포트 대상 월 (형식: <code>YYYY년 MM월</code>)</td></tr><tr><td><strong>총 이용 요금</strong></td><td>해당 월에 발생한 총 라이선스 이용 요금 (소수점 둘째 자리 반올림)<ul><li>이용 요금이 없는 달은<code>$0.00</code> 표기</li></ul></td></tr></tbody></table>
+<table><thead><tr><th><strong>항목</strong></th><th><strong>설명</strong></th></tr></thead><tbody><tr><td><strong>이름</strong></td><td>월별 이용 리포트 이름 (형식: <code>OwlDB Monthly Report YYYYMM</code>)</td></tr><tr><td><strong>이용 월</strong></td><td>리포트 대상 월 (형식: <code>YYYY년 MM월</code>)</td></tr><tr><td><strong>총 이용 요금</strong></td><td>해당 월에 발생한 총 라이선스 이용 요금 (소수점 둘째 자리 반올림)<br>이용 요금이 없는 달은<code>$0.00</code> 표기</td></tr></tbody></table>
 
 {% hint style="info" %}
 **참고**
 
-특정 월에 DB 서비스를 전혀 사용하지 않았거나 등록된 DB 서비스가 없더라도 월별 리포트는 매월 자동 생성됩니다. 이 경우 총 이용 요금은 `$0.00`으로 표시되며, 상세 내역 진입 시 *"확인 가능한 이용 내역이 없습니다."* 라는 안내가 노출됩니다.
+특정 월에 DB Service를 전혀 사용하지 않았거나 등록된 DB Service가 없더라도 월별 리포트는 매월 자동 생성됩니다. 이 경우 총 이용 요금은 `$0.00`으로 표시되며, 상세 내역 진입 시 *"확인 가능한 이용 내역이 없습니다."* 라는 안내가 노출됩니다.
 {% endhint %}
 
 ## 이용 내역 상세 <a href="#usage-history-details" id="usage-history-details"></a>

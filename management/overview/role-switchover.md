@@ -8,7 +8,7 @@
 AWS 환경에서는 Tibero 엔진에서만 역할 전환을 지원합니다. Azure 환경에서는 Tibero와 OpenSQL 모두 지원합니다.
 {% endhint %}
 
-## 역할 전환 <a href="#role-switchover" id="role-switchover"></a>
+# 역할 전환 <a href="#role-switchover" id="role-switchover"></a>
 
 역할 전환 모달은 **보안 인증**과 **전환 설정**의 두 단계로 구성됩니다. 첫 번째 단계에서 현재 로그인 계정의 비밀번호를 입력해 관리자 권한을 확인하고, 두 번째 단계에서 새로운 Primary DB를 선택합니다.
 
@@ -24,7 +24,7 @@ AWS 환경에서는 Tibero 엔진에서만 역할 전환을 지원합니다. Azu
 전환 요청 후, 시스템은 현재 Primary DB의 상태를 자동으로 진단하여 전환 방식을 결정합니다.
 
 * **Primary DB가 정상 상태**: Switchover 방식으로 수행됩니다. 현재 Primary를 안전하게 종료하고 데이터 동기화를 완료한 후, 선택한 Standby DB를 새로운 Primary로 승격합니다.
-* **Primary DB가 비정상 상태**: Failover 방식으로 수행됩니다. 선택한 Standby DB를 즉시 새로운 Primary로 승격시켜 서비스를 복구합니다.
+* **Primary DB가 비정상 상태**: 장애 조치 방식으로 수행됩니다. 선택한 Standby DB를 즉시 새로운 Primary로 승격시켜 서비스를 복구합니다.
 
 {% hint style="warning" %}
 **주의**

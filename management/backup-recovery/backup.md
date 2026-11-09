@@ -6,13 +6,13 @@
 
 보존 기간은 1시간부터 최대 35일까지 설정할 수 있습니다.
 
-### 백업 목록 조회 <a href="#backup-list" id="backup-list"></a>
+## 백업 목록 조회 <a href="#backup-list" id="backup-list"></a>
 
 **관리 > 백업/복구 > 백업** 메뉴에 진입하면 현재 DB Service의 백업 목록이 나타납니다. 각 행은 하나의 백업 이미지를 나타내며, Full/Incremental 구분 없이 단일 이미지 기준으로 표시됩니다.
 
 목록에 표시되는 컬럼은 다음과 같습니다.
 
-<table><thead><tr><th width="216">컬럼</th><th>설명</th></tr></thead><tbody><tr><td>이름</td><td>백업 이미지 이름</td></tr><tr><td>백업 경로</td><td>백업 경로 이름</td></tr><tr><td>생성일</td><td>백업 이미지 생성 일시 (yyyy.mm.dd HH:mm:ss)</td></tr><tr><td>만료일</td><td><p>보존 기간으로 계산된 만료 일시 (yyyy.mm.dd HH:mm:ss)</p><ul><li>자동 백업 : 백업 실행 시각 + 보존 기간</li><li>수동 백업 : 선택한 종료일의 다음날 00:00:00</li></ul></td></tr><tr><td>생성 방식</td><td>자동 / 수동</td></tr><tr><td>상태</td><td>현재 백업 상태</td></tr></tbody></table>
+<table><thead><tr><th width="216">컬럼</th><th>설명</th></tr></thead><tbody><tr><td>이름</td><td>백업 이미지 이름</td></tr><tr><td>백업 경로</td><td>백업 경로 이름</td></tr><tr><td>생성일</td><td>백업 이미지 생성 일시 (yyyy.mm.dd HH:mm:ss)</td></tr><tr><td>만료일</td><td><p>보존 기간으로 계산된 만료 일시 (yyyy.mm.dd HH:mm:ss)</p><ul><li>자동 백업: 백업 실행 시각 + 보존 기간</li><li>수동 백업: 선택한 종료일의 다음날 00:00:00</li></ul></td></tr><tr><td>생성 방식</td><td>자동 / 수동</td></tr><tr><td>상태</td><td>현재 백업 상태</td></tr></tbody></table>
 
 {% hint style="info" %}
 **참고**
@@ -21,9 +21,9 @@
 * 조회 조건에 해당하는 데이터가 없으면 "확인 가능한 데이터가 없습니다."가 표시됩니다.
 {% endhint %}
 
-#### 백업 상태 이력
+### 백업 상태 이력
 
-<table data-full-width="true"><thead><tr><th width="156">항목</th><th>설명</th></tr></thead><tbody><tr><td>상태</td><td><ul><li>생성 시작</li><li>복구 가능</li><li>생성 실패</li><li>복구 시작</li><li>복구 실패</li><li>삭제 시작</li><li>삭제됨</li><li>사용 불가</li></ul></td></tr><tr><td>발생일</td><td>상태가 변경된 일시 표시 (yyyy.mm.dd HH:mm:ss)</td></tr></tbody></table>
+<table><thead><tr><th width="156">항목</th><th>설명</th></tr></thead><tbody><tr><td>상태</td><td><ul><li>생성 시작</li><li>복구 가능</li><li>생성 실패</li><li>복구 시작</li><li>복구 실패</li><li>삭제 시작</li><li>삭제됨</li><li>사용 불가</li></ul></td></tr><tr><td>발생일</td><td>상태가 변경된 일시 표시 (yyyy.mm.dd HH:mm:ss)</td></tr></tbody></table>
 
 {% hint style="info" %}
 **참고**
@@ -31,7 +31,7 @@
 OpenSQL에서 OpenBackup 사용을 미사용으로 전환하면 상태는 삭제됨으로 표시됩니다.
 {% endhint %}
 
-### 백업 생성 <a href="#create-backup" id="create-backup"></a>
+## 백업 생성 <a href="#create-backup" id="create-backup"></a>
 
 이름과 보존 기간을 입력하면 현재 시점의 단일 백업 이미지가 생성됩니다.
 
@@ -46,7 +46,7 @@ OpenSQL에서 OpenBackup 사용을 미사용으로 전환하면 상태는 삭제
 데이터베이스 운영 상태가 `Running`일 때만 가능합니다.
 {% endhint %}
 
-### 복구 <a href="#restore" id="restore"></a>
+## 복구 <a href="#restore" id="restore"></a>
 
 백업 목록에서 백업을 하나 선택하고 **복구** 버튼을 클릭하면 복구 모달이 나타납니다. 복구 유형을 선택하여 데이터베이스를 특정 시점으로 복구합니다.
 
@@ -80,7 +80,7 @@ OpenSQL에서 OpenBackup 사용을 미사용으로 전환하면 상태는 삭제
 * 복구가 실패하는 경우 이전에 선택한 시점보다 더 이전 시점을 선택해 다시 시도해 주세요. 여러 차례 시도해도 복구되지 않으면 기술지원을 요청해 주세요.
 {% endhint %}
 
-### 백업 수정 <a href="#modify-backup" id="modify-backup"></a>
+## 백업 수정 <a href="#modify-backup" id="modify-backup"></a>
 
 백업의 이름과 보존 기간을 수정합니다.
 
@@ -89,7 +89,7 @@ OpenSQL에서 OpenBackup 사용을 미사용으로 전환하면 상태는 삭제
 3. **이름** 또는 **보존 기간**을 변경합니다.
 4. **저장** 버튼을 클릭합니다.
 
-### 백업 삭제 <a href="#delete-backup" id="delete-backup"></a>
+## 백업 삭제 <a href="#delete-backup" id="delete-backup"></a>
 
 선택한 백업 이미지를 영구적으로 삭제합니다.
 
@@ -104,7 +104,7 @@ OpenSQL에서 OpenBackup 사용을 미사용으로 전환하면 상태는 삭제
 3. 삭제 안내 모달을 확인합니다.
 4. **삭제** 버튼을 클릭합니다.
 
-### 백업 보관 <a href="#backup-retention" id="backup-retention"></a>
+## 백업 보관 <a href="#backup-retention" id="backup-retention"></a>
 
 특정 백업을 장기 보관 스토리지에 저장합니다. 보관된 백업은 보관 기간이 지나도 자동으로 삭제되지 않으며, 필요할 때 복구합니다.
 
@@ -127,7 +127,7 @@ OpenSQL에서 OpenBackup 사용을 미사용으로 전환하면 상태는 삭제
 데이터베이스 운영 상태가 `Terminating`이 아닐 때만 가능합니다.
 {% endhint %}
 
-#### 보관 목록 조회
+### 보관 목록 조회
 
 백업/보관 페이지 내 **보관** 섹션에서 장기 보관 중인 백업 목록을 확인합니다.
 
@@ -139,7 +139,7 @@ OpenSQL에서 OpenBackup 사용을 미사용으로 전환하면 상태는 삭제
 2. 페이지를 아래로 스크롤하여 **보관** 섹션으로 이동합니다.
 3. 필터나 이름 검색으로 원하는 보관 백업을 찾습니다.
 
-#### 보관 수정
+### 보관 수정
 
 보관된 백업의 이름과 보존 기간을 수정합니다.
 
@@ -148,7 +148,7 @@ OpenSQL에서 OpenBackup 사용을 미사용으로 전환하면 상태는 삭제
 3. **이름** 또는 **보관 기간**을 변경합니다.
 4. **저장** 버튼을 클릭합니다.
 
-#### 보관 복구
+### 보관 복구
 
 1. 복구할 보관된 백업을 하나 선택합니다.
 2. **복구** 버튼을 클릭합니다.
@@ -162,7 +162,7 @@ OpenSQL에서 OpenBackup 사용을 미사용으로 전환하면 상태는 삭제
 보관 복구 시 데이터베이스 복구가 곧바로 시작되고 현재 저장된 모든 백업이 삭제됩니다. 데이터 크기에 따라 완료까지 최대 3일이 걸릴 수 있습니다.
 {% endhint %}
 
-#### 보관 삭제
+### 보관 삭제
 
 1. 삭제할 보관 백업을 하나 이상 선택합니다.
 2. **삭제** 버튼을 클릭합니다.

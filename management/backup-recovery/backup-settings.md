@@ -1,6 +1,6 @@
 백업 설정 페이지에서는 자동 백업 스케줄러를 구성하고 운영 상태를 확인합니다.
 
-## 백업 설정 <a href="#backup-settings" id="backup-settings"></a>
+# 백업 설정 <a href="#backup-settings" id="backup-settings"></a>
 
 자동 백업의 사용 여부, 실행 주기, 보존 기간, 시작 시간을 설정하며, 스케줄러의 최근 실행 결과·7일 성공률·연속 실패 횟수와 30일 실행 이력 차트를 통해 백업 안정성을 점검합니다.
 
@@ -20,7 +20,7 @@ Cloud 환경에서는 CSP Snapshot 기능을 사용해 Full/Incremental 구분 �
 
 페이지에는 다음 항목이 표시됩니다.
 
-<table data-full-width="true"><thead><tr><th>항목</th><th>설명</th><th>입력 규칙</th></tr></thead><tbody><tr><td>자동 백업</td><td>자동 백업 활성화 여부 (켜짐/꺼짐)</td><td>기본값: 꺼짐</td></tr><tr><td>자동 백업 주기</td><td>자동 백업이 실행되는 주기</td><td><ul><li>시간마다: 1~23</li><li>일마다: 1~7</li></ul></td></tr><tr><td>보존 기간</td><td>생성된 백업 이미지를 보존하는 기간</td><td><ul><li>시간마다: 1~23</li><li>일마다: 1~35</li></ul></td></tr><tr><td>시작 시간</td><td>자동 백업이 처음 시작되는 일시</td><td>현재보다 과거 일시는 선택 불가</td></tr><tr><td>최근 백업 일자</td><td>가장 최근에 자동 백업이 완료된 일시</td><td>표시 전용</td></tr><tr><td>다음 백업 일자</td><td>다음 자동 백업 예정 일시</td><td>표시 전용</td></tr></tbody></table>
+<table><thead><tr><th>항목</th><th>설명</th><th>입력 규칙</th></tr></thead><tbody><tr><td>자동 백업</td><td>자동 백업 활성화 여부 (켜짐/꺼짐)</td><td>기본값: 꺼짐</td></tr><tr><td>자동 백업 주기</td><td>자동 백업이 실행되는 주기</td><td><ul><li>시간마다: 1~23</li><li>일마다: 1~7</li></ul></td></tr><tr><td>보존 기간</td><td>생성된 백업 이미지를 보존하는 기간</td><td><ul><li>시간마다: 1~23</li><li>일마다: 1~35</li></ul></td></tr><tr><td>시작 시간</td><td>자동 백업이 처음 시작되는 일시</td><td>현재보다 과거 일시는 선택 불가</td></tr><tr><td>최근 백업 일자</td><td>가장 최근에 자동 백업이 완료된 일시</td><td>표시 전용</td></tr><tr><td>다음 백업 일자</td><td>다음 자동 백업 예정 일시</td><td>표시 전용</td></tr></tbody></table>
 
 {% hint style="warning" %}
 **주의**
@@ -30,7 +30,7 @@ Cloud 환경에서는 CSP Snapshot 기능을 사용해 Full/Incremental 구분 �
 
 ---
 
-## 백업 스케줄러 운영 상태 <a href="#backup-scheduler-status" id="backup-scheduler-status"></a>
+# 백업 스케줄러 운영 상태 <a href="#backup-scheduler-status" id="backup-scheduler-status"></a>
 
 백업 설정 페이지 하단의 **백업 스케줄러 운영 상태** 섹션에서 자동 백업의 최근 실행 이력과 안정성 지표를 확인합니다. 자동 백업이 꺼진 상태에서도 마지막 실행 정보가 표시됩니다.
 
